@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Documents.FormatProviders.Pdf</name>
+    </assembly>
+    <members>
+        <member name="P:Telerik.Windows.Documents.FormatProviders.Pdf.PdfExportSettings.ContentsDeflaterCompressionLevel">
+            <summary>
+            Gets or sets a value indicating the compression level to be used when deflating images.
+            -1 = Default Compression.
+            0 = No Compression.
+            9 = Best Compression.
+            The default is -1.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Documents.FormatProviders.Pdf.PdfExportSettings.ContentsCompressionMode">
+            <summary>
+            Gets or sets a value indicating the compression mode used when compressing page contents
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Documents.FormatProviders.Pdf.PdfExportSettings.ImagesCompressionMode">
+            <summary>
+            Gets or sets a value indicating the compression mode used when compressing images
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Documents.FormatProviders.Pdf.PdfExportSettings.ImagesDeflaterCompressionLevel">
+            <summary>
+            Gets or sets a value indicating the compression level to be used when deflating images.
+            -1 = Default Compression.
+            0 = No Compression.
+            9 = Best Compression.
+            The default is -1.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Documents.FormatProviders.Pdf.PdfImagesCompressionMode.None">
+            <summary>
+            Don't compress the images.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Documents.FormatProviders.Pdf.PdfImagesCompressionMode.Deflate">
+            <summary>
+            Use the deflate algorithm to compress the images.
+            Use PdfExportSettings.ImagesDeflaterCompressionLevel to specify the compression ratio.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Documents.FormatProviders.Pdf.PdfImagesCompressionMode.Jpeg">
+            <summary>
+            Use JPEG to compress the images.
+            This mode is only supported for images that are imported as JPEGs.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Documents.FormatProviders.Pdf.PdfImagesCompressionMode.Automatic">
+            <summary>
+            Automatically choose the best algorithm to compress the images.
+            </summary>
+        </member>
+    </members>
+</doc>
