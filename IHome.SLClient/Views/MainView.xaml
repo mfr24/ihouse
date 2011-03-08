@@ -312,8 +312,8 @@
             <telerik:RadRibbonTab Header="首页" telerik:KeyTipService.AccessText="H" x:Name="CRM">
                 <telerik:RadRibbonGroup Header="爱帮">
                     <!--frm 窗体类名, name 在标签上显示的名字, xap 窗体类所在的包-->
-                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="最新求助" LargeImage="/Images/CoverPage.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{frm:'SomeHelp.IM.ITurnLogin_RegView',name='登录',xap='SomeHelp.IM.zip'}"/>
-                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="发布求助" LargeImage="/Images/documentworkspace.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="frm=ILight.IShow.CRM.CustomerQueryView&amp;name=查看客户&amp;xap=ILight.IShow.CRM.zip"/>
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="最新求助" LargeImage="/Images/CoverPage.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'SomeHelp.IM.ITurnLogin_RegView',name:'登录',xap_name:'SomeHelp.IM.zip'}"/>
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="发布求助" LargeImage="/Images/documentworkspace.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'ILight.IShow.CRM.CustomerQueryView',name:'查看客户',xap_name:'ILight.IShow.CRM.zip'}"/>
                     <telerik:RadRibbonSplitButton HorizontalAlignment="Left" Text="涂鸦墙" LargeImage="/Images/markasfinal.png" Size="Large">
                         <telerik:RadRibbonSplitButton.DropDownContent>
                             <telerik:RadContextMenu BorderThickness="0">
