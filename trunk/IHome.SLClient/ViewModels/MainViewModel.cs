@@ -6,9 +6,22 @@ using System.ComponentModel;
 using System.Windows.Input;
 using ILight.Core.Model;
 using System.Windows;
+using Newtonsoft.Json;
 
 namespace IHome.SLClient
 {
+    public class DLLModel {
+        public string name { get; set; }
+        public string type_name { get; set; }
+        public string xap_name { get; set; }
+        private string _version = "1.0.0.0";
+
+        public string version
+        {
+            get { return _version; }
+            set { _version = value; }
+        }
+    }
 	public class MainViewModel : INotifyPropertyChanged
 	{
 		public MainViewModel()
@@ -21,42 +34,19 @@ namespace IHome.SLClient
                 return new ILight.Core.Model.CommandBase(
                     (parameter) =>
                     {
-                        new Newtonsoft.Json.JsonConverter().ReadJson(parameter);
-                        string[] parameters = ((string)parameter).Split('&');
-                        string name = string.Empty;
-                        string typeName = string.Empty;
-                        string xapName = string.Empty;
-                        string version = "1.0.0.0";
-                        foreach (string p in parameters)
-                        {
-                            switch (p.Split('=')[0].Trim().ToLower())
-                            {
-                                case "frm":
-                                    typeName = p.Split('=')[1].Trim();
-                                    break;
-                                case "name":
-                                    name = p.Split('=')[1].Trim();
-                                    break;
-                                case "xap":
-                                    xapName = p.Split('=')[1].Trim();
-                                    break;
-                                case "version":
-                                    version = p.Split('=')[1].Trim();
-                                    break;
-                            }
-
-                        }
-                        ILight.Core.Reflection.AssemblyProvider.GetInstanceAsync(typeName, xapName, version, (frm) =>
+                        DLLModel dll= JsonConvert.DeserializeObject<DLLModel>((string)parameter);
+                        
+                        ILight.Core.Reflection.AssemblyProvider.GetInstanceAsync(dll.type_name, dll.xap_name, dll.version, (frm) =>
                         {
                             foreach (ILight.Controls.RadControls.RadTabItemCloseable item in ((Telerik.Windows.Controls.RadTabControl)((FrameworkElement)Application.Current.RootVisual).FindName("MainTab")).Items)
                             {
-                                if (item.Content.GetType().FullName == typeName)
+                                if (item.Content.GetType().FullName == dll.type_name)
                                 {
                                     item.IsSelected = true;
                                     return;
                                 }
                             }
-                            ILight.Controls.RadControls.RadTabItemCloseable tab = new ILight.Controls.RadControls.RadTabItemCloseable() { Header = name, Content = frm, IsSelected = true };
+                            ILight.Controls.RadControls.RadTabItemCloseable tab = new ILight.Controls.RadControls.RadTabItemCloseable() { Header = dll.name, Content = frm, IsSelected = true };
                             ((Telerik.Windows.Controls.RadTabControl)((FrameworkElement)Application.Current.RootVisual).FindName("MainTab")).Items.Add(tab);
                             //((Telerik.Windows.Controls.RadTabControl)((FrameworkElement)Application.Current.RootVisual).FindName("MainTab")).se
                         });
