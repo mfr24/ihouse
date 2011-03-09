@@ -309,7 +309,7 @@
                             Size="Small" telerik:KeyTipService.AccessText="3" />
                 </telerik:QuickAccessToolBar>
             </telerik:RadRibbonBar.QuickAccessToolBar>
-            <telerik:RadRibbonTab Header="首页" telerik:KeyTipService.AccessText="H" x:Name="CRM">
+            <telerik:RadRibbonTab Header="房源管理" telerik:KeyTipService.AccessText="H" x:Name="CRM">
                 <telerik:RadRibbonGroup Header="爱帮">
                     <!--frm 窗体类名, name 在标签上显示的名字, xap 窗体类所在的包-->
                     <telerik:RadRibbonButton HorizontalAlignment="Left" Text="最新求助" LargeImage="/Images/CoverPage.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'SomeHelp.IM.ITurnLogin_RegView',name:'登录',xap_name:'SomeHelp.IM.zip'}"/>
@@ -379,10 +379,10 @@
                 </telerik:RadRibbonGroup>
 
             </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="好友" x:Name="ProjectManagement">
+            <telerik:RadRibbonTab Header="客户管理" x:Name="ProjectManagement">
 
             </telerik:RadRibbonTab>
-            <telerik:RadRibbonTab Header="爱帮事迹" x:Name="SaleManagement">
+            <telerik:RadRibbonTab Header="基础管理" x:Name="SaleManagement">
                 <telerik:RadRibbonGroup Header="预售管理">
                     <telerik:RadRibbonButton HorizontalAlignment="Left" Text="客户信息登记" LargeImage="/Images/CoverPage.png" Size="Large"/>
                     <telerik:RadRibbonButton HorizontalAlignment="Left" Text="价目表" LargeImage="/Images/CoverPage.png" Size="Large"/>
