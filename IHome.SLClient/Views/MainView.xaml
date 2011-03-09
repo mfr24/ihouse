@@ -312,9 +312,9 @@
             <telerik:RadRibbonTab Header="房源管理" telerik:KeyTipService.AccessText="H" x:Name="CRM">
                 <telerik:RadRibbonGroup Header="爱帮">
                     <!--frm 窗体类名, name 在标签上显示的名字, xap 窗体类所在的包-->
-                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="最新求助" LargeImage="/Images/CoverPage.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'SomeHelp.IM.ITurnLogin_RegView',name:'登录',xap_name:'SomeHelp.IM.zip'}"/>
-                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="发布求助" LargeImage="/Images/documentworkspace.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'ILight.IShow.CRM.CustomerQueryView',name:'查看客户',xap_name:'ILight.IShow.CRM.zip'}"/>
-                    <telerik:RadRibbonSplitButton HorizontalAlignment="Left" Text="涂鸦墙" LargeImage="/Images/markasfinal.png" Size="Large">
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="新增房源" LargeImage="/Images/CoverPage.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'SomeHelp.IM.ITurnLogin_RegView',name:'登录',xap_name:'SomeHelp.IM.zip'}"/>
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="查询房源" LargeImage="/Images/documentworkspace.png" Size="Large" Command="{Binding MenuCommand}" CommandParameter="{}{type_name:'ILight.IShow.CRM.CustomerQueryView',name:'查看客户',xap_name:'ILight.IShow.CRM.zip'}"/>
+                    <telerik:RadRibbonSplitButton HorizontalAlignment="Left" Text="房源跟单" LargeImage="/Images/markasfinal.png" Size="Large">
                         <telerik:RadRibbonSplitButton.DropDownContent>
                             <telerik:RadContextMenu BorderThickness="0">
                                 <telerik:RadMenuItem Header="住宅需求登记" telerik:KeyTipService.AccessText="S">
@@ -344,17 +344,25 @@
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="应用中心" telerik:KeyTipService.AltAccessText="ZI">
                     <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium" CollapseToSmall="WhenGroupIsSmall"
-                		LargeImage="/Images/chart.png" Size="Large" Text="综合分析"
+                		LargeImage="/Images/chart.png" Size="Large" Text="房源详情"
                 		telerik:KeyTipService.AccessText="C" />
                     <telerik:RadCollapsiblePanel>
                         <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium" CollapseToSmall="WhenGroupIsSmall"
-                			LargeImage="/Images/Shapes.png" Size="Large" Text="客户需求分析"
+                			LargeImage="/Images/Shapes.png" Size="Large" Text="房源修改"
                 			telerik:KeyTipService.AccessText="SH" />
                         <telerik:RadRibbonButton CollapseToMedium="WhenGroupIsMedium" CollapseToSmall="WhenGroupIsSmall"
                 			LargeImage="/Images/SmartArt.png" Size="Large"
-                			Text="区域分析" telerik:KeyTipService.AccessText="M"/>
+                			Text="房源推送" telerik:KeyTipService.AccessText="M"/>
                         <telerik:RadRibbonButton LargeImage="/Images/ClipArt.png" Size="Large"
-                			Text="客户集分析" telerik:KeyTipService.AccessText="F"/>
+                			Text="房源委托" telerik:KeyTipService.AccessText="F"/>
+                        <telerik:RadRibbonButton LargeImage="/Images/ClipArt.png" Size="Large"
+                			Text="房源带看" telerik:KeyTipService.AccessText="F"/>
+                        <telerik:RadRibbonButton LargeImage="/Images/ClipArt.png" Size="Large"
+                			Text="钥匙收据" telerik:KeyTipService.AccessText="F"/>
+                        <telerik:RadRibbonButton LargeImage="/Images/ClipArt.png" Size="Large"
+                			Text="房源备案" telerik:KeyTipService.AccessText="F"/>
+                        <telerik:RadRibbonButton LargeImage="/Images/ClipArt.png" Size="Large"
+                			Text="房源图片" telerik:KeyTipService.AccessText="F"/>
                     </telerik:RadCollapsiblePanel>
                 </telerik:RadRibbonGroup>
                 <telerik:RadRibbonGroup Header="信息服务" telerik:ScreenTip.Title="Clipboard"
@@ -380,7 +388,45 @@
 
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="客户管理" x:Name="ProjectManagement">
-
+                <telerik:RadRibbonGroup Header="预售管理">
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="新增客需" LargeImage="/Images/CoverPage.png" Size="Large"/>
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="查询客需" LargeImage="/Images/CoverPage.png" Size="Large"/>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="大定签约">
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="客需详情" LargeImage="/Images/CoverPage.png" Size="Large"/>
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="客需修改" LargeImage="/Images/CoverPage.png" Size="Large"/>
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="客户跟单" LargeImage="/Images/CoverPage.png" Size="Large"/>
+                </telerik:RadRibbonGroup>
+                <telerik:RadRibbonGroup Header="报表管理">
+                    <telerik:RadRibbonButton HorizontalAlignment="Left" Text="客需分类" LargeImage="/Images/CoverPage.png" Size="Large"/>
+                    <telerik:RadRibbonSplitButton HorizontalAlignment="Left" Text="查询客户" LargeImage="/Images/CoverPage.png" Size="Large">
+                        <telerik:RadRibbonSplitButton.DropDownContent>
+                            <telerik:RadContextMenu BorderThickness="0">
+                                <telerik:RadMenuItem Header="换房明细表">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Stretch="None" Source="/Images/paste.png" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="更名明细表">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Stretch="None" Source="/Images/paste.png" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="客户访问登记表">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Stretch="None" Source="/Images/paste.png" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                                <telerik:RadMenuItem Header="销售排名" IsEnabled="False">
+                                    <telerik:RadMenuItem.Icon>
+                                        <Image Stretch="None"
+                                                Source="/Images/pastehyperlink.png" />
+                                    </telerik:RadMenuItem.Icon>
+                                </telerik:RadMenuItem>
+                            </telerik:RadContextMenu>
+                        </telerik:RadRibbonSplitButton.DropDownContent>
+                    </telerik:RadRibbonSplitButton>
+                </telerik:RadRibbonGroup>
             </telerik:RadRibbonTab>
             <telerik:RadRibbonTab Header="基础管理" x:Name="SaleManagement">
                 <telerik:RadRibbonGroup Header="预售管理">
