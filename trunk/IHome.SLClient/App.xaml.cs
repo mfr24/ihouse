@@ -26,7 +26,7 @@ namespace IHome.SLClient
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            this.RootVisual = new MainView();
+            this.RootVisual = new MainOutLookView();
         }
 
         private void Application_Exit(object sender, EventArgs e)

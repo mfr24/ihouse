@@ -32,9 +32,9 @@ namespace IHome.SLClient
             get
             {
                 return new ILight.Core.Model.CommandBase(
-                    (parameter) =>
+                    (p) =>
                     {
-                        DLLModel dll= JsonConvert.DeserializeObject<DLLModel>((string)parameter);
+                        DLLModel dll= JsonConvert.DeserializeObject<DLLModel>((string)p);
                         
                         ILight.Core.Reflection.AssemblyProvider.GetInstanceAsync(dll.type_name, dll.xap_name, dll.version, (frm) =>
                         {
