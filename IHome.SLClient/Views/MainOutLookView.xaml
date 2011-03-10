@@ -84,7 +84,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
-        <telerik:RadOutlookBar Width="150" d:LayoutOverrides="HorizontalMargin" ItemsSource="{Binding MenuList}">
+        <telerik:RadOutlookBar Width="150" d:LayoutOverrides="HorizontalMargin" ItemsSource="{Binding MenuList}" >
             <telerik:RadOutlookBar.TitleTemplate>
                 <DataTemplate>
                     <Grid>
@@ -94,9 +94,10 @@
                 </telerik:RadOutlookBar.TitleTemplate>
             <telerik:RadOutlookBar.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <TextBlock Text="{Binding header}" Cursor="Hand" />
-                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="20" Source="/Images/send_email.png"></Image>
+                		<TextBlock Text="{Binding header}" Cursor="Hand" Height="20" />
+                	</StackPanel>
                 </DataTemplate>
             </telerik:RadOutlookBar.ItemTemplate>
             <telerik:RadOutlookBar.ContentTemplate>
@@ -105,7 +106,6 @@
                     </ListBox>
                 </DataTemplate>
             </telerik:RadOutlookBar.ContentTemplate>
-
         </telerik:RadOutlookBar>
         <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
             <ilight:RadTabItemCloseable Header="首页">
