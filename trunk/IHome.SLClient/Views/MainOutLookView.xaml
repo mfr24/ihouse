@@ -38,7 +38,7 @@
             </telerik:RadOutlookBar.ItemTemplate>
                 <telerik:RadOutlookBar.ContentTemplate>
                 <DataTemplate>
-                    <ListBox x:Name="hoseManageList" ItemTemplate="{StaticResource ItemDataTemplate}" ItemsSource="{Binding item_list}">
+                    <ListBox x:Name="hoseManageList" ItemTemplate="{StaticResource ItemDataTemplate}" ItemsSource="{Binding item_list, Mode=TwoWay}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
                                 <i:InvokeCommandAction Command="{Binding Source={StaticResource MainOutLookViewModelDataSource}, Path=ItemCommand}"
