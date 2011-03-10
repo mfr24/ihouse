@@ -4,6 +4,7 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:IHome.SLClient"
+    xmlns:ilight="http://silverlight.imbob.com.cn/Controls"
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" x:Name="userControl"
 	mc:Ignorable="d"
@@ -13,15 +14,77 @@
 		<local:MainOutLookViewModel x:Key="MainOutLookViewModelDataSource" />
 		<DataTemplate x:Key="ItemDataTemplate">
 			
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Background="White">
+
 				<Image Width="20"/>
 				<TextBlock Text="{Binding name}"/>
 			</StackPanel>
         </DataTemplate>
+		<ControlTemplate x:Key="ListBoxItemControlTemplate" TargetType="ListBoxItem">
+			<Grid Background="{TemplateBinding Background}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonDown">
+                        <i:InvokeCommandAction Command="{Binding ItemCommand, Source={StaticResource MainOutLookViewModelDataSource}}"
+                				CommandParameter="{Binding}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+                <VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <DoubleAnimation Duration="0" To=".75" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor2"/>
+                            </Storyboard>
+                        </VisualState>
+						<VisualState x:Name="Disabled">
+							<Storyboard>
+								<DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="contentPresenter"/>
+							</Storyboard>
+						</VisualState>
+					</VisualStateGroup>
+					<VisualStateGroup x:Name="SelectionStates">
+                        
+						<VisualState x:Name="Unselected"/>
+						<VisualState x:Name="Selected"/>
+					</VisualStateGroup>
+					<VisualStateGroup x:Name="FocusStates">
+						<VisualState x:Name="Focused">
+							<Storyboard>
+								<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisualElement">
+									<DiscreteObjectKeyFrame KeyTime="0">
+										<DiscreteObjectKeyFrame.Value>
+											<Visibility>Visible</Visibility>
+										</DiscreteObjectKeyFrame.Value>
+									</DiscreteObjectKeyFrame>
+								</ObjectAnimationUsingKeyFrames>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Unfocused"/>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Rectangle x:Name="fillColor" Fill="#FF86C3D8" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+				<Rectangle x:Name="fillColor2" Fill="#FFBADDE9" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+				<ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+				<Rectangle x:Name="FocusVisualElement" RadiusY="1" RadiusX="1" Stroke="#FF6DBDD1" StrokeThickness="1" Visibility="Collapsed"/>
+			</Grid>
+		</ControlTemplate>
+		<Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+			<Setter Property="Padding" Value="3"/>
+			<Setter Property="HorizontalContentAlignment" Value="Left"/>
+			<Setter Property="VerticalContentAlignment" Value="Top"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="TabNavigation" Value="Local"/>
+			<Setter Property="Template" Value="{StaticResource ListBoxItemControlTemplate}"/>
+		</Style>
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource MainOutLookViewModelDataSource}}">
-        <telerik:RadOutlookBar Width="150" HorizontalAlignment="Left" d:LayoutOverrides="Width, HorizontalMargin" ItemsSource="{Binding MenuList}">
+		<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+        <telerik:RadOutlookBar Width="150" d:LayoutOverrides="HorizontalMargin" ItemsSource="{Binding MenuList}">
             <telerik:RadOutlookBar.TitleTemplate>
                 <DataTemplate>
                     <Grid>
@@ -36,19 +99,19 @@
                     </Grid>
                 </DataTemplate>
             </telerik:RadOutlookBar.ItemTemplate>
-                <telerik:RadOutlookBar.ContentTemplate>
+            <telerik:RadOutlookBar.ContentTemplate>
                 <DataTemplate>
-                    <ListBox x:Name="hoseManageList" ItemTemplate="{StaticResource ItemDataTemplate}" ItemsSource="{Binding item_list, Mode=TwoWay}">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction Command="{Binding Source={StaticResource MainOutLookViewModelDataSource}, Path=ItemCommand}"
-                                                   CommandParameter="{Binding SelectedItem, ElementName=hoseManageList}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
+                    <ListBox x:Name="hoseManageList" ItemTemplate="{StaticResource ItemDataTemplate}" ItemsSource="{Binding item_list, Mode=TwoWay}" ItemContainerStyle="{StaticResource ListBoxItemStyle}">
                     </ListBox>
                 </DataTemplate>
             </telerik:RadOutlookBar.ContentTemplate>
 
         </telerik:RadOutlookBar>
-	</Grid>
+        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
+            <ilight:RadTabItemCloseable Header="首页">
+                <Grid Background="Transparent">
+                </Grid>
+            </ilight:RadTabItemCloseable>
+        </telerik:RadTabControl>
+    </Grid>
 </UserControl>
