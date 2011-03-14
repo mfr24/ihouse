@@ -13,6 +13,6 @@
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource HoseInfoAddViewModelDataSource}}">
 		<TextBlock Margin="122,109,289,193" TextWrapping="Wrap" Text="TextBlock"/>
-		<Button Content="提交" HorizontalAlignment="Right" Margin="0,0,156,60" Width="139" Height="120" VerticalAlignment="Bottom"/>
+		<Button Content="提交" HorizontalAlignment="Right" Margin="0,0,156,60" Width="139" Height="120" VerticalAlignment="Bottom" Command="{Binding AddHoseInfoCommand, Mode=OneWay}"/>
 	</Grid>
 </UserControl>
