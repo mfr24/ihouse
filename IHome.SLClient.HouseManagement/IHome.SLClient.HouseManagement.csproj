@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ILight.Core">
+      <HintPath>..\Libs\Silverlight\ILight.Core.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
@@ -58,14 +61,16 @@
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\HouseInfo.cs" />
+    <Compile Include="Models\ServerResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HoseInfoAddViewModel.cs" />
-    <Compile Include="Views\HoseInfoAddView.xaml.cs">
-      <DependentUpon>HoseInfoAddView.xaml</DependentUpon>
+    <Compile Include="ViewModels\HouseInfoAddViewModel.cs" />
+    <Compile Include="Views\HouseInfoAddView.xaml.cs">
+      <DependentUpon>HouseInfoAddView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\HoseInfoAddView.xaml">
+    <Page Include="Views\HouseInfoAddView.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
