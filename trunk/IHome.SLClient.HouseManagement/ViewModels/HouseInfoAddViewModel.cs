@@ -81,6 +81,7 @@ namespace IHome.SLClient.HouseManagement
                 if (result.DataList[0] != null)
                 {
                     Result = result.DataList[0] as Models.ServerResult;
+                    Models.HouseInfo houseinfo = Result.data as Models.HouseInfo;
                 }
             };
             webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
