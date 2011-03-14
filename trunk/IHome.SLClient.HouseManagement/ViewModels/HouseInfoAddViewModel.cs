@@ -17,7 +17,15 @@ namespace IHome.SLClient.HouseManagement
 
         }
 
+        private string _xxx;
 
+        public string xxx
+        {
+            get { return _xxx; }
+            set { _xxx = value;
+            NotifyPropertyChanged("xxx");
+            }
+        }
         public ICommand AddHoseInfoCommand
         {
             get
@@ -28,7 +36,16 @@ namespace IHome.SLClient.HouseManagement
                 });
             }
         }
-
+        public ICommand ChangePCommand
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    xxx = Guid.NewGuid().ToString();
+                });
+            }
+        }
         private Models.ServerResult<Models.HouseInfo> _result;
 
         public Models.ServerResult<Models.HouseInfo> Result
