@@ -3,8 +3,9 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
 	xmlns:local="clr-namespace:IHome.SLClient.HouseManagement"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Custom="http://silverlight.imbob.com.cn"
+	mc:Ignorable="d"
 	x:Class="IHome.SLClient.HouseManagement.HoseInfoAddView"
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
@@ -14,6 +15,10 @@
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource HoseInfoAddViewModelDataSource}}">
         <TextBlock Margin="122,109,289,193" TextWrapping="Wrap" Text="{Binding Result.data.MyProperty1, Mode=TwoWay}"/>
 		<Button Content="提交" HorizontalAlignment="Right" Margin="0,0,156,60" Width="139" Height="120" VerticalAlignment="Bottom" Command="{Binding AddHoseInfoCommand, Mode=OneWay}" CommandParameter="{Binding xxx}" />
-        <Button Content="Button" HorizontalAlignment="Left" Height="88" Margin="143,0,0,60" VerticalAlignment="Bottom" Width="105" Command="{Binding ChangePCommand, Mode=OneWay}"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="88" Margin="143,0,0,60" VerticalAlignment="Bottom" Width="105" Command="{Binding ChangePCommand, Mode=OneWay}">
+        	<i:Interaction.Behaviors>
+        		<Custom:XDrop/>
+        	</i:Interaction.Behaviors>
+        </Button>
 	</Grid>
 </UserControl>
