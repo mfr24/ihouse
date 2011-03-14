@@ -16,9 +16,11 @@
         <TextBlock Margin="122,109,289,193" TextWrapping="Wrap" Text="{Binding Result.data.MyProperty1, Mode=TwoWay}"/>
 		<Button Content="提交" HorizontalAlignment="Right" Margin="0,0,156,60" Width="139" Height="120" VerticalAlignment="Bottom" Command="{Binding AddHoseInfoCommand, Mode=OneWay}" CommandParameter="{Binding xxx}" />
         <Button Content="Button" HorizontalAlignment="Left" Height="88" Margin="143,0,0,60" VerticalAlignment="Bottom" Width="105" Command="{Binding ChangePCommand, Mode=OneWay}">
-        	<i:Interaction.Behaviors>
-        		<Custom:XDrop/>
-        	</i:Interaction.Behaviors>
         </Button>
+        <Grid Height="167" Margin="156,45,273,0" VerticalAlignment="Top" Background="Black">
+            <i:Interaction.Behaviors>
+                <Custom:XDrop/>
+            </i:Interaction.Behaviors>
+        </Grid>
 	</Grid>
 </UserControl>
