@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>EXTAJAX站内调用</title>
+    <script src="/Scripts/ExtJs/ext-base.js" type="text/javascript"></script>
+    <script src="/Scripts/ExtJs/ext-all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        Ext.onReady(function () {
+            Ext.Ajax.request({
+                method: "post",
+                jsonData: {
+                    RequestKey: "Token",
+                    RequestMethod: 'BobLib.Template.Server.Facade.MainFacade.Test',
+                    RequestData: [{ 'customer': { 'pk_customer': 'ed7276e4-d915-4881-8abe-6b0e96cfc5c1', 'name': '钟2', 'Sex': true }, 'pwd': 'pawww', user: '3156' }, { pre: 'aekd', pass: '中文参数'}]
+                },
+                url: "/apphandler.dll",
+                success: function (result, request) {
+                    alert(result.responseText);
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
