@@ -60,18 +60,18 @@ namespace IHome.SLClient.HouseManagement
         private void PostData()
         {
             // creat request array
-            List<object> data = new List<object>();
+            List<object> requsetData = new List<object>();
 
             // creat request object
             Dictionary<string, object> dict = new Dictionary<string, object>();
             dict.Add("house_info", new Models.HouseInfo() { MyProperty1 = "1asdjf", MyProperty2 = "2134asdfasdf" });
-            data.Add(dict);// request data :[ {house_info:{MyProperty1:'1asdjf',MyProperty2:'2134asdfasdf'}}]
+            requsetData.Add(dict);// request data :[ {house_info:{MyProperty1:'1asdjf',MyProperty2:'2134asdfasdf'}}]
 
             // creat dictionary contains type of returned object 
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
 
             //the dictionary key is index of returned array
-            resultType.Add(0, typeof(string));
+            resultType.Add(0, typeof(Models.ServerResult));
 
 
             ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
@@ -86,7 +86,7 @@ namespace IHome.SLClient.HouseManagement
             webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
                 , "guest"
                 , "IHome.Sever.Facade.MainFacade.AddHoseInfo"
-                , data
+                , requsetData
                 , resultType);
 
         }
