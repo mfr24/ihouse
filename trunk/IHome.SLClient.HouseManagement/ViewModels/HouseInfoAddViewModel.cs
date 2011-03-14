@@ -81,7 +81,7 @@ namespace IHome.SLClient.HouseManagement
                 if (result.DataList[0] != null)
                 {
                     Result = result.DataList[0] as Models.ServerResult<Models.HouseInfo>;
-                    // can not  do this 
+                    // do this 
                     Models.HouseInfo houseinfo = Result.data;
                 }
             };
