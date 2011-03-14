@@ -11,10 +11,10 @@ using System.Windows.Shapes;
 
 namespace IHome.Models
 {
-    public class ServerResult
+    public class ServerResult<T>
     {
         public bool succeed { get; set; }
-        public object data { get; set; }
+        public T data { get; set; }
         public string message { get; set; }
     }
 }

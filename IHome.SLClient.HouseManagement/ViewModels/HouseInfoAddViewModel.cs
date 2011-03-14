@@ -29,9 +29,9 @@ namespace IHome.SLClient.HouseManagement
             }
         }
 
-        private Models.ServerResult _result;
+        private Models.ServerResult<Models.HouseInfo> _result;
 
-        public Models.ServerResult Result
+        public Models.ServerResult<Models.HouseInfo> Result
         {
             get { return _result; }
             set { _result = value;
@@ -71,7 +71,7 @@ namespace IHome.SLClient.HouseManagement
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
 
             //the dictionary key is index of returned array
-            resultType.Add(0, typeof(Models.ServerResult));
+            resultType.Add(0, typeof(Models.ServerResult<Models.HouseInfo>));
 
 
             ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
@@ -80,8 +80,9 @@ namespace IHome.SLClient.HouseManagement
             {
                 if (result.DataList[0] != null)
                 {
-                    Result = result.DataList[0] as Models.ServerResult;
-                    Models.HouseInfo houseinfo = Result.data as Models.HouseInfo;
+                    Result = result.DataList[0] as Models.ServerResult<Models.HouseInfo>;
+                    // can not  do this 
+                    Models.HouseInfo houseinfo = Result.data;
                 }
             };
             webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
