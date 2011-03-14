@@ -85,7 +85,7 @@ namespace IHome.SLClient.HouseManagement
             };
             webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
                 , "guest"
-                , "IHome.Sever.Facade.MainFacade.AddHoseInfo"
+                , "IHome.Server.Facade.MainFacade.AddHoseInfo"
                 , requsetData
                 , resultType);
 
