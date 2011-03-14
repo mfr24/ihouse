@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ILight.Behaviors">
+      <HintPath>..\Libs\Silverlight\ILight.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="ILight.Core">
       <HintPath>..\Libs\Silverlight\ILight.Core.dll</HintPath>
     </Reference>
