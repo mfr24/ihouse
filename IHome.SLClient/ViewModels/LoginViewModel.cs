@@ -60,8 +60,7 @@ namespace IHome.SLClient
         {
             List<object> data = new List<object>();
             Dictionary<string, object> dict = new Dictionary<string, object>();
-            dict.Add("User_login", User_login);
-            dict.Add("User_pass", User_pass);
+            dict.Add("user", new Models.User() { User_login = _user_login, User_pass = _user_pass });
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
             data.Add(dict);
             resultType.Add(0, typeof(Models.ServerResult<User>));
@@ -72,10 +71,7 @@ namespace IHome.SLClient
                     Models.ServerResult<User> serverResult = result.DataList[0] as Models.ServerResult<User>;
                     if (serverResult.succeed == true)
                     {
-                        if (serverResult.data != null)
-                        {
                             CurrentUser = serverResult.data;
-                        }
                     }
                     else {
                         MessageBox.Show(serverResult.message);
@@ -84,7 +80,7 @@ namespace IHome.SLClient
             };
             webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll",
                 "guest",
-                "IHome.Sever.Facade.MainFacade.Login",
+                "IHome.Server.Facade.MainFacade.Login",
                 data,
                 resultType);
         }
