@@ -1,9 +1,7 @@
 ﻿using System;
 namespace IHome.Models
 {
-    /// <summary>
-    /// 实体类Wp_user
-    /// </summary>
+
     public class User
     {
         #region 私有字段
