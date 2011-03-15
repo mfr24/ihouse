@@ -150,6 +150,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IHome.Models\IHome.Models.csproj">
+      <Project>{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}</Project>
+      <Name>IHome.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IHome.SLClient.HouseManagement\IHome.SLClient.HouseManagement.csproj">
       <Project>{9FA3E1AA-A6A5-4CB0-B907-EB8C7E2C3D1E}</Project>
       <Name>IHome.SLClient.HouseManagement</Name>
