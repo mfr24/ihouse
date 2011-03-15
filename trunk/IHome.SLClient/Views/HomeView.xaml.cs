@@ -20,10 +20,14 @@ namespace IHome.SLClient
 		public HomeView()
 		{
 			this.InitializeComponent();
-            //Login.CloseButton.Click += (o, arg) => { this.Visibility = Visibility.Collapsed; };
-            //Login.Button_TurnReg.Click += (o, arg) => { ITurnGrid.Turn(); };
-            //Reg.CloseButton.Click += (o, arg) => { this.Visibility = Visibility.Collapsed; };
-            //Reg.Button_TurnLogin.Click += (o, arg) => { ITurnGrid.Turn(); };
+
+            Loaded += (sender, e) => {
+                ((LoginView)ITurnLogin_Reg.Face).CloseButton.Click += (o, arg) => { this.Visibility = Visibility.Collapsed; };
+                ((LoginView)ITurnLogin_Reg.Face).Button_TurnReg.Click += (o, arg) => { ITurnLogin_Reg.Turn(); };
+                ((RegisterView)ITurnLogin_Reg.Back).CloseButton.Click += (o, arg) => { this.Visibility = Visibility.Collapsed; };
+                ((RegisterView)ITurnLogin_Reg.Back).Button_TurnLogin.Click += (o, arg) => { ITurnLogin_Reg.Turn(); };
+            };
 		}
+        
 	}
 }
