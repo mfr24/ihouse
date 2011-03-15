@@ -28,9 +28,20 @@ namespace IHome.Server.Facade
             {
                 //check user
             }
-            revList.Add(new Models.ServerResult() { succeed = true, data = new Models.User() { User_nicename = "哈哈",Token=Guid.NewGuid().ToString() }, message = "message f!!!!!!" });
+            revList.Add(new Models.ServerResult() { succeed = true, data = new Models.User() { user_login = "哈哈",token=Guid.NewGuid().ToString() }, message = "message f!!!!!!" });
             return revList;
         }
+        public ArrayList Register(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Models.User model = paramDicts[0]["user"].ToString().JsonToModel<Models.User>();
+            ArrayList revList = new ArrayList();
+            {
+                //check user
+            }
+            revList.Add(new Models.ServerResult() { succeed = true, data = model, message = "message f!!!!!!" });
+            return revList;
+        }
+        
 
     }
 }

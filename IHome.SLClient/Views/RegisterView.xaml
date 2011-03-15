@@ -106,13 +106,13 @@
                 </Grid>
                 <Grid Margin="0,30,0,0">
                     <telerik:RadButton x:Name="Button_TurnLogin" Content="返回登录" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,139,8,0" Width="60"/>
-                    <telerik:RadButton x:Name="Button_Reg" Content="立即注册" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,139,72,0" Width="60"/>
+                    <telerik:RadButton x:Name="Button_Reg" Command="{Binding RegisterCommand}" Content="立即注册" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,139,72,0" Width="60"/>
                     <TextBlock HorizontalAlignment="Left" Margin="60,39,0,0" TextWrapping="Wrap" Text="创建密码" VerticalAlignment="Top"/>
-                    <TextBox Margin="0,0,60,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="168" />
-                    <TextBox Margin="120,35,60,0" TextWrapping="Wrap" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
+                    <TextBox  Text="{Binding NewUser.user_email, Mode=TwoWay}" Margin="0,0,60,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="168" />
+                    <TextBox  Text="{Binding NewUser.user_pass, Mode=TwoWay}" Margin="120,35,60,0" TextWrapping="Wrap" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
                     <TextBlock HorizontalAlignment="Left" Margin="60,4,0,0" TextWrapping="Wrap" Text="注册邮箱" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Margin="60,74,0,0" TextWrapping="Wrap" Text="真实姓名" VerticalAlignment="Top"/>
-                    <TextBox Margin="120,70,60,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                    <TextBox  Text="{Binding NewUser.user_nicename, Mode=TwoWay}" Margin="120,70,60,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Margin="60,109,0,0" TextWrapping="Wrap" Text="性别" VerticalAlignment="Top"/>
                     <telerik:RadRadioButton VerticalAlignment="Top" Margin="120,105,0,0" HorizontalAlignment="Left">
                     <telerik:RadRadioButton.Content>
