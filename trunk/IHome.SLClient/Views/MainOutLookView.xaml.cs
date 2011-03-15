@@ -20,8 +20,6 @@ namespace IHome.SLClient
 		public MainOutLookView()
 		{
 			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
 		}
 	}
 }
