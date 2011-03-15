@@ -27,7 +27,14 @@ namespace IHome.SLClient
         public User CurrentUser
         {
             get { return Application.Current.Resources["CurrentUser"] as User; }
-            set { Application.Current.Resources["CurrentUser"] = value; }
+            set {
+                if (!Application.Current.Resources.Contains("CurrentUser"))
+                {
+                    Application.Current.Resources.Add("CurrentUser", value);
+                }
+                else { Application.Current.Resources["CurrentUser"] = value;
+                }
+                }
         }
         private string _user_login;
 

@@ -29,7 +29,23 @@ namespace IHome.SLClient
             NotifyPropertyChanged("NewUser");
             }
         }
-        
+        private User _currentUser;
+
+        public User CurrentUser
+        {
+            get { return Application.Current.Resources["CurrentUser"] as User; }
+            set
+            {
+                if (!Application.Current.Resources.Contains("CurrentUser"))
+                {
+                    Application.Current.Resources.Add("CurrentUser", value);
+                }
+                else
+                {
+                    Application.Current.Resources["CurrentUser"] = value;
+                }
+            }
+        }
 		public RegisterViewModel()
 		{
             _newUser = new User();
@@ -49,7 +65,7 @@ namespace IHome.SLClient
                 Models.ServerResult<User> serverResult = result.DataList[0] as Models.ServerResult<User>;
                 if (serverResult.succeed == true)
                 {
-                    Application.Current.Resources["CurrentUser"] = "123";
+                    CurrentUser = serverResult.data;
                 }
                 else
                 {
