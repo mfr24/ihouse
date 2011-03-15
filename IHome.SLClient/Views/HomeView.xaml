@@ -14,8 +14,14 @@
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource HomeViewModelDataSource}}">
 		<Custom:XTurnRoundGrid x:Name="ITurnGrid" Margin="0">
-			<i:Interaction.Behaviors>
-				<Custom1:XDrop/>
+            <Custom:XTurnRoundGrid.Back>
+                <local:RegisterView x:Name="Reg"/>
+            </Custom:XTurnRoundGrid.Back>
+            <Custom:XTurnRoundGrid.Face>
+                <local:LoginView x:Name="Login"/>
+            </Custom:XTurnRoundGrid.Face>
+            <i:Interaction.Behaviors>
+                <Custom1:XDrop />
 			</i:Interaction.Behaviors>
 		</Custom:XTurnRoundGrid>
 	</Grid>
