@@ -7,12 +7,12 @@ namespace IHome.Models
         #region 私有字段
         private string _token;
 
-        public string Token
+        public string token
         {
             get { return _token; }
             set { _token = value; }
         }
-        private ulong _iD;
+        private ulong _id;
         private string _user_login;
         private string _user_pass;
         private string _user_nicename;
@@ -25,52 +25,52 @@ namespace IHome.Models
         #endregion
 
         #region 公开属性
-        public ulong ID
+        public ulong id
         {
-            get { return _iD; }
-            set { _iD = value; }
+            get { return _id; }
+            set { _id = value; }
         }
-        public string User_login
+        public string user_login
         {
             get { return _user_login; }
             set { _user_login = value; }
         }
-        public string User_pass
+        public string user_pass
         {
             get { return _user_pass; }
             set { _user_pass = value; }
         }
-        public string User_nicename
+        public string user_nicename
         {
             get { return _user_nicename; }
             set { _user_nicename = value; }
         }
-        public string User_email
+        public string user_email
         {
             get { return _user_email; }
             set { _user_email = value; }
         }
-        public string User_url
+        public string user_url
         {
             get { return _user_url; }
             set { _user_url = value; }
         }
-        public DateTime User_registered
+        public DateTime user_registered
         {
             get { return _user_registered; }
             set { _user_registered = value; }
         }
-        public string User_activation_key
+        public string user_activation_key
         {
             get { return _user_activation_key; }
             set { _user_activation_key = value; }
         }
-        public int User_status
+        public int user_status
         {
             get { return _user_status; }
             set { _user_status = value; }
         }
-        public string Display_name
+        public string display_name
         {
             get { return _display_name; }
             set { _display_name = value; }

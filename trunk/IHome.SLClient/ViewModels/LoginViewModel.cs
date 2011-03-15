@@ -60,7 +60,7 @@ namespace IHome.SLClient
         {
             List<object> data = new List<object>();
             Dictionary<string, object> dict = new Dictionary<string, object>();
-            dict.Add("user", new Models.User() { User_login = _user_login, User_pass = _user_pass });
+            dict.Add("user", new Models.User() { user_login = _user_login, user_pass = _user_pass });
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
             data.Add(dict);
             resultType.Add(0, typeof(Models.ServerResult<User>));
