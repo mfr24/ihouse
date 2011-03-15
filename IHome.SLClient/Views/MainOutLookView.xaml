@@ -108,7 +108,8 @@
             </telerik:RadOutlookBar.ContentTemplate>
         </telerik:RadOutlookBar>
         <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
-            <ilight:RadTabItemCloseable Header="首页">
+            <ilight:RadTabItemCloseable Header="首页" x:Name="BB">
+                <!--无法获得属性内容的x:Name,此处后台代码HH引用为null-->
                 <local:HomeView x:Name="HH"/>
             </ilight:RadTabItemCloseable>
         </telerik:RadTabControl>
