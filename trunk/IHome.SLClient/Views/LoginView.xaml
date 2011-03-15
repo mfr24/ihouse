@@ -112,7 +112,7 @@
                     <TextBox Text="{Binding User_pass, Mode=TwoWay}" Margin="120,73,60,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Margin="60,37,0,0" TextWrapping="Wrap" Text="登录名" VerticalAlignment="Top"/>
 
-                    <telerik:RadButton Command="{Binding Cmd_Login}" x:Name="Button_Login" Content="登录" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,72,8" Width="60"/>
+                    <telerik:RadButton Command="{Binding LoginCommand}" x:Name="Button_Login" Content="登录" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,72,8" Width="60"/>
                     <telerik:RadButton x:Name="Button_TurnReg" Content="立即注册" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,8,8" Width="60"/>
                 </Grid>
             </Grid>
