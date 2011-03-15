@@ -109,7 +109,7 @@
         </telerik:RadOutlookBar>
         <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
             <ilight:RadTabItemCloseable Header="首页">
-                <local:HomeView/>
+                <local:HomeView x:Name="HH"/>
             </ilight:RadTabItemCloseable>
         </telerik:RadTabControl>
     </Grid>
