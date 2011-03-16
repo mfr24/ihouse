@@ -45,11 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CbooMainModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CbooMainModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Common\FacadeExtension.cs" />
     <Compile Include="Facade\MainFacade.cs" />
     <Compile Include="Models\HouseInfo.cs" />
@@ -59,10 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="CbooMainModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CbooMainModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
