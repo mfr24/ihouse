@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.Server", "IHome.Serve
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IHome.Web", "IHome.Web\", "{15E8C638-1346-42D4-A0AF-718D06CF3B71}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{9F12845B-F827-40E6-BF51-B5AFCCC7E9E9}|IHome.Server.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/IHome.Web"
 		Debug.AspNetCompiler.PhysicalPath = "IHome.Web\"
