@@ -6,15 +6,15 @@
     <edmx:StorageModels>
     <Schema Namespace="IHomeModels.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="IHomeModelsStoreContainer">
-          <EntitySet Name="base_community_baseinfo" EntityType="IHomeModels.Store.base_community_baseinfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_community_buildinginfo" EntityType="IHomeModels.Store.base_community_buildinginfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_datadic_detailinfo" EntityType="IHomeModels.Store.base_datadic_detailinfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_datadic_iteminfo" EntityType="IHomeModels.Store.base_datadic_iteminfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_permit_define" EntityType="IHomeModels.Store.base_permit_define" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_community_baseinfo" EntityType="IHomeModels.Store.base_community_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_community_buildinginfo" EntityType="IHomeModels.Store.base_community_buildinginfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_datadic_detailinfo" EntityType="IHomeModels.Store.base_datadic_detailinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_datadic_iteminfo" EntityType="IHomeModels.Store.base_datadic_iteminfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_permit_define" EntityType="IHomeModels.Store.base_permit_define" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo" />
         </EntityContainer>
         <EntityType Name="base_community_baseinfo">
           <Key>
@@ -134,7 +134,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="IHome.Models" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="CbooMainEntities" a:LazyLoadingEnabled="true" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CbooEntities" a:LazyLoadingEnabled="true" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="base_community_baseinfo" EntityType="IHome.Models.base_community_baseinfo" />
           <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.base_community_buildinginfo" />
           <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.base_datadic_detailinfo" />
@@ -269,7 +269,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IHomeModelsStoreContainer" CdmEntityContainer="CbooMainEntities">
+        <EntityContainerMapping StorageEntityContainer="IHomeModelsStoreContainer" CdmEntityContainer="CbooEntities">
           <EntitySetMapping Name="base_community_baseinfo">
             <EntityTypeMapping TypeName="IHome.Models.base_community_baseinfo">
               <MappingFragment StoreEntitySet="base_community_baseinfo">
@@ -416,7 +416,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="CbooMainModel">
+      <Diagram Name="CbooModel">
         <EntityTypeShape EntityType="IHome.Models.base_community_baseinfo" Width="1.5" PointX="0.75" PointY="0.75" Height="3.6892097981770853" />
         <EntityTypeShape EntityType="IHome.Models.base_community_buildinginfo" Width="1.5" PointX="2.75" PointY="0.75" Height="3.1161507161458317" />
         <EntityTypeShape EntityType="IHome.Models.base_datadic_detailinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7790128580729174" />

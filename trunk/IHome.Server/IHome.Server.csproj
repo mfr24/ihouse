@@ -81,10 +81,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\CbooMainModel.Designer.cs">
+    <Compile Include="Data\CbooModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CbooMainModel.edmx</DependentUpon>
+      <DependentUpon>CbooModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\sys_user_baseinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
@@ -97,9 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Data\CbooMainModel.edmx">
+    <EntityDeploy Include="Data\CbooModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CbooMainModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>CbooModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="Data\CbooMainModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
