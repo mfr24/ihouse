@@ -33,12 +33,22 @@ namespace IHome.Server.Facade
         }
         public ArrayList Register(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            Models.User model = paramDicts[0]["user"].ToString().JsonToModel<Models.User>();
+            //Models.User model = paramDicts[0]["user"].ToString().JsonToModel<Models.User>();
+            {
+                Data.sys_user_baseinfo user = new Data.sys_user_baseinfo();
+                user.user_id = Guid.NewGuid().ToString();
+                user.CityName = "北京";
+                using (var context=new Data.CbooMainEntities())
+                {
+                    context.sys_user_baseinfo.AddObject(user);
+                    context.SaveChanges();
+                }
+            }
             ArrayList revList = new ArrayList();
             {
                 //check user
             }
-            revList.Add(new Models.ServerResult() { succeed = true, data = model, message = "message f!!!!!!" });
+            revList.Add(new Models.ServerResult() { succeed = true, data = null, message = "message f!!!!!!" });
             return revList;
         }
 
