@@ -28,7 +28,7 @@ namespace IHome.Server.Facade
             {
                 //check user
             }
-            revList.Add(new Models.ServerResult() { succeed = true, data = new Models.User() { user_login = "哈哈",token=Guid.NewGuid().ToString() }, message = "message f!!!!!!" });
+            revList.Add(new Models.ServerResult() { succeed = true, data = new Models.User() { user_login = "哈哈", token = Guid.NewGuid().ToString() }, message = "message f!!!!!!" });
             return revList;
         }
         public ArrayList Register(string userKey, Dictionary<string, object>[] paramDicts)
@@ -41,7 +41,28 @@ namespace IHome.Server.Facade
             revList.Add(new Models.ServerResult() { succeed = true, data = model, message = "message f!!!!!!" });
             return revList;
         }
-        
+
+        public ArrayList GetUserList(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            using (var context = new Data.CbooMainEntities())
+            {
+
+                var users = from user in context.sys_user_baseinfo
+
+                            where user.CityName == "北京"
+
+                            select user;
+                ArrayList revList = new ArrayList();
+                {
+                    //check user
+                }
+                revList.Add(new Models.ServerResult() { succeed = true, data = users.ToList<Data.sys_user_baseinfo>(), message = "message f!!!!!!" });
+                return revList;
+
+            }
+
+        }
+
 
     }
 }

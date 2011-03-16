@@ -79,7 +79,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="IHome.Models" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="CbooMainEntities">
+        <EntityContainer Name="CbooMainEntities" a:LazyLoadingEnabled="true" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="base_permit_define" EntityType="IHome.Models.base_permit_define" />
           <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.base_permit_roledefine" />
           <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHome.Models.base_rolepermitionrelationinfo" />
