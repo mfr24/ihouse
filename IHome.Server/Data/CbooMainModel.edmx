@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="IHomeModels.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+      <Schema Namespace="IHomeModels.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="IHomeModelsStoreContainer">
-          <EntitySet Name="base_permit_define" EntityType="IHomeModels.Store.base_permit_define" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo_main" />
-          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_permit_define" EntityType="IHomeModels.Store.base_permit_define" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
         </EntityContainer>
         <EntityType Name="base_permit_define">
           <Key>
@@ -78,13 +78,13 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="IHomeModels" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+      <Schema Namespace="IHome.Models" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="CbooMainEntities">
-          <EntitySet Name="base_permit_define" EntityType="IHomeModels.base_permit_define" />
-          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.base_permit_roledefine" />
-          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.base_rolepermitionrelationinfo" />
-          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.base_roleuserrelationinfo" />
-          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.sys_user_baseinfo" />
+          <EntitySet Name="base_permit_define" EntityType="IHome.Models.base_permit_define" />
+          <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.base_permit_roledefine" />
+          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHome.Models.base_rolepermitionrelationinfo" />
+          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHome.Models.base_roleuserrelationinfo" />
+          <EntitySet Name="sys_user_baseinfo" EntityType="IHome.Models.sys_user_baseinfo" />
         </EntityContainer>
         <EntityType Name="base_permit_define">
           <Key>
@@ -152,15 +152,15 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="IHomeModelsStoreContainer" CdmEntityContainer="CbooMainEntities">
-          <EntitySetMapping Name="base_permit_define"><EntityTypeMapping TypeName="IHomeModels.base_permit_define"><MappingFragment StoreEntitySet="base_permit_define">
+          <EntitySetMapping Name="base_permit_define"><EntityTypeMapping TypeName="IHome.Models.base_permit_define"><MappingFragment StoreEntitySet="base_permit_define">
             <ScalarProperty Name="permit_code" ColumnName="permit_code" />
             <ScalarProperty Name="permit_id" ColumnName="permit_id" />
             <ScalarProperty Name="permit_name" ColumnName="permit_name" />
             <ScalarProperty Name="permit_roup" ColumnName="permit_roup" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="base_permit_roledefine"><EntityTypeMapping TypeName="IHomeModels.base_permit_roledefine"><MappingFragment StoreEntitySet="base_permit_roledefine">
+          <EntitySetMapping Name="base_permit_roledefine"><EntityTypeMapping TypeName="IHome.Models.base_permit_roledefine"><MappingFragment StoreEntitySet="base_permit_roledefine">
             <ScalarProperty Name="city_id" ColumnName="city_id" />
             <ScalarProperty Name="city_name" ColumnName="city_name" />
             <ScalarProperty Name="company_id" ColumnName="company_id" />
@@ -170,17 +170,17 @@
             <ScalarProperty Name="role_id" ColumnName="role_id" />
             <ScalarProperty Name="role_name" ColumnName="role_name" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="base_rolepermitionrelationinfo"><EntityTypeMapping TypeName="IHomeModels.base_rolepermitionrelationinfo"><MappingFragment StoreEntitySet="base_rolepermitionrelationinfo">
+          <EntitySetMapping Name="base_rolepermitionrelationinfo"><EntityTypeMapping TypeName="IHome.Models.base_rolepermitionrelationinfo"><MappingFragment StoreEntitySet="base_rolepermitionrelationinfo">
             <ScalarProperty Name="permit_id" ColumnName="permit_id" />
             <ScalarProperty Name="record_id" ColumnName="record_id" />
             <ScalarProperty Name="role_id" ColumnName="role_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="base_roleuserrelationinfo"><EntityTypeMapping TypeName="IHomeModels.base_roleuserrelationinfo"><MappingFragment StoreEntitySet="base_roleuserrelationinfo">
+          <EntitySetMapping Name="base_roleuserrelationinfo"><EntityTypeMapping TypeName="IHome.Models.base_roleuserrelationinfo"><MappingFragment StoreEntitySet="base_roleuserrelationinfo">
             <ScalarProperty Name="record_id" ColumnName="record_id" />
             <ScalarProperty Name="role_id" ColumnName="role_id" />
             <ScalarProperty Name="user_id" ColumnName="user_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sys_user_baseinfo"><EntityTypeMapping TypeName="IHomeModels.sys_user_baseinfo"><MappingFragment StoreEntitySet="sys_user_baseinfo">
+          <EntitySetMapping Name="sys_user_baseinfo"><EntityTypeMapping TypeName="IHome.Models.sys_user_baseinfo"><MappingFragment StoreEntitySet="sys_user_baseinfo">
             <ScalarProperty Name="CityName" ColumnName="CityName" />
             <ScalarProperty Name="city_id" ColumnName="city_id" />
             <ScalarProperty Name="company_name" ColumnName="company_name" />
@@ -206,7 +206,7 @@
     </edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
-  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <Connection>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
@@ -217,18 +217,19 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
-        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="False" />
+        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="True" />
         <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL.tt" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="CbooMainModel">
-        <EntityTypeShape EntityType="IHomeModels.base_permit_define" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHomeModels.base_permit_roledefine" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5430916341145826" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHomeModels.base_rolepermitionrelationinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHomeModels.base_roleuserrelationinfo" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHomeModels.sys_user_baseinfo" Width="1.5" PointX="2.75" PointY="4.75" Height="4.6443082682291674" IsExpanded="true" />
+        <EntityTypeShape EntityType="IHome.Models.base_permit_define" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
+        <EntityTypeShape EntityType="IHome.Models.base_permit_roledefine" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5430916341145826" IsExpanded="true" />
+        <EntityTypeShape EntityType="IHome.Models.base_rolepermitionrelationinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="IHome.Models.base_roleuserrelationinfo" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5879931640624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="IHome.Models.sys_user_baseinfo" Width="1.5" PointX="2.75" PointY="4.75" Height="4.6443082682291674" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>
