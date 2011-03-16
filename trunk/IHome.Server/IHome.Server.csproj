@@ -46,10 +46,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\FacadeExtension.cs" />
+    <Compile Include="Data\base_permit_define.cs">
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_permit_roledefine.cs">
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_rolepermitionrelationinfo.cs">
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_roleuserrelationinfo.cs">
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\CbooMainModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CbooMainModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ModelTemplate.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTemplate.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ModelTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_baseinfo.cs">
+      <DependentUpon>ModelTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Facade\MainFacade.cs" />
     <Compile Include="Models\HouseInfo.cs" />
@@ -63,8 +88,18 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CbooMainModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Data\ModelTemplate.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTemplate.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\ModelTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
