@@ -18,49 +18,49 @@ namespace IHome.Server.Data
     public partial class base_permit_roledefine
     {
         #region Primitive Properties
-    
+    //
         public virtual string city_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string city_name
         {
             get;
             set;
         }
-    
+    //
         public virtual string company_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string company_name
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<sbyte> DefRole
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<sbyte> is_show
         {
             get;
             set;
         }
-    
+    //
         public virtual System.Guid role_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string role_name
         {
             get;

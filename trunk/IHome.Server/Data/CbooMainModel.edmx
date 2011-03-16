@@ -149,7 +149,11 @@
           <Key>
             <PropertyRef Name="community_id" />
           </Key>
-          <Property Type="String" Name="address" />
+          <Property Type="String" Name="address" >
+            <Documentation>
+              <Summary>地址</Summary>
+            </Documentation>
+          </Property>
           <Property Type="Guid" Name="add_person_id" />
           <Property Type="String" Name="block" />
           <Property Type="String" Name="building_type" />
