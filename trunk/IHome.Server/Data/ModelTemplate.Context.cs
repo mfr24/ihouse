@@ -23,16 +23,19 @@ namespace IHome.Server.Data
         public CbooMainEntities()
             : base(ConnectionString, ContainerName)
         {
+            this.ContextOptions.LazyLoadingEnabled = true;
         }
     
         public CbooMainEntities(string connectionString)
             : base(connectionString, ContainerName)
         {
+            this.ContextOptions.LazyLoadingEnabled = true;
         }
     
         public CbooMainEntities(EntityConnection connection)
             : base(connection, ContainerName)
         {
+            this.ContextOptions.LazyLoadingEnabled = true;
         }
     
         #endregion
