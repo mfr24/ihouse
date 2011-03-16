@@ -4,7 +4,9 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:IHome.SLClient"
-	xmlns:Custom="http://silverlight.imbob.com.cn/Controls" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Custom1="http://silverlight.imbob.com.cn"
+	xmlns:ilight="http://silverlight.imbob.com.cn/Controls" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ilight1="http://silverlight.imbob.com.cn"
 	mc:Ignorable="d"
 	x:Class="IHome.SLClient.HomeView"
 	d:DesignWidth="640" d:DesignHeight="480">
@@ -13,16 +15,16 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource HomeViewModelDataSource}}">
-        <Custom:XTurnRoundGrid x:Name="ITurnLogin_Reg" Margin="0">
-            <Custom:XTurnRoundGrid.Back>
+        <ilight:XTurnRoundGrid x:Name="ITurnLogin_Reg" Margin="0">
+            <ilight:XTurnRoundGrid.Back>
                 <local:RegisterView x:Name="Reg" />
-            </Custom:XTurnRoundGrid.Back>
-            <Custom:XTurnRoundGrid.Face>
+            </ilight:XTurnRoundGrid.Back>
+            <ilight:XTurnRoundGrid.Face>
                 <local:LoginView x:Name="Login" />
-            </Custom:XTurnRoundGrid.Face>
+            </ilight:XTurnRoundGrid.Face>
             <i:Interaction.Behaviors>
-                <Custom1:XDrop />
+                <ilight1:XDrop />
 			</i:Interaction.Behaviors>
-		</Custom:XTurnRoundGrid>
+        </ilight:XTurnRoundGrid>
 	</Grid>
 </UserControl>
