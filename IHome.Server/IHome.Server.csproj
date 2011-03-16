@@ -47,6 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\FacadeExtension.cs" />
+    <Compile Include="Data\base_community_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_community_buildinginfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_datadic_detailinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_datadic_iteminfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\base_permit_define.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>

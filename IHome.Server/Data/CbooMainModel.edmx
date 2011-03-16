@@ -4,14 +4,70 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="IHomeModels.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="IHomeModels.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="IHomeModelsStoreContainer">
-          <EntitySet Name="base_permit_define" EntityType="IHomeModels.Store.base_permit_define" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo_main" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="base_community_baseinfo" EntityType="IHomeModels.Store.base_community_baseinfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_community_buildinginfo" EntityType="IHomeModels.Store.base_community_buildinginfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_datadic_detailinfo" EntityType="IHomeModels.Store.base_datadic_detailinfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_datadic_iteminfo" EntityType="IHomeModels.Store.base_datadic_iteminfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_permit_define" EntityType="IHomeModels.Store.base_permit_define" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_permit_roledefine" EntityType="IHomeModels.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHomeModels.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHomeModels.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo_main" />
+          <EntitySet Name="sys_user_baseinfo" EntityType="IHomeModels.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo_main" />
         </EntityContainer>
+        <EntityType Name="base_community_baseinfo">
+          <Key>
+            <PropertyRef Name="community_id" />
+          </Key>
+          <Property Name="address" Type="varchar" MaxLength="200" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="block" Type="varchar" MaxLength="50" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="city_id" Type="int" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" />
+          <Property Name="community_id" Type="guid" Nullable="false" />
+          <Property Name="community_name" Type="varchar" MaxLength="200" />
+          <Property Name="community_use" Type="varchar" MaxLength="50" />
+          <Property Name="complete_year" Type="int" />
+          <Property Name="pinyin" Type="varchar" MaxLength="200" />
+          <Property Name="region" Type="varchar" MaxLength="50" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="base_community_buildinginfo">
+          <Key>
+            <PropertyRef Name="building_id" />
+          </Key>
+          <Property Name="building_floor" Type="int" />
+          <Property Name="building_id" Type="guid" Nullable="false" />
+          <Property Name="building_name" Type="varchar" MaxLength="50" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="building_use" Type="varchar" MaxLength="50" />
+          <Property Name="community_id" Type="guid" />
+          <Property Name="room_rule" Type="varchar" MaxLength="500" />
+          <Property Name="room_rule_remark" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+          <Property Name="unit_num" Type="int" />
+          <Property Name="unit_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="base_datadic_detailinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="item_index" Type="int" />
+          <Property Name="item_key" Type="varchar" MaxLength="50" />
+          <Property Name="item_value" Type="varchar" MaxLength="255" />
+          <Property Name="record_id" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="base_datadic_iteminfo">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="guid" Nullable="false" />
+          <Property Name="item_key" Type="varchar" MaxLength="50" />
+          <Property Name="item_name" Type="varchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="base_permit_define">
           <Key>
             <PropertyRef Name="permit_id" />
@@ -74,8 +130,7 @@
           <Property Name="user_name" Type="varchar" MaxLength="150" />
           <Property Name="Validate" Type="tinyint" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="IHome.Models" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -85,6 +140,10 @@
           <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHome.Models.base_rolepermitionrelationinfo" />
           <EntitySet Name="base_roleuserrelationinfo" EntityType="IHome.Models.base_roleuserrelationinfo" />
           <EntitySet Name="sys_user_baseinfo" EntityType="IHome.Models.sys_user_baseinfo" />
+          <EntitySet Name="base_community_baseinfo" EntityType="IHome.Models.base_community_baseinfo" />
+          <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.base_community_buildinginfo" />
+          <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.base_datadic_detailinfo" />
+          <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.base_datadic_iteminfo" />
         </EntityContainer>
         <EntityType Name="base_permit_define">
           <Key>
@@ -148,6 +207,58 @@
           <Property Name="user_name" Type="String" />
           <Property Name="Validate" Type="SByte" />
         </EntityType>
+        <EntityType Name="base_community_baseinfo">
+          <Key>
+            <PropertyRef Name="community_id" />
+          </Key>
+          <Property Type="String" Name="address" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="String" Name="block" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="Int32" Name="city_id" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="Guid" Name="community_id" Nullable="false" />
+          <Property Type="String" Name="community_name" />
+          <Property Type="String" Name="community_use" />
+          <Property Type="Int32" Name="complete_year" />
+          <Property Type="String" Name="pinyin" />
+          <Property Type="String" Name="region" />
+          <Property Type="String" Name="remark" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
+        <EntityType Name="base_community_buildinginfo">
+          <Key>
+            <PropertyRef Name="building_id" />
+          </Key>
+          <Property Type="Int32" Name="building_floor" />
+          <Property Type="Guid" Name="building_id" Nullable="false" />
+          <Property Type="String" Name="building_name" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="String" Name="building_use" />
+          <Property Type="Guid" Name="community_id" />
+          <Property Type="String" Name="room_rule" />
+          <Property Type="String" Name="room_rule_remark" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="Int32" Name="unit_num" />
+          <Property Type="String" Name="unit_type" />
+        </EntityType>
+        <EntityType Name="base_datadic_detailinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Int32" Name="item_index" />
+          <Property Type="String" Name="item_key" />
+          <Property Type="String" Name="item_value" />
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="base_datadic_iteminfo">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Type="Guid" Name="item_id" Nullable="false" />
+          <Property Type="String" Name="item_key" />
+          <Property Type="String" Name="item_name" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -201,6 +312,62 @@
             <ScalarProperty Name="user_name" ColumnName="user_name" />
             <ScalarProperty Name="Validate" ColumnName="Validate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="base_community_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.base_community_baseinfo">
+              <MappingFragment StoreEntitySet="base_community_baseinfo">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="pinyin" ColumnName="pinyin" />
+                <ScalarProperty Name="complete_year" ColumnName="complete_year" />
+                <ScalarProperty Name="community_use" ColumnName="community_use" />
+                <ScalarProperty Name="community_name" ColumnName="community_name" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_community_buildinginfo">
+            <EntityTypeMapping TypeName="IHome.Models.base_community_buildinginfo">
+              <MappingFragment StoreEntitySet="base_community_buildinginfo">
+                <ScalarProperty Name="unit_type" ColumnName="unit_type" />
+                <ScalarProperty Name="unit_num" ColumnName="unit_num" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="room_rule_remark" ColumnName="room_rule_remark" />
+                <ScalarProperty Name="room_rule" ColumnName="room_rule" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="building_use" ColumnName="building_use" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="building_name" ColumnName="building_name" />
+                <ScalarProperty Name="building_id" ColumnName="building_id" />
+                <ScalarProperty Name="building_floor" ColumnName="building_floor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_datadic_detailinfo">
+            <EntityTypeMapping TypeName="IHome.Models.base_datadic_detailinfo">
+              <MappingFragment StoreEntitySet="base_datadic_detailinfo">
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+                <ScalarProperty Name="item_value" ColumnName="item_value" />
+                <ScalarProperty Name="item_key" ColumnName="item_key" />
+                <ScalarProperty Name="item_index" ColumnName="item_index" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_datadic_iteminfo">
+            <EntityTypeMapping TypeName="IHome.Models.base_datadic_iteminfo">
+              <MappingFragment StoreEntitySet="base_datadic_iteminfo">
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="item_key" ColumnName="item_key" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -230,6 +397,10 @@
         <EntityTypeShape EntityType="IHome.Models.base_rolepermitionrelationinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
         <EntityTypeShape EntityType="IHome.Models.base_roleuserrelationinfo" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5879931640624996" IsExpanded="true" />
         <EntityTypeShape EntityType="IHome.Models.sys_user_baseinfo" Width="1.5" PointX="2.75" PointY="4.75" Height="4.6443082682291674" IsExpanded="true" />
+        <EntityTypeShape EntityType="IHome.Models.base_community_baseinfo" Width="1.5" PointX="5.375" PointY="3.75" Height="3.6892097981770822" />
+        <EntityTypeShape EntityType="IHome.Models.base_community_buildinginfo" Width="1.5" PointX="7.375" PointY="0.75" Height="3.1161507161458317" />
+        <EntityTypeShape EntityType="IHome.Models.base_datadic_detailinfo" Width="1.5" PointX="7.375" PointY="4.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.base_datadic_iteminfo" Width="1.5" PointX="7.375" PointY="7.75" Height="1.5879931640624996" />
       </Diagram>
     </Diagrams>
   </Designer>
