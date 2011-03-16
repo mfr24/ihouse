@@ -19,7 +19,10 @@ namespace IHome.Server.Data
     {
         #region Primitive Properties
     //
-        public virtual string address
+    	/// <summary>
+        /// 地址
+        /// </summary>
+    		    public virtual string address
         {
             get;
             set;
