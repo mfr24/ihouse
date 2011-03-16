@@ -152,6 +152,7 @@
           <Property Type="String" Name="address" >
             <Documentation>
               <Summary>地址</Summary>
+              <LongDescription>地址</LongDescription>
             </Documentation>
           </Property>
           <Property Type="Guid" Name="add_person_id" />
