@@ -36,7 +36,7 @@ namespace IHome.Server.Facade
             //Models.User model = paramDicts[0]["user"].ToString().JsonToModel<Models.User>();
             {
                 Data.sys_user_baseinfo user = new Data.sys_user_baseinfo();
-                user.user_id = Guid.NewGuid().ToString();
+                user.user_id = Guid.NewGuid();
                 user.CityName = "北京";
                 using (var context=new Data.CbooMainEntities())
                 {
