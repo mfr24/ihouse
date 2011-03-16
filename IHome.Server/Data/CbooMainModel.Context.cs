@@ -42,6 +42,30 @@ namespace IHome.Server.Data
     
         #region ObjectSet Properties
     
+        public ObjectSet<base_community_baseinfo> base_community_baseinfo
+        {
+            get { return _base_community_baseinfo  ?? (_base_community_baseinfo = CreateObjectSet<base_community_baseinfo>("base_community_baseinfo")); }
+        }
+        private ObjectSet<base_community_baseinfo> _base_community_baseinfo;
+    
+        public ObjectSet<base_community_buildinginfo> base_community_buildinginfo
+        {
+            get { return _base_community_buildinginfo  ?? (_base_community_buildinginfo = CreateObjectSet<base_community_buildinginfo>("base_community_buildinginfo")); }
+        }
+        private ObjectSet<base_community_buildinginfo> _base_community_buildinginfo;
+    
+        public ObjectSet<base_datadic_detailinfo> base_datadic_detailinfo
+        {
+            get { return _base_datadic_detailinfo  ?? (_base_datadic_detailinfo = CreateObjectSet<base_datadic_detailinfo>("base_datadic_detailinfo")); }
+        }
+        private ObjectSet<base_datadic_detailinfo> _base_datadic_detailinfo;
+    
+        public ObjectSet<base_datadic_iteminfo> base_datadic_iteminfo
+        {
+            get { return _base_datadic_iteminfo  ?? (_base_datadic_iteminfo = CreateObjectSet<base_datadic_iteminfo>("base_datadic_iteminfo")); }
+        }
+        private ObjectSet<base_datadic_iteminfo> _base_datadic_iteminfo;
+    
         public ObjectSet<base_permit_define> base_permit_define
         {
             get { return _base_permit_define  ?? (_base_permit_define = CreateObjectSet<base_permit_define>("base_permit_define")); }
@@ -71,30 +95,6 @@ namespace IHome.Server.Data
             get { return _sys_user_baseinfo  ?? (_sys_user_baseinfo = CreateObjectSet<sys_user_baseinfo>("sys_user_baseinfo")); }
         }
         private ObjectSet<sys_user_baseinfo> _sys_user_baseinfo;
-    
-        public ObjectSet<base_community_baseinfo> base_community_baseinfo
-        {
-            get { return _base_community_baseinfo  ?? (_base_community_baseinfo = CreateObjectSet<base_community_baseinfo>("base_community_baseinfo")); }
-        }
-        private ObjectSet<base_community_baseinfo> _base_community_baseinfo;
-    
-        public ObjectSet<base_community_buildinginfo> base_community_buildinginfo
-        {
-            get { return _base_community_buildinginfo  ?? (_base_community_buildinginfo = CreateObjectSet<base_community_buildinginfo>("base_community_buildinginfo")); }
-        }
-        private ObjectSet<base_community_buildinginfo> _base_community_buildinginfo;
-    
-        public ObjectSet<base_datadic_detailinfo> base_datadic_detailinfo
-        {
-            get { return _base_datadic_detailinfo  ?? (_base_datadic_detailinfo = CreateObjectSet<base_datadic_detailinfo>("base_datadic_detailinfo")); }
-        }
-        private ObjectSet<base_datadic_detailinfo> _base_datadic_detailinfo;
-    
-        public ObjectSet<base_datadic_iteminfo> base_datadic_iteminfo
-        {
-            get { return _base_datadic_iteminfo  ?? (_base_datadic_iteminfo = CreateObjectSet<base_datadic_iteminfo>("base_datadic_iteminfo")); }
-        }
-        private ObjectSet<base_datadic_iteminfo> _base_datadic_iteminfo;
 
         #endregion
     }

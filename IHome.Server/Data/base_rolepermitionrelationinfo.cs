@@ -25,7 +25,7 @@ namespace IHome.Server.Data
             set;
         }
     
-        public virtual string record_id
+        public virtual System.Guid record_id
         {
             get;
             set;
