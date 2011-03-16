@@ -18,19 +18,19 @@ namespace IHome.Server.Data
     public partial class base_datadic_iteminfo
     {
         #region Primitive Properties
-    
+    //
         public virtual System.Guid item_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string item_key
         {
             get;
             set;
         }
-    
+    //
         public virtual string item_name
         {
             get;

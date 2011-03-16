@@ -18,19 +18,19 @@ namespace IHome.Server.Data
     public partial class base_roleuserrelationinfo
     {
         #region Primitive Properties
-    
+    //
         public virtual System.Guid record_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string role_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string user_id
         {
             get;

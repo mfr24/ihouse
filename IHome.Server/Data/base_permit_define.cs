@@ -18,25 +18,25 @@ namespace IHome.Server.Data
     public partial class base_permit_define
     {
         #region Primitive Properties
-    
+    //
         public virtual string permit_code
         {
             get;
             set;
         }
-    
+    //
         public virtual System.Guid permit_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string permit_name
         {
             get;
             set;
         }
-    
+    //
         public virtual string permit_roup
         {
             get;

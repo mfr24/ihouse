@@ -18,67 +18,67 @@ namespace IHome.Server.Data
     public partial class base_community_buildinginfo
     {
         #region Primitive Properties
-    
+    //
         public virtual Nullable<int> building_floor
         {
             get;
             set;
         }
-    
+    //
         public virtual System.Guid building_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string building_name
         {
             get;
             set;
         }
-    
+    //
         public virtual string building_type
         {
             get;
             set;
         }
-    
+    //
         public virtual string building_use
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<System.Guid> community_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string room_rule
         {
             get;
             set;
         }
-    
+    //
         public virtual string room_rule_remark
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<int> status
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<int> unit_num
         {
             get;
             set;
         }
-    
+    //
         public virtual string unit_type
         {
             get;

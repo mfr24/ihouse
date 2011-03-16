@@ -18,115 +18,115 @@ namespace IHome.Server.Data
     public partial class sys_user_baseinfo
     {
         #region Primitive Properties
-    
+    //
         public virtual string CityName
         {
             get;
             set;
         }
-    
+    //
         public virtual string city_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string company_name
         {
             get;
             set;
         }
-    
+    //
         public virtual string department
         {
             get;
             set;
         }
-    
+    //
         public virtual string Email
         {
             get;
             set;
         }
-    
+    //
         public virtual string IDNum
         {
             get;
             set;
         }
-    
+    //
         public virtual string IDType
         {
             get;
             set;
         }
-    
+    //
         public virtual System.DateTimeOffset LastLoginTime
         {
             get;
             set;
         }
-    
+    //
         public virtual string Mobile
         {
             get;
             set;
         }
-    
+    //
         public virtual string OfficeTel
         {
             get;
             set;
         }
-    
+    //
         public virtual string password
         {
             get;
             set;
         }
-    
+    //
         public virtual System.DateTimeOffset Regtime
         {
             get;
             set;
         }
-    
+    //
         public virtual string Remark
         {
             get;
             set;
         }
-    
+    //
         public virtual System.DateTimeOffset Updatetime
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<int> UserType
         {
             get;
             set;
         }
-    
+    //
         public virtual string user_code
         {
             get;
             set;
         }
-    
+    //
         public virtual System.Guid user_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string user_name
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<sbyte> Validate
         {
             get;

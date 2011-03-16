@@ -18,85 +18,85 @@ namespace IHome.Server.Data
     public partial class base_community_baseinfo
     {
         #region Primitive Properties
-    
+    //
         public virtual string address
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<System.Guid> add_person_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string block
         {
             get;
             set;
         }
-    
+    //
         public virtual string building_type
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<int> city_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string city_name
         {
             get;
             set;
         }
-    
+    //
         public virtual System.Guid community_id
         {
             get;
             set;
         }
-    
+    //
         public virtual string community_name
         {
             get;
             set;
         }
-    
+    //
         public virtual string community_use
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<int> complete_year
         {
             get;
             set;
         }
-    
+    //
         public virtual string pinyin
         {
             get;
             set;
         }
-    
+    //
         public virtual string region
         {
             get;
             set;
         }
-    
+    //
         public virtual string remark
         {
             get;
             set;
         }
-    
+    //
         public virtual Nullable<int> status
         {
             get;
