@@ -21,6 +21,7 @@ namespace IHome.SLClient
 		{
 			this.InitializeComponent();
 
+            //这个地方不是很好,暂时不知道怎么把这个放到XAML里实现
             Loaded += (sender, e) => {
                 ((LoginView)ITurnLogin_Reg.Face).CloseButton.Click += (o, arg) => { this.Visibility = Visibility.Collapsed; };
                 ((LoginView)ITurnLogin_Reg.Face).Button_TurnReg.Click += (o, arg) => { ITurnLogin_Reg.Turn(); };
