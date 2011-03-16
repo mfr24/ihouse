@@ -115,7 +115,7 @@ namespace IHome.Server.Data
             set;
         }
     
-        public virtual string user_id
+        public virtual System.Guid user_id
         {
             get;
             set;

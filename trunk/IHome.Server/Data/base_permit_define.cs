@@ -25,7 +25,7 @@ namespace IHome.Server.Data
             set;
         }
     
-        public virtual string permit_id
+        public virtual System.Guid permit_id
         {
             get;
             set;

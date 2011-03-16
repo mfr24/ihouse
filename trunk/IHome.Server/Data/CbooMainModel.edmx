@@ -73,7 +73,7 @@
             <PropertyRef Name="permit_id" />
           </Key>
           <Property Name="permit_code" Type="varchar" MaxLength="200" />
-          <Property Name="permit_id" Type="char" Nullable="false" MaxLength="38" />
+          <Property Name="permit_id" Type="guid" Nullable="false" />
           <Property Name="permit_name" Type="varchar" MaxLength="200" />
           <Property Name="permit_roup" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -87,7 +87,7 @@
           <Property Name="company_name" Type="varchar" MaxLength="50" />
           <Property Name="DefRole" Type="tinyint" />
           <Property Name="is_show" Type="tinyint" />
-          <Property Name="role_id" Type="char" Nullable="false" MaxLength="20" />
+          <Property Name="role_id" Type="guid" Nullable="false" />
           <Property Name="role_name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="base_rolepermitionrelationinfo">
@@ -95,14 +95,14 @@
             <PropertyRef Name="record_id" />
           </Key>
           <Property Name="permit_id" Type="longtext" />
-          <Property Name="record_id" Type="char" Nullable="false" MaxLength="38" />
+          <Property Name="record_id" Type="guid" Nullable="false" />
           <Property Name="role_id" Type="longtext" />
         </EntityType>
         <EntityType Name="base_roleuserrelationinfo">
           <Key>
             <PropertyRef Name="record_id" />
           </Key>
-          <Property Name="record_id" Type="char" Nullable="false" MaxLength="38" />
+          <Property Name="record_id" Type="guid" Nullable="false" />
           <Property Name="role_id" Type="longtext" />
           <Property Name="user_id" Type="longtext" />
         </EntityType>
@@ -126,7 +126,7 @@
           <Property Name="Updatetime" Type="timestamp" Nullable="false" Precision="0" />
           <Property Name="UserType" Type="int" />
           <Property Name="user_code" Type="varchar" MaxLength="50" />
-          <Property Name="user_id" Type="char" Nullable="false" MaxLength="38" />
+          <Property Name="user_id" Type="guid" Nullable="false" />
           <Property Name="user_name" Type="varchar" MaxLength="150" />
           <Property Name="Validate" Type="tinyint" />
         </EntityType>
@@ -135,78 +135,16 @@
     <edmx:ConceptualModels>
       <Schema Namespace="IHome.Models" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="CbooMainEntities" a:LazyLoadingEnabled="true" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="base_community_baseinfo" EntityType="IHome.Models.base_community_baseinfo" />
+          <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.base_community_buildinginfo" />
+          <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.base_datadic_detailinfo" />
+          <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.base_datadic_iteminfo" />
           <EntitySet Name="base_permit_define" EntityType="IHome.Models.base_permit_define" />
           <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.base_permit_roledefine" />
           <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHome.Models.base_rolepermitionrelationinfo" />
           <EntitySet Name="base_roleuserrelationinfo" EntityType="IHome.Models.base_roleuserrelationinfo" />
           <EntitySet Name="sys_user_baseinfo" EntityType="IHome.Models.sys_user_baseinfo" />
-          <EntitySet Name="base_community_baseinfo" EntityType="IHome.Models.base_community_baseinfo" />
-          <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.base_community_buildinginfo" />
-          <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.base_datadic_detailinfo" />
-          <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.base_datadic_iteminfo" />
         </EntityContainer>
-        <EntityType Name="base_permit_define">
-          <Key>
-            <PropertyRef Name="permit_id" />
-          </Key>
-          <Property Name="permit_code" Type="String" />
-          <Property Name="permit_id" Type="String" Nullable="false" />
-          <Property Name="permit_name" Type="String" />
-          <Property Name="permit_roup" Type="String" />
-        </EntityType>
-        <EntityType Name="base_permit_roledefine">
-          <Key>
-            <PropertyRef Name="role_id" />
-          </Key>
-          <Property Name="city_id" Type="String" />
-          <Property Name="city_name" Type="String" />
-          <Property Name="company_id" Type="String" />
-          <Property Name="company_name" Type="String" />
-          <Property Name="DefRole" Type="SByte" />
-          <Property Name="is_show" Type="SByte" />
-          <Property Name="role_id" Type="String" Nullable="false" />
-          <Property Name="role_name" Type="String" />
-        </EntityType>
-        <EntityType Name="base_rolepermitionrelationinfo">
-          <Key>
-            <PropertyRef Name="record_id" />
-          </Key>
-          <Property Name="permit_id" Type="String" />
-          <Property Name="record_id" Type="String" Nullable="false" />
-          <Property Name="role_id" Type="String" />
-        </EntityType>
-        <EntityType Name="base_roleuserrelationinfo">
-          <Key>
-            <PropertyRef Name="record_id" />
-          </Key>
-          <Property Name="record_id" Type="String" Nullable="false" />
-          <Property Name="role_id" Type="String" />
-          <Property Name="user_id" Type="String" />
-        </EntityType>
-        <EntityType Name="sys_user_baseinfo">
-          <Key>
-            <PropertyRef Name="user_id" />
-          </Key>
-          <Property Name="CityName" Type="String" />
-          <Property Name="city_id" Type="String" />
-          <Property Name="company_name" Type="String" />
-          <Property Name="department" Type="String" />
-          <Property Name="Email" Type="String" />
-          <Property Name="IDNum" Type="String" />
-          <Property Name="IDType" Type="String" />
-          <Property Name="LastLoginTime" Type="DateTimeOffset" Nullable="false" />
-          <Property Name="Mobile" Type="String" />
-          <Property Name="OfficeTel" Type="String" />
-          <Property Name="password" Type="String" />
-          <Property Name="Regtime" Type="DateTimeOffset" Nullable="false" />
-          <Property Name="Remark" Type="String" />
-          <Property Name="Updatetime" Type="DateTimeOffset" Nullable="false" />
-          <Property Name="UserType" Type="Int32" />
-          <Property Name="user_code" Type="String" />
-          <Property Name="user_id" Type="String" Nullable="false" />
-          <Property Name="user_name" Type="String" />
-          <Property Name="Validate" Type="SByte" />
-        </EntityType>
         <EntityType Name="base_community_baseinfo">
           <Key>
             <PropertyRef Name="community_id" />
@@ -259,59 +197,74 @@
           <Property Type="String" Name="item_key" />
           <Property Type="String" Name="item_name" />
         </EntityType>
-      </Schema>
+        <EntityType Name="base_permit_define">
+          <Key>
+            <PropertyRef Name="permit_id" />
+          </Key>
+          <Property Type="String" Name="permit_code" />
+          <Property Type="Guid" Name="permit_id" Nullable="false" />
+          <Property Type="String" Name="permit_name" />
+          <Property Type="String" Name="permit_roup" />
+        </EntityType>
+        <EntityType Name="base_permit_roledefine">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Type="String" Name="city_id" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="String" Name="company_id" />
+          <Property Type="String" Name="company_name" />
+          <Property Type="SByte" Name="DefRole" />
+          <Property Type="SByte" Name="is_show" />
+          <Property Type="Guid" Name="role_id" Nullable="false" />
+          <Property Type="String" Name="role_name" />
+        </EntityType>
+        <EntityType Name="base_rolepermitionrelationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="String" Name="permit_id" />
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="String" Name="role_id" />
+        </EntityType>
+        <EntityType Name="base_roleuserrelationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="String" Name="role_id" />
+          <Property Type="String" Name="user_id" />
+        </EntityType>
+        <EntityType Name="sys_user_baseinfo">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Type="String" Name="CityName" />
+          <Property Type="String" Name="city_id" />
+          <Property Type="String" Name="company_name" />
+          <Property Type="String" Name="department" />
+          <Property Type="String" Name="Email" />
+          <Property Type="String" Name="IDNum" />
+          <Property Type="String" Name="IDType" />
+          <Property Type="DateTimeOffset" Name="LastLoginTime" Nullable="false" />
+          <Property Type="String" Name="Mobile" />
+          <Property Type="String" Name="OfficeTel" />
+          <Property Type="String" Name="password" />
+          <Property Type="DateTimeOffset" Name="Regtime" Nullable="false" />
+          <Property Type="String" Name="Remark" />
+          <Property Type="DateTimeOffset" Name="Updatetime" Nullable="false" />
+          <Property Type="Int32" Name="UserType" />
+          <Property Type="String" Name="user_code" />
+          <Property Type="Guid" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="user_name" />
+          <Property Type="SByte" Name="Validate" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="IHomeModelsStoreContainer" CdmEntityContainer="CbooMainEntities">
-          <EntitySetMapping Name="base_permit_define"><EntityTypeMapping TypeName="IHome.Models.base_permit_define"><MappingFragment StoreEntitySet="base_permit_define">
-            <ScalarProperty Name="permit_code" ColumnName="permit_code" />
-            <ScalarProperty Name="permit_id" ColumnName="permit_id" />
-            <ScalarProperty Name="permit_name" ColumnName="permit_name" />
-            <ScalarProperty Name="permit_roup" ColumnName="permit_roup" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="base_permit_roledefine"><EntityTypeMapping TypeName="IHome.Models.base_permit_roledefine"><MappingFragment StoreEntitySet="base_permit_roledefine">
-            <ScalarProperty Name="city_id" ColumnName="city_id" />
-            <ScalarProperty Name="city_name" ColumnName="city_name" />
-            <ScalarProperty Name="company_id" ColumnName="company_id" />
-            <ScalarProperty Name="company_name" ColumnName="company_name" />
-            <ScalarProperty Name="DefRole" ColumnName="DefRole" />
-            <ScalarProperty Name="is_show" ColumnName="is_show" />
-            <ScalarProperty Name="role_id" ColumnName="role_id" />
-            <ScalarProperty Name="role_name" ColumnName="role_name" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="base_rolepermitionrelationinfo"><EntityTypeMapping TypeName="IHome.Models.base_rolepermitionrelationinfo"><MappingFragment StoreEntitySet="base_rolepermitionrelationinfo">
-            <ScalarProperty Name="permit_id" ColumnName="permit_id" />
-            <ScalarProperty Name="record_id" ColumnName="record_id" />
-            <ScalarProperty Name="role_id" ColumnName="role_id" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="base_roleuserrelationinfo"><EntityTypeMapping TypeName="IHome.Models.base_roleuserrelationinfo"><MappingFragment StoreEntitySet="base_roleuserrelationinfo">
-            <ScalarProperty Name="record_id" ColumnName="record_id" />
-            <ScalarProperty Name="role_id" ColumnName="role_id" />
-            <ScalarProperty Name="user_id" ColumnName="user_id" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sys_user_baseinfo"><EntityTypeMapping TypeName="IHome.Models.sys_user_baseinfo"><MappingFragment StoreEntitySet="sys_user_baseinfo">
-            <ScalarProperty Name="CityName" ColumnName="CityName" />
-            <ScalarProperty Name="city_id" ColumnName="city_id" />
-            <ScalarProperty Name="company_name" ColumnName="company_name" />
-            <ScalarProperty Name="department" ColumnName="department" />
-            <ScalarProperty Name="Email" ColumnName="Email" />
-            <ScalarProperty Name="IDNum" ColumnName="IDNum" />
-            <ScalarProperty Name="IDType" ColumnName="IDType" />
-            <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
-            <ScalarProperty Name="Mobile" ColumnName="Mobile" />
-            <ScalarProperty Name="OfficeTel" ColumnName="OfficeTel" />
-            <ScalarProperty Name="password" ColumnName="password" />
-            <ScalarProperty Name="Regtime" ColumnName="Regtime" />
-            <ScalarProperty Name="Remark" ColumnName="Remark" />
-            <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
-            <ScalarProperty Name="UserType" ColumnName="UserType" />
-            <ScalarProperty Name="user_code" ColumnName="user_code" />
-            <ScalarProperty Name="user_id" ColumnName="user_id" />
-            <ScalarProperty Name="user_name" ColumnName="user_name" />
-            <ScalarProperty Name="Validate" ColumnName="Validate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="base_community_baseinfo">
             <EntityTypeMapping TypeName="IHome.Models.base_community_baseinfo">
               <MappingFragment StoreEntitySet="base_community_baseinfo">
@@ -368,6 +321,73 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="base_permit_define">
+            <EntityTypeMapping TypeName="IHome.Models.base_permit_define">
+              <MappingFragment StoreEntitySet="base_permit_define">
+                <ScalarProperty Name="permit_roup" ColumnName="permit_roup" />
+                <ScalarProperty Name="permit_name" ColumnName="permit_name" />
+                <ScalarProperty Name="permit_id" ColumnName="permit_id" />
+                <ScalarProperty Name="permit_code" ColumnName="permit_code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_permit_roledefine">
+            <EntityTypeMapping TypeName="IHome.Models.base_permit_roledefine">
+              <MappingFragment StoreEntitySet="base_permit_roledefine">
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="is_show" ColumnName="is_show" />
+                <ScalarProperty Name="DefRole" ColumnName="DefRole" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_rolepermitionrelationinfo">
+            <EntityTypeMapping TypeName="IHome.Models.base_rolepermitionrelationinfo">
+              <MappingFragment StoreEntitySet="base_rolepermitionrelationinfo">
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+                <ScalarProperty Name="permit_id" ColumnName="permit_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_roleuserrelationinfo">
+            <EntityTypeMapping TypeName="IHome.Models.base_roleuserrelationinfo">
+              <MappingFragment StoreEntitySet="base_roleuserrelationinfo">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.sys_user_baseinfo">
+              <MappingFragment StoreEntitySet="sys_user_baseinfo">
+                <ScalarProperty Name="Validate" ColumnName="Validate" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_code" ColumnName="user_code" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Updatetime" ColumnName="Updatetime" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Regtime" ColumnName="Regtime" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="OfficeTel" ColumnName="OfficeTel" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+                <ScalarProperty Name="IDType" ColumnName="IDType" />
+                <ScalarProperty Name="IDNum" ColumnName="IDNum" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -392,15 +412,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="CbooMainModel">
-        <EntityTypeShape EntityType="IHome.Models.base_permit_define" Width="1.5" PointX="0.75" PointY="0.75" Height="1.779012858072917" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHome.Models.base_permit_roledefine" Width="1.5" PointX="2.75" PointY="0.75" Height="2.5430916341145826" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHome.Models.base_rolepermitionrelationinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHome.Models.base_roleuserrelationinfo" Width="1.5" PointX="0.75" PointY="4.75" Height="1.5879931640624996" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHome.Models.sys_user_baseinfo" Width="1.5" PointX="2.75" PointY="4.75" Height="4.6443082682291674" IsExpanded="true" />
-        <EntityTypeShape EntityType="IHome.Models.base_community_baseinfo" Width="1.5" PointX="5.375" PointY="3.75" Height="3.6892097981770822" />
-        <EntityTypeShape EntityType="IHome.Models.base_community_buildinginfo" Width="1.5" PointX="7.375" PointY="0.75" Height="3.1161507161458317" />
-        <EntityTypeShape EntityType="IHome.Models.base_datadic_detailinfo" Width="1.5" PointX="7.375" PointY="4.75" Height="1.7790128580729174" />
-        <EntityTypeShape EntityType="IHome.Models.base_datadic_iteminfo" Width="1.5" PointX="7.375" PointY="7.75" Height="1.5879931640624996" />
+        <EntityTypeShape EntityType="IHome.Models.base_community_baseinfo" Width="1.5" PointX="0.75" PointY="0.75" Height="3.6892097981770853" />
+        <EntityTypeShape EntityType="IHome.Models.base_community_buildinginfo" Width="1.5" PointX="2.75" PointY="0.75" Height="3.1161507161458317" />
+        <EntityTypeShape EntityType="IHome.Models.base_datadic_detailinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.base_datadic_iteminfo" Width="1.5" PointX="2.75" PointY="4.75" Height="1.5879931640625031" />
+        <EntityTypeShape EntityType="IHome.Models.base_permit_define" Width="1.5" PointX="4.75" PointY="3.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.base_permit_roledefine" Width="1.5" PointX="6.75" PointY="0.75" Height="2.5430916341145888" />
+        <EntityTypeShape EntityType="IHome.Models.base_rolepermitionrelationinfo" Width="1.5" PointX="6.75" PointY="4.75" Height="1.5879931640625031" />
+        <EntityTypeShape EntityType="IHome.Models.base_roleuserrelationinfo" Width="1.5" PointX="0.75" PointY="7.75" Height="1.5879931640625031" />
+        <EntityTypeShape EntityType="IHome.Models.sys_user_baseinfo" Width="1.5" PointX="2.75" PointY="7.75" Height="4.6443082682291674" />
       </Diagram>
     </Diagrams>
   </Designer>

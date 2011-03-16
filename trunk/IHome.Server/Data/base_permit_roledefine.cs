@@ -55,7 +55,7 @@ namespace IHome.Server.Data
             set;
         }
     
-        public virtual string role_id
+        public virtual System.Guid role_id
         {
             get;
             set;

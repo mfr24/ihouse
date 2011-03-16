@@ -19,7 +19,7 @@ namespace IHome.Server.Data
     {
         #region Primitive Properties
     
-        public virtual string record_id
+        public virtual System.Guid record_id
         {
             get;
             set;
