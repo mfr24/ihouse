@@ -15,28 +15,21 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class base_roleuserrelationinfo
+    // An System.Collections.ObjectModel.ObservableCollection that raises
+    // individual item removal notifications on clear and prevents adding duplicates.
+    public class FixupCollection<T> : ObservableCollection<T>
     {
-        #region Primitive Properties
-    
-        public virtual string record_id
+        protected override void ClearItems()
         {
-            get;
-            set;
+            new List<T>(this).ForEach(t => Remove(t));
         }
     
-        public virtual string role_id
+        protected override void InsertItem(int index, T item)
         {
-            get;
-            set;
+            if (!this.Contains(item))
+            {
+                base.InsertItem(index, item);
+            }
         }
-    
-        public virtual string user_id
-        {
-            get;
-            set;
-        }
-
-        #endregion
     }
 }

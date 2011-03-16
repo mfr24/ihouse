@@ -48,34 +48,34 @@
   <ItemGroup>
     <Compile Include="Common\FacadeExtension.cs" />
     <Compile Include="Data\base_permit_define.cs">
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\base_permit_roledefine.cs">
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\base_rolepermitionrelationinfo.cs">
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\base_roleuserrelationinfo.cs">
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CbooMainModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CbooMainModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CbooMainModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\CbooMainModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CbooMainModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Data\ModelTemplate.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTemplate.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\ModelTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\sys_user_baseinfo.cs">
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Facade\MainFacade.cs" />
     <Compile Include="Models\HouseInfo.cs" />
@@ -89,13 +89,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CbooMainModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Data\ModelTemplate.Context.tt">
+    <None Include="Data\CbooMainModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelTemplate.Context.cs</LastGenOutput>
+      <LastGenOutput>CbooMainModel.Context.cs</LastGenOutput>
     </None>
-    <None Include="Data\ModelTemplate.tt">
+    <None Include="Data\CbooMainModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelTemplate.cs</LastGenOutput>
+      <LastGenOutput>CbooMainModel.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
