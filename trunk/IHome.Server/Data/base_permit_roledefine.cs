@@ -15,50 +15,14 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class usys_community_baseinfo
+    public partial class base_permit_roledefine
     {
         #region Primitive Properties
     
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string address
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<System.Guid> add_person_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string block
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string building_type
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<int> city_code
+        public virtual string city_code
         {
             get;
             set;
@@ -76,7 +40,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid community_id
+        public virtual Nullable<System.Guid> company_id
         {
             get;
             set;
@@ -85,7 +49,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_name
+        public virtual string company_name
         {
             get;
             set;
@@ -94,7 +58,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_use
+        public virtual Nullable<bool> def_role
         {
             get;
             set;
@@ -103,7 +67,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> complete_year
+        public virtual Nullable<bool> is_show
         {
             get;
             set;
@@ -112,7 +76,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string pinyin
+        public virtual System.Guid role_id
         {
             get;
             set;
@@ -121,25 +85,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string region
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string remark
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<int> status
+        public virtual string role_name
         {
             get;
             set;
