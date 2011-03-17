@@ -15,14 +15,14 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class base_personal_push_config
+    public partial class base_datadic_detailinfo
     {
         #region Primitive Properties
     
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string display_company
+        public virtual Nullable<int> item_index
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string display_depart
+        public virtual string item_key
         {
             get;
             set;
@@ -40,25 +40,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string display_mobile
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string display_name
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<System.Guid> person_id
+        public virtual string item_value
         {
             get;
             set;
@@ -68,33 +50,6 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual System.Guid record_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<int> web_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string web_user_code
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string web_user_password
         {
             get;
             set;
