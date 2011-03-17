@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\FacadeExtension.cs" />
-    <Compile Include="Data\base_community_baseinfo.cs">
-      <DependentUpon>CbooMainModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Data\base_community_buildinginfo.cs">
-      <DependentUpon>CbooMainModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\base_datadic_detailinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
@@ -63,6 +57,9 @@
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\base_permit_roledefine.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_personal_push_config.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\base_rolepermitionrelationinfo.cs">
@@ -87,6 +84,12 @@
       <DependentUpon>CbooModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Data\sys_user_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\usys_community_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\usys_community_buildinginfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Facade\MainFacade.cs" />

@@ -15,23 +15,59 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class base_rolepermitionrelationinfo
+    public partial class base_personal_push_config
     {
         #region Primitive Properties
-    //
-        public virtual string permit_id
+    
+        public virtual string display_company
         {
             get;
             set;
         }
-    //
+    
+        public virtual string display_depart
+        {
+            get;
+            set;
+        }
+    
+        public virtual string display_mobile
+        {
+            get;
+            set;
+        }
+    
+        public virtual string display_name
+        {
+            get;
+            set;
+        }
+    
+        public virtual Nullable<System.Guid> person_id
+        {
+            get;
+            set;
+        }
+    
         public virtual System.Guid record_id
         {
             get;
             set;
         }
-    //
-        public virtual string role_id
+    
+        public virtual Nullable<int> web_id
+        {
+            get;
+            set;
+        }
+    
+        public virtual string web_user_code
+        {
+            get;
+            set;
+        }
+    
+        public virtual string web_user_password
         {
             get;
             set;
