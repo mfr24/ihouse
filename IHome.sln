@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.SLClient.HouseManagem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.Models", "IHome.Models\IHome.Models.csproj", "{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.SLClient.InfoManagement", "IHome.SLClient.InfoManagement\IHome.SLClient.InfoManagement.csproj", "{92BE0677-8FB4-4837-B246-B9B8570B1245}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92BE0677-8FB4-4837-B246-B9B8570B1245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92BE0677-8FB4-4837-B246-B9B8570B1245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92BE0677-8FB4-4837-B246-B9B8570B1245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92BE0677-8FB4-4837-B246-B9B8570B1245}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
