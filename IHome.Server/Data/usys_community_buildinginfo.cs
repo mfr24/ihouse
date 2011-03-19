@@ -22,7 +22,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> building_floor
+        public virtual System.Guid building_id
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid building_id
+        public virtual Nullable<System.Guid> community_id
         {
             get;
             set;
@@ -49,15 +49,6 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string building_type
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
         public virtual string building_use
         {
             get;
@@ -67,7 +58,34 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<System.Guid> community_id
+        public virtual string building_type
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<int> building_floor
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<int> unit_num
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string unit_type
         {
             get;
             set;
@@ -95,24 +113,6 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual Nullable<int> status
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<int> unit_num
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string unit_type
         {
             get;
             set;

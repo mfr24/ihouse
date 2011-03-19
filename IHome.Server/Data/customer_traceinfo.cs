@@ -15,14 +15,14 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class base_permit_define
+    public partial class customer_traceinfo
     {
         #region Primitive Properties
     
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid permit_id
+        public virtual System.Guid record_id
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string permit_code
+        public virtual Nullable<System.Guid> customer_id
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string permit_name
+        public virtual Nullable<int> trace_type
         {
             get;
             set;
@@ -49,7 +49,34 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string permit_roup
+        public virtual string trace_context
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.DateTime> trace_time
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string trace_person_id
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string trace_person_name
         {
             get;
             set;

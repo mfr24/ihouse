@@ -22,34 +22,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string display_company
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string display_depart
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string display_mobile
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string display_name
+        public virtual System.Guid record_id
         {
             get;
             set;
@@ -59,15 +32,6 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual Nullable<System.Guid> person_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual System.Guid record_id
         {
             get;
             set;
@@ -95,6 +59,42 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual string web_user_password
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string display_name
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string display_depart
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string display_company
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string display_mobile
         {
             get;
             set;

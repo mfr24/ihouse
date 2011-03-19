@@ -22,6 +22,60 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
+        public virtual System.Guid user_id
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string user_code
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string user_name
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string department
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string company_name
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string password
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
         public virtual string city_code
         {
             get;
@@ -40,7 +94,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string company_name
+        public virtual Nullable<bool> validate
         {
             get;
             set;
@@ -49,16 +103,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string department
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string email
+        public virtual Nullable<int> user_type
         {
             get;
             set;
@@ -85,15 +130,6 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.DateTimeOffset last_login_time
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
         public virtual string mobile
         {
             get;
@@ -112,16 +148,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string password
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual System.DateTimeOffset reg_time
+        public virtual string email
         {
             get;
             set;
@@ -139,6 +166,15 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
+        public virtual System.DateTimeOffset reg_time
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
         public virtual System.DateTimeOffset update_time
         {
             get;
@@ -148,43 +184,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string user_code
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual System.Guid user_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string user_name
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<int> user_type
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<bool> validate
+        public virtual System.DateTimeOffset last_login_time
         {
             get;
             set;

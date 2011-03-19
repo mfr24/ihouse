@@ -22,15 +22,6 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<System.Guid> permit_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
         public virtual System.Guid record_id
         {
             get;
@@ -41,6 +32,15 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual Nullable<System.Guid> role_id
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.Guid> permit_id
         {
             get;
             set;

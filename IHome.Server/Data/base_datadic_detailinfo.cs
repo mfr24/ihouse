@@ -22,7 +22,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> item_index
+        public virtual System.Guid record_id
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid record_id
+        public virtual Nullable<int> item_index
         {
             get;
             set;

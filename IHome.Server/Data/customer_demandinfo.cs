@@ -15,14 +15,14 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class usys_community_baseinfo
+    public partial class customer_demandinfo
     {
         #region Primitive Properties
     
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid community_id
+        public virtual System.Guid record_id
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_name
+        public virtual Nullable<System.Guid> customer_id
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> city_id
+        public virtual Nullable<int> demand_kind
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string city_name
+        public virtual Nullable<int> demand_type
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string region
+        public virtual string demand_zone
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string block
+        public virtual string demand_price
         {
             get;
             set;
@@ -76,7 +76,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string address
+        public virtual string demand_use
         {
             get;
             set;
@@ -85,7 +85,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_use
+        public virtual string demand_building
         {
             get;
             set;
@@ -94,7 +94,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string building_type
+        public virtual string demand_consider
         {
             get;
             set;
@@ -103,7 +103,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> complete_year
+        public virtual string demand_area
         {
             get;
             set;
@@ -112,7 +112,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string remark
+        public virtual string demand_service
         {
             get;
             set;
@@ -121,7 +121,79 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string pinyin
+        public virtual string demand_age
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_special
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_room
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_hall
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_toilet
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_fitment
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_catalog
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string demand_return_rate
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<int> status
         {
             get;
             set;
@@ -139,7 +211,25 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> status
+        public virtual Nullable<System.DateTime> add_time
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.DateTime> last_trace_time
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.DateTime> update_time
         {
             get;
             set;

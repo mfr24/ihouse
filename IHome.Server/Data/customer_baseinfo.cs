@@ -15,14 +15,14 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class usys_community_baseinfo
+    public partial class customer_baseinfo
     {
         #region Primitive Properties
     
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid community_id
+        public virtual System.Guid customer_id
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_name
+        public virtual string customer_name
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> city_id
+        public virtual string customer_sex
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string city_name
+        public virtual string mobile
         {
             get;
             set;
@@ -58,16 +58,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string region
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string block
+        public virtual string phone
         {
             get;
             set;
@@ -85,7 +76,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_use
+        public virtual Nullable<int> status
         {
             get;
             set;
@@ -94,7 +85,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string building_type
+        public virtual string customer_type
         {
             get;
             set;
@@ -103,25 +94,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> complete_year
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string remark
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string pinyin
+        public virtual Nullable<System.DateTime> last_trace_date
         {
             get;
             set;
@@ -139,7 +112,16 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> status
+        public virtual Nullable<System.DateTime> add_time
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.DateTime> update_time
         {
             get;
             set;
