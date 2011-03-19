@@ -24,9 +24,21 @@ namespace IHome.SLClient.InfoManagement
         }
 		public ConmmunityAddViewModel()
 		{
-            community = new Data.base_community_baseinfo();
+            _community = new Data.base_community_baseinfo_ex();
 		}
-        public Data.base_community_baseinfo community { get; set; }
+        private Data.base_community_baseinfo_ex _community;
+        public Data.base_community_baseinfo_ex Community
+        {
+            get
+            {
+                return _community;
+            }
+            set
+            {
+                _community = value;
+                NotifyPropertyChanged("Community");
+            }
+        }
         private void PostData()
         {
             // creat request array
@@ -34,7 +46,7 @@ namespace IHome.SLClient.InfoManagement
 
             // creat request object
             Dictionary<string, object> dict = new Dictionary<string, object>();
-            dict.Add("community", community);
+            dict.Add("community", Community);
             requsetData.Add(dict);// request data :[ {house_info:{MyProperty1:'1asdjf',MyProperty2:'2134asdfasdf'}}]
 
             // creat dictionary contains type of returned object 
