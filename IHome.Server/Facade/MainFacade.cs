@@ -37,8 +37,8 @@ namespace IHome.Server.Facade
             {
                 Data.sys_user_baseinfo user = new Data.sys_user_baseinfo();
                 user.user_id = Guid.NewGuid();
-                user.CityName = "北京";
-                using (var context=new Data.CbooMainEntities())
+                user.city_name = "北京";
+                using (var context=new Data.CbooEntities())
                 {
                     context.sys_user_baseinfo.AddObject(user);
                     context.SaveChanges();
@@ -54,12 +54,12 @@ namespace IHome.Server.Facade
 
         public ArrayList GetUserList(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            using (var context = new Data.CbooMainEntities())
+            using (var context = new Data.CbooEntities())
             {
 
                 var users = from user in context.sys_user_baseinfo
 
-                            where user.CityName == "北京"
+                            where user.city_name == "北京"
 
                             select user;
                 ArrayList revList = new ArrayList();
