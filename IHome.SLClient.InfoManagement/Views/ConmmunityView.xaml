@@ -19,7 +19,7 @@
                              CanUserFreezeColumns="False" 
 							 CanUserResizeColumns="False">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewImageColumn Header="名称" DataMemberBinding="{Binding community_name}" ImageHeight="40" ImageWidth="40" />
+                <telerik:GridViewDataColumn Header="名称" DataMemberBinding="{Binding community_name}" />
                 <telerik:GridViewDataColumn Header="拼音" DataMemberBinding="{Binding pinyin}" />
                 <telerik:GridViewDataColumn Header="城市" DataMemberBinding="{Binding city_name}" />
                 <telerik:GridViewDataColumn Header="区域" DataMemberBinding="{Binding region}" />
