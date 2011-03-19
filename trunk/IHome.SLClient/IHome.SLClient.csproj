@@ -158,6 +158,10 @@
       <Project>{9FA3E1AA-A6A5-4CB0-B907-EB8C7E2C3D1E}</Project>
       <Name>IHome.SLClient.HouseManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IHome.SLClient.InfoManagement\IHome.SLClient.InfoManagement.csproj">
+      <Project>{92BE0677-8FB4-4837-B246-B9B8570B1245}</Project>
+      <Name>IHome.SLClient.InfoManagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
