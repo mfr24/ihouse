@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\base_community_baseinfo.cs" />
+    <Compile Include="Data\base_community_baseinfo_ex.cs" />
     <Compile Include="HouseInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerResult.cs" />
