@@ -22,6 +22,24 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
+        public virtual System.Guid role_id
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string role_name
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
         public virtual string city_code
         {
             get;
@@ -58,15 +76,6 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<bool> def_role
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
         public virtual Nullable<bool> is_show
         {
             get;
@@ -76,16 +85,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid role_id
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string role_name
+        public virtual Nullable<bool> def_role
         {
             get;
             set;

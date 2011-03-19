@@ -11,5 +11,8 @@
 		<local:ConmmunityAddViewModel x:Key="ConmmunityAddViewModelDataSource" />
 	</UserControl.Resources>
 
-	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityAddViewModelDataSource}}"/>
+	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityAddViewModelDataSource}}">
+		<TextBox TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Margin="141,8,0,0" HorizontalAlignment="Left" Width="152"/>
+		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="39,12,0,0"/>
+	</Grid>
 </UserControl>

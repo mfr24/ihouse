@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class usys_community_baseinfo
+    public partial class base_community_baseinfo
     {
         #region Primitive Properties
     

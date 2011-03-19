@@ -42,6 +42,18 @@ namespace IHome.Server.Data
     
         #region ObjectSet Properties
     
+        public ObjectSet<base_community_baseinfo> base_community_baseinfo
+        {
+            get { return _base_community_baseinfo  ?? (_base_community_baseinfo = CreateObjectSet<base_community_baseinfo>("base_community_baseinfo")); }
+        }
+        private ObjectSet<base_community_baseinfo> _base_community_baseinfo;
+    
+        public ObjectSet<base_community_buildinginfo> base_community_buildinginfo
+        {
+            get { return _base_community_buildinginfo  ?? (_base_community_buildinginfo = CreateObjectSet<base_community_buildinginfo>("base_community_buildinginfo")); }
+        }
+        private ObjectSet<base_community_buildinginfo> _base_community_buildinginfo;
+    
         public ObjectSet<base_datadic_detailinfo> base_datadic_detailinfo
         {
             get { return _base_datadic_detailinfo  ?? (_base_datadic_detailinfo = CreateObjectSet<base_datadic_detailinfo>("base_datadic_detailinfo")); }
@@ -83,6 +95,36 @@ namespace IHome.Server.Data
             get { return _base_roleuserrelationinfo  ?? (_base_roleuserrelationinfo = CreateObjectSet<base_roleuserrelationinfo>("base_roleuserrelationinfo")); }
         }
         private ObjectSet<base_roleuserrelationinfo> _base_roleuserrelationinfo;
+    
+        public ObjectSet<customer_baseinfo> customer_baseinfo
+        {
+            get { return _customer_baseinfo  ?? (_customer_baseinfo = CreateObjectSet<customer_baseinfo>("customer_baseinfo")); }
+        }
+        private ObjectSet<customer_baseinfo> _customer_baseinfo;
+    
+        public ObjectSet<customer_demandinfo> customer_demandinfo
+        {
+            get { return _customer_demandinfo  ?? (_customer_demandinfo = CreateObjectSet<customer_demandinfo>("customer_demandinfo")); }
+        }
+        private ObjectSet<customer_demandinfo> _customer_demandinfo;
+    
+        public ObjectSet<customer_traceinfo> customer_traceinfo
+        {
+            get { return _customer_traceinfo  ?? (_customer_traceinfo = CreateObjectSet<customer_traceinfo>("customer_traceinfo")); }
+        }
+        private ObjectSet<customer_traceinfo> _customer_traceinfo;
+    
+        public ObjectSet<house_baseinfo> house_baseinfo
+        {
+            get { return _house_baseinfo  ?? (_house_baseinfo = CreateObjectSet<house_baseinfo>("house_baseinfo")); }
+        }
+        private ObjectSet<house_baseinfo> _house_baseinfo;
+    
+        public ObjectSet<house_traceinfo> house_traceinfo
+        {
+            get { return _house_traceinfo  ?? (_house_traceinfo = CreateObjectSet<house_traceinfo>("house_traceinfo")); }
+        }
+        private ObjectSet<house_traceinfo> _house_traceinfo;
     
         public ObjectSet<sys_user_baseinfo> sys_user_baseinfo
         {
