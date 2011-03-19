@@ -5,20 +5,27 @@ namespace IHome.Data
 {
     public partial class base_community_baseinfo_ex : base_community_baseinfo, IDataErrorInfo
     {
-        
+
 
         override public string community_name
         {
             get { return base.community_name; }
-            set {
+            set
+            {
                 if (string.IsNullOrWhiteSpace(value))
-                _errors.Add("community_name", "小区名不能为空");
-                base.community_name = value; 
+                { _errors["community_name"] = "小区名不能为空"; return; }
+
+                base.community_name = value;
+                if (_errors.ContainsKey("community_name"))
+                {
+                    _errors.Remove("community_name");
+                }
+
             }
         }
 
         //属性为int时,无法捕获前端输入字符串引发的异常;
-        new public string complete_year
+        public string complete_year_ex
         {
             get
             {
@@ -27,19 +34,27 @@ namespace IHome.Data
             }
             set
             {
-                if (value != null)
+                if (!string.IsNullOrWhiteSpace(value))
                 {
-                    int year=0;
-                    if (!int.TryParse(value,out year))
+                    int year = 0;
+                    if (!int.TryParse(value, out year))
                     {
-                        _errors.Add("complete_year", "必须为数字");
+                        _errors["complete_year_ex"] = "必须为数字";
                         return;
                     }
+                    base.complete_year = int.Parse(value);
                 }
-                base.complete_year = int.Parse(value);
+                else
+                {
+                    base.complete_year = null;
+                }
+                if (_errors.ContainsKey("complete_year_ex"))
+                {
+                    _errors.Remove("complete_year_ex");
+                }
+
             }
         }
-
         private string _error = string.Empty;
         public string Error
         {
@@ -53,6 +68,13 @@ namespace IHome.Data
             {
                 if (_errors.ContainsKey(columnName)) return _errors[columnName];
                 else return null;
+            }
+        }
+        public bool HasErrors
+        {
+            get
+            {
+                return _errors.Count > 0;
             }
         }
     }

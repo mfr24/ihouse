@@ -28,7 +28,7 @@
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区用途" Margin="39,262,0,0" VerticalAlignment="Top"/>
         <TextBox TextWrapping="Wrap" Text="{Binding Community.building_type, Mode=TwoWay}" Margin="111,298,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="建筑类型" Margin="39,302,0,0" VerticalAlignment="Top"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Mode=TwoWay, Path=Community.complete_year, ValidatesOnDataErrors=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Mode=TwoWay, Path=Community.complete_year_ex, ValidatesOnDataErrors=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="竣工年份" Margin="39,342,0,0" VerticalAlignment="Top"/>
         <TextBox TextWrapping="Wrap" Text="{Binding Community.remark, Mode=TwoWay}" Margin="111,378,0,0" VerticalAlignment="Top" Height="94" HorizontalAlignment="Left" Width="521" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区描述" Margin="39,382,0,0" VerticalAlignment="Top"/>
