@@ -17,6 +17,11 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
+                    NotifyPropertyChanged("Community");
+                    if (Community.HasErrors) {
+                        MessageBox.Show("请确认信息是否正确");
+                        return;
+                    }
                     PostData();
                 });
 
@@ -36,7 +41,7 @@ namespace IHome.SLClient.InfoManagement
             set
             {
                 _community = value;
-                NotifyPropertyChanged("Community");
+
             }
         }
         private void PostData()
@@ -53,7 +58,7 @@ namespace IHome.SLClient.InfoManagement
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
 
             //the dictionary key is index of returned array
-            resultType.Add(0, typeof(Models.ServerResult<Models.HouseInfo>));
+            resultType.Add(0, typeof(Models.ServerResult<Data.base_community_baseinfo>));
 
 
             ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
@@ -62,7 +67,7 @@ namespace IHome.SLClient.InfoManagement
             {
                 if (result.DataList[0] != null)
                 {
-                    if ((result.DataList[0] as Models.ServerResult<Models.HouseInfo>).succeed)
+                    if ((result.DataList[0] as Models.ServerResult<Data.base_community_baseinfo>).succeed)
                     {
                         MessageBox.Show("OK!!!");
                     }
