@@ -89,6 +89,12 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IHome.Models\IHome.Models.csproj">
+      <Project>{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}</Project>
+      <Name>IHome.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>

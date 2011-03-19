@@ -118,7 +118,7 @@ namespace IHome.Server.Facade
                 using (var context = new Data.CbooEntities())
                 {
                     context.base_community_baseinfo.AddObject(community);
-                    context.SaveChanges();
+                    int a =context.SaveChanges();
                 }
             }
             catch (Exception ex)
