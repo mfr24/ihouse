@@ -1,41 +1,99 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows.Data;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
 
 namespace IHome.SLClient.InfoManagement
 {
-	public class ConmmunityViewModel : INotifyPropertyChanged
-	{
-        public ICommand AddConmmunity {
+    public class ConmmunityViewModel : INotifyPropertyChanged
+    {
+        public ICommand AddConmmunity
+        {
             get
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
-                    childWin.Content =new ConmmunityAddView();
+                    childWin.Content = new ConmmunityAddView();
                     childWin.Show();
                 });
-            
+
             }
         }
-		public ConmmunityViewModel()
-		{
-			
-		}
+        public ICommand GetConmmunityList
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    PostData();
+                });
 
-		#region INotifyPropertyChanged
-		public event PropertyChangedEventHandler PropertyChanged;
+            }
+        }
+        public ConmmunityViewModel()
+        {
+            _communityList = new ObservableCollection<Data.base_community_baseinfo>();
+        }
+        private ObservableCollection<Data.base_community_baseinfo> _communityList;
 
-		private void NotifyPropertyChanged(String info)
-		{
-			if (PropertyChanged != null)
-			{
-				PropertyChanged(this, new PropertyChangedEventArgs(info));
-			}
-		}
-		#endregion
-	}
+        public ObservableCollection<Data.base_community_baseinfo> CommunityList
+        {
+            get { return _communityList; }
+            set { _communityList = value; }
+        }
+        private void PostData()
+        {
+            // creat request array
+            List<object> requsetData = new List<object>();
+
+            // creat request object
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            requsetData.Add(dict);// request data :[ {house_info:{MyProperty1:'1asdjf',MyProperty2:'2134asdfasdf'}}]
+
+            // creat dictionary contains type of returned object 
+            Dictionary<int, Type> resultType = new Dictionary<int, Type>();
+
+            //the dictionary key is index of returned array
+            resultType.Add(0, typeof(Models.ServerResult<List<Data.base_community_baseinfo>>));
+
+
+            ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
+            //
+            webRequest.OnRequestCompleted += (sender, result) =>
+            {
+                if (result.DataList[0] != null)
+                {
+                    CommunityList.Clear();
+                    List<Data.base_community_baseinfo> data = (result.DataList[0] as Models.ServerResult<List<Data.base_community_baseinfo>>).data;
+                    foreach (var item in data)
+                    {
+                        CommunityList.Add(item);
+                    }
+
+
+                }
+            };
+            webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
+                , "guest"
+                , "IHome.Server.Facade.MainFacade.GetCommunityList"
+                , requsetData
+                , resultType);
+
+        }
+
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+        #endregion
+    }
 }
