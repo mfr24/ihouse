@@ -72,7 +72,66 @@ namespace IHome.Server.Facade
             }
 
         }
+        public ArrayList GetCommunityList(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                using (var context = new Data.CbooEntities())
+                {
 
+                    var communities = from community in context.base_community_baseinfo
+
+                                      //where community.city_name == "北京"
+
+                                      select community;
+
+                    data = communities.ToList<Data.base_community_baseinfo>();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+
+            ArrayList revList = new ArrayList();
+            {
+                //check user
+            }
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data ,message=message});
+            return revList;
+
+        }
+
+        public ArrayList AddCommunity(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                Data.base_community_baseinfo community = paramDicts[0]["community"].ToString().JsonToModel<Data.base_community_baseinfo>();
+                community.community_id = Guid.NewGuid();
+                using (var context = new Data.CbooEntities())
+                {
+                    context.base_community_baseinfo.AddObject(community);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+
+        }
 
     }
 }
