@@ -52,22 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\base_community_baseinfo.cs" />
-    <Compile Include="Data\base_community_buildinginfo.cs" />
-    <Compile Include="Data\base_datadic_detailinfo.cs" />
-    <Compile Include="Data\base_datadic_iteminfo.cs" />
-    <Compile Include="Data\base_permit_define.cs" />
-    <Compile Include="Data\base_permit_roledefine.cs" />
-    <Compile Include="Data\base_personal_push_config.cs" />
-    <Compile Include="Data\base_rolepermitionrelationinfo.cs" />
-    <Compile Include="Data\base_roleuserrelationinfo.cs" />
-    <Compile Include="Data\customer_baseinfo.cs" />
-    <Compile Include="Data\customer_demandinfo.cs" />
-    <Compile Include="Data\customer_traceinfo.cs" />
-    <Compile Include="Data\house_baseinfo.cs" />
-    <Compile Include="Data\house_traceinfo.cs" />
-    <Compile Include="Data\sys_user_baseinfo.cs" />
-    <Compile Include="Data\usys_community_baseinfo.cs" />
-    <Compile Include="Data\usys_community_buildinginfo.cs" />
     <Compile Include="HouseInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerResult.cs" />
