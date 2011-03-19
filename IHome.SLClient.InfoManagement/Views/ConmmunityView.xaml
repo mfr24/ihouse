@@ -13,7 +13,7 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityViewModelDataSource}}">
-		<telerik:RadGridView Margin="0,57,0,0"/>
-		<Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+		<telerik:RadGridView Margin="0,22,0,0"/>
+		<Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddConmmunity, Mode=OneWay}"/>
 	</Grid>
 </UserControl>
