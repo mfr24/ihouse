@@ -13,8 +13,25 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityViewModelDataSource}}">
-        <telerik:RadGridView ItemsSource="{Binding CommunityList ,Mode=TwoWay}"/>
-		<Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddConmmunity, Mode=OneWay}"/>
+        <telerik:RadGridView ItemsSource="{Binding CommunityList ,Mode=TwoWay}" ShowGroupPanel="False" IsReadOnly="True" Margin="0,22,0,0"
+                             IsBusy="{Binding IsBusy,Mode=TwoWay}" 
+                             AutoGenerateColumns="False" 
+                             CanUserFreezeColumns="False" 
+							 CanUserResizeColumns="False">
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewImageColumn Header="名称" DataMemberBinding="{Binding community_name}" ImageHeight="40" ImageWidth="40" />
+                <telerik:GridViewDataColumn Header="拼音" DataMemberBinding="{Binding pinyin}" />
+                <telerik:GridViewDataColumn Header="城市" DataMemberBinding="{Binding city_name}" />
+                <telerik:GridViewDataColumn Header="区域" DataMemberBinding="{Binding region}" />
+                <telerik:GridViewDataColumn Header="板块" DataMemberBinding="{Binding block}" />
+                <telerik:GridViewDataColumn Header="地址" DataMemberBinding="{Binding address}" />
+                <telerik:GridViewDataColumn Header="用途" DataMemberBinding="{Binding community_use}" />
+                <telerik:GridViewDataColumn Header="建筑类型" DataMemberBinding="{Binding building_type}" />
+                <telerik:GridViewDataColumn Header="竣工年份" DataMemberBinding="{Binding complete_year}" />
+                <telerik:GridViewDataColumn Header="小区描述" DataMemberBinding="{Binding remark}" Width="*"/>
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+        <Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddConmmunity, Mode=OneWay}"/>
         <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetConmmunityList, Mode=OneWay}" Margin="81,0,0,0" />
     </Grid>
 </UserControl>

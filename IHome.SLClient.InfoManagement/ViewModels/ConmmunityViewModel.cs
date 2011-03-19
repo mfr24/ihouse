@@ -38,6 +38,16 @@ namespace IHome.SLClient.InfoManagement
             _communityList = new ObservableCollection<Data.base_community_baseinfo>();
         }
         private ObservableCollection<Data.base_community_baseinfo> _communityList;
+        private bool _isBusy;
+
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set { _isBusy = value;
+            NotifyPropertyChanged("IsBusy");
+            }
+        }
+        
 
         public ObservableCollection<Data.base_community_baseinfo> CommunityList
         {
