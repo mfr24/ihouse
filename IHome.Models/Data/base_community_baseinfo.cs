@@ -10,10 +10,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 
-namespace IHome.Server.Data
+namespace IHome.Data
 {
     public partial class base_community_baseinfo
     {
