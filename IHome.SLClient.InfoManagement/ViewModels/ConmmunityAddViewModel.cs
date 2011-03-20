@@ -17,11 +17,9 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    this.Community.pinyin2 = "哈哈";
-                    if (Community.HasErrors) {
-                        MessageBox.Show("请确认信息是否正确");
+                    if (!Community.Validate()) {
                         return;
-                    }
+                    } 
                     PostData();
                 });
 
@@ -29,20 +27,13 @@ namespace IHome.SLClient.InfoManagement
         }
 		public ConmmunityAddViewModel()
 		{
-            _community = new Data.base_community_baseinfo_ex();
+            Community = new Data.base_community_baseinfo_ex();
 		}
-        private Data.base_community_baseinfo_ex _community;
+        
         public Data.base_community_baseinfo_ex Community
         {
-            get
-            {
-                return _community;
-            }
-            set
-            {
-                _community = value;
-
-            }
+            get;
+            set;
         }
         private void PostData()
         {
