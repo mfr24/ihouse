@@ -89,11 +89,6 @@
             When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellBase.ClearCell(Telerik.Windows.Controls.GridView.GridViewRowItem,Telerik.Windows.Controls.GridViewColumn)">
-            <summary>
-                Clears the cell of references.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewCellBase.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
             <summary>
             Raises the <see cref="E:Telerik.Windows.Controls.GridView.GridViewCellBase.PropertyChanged"/> event.
@@ -956,6 +951,16 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.GridView.GridViewDataControl.ValidatesOnDataErrors"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewDataControl.CellUnloadedEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.GridView.GridViewRowItem.CellUnloaded"/> routed event.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewDataControl.CellLoadedEvent">
+            <summary>
+            Identifies the <see cref="E:Telerik.Windows.Controls.GridView.GridViewRowItem.CellLoaded"/> routed event.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.GridView.GridViewDataControl.AutoGenerateColumnsProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridView.GridViewDataControl.AutoGenerateColumns"/> dependency property.
@@ -1330,6 +1335,12 @@
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.OnArrowKeyDown(Telerik.Windows.Controls.GridViewCellInfo,Telerik.Windows.Controls.GridView.FocusNavigationDirection)">
             <summary>
                 Helper method which handles the arrow key down
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.PreserveFocus">
+            <summary>
+            Preserves the focus. This method should be used in cases when focused element will become invisible
+            and nearby control could get the focus (in Silverlight).
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.BeginInsert">
@@ -2090,6 +2101,20 @@
             <param name="dataItem">The data item to scroll into view.</param>
             <param name="column">The column to scroll into view.</param>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.ScrollIntoViewAsync(System.Object,System.Action{System.Windows.FrameworkElement},System.Action)">
+            <summary>
+            Scrolls the row containing the data item into view in an asynchronous manner.
+            </summary>
+            <remarks>
+            Since this method is asynchonous, calling it will return immediately. If you need
+            to perform a certain action once the scrolling is done use the scrollFinishedCallback 
+            parameter to pass in a method to execute. The FrameworkElement parameter of this 
+            method will be the row that was just scrolled.
+            </remarks>
+            <param name="dataItem">The data item to scroll into view.</param>
+            <param name="scrollFinishedCallback">The method to execute when scrolling has finished.</param>
+            <param name="scrollFailedCallback">The method to execute when scrolling has failed.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.ScrollIntoViewAsync(System.Object,System.Action{System.Windows.FrameworkElement})">
             <summary>
             Scrolls the row containing the data item into view in an asynchronous manner.
@@ -2102,6 +2127,21 @@
             </remarks>
             <param name="dataItem">The data item to scroll into view.</param>
             <param name="scrollFinishedCallback">The method to execute when scrolling has finished.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.ScrollIntoViewAsync(System.Object,Telerik.Windows.Controls.GridViewColumn,System.Action{System.Windows.FrameworkElement},System.Action)">
+            <summary>
+            Scrolls the row containing the data item and <see cref="T:Telerik.Windows.Controls.GridViewColumn"/> into view in an asynchronous manner.
+            </summary>
+            <remarks>
+            Since this method is asynchonous, calling it will return immediately. If you need
+            to perform a certain action once the scrolling is done use the scrollFinishedCallback
+            parameter to pass in a method to execute. The FrameworkElement parameter of this
+            method will be the row that was just scrolled.
+            </remarks>
+            <param name="dataItem">The data item to scroll into view.</param>
+            <param name="column">The column to scroll into view.</param>
+            <param name="scrollFinishedCallback">The method to execute when scrolling has finished.</param>
+            <param name="scrollFailedCallback">The method to execute when scrolling has failed.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.ScrollIntoViewAsync(System.Object,Telerik.Windows.Controls.GridViewColumn,System.Action{System.Windows.FrameworkElement})">
             <summary>
@@ -2135,6 +2175,16 @@
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.UnselectAll">
             <summary>
             Unselects all grid data items.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.Select(System.Collections.IEnumerable)">
+            <summary>
+            Selects specified items.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.Unselect(System.Collections.IEnumerable)">
+            <summary>
+            Unselects specified items.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewDataControl.RaiseSelectionChangedEvent(Telerik.Windows.Controls.SelectionChangeEventArgs)">
@@ -2892,6 +2942,11 @@
             <summary>
                 Property which indicates whether a request to
                 invalidate CellsPanelOffset is already in queue or not.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewDataControl.InitialViewportWidth">
+            <summary>
+            Used to get approximate information about the ViewportWidth before initializing the GridViewScrollViewer in order to estimate the visible columns.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewDataControl.FrozenColumnCount">
@@ -5951,7 +6006,7 @@
         <member name="F:Telerik.Windows.Controls.GridView.GridViewHeaderCell.SortingStateProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.GridView.GridViewHeaderCell.SortingState"/> dependency property.
-            </summary> This enables animation, styling, binding, etc...
+            </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewHeaderCell.#ctor">
             <summary>
@@ -6058,9 +6113,8 @@
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewHeaderCell.SortingState">
             <summary>
-            Gets a column sorting state depending on executed sorted command,
-            it can take 3 possible values: Ascending, Descending and None. 
-            This is a readonly dependency property.
+            Gets or sets a Column sorting state depending on executed sorted command,
+            it can take 3 possible values: Ascending, Descending and None
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewHeaderCell.PreviousHeader">
@@ -6362,11 +6416,6 @@
             <summary>
                 Method which determines if there are any
                 star columns in GridViewDataControl except the given column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.InvalidateHasVisibleStarColumns">
-            <summary>
-                Method which redetermines if the collection has any star columns are not.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.GridViewColumnCollectionInternal.RecomputeStarColumnWidths">
@@ -9396,6 +9445,22 @@
             Called when GridViewDataControl ItemsSource is changed.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.TransferValue(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Windows.DependencyProperty)">
+            <summary>
+            Check if the values are equal before setting value since the operation is several times slower than getting a value.
+            </summary>
+            <remarks>
+            This method should be used only if the property will be set intensively and in the scenario the values are likely to be the same.
+            </remarks>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewHelper.TransferValue(System.Windows.DependencyObject,System.Windows.DependencyProperty,System.Object)">
+            <summary>
+            Check if the values are equal before setting value since the operation is several times slower than getting a value.
+            </summary>
+            <remarks>
+            This method should be used only if the property will be set intensively and in the scenario the values are likely to be the same.
+            </remarks>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridView.WeakHashtable.SetWeak(System.Object,System.Object)">
             <devdoc>
                 Override of Item that wraps a weak reference around the
@@ -11002,6 +11067,36 @@
             Move focus to another focusable element downwards from the currently focused element.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.GridView.FocusNavigationDirection.Home">
+            <summary>
+            Move focus to the first topmost element.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.FocusNavigationDirection.End">
+            <summary>
+            Move focus to the last bottommost element.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.FocusNavigationDirection.Top">
+            <summary>
+            Move focus to the topmost element from the currently focused element.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.FocusNavigationDirection.Bottom">
+            <summary>
+            Move focus to the bottommost element from the currently focused element.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.FocusNavigationDirection.PageDown">
+            <summary>
+            Move focus to another focusable element one page downwards from the current focused element.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.FocusNavigationDirection.PageUp">
+            <summary>
+            Move focus to another focusable element one page upwards from the current focused element.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.GridView.KeyboardNavigationMode">
             <summary>
             Specifies the possible values for changes in focus when logical and directional navigation occurs.
@@ -11163,6 +11258,54 @@
             Gets value that represents the move previous command.
             </summary>
             <value>The move previous command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MoveFirst">
+            <summary>
+            Gets value that represents the move first command.
+            </summary>
+            <value>The move first command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MoveLast">
+            <summary>
+            Gets value that represents the move last command.
+            </summary>
+            <value>The move last command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MoveHome">
+            <summary>
+            Gets value that represents the move home command.
+            </summary>
+            <value>The move home command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MoveEnd">
+            <summary>
+            Gets value that represents the move end command.
+            </summary>
+            <value>The move end command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MovePageDown">
+            <summary>
+            Gets value that represents the move page down command.
+            </summary>
+            <value>The move page down command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MovePageUp">
+            <summary>
+            Gets value that represents the move page up command.
+            </summary>
+            <value>The move page up command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MoveTop">
+            <summary>
+            Gets value that represents the move top command.
+            </summary>
+            <value>The move top command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadGridViewCommands.MoveBottom">
+            <summary>
+            Gets value that represents the move bottom command.
+            </summary>
+            <value>The move bottom command.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadGridViewCommands.Paste">
             <summary>
@@ -11440,6 +11583,26 @@
             Identifies the HasHierarchy readonly dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewRowItem.RenderWidthPropertyKey">
+            <summary>
+            Identifies the RenderWidth dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewRowItem.RenderWidthProperty">
+            <summary>
+            Identifies the RenderWidth readonly dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewRowItem.RenderHorizontalAlignmentPropertyKey">
+            <summary>
+            Identifies the RenderHorizontalAlignment dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.GridView.GridViewRowItem.RenderHorizontalAlignmentProperty">
+            <summary>
+            Identifies the RenderHorizontalAlignment readonly dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewRowItem.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.GridView.GridViewRowItem"/> class.
@@ -11618,6 +11781,18 @@
         <member name="P:Telerik.Windows.Controls.GridView.GridViewRowItem.HasHierarchy">
             <summary>
             Gets a value indicating whether this row data control has hierarchy or not.
+            This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewRowItem.RenderWidth">
+            <summary>
+            Gets a value indicating this row render width.
+            This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewRowItem.RenderHorizontalAlignment">
+            <summary>
+            Gets a value indicating this row render HorizontalAlignment.
             This is a dependency property.
             </summary>
         </member>
@@ -12246,7 +12421,7 @@
             <summary>
             Called to arrange and size the content of a <see cref="T:System.Windows.Controls.Control"/> object.
             </summary>
-            <param name="finalSize">The computed size that is used to arrange the content.</param>
+            <param name="arrangeBounds">The computed size that is used to arrange the content.</param>
             <returns>The size of the control.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewNewRow.OnApplyTemplate">
@@ -13246,254 +13421,26 @@
                 relevant GridViewColumn to ensure all rows give cells in a given column the same size.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.#ctor">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeOverride(System.Windows.Size)">
             <summary>
-            Initializes a new instance of the GridViewCellsPanel class.
+            Called to arrange and size the content of a <see cref="T:System.Windows.Controls.Control"/> object.
             </summary>
+            <param name="finalSize">The computed size that is used to arrange the content.</param>
+            <returns>The size of the control.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.MeasureOverride(System.Windows.Size)">
             <summary>
-                Measure
-                
-                The logic is to see determinition of realized blocks is needed and do it.
-                If not, iterate over the realized block list and for each block generate the
-                children and measure them.
+            Called to remeasure a control.
             </summary>
-            <param name="constraint">Size constraint</param>
-            <returns></returns>
+            <param name="availableSize">The maximum size that the method can return.</param>
+            <returns>
+            The size of the control, up to the maximum specified by <paramref name="availableSize"/>.
+            </returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.MeasureChild(System.Windows.UIElement,System.Windows.Size)">
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.OverrideChildrenCollectionAccess">
             <summary>
-                Method which measures a given child based on its column width
-                
-                For auto kind columns it may actually end up measuring twice
-                once with positive infinity to determine its actual desired width
-                and then again with the available space constraints
+            This method is used to bypass WPF restriction of adding UIElements when panel is itemsHost of data control.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GenerateAndMeasureChildrenForRealizedColumns(System.Windows.Size)">
-            <summary>
-                Generates children and measures them based on RealizedColumnList of 
-                ancestor rows presenter.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.DetermineRealizedColumnsBlockList(System.Windows.Size)">
-            <summary>
-                Method which determines the realized columns list and
-                stores it in ancestor rowpresenter which is to be used
-                by other cellpanels to virtualize without recomputation.
-                Simultaneously measures the children of this panel.
-                
-                If the GridViewDataControl has star columns, then all cells for all
-                realized rows are generated.
-                
-                For remaining case the logic is to iterate over columns of
-                gridViewDataControl in DisplayIndex order, as if one is actually arranging
-                them, to determine which of them actually fall in viewport.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.EnsureAtleastOneHeader(System.Windows.Controls.Primitives.IItemContainerGenerator,System.Windows.Size,System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32})">
-            <summary>
-                Method which ensures that atleast one column
-                header is generated. Such a generation would
-                help in determination of the height.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.BuildRealizedColumnsBlockList(System.Collections.Generic.List{System.Int32})">
-            <summary>
-                Helper method which creates a list of RealizedColumnsBlock struct
-                out of a list on integer indices.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.IndexToGeneratorPositionForStart(System.Windows.Controls.Primitives.IItemContainerGenerator,System.Int32,System.Int32@)">
-            <summary>
-                Helper method to build generator position out to index
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GenerateChild(System.Windows.Controls.Primitives.IItemContainerGenerator,System.Windows.Size,Telerik.Windows.Controls.GridViewColumn,System.IDisposable@,System.Int32@,System.Windows.Size@)">
-            <summary>
-                Helper method which generates and measures a
-                child of given index
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GenerateChild(System.Windows.Controls.Primitives.IItemContainerGenerator,System.Windows.Size,Telerik.Windows.Controls.GridViewColumn,System.Int32@,System.Windows.Size@)">
-            <summary>
-                Helper method which generates and measures a
-                child of given index
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GenerateChildren(System.Windows.Controls.Primitives.IItemContainerGenerator,System.Int32,System.Int32,System.Windows.Size)">
-            <summary>
-                Helper method which generates and measures children of 
-                a given block of indices
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.AddContainerFromGenerator(System.Int32,System.Windows.UIElement,System.Boolean)">
-            <summary>
-                Method which adds the given container at the given index
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InsertRecycledContainer(System.Int32,System.Windows.UIElement)">
-            <summary>
-                Inserts a recycled container in the visual tree
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InsertNewContainer(System.Int32,System.Windows.UIElement)">
-            <summary>
-                Inserts a new container in the visual tree
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InsertContainer(System.Int32,System.Windows.UIElement,System.Boolean)">
-            <summary>
-                Inserts a container into the Children collection.  The container is either new or recycled.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ChildIndexFromRealizedIndex(System.Int32)">
-            <summary>
-                Takes an index from the realized list and returns the corresponding index in the Children collection
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InBlockOrNextBlock(System.Collections.Generic.List{Telerik.Windows.Controls.GridView.RealizedColumnsBlock},System.Int32,System.Int32@,Telerik.Windows.Controls.GridView.RealizedColumnsBlock@,System.Boolean@)">
-            <summary>
-                Helper method which determines if the given in index
-                falls in the given block or in the next block
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.EnsureFocusTrail(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Windows.Size)">
-            <summary>
-                Method which ensures that all the appropriate
-                focus trail cells are realized such that tabbing 
-                works.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GenerateChildForFocusTrail(System.Windows.Controls.ItemContainerGenerator,System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32},System.Windows.Size,System.Int32,System.Int32@)">
-            <summary>
-                Method which generates the focus trail cell
-                if it is not already generated and adds it to 
-                the block lists appropriately.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.TreeHasFocusAndTabStop(System.Windows.DependencyObject)">
-            <summary>
-                Helper method which determines if any of the elements of
-                the tree is focusable and has tab stop
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.AddToIndicesListIfNeeded(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32},System.Int32,System.Int32,System.Int32@)">
-            <summary>
-                Helper method which adds the generated
-                display index to the the block lists if not
-                already present.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.VirtualizeChildren(System.Collections.Generic.List{Telerik.Windows.Controls.GridView.RealizedColumnsBlock},System.Windows.Controls.Primitives.IItemContainerGenerator)">
-            <summary>
-                Method which virtualizes the children which are determined to be unused. 
-                Eligible candidates for virtualization are those which are not in block list.
-                Some exceptions to the criterion are the cells which are in edit mode, or
-                if item is its own container.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.CleanupRange(System.Collections.IList,System.Windows.Controls.Primitives.IItemContainerGenerator,System.Int32,System.Int32)">
-            <summary>
-                Method which cleans up a given range of children
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.DisconnectRecycledContainers">
-            <summary>
-                Recycled containers still in the InternalChildren collection at the end of Measure should be disconnected
-                from the visual tree.  Otherwise they're still visible to things like Arrange, keyboard navigation, etc.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InitializeArrangeState(Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeState)">
-            <summary>
-                Helper method to initialize the arrange state
-            </summary>
-            <param name="arrangeState"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.FinishArrange(Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeState)">
-            <summary>
-                Helper method which which ends the arrange by setting values
-                from arrange state to appropriate fields.
-            </summary>
-            <param name="arrangeState"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeOverride(System.Windows.Size)">
-            <summary>
-                Arrange
-                
-                Iterates over the columns in the display index order and looks if
-                it the corresponding child is realized. If yes then arranges it.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeChild(System.Windows.UIElement,System.Int32,Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeState)">
-            <summary>
-                Method which arranges the give child
-                based on given arrange state.
-                
-                Determines the start position of the child
-                based on its display index, frozen count of 
-                gridViewDataControl, current horizontal offset etc.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GetRealizedBlockForColumn(System.Collections.Generic.List{Telerik.Windows.Controls.GridView.RealizedColumnsBlock},System.Int32)">
-            <summary>
-                Method which gets the realized block for a given index
-            </summary>
-            <param name="blockList"></param>
-            <param name="columnIndex"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GetRealizedChildrenNotInBlockList(System.Collections.Generic.List{Telerik.Windows.Controls.GridView.RealizedColumnsBlock},System.Collections.IList)">
-            <summary>
-                Determines the list of children which are realized, but
-                shouldnt be as per the state stored at rows presenter
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GetColumnEstimatedMeasureWidth(Telerik.Windows.Controls.GridViewColumn,System.Double)">
-            <summary>
-                Helper method which estimates the width of the column
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GetColumnEstimatedMeasureWidthSum(System.Int32,System.Int32,System.Double)">
-            <summary>
-                Helper method which estimates the sum of widths of
-                a given block of columns.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.EnsureRealizedChildren">
-            <summary>
-                Helper method which ensures that the _realizedChildren
-                member is properly initialized
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ComputeCellsPanelHorizontalOffset">
-            <summary>
-                Helper method to compute the cells panel horizontal offset
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GetViewportWidth">
-            <summary>
-                Helper method which returns the viewport width
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.OnItemsChanged(System.Object,System.Windows.Controls.Primitives.ItemsChangedEventArgs)">
-            <summary>
-                Called when the Items collection associated with the containing ItemsControl changes.
-            </summary>
-            <param name="sender">sender</param>
-            <param name="args">Event arguments</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.OnClearChildren">
-            <summary>
-                Sets the _realizedChildren in sync when children are cleared
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InternalBringIndexIntoView(System.Int32)">
-            <summary>
-                A workaround method to access BringIndexIntoView method in this assembly.
-            </summary>
-            <param name="index"></param>
         </member>
         <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.BringIndexIntoView(System.Int32)">
             <summary>
@@ -13512,43 +13459,56 @@
                 child into view if it is not already in view.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.GetColumnEstimatedMeasureWidth(Telerik.Windows.Controls.GridViewColumn,System.Double)">
+            <summary>
+                Helper method which estimates the width of the column
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ComputeCellsPanelHorizontalOffset">
+            <summary>
+                Helper method to compute the cells panel horizontal offset
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ParentDataGrid">
+            <summary>
+            Gets the parent data grid.
+            </summary>
+            <value>The parent data grid.</value>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ParentRowsPresenter">
             <summary>
                 The property which returns GridViewVirtualizingPanel ancestor of this panel
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.Item">
+            <summary>
+                The item that the row represents. This item is an entry in the list of items from the GridViewDataControl.
+                From this item, cells are generated for each column in the GridViewDataControl.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.IsVirtualizing">
             <summary>
-                Property which determines if one has to virtualize the cells
+            Property which determines if one has to virtualize the cells
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.InRecyclingMode">
+        <member name="T:Telerik.Windows.Controls.GridView.GridViewCellsPanel.MeasureDataIndices">
             <summary>
-                Property which determines if one is in recycling mode.
+            Internal structure that keeps information about the Measured Indices.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.RealizedChildren">
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.MeasureDataIndices.FrozenColumnLastLeftIndex">
             <summary>
-                Returns the list of childen that have been realized by the Generator.  
-                We must use this method whenever we interact with the Generator's index.  
-                In recycling mode the Children collection also contains recycled containers and thus does 
-                not map to the Generator's list.
+            Indicates the last frozen column displayIndex.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.Columns">
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.MeasureDataIndices.FrozenColumnAwareLeftMostIndex">
             <summary>
-                Returns the columns on the parent RadGridView.
+            Indicates the first visible nonfrozen column that should realize.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ParentDataGrid">
+        <member name="P:Telerik.Windows.Controls.GridView.GridViewCellsPanel.MeasureDataIndices.LeftFrozenAreaWidth">
             <summary>
-                The row that this panel presents belongs to the RadGridView returned from this property.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.GridView.GridViewCellsPanel.ArrangeState">
-            <summary>
-                Private class used to maintain state between arrange 
-                of multiple children.
+            Indicates the left frozen column width.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.GridView.BroughtIntoViewEventArgs">
@@ -14109,6 +14069,13 @@
             </summary>
             <param name="element">The container that will be prepared.</param>
             <param name="item">The item of the container.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadTreeListView.ClearContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            When overridden in a derived class, undoes the effects of the PrepareContainerForItemOverride method.
+            </summary>
+            <param name="element">The container element.</param>
+            <param name="item">The item.</param>
         </member>
         <member name="F:Telerik.Windows.Controls.RadTreeListView.HierarchyColumnIndexProperty">
             <summary>

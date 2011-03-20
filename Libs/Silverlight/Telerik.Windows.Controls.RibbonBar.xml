@@ -227,6 +227,44 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.BackstageContainerStyle">
+            <summary>
+            This class is used to relate a style to a backstage item's container.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BackstageContainerStyle.TypeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BackstageContainerStyle.ContainerStyle">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.BackstageContainerStyleSelector">
+            <summary>
+            Holds predefined styles for backstage items' containers.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BackstageContainerStyleSelector.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.BackstageContainerStyleSelector"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BackstageContainerStyleSelector.SelectStyle(System.Object,System.Windows.DependencyObject)">
+            <summary>
+                When overriden this method is used for determining the Style of items.
+            </summary>
+            <param name="item">The item for whoose container is wanted.</param>
+            <param name="container">The container for which a Style is selected.</param>
+            <returns>The Style for the given container.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.BackstageContainerStyleSelector.ContainerStyles">
+            <summary>
+            Gets the holder of all the predefined styles.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.BooleanToWindowStateConverter">
             <summary>
             Represents the converter that converts Boolean values to and from maximized and normal window states.
@@ -760,6 +798,11 @@
             Identifies the CollapseToMedium property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonDropDownButton.IsBackstageOpenProperty">
+            <summary>
+            Identifies the IsBackstageOpen property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RadRibbonDropDownButton.#ctor">
             <summary>
             Initializes a new instance of the RadRibbonDropDownButton class.
@@ -790,6 +833,12 @@
             <summary>
             Initializes the position of the DropDown indicator and
             correct the placement of the Popup window.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonDropDownButton.IsBackstageOpen">
+            <summary>
+            Get/Set if the backstage contained in the button is open.
+            This is a dependency property.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRibbonDropDownButton.Text">
@@ -1373,10 +1422,212 @@
             </summary>
             <value>The quick access tool bar placeholder.</value>
         </member>
+        <member name="T:Telerik.Windows.Controls.RadRibbonBackstage">
+            <summary>
+            Represents a ribbonbar backstage control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadRibbonBackstage"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstage.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Prepares the specified element to display the specified item.
+            </summary>
+            <param name="element">Element used to display the specified item.</param>
+            <param name="item">Specified item.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstage.GetContainerForItemOverride">
+            <summary>
+            Creates or identifies the element used to display a specified item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstage.IsItemItsOwnContainerOverride(System.Object)">
+            <summary>
+            Determines if the specified item is (or is eligible to be) its own container.
+            </summary>
+            <param name="item">The item to check.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstage.BottomTemplate">
+            <summary>
+            This property does not apply to Backstage. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstage.LeftTemplate">
+            <summary>
+            This property does not apply to Backstage. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstage.ReorderTabRows">
+            <summary>
+            This property does not apply to Backstage. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstage.RightTemplate">
+            <summary>
+            This property does not apply to Backstage. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstage.ScrollMode">
+            <summary>
+            This property does not apply to Backstage. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstage.TopTemplate">
+            <summary>
+            This property does not apply to Backstage. 
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadRibbonBackstageItem">
+            <summary>
+            Represents a ribbonbar backstage item control.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.CommandProperty">
+            <summary>
+            Identifies the Command dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.CommandParameterProperty">
+            <summary>
+            Identifies the CommandParameter dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.CommandTargetProperty">
+            <summary>
+            Identifies the CommandTarget dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.IsSelectableProperty">
+            <summary>
+            Identifies the IsSelectable property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.IsDefaultProperty">
+            <summary>
+            Identifies the IsDefault property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.IsGroupSeparatorProperty">
+            <summary>
+            Identifies the IsGroupSeparator property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.CloseOnClickProperty">
+            <summary>
+            Identifies the CloseOnClick property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.IconProperty">
+            <summary>
+            Identifies the Icon property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBackstageItem.ClickEvent">
+            <summary>
+            Identifies the Click event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstageItem.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadRibbonBackstageItem"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstageItem.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application
+            code or internal processes (such as a rebuilding layout pass) call
+            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstageItem.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.MouseEnter"/> event occurs.
+            </summary>
+            <param name="e">The data for the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadRibbonBackstageItem.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.MouseLeave"/> event occurs.
+            </summary>
+            <param name="e">The data for the event.</param>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadRibbonBackstageItem.Click">
+            <summary>
+            Gets or sets the click event.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.IsSelectable">
+            <summary>
+            Gets or sets if the item should be selectable.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.IsDefault">
+            <summary>
+            Gets or sets if the item should be default.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.IsGroupSeparator">
+            <summary>
+            Gets or sets if the item should be group separator.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.CloseOnClick">
+            <summary>
+            Gets or sets if parent backstage should close on click of the item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.Icon">
+            <summary>
+            Gets or sets the image source.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.Command">
+            <summary>
+            Gets or sets the command that will be executed when the command source is invoked.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.CommandParameter">
+            <summary>
+            Represents a user defined data value that can be passed to the command when it is executed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.CommandTarget">
+            <summary>
+            The object that the command is being executed on.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.BottomTemplate">
+            <summary>
+            This property does not apply to BackstageItem. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.IsBreak">
+            <summary>
+            This property does not apply to BackstageItem. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.LeftTemplate">
+            <summary>
+            This property does not apply to BackstageItem. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.RightTemplate">
+            <summary>
+            This property does not apply to BackstageItem. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBackstageItem.TopTemplate">
+            <summary>
+            This property does not apply to BackstageItem. 
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadRibbonBar">
             <summary>
             Represents a Ribbon bar control.
-            </summary> 
+            </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.RadRibbonBar.ApplicationButtonImageSourceProperty">
             <summary>
@@ -1443,6 +1694,16 @@
             Identifies the ApplicationMenu property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBar.BackstageProperty">
+            <summary>
+            Identifies the Backstage property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBar.BackstageClippingElementProperty">
+            <summary>
+            Identifies the BackstageClippingElement dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadRibbonBar.ContextualGroupContainerProperty">
             <summary>
             Identifies the ContextualGroupContainer property.
@@ -1476,6 +1737,11 @@
         <member name="F:Telerik.Windows.Controls.RadRibbonBar.IsCollapsedProperty">
             <summary>
             Identifies the IsCollapsed property.
+            </summary>        
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadRibbonBar.IsBackstageOpenProperty">
+            <summary>
+            Identifies the IsBackstageOpen property.
             </summary>        
         </member>
         <member name="F:Telerik.Windows.Controls.RadRibbonBar.CollapseThresholdSizeProperty">
@@ -1729,6 +1995,11 @@
             </summary>
             <value>The ApplicationButtonStyle.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBar.BackstageClippingElement">
+            <summary>
+            Gets or sets the area that will contain the backstage.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadRibbonBar.ApplicationButtonStyleOffice2007">
             <summary>
             Gets or sets the ApplicationButtonOffice2007 style.
@@ -1781,6 +2052,12 @@
             </summary>
             <value>The application menu.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBar.Backstage">
+            <summary>
+            Gets or sets the backstage.
+            </summary>
+            <value>The backstage.</value>
+        </member>
         <member name="P:Telerik.Windows.Controls.RadRibbonBar.ContextualGroupContainer">
             <summary>
             Gets or sets the contextual group container.
@@ -1818,6 +2095,11 @@
             <remarks>
             RadRibbonBar is collapsed automatically when its size is smaller than the specified value for <see cref="P:Telerik.Windows.Controls.RadRibbonBar.CollapseThresholdSize"/> property.
             </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadRibbonBar.IsBackstageOpen">
+            <summary>
+            Gets or sets a value indicating whether the ribbon bar's backstage is open.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadRibbonBar.CollapseThresholdSize">
             <summary>

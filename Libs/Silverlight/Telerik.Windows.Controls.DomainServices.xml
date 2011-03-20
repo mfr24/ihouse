@@ -94,6 +94,12 @@
             <param name="source">A sequence of values to sort.</param>
             <param name="sortDescriptors">The sort descriptors used for sorting.</param>
         </member>
+        <member name="T:Telerik.Windows.Controls.DomainServices.EntityQueryInfo">
+            <summary>
+            Represent a structure holding all EntityQuery relevant information
+            used for comparing whether two queries are equivalent.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.DomainServices.EntityQueryPlaceholder`1">
             <summary>
             EntityQueryPlaceholder.

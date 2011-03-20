@@ -125,6 +125,100 @@
             A converted value. If the method returns null, the valid null value is used.
             </returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.DateTimeTypeConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DateTimeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Determines whether this instance [can convert from] the specified context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">Type of the source.</param>
+            <returns>
+            	<c>true</c> if this instance [can convert from] the specified context; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DateTimeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether the type converter can convert an object to the specified type to the type of this converter.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type you want to convert to.</param>
+            <returns>
+            True if this converter can perform the conversion; otherwise, false.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="destinationType"/> is null.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DateTimeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts from the specified value to the type of this converter.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The value to convert to the type of this converter.</param>
+            <returns>The converted value.</returns>
+            <exception cref="T:System.NotSupportedException">The conversion cannot be performed.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DateTimeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts from the specified value to the type of this converter.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The value.</param>
+            <param name="destinationType">Type of the destination.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.DecimalTypeConverter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DecimalTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Determines whether this instance [can convert from] the specified context.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="sourceType">Type of the source.</param>
+            <returns>
+            	<c>true</c> if this instance [can convert from] the specified context; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DecimalTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
+            <summary>
+            Returns whether the type converter can convert an object to the specified type to the type of this converter.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="destinationType">The type you want to convert to.</param>
+            <returns>
+            True if this converter can perform the conversion; otherwise, false.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            <paramref name="destinationType"/> is null.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DecimalTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)">
+            <summary>
+            Converts from the specified value to the type of this converter.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The value to convert to the type of this converter.</param>
+            <returns>The converted value.</returns>
+            <exception cref="T:System.NotSupportedException">The conversion cannot be performed.</exception>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DecimalTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
+            <summary>
+            Converts from the specified value to the type of this converter.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="culture">The culture.</param>
+            <param name="value">The value.</param>
+            <param name="destinationType">Type of the destination.</param>
+            <returns></returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.DragDrop.DragArrowAdjustingEventArgs">
             <summary>
             EventArgs holding the information for the DragArrowAdjusting Event
@@ -314,6 +408,202 @@
             <param name="source">If provided, the properties of the visual cue will be set to match this element.</param>
             <returns>A new instance of the DragVisualCue class.</returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.GroupBox">
+            <summary>
+            Represents a control that creates a container that has a border and a header for user interface (UI) content.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.HeaderedContentControl">
+            <summary>
+                Base class for the content controls that have a header.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HasHeaderProperty">
+            <summary>
+                Identifies the HasHeader property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HeaderProperty">
+            <summary>
+                Identifies the Header property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplateProperty">
+            <summary>
+                Identifies the HeaderTemplatee property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.FocusVisualStyleProperty">
+            <summary>
+            Identifies the FocusVisualStyle property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplateSelectorProperty">
+            <summary>
+            Identifies the HeaderTemplateSelector property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.IsFocusedProperty">
+            <summary>
+            Identifies the IsFocused property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.#ctor">
+            <summary>
+            Initializes a new instance of the HeaderedContentControl class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or 
+            internal processes (such as a rebuilding layout pass) call 
+            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.ChangeVisualState">
+            <summary>
+            Changes the visual state of the control using transitions.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.ChangeVisualState(System.Boolean)">
+            <summary>
+            Updates the visual state of the control.
+            </summary>
+            <param name="useTransitions">Indicates whether transitions should be used.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnIsEnabledChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Invoked when the IsEnabled property of the control changes.
+            </summary>
+            <param name="e">The information about the new and old value of the property.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnHeaderChanged(System.Object,System.Object)">
+            <summary>
+                Allows derived classes to act on header change.
+            </summary>
+            <param name="oldHeader">The old header value.</param>
+            <param name="newHeader">The new header value.</param>
+            <seealso cref="P:Telerik.Windows.Controls.HeaderedContentControl.Header"/>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnHeaderTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">
+            <summary>
+                Allows derived classes to act on HeaderTemplate change.
+            </summary>
+            <param name="oldHeaderTemplate">The old header tempalte.</param>
+            <param name="newHeaderTemplate">The new header tempalte.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnIsFocusedChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when the IsFocused property changes.
+            </summary>
+            <param name="e">Event args with the old and the new value of the property.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnGotFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.GotFocus"/> event occurs.
+            </summary>
+            <param name="e">The data for the event.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnLostFocus(System.Windows.RoutedEventArgs)">
+            <summary>
+            Called before the <see cref="E:System.Windows.UIElement.LostFocus"/> event occurs.
+            </summary>
+            <param name="e">The data for the event.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.HasHeader">
+            <summary>
+                Gets whether there is header assigned. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.IsFocused">
+            <summary>
+            	Gets a value indicating whether the control is focused.
+            </summary>
+            <remarks>
+            	<para>
+                    Please note that <strong>IsFocused</strong> is a read only property. 
+                    To focus the Control, use the <see cref="M:System.Windows.Controls.Control.Focus"/> method.
+                </para> 
+            </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.Header">
+            <summary>
+                Gets or sets the header of the control. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.FocusVisualStyle">
+            <summary>
+            Gets or sets the style used by the focus visual of the cotnrol. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplate">
+            <summary>
+                Gets or sets the data tempalte for the header. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplateSelector">
+            <summary>
+            Gets or sets a selector for the HeaderTemplate. This is a dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GroupBox.#ctor">
+            <summary>
+            Initializes a new instance of the GroupBox class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.GroupBox.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or 
+            internal processes (such as a rebuilding layout pass) call 
+            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.IRangeSelector`1">
+            <summary>
+            An interface to be used by range selecting controls.
+            </summary>
+            <typeparam name="T">Simple type used for Selection properties.</typeparam>
+        </member>
+        <member name="P:Telerik.Windows.Controls.IRangeSelector`1.SelectionStart">
+            <summary>
+            Gets or sets the SelectionStart property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.IRangeSelector`1.SelectionEnd">
+            <summary>
+            Gets or sets the SelectionEnd property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.IRangeSelector`1.Selection">
+            <summary>
+            Gets or sets the Selection property. 
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.IRangeSelector`1.SelectionChanged">
+            <summary>
+            Identifies the SelectionChanged routed event.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Label">
+            <summary>
+            Represents the text label for a control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Label.#ctor">
+            <summary>
+            Initializes a new instance of the Label class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Label.TargetProperty">
+            <summary>
+            Using a DependencyProperty as the backing store for Target.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Label.Target">
+            <summary>
+            Reserved for future use.
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Controls.DelegateCommand">
             <summary>
             Provides a simple ICommand implementation.
@@ -355,6 +645,29 @@
         <member name="E:Telerik.Windows.Controls.DelegateCommand.CanExecuteChanged">
             <summary>
             Occurs when changes occur that affect whether the command should execute.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.SelectionRange`1">
+            <summary>
+            Simple structure representing a simple Generic range.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Telerik.Windows.Controls.SelectionRange`1.#ctor(`0,`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.SelectionRange`1"/> struct.
+            </summary>
+            <param name="start">The start.</param>
+            <param name="end">The end.</param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.SelectionRange`1.Start">
+            <summary>
+            Gets or sets the Start proeprty.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.SelectionRange`1.End">
+            <summary>
+            Gets or sets the Start proeprty.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Shapes.Arc">
@@ -1823,139 +2136,6 @@
             A HeaderedContentControl control.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.HeaderedContentControl">
-            <summary>
-                Base class for the content controls that have a header.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HasHeaderProperty">
-            <summary>
-                Identifies the HasHeader property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HeaderProperty">
-            <summary>
-                Identifies the Header property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplateProperty">
-            <summary>
-                Identifies the HeaderTemplatee property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.FocusVisualStyleProperty">
-            <summary>
-            Identifies the FocusVisualStyle property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplateSelectorProperty">
-            <summary>
-            Identifies the HeaderTemplateSelector property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.HeaderedContentControl.IsFocusedProperty">
-            <summary>
-            Identifies the IsFocused property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.#ctor">
-            <summary>
-            Initializes a new instance of the HeaderedContentControl class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnApplyTemplate">
-            <summary>
-            When overridden in a derived class, is invoked whenever application code or 
-            internal processes (such as a rebuilding layout pass) call 
-            <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.ChangeVisualState">
-            <summary>
-            Changes the visual state of the control using transitions.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.ChangeVisualState(System.Boolean)">
-            <summary>
-            Updates the visual state of the control.
-            </summary>
-            <param name="useTransitions">Indicates whether transitions should be used.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnIsEnabledChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            Invoked when the IsEnabled property of the control changes.
-            </summary>
-            <param name="e">The information about the new and old value of the property.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnHeaderChanged(System.Object,System.Object)">
-            <summary>
-                Allows derived classes to act on header change.
-            </summary>
-            <param name="oldHeader">The old header value.</param>
-            <param name="newHeader">The new header value.</param>
-            <seealso cref="P:Telerik.Windows.Controls.HeaderedContentControl.Header"/>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnHeaderTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">
-            <summary>
-                Allows derived classes to act on HeaderTemplate change.
-            </summary>
-            <param name="oldHeaderTemplate">The old header tempalte.</param>
-            <param name="newHeaderTemplate">The new header tempalte.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnIsFocusedChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>
-            Called when the IsFocused property changes.
-            </summary>
-            <param name="e">Event args with the old and the new value of the property.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnGotFocus(System.Windows.RoutedEventArgs)">
-            <summary>
-            Called before the <see cref="E:System.Windows.UIElement.GotFocus"/> event occurs.
-            </summary>
-            <param name="e">The data for the event.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.HeaderedContentControl.OnLostFocus(System.Windows.RoutedEventArgs)">
-            <summary>
-            Called before the <see cref="E:System.Windows.UIElement.LostFocus"/> event occurs.
-            </summary>
-            <param name="e">The data for the event.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.HasHeader">
-            <summary>
-                Gets whether there is header assigned. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.IsFocused">
-            <summary>
-            	Gets a value indicating whether the control is focused.
-            </summary>
-            <remarks>
-            	<para>
-                    Please note that <strong>IsFocused</strong> is a read only property. 
-                    To focus the Control, use the <see cref="M:System.Windows.Controls.Control.Focus"/> method.
-                </para> 
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.Header">
-            <summary>
-                Gets or sets the header of the control. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.FocusVisualStyle">
-            <summary>
-            Gets or sets the style used by the focus visual of the cotnrol. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplate">
-            <summary>
-                Gets or sets the data tempalte for the header. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.HeaderedContentControl.HeaderTemplateSelector">
-            <summary>
-            Gets or sets a selector for the HeaderTemplate. This is a dependency property.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.QuickStart.HeaderedContentControl.#ctor">
             <summary>
             Initializes a new instance of the RadButton class.
@@ -1964,6 +2144,25 @@
         <member name="T:Telerik.Windows.Controls.QuickStart.QuickStart">
             <summary>
             Container for the ConfigurationPanel attached property used in QuickStart application.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.QuickStart.QuickStart.GetExampleHeader(System.Windows.DependencyObject)">
+            <summary>
+            Gets the value of the ExampleHeader attached property from a given DependencyObject.
+            </summary>
+            <param name="obj">The DependencyObject from which to read the property value.</param>
+            <returns>The value of the ExampleHeader attached property.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.QuickStart.QuickStart.SetExampleHeader(System.Windows.DependencyObject,System.Object)">
+            <summary>
+            Sets the value of the ExampleHeader attached property to a given DependencyObject.
+            </summary>
+            <param name="obj">The DependencyObject on which to set the property value.</param>
+            <param name="value">The property value to set.</param>
+        </member>
+        <member name="F:Telerik.Windows.Controls.QuickStart.QuickStart.ExampleHeaderProperty">
+            <summary>
+            Identifies the ExampleHeader attached property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.QuickStart.QuickStart.GetConfigurationPanel(System.Windows.DependencyObject)">
@@ -2011,10 +2210,11 @@
             <param name="source">The target <see cref="T:System.Windows.DependencyObject"/> which children will be traversed.</param>
             <returns>The first child element that is of the specified type.</returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.DependencyObjectExtensions.IsDependencyPropertySet(System.Windows.DependencyObject,System.Windows.DependencyProperty)">
+        <member name="M:Telerik.Windows.Controls.DependencyObjectExtensions.IsLocalValueSet(System.Windows.DependencyObject,System.Windows.DependencyProperty)">
             <summary>
-            Determines whether the specified dependency property is set.
+            Determines whether the specified dependency property local value is set.
             </summary>
+            <seealso cref="M:System.Windows.DependencyObject.ReadLocalValue(System.Windows.DependencyProperty)"/>
             <param name="dependencyObject">The dependency object.</param>
             <param name="property">The property.</param>
             <returns></returns>
@@ -2111,6 +2311,13 @@
             <returns>
             A converted value. If the method returns null, the valid null value is used.
             </returns>
+        </member>
+        <member name="M:Telerik.Windows.Media.Brushes.FromKnownColor(System.String)">
+            <summary>
+            Gets a SolidColorBrush from a known color's name.
+            </summary>
+            <param name="colorName">The name of the known color.</param>
+            <returns>Retuns a SolidColorBrush from a known color.</returns>
         </member>
         <member name="T:Telerik.Windows.Controls.DropDownButtonPosition">
             <summary>
@@ -6480,7 +6687,7 @@
             The RadFluidContentControl has three content properties which are displayed depending on the available space.
             Using the adjustable threshold properties, the exact points at which the visible content is switched can be
             precisely controlled.
-            </summary>
+            </summary>	
         </member>
         <member name="M:Telerik.Windows.Controls.RadFluidContentControl.#ctor">
             <summary>
@@ -6491,15 +6698,6 @@
             <summary>
             When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFluidContentControl.ArrangeOverride(System.Windows.Size)">
-            <summary>
-            Provides the behavior for the Arrange pass of Silverlight layout. Classes can override this method to define their own Arrange pass behavior.
-            </summary>
-            <param name="finalSize">The final area within the parent that this object should use to arrange itself and its children.</param>
-            <returns>
-            The actual size used once the element is arranged.
-            </returns>
         </member>
         <member name="M:Telerik.Windows.Controls.RadFluidContentControl.MeasureOverride(System.Windows.Size)">
             <summary>
@@ -6553,16 +6751,46 @@
         <member name="F:Telerik.Windows.Controls.RadFluidContentControl.LargeToNormalThresholdProperty">
             <summary>
             Identifies the LargeToNormalThreshold dependency property.
-            </summary>
+            </summary>		
         </member>
         <member name="F:Telerik.Windows.Controls.RadFluidContentControl.ContentChangeModeProperty">
             <summary>
             Identifies the ContentChangeMode dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadFluidContentControl.VisibleContentTemplateProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadFluidContentControl.TransitionProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadFluidContentControl.TransitionDurationProperty">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadFluidContentControl.VisibleContentProperty">
+            <summary>
+            Identifies the VisibleContent readonly dependency property.
+            </summary>
+        </member>
         <member name="E:Telerik.Windows.Controls.RadFluidContentControl.StateChanged">
             <summary>
             Occurs when the State property of the control is changed.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFluidContentControl.TransitionDuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFluidContentControl.Transition">
+            <summary>
+            
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadFluidContentControl.State">
@@ -6572,6 +6800,12 @@
             <value>The state.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadFluidContentControl.VisibleContent">
+            <summary>
+            Gets the currently visible content.
+            </summary>
+            <value>The visible content.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadFluidContentControl.VisibleContentTemplate">
             <summary>
             Gets the currently visible content.
             </summary>
@@ -6630,12 +6864,6 @@
             Gets or sets the content change mode.
             </summary>
             <value>The content change mode.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadFluidContentControl.NumberOfSetContentProperties">
-            <summary>
-            Gets the number of set content properties.
-            </summary>
-            <value>The number of set content properties.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.InvertedBooleanToVisibilityConverter">
             <summary>
@@ -8512,6 +8740,14 @@
             </summary>
             <param name="itemType">The type of the instance which property will be returned.</param>
             <param name="propertyPath">The path of the property which value will be returned.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.BindingExpressionHelper.GetValue(System.Object,System.Windows.Data.Binding)">
+            <summary>
+            Gets the value of the specified item using the provided Binding.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="binding">The binding.</param>
+            <returns>The value of the item</returns>
         </member>
         <member name="T:Telerik.Windows.Controls.ContainerBinding">
             <summary>
@@ -10934,26 +11170,6 @@
             A HeaderContentControl used to create interactive Expand/Collapse control.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RadExpander.TemplateLeftProperty">
-            <summary>
-            Identifies the TemplateLeft property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpander.TemplateDownProperty">
-            <summary>
-            Identifies the TemplateDown property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpander.TemplateUpProperty">
-            <summary>
-            Identifies the TemplateUp property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadExpander.TemplateRightProperty">
-            <summary>
-            Identifies the TemplateRight property.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.RadExpander.DecoratorTemplateProperty">
             <summary>
             Identifies the DecoratorTemplate property.
@@ -10968,6 +11184,16 @@
             <summary>
             Identifies the IsExpanded property.
             </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadExpander.HeaderOrientationProperty">
+            <summary>
+            Identifies the HeaderOrientation property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadExpander.ResultOrientationProperty">
+            <summary>
+            Identifies the ResultOrientation property.
+            </summary>		
         </member>
         <member name="F:Telerik.Windows.Controls.RadExpander.ClickModeProperty">
             <summary>
@@ -10997,6 +11223,16 @@
         <member name="F:Telerik.Windows.Controls.RadExpander.PreviewExpandedEvent">
             <summary>
             Identifies the PreviewExpanded property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadExpander.IsHeaderPressedProperty">
+            <summary>
+            Identifies the IsHeaderPressed property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadExpander.IsMouseOverHeaderProperty">
+            <summary>
+            Identifies the IsMouseOver property.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RadExpander.#ctor">
@@ -11044,26 +11280,6 @@
             If the event handler set True for the Handled proterty then the content will not expand.
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadExpander.TemplateDown">
-            <summary>
-            Gets or sets the template of the expander when the ExpandDirection is Down. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpander.TemplateUp">
-            <summary>
-            Gets or sets the template of the expander when the ExpandDirection is Up. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpander.TemplateLeft">
-            <summary>
-            Gets or sets the template of the expander when the ExpandDirection is Left. This is a dependency property.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadExpander.TemplateRight">
-            <summary>
-            Gets or sets the template of the expander when the ExpandDirection is Right. This is a dependency property.
-            </summary>
-        </member>
         <member name="P:Telerik.Windows.Controls.RadExpander.IsExpanded">
             <summary>
             Gets or sets whether the content is expanded. This is a dependency property.
@@ -11072,6 +11288,16 @@
         <member name="P:Telerik.Windows.Controls.RadExpander.ClickMode">
             <summary>
             Gets or sets when the content will expand. This is a dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExpander.IsHeaderPressed">
+            <summary>
+            Gets the IsHeaderPressed property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExpander.HeaderOrientation">
+            <summary>
+            Gets or sets the orientation of the exapnd Header.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadExpander.ExpandDirection">
@@ -11115,9 +11341,15 @@
                 </code>
             </example>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadExpander.IsAnimated">
+        <member name="P:Telerik.Windows.Controls.RadExpander.ResultOrientation">
             <summary>
-            Gets or sets whether the content is animated.
+            Gets or sets the result header orientation.
+            </summary>
+            <value>The result orientation.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadExpander.IsMouseOverHeader">
+            <summary>
+            Gets the IsMouseOver property.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.RadExpanderAutomationPeer">
@@ -11279,6 +11511,12 @@
             	Please note that keeping the page in memory may lead to leaks when the control is removed from the Visual Tree 
             	and will no longer be used.
             </remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadHtmlPlaceholder.WebBrowser">
+            <summary>
+            Gets the <see href="http://msdn.microsoft.com/en-us/library/system.windows.controls.webbrowser%28v=vs.95%29.aspx">WebBrowser</see> control which is internally used in out-of-browser scenarios.
+            </summary>
+            <value>The web browser.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.RadHtmlPlaceholder.RespectSilverlightLayoutMeasure">
             <summary>
@@ -11511,605 +11749,6 @@
             <summary>
             Occurs when the browser window is closing.
             </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.AjaxHistoryManager">
-            <summary>
-            AjaxHistoryManager enables you to use the functionality from Microsoft Ajax Framework
-            to enable the browser back and forward buttons to navigate thru the pages
-            in the application.
-            </summary>
-            <remarks>
-            To use the Ajax history you need to embed your Silverlight application into a
-            Ajax-enabled web application and to set the EnableHistory property of 
-            the ScriptManager control to True.
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.Controls.AjaxHistoryManager.LoadPoint(System.Object,System.Object)">
-            <summary>
-            This is the entry point used from the Ajax history manager to interact with the Silverlight
-            application when the browser history is changed.
-            </summary>
-            <remarks>
-            Used internaly from the RadNavigation framework.
-            </remarks>
-            <param name="sender">The Ajax javascript object.</param>
-            <param name="args">The absolute uri that needs to be loaded in the Silverlight application.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.AjaxHistoryManager.AddPointData(System.String)">
-            <summary>
-            Adds the point data to AjaxHistory.
-            </summary>
-        </member>
-        <member name="E:Telerik.Windows.Controls.AjaxHistoryManager.HistoryChanged">
-            <summary>
-            Occurs when the history journal is changed.
-            </summary>
-            <remarks>
-            This event is raised every time a new Page is navigated to or when
-            the Previouse/Forward actions occures.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.AjaxHistoryManager.JavaScriptHistoryManager">
-            <summary>
-            Represents the Javascript Ajax history object. This object is needed for the interaction between
-            the Silverlight application and the Ajax history manager.
-            </summary>
-            <remarks>
-            Used internally from the RadNavigation framework,
-            </remarks>
-        </member>
-        <member name="T:Telerik.Windows.Controls.BrowserHistoryEventArgs">
-            <summary>
-            BrowserHistoryEventArgs used in implementing AjaxHistoryManager.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.BrowserHistoryEventArgs.HistoryState">
-            <summary>
-            The state in RadNavigation is the URI that identifies which pages should be loaded.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.FrameInfoEventArgs">
-            <summary>
-             EventArgs used in setting different values of one page instance.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.FrameInfoEventArgs.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.FrameInfoEventArgs"/> class.
-            </summary>
-            <param name="frameType">Type of the frame.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.FrameInfoEventArgs.FrameType">
-            <summary>
-            Gets the  instance of the base frame.
-            </summary>
-            <value>The frame.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.FrameInfoEventArgs.Frame">
-            <summary>
-            Gets the  instance of the base frame.
-            </summary>
-            <value>The frame.</value>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadFrameContainer">
-            <summary>
-            RadFrameContainer class is used as a plaseholder for RadPages or RadFrames.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrameContainer.#ctor">
-            <summary>
-            Initializes a new instance of the RadFrameContainer class.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadFrame">
-            <summary>
-            RadFrame class.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadPage">
-            <summary>
-            RadPage is the class that represent navigation page in page navigation.It can be.used with NavigationService, RadNavigationButton or RadFrame for PageNavigation.
-            You have to use RadPage classes in order to have page navigation.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.IFrame">
-            <summary>
-            Base interface for navigation containers.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.IFrame.NavigationIdentifier">
-            <summary>
-            Gets or sets the navigation identifier.
-            </summary>
-            <value>The navigation identifier.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.IFrame.ParentContainer">
-            <summary>
-            Gets or sets the parent frame.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.IFrame.Title">
-            <summary>
-            Gets or sets the title.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadPage.#ctor">
-            <summary>
-            Initializes a new instance of the RadPage class.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadPage.NavigationIdentifier">
-            <summary>
-            Identifies the frame inside the NavigationUri.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadPage.ChildContainer">
-            <summary>
-            Gets or sets the RadPage`s child RadFrameContainer if there is any on the page.
-            </summary> 
-            <value>The child container.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadPage.ParentContainer">
-            <summary>
-            Gets or sets the RadFramecontainer in which tha RadPage is placed.
-            </summary>
-            <value></value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadPage.Title">
-            <summary>
-            Gets or sets the title of the WebPage.
-            </summary>
-            <value></value>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadFrame.SourceProperty">
-            <summary>
-            Sorce property is used in order to navigate to desired page using it`s string representation in XAML or code behind.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrame.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadFrame"/> class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrame.Navigate(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Navigates the specified frame using current set transition.
-            </summary>
-            <param name="frame">The frame.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrame.Navigate(Telerik.Windows.Controls.IFrame,Telerik.Windows.Controls.ITransition)">
-            <summary>
-            Navigates the specified frame using specified transition.
-            </summary>
-            <param name="frame">The frame.</param>
-            <param name="transition">The transition.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrame.Navigate(System.String,Telerik.Windows.Controls.ITransition)">
-            <summary>
-            Navigates the specified frame using page instance string representation and specified transition.
-            </summary>
-            <param name="frame">The frame.</param>
-            <param name="transition">The transition.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrame.Navigate(System.String)">
-            <summary>
-            Navigates the specified frame using page string representation.
-            </summary>
-            <param name="frame">The frame.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadFrame.OnNavigating(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Called when [navigating].
-            </summary>
-            <param name="frame">The frame.</param>
-        </member>
-        <member name="E:Telerik.Windows.Controls.RadFrame.Navigating">
-            <summary>
-            Occurs in the end of page navigation.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadFrame.ParentContainer">
-            <summary>
-            Gets or sets the parent frame.
-            </summary>
-            <value>The parent frame.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadFrame.Source">
-            <summary>
-            Gets or sets the RadFrame source.
-            </summary>
-            <value>The source.</value>
-        </member>
-        <member name="T:Telerik.Windows.Controls.NavigationAction">
-            <summary>
-            ButtonAction enables you to select navigation mode. You can use GoBack for back navigation,
-            BoForward for forward navigation or LoadPage if you want to navigate to a specific page.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationAction.GoBack">
-            <summary>
-            Use GoBack if you want to perform back page navigation.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationAction.GoForward">
-            <summary>
-            Use GoForward if you want to perform forwards page navigation.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationAction.LoadPage">
-            <summary>
-            Use LoadPage if you want to perform specific page navigation.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.NavigationTarget">
-            <summary>
-            Specify the target where the new page will be loaded.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationTarget.Self">
-            <summary>
-            Use the Self option to load replace the current page with the new one.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationTarget.Child">
-            <summary>
-            Use the Child option to load the page in the child frame.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationTarget.Parent">
-            <summary>
-            Use the Parent option to load the page in the parent page.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.NavigationTarget.Top">
-            <summary>
-            Use the Top option to load the page in the RootVisual - e.g. on the root level.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.RadNavigationButton">
-            <summary>
-            RadNavigationButton enables you to navigate to a specific page by clicking the button. You can set 
-            ActionProperty in order to set navigation action and NavigateUriProperty in order to set the navigation 
-            page.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadNavigationButton.NavigateUriProperty">
-            <summary>
-            Identifies NavigateUri dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadNavigationButton.TargetProperty">
-            <summary>
-            Identifies Target dependency property.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.RadNavigationButton.ActionProperty">
-            <summary>
-            Identifies Action dependency property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadNavigationButton.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RadNavigationButton"/> class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RadNavigationButton.OnApplyTemplate">
-            <summary>
-            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadNavigationButton.NavigateUri">
-            <summary>
-            NavigateUri Property is used when you want to navigate to a specific page.
-            </summary>
-            <remarks>
-            In order to use this property correctly you have to set it`s value to string representation of the page.
-            For example : "Page1" or "Page2" etc.
-            </remarks>
-            <value>The navigation page string representation.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadNavigationButton.Target">
-            <summary>
-            Gets or sets the target. 
-            </summary>
-            <remarks>
-            This property is ingored when the Action is set to Back or Forward.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RadNavigationButton.Action">
-            <summary>
-            ActionProperty is used when you want to set the button action value.It can be GoBack,
-            GoForward or LoadPage.
-            </summary>
-            <value>The ButtonAction value..</value>
-            <remarks>
-            For example : ButtonAction.GoBack/ButtonAction.GoForward .
-            </remarks>
-        </member>
-        <member name="T:Telerik.Windows.Controls.NavigatingCancelEventArgs">
-            <summary>
-            NavigatingCancelEventArgs Provides data for the Navigating event.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigatingCancelEventArgs.#ctor(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.NavigatingCancelEventArgs"/> class.
-            </summary>
-            <remarks>
-            The event is not cancelable - it is named so in sake of WPF compatibility 
-            </remarks>
-            <param name="frame">The frame.</param>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigatingCancelEventArgs.Frame">
-            <summary>
-            Gets the frame.
-            </summary>
-            <value>The frame.</value>
-        </member>
-        <member name="T:Telerik.Windows.Controls.ITransition">
-            <summary>
-            Base interface for all transitions.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.ITransition.Begin(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Transitions the page.Transition between previous and next page.
-            </summary>
-            <param name="page">The next page.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.ITransition.StopTransition">
-            <summary>
-            Stops the currently runnint transition.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.ITransition.IsRunning">
-            <summary>
-            Gets or sets a value indicating whether the transition is running.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.NavigationService">
-            <summary>
-            NavigationService.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.GetNavigationService(System.Windows.UIElement)">
-            <summary>
-            Gets the navigation service.
-            </summary>
-            <param name="targetFrameContainer">The target frame container.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.GetNavigationService">
-            <summary>
-            Gets the navigation service.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.LoadDeepLink">
-            <summary>
-            Loads the deep link.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.Navigate(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Navigates the specified frame.
-            </summary>
-            <param name="frame">The frame.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.Navigate(Telerik.Windows.Controls.IFrame,System.Boolean)">
-            <summary>
-            Navigates the specified frame.
-            </summary>
-            <param name="frame">The frame.</param>
-            <param name="addToHistory">If set to <c>true</c> [add to history].</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.Navigate(System.String,System.Boolean)">
-            <summary>
-            Navigates the specified URI.
-            </summary>
-            <param name="pageName">The pageName.</param>
-            <param name="addToHistory">If set to <c>true</c> [add to history].</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.Navigate(System.String)">
-            <summary>
-            Navigates the specified URI.
-            </summary>
-            <param name="pageName">The pageName.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.SetApplicationUri(System.String)">
-            <summary>
-            Sets the application URI.
-            </summary>
-            <param name="absoluteUri">The absolute URI.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.GoForward">
-            <summary>
-            Navigate forward in the history.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.GoBack">
-            <summary>
-            Navigate Back in the history.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.OnNavigating(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Called every time when page navigation happen.
-            </summary>
-            <param name="frame">The frame.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.OnGetBookmarkFromUri(System.String)">
-            <summary>
-            Called when you want to get the bookmark that represent some uri.
-            </summary>
-            <param name="uri">The URI.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.OnGetUriFromBookmark(System.String)">
-            <summary>
-            Called when you want to transform the bookmark to real uri.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.OnGetPageForBookmark(System.String)">
-            <summary>
-            Called when you want to get some page instance from custom bookmark.
-            </summary>
-            <param name="frameType">The frame.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.GetStateFromUrl">
-            <summary>
-            Gets the URI from browser bookmark.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.GetUrisToLoad(System.String,System.String)">
-            <summary>
-            Compare the passed uris and returns a queue with the different pages
-            that need to be loaded.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.ComposeAbsoluteUri(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Compose the absolute uri, depending on the Target and the frame that will be loaded in this target.
-            </summary>
-            <param name="frame">The frame.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.LoadUriOptimized(System.String)">
-            <summary>
-            Loads only the needed pages, without to reload the alread loaded pages.
-            </summary>
-            <remarks>
-            If we have a current Uri -> /page1/page2/page3,
-            and want to load new Uri -> /page1/page2/page4
-            
-            Only the page4 will be loaded, and page1 and page2 will stay
-            untouched.
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.Controls.NavigationService.PerformTransition(Telerik.Windows.Controls.IFrame)">
-            <summary>
-            Performs the transition between two pages.
-            </summary>
-            <param name="nextFrame">The next frame.</param>
-        </member>
-        <member name="E:Telerik.Windows.Controls.NavigationService.Navigating">
-            <summary>
-            Occurs when navigating from one page to another.
-            </summary>
-        </member>
-        <member name="E:Telerik.Windows.Controls.NavigationService.GetBookmarkFromUri">
-            <summary>
-            Occurs when you want to get bookmark from uri.
-            </summary>
-            <remarks>
-            If you want to get some custom bookmark that represent an instant of page from it`s uri.
-            </remarks>
-        </member>
-        <member name="E:Telerik.Windows.Controls.NavigationService.GetUriFromBookmark">
-            <summary>
-            Occurs when you want to get uri from bookmark.
-            </summary>
-            <remarks>
-            If you have some custom bookmark and want to get the real page uri then you have to use this method.
-            </remarks>
-        </member>
-        <member name="E:Telerik.Windows.Controls.NavigationService.GetPageFromBookmark">
-            <summary>
-            Occurs when query base page instance.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.UseBrowserHistory">
-            <summary>
-            Gets or sets a value indicating wheter the integration with Browser history is enabled.
-            </summary>
-            <remarks>
-            This features requires that the Silverlight application is in Ajax-enabled web application and
-            that the ScriptManager controls in the ASP.NET page has the property EnableHistory set to True.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.BrowserHistoryIdentifier">
-            <summary>
-            Gets or sets the browser history identifier.
-            </summary>
-            <remarks>
-            Use this property to tweak the name of the parameter used to identify your application 
-            in the browser bookmark string.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.LocationUri">
-            <summary>
-            Gets or sets the location URI.
-            </summary>
-            <value>The location URI.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.UseHistoryBookmark">
-            <summary>
-            Gets or sets a value indicating whether to [use historybookmark].
-            </summary>
-            <value><c>True</c> if [use historybookmark]; otherwise, <c>false</c>.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.Transition">
-            <summary>
-            Gets or sets the transition.
-            </summary>
-            <value>The transition.</value>
-            <remarks>
-            Transition is the animation effect between two page navigation.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.RootPanel">
-            <summary>
-            Gets or sets the target.
-            </summary>
-            <value>The target.</value>
-            <remarks>
-            This property is used only if you do not want to set application`s RootVisual to RadFramecontainer or some Panel.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.Target">
-            <summary>
-            Gets or sets the target.
-            </summary>
-            <value>The target.</value>
-            <remarks>
-            Target is the place where the page will be placed in page navigation.
-            </remarks>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.ForwardHistory">
-            <summary>
-            Gets the Forward history list.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.NavigationService.BackHistory">
-            <summary>
-            Gets the Back history list.
-            </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.UriInfoEventArgs">
-            <summary>
-            EventArgs used in setting custom hashes for browser uri.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.UriInfoEventArgs.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.UriInfoEventArgs"/> class.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.UriInfoEventArgs.Uri">
-            <summary>
-            Gets or sets the location URI.
-            </summary>
-            <value>The location URI.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.UriInfoEventArgs.Bookmark">
-            <summary>
-            Gets or sets the bookmark.
-            </summary>
-            <value>The bookmark.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.RadDockPanel">
             <summary>
@@ -13016,6 +12655,18 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.DoubleRangeBase"/> class.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.DoubleRangeBase.SetSelectionRange(System.Double,System.Double)">
+            <summary>
+            Sets the selection range.
+            </summary>
+            <param name="start">The start.</param>
+            <param name="end">The end.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DoubleRangeBase.SetThumbsPosition">
+            <summary>
+            Sets the thumbs' position.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.DoubleRangeBase.OnMinimumChanged(System.Double,System.Double)">
             <summary>
             Called when the <see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum"/> property changes.
@@ -13627,7 +13278,7 @@
             Called when the EnableSideTicks property changes value.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadSlider.UpdateTrackLayout">
+        <member name="M:Telerik.Windows.Controls.RadSlider.SetThumbsPosition">
             <summary> 
             This method will take the current min, max, and value to 
             calculate and layout the current control measurements.
@@ -14275,87 +13926,6 @@
             </summary>
             <value><c>True</c> if side ticks are enabled; otherwise, <c>false</c>.</value>
         </member>
-        <member name="T:Telerik.Windows.Controls.Resource">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarDayMonthNamesFormatInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid NamesFormat value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarGetDayNamesInvalidDaynamesFormat">
-            <summary>
-              Looks up a localized string similar to Invalid DayNamesFormat value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarMonthViewHeaderText">
-            <summary>
-              Looks up a localized string similar to MMMM&apos;, &apos;yyyy.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnAreDatesInPastSelectableChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid SelectedDate value. SelectedDate cannot be in the past..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnDisplayDateChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid DisplayDate value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnDisplayDateEndChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid DisplayDateEnd value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnDisplayDateStartChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid DisplayDateStart value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnFirstDayOfWeekChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid FirstDayOfWeek value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnMonthViewHeaderTextChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid header format string..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnSelectableDateEndChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid SelectableDateEnd value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnSelectableDateStartChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid SelectableDateStart value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnSelectedDateChangedInvalidValue">
-            <summary>
-              Looks up a localized string similar to Invalid SelectedDate value..
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Resource.CalendarOnSelectedDatesChangedReadOnly">
-            <summary>
-              Looks up a localized string similar to SelectedDates is a read-only DependencyProperty..
-            </summary>
-        </member>
         <member name="T:Telerik.Windows.Controls.SelectionRangeChangedEventArgs">
             <summary>
             Provides data for the SelectionStartChanged and SelectionEndChanged events.
@@ -14741,6 +14311,41 @@
               Looks up a localized string similar to _Daily.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_AddNew">
+            <summary>
+              Looks up a localized string similar to Add.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_BeginEdit">
+            <summary>
+              Looks up a localized string similar to Edit.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_Delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_MoveCurrentToFirst">
+            <summary>
+              Looks up a localized string similar to First.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_MoveCurrentToLast">
+            <summary>
+              Looks up a localized string similar to Last.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_MoveCurrentToNext">
+            <summary>
+              Looks up a localized string similar to Next.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.DataForm_MoveCurrentToPrevious">
+            <summary>
+              Looks up a localized string similar to Previous.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Day">
             <summary>
               Looks up a localized string similar to _Day.
@@ -14794,6 +14399,994 @@
         <member name="P:Telerik.Windows.Controls.Strings.Dockable">
             <summary>
               Looks up a localized string similar to Dockable.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColorPicker_NoColor">
+            <summary>
+              Looks up a localized string similar to No color.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColorSelector_Automatic">
+            <summary>
+              Looks up a localized string similar to Automatic.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColorSelector_Transparent">
+            <summary>
+              Looks up a localized string similar to No color.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_ColumnIndex">
+            <summary>
+              Looks up a localized string similar to Column index: {0}.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_MeasureIn">
+            <summary>
+              Looks up a localized string similar to Measure in:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_NextColumn">
+            <summary>
+              Looks up a localized string similar to Next Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_Percents">
+            <summary>
+              Looks up a localized string similar to Percents.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_Pixels">
+            <summary>
+              Looks up a localized string similar to Pixels.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_PreferredWidth">
+            <summary>
+              Looks up a localized string similar to Preferred Width:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_PreferredWidth_InvalidNumberMessage">
+            <summary>
+              Looks up a localized string similar to Enter number..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_PreferredWidth_InvalidNumberMessageHeader">
+            <summary>
+              Looks up a localized string similar to Column width.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_PreviousColumn">
+            <summary>
+              Looks up a localized string similar to Previous Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ColumnProperties_Size">
+            <summary>
+              Looks up a localized string similar to Size.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Clipboard_Copy">
+            <summary>
+              Looks up a localized string similar to Copy.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Clipboard_Cut">
+            <summary>
+              Looks up a localized string similar to Cut.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Clipboard_Paste">
+            <summary>
+              Looks up a localized string similar to Paste.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Hyperlink_CopyHyperlink">
+            <summary>
+              Looks up a localized string similar to Copy Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Hyperlink_OpenHyperlink">
+            <summary>
+              Looks up a localized string similar to Open Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Hyperlink_RemoveHyperlink">
+            <summary>
+              Looks up a localized string similar to Remove Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Hyperlink_SelectHyperlink">
+            <summary>
+              Looks up a localized string similar to Select Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Hyperlink_ShowEditHyperlinkPropertiesDialog">
+            <summary>
+              Looks up a localized string similar to Edit Hyperlink....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Hyperlink_ShowHyperlinkPropertiesDialog">
+            <summary>
+              Looks up a localized string similar to Hyperlink....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_SpellChecker_AddingWordsNotAvailable">
+            <summary>
+              Looks up a localized string similar to Adding words is not available at the moment..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_SpellChecker_AddToDictionary">
+            <summary>
+              Looks up a localized string similar to Add to Dictionary.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_SpellChecker_IgnoreWord">
+            <summary>
+              Looks up a localized string similar to Ignore.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_SpellChecker_NoSpellingSuggestions">
+            <summary>
+              Looks up a localized string similar to (No Spelling Suggestions).
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_SpellChecker_ShowSpellCheckingDialog">
+            <summary>
+              Looks up a localized string similar to Spelling....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_AutoFit">
+            <summary>
+              Looks up a localized string similar to AutoFit.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_AutoFitToWindow">
+            <summary>
+              Looks up a localized string similar to AutoFit to Window.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_CellAlignment">
+            <summary>
+              Looks up a localized string similar to Cell Alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_Delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_DeleteColumn">
+            <summary>
+              Looks up a localized string similar to Delete Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_DeleteRow">
+            <summary>
+              Looks up a localized string similar to Delete Row.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_DeleteTable">
+            <summary>
+              Looks up a localized string similar to Delete Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_FixedColumnWidth">
+            <summary>
+              Looks up a localized string similar to Fixed Column Width.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_Insert">
+            <summary>
+              Looks up a localized string similar to Insert.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_InsertColumnToTheLeft">
+            <summary>
+              Looks up a localized string similar to Insert Column to the Left.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_InsertColumnToTheRight">
+            <summary>
+              Looks up a localized string similar to Insert Column to the Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_InsertRowAbove">
+            <summary>
+              Looks up a localized string similar to Insert Row Above.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_InsertRowBelow">
+            <summary>
+              Looks up a localized string similar to Insert Row Below.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_MergeCells">
+            <summary>
+              Looks up a localized string similar to Merge Cells.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_Select">
+            <summary>
+              Looks up a localized string similar to Select.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_SelectCell">
+            <summary>
+              Looks up a localized string similar to Select Cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_SelectColumn">
+            <summary>
+              Looks up a localized string similar to Select Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_SelectRow">
+            <summary>
+              Looks up a localized string similar to Select Row.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_SelectTable">
+            <summary>
+              Looks up a localized string similar to Select Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_TableBordersProperties">
+            <summary>
+              Looks up a localized string similar to Table Borders....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Table_TableProperties">
+            <summary>
+              Looks up a localized string similar to Table Properties....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Text_ShowFontPropertiesDialog">
+            <summary>
+              Looks up a localized string similar to Font....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ContextMenu_Text_ShowParagraphPropertiesDialog">
+            <summary>
+              Looks up a localized string similar to Paragraph....
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_FindNext">
+            <summary>
+              Looks up a localized string similar to Find Next.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_FinishedSearching">
+            <summary>
+              Looks up a localized string similar to Finished searching the document..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_Header">
+            <summary>
+              Looks up a localized string similar to Find/Replace.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_MadeReplacements">
+            <summary>
+              Looks up a localized string similar to {0} replacements made..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_Replace">
+            <summary>
+              Looks up a localized string similar to Replace.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_ReplaceAll">
+            <summary>
+              Looks up a localized string similar to Replace All.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_ReplaceWith">
+            <summary>
+              Looks up a localized string similar to Replace with.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_RestartSearch">
+             <summary>
+               Looks up a localized string similar to The searched text was not found to the end of the document. Restart search from the beginning?
+            Searched Text:&quot;{0}&quot;.
+             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_SearchedTextNotFound">
+             <summary>
+               Looks up a localized string similar to The searched text was not found:
+            &quot;{0}&quot;.
+             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FindReplaceDialog_TextToFind">
+            <summary>
+              Looks up a localized string similar to Text to find.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Effects">
+            <summary>
+              Looks up a localized string similar to Effects:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Effects_Strikethrough">
+            <summary>
+              Looks up a localized string similar to Strikethrough.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Effects_Subscript">
+            <summary>
+              Looks up a localized string similar to Subscript.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Effects_Superscript">
+            <summary>
+              Looks up a localized string similar to Superscript.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Font">
+            <summary>
+              Looks up a localized string similar to Font:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_FontColor">
+            <summary>
+              Looks up a localized string similar to Font color:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_FontStyle">
+            <summary>
+              Looks up a localized string similar to Font style:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_FontStyles_Bold">
+            <summary>
+              Looks up a localized string similar to Bold.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_FontStyles_BoldItalic">
+            <summary>
+              Looks up a localized string similar to Bold and Italic.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_FontStyles_Italic">
+            <summary>
+              Looks up a localized string similar to Italic.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_FontStyles_Regular">
+            <summary>
+              Looks up a localized string similar to Regular.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Header">
+            <summary>
+              Looks up a localized string similar to Font.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_HighlightColor">
+            <summary>
+              Looks up a localized string similar to Highlight color:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_Size">
+            <summary>
+              Looks up a localized string similar to Size:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles">
+            <summary>
+              Looks up a localized string similar to Underline Styles.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_DashedLine">
+            <summary>
+              Looks up a localized string similar to Dashed line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_DotDashedLine">
+            <summary>
+              Looks up a localized string similar to Dot-dashed line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_DotDotDashedLine">
+            <summary>
+              Looks up a localized string similar to Dot-dot-dashed line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_DottedLine">
+            <summary>
+              Looks up a localized string similar to Dotted line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_DoubleLine">
+            <summary>
+              Looks up a localized string similar to Double line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_Line">
+            <summary>
+              Looks up a localized string similar to Line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_ThickLine">
+            <summary>
+              Looks up a localized string similar to Thick line.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_FontPropertiesDialog_UnderlineStyles_Wave">
+            <summary>
+              Looks up a localized string similar to Wave.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_Address">
+            <summary>
+              Looks up a localized string similar to Address:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_ExistingFrameOrWebpage">
+            <summary>
+              Looks up a localized string similar to Existing file or web page.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_Header">
+            <summary>
+              Looks up a localized string similar to Insert Hyperlink.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_InvalidAddress">
+            <summary>
+              Looks up a localized string similar to Address should not be empty.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_InvalidBookmark">
+            <summary>
+              Looks up a localized string similar to Please select bookmark item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_InvalidText">
+            <summary>
+              Looks up a localized string similar to Text should not be empty.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_LinkTo">
+            <summary>
+              Looks up a localized string similar to Link to:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_NewWindow">
+            <summary>
+              Looks up a localized string similar to New window.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_PlaceInDocument">
+            <summary>
+              Looks up a localized string similar to Place in the document.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_SameFrame">
+            <summary>
+              Looks up a localized string similar to Same frame.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_SelectBookmark">
+            <summary>
+              Looks up a localized string similar to Select bookmark.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_SelectionInDocument">
+            <summary>
+              Looks up a localized string similar to &lt;&lt;Selection in Document&gt;&gt;.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_TargetFrame">
+            <summary>
+              Looks up a localized string similar to Target frame:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertHyperlinkDialog_TextToDisplay">
+            <summary>
+              Looks up a localized string similar to Text to display:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertSymbolDialog_Filter">
+            <summary>
+              Looks up a localized string similar to Filter:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertSymbolDialog_Font">
+            <summary>
+              Looks up a localized string similar to Font:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertSymbolDialog_Header">
+            <summary>
+              Looks up a localized string similar to Insert Symbol.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertTableDialog_Header">
+            <summary>
+              Looks up a localized string similar to Insert Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertTableDialog_NumberMustBeBetween">
+            <summary>
+              Looks up a localized string similar to The number must be between {0} and {1}..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertTableDialog_NumberOfColumns">
+            <summary>
+              Looks up a localized string similar to Number of columns:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertTableDialog_NumberOfRows">
+            <summary>
+              Looks up a localized string similar to Number of rows:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_InsertTableDialog_TableSize">
+            <summary>
+              Looks up a localized string similar to Table size.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_Add">
+            <summary>
+              Looks up a localized string similar to Add.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_BookmarkName">
+            <summary>
+              Looks up a localized string similar to Bookmark name:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_Delete">
+            <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_GoTo">
+            <summary>
+              Looks up a localized string similar to Go To.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_Header">
+            <summary>
+              Looks up a localized string similar to Bookmarks.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_SortBy">
+            <summary>
+              Looks up a localized string similar to Sort by:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_SortByLocation">
+            <summary>
+              Looks up a localized string similar to Location.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ManageBookmarksDialog_SortByName">
+            <summary>
+              Looks up a localized string similar to Name.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_OpenDocumentCommand_TheFileCannotBeOpened">
+            <summary>
+              Looks up a localized string similar to The file cannot be opened..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_OpenDocumentCommand_TheFileIsLocked">
+            <summary>
+              Looks up a localized string similar to The file cannot be opened. It might be locked by another application..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_OpenDocumentCommand_UnsupportedFileFormat">
+            <summary>
+              Looks up a localized string similar to Unsupported file format..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_Alignment">
+            <summary>
+              Looks up a localized string similar to Alignment:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_BackgroundColor">
+            <summary>
+              Looks up a localized string similar to Background color:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_General">
+            <summary>
+              Looks up a localized string similar to General.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_Header">
+            <summary>
+              Looks up a localized string similar to Paragraph Properties.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_Indentation">
+            <summary>
+              Looks up a localized string similar to Indentation.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LeftIndentation">
+            <summary>
+              Looks up a localized string similar to Left:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing">
+            <summary>
+              Looks up a localized string similar to Line spacing:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing_AtLeast">
+            <summary>
+              Looks up a localized string similar to At least.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing_Double">
+            <summary>
+              Looks up a localized string similar to Double.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing_Exactly">
+            <summary>
+              Looks up a localized string similar to Exactly.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing_LineAndAHalf">
+            <summary>
+              Looks up a localized string similar to 1.5 lines.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing_Multiple">
+            <summary>
+              Looks up a localized string similar to Multiple.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacing_Single">
+            <summary>
+              Looks up a localized string similar to Single.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_LineSpacingAt">
+            <summary>
+              Looks up a localized string similar to At:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_RightIndentation">
+            <summary>
+              Looks up a localized string similar to Right:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_Spacing">
+            <summary>
+              Looks up a localized string similar to Spacing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_SpacingAfter">
+            <summary>
+              Looks up a localized string similar to After:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_SpacingBefore">
+            <summary>
+              Looks up a localized string similar to Before:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_TextAlignment_Center">
+            <summary>
+              Looks up a localized string similar to Center.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_TextAlignment_Justify">
+            <summary>
+              Looks up a localized string similar to Justify.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_TextAlignment_Left">
+            <summary>
+              Looks up a localized string similar to Left.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_ParagraphPropertiesDialog_TextAlignment_Right">
+            <summary>
+              Looks up a localized string similar to Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_RadRichTextBox_ContinueToNextCommentFromBeginningOfDocument">
+            <summary>
+              Looks up a localized string similar to Do you want to continue searching from the beginning of the document?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_RadRichTextBox_ContinueToPreviousCommentFromEndOfDocument">
+            <summary>
+              Looks up a localized string similar to Do you want to continue searching from the end of the document?.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_RadRichTextBox_FinishedSpellChecking">
+            <summary>
+              Looks up a localized string similar to Finished spell checking..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_RadRichTextBox_HyperlinkToolTipFormatString">
+             <summary>
+               Looks up a localized string similar to {0}
+            {1} to follow link.
+             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SaveCommand_UnableToSaveFile">
+            <summary>
+              Looks up a localized string similar to Unable to save the file..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SaveCommand_UnsupportedFileFormat">
+            <summary>
+              Looks up a localized string similar to Unsupported file format..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_AddToDictionary">
+            <summary>
+              Looks up a localized string similar to Add to Dictionary.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_Change">
+            <summary>
+              Looks up a localized string similar to Change.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_Header">
+            <summary>
+              Looks up a localized string similar to Spell checking.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_IgnoreAll">
+            <summary>
+              Looks up a localized string similar to Ignore All.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_NotInDictionary">
+            <summary>
+              Looks up a localized string similar to Not in Dictionary:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_SpellingCheckIsComplete">
+            <summary>
+              Looks up a localized string similar to The spelling check is complete..
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_SpellCheckingDialog_Suggestions">
+            <summary>
+              Looks up a localized string similar to Suggestions:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableAndCellPadding_AllTheSame">
+            <summary>
+              Looks up a localized string similar to All the same.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableAndCellPadding_Bottom">
+            <summary>
+              Looks up a localized string similar to Bottom:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableAndCellPadding_Left">
+            <summary>
+              Looks up a localized string similar to Left:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableAndCellPadding_Right">
+            <summary>
+              Looks up a localized string similar to Right:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableAndCellPadding_Top">
+            <summary>
+              Looks up a localized string similar to Top:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_All">
+            <summary>
+              Looks up a localized string similar to All.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_ApplyBordersText">
+            <summary>
+              Looks up a localized string similar to Click on the image or use the buttons to apply borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_Box">
+            <summary>
+              Looks up a localized string similar to Box.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_Custom">
+            <summary>
+              Looks up a localized string similar to Custom.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_Grid">
+            <summary>
+              Looks up a localized string similar to Grid.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_None">
+            <summary>
+              Looks up a localized string similar to None.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorders_Setting">
+            <summary>
+              Looks up a localized string similar to Setting:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBordersDialog_CellBorders">
+            <summary>
+              Looks up a localized string similar to Cell Borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBordersDialog_Header">
+            <summary>
+              Looks up a localized string similar to Table Properties.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBordersDialog_TableBorders">
+            <summary>
+              Looks up a localized string similar to Table Borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorderSelector_AutomaticColorName">
+            <summary>
+              Looks up a localized string similar to Automatic.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorderSelector_Color">
+            <summary>
+              Looks up a localized string similar to Color:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorderSelector_Preview">
+            <summary>
+              Looks up a localized string similar to Preview:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorderSelector_Style">
+            <summary>
+              Looks up a localized string similar to Style:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableBorderSelector_Width">
+            <summary>
+              Looks up a localized string similar to Width:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellBorders_ApplyBordersText">
+            <summary>
+              Looks up a localized string similar to Click on the image or use the buttons to apply borders.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellBorders_Box">
+            <summary>
+              Looks up a localized string similar to Box.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellBorders_Custom">
+            <summary>
+              Looks up a localized string similar to Custom.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellBorders_None">
+            <summary>
+              Looks up a localized string similar to None.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellBorders_Setting">
+            <summary>
+              Looks up a localized string similar to Setting:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_Background">
+            <summary>
+              Looks up a localized string similar to Background.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_CellPaddings">
+            <summary>
+              Looks up a localized string similar to Cell Paddings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_Color">
+            <summary>
+              Looks up a localized string similar to Color:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_TextAlignment">
+            <summary>
+              Looks up a localized string similar to TextAlignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_TextAlignment_Center">
+            <summary>
+              Looks up a localized string similar to Center.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_TextAlignment_Justified">
+            <summary>
+              Looks up a localized string similar to Justified.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_TextAlignment_Left">
+            <summary>
+              Looks up a localized string similar to Left.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_TextAlignment_Right">
+            <summary>
+              Looks up a localized string similar to Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_VerticalAlignment">
+            <summary>
+              Looks up a localized string similar to Vertical Alignment.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_VerticalAlignment_Bottom">
+            <summary>
+              Looks up a localized string similar to Bottom.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_VerticalAlignment_Middle">
+            <summary>
+              Looks up a localized string similar to Middle.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableCellProperties_VerticalAlignment_Top">
+            <summary>
+              Looks up a localized string similar to Top.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_DefaultCellPaddings">
+            <summary>
+              Looks up a localized string similar to Default cell paddings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_DefaultCellSpacing">
+            <summary>
+              Looks up a localized string similar to Default cell spacing.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableProperties_SpacingBetweenCells">
+            <summary>
+              Looks up a localized string similar to Spacing between cells:.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TablePropertiesDialog_Cell">
+            <summary>
+              Looks up a localized string similar to Cell.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TablePropertiesDialog_Column">
+            <summary>
+              Looks up a localized string similar to Column.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TablePropertiesDialog_Header">
+            <summary>
+              Looks up a localized string similar to Table Properties.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TablePropertiesDialog_Table">
+            <summary>
+              Looks up a localized string similar to Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableSizePicker_InsertTable">
+            <summary>
+              Looks up a localized string similar to Insert Table.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.Documents_TableSizePicker_TableSize">
+            <summary>
+              Looks up a localized string similar to {0}x{1} Table.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.DragDropMissingAdornerLayer">
@@ -15004,6 +15597,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.ExpandHierarchyItem">
             <summary>
               Looks up a localized string similar to Expand.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ExpressionEditor_InsertTextCommand_Description">
+            <summary>
+              Looks up a localized string similar to Insert text.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.ExtendSelectionToCurrentUnit">
@@ -15251,6 +15849,11 @@
               Looks up a localized string similar to High Importance.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.HtmlPlaceholderWindowlessMessage">
+            <summary>
+              Looks up a localized string similar to RadHtmlPlaceholder design time content. Please make sure that the &quot;Windowless&quot; parameter of the Silverlight application is set to &quot;True&quot;..
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.InvalidRecurrenceRuleMessage">
             <summary>
               Looks up a localized string similar to The Recurrence pattern is not valid..
@@ -15386,6 +15989,21 @@
               Looks up a localized string similar to W.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MaskedInputErrorMessageInvalid">
+            <summary>
+              Looks up a localized string similar to Invalid input.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MaskedInputErrorMessageRequired">
+            <summary>
+              Looks up a localized string similar to Required input.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MaskedInputErrorMessageValidation">
+            <summary>
+              Looks up a localized string similar to Validation error.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.Maximize">
             <summary>
               Looks up a localized string similar to Maximize.
@@ -15461,9 +16079,34 @@
               Looks up a localized string similar to month(s).
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MoveBottom">
+            <summary>
+              Looks up a localized string similar to Move Bottom.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.MoveDown">
             <summary>
               Looks up a localized string similar to Move Down.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MoveEnd">
+            <summary>
+              Looks up a localized string similar to Move End.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MoveFirst">
+            <summary>
+              Looks up a localized string similar to Move First.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MoveHome">
+            <summary>
+              Looks up a localized string similar to Move Home.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MoveLast">
+            <summary>
+              Looks up a localized string similar to Move Last.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.MoveLeft">
@@ -15476,6 +16119,16 @@
               Looks up a localized string similar to Move Next.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MovePageDown">
+            <summary>
+              Looks up a localized string similar to Move PageDown.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MovePageUp">
+            <summary>
+              Looks up a localized string similar to Move PageUp.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Strings.MovePrevious">
             <summary>
               Looks up a localized string similar to Move Previous.
@@ -15484,6 +16137,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.MoveRight">
             <summary>
               Looks up a localized string similar to Move Right.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.MoveTop">
+            <summary>
+              Looks up a localized string similar to Move Top.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.MoveUp">
@@ -15634,6 +16292,11 @@
         <member name="P:Telerik.Windows.Controls.Strings.RemoveRecurrence">
             <summary>
               Looks up a localized string similar to Remove Recurrence.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Strings.ResetAll">
+            <summary>
+              Looks up a localized string similar to Reset All.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Strings.ResizeOccurrence">
@@ -17640,6 +18303,406 @@
             <summary>
             The caret will be moved at the end of the text.
             </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.SelectionOnFocus.Default">
+            <summary>
+            The default.
+            </summary>
+        </member>
+        <member name="T:System.Windows.CanExecuteChangedEventManager">
+            <summary>
+            Provides a WeakEventManager implementation so that you can use the "weak event listener" pattern to attach listeners for the ICommand.CanExecuteChanged events.
+            </summary>
+        </member>
+        <member name="T:System.Windows.WeakEventManager`1">
+            <summary>
+            Provides a base class for the event manager that is used in the weak event pattern. The manager adds and removes listeners for events (or callbacks) that also use the pattern.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.#ctor">
+            <summary>
+            Initializes base class values when it is used as the initializer by the constructor of a derived class. 
+            </summary>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.GetCurrentManager(System.Type)">
+            <summary>
+            Returns the WeakEventManager implementation that is used for the provided type.
+            </summary>
+            <param name="managerType">The type to obtain the WeakEventManager for.</param>
+            <returns>The matching WeakEventManager implementation.</returns>
+            <remarks>ReceiveWeakEvent implementations call this method using their passed managerType.
+            The returned WeakEventManager is then used as the differentiator that determines which event was received, and which private class handler to invoke.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.SetCurrentManager(System.Type,System.Windows.WeakEventManager{`0})">
+            <summary>
+            Sets the current manager for the specified manager type.
+            </summary>
+            <param name="managerType">The type to set the new event manager.</param>
+            <param name="manager">The new event manager.</param>
+            <remarks>Call the SetCurrentManager method to initialize a manager, if that is required by a call to your CurrentManager property on a WeakEventManager implementation.</remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.CheckForNull(System.Object,System.String)">
+            <summary>
+            Helper method that throw ArgumentNullException if given source is null.
+            </summary>
+            <param name="source">The element that is check for null.</param>
+            <param name="argumentName">The name that should be passed to ArgumentNullException constructor.</param>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.StartListening(System.Object)">
+            <summary>
+            When overridden in a derived class, starts listening for the event being managed. After the StartListening method is first called, the manager should be in the state of calling DeliverEvent or DeliverEventToList whenever the relevant event from the provided source is handled.
+            </summary>
+            <param name="source">The source to begin listening on.</param>
+            <remarks>Notes to Inheritors
+            StartListening overrides should add a handler to the provided source. The handler is declared by the manager itself.
+            The class handler should not be public, and it should only be called in response to the event being managed.
+            The class handler should call the DeliverEvent method or the DeliverEventToList method appropriately.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.StopListening(System.Object)">
+            <summary>
+            When overridden in a derived class, stops listening on the provided source for the event being managed.
+            </summary>
+            <param name="source">The source to stop listening on.</param>
+            <remarks>Notes to Inheritors
+            StopListening implementations should remove the class handler as added by the StartListening method.
+            Removing a listener should not clear the listener list. Instead, it should only disconnect the class handler (perhaps temporarily).
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ProtectedAddListener(`0,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the provided listener to the provided source for the event being managed.
+            </summary>
+            <param name="source">The source to attach listeners to.</param>
+            <param name="listener">The listening class (which must implement IWeakEventListener).</param>
+            <remarks>Call this method within your manager class AddListener methods on WeakEventManager implementations.
+            AddListener is the suggested name for the static method you define on your manager class to enable other classes to add a listener for your weak event pattern.
+            AddListener should take two parameters: the source where the listener is attached, and the listener instance.
+            For your AddListener implementation, call the ProtectedAddListener method on the current manager and pass the same two parameters.
+            If the list of listeners was previously empty, ProtectedAddListener calls the StartListening method internally, which will call your specific StartListening override through polymorphism.
+            ProtectedAddListener adds listeners to a single internal WeakEventManager.ListenerList per source. If your manager implementation maintains more than one list of listeners for each event-source combination, do not use ProtectedAddListener.
+            Instead, your implementation should create its own WeakEventManager.ListenerList instances, AddListener should add listeners to the appropriate list, and events should be delivered to the appropriate listener list by calling the DeliverEventToList event instead of the DeliverEvent method.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ProtectedRemoveListener(`0,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes a previously added listener from the provided source.
+            </summary>
+            <param name="source">The source to remove listeners from.</param>
+            <param name="listener">The listening class (which must implement IWeakEventListener).</param>
+            <remarks>Call this method within your manager class RemoveListener methods on WeakEventManager implementations.
+            RemoveListener is the suggested name for the static method you define on your manager class to enable other classes to remove a listener for your weak event pattern.
+            RemoveListener should take two parameters: the source where the listener is removed, and the listener class. For your RemoveListener implementation, call the ProtectedRemoveListener method on the current manager and pass the same two parameters.
+            If a call to ProtectedRemoveListener removes the last listener in the list, ProtectedRemoveListener calls the StopListening method internally, which will call your specific StopListening override through polymorphism.
+            ProtectedRemoveListener removes listeners from a single internal WeakEventManager.ListenerList per source. If your manager implementation maintains more than one list of listeners for each event-source combination, do not use ProtectedRemoveListener.
+            Instead, your implementation should create its own WeakEventManager.ListenerList instances, RemoveListener should remove listeners from the appropriate list, and events should be delivered to the appropriate listener list by calling the DeliverEventToList method instead of the DeliverEvent method.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager{`0}.ListenerList)">
+            <summary>
+            Delivers the event being managed to each listener in the provided list.
+            </summary>
+            <param name="sender">The object on which the event is being handled.</param>
+            <param name="args">An EventArgs that contains the event data.</param>
+            <param name="list">The provided ListenerList.</param>
+            <remarks>This method is necessary if your manager implementation maintains separate listeners lists based on information that is captured in the event data.
+            If you use this advanced technique, you must create and maintain the separate lists as part of your manager implementation, and you must provide a way to add listeners to a specific list.
+            Your handler implementation that listens to the raw event must act upon the condition that you use to differentiate the lists, and deliver the event only to the appropriate list or lists.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.DeliverEvent(System.Object,System.EventArgs)">
+            <summary>
+            Delivers the event being managed to each listener.
+            </summary>
+            <param name="sender">The object on which the event is being handled.</param>
+            <param name="args">An EventArgs that contains the event data for the event to deliver.</param>
+            <remarks>Call the DeliverEvent method from within the event handlers that are added or removed by the StartListening and StopListening implementations of subclasses.
+            If you call the ProtectedAddListener method in your AddListener implementation of your class, the list of listeners receiving the event is kept in an underlying collection. (AddListener is not part of an interface or class contract. AddListener is the suggested name for the method of your manager class that calls ProtectedAddListener and adds weak event pattern listeners for the event.)
+            ProtectedAddListener adds listeners to a single list. If your manager implementation maintains more than one list of listeners per event, do not use DeliverEvent or ProtectedAddListener. Instead, your implementation should create its own WeakEventManager.ListenerList instances, AddListener should add listeners to the appropriate list, and events should be delivered to the appropriate listener list by calling DeliverEventToList.
+            </remarks>
+        </member>
+        <member name="T:System.Windows.WeakEventManager`1.ListenerList">
+            <summary>
+            Provides a built-in collection list for storing listeners for a WeakEventManager.
+            </summary>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.#ctor">
+            <summary>
+            Initializes a new instance of the WeakEventManager.ListenerList class.
+            </summary>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the WeakEventManager.ListenerList class with the specified initial capacity.
+            </summary>
+            <param name="capacity"></param>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.Add(System.Windows.IWeakEventListener)">
+            <summary>
+            Adds a listener item to the WeakEventManager.ListenerList.
+            </summary>
+            <param name="listener">The listener element to add to the WeakEventManager.ListenerList.</param>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.BeginUse">
+            <summary>
+            Declares the list to be in use. This prevents direct changes to the list during iterations of the list items.
+            </summary>
+            <returns>true if the list was already declared to be in use; otherwise, false.</returns>
+            <remarks>A WeakEventManager implementation should call BeginUse before iterating through the list to deliver an event to the listeners, and should call EndUse when it is done.
+            This prevents another caller from modifying the list while the iteration for purposes of event delivery is in progress. If the list is modified during this time, then the list is cloned.
+            If the list is cloned, then PrepareForWriting returns true, which means that you have missed a recent listener change in the last delivery.
+            </remarks>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.Clone">
+            <summary>
+            Creates a modifiable clone of this WeakEventManager.ListenerList.
+            </summary>
+            <returns>A modifiable clone of the current object.</returns>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.EndUse">
+            <summary>
+            Unlocks the locked state initiated by BeginUse.
+            </summary>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.PrepareForWriting(System.Windows.WeakEventManager{`0}.ListenerList@)">
+            <summary>
+            Checks to see whether the provided list is in use, and if so, sets the list reference parameter to a copy of that list rather than the original.
+            </summary>
+            <param name="list">The list to check for use state and potentially copy.</param>
+            <returns>true if the provided list was in use at the time of call and therefore the list parameter reference was reset to be a copy. false if the provided list was not in use, in which case the list parameter reference remains unaltered.</returns>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.Purge">
+            <summary>
+            Removes all entries from the list where the underlying reference target is a null reference.
+            </summary>
+            <returns>Returns true if any entries were purged; otherwise, false.</returns>
+        </member>
+        <member name="M:System.Windows.WeakEventManager`1.ListenerList.Remove(System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the first occurrence of a listener item from the WeakEventManager.ListenerList.
+            </summary>
+            <param name="listener">The item to remove.</param>
+        </member>
+        <member name="P:System.Windows.WeakEventManager`1.ListenerList.Empty">
+            <summary>
+            Gets a value that represents an empty list for purposes of comparisons.
+            </summary>
+        </member>
+        <member name="P:System.Windows.WeakEventManager`1.ListenerList.Count">
+            <summary>
+            Gets the number of items contained in the WeakEventManager.ListenerList.
+            </summary>
+        </member>
+        <member name="P:System.Windows.WeakEventManager`1.ListenerList.IsEmpty">
+            <summary>
+            Gets a value that declares whether this WeakEventManager.ListenerList is empty.
+            </summary>
+        </member>
+        <member name="P:System.Windows.WeakEventManager`1.ListenerList.Item(System.Int32)">
+            <summary>
+            Gets a value that declares whether this WeakEventManager.ListenerList is empty.
+            </summary>
+            <param name="index">The zero-based index of the listener in the list.</param>
+            <returns>The item at that index, or a null reference if no item was at that index.</returns>
+        </member>
+        <member name="M:System.Windows.CanExecuteChangedEventManager.AddListener(System.Windows.Input.ICommand,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the provided listener to the list of listeners on the provided source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+        </member>
+        <member name="M:System.Windows.CanExecuteChangedEventManager.RemoveListener(System.Windows.Input.ICommand,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the specified listener from the list of listeners on the provided source.
+            </summary>
+            <param name="source">The object to remove the listener from.</param>
+            <param name="listener">The listener to remove.</param>
+        </member>
+        <member name="M:System.Windows.CanExecuteChangedEventManager.StartListening(System.Object)">
+            <summary>
+            Begins listening for the CanExecuteChanged event on the given source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="M:System.Windows.CanExecuteChangedEventManager.StopListening(System.Object)">
+            <summary>
+            Stops listening for the CanExecuteChanged event on the given source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="T:System.Collections.Specialized.CollectionChangedEventManager">
+            <summary>
+            Provides a WeakEventManager implementation so that you can use the "weak event listener" pattern to attach listeners for the CollectionChanged event.
+            </summary>
+        </member>
+        <member name="M:System.Collections.Specialized.CollectionChangedEventManager.AddListener(System.Collections.Specialized.INotifyCollectionChanged,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the specified listener to the CollectionChanged event of the specified source. 
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.CollectionChangedEventManager.RemoveListener(System.Collections.Specialized.INotifyCollectionChanged,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the specified listener from the CollectionChanged event of the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The listener to remove.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.CollectionChangedEventManager.StartListening(System.Object)">
+            <summary>
+            Begins listening for the CollectionChanged event on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="M:System.Collections.Specialized.CollectionChangedEventManager.StopListening(System.Object)">
+            <summary>
+            Stops listening for the CollectionChanged event on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="T:System.ComponentModel.CurrentChangedEventManager">
+            <summary>
+            Provides a WeakEventManager implementation so that you can use the "weak event listener" pattern to attach listeners for the CurrentChanged event.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangedEventManager.AddListener(System.ComponentModel.ICollectionView,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the specified listener to the CurrentChanged event of the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangedEventManager.RemoveListener(System.ComponentModel.ICollectionView,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the specified listener from the CurrentChanged event of the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The listener to remove.</param>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangedEventManager.StartListening(System.Object)">
+            <summary>
+            Begins listening for the CurrentChanged event on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangedEventManager.StopListening(System.Object)">
+            <summary>
+            Stops listening for the CurrentChanged event on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="T:System.ComponentModel.CurrentChangingEventManager">
+            <summary>
+            Provides a WeakEventManager implementation so that you can use the "weak event listener" pattern to attach listeners for the CurrentChanging event.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangingEventManager.AddListener(System.ComponentModel.ICollectionView,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the specified listener to the CurrentChanging event of the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangingEventManager.RemoveListener(System.ComponentModel.ICollectionView,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the specified listener from the CurrentChanging event of the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The listener to remove.</param>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangingEventManager.StartListening(System.Object)">
+            <summary>
+            Begins listening for the CurrentChanging event on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="M:System.ComponentModel.CurrentChangingEventManager.StopListening(System.Object)">
+            <summary>
+            Stops listening for the CurrentChanging event on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+        </member>
+        <member name="T:System.Windows.IWeakEventListener">
+            <summary>
+            Provides event listening support for classes that expect to receive events through the WeakEvent pattern and a WeakEventManager.
+            </summary>
+        </member>
+        <member name="M:System.Windows.IWeakEventListener.ReceiveWeakEvent(System.Type,System.Object,System.EventArgs)">
+            <summary>
+            Receives events from the centralized event manager.
+            </summary>
+            <param name="managerType">The type of the WeakEventManager calling this method.</param>
+            <param name="sender">Object that originated the event.</param>
+            <param name="e">Event data.</param>
+            <returns>true if the listener handled the event. It is considered an error by the WeakEventManager handling in WPF to register a listener for an event that the listener does not handle. Regardless, the method should return false if it receives an event that it does not recognize or handle.</returns>
+        </member>
+        <member name="T:System.Windows.LostFocusEventManager">
+            <summary>
+            Provides a WeakEventManager implementation so that you can use the "weak event listener" pattern to attach listeners for the UIElement.LostFocus events.
+            </summary>
+        </member>
+        <member name="M:System.Windows.LostFocusEventManager.AddListener(System.Windows.UIElement,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the provided listener to the list of listeners on the provided source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+        </member>
+        <member name="M:System.Windows.LostFocusEventManager.RemoveListener(System.Windows.UIElement,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the specified listener from the list of listeners on the provided source.
+            </summary>
+            <param name="source">The object to remove the listener from.</param>
+            <param name="listener">The listener to remove.</param>
+        </member>
+        <member name="M:System.Windows.LostFocusEventManager.StartListening(System.Object)">
+            <summary>
+            Begins listening for the LostFocus event on the given source.
+            </summary>
+            <param name="source">The object on which to start listening for the pertinent LostFocus event.</param>
+        </member>
+        <member name="M:System.Windows.LostFocusEventManager.StopListening(System.Object)">
+            <summary>
+            Stops listening for the LostFocus event on the given source.
+            </summary>
+            <param name="source">The source object on which to stop listening for LostFocus.</param>
+        </member>
+        <member name="T:System.ComponentModel.PropertyChangedEventManager">
+            <summary>
+            Provides a WeakEventManager implementation so that you can use the "weak event listener" pattern to attach listeners for the PropertyChanged event.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.PropertyChangedEventManager.AddListener(System.ComponentModel.INotifyPropertyChanged,System.Windows.IWeakEventListener,System.String)">
+            <summary>
+            Adds the specified listener to the list of listeners on the specified source.
+            </summary>
+            <param name="source">The object with the event.</param>
+            <param name="listener">The object to add as a listener.</param>
+            <param name="propertyName">The name of the property that exists on source upon which to listen for changes. Set to string.Empty to indicate "any property".</param>
+        </member>
+        <member name="M:System.ComponentModel.PropertyChangedEventManager.RemoveListener(System.ComponentModel.INotifyPropertyChanged,System.Windows.IWeakEventListener,System.String)">
+            <summary>
+            Removes the specified listener from the list of listeners on the provided source.
+            </summary>
+            <param name="source">The object to remove the listener from.</param>
+            <param name="listener">The listener to remove.</param>
+            <param name="propertyName">The name of the property that exists on source upon which to stop listening for changes. Set to string.Empty to indicate "any property".</param>
+        </member>
+        <member name="M:System.ComponentModel.PropertyChangedEventManager.StartListening(System.Object)">
+            <summary>
+            Begins listening for the PropertyChanged event on the provided source.
+            </summary>
+            <param name="source">The object on which to start listening for PropertyChanged.</param>
+        </member>
+        <member name="M:System.ComponentModel.PropertyChangedEventManager.StopListening(System.Object)">
+            <summary>
+            Stops listening for the PropertyChanged event on the provided source.
+            </summary>
+            <param name="source">The source object on which to stop listening for PropertyChanged.</param>
         </member>
         <member name="T:Telerik.WebUI.PopupTracker">
             <summary>

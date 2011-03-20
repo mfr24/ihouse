@@ -75,12 +75,11 @@
             </summary>
             <param name="pane">The pane.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.Docking.AutoHideArea.OnSelectionChanged(System.Collections.IList,System.Collections.IList)">
+        <member name="M:Telerik.Windows.Controls.Docking.AutoHideArea.OnSelectionChanged(Telerik.Windows.Controls.RadSelectionChangedEventArgs)">
             <summary>
             Called when the selection is changed.
             </summary>
-            <param name="removedItems">The items removed from the selection.</param>
-            <param name="addedItems">The items added to the selection.</param>
+            <param name="args">The args for SelectionChangedEvent.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.Docking.AutoHideArea.GetContainerForItemOverride">
             <summary>
@@ -2421,12 +2420,11 @@
             </summary>
             <param name="e">Information about the change.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.RadPaneGroup.OnSelectionChanged(System.Collections.IList,System.Collections.IList)">
+        <member name="M:Telerik.Windows.Controls.RadPaneGroup.OnSelectionChanged(Telerik.Windows.Controls.RadSelectionChangedEventArgs)">
             <summary>
             Called when the selection is changed.
             </summary>
-            <param name="removedItems">The items removed from the selection.</param>
-            <param name="addedItems">The items added to the selection.</param>
+            <param name="args">The args for SelectionChanged event.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RadPaneGroup.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
             <summary>

@@ -45,6 +45,13 @@
             </summary>
             <value>The item properties.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataFilter.CompositeFilterViewModel.Descriptor">
+            <summary>
+            Gets the underlying ICompositeFilterDescriptor.
+            </summary>
+            <value>The underlying ICompositeFilterDescriptor.</value>
+            <remarks>This property is used by the filtering infrastructure and is not meant to be used directly from your code.</remarks>
+        </member>
         <member name="T:Telerik.Windows.Controls.Data.DataFilter.CompositeFilterViewModel.FilterViewModelCollection">
             <summary>
             FilterViewModelCollection.
@@ -324,6 +331,13 @@
             <value>
             	<c>true</c> if this instance can user create composite filters; otherwise, <c>false</c>.
             </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataFilter.FilterViewModel.Descriptor">
+            <summary>
+            Gets the underlying IFilterDescriptor.
+            </summary>
+            <value>The underlying IFilterDescriptor.</value>
+            <remarks>This property is used by the filtering infrastructure and is not meant to be used directly from your code.</remarks>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataFilter.FilterViewModel.AddFilterCommand">
             <summary>
@@ -640,6 +654,31 @@
             FilterCompositionLogicalOperator.And if the value is true, otherwise FilterCompositionLogicalOperator.Or.
             </returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter">
+            <summary>
+            FilterOperatorToSelectedItemConverter.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified value.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="targetType">Type of the target.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="culture">The culture.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataFilter.FilterOperatorToSelectedItemConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the back.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="targetType">Type of the target.</param>
+            <param name="parameter">The parameter.</param>
+            <param name="culture">The culture.</param>
+            <returns></returns>
+        </member>
         <member name="T:Telerik.Windows.Controls.RadDataFilter">
             <summary>
             Provides a user interface for creating filtering expressions.
@@ -913,10 +952,1282 @@
             Gets the underlying FilterDescriptor.
             </summary>
             <value>The underlying FilterDescriptor.</value>
+            <remarks>This property is used by the filtering infrastructure and is not meant to be used directly from your code.</remarks>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataFilter.UnboundQueryableCollectionView">
             <summary>
             Default implementation used for unbound mode.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.AddingNewItemEventArgs">
+            <summary>
+            AddingNewItemEventArgs.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.AutoGeneratingFieldEventArgs">
+            <summary>
+            Porvides data for the AutogeneratingField event.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.AutoGeneratingFieldEventArgs.#ctor(System.String,System.Type,Telerik.Windows.Controls.DataFormDataField)">
+            <summary>
+            Initializes a new instance of the AutoGeneratingFieldEventArgs class.
+            </summary>
+            <param name="propertyName"></param>
+            <param name="propertyType"></param>
+            <param name="dataField"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratingFieldEventArgs.PropertyName">
+            <summary>
+            Gets or sets the property name.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratingFieldEventArgs.PropertyType">
+            <summary>
+            Gets or sets the property type.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratingFieldEventArgs.DataField">
+            <summary>
+            Gets or sets the data field.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer">
+            <summary>
+            Represents an automation peer for the <see cref="T:Telerik.Windows.Controls.RadDataForm"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer.#ctor(Telerik.Windows.Controls.RadDataForm)">
+            <summary>
+             Initializes a new instance of the RadDataFormAutomationPeer class.
+            </summary>
+            <param name="owner">The <see cref="T:Telerik.Windows.Controls.RadDataForm"/>.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer.GetAutomationControlTypeCore">
+            <summary>
+            Returns the automation control type.
+            </summary>
+            <returns>The group automation control type.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer.GetClassNameCore">
+            <summary>
+            Returns the class name.
+            </summary>
+            <returns>The string "RadDataForm".</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer.GetNameCore">
+            <summary>
+            Returns the name.
+            </summary>
+            <returns>The <see cref="T:Telerik.Windows.Controls.RadDataForm"/> header content, if it is a string.</returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.RadDataFormAutomationPeer.OwningRadDataForm">
+            <summary>
+            Gets the owning <see cref="T:Telerik.Windows.Controls.RadDataForm"/>.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.CollectionNavigator">
+            <summary>
+            A control providing UI to navigate collections.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.CollectionNavigator.#ctor">
+            <summary>
+            Initializes a new instance of the CollectionNavigator class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.CollectionNavigator.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.DataFormCheckBoxField">
+            <summary>
+            Data field displaying and editing boolean data.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.DataFormDataField">
+            <summary>
+            A field  used to display and edit data in RadDataForm.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.ItemProperty">
+            <summary>
+            Represents  the Item dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDataField.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever 
+            application code or internal processes call 
+            <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.ModeProperty">
+            <summary>
+            Identifies the Mode dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.DescriptionProperty">
+            <summary>
+            Identifies the Description dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.LabelProperty">
+            <summary>
+            Identifies the Label dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.IsReadOnlyProperty">
+            <summary>
+            Identifies the IsReadOnly dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.IsRequiredProperty">
+            <summary>
+            Identifies the IsReadOnly dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDataField.#ctor">
+            <summary>
+            Initializes a new instance of the DataFormDataField class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDataField.PrepareControl">
+            <summary>
+            Prepares the inner control.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDataField.GetControl">
+            <summary>
+            Returns a control to display and edit the underlying data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDataField.GetControlBindingProperty">
+            <summary>
+            Returns the dependency property of the control to be bound to the underlying data.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormDataField.LabelPositionProperty">
+            <summary>
+            Represents the LabelPosition dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDataField.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.Item">
+            <summary>
+            The business object bound to the field.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.Description">
+            <summary>
+            Gets or sets the text displayed in the description viewer.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.Label">
+            <summary>
+            Gets or sets the content of the label displayed for this control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.IsReadOnly">
+            <summary>
+            Gets or sets a value that indicates whether the user can edit the values in the control.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.IsRequired">
+            <summary>
+            Gets or sets a value indicating whether this field is required.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.DataMemberBinding">
+            <summary>
+            Gets or sets the binding which points to the data member to display/edit  in the field.
+            </summary>
+            <value>The data member binding.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormDataField.LabelPosition">
+            <summary>
+            Gets or sets the position of lebels in data fields in RadDataForm.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormCheckBoxField.GetControl">
+            <summary>
+            Returns a control to display and edit the underlying data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormCheckBoxField.GetControlBindingProperty">
+            <summary>
+            Returns the dependency property of the control to be bound to the underlying data.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormCheckBoxField.IsThreeStateProperty">
+            <summary>
+            Represents the IsThreeState dependency proeprty. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormCheckBoxField.IsThreeState">
+            <summary>
+            Gets or sets a property indication whether the field is threestate.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.DataFormComboBoxField">
+            <summary>
+            Data field displaying and editing enum and lookup data. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormComboBoxField.GetControl">
+            <summary>
+            Returns a control to display and edit the underlying data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormComboBoxField.GetControlBindingProperty">
+            <summary>
+            Returns the dependency property of the control to be bound to the underlying data.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormComboBoxField.ItemsSourceProperty">
+            <summary>
+            Represents the ItemsSource dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormComboBoxField.SelectedValuePathProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.DataFormComboBoxField.SelectedValuePath"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.DataFormComboBoxField.DisplayMemberPathProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.DataFormComboBoxField.DisplayMemberPath"/> dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormComboBoxField.ItemsSource">
+            <summary>
+            Gets or Sets the ItemsSource to be used by the internal combo.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormComboBoxField.SelectedValuePath">
+            <summary>
+            Gets or sets the SelectedValuePath.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.DataFormComboBoxField.DisplayMemberPath">
+            <summary>
+            Gets or sets the DisplayMemberPath.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.DataFormDateField">
+            <summary>
+            <summary>
+            A field  used to display and edit dates in RadDataForm.
+            </summary>
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDateField.GetControl">
+            <summary>
+            Returns a control to display and edit the underlying data.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.DataFormDateField.GetControlBindingProperty">
+            <summary>
+            Returns the dependency property of the control to be bound to the underlying data.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter">
+            <summary>
+            Viewer for the fields contained in a RadDataForm.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.#ctor">
+            <summary>
+            Initializes a new instance of the AutoGeneratedFieldsPresenter class.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.FieldsPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.Fields"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.FieldsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.Fields"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.AutoGenerateFieldsProperty">
+            <summary>
+            Represents the AutoGenerateFields dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever 
+            application code or internal processes call 
+            <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.CurrentItemProperty">
+            <summary>
+            Represents the CurrentItem dependency property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.Fields">
+            <summary>
+            Gets the auto generated fields.
+            </summary>
+            <remarks>
+            </remarks>
+            <value>The auto generated fields.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.CurrentItem">
+            <summary>
+            The current item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.AutoGenerateFields">
+            <summary>
+            Gets or sets a value indicating whether fields will be autogenerated. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.AutoGeneratedFieldsPresenter.OwnerForm">
+            <summary>
+            Gets the owner form.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility">
+            <summary>
+            Determines which buttons to be visible in a RadDataForm.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.None">
+            <summary>
+            No command buttons will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.Add">
+            <summary>
+            AddNew button will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.Delete">
+            <summary>
+            DeleteButton will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.Edit">
+            <summary>
+            Edit button will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.Navigation">
+            <summary>
+            Collection navigation buttons will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.Commit">
+            <summary>
+            Commit button will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.Cancel">
+            <summary>
+            Cancel button will be visible.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.DataFormCommandButtonsVisibility.All">
+            <summary>
+            All buttons will be visible.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.DescriptionPresenter">
+            <summary>
+            Used to display the description of a property.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.DescriptionVisibilityConverter">
+            <summary>
+            Used to hide an UI element displaying text, when no text is present.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.DescriptionVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Choses visibility depending on a text being empty or not.
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.DescriptionVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            Not implemented. 
+            </summary>
+            <param name="value"></param>
+            <param name="targetType"></param>
+            <param name="parameter"></param>
+            <param name="culture"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.EditAction">
+            <summary>
+            The action on ending edit. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.EditAction.Cancel">
+            <summary>
+            Cancel the changes made.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.EditAction.Commit">
+            <summary>
+            Commit the changes made.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.EditEndedEventArgs">
+            <summary>
+            EditEndedEventArgs.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.EditEndedEventArgs.#ctor(Telerik.Windows.Controls.Data.DataForm.EditAction)">
+            <summary>
+            Initializes a new instance of the EditEndedEventArgs class.
+            </summary>
+            <param name="editAction"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.EditEndedEventArgs.EditAction">
+            <summary>
+            The action in edning edit.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.EditEndingEventArgs">
+            <summary>
+            EditEndingEventArgs.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.EditEndingEventArgs.#ctor(Telerik.Windows.Controls.Data.DataForm.EditAction)">
+            <summary>
+            Initializes a new instance of the EditEndingEventArgs class.
+            </summary>
+            <param name="editAction"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.EditEndingEventArgs.EditAction">
+            <summary>
+            The action in edning edit.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.FormViewModel">
+            <summary>
+            Provides a datacontext for datafields in a dataform.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.CurrentItem">
+            <summary>
+            Gets the current item. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.Mode">
+            <summary>
+            Gets the current mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.Items">
+            <summary>
+            The colections of data items. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.IsBoundToCollection">
+            <summary>
+            Identifies whether the ItemsSource property is in use in order to control the collection navigation UI visibility.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.AddNewButtonVisibility">
+            <summary>
+            Gets or sets a value indicating whether the Add New button will be visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.DeleteButtonVisibility">
+            <summary>
+            Gets or sets a value indicating whether the Delete button is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.EditButtonVisibility">
+            <summary>
+            Gets or sets a value indicating whether the Edit button is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.NavigationButtonsVisibility">
+            <summary>
+            Gets or sets a value indicating whether the collection navigation buttons are visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.CommitButtonVisibility">
+            <summary>
+            Gets or sets a value indicating whether the Commit button is visible.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.FormViewModel.CancelButtonVisibility">
+            <summary>
+            Gets or sets a value indicating whether the Cancel button is visible.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.ItemDeletedEventArgs">
+            <summary>
+            ItemDeletedEventArgs.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Data.DataForm.ItemDeletedEventArgs.#ctor(System.Object)">
+            <summary>
+            Initializes a new instance of the ItemDeletedEventArgs class.
+            </summary>
+            <param name="deletedItem"></param>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Data.DataForm.ItemDeletedEventArgs.DeletedItem">
+            <summary>
+            The item deleted.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.LabelPosition">
+            <summary>
+            Defines a position for the label in a datafield.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.LabelPosition.Beside">
+            <summary>
+            Label will be placed on the left of the field. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.LabelPosition.Above">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadDataForm">
+            <summary>
+            Provides UI and logic for displaying and editing data in a from layout.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.MoveCurrentToFirst">
+            <summary>
+            Moves the current item to the first position.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.MoveCurrentToLast">
+            <summary>
+            Moves the current item to the last position.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.MoveCurrentToNext">
+            <summary>
+            Moves the currernt item to the next position.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.MoveCurrentToPosition(System.Int32)">
+            <summary>
+            Moves the current item to the specified position.
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.MoveCurrentToPrevious">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.DataFieldStyleProperty">
+            <summary>
+            Represents the DataFieldStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.LabelPositionProperty">
+            <summary>
+            Represents the LabelPosition dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CommitButtonStyleProperty">
+            <summary>
+            Represents the CommitButtonStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CancelButtonStyleProperty">
+            <summary>
+            Represents the CancelButtonStyle dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.AutoGenerateFieldsProperty">
+            <summary>
+            Represents the AutoGenerateFields dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CurrentIndexProperty">
+            <summary>
+            Represents the CurrentIndex dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CancelButtonContentProperty">
+            <summary>
+            Represents the CancelButttonContent dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CommitButtonContentProperty">
+            <summary>
+            Represents the CommitButttonContent dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CommandButtonsVisibilityProperty">
+            <summary>
+            Represents the CommandButtonsVisibility dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.EditTemplateProperty">
+            <summary>
+            Represents the EditTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.NewItemTemplateProperty">
+            <summary>
+            Represents the NewItemTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.ReadOnlyTemplateProperty">
+            <summary>
+            Represents the ReadOnlyTemplate dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.IsEmptyProperty">
+            <summary>
+            Represents the IsEmpty dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.AutoCommitProperty">
+            <summary>
+            Represents the Autocommit dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.IsItemChangedPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.IsItemChanged"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.IsItemChangedProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.IsItemChanged"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.IsItemChanged"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.ModeProperty">
+            <summary>
+            Identifies the <see cref="T:Telerik.Windows.Controls.Data.DataForm.RadDataFormMode"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.AutoEditProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.AutoEdit"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.ItemsSource"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.HeaderProperty">
+            <summary>
+            /Represents the Header property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CurrentItemProperty">
+            <summary>
+            Represents the CurrentItem property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnCreateAutomationPeer">
+            <summary>
+            Returns an automation peer for this RadDataForm.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.#ctor">
+            <summary>
+            Initializes a new instance of the RadDataForm class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever 
+            application code or internal processes call 
+            <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToFirstPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToFirst"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToFirstProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToFirst"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToFirst"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToLastPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToLast"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToLastProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToLast"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToLast"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToNextPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToNext"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToNextProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToNext"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToNext"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPositionPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPosition"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPositionProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPosition"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPosition"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPreviousPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPrevious"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPreviousProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPrevious"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPrevious"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanDeleteItemsPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanDeleteItems"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanDeleteItemsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanDeleteItems"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanDeleteItems"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanAddItemsPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanAddItems"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanAddItemsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanAddItems"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanAddItems"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanBeginEditPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanBeginEdit"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanBeginEditProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanBeginEdit"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanBeginEdit"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanCommitEditPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanCommitEdit"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanCommitEditProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanCommitEdit"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanCommitEdit"/> dependency property.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanCancelEditPropertyKey">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanCancelEdit"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataForm.CanCancelEditProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanCancelEdit"/> dependency property.
+            </summary>
+            <value>The identifier for the <see cref="P:Telerik.Windows.Controls.RadDataForm.CanCancelEdit"/> dependency property.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.AddNewItem">
+            <summary>
+            Adds a new item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnAddingNewItem(Telerik.Windows.Controls.Data.DataForm.AddingNewItemEventArgs)">
+            <summary>
+            Raises the AddingNewItem event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.ValidateItem">
+            <summary>
+            Performs validation on the current item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnValidatingItem(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the ValidatingItemEvent.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.DeleteItem">
+            <summary>
+            Deletes the current item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnDeletingItem(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the DeletingItem event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnBeginningEdit(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            Raises the BeginningEdit event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.BeginEdit">
+            <summary>
+            Begins edit on the current item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnItemEditEnding(Telerik.Windows.Controls.Data.DataForm.EditEndingEventArgs)">
+            <summary>
+            Raises the EditEnding event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnItemEditEnded(Telerik.Windows.Controls.Data.DataForm.EditEndedEventArgs)">
+            <summary>
+            Raises the EditEnded event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.OnDeletedItem(Telerik.Windows.Controls.Data.DataForm.ItemDeletedEventArgs)">
+            <summary>
+            Raises the DeletedItem event.
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.CommitEdit(System.Boolean)">
+            <summary>
+            Commits the edit of the current item.
+            </summary>
+            <param name="exitEditMode">Whether or not editing mode should be exited after committing the edit.</param>
+            <returns>True if the commit succeeds; false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.CommitEdit">
+            <summary>
+            Commits the edit of the current item and exits editing mode.
+            </summary>
+            <returns>True if the commit succeeds; false otherwise.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.CancelEdit">
+            <summary>
+            Cancels the edit on the current item.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RadDataForm.ResetTheme">
+            <summary>
+            Resets the theme.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.DataFieldStyle">
+            <summary>
+            The style to be applied to data fields in dataform.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.AutoGeneratingField">
+            <summary>
+            Occurs when a data field is being generated.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.AddingNewItem">
+            <summary>
+            Occurs when a new item is being added.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.BeginningEdit">
+            <summary>
+            Occurs when an edit operation on the current item is beginning.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.CurrentItemChanged">
+            <summary>
+            Occurs when the current item has changed.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.DeletingItem">
+            <summary>
+            Occurs on deleting the current item.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.DeletedItem">
+            <summary>
+            Occurs after the current item whas deleted.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.EditEnded">
+            <summary>
+            Occurs after the current item whas edited.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.EditEnding">
+            <summary>
+            Occurs when the edit of the current item is ending.
+            </summary>
+        </member>
+        <member name="E:Telerik.Windows.Controls.RadDataForm.ValidatingItem">
+            <summary>
+            Occurs when the current item is being validated.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.LabelPosition">
+            <summary>
+            Gets or sets the position of lebels in data fields in RadDataForm.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CommitButtonStyle">
+            <summary>
+            The style for the Commit button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CancelButtonStyle">
+            <summary>
+            The style for the Cancel button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.AutoGenerateFields">
+            <summary>
+            Gets or sets a value indicating whether fields will be autogenerated. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CurrentIndex">
+            <summary>
+            The index of the current item in the source collection.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CancelButtonContent">
+            <summary>
+            Gets or sets the content of the Cancel button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CommitButtonContent">
+            <summary>
+            Gets or sets the content of the Cancel button.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CommandButtonsVisibility">
+            <summary>
+            Gets or sets the command buttons visibility.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.EditTemplate">
+            <summary>
+            Gets or sets the data template to be used in edit mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.NewItemTemplate">
+            <summary>
+            Gets or sets the data template to be used when adding new item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.ReadOnlyTemplate">
+            <summary>
+            Gets or sets the data template to be used in ReadOnly mode. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.IsEmpty">
+            <summary>
+            Indicates whether the dataform is empty. 
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.AutoEdit">
+            <summary>
+            Gets or sets a value indicating whether DataForm should automatically enter edit mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.Mode">
+            <summary>
+            Gets or sets the mode.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.AutoCommit">
+            <summary>
+            Controls whether edited item will be commited on changing the current item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.IsItemChanged">
+            <summary>
+            Gets a value that indicates whether the current item was changed.
+            </summary>
+            <value>
+            	<c>true</c> if the current item was changed; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.ItemsSource">
+            <summary>
+            Gets or sets the items source.
+            </summary>
+            <value>The items source.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.Header">
+            <summary>
+            Gets or sets the content of the Header.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CurrentItem">
+            <summary>
+            Gets or sets the current item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CurrentItemType">
+            <summary>
+            Gets the type of the current item.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToFirst">
+            <summary>
+            Gets a value that indicates whether the user can move the current item to the first position.
+            </summary>
+            <value>
+            	<c>true</c> if the user can move to the first porition; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToLast">
+            <summary>
+            Gets a value that indicates whether the user can move the current item  to the last position.
+            </summary>
+            <value>
+            	<c>true</c> if the user can move the current item to the last position; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToNext">
+            <summary>
+            Gets a value that indicates whether the user can move the current item to the next position.
+            </summary>
+            <value>
+            	<c>true</c> if the  user can move the current item to the next position; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPosition">
+            <summary>
+            Gets a value that indicates whether the user can move the current item to another position.
+            </summary>
+            <value>
+            	<c>true</c> if the user can move to another position; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanMoveCurrentToPrevious">
+            <summary>
+            Gets a value that indicates whether the user can move the current item  to the previous position.
+            </summary>
+            <value>
+            	<c>true</c> if the user can move the current to the previous position; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanDeleteItems">
+            <summary>
+            Gets a value that indicates whether the user can Delete items.
+            </summary>
+            <value>
+            	<c>true</c> if the user can Delete items; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanAddItems">
+            <summary>
+            Gets a value that indicates whether the user can add items.
+            </summary>
+            <value>
+            	<c>true</c> if the user can add items; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanBeginEdit">
+            <summary>
+            Gets a value that indicates whether an edit of the current item can be started.
+            </summary>
+            <value>
+            	<c>true</c> if edit can be started; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanCommitEdit">
+            <summary>
+            Gets a value that indicates whether an edit of the current item can be commited.
+            </summary>
+            <value>
+            	<c>true</c> if edit can be commited; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataForm.CanCancelEdit">
+            <summary>
+            Gets a value that indicates whether an edit of the current item can be canceled.
+            </summary>
+            <value>
+            	<c>true</c> if edit can be canceled; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RadDataFormCommands">
+            <summary>
+            All commands that <see cref="T:Telerik.Windows.Controls.RadDataForm"/> exposes.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.AddNew">
+            <summary>
+            Gets the add new  command.
+            </summary>
+            <value>The add new command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.Delete">
+            <summary>
+            Gets the delete command.
+            </summary>
+            <value>The delete command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.CommitEdit">
+            <summary>
+            Gets the commit edit command.
+            </summary>
+            <value>The commit edit command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.CancelEdit">
+            <summary>
+            Gets the cancel edit command.
+            </summary>
+            <value>The cencel edit command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.MoveCurrentToFirst">
+            <summary>
+            Gets the move current to first command.
+            </summary>
+            <value>The move current to first command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.MoveCurrentToLast">
+            <summary>
+            Gets the move current to last command.
+            </summary>
+            <value>The move current to last command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.MoveCurrentToNext">
+            <summary>
+            Gets the move current to  next command.
+            </summary>
+            <value>The move current to next command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.MoveCurrentToPosition">
+            <summary>
+            Gets the move current to position command.
+            </summary>
+            <value>The move current to position command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.MoveCurrentToPrevious">
+            <summary>
+            Gets the move current to previous command.
+            </summary>
+            <value>The move current to previous command.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadDataFormCommands.BeginEdit">
+            <summary>
+            Gets the begin edit command.
+            </summary>
+            <value>The begin edit command.</value>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.MoveCurrentToFirst">
+            <summary>
+            Move current to first command.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.MoveCurrentToLast">
+            <summary>
+            Move current to last command.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.MoveCurrentToNext">
+            <summary>
+            Move current to next command.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.MoveCurrentToPrevious">
+            <summary>
+            Move current to previous command.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.MoveCurrentToPosition">
+            <summary>
+            Move current to position command.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.BeginEdit">
+            <summary>
+            Begins edit on the current item.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.CommitEdit">
+            <summary>
+            Commits the edit on the current item.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.CancelEdit">
+            <summary>
+            Cancels the edit on the current item.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.AddNew">
+            <summary>
+            Adds a new item.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RadDataFormCommands.CommandId.Delete">
+            <summary>
+            Deletes the current item.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Data.DataForm.RadDataFormMode">
+            <summary>
+            Specifies the current mode of RadDataForm.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.RadDataFormMode.AddNew">
+            <summary>
+            The mode when adding new item.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.RadDataFormMode.Edit">
+            <summary>
+            The mode when editing the current item.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Data.DataForm.RadDataFormMode.ReadOnly">
+            <summary>
+            The mode when the current item is readonly.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Data.DataPager.UnboundPagerSource">

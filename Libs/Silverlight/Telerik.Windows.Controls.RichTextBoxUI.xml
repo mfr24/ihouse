@@ -9,6 +9,22 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker">
+            <summary>
+            Represents color picker with changeable image.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker.ImageProperty">
+            <summary>
+            Identifies the Image property.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker.Image">
+            <summary>
+            Gets or sets the image.
+            </summary>
+            <value>The image.</value>
+        </member>
         <member name="T:Telerik.Windows.Controls.RichTextBoxUI.ContextMenu">
             <summary>
             The default context menu.
@@ -78,6 +94,14 @@
             </summary>
             <value>The context menu content builder.</value>
         </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.FindReplaceDialog.Show(Telerik.Windows.Controls.RadRichTextBox,System.Action{System.String},System.String)">
+            <summary>
+            Shows the dialog.
+            </summary>
+            <param name="richTextBox">The associated <see cref="T:Telerik.Windows.Controls.RadRichTextBox"/>.</param>
+            <param name="replaceCallback">The callback that will be invoked to perform replace.</param>
+            <param name="textToFind">The text to initially set in the search field.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.FindReplaceDialog.InitializeComponent">
             <summary>
             InitializeComponent
@@ -104,10 +128,53 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.ManageBookmarksDialog.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertHyperlinkDialog">
+            <summary>
+            Represents dialog for inserting hyperlinks.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertHyperlinkDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertHyperlinkDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertHyperlinkDialog.ShowDialog(System.String,Telerik.Windows.Documents.Model.HyperlinkInfo,System.Collections.Generic.IEnumerable{System.String},System.Action{System.String,Telerik.Windows.Documents.Model.HyperlinkInfo},System.Action)">
+            <summary>
+            Shows the dialog for inserting hyperlinks.
+            </summary>
+            <param name="text">The text of the hyperlink.</param>
+            <param name="currentHyperlinkInfo">The current hyperlink info. Null if we are not in edit mode.</param>
+            <param name="bookmarkNames">Names of all existing bookmarks.</param>
+            <param name="insertHyperlinkCallback">The callback that will be called on confirmation to insert the hyperlink.</param>
+            <param name="cancelCallback">The callback that will be called on cancelation.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertHyperlinkDialog.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertSymbolDialog">
+            <summary>
+            Default window for inserting symbols in <see cref="T:Telerik.Windows.Controls.RadRichTextBox"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertSymbolDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertSymbolDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertSymbolDialog.Show(System.Action{System.Char,System.Windows.Media.FontFamily},System.Windows.Media.FontFamily,Telerik.Windows.Controls.RadRichTextBox)">
+            <summary>
+            Shows the dialog.
+            </summary>
+            <param name="insertSymbolCallback">The callback that will be invoked to insert symbols.</param>
+            <param name="initialFont">The font which symbols will be loaded initially.</param>
+            <param name="owner">The owner of the dialog.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.RadInsertSymbolDialog.InitializeComponent">
             <summary>
@@ -165,6 +232,22 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.TablePropertiesDialog">
+            <summary>
+            Represents dialog for showing dialogs for editing table properties.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.TablePropertiesDialog.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.TablePropertiesDialog"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.TablePropertiesDialog.ShowDialog(Telerik.Windows.Documents.UI.Extensibility.TablePropertiesEditor)">
+            <summary>
+            Shows the dialog.
+            </summary>
+            <param name="tablePropertiesEditor">Instance of <see cref="T:Telerik.Windows.Documents.UI.Extensibility.TablePropertiesEditor"/> used to edit table properties.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Dialogs.TablePropertiesDialog.InitializeComponent">
             <summary>
             InitializeComponent
@@ -185,35 +268,16 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker">
+        <member name="T:Telerik.Windows.Controls.RichTextBoxUI.FontFamiliesProvider">
             <summary>
-            Represents color picker with changeable image.
+            Represents bindable object containing registered fonts.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker.ImageProperty">
+        <member name="P:Telerik.Windows.Controls.RichTextBoxUI.FontFamiliesProvider.RegisteredFonts">
             <summary>
-            Identifies the Image property.
+            Gets registered fonts.
             </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker"/> class.
-            </summary>
-            <remarks>
-            Use this constructor to create and initialize a new instance of the HighlightColorPicker
-            control.
-            </remarks>
-        </member>
-        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.RichTextBoxUI.ColorPickers.HighlightColorPicker.Image">
-            <summary>
-            Gets or sets the image.
-            </summary>
-            <value>The image.</value>
+            <value>The registered fonts.</value>
         </member>
         <member name="T:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuContentBuilder">
             <summary>
@@ -254,6 +318,15 @@
             Creates the text edit commands menu items.
             </summary>
             <returns><see cref="T:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuGroup"/> containing text editing commands.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuContentBuilder.CreateHyperlinkCommands(System.Boolean)">
+            <summary>
+            Creates the hyperlink commands menu items.
+            </summary>
+            <param name="forExistingHyperlink">True if group should be created for editing of existing hyperlink, otherwise false.</param>
+            <returns>
+            	<see cref="T:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuGroup"/> containing hyperlink commands.
+            </returns>
         </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuContentBuilder.CreateSpellCheckingSuggestions">
             <summary>
@@ -355,6 +428,11 @@
              Table commands context menu group.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuGroupType.HyperlinkCommands">
+            <summary>
+             Hyperlink commands context menu group.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RichTextBoxUI.Menus.ContextMenuGroupType.TextEditCommands">
             <summary>
              Text editing commands context menu group.
@@ -370,6 +448,7 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.RichTextBoxUI.Menus.SpellCheckerMenuBuilder"/> class.
             </summary>
             <param name="radRichTextBox">The RadRichTextBox to create spell check suggestion for.</param>
+            <param name="incorrectWordInfo">Info about the incorrect word.</param>
         </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.Menus.SpellCheckerMenuBuilder.Construct">
             <summary>
@@ -381,10 +460,23 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.RichTextBoxUI.DocumentRuler.OnAssociatedRichTextBoxChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Called when [associated rich text box changed].
+            </summary>
+            <param name="o">The o.</param>
+            <param name="e">The <see cref="T:System.Windows.DependencyPropertyChangedEventArgs"/> instance containing the event data.</param>
+        </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.DocumentRuler.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RichTextBoxUI.DocumentRuler.AssociatedRichTextBox">
+            <summary>
+            Gets or sets the associated <see cref="T:Telerik.Windows.Controls.RadRichTextBox"/>. This is a dependency property.
+            </summary>
+            <value>The associated rich text box.</value>
         </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.SelectionMiniToolBar.InitializeComponent">
             <summary>
@@ -396,9 +488,19 @@
             Deprecated.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxStatusBar.ScaleFactorProperty">
+            <summary>
+            Deprecated.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxStatusBar.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RichTextBoxUI.RadRichTextBoxStatusBar.ScaleFactor">
+            <summary>
+            Deprecated.
             </summary>
         </member>
         <member name="M:Telerik.Windows.Controls.RichTextBoxUI.StatusBar.NonLinearSlider.InitializeComponent">
