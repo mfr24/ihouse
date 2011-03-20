@@ -17,7 +17,7 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    NotifyPropertyChanged("Community");
+                    this.Community.pinyin2 = "哈哈";
                     if (Community.HasErrors) {
                         MessageBox.Show("请确认信息是否正确");
                         return;
