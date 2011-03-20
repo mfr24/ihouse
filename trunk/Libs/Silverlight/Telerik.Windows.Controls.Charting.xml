@@ -6001,6 +6001,83 @@
             <param name="range">The range.</param>
             <returns></returns>
         </member>
+        <member name="T:Telerik.Windows.Controls.Charting.SimpleYAggregator">
+            <summary>
+            Simple aggregator applied for series not dependent on other series.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.#ctor(Telerik.Windows.Controls.Charting.Axis,Telerik.Windows.Controls.Charting.AggregationGroup)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.SimpleYAggregator"/> class.
+            </summary>
+            <param name="aggregationGroup"></param>
+            <param name="axis"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.CalculateRange(Telerik.Windows.Controls.Charting.DataSeries,System.Int32,Telerik.Windows.Controls.Charting.DataRange)">
+            <summary>
+            Calculates the range.
+            </summary>
+            <param name="dataSeries">The data series.</param>
+            <param name="index">The index.</param>
+            <param name="range">The range.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.CalculateMaxValue">
+            <summary>
+            Successor classes should provide implementation, evaluating the maximal value
+            for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
+            </summary>
+            <returns>The maximum value.</returns>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.CalculateMinValue">
+            <summary>
+            Successor classes should provide implementation, evaluating the minimal value
+            for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
+            </summary>
+            <returns>The minimum value.</returns>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarYAggregator.#ctor(Telerik.Windows.Controls.Charting.Axis,Telerik.Windows.Controls.Charting.AggregationGroup)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.RangeBarYAggregator"/> class.
+            </summary>
+            <param name="aggregationGroup"></param>
+            <param name="axis"></param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarYAggregator.CalculateRange(Telerik.Windows.Controls.Charting.DataSeries,System.Int32,Telerik.Windows.Controls.Charting.DataRange)">
+            <summary>
+            Calculates the range.
+            </summary>
+            <param name="dataSeries">The data series.</param>
+            <param name="index">The index.</param>
+            <param name="range">The range.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarYAggregator.CalculateMaxValue">
+            <summary>
+            Successor classes should provide implementation, evaluating the maximal value
+            for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
+            </summary>
+            <returns>The maximum value.</returns>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarYAggregator.CalculateMinValue">
+            <summary>
+            Successor classes should provide implementation, evaluating the minimal value
+            for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
+            </summary>
+            <returns>The minimum value.</returns>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
+            <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
+        </member>
         <member name="T:Telerik.Windows.Controls.Charting.SeriesItemLabel">
             <summary>
             Represents the series item label.
@@ -6359,11 +6436,25 @@
             <param name="element">Element used to display the specified item.</param>
             <param name="item">Specified item.</param>
         </member>
-        <member name="M:Telerik.Windows.Controls.Charting.SelfDrawingSeries.CreateTopBorderLineFigure(System.Windows.Media.PointCollection)">
+        <member name="M:Telerik.Windows.Controls.Charting.SelfDrawingSeries.CreateFigure(System.Windows.Media.PointCollection)">
             <summary>
             Creates geometry for displaying data points.
             </summary>
             <param name="pointsAtIndex">Data points on the chart.</param>
+            <returns>Path connecting data points with step line.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SelfDrawingSeries.CreateBorderLineFigures(System.Windows.Media.PointCollection)">
+            <summary>
+            Creates geometry for displaying data points.
+            </summary>
+            <param name="pointsAtIndex">Data points on the chart.</param>
+            <returns>Path connecting data points with step line.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SelfDrawingSeries.CreateBorderLineFigures(System.Collections.Generic.Dictionary{System.Int32,System.Windows.Media.PointCollection})">
+            <summary>
+            Creates geometry for displaying data points.
+            </summary>
+            <param name="points">Data points on the chart.</param>
             <returns>Path connecting data points with step line.</returns>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.SelfDrawingSeries.BorderLineStyle">
@@ -6473,6 +6564,19 @@
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.BasePointMarkChartItem"/> class.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.BasePointMarkChartItem.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate"/>.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.BasePointMarkChartItem.UpdatePointMarkPosition">
+            <summary>
+            Updates the point mark position.
+            </summary>
+            <remarks>
+            You need to call this method only if you have changed the size of individual pointmark.
+            </remarks>
         </member>
         <member name="M:Telerik.Windows.Controls.Charting.BasePointMarkChartItem.CreatePoints(System.Windows.Size)">
             <summary>
@@ -6748,7 +6852,7 @@
             <param name="bottomPoints">The bottom points.</param>
             <returns></returns>
         </member>
-        <member name="M:Telerik.Windows.Controls.Charting.StepAreaSeries.CreateTopBorderLineFigure(System.Windows.Media.PointCollection)">
+        <member name="M:Telerik.Windows.Controls.Charting.StepAreaSeries.CreateFigure(System.Windows.Media.PointCollection)">
             <summary>
             Creates geometry for displaying data points.
             </summary>
@@ -6831,6 +6935,12 @@
             <summary>
             Gets the name of the Y Axis associated with the current <see cref="T:Telerik.Windows.Controls.Charting.ISeriesDefinition"/>.
             </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.EmptyPointBehavior">
+            <summary>
+            Gets or sets how null values will be handled in the chart.
+            </summary>
+            <value>The option.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.SeriesName">
             <summary>
@@ -6955,12 +7065,6 @@
             </summary>
             <value>Default value is <c>true</c>.</value>
         </member>
-        <member name="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ShowZeroValuesLabels">
-            <summary>
-            Gets or sets a value indicating whether the labels associated with each series item whose value is 0 should be visible or hidden.
-            </summary>
-            <value>Default value is <c>true</c>.</value>
-        </member>
         <member name="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ShowItemToolTips">
             <summary>
             Gets or sets a value indicating whether the tool tips are enabled.
@@ -6998,6 +7102,11 @@
         <member name="F:Telerik.Windows.Controls.Charting.SeriesDefinition.ShowItemLabelsProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.Charting.SeriesDefinition.ShowItemLabels"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.SeriesDefinition.EmptyPointBehaviorProperty">
+            <summary>
+            Identifies the <see cref="F:Telerik.Windows.Controls.Charting.SeriesDefinition.EmptyPointBehaviorProperty"/> dependency property.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.Charting.SeriesDefinition.ItemToolTipFormatProperty">
@@ -7122,15 +7231,15 @@
             </summary>
             <value><c>True</c> if tool tips are enabled otherwise, <c>false</c>.</value>
         </member>
+        <member name="P:Telerik.Windows.Controls.Charting.SeriesDefinition.EmptyPointBehavior">
+            <summary>
+            Gets or sets how null values will be handled in the chart.
+            </summary>
+            <value>The option.</value>
+        </member>
         <member name="P:Telerik.Windows.Controls.Charting.SeriesDefinition.ShowItemLabels">
             <summary>
             Gets or sets a value indicating whether the labels associated with each series item should be visible or hidden.
-            </summary>
-            <value>Default value is <c>true</c>.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.SeriesDefinition.ShowZeroValuesLabels">
-            <summary>
-            Gets or sets a value indicating whether the labels associated with each series item whose value is 0 should be visible or hidden.
             </summary>
             <value>Default value is <c>true</c>.</value>
         </member>
@@ -7437,6 +7546,175 @@
             </summary>
             <value></value>
         </member>
+        <member name="T:Telerik.Windows.Controls.Charting.HorizontalRangeBar">
+            <summary>
+            This class represents a 2D StackedBar series item.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Charting.RangeBar">
+            <summary>
+            This class represents a 2D StackedBar series item.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Charting.Bar">
+            <summary>
+            This class represents a 2D bar series item.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.Bar.ArrangeOverride(System.Windows.Size)">
+            <summary>
+            Called to arrange and size the content of a <see cref="T:System.Windows.Controls.Control"/> object.
+            </summary>
+            <param name="finalSize">The computed size that is used to arrange the content.</param>
+            <returns>The size of the control.</returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.Bar.OnAnimationSettingsChanged">
+            <summary>
+            Called when the animation settings associated with the respective series item change.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.Bar.SetTransformCenter(System.Windows.Size)">
+            <summary>
+            Sets the transform center.
+            </summary>
+            <param name="arrangedSize">Size of the arranged.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.Bar.SetTransformScale">
+            <summary>
+            Sets the transform scale.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.HorizontalRangeBar.SetTransformCenter(System.Windows.Size)">
+            <summary>
+            Sets the transform center.
+            </summary>
+            <param name="arrangedSize">Size of the arranged.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.HorizontalRangeBar.SetTransformScale">
+            <summary>
+            Sets the transform scale.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Charting.HorizontalRangeBarSeriesDefinition">
+            <summary>
+            Defines the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual representation to be horizontal Bar chart.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Charting.RangeBarSeriesDefinition">
+            <summary>
+            Defines the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual representation to be Stacked Bar chart.
+            </summary>
+        </member>
+        <member name="T:Telerik.Windows.Controls.Charting.BarSeriesDefinition">
+            <summary>
+            Defines the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual representation to be Bar chart.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.BarSeriesDefinition.LabelSettingsProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.LabelSettings"/> dependency property.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.BarSeriesDefinition.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.BarSeriesDefinition"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.BarSeriesDefinition.CreateChartItem">
+            <summary>
+            Creates specific IChartItem instance for this series definition type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.BarSeriesDefinition.CreateSeriesPanel">
+            <summary>
+            Creates an instance of the panel for this series definition type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.ItemType">
+            <summary>
+            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/>s in the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.ContainerType">
+            <summary>
+            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual container.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.LabelSettings">
+            <summary>
+            Gets the label settings.
+            </summary>
+            <value>The label settings.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.ResourceId">
+            <summary>
+            Gets the resource id associated with the Bar chart.
+            For more information, please, refer to <see cref="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ResourceId"/>.
+            </summary>
+            <value>The resource id.</value>
+            <seealso cref="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ResourceId"/>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.PreferredLabelDisplayMode">
+            <summary>
+            Gets the preferred label display mode.
+            </summary>
+            <value>The preferred label display mode.</value>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarSeriesDefinition.#ctor">
+            <summary>
+            Initializes a new instance of the RangeBarSeriesDefinition class setting a default <see cref="P:Telerik.Windows.Controls.Charting.AggregationGroup.GroupName"/> (string.Empty).
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarSeriesDefinition.CreateChartItem">
+            <summary>
+            Creates specific IChartItem instance for this series definition type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.RangeBarSeriesDefinition.CreateSeriesPanel">
+            <summary>
+            Creates an instance of the panel for this series definition type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.RangeBarSeriesDefinition.ItemType">
+            <summary>
+            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/>s in the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.RangeBarSeriesDefinition.ContainerType">
+            <summary>
+            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual container.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.HorizontalRangeBarSeriesDefinition.#ctor">
+            <summary>
+            Initializes a new instance of the HorizontalRangeBarSeriesDefinition class setting a default <see cref="P:Telerik.Windows.Controls.Charting.AggregationGroup.GroupName"/> (string.Empty).
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.HorizontalRangeBarSeriesDefinition.CreateChartItem">
+            <summary>
+            Creates specific IChartItem instance for this series definition type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.HorizontalRangeBarSeriesDefinition.ItemType">
+            <summary>
+            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/>s in the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.HorizontalRangeBarSeriesDefinition.ResourceId">
+            <summary>
+            Gets the resource id associated with the Horizontal Range Bar chart.
+            
+            For more information, please, refer to <see cref="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ResourceId"/>.
+            </summary>
+            <value>The resource id.</value>
+            <seealso cref="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ResourceId"/>
+        </member>
         <member name="T:Telerik.Windows.Controls.Charting.StepLine">
             <summary>
             The class represents 2d step line series item.
@@ -7481,7 +7759,7 @@
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.BaseLineSeries"/> class.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Charting.StepLineSeries.CreateTopBorderLineFigure(System.Windows.Media.PointCollection)">
+        <member name="M:Telerik.Windows.Controls.Charting.StepLineSeries.CreateFigure(System.Windows.Media.PointCollection)">
             <summary>
             Creates geometry for displaying data points.
             </summary>
@@ -7553,11 +7831,6 @@
             Resets the theme.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.Charting.ChartLegend.TitleFontWeightProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.ChartLegend.TitleFontWeight"/> dependency property.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.Charting.ChartLegend.HeaderFontWeightProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.Charting.ChartLegend.HeaderFontWeight"/> dependency property.
@@ -7617,12 +7890,6 @@
             Gets or sets the legend item marker shape.
             </summary>
             <value>The legend item marker shape.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.ChartLegend.TitleFontWeight">
-            <summary>
-            Gets or sets FontWeight for the HeaderTemplate of the ChartLegend.
-            </summary>
-            <value>The default value is bold.</value>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.ChartLegend.HeaderFontWeight">
             <summary>
@@ -7826,20 +8093,24 @@
             Holds the collection of <see cref="T:Telerik.Windows.Controls.Charting.ChartHierarchicalViewDescriptor"/> items that describe the hierarchy structure in the chart.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.Charting.ChartDependencyObjectCollection`1">
+        <member name="T:Telerik.Windows.Controls.Charting.EmptyPointBehavior">
             <summary>
-            Represents a collection of DependencyObject instances of a specified type.
-            </summary>
-            <typeparam name="T">The type of items in the collection.</typeparam>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.ChartDependencyObjectCollection`1.ResumeNotifications">
-            <summary>
-            This is a no-operation method that is kept for backwards compatibility reasons.
+            Determines how empty datapoints are handled by the control.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.Charting.ChartDependencyObjectCollection`1.SuspendNotifications">
+        <member name="F:Telerik.Windows.Controls.Charting.EmptyPointBehavior.Zero">
             <summary>
-            This is a no-operation method that is kept for backwards compatibility reasons.
+            Replaces the empty datapoint with 0. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.EmptyPointBehavior.Drop">
+            <summary>
+            Does not render visible representation for the corresponding empty datapoint.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.EmptyPointBehavior.Gap">
+            <summary>
+            Disconnects the dataseries, to signify the presence of empty datapoint.
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.CommandId.Back">
@@ -10732,8 +11003,9 @@
             <summary>
             Gets or sets the property indicating whether transitioning animations should be applied when changing chart data.
             </summary>
-            <remarks> Transitioning animations are supported for the built-in hierarchical data (drill-down) and zooming &amp; scrolling scenarios;
-            otherwise you can use the ChartArea.StartTransitionAnimation() method to trigger the transition programatically.</remarks>
+            <remarks> Transitioning animations are supported for the built-in hierarchical data (drill-down), zooming &amp; scrolling, and
+            scenarios that utilize the built-in integration with RadTimeBar; otherwise you can use the ChartArea.StartTransitionAnimation() 
+            method to trigger the transition programatically.</remarks>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.ChartArea.TransitionControlStyle">
             <summary>
@@ -12383,8 +12655,7 @@
         </member>
         <member name="T:Telerik.Windows.Controls.Charting.MaterialMappingCollection">
             <summary>
-            This class supports the <see cref="T:Telerik.Windows.Controls.RadChart"/> theming and styling infrastructure and is intended for internal use only.
-            
+            This class supports the <see cref="T:Telerik.Windows.Controls.RadChart"/> theming and styling infrastructure and is intended for internal use only.    /// 
             Provides information on how a material should be built from the theme resources.
             </summary>
         </member>
@@ -12500,34 +12771,6 @@
             This class represents a 2D horizontal bar series item.
             </summary>
         </member>
-        <member name="T:Telerik.Windows.Controls.Charting.Bar">
-            <summary>
-            This class represents a 2D bar series item.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.Bar.ArrangeOverride(System.Windows.Size)">
-            <summary>
-            Called to arrange and size the content of a <see cref="T:System.Windows.Controls.Control"/> object.
-            </summary>
-            <param name="finalSize">The computed size that is used to arrange the content.</param>
-            <returns>The size of the control.</returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.Bar.OnAnimationSettingsChanged">
-            <summary>
-            Called when the animation settings associated with the respective series item change.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.Bar.SetTransformCenter(System.Windows.Size)">
-            <summary>
-            Sets the transform center.
-            </summary>
-            <param name="arrangedSize">Size of the arranged.</param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.Bar.SetTransformScale">
-            <summary>
-            Sets the transform scale.
-            </summary>
-        </member>
         <member name="M:Telerik.Windows.Controls.Charting.HorizontalBar.SetTransformCenter(System.Windows.Size)">
             <summary>
             Sets the transform center.
@@ -12554,63 +12797,6 @@
             <summary>
             Defines the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual representation to be Stacked Bar 100 chart.
             </summary>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Charting.BarSeriesDefinition">
-            <summary>
-            Defines the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual representation to be Bar chart.
-            </summary>
-        </member>
-        <member name="F:Telerik.Windows.Controls.Charting.BarSeriesDefinition.LabelSettingsProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.LabelSettings"/> dependency property.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.BarSeriesDefinition.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.BarSeriesDefinition"/> class.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.BarSeriesDefinition.CreateChartItem">
-            <summary>
-            Creates specific IChartItem instance for this series definition type.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.BarSeriesDefinition.CreateSeriesPanel">
-            <summary>
-            Creates an instance of the panel for this series definition type.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.ItemType">
-            <summary>
-            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/>s in the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.ContainerType">
-            <summary>
-            Gets the type of the <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> visual container.
-            </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.LabelSettings">
-            <summary>
-            Gets the label settings.
-            </summary>
-            <value>The label settings.</value>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.ResourceId">
-            <summary>
-            Gets the resource id associated with the Bar chart.
-            For more information, please, refer to <see cref="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ResourceId"/>.
-            </summary>
-            <value>The resource id.</value>
-            <seealso cref="P:Telerik.Windows.Controls.Charting.ISeriesDefinition.ResourceId"/>
-        </member>
-        <member name="P:Telerik.Windows.Controls.Charting.BarSeriesDefinition.PreferredLabelDisplayMode">
-            <summary>
-            Gets the preferred label display mode.
-            </summary>
-            <value>The preferred label display mode.</value>
         </member>
         <member name="M:Telerik.Windows.Controls.Charting.StackedBar100SeriesDefinition.#ctor">
             <summary>
@@ -14690,6 +14876,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.RadChart.HierarchyManager"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.RadChart.TimeBarProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.RadChart.TimeBar"/> dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.RadChart.FilterDescriptorsProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.RadChart.FilterDescriptors"/> dependency property.
@@ -14885,29 +15076,6 @@
             </list>
             </summary>
         </member>
-        <member name="P:Telerik.Windows.Controls.RadChart.CustomItemStyle">
-            <summary>
-            Gets or sets a delegate that allows you to generate a new user defined <see cref="T:System.Windows.Style"/> to be applied to a number of chart items.
-            <para>
-            The delegate accepts two parameters:
-            </para>
-            <list type="bullet">
-                <item>
-                    <description>
-                        First parameter is a <see cref="T:System.Windows.Controls.Control"/> instance that represents the chart item that is currently processed. 
-                        This could be either a derivative of <see cref="T:Telerik.Windows.Controls.Charting.BaseChartItem"/>, or a derivative of <see cref="T:Telerik.Windows.Controls.Charting.SelfDrawingSeries"/>, or a 
-                        <see cref="T:Telerik.Windows.Controls.Charting.SeriesItemLabel"/>, or a <see cref="T:Telerik.Windows.Controls.Charting.ChartLegendItem"/>.
-                    </description>
-                </item>
-                <item>
-                    <description>
-                        Second parameter is the <see cref="T:System.Windows.Style"/> that would be applied to the respective chart item by default. 
-                        You can use it to set the Style.BasedOn property of the user defined style you are generating.
-                    </description>
-                </item>
-            </list>
-            </summary>
-        </member>
         <member name="P:Telerik.Windows.Controls.RadChart.DefaultView">
             <summary>
             Gets or sets the default view of RadChart.
@@ -14990,6 +15158,11 @@
             Gets or sets an instance of HierarchyManager. This object is in charge of hierarchical operations in RadChart.
             </summary>
             <value>The HierarchyManager.</value>
+        </member>
+        <member name="P:Telerik.Windows.Controls.RadChart.TimeBar">
+            <summary>
+            Gets or sets the TimeBar.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.RadChart.InheritanceContextPropagator">
             <summary>
@@ -15387,47 +15560,6 @@
             for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
             </summary>
             <returns>The maximum value.</returns>
-            <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
-            <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
-            <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
-        </member>
-        <member name="T:Telerik.Windows.Controls.Charting.SimpleYAggregator">
-            <summary>
-            Simple aggregator applied for series not dependent on other series.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.#ctor(Telerik.Windows.Controls.Charting.Axis,Telerik.Windows.Controls.Charting.AggregationGroup)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.SimpleYAggregator"/> class.
-            </summary>
-            <param name="aggregationGroup"></param>
-            <param name="axis"></param>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.CalculateRange(Telerik.Windows.Controls.Charting.DataSeries,System.Int32,Telerik.Windows.Controls.Charting.DataRange)">
-            <summary>
-            Calculates the range.
-            </summary>
-            <param name="dataSeries">The data series.</param>
-            <param name="index">The index.</param>
-            <param name="range">The range.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.CalculateMaxValue">
-            <summary>
-            Successor classes should provide implementation, evaluating the maximal value
-            for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
-            </summary>
-            <returns>The maximum value.</returns>
-            <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
-            <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
-            <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
-        </member>
-        <member name="M:Telerik.Windows.Controls.Charting.SimpleYAggregator.CalculateMinValue">
-            <summary>
-            Successor classes should provide implementation, evaluating the minimal value
-            for all aggregated <see cref="T:Telerik.Windows.Controls.Charting.DataSeries"/> (held in the <see cref="T:Telerik.Windows.Controls.Charting.Series"/> collection).
-            </summary>
-            <returns>The minimum value.</returns>
             <seealso cref="T:Telerik.Windows.Controls.Charting.ISeriesAggregator"/>
             <seealso cref="T:Telerik.Windows.Controls.Charting.Series"/>
             <seealso cref="T:Telerik.Windows.Controls.Charting.DataSeries"/>
@@ -17402,6 +17534,16 @@
             This field supports the RadChart infrastructure and is not intended to be used directly from your code. 
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Charting.ResourceHelper.ResourceKeyRangeBarStyle">
+            <summary>
+            This field supports the RadChart infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.ResourceHelper.ResourceKeyHorizontalRangeBarStyle">
+            <summary>
+            This field supports the RadChart infrastructure and is not intended to be used directly from your code. 
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Charting.ResourceHelper.ResourceKeyStackedSplineArea100Style">
             <summary>
             This field supports the RadChart infrastructure and is not intended to be used directly from your code. 
@@ -17514,9 +17656,29 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.Charting.PointMark.Fill"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Charting.PointMark.ShapeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.PointMark.Shape"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.PointMark.SeriesDefinitionShapeProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.PointMark.SeriesDefinitionShape"/> dependency property.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Charting.PointMark.SeriesDefinitionShowPointMarksProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.PointMark.SeriesDefinitionShowPointMarks"/> dependency property.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.Charting.PointMark.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.PointMark"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Charting.PointMark.OnApplyTemplate">
+            <summary>
+            When overridden in a derived class, is invoked whenever application code or internal processes (such as a rebuilding layout pass) call <see cref="M:System.Windows.Controls.Control.ApplyTemplate"/>. In simplest terms, this means the method is called just before a UI element displays in an application. For more information, see Remarks.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.PointMark.PointMarkCanvasLeft">
@@ -17554,6 +17716,11 @@
         <member name="P:Telerik.Windows.Controls.Charting.PointMark.Fill">
             <summary>
             Gets or sets the fill of the point mark.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.PointMark.Shape">
+            <summary>
+            Gets or sets the shape of the point mark.
             </summary>
         </member>
         <member name="T:Telerik.Windows.Controls.Charting.SeriesStyles">
@@ -17646,6 +17813,16 @@
         <member name="P:Telerik.Windows.Controls.Charting.SeriesStyles.StackedBarSeriesStyle">
             <summary>
             Gets or sets the StackedBar series style.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.SeriesStyles.RangeBarSeriesStyle">
+            <summary>
+            Gets or sets the RangeBar series style.
+            </summary>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.SeriesStyles.HorizontalRangeBarSeriesStyle">
+            <summary>
+            Gets or sets the HorizontalRangeBar series style.
             </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.SeriesStyles.StackedBar100SeriesStyle">
@@ -19255,6 +19432,11 @@
             The smoothness of the spline.
             </summary>
         </member>
+        <member name="M:Telerik.Windows.Controls.Charting.SplineArea.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Windows.Controls.Charting.SplineArea"/> class.
+            </summary>
+        </member>
         <member name="M:Telerik.Windows.Controls.Charting.SplineArea.CreateClippingGeometry">
             <summary>
             Creates the clipping geometry of this item.
@@ -20091,6 +20273,11 @@
             Gets or sets the tooltip for the associated <see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/>.
             </summary>
         </member>
+        <member name="P:Telerik.Windows.Controls.Charting.DataPoint.IsEmpty">
+            <summary>
+            Gets or sets a boolean value, indicating whether the data point should be considered empty.<see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/>.
+            </summary>
+        </member>
         <member name="P:Telerik.Windows.Controls.Charting.DataPoint.DataSeries">
             <summary>
             Gets the <see cref="P:Telerik.Windows.Controls.Charting.DataPoint.DataSeries"/> to which the current <see cref="T:Telerik.Windows.Controls.Charting.DataPoint"/> belongs.
@@ -20385,6 +20572,11 @@
             Identifies the <see cref="P:Telerik.Windows.Controls.Charting.SeriesMapping.ChartArea"/> dependency property.
             </summary>
         </member>
+        <member name="F:Telerik.Windows.Controls.Charting.SeriesMapping.ItemsSourceProperty">
+            <summary>
+            Identifies the <see cref="P:Telerik.Windows.Controls.Charting.SeriesMapping.ItemsSource"/> dependency property.
+            </summary>
+        </member>
         <member name="F:Telerik.Windows.Controls.Charting.SeriesMapping.SeriesDefinitionProperty">
             <summary>
             Identifies the <see cref="P:Telerik.Windows.Controls.Charting.SeriesMapping.SeriesDefinition"/> dependency property.
@@ -20449,6 +20641,11 @@
             defined ChartArea and not only the default one. Note, however, that if you are
             using the default layout of the control (i.e. the default ChartArea), you do
             not need to set this property.</remarks>
+        </member>
+        <member name="P:Telerik.Windows.Controls.Charting.SeriesMapping.ItemsSource">
+            <summary>
+            Gets or sets a collection used to generate the DataSeries, corresponding to this SeriesMapping object. This is a dependency property.
+            </summary>
         </member>
         <member name="P:Telerik.Windows.Controls.Charting.SeriesMapping.SeriesDefinition">
             <summary>

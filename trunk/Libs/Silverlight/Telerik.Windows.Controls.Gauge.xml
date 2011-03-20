@@ -3301,17 +3301,12 @@
             List of the labels.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.Gauges.ScaleBase.linearScale">
-            <summary>
-            Linear scale.
-            </summary>
-        </member>
         <member name="F:Telerik.Windows.Controls.Gauges.ScaleBase.linearStep">
             <summary>
             Linear step (length of the tick).
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.Gauges.ScaleBase.logScale">
+        <member name="F:Telerik.Windows.Controls.Gauges.ScaleBase.logarithmicScale">
             <summary>
             Logarithmic scale.
             </summary>
@@ -3340,6 +3335,11 @@
             <summary>
             Event handler for property changed event occurs
             when tick properties are changed.
+            </summary>
+        </member>
+        <member name="F:Telerik.Windows.Controls.Gauges.ScaleBase.tickScale">
+            <summary>
+            Length of the scale between StartValue and EndValue (linear o logarithmic).
             </summary>
         </member>
         <member name="F:Telerik.Windows.Controls.Gauges.ScaleBase.totalTicks">
@@ -3560,6 +3560,14 @@
             Check if indicator's value is double.NaN 
             and find off position if necessary.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.Gauges.ScaleBase.GetRelativeValue(System.Double)">
+            <summary>
+            Gets value in [0..1] range which describe relative
+            position of the real value along the scale.
+            </summary>
+            <param name="value">Real value.</param>
+            <returns>Relative value.</returns>
         </member>
         <member name="M:Telerik.Windows.Controls.Gauges.ScaleBase.GetValueAtTick(System.Int32,System.Int32,System.Int32)">
             <summary>

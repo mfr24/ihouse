@@ -282,6 +282,11 @@
             Synchronization is disabled.
             </summary>
         </member>
+        <member name="T:Telerik.Windows.Data.VirtualQueryableCollectionView`1">
+            <summary>
+            Represents a view for grouping, sorting, filtering and paging data collection virtually
+            </summary>
+        </member>
         <member name="T:Telerik.Windows.Data.VirtualQueryableCollectionView">
             <summary>
             Represents a view for grouping, sorting, filtering and paging data collection virtually
@@ -1006,6 +1011,14 @@
             </summary>
             <value>The internal list for the current view.</value>
         </member>
+        <member name="P:Telerik.Windows.Data.VirtualQueryableCollectionView.QueryableSourceCollection">
+            <summary>
+            Returns the queryable collection, constructed from SourceCollection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Linq.IQueryable"/> object that is constructed from the underlying collection.
+            </returns>
+        </member>
         <member name="P:Telerik.Windows.Data.VirtualQueryableCollectionView.ItemCount">
             <summary>
             Gets the minimum number of items known to be in the source collection.
@@ -1036,6 +1049,11 @@
         </member>
         <member name="P:Telerik.Windows.Data.VirtualQueryableCollectionView.System#Collections#ICollection#Count">
             <inheritdoc />
+        </member>
+        <member name="M:Telerik.Windows.Data.VirtualQueryableCollectionView`1.#ctor">
+            <summary>
+            Initializes a new instance of the VirtualQueryableCollectionView class.
+            </summary>
         </member>
         <member name="T:Telerik.Windows.Data.CollectionChangingEventArgs">
             <summary>
@@ -1884,11 +1902,6 @@
         <member name="M:Telerik.Windows.Data.EnumerableExtensions.ElementAt(System.Collections.IEnumerable,System.Int32)">
             <exception cref="T:System.ArgumentOutOfRangeException"><c>index</c> is out of range.</exception>
         </member>
-        <member name="M:Telerik.Windows.Data.EnumerableExtensions.Zip``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1,``2})">
-            <exception cref="T:System.ArgumentNullException"><c>first</c> is null.</exception>
-            <exception cref="T:System.ArgumentNullException"><c>second</c> is null.</exception>
-            <exception cref="T:System.ArgumentNullException"><c>resultSelector</c> is null.</exception>
-        </member>
         <member name="T:Telerik.Windows.Data.GenericEnumerable`1">
             <summary>
             This type is used internally by the data binding infrastructure and is not intended to be used directly from your code.
@@ -1983,6 +1996,12 @@
             <summary>
             CollectionView used in the RadTreeListView.
             </summary>
+        </member>
+        <member name="M:Telerik.Windows.Data.HierarchicalCollectionView.Remove(System.Object)">
+            <summary>
+            Removes the specified item from the collection.
+            </summary>
+            <param name="item">The item to remove.</param>
         </member>
         <member name="P:Telerik.Windows.Data.HierarchicalCollectionView.HierarchyDescriptors">
             <summary>

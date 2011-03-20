@@ -382,18 +382,6 @@
             Finds <see cref="P:Telerik.Windows.Controls.AppointmentsControl.AppointmentItemsControl"/> and <see cref="P:Telerik.Windows.Controls.AppointmentsControl.TimeSlotItemsControl"/> in the template.
             </summary>
         </member>
-        <member name="M:Telerik.Windows.Controls.AppointmentsControl.ReceiveWeakEvent(System.Object,System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
-            <summary>
-            Receive weak event.
-            </summary>
-        </member>
-        <member name="M:Telerik.Windows.Controls.AppointmentsControl.ReceiveWeakEvent(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            Receives the weak event.
-            </summary>
-            <param name="sender">The sender.</param>
-            <param name="args">The <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance containing the event data.</param>
-        </member>
         <member name="M:Telerik.Windows.Controls.AppointmentsControl.RecreateAppointmentSlots">
             <summary>
             Recreates the appointment slots.
@@ -944,12 +932,6 @@
             A virtualizing panel for rendering appointments.
             </summary>
         </member>
-        <member name="F:Telerik.Windows.Controls.VirtualizedAppointmentPanel.AppointmentsRightPaddingProperty">
-            <summary>
-            Identifies the <see cref="P:Telerik.Windows.Controls.VirtualizedAppointmentPanel.AppointmentsRightPadding"/> property.
-            </summary>
-            <returns>The identifier for the <see cref="P:Telerik.Windows.Controls.VirtualizedAppointmentPanel.AppointmentsRightPadding"/> property</returns>
-        </member>
         <member name="F:Telerik.Windows.Controls.VirtualizedAppointmentPanel.OrientationProperty">
             <summary>
             Identifies the Orientation dependency property.
@@ -986,12 +968,6 @@
             Gets or sets a value that indicates the dimension by which child elements are stacked. Default value is Vertical.
             This is a dependency property. 
             </summary>
-        </member>
-        <member name="P:Telerik.Windows.Controls.VirtualizedAppointmentPanel.AppointmentsRightPadding">
-            <summary>
-            Gets or sets <see cref="F:Telerik.Windows.Controls.VirtualizedAppointmentPanel.AppointmentsRightPaddingProperty"/>. This is a dependency property.
-            </summary>
-            <returns>the <see cref="F:Telerik.Windows.Controls.VirtualizedAppointmentPanel.AppointmentsRightPaddingProperty"/>. The default value is 0.0</returns>  
         </member>
         <member name="T:Telerik.Windows.Controls.AppointmentToTitleConverter">
             <summary>
@@ -6254,6 +6230,44 @@
             Gets or sets the recurrence pattern.
             </summary>
             <value>The recurrence pattern.</value>
+        </member>
+        <member name="T:Telerik.Windows.Controls.RecurrenceRuleChangedEventManager">
+            <summary>
+            A RecurrenceRuleChangedEventManager class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RecurrenceRuleChangedEventManager.AddListener(Telerik.Windows.Controls.Scheduler.IAppointment,System.Windows.IWeakEventListener)">
+            <summary>
+            Adds the listener.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="listener">The listener.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RecurrenceRuleChangedEventManager.RemoveListener(Telerik.Windows.Controls.Scheduler.IAppointment,System.Windows.IWeakEventListener)">
+            <summary>
+            Removes the listener.
+            </summary>
+            <param name="source">The source.</param>
+            <param name="listener">The listener.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RecurrenceRuleChangedEventManager.StartListening(System.Object)">
+            <summary>
+            When overridden in a derived class, starts listening for the event being managed. After <see cref="M:System.Windows.WeakEventManager.StartListening(System.Object)"/>  is first called, the manager should be in the state of calling <see cref="M:System.Windows.WeakEventManager.DeliverEvent(System.Object,System.EventArgs)"/> or <see cref="M:System.Windows.WeakEventManager.DeliverEventToList(System.Object,System.EventArgs,System.Windows.WeakEventManager.ListenerList)"/> whenever the relevant event from the provided source is handled.
+            </summary>
+            <param name="source">The source to begin listening on.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RecurrenceRuleChangedEventManager.StopListening(System.Object)">
+            <summary>
+            When overridden in a derived class, stops listening on the provided source for the event being managed.
+            </summary>
+            <param name="source">The source to stop listening on.</param>
+        </member>
+        <member name="M:Telerik.Windows.Controls.RecurrenceRuleChangedEventManager.OnRecurrenceRuleChanged(System.Object,System.EventArgs)">
+            <summary>
+            Called when [recurrence rule changed].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
         </member>
         <member name="T:Telerik.Windows.Controls.Scheduler.RecurrenceState">
             <summary>
