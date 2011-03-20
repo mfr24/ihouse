@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Collections.Generic;
+using IHome.Models.Validation;
 namespace IHome.Data
 {
     public partial class base_community_baseinfo_ex : base_community_baseinfo, IDataErrorInfo
@@ -21,6 +22,18 @@ namespace IHome.Data
                     _errors.Remove("community_name");
                 }
 
+            }
+        }
+        [VRegularExpressionAttribute(@"^http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$")]
+        public string pinyin2
+        {
+            get
+            {
+                return base.pinyin;
+            }
+            set
+            {
+                base.pinyin = value;
             }
         }
 
