@@ -1,31 +1,35 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using IHome.Models.Validation;
+using ILight.Core.Model;
 namespace IHome.Data
 {
-    public partial class base_community_baseinfo_ex : base_community_baseinfo, IDataErrorInfo
+    public partial class base_community_baseinfo_ex : base_community_baseinfo,IValidateable
     {
 
+        public base_community_baseinfo_ex()
+        {
+            _validationContext = new ValidationContext(this, null, null);
+        }
 
+
+        [Required(ErrorMessage = "小区名不能为空")]
         override public string community_name
         {
             get { return base.community_name; }
             set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                { _errors["community_name"] = "小区名不能为空"; return; }
-
+                ValidatePro("community_name", value);
                 base.community_name = value;
-                if (_errors.ContainsKey("community_name"))
-                {
-                    _errors.Remove("community_name");
-                }
+
 
             }
         }
-        [VRegularExpressionAttribute(@"^http\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$")]
-        public string pinyin2
+        [Required(ErrorMessage = "小区拼音不能为空")]
+        [RegularExpressionAttribute(@"^[A-Za-z]+$", ErrorMessage = "请输入拼音首字母")]
+        public string pinyin
         {
             get
             {
@@ -33,9 +37,10 @@ namespace IHome.Data
             }
             set
             {
-                base.pinyin = value;
+                if (ValidatePro("pinyin", value)) base.pinyin = value;
             }
         }
+
 
         //属性为int时,无法捕获前端输入字符串引发的异常;
         public string complete_year_ex
@@ -52,7 +57,7 @@ namespace IHome.Data
                     int year = 0;
                     if (!int.TryParse(value, out year))
                     {
-                        _errors["complete_year_ex"] = "必须为数字";
+
                         return;
                     }
                     base.complete_year = int.Parse(value);
@@ -61,34 +66,67 @@ namespace IHome.Data
                 {
                     base.complete_year = null;
                 }
-                if (_errors.ContainsKey("complete_year_ex"))
-                {
-                    _errors.Remove("complete_year_ex");
-                }
 
             }
         }
+
+
+        #region validation
+        private ICollection<ValidationResult> _validationResults = new List<ValidationResult>();
         private string _error = string.Empty;
+        private Dictionary<string, List<string>> _errorDict = new Dictionary<string, List<string>>();
+        private ValidationContext _validationContext;
         public string Error
         {
             get { return _error; }
         }
-
-        private Dictionary<string, string> _errors = new Dictionary<string, string>();
         public string this[string columnName]
         {
             get
             {
-                if (_errors.ContainsKey(columnName)) return _errors[columnName];
-                else return null;
+
+                if (_errorDict.ContainsKey(columnName))
+                {
+                    string str = "|";
+                    foreach (var item in _errorDict[columnName])
+                    {
+                        str += item + "|";
+                    }
+                    return str;
+                }
+                return null;
             }
         }
+        public bool ValidatePro(string columnName, object value)
+        {
+            return this.ValidatePro(columnName, value, ref _errorDict, ErrorsChanged);
+        }
+
+        public bool Validate()
+        {
+            return this.Validate(ref _errorDict, ErrorsChanged);
+        }
+        #endregion
+        #region INotifyDataErrorInfo
+        private List<ValidationResult> _errorsContainer;
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public System.Collections.IEnumerable GetErrors(string propertyName)
+        {
+            if (_errorDict.ContainsKey(propertyName))
+            {
+                return _errorDict[propertyName];
+            }
+            return null;
+        }
+
         public bool HasErrors
         {
             get
             {
-                return _errors.Count > 0;
+                return _errorDict.Count > 0;
             }
         }
+        #endregion
     }
 }

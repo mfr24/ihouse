@@ -14,9 +14,10 @@
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityAddViewModelDataSource}}">
         <TextBox TextWrapping="Wrap" Text="{Binding Community.community_name, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区名称" VerticalAlignment="Top" Margin="39,22,0,0"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Mode=TwoWay, Path=Community.pinyin, ValidatesOnExceptions=True, NotifyOnValidationError=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.pinyin, Mode=TwoWay, ValidatesOnExceptions=True,
+      NotifyOnValidationError=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区拼音" Margin="39,62,0,0" VerticalAlignment="Top"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.city_name, Mode=TwoWay}" VerticalAlignment="Top" Margin="111,98,0,0" HorizontalAlignment="Left" Width="152"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.city_name, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,98,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="城市" VerticalAlignment="Top" Margin="39,102,0,0"/>
         <TextBox TextWrapping="Wrap" Text="{Binding Community.region, Mode=TwoWay}" VerticalAlignment="Top" Margin="111,138,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属区域" VerticalAlignment="Top" Margin="39,142,0,0"/>
