@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : KIMI
 Source Server Version : 50022
 Source Host           : localhost:3306
-Source Database       : cboo_house
+Source Database       : cboo
 
 Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2011-03-18 18:02:15
+Date: 2011-03-21 12:50:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -168,25 +168,30 @@ CREATE TABLE `customer_demandinfo` (
   `demand_kind` int(11) default NULL COMMENT '需求类型：10：求租：20求购',
   `demand_type` int(11) default NULL COMMENT '需求目标：10=住宅；20=商铺；30=办公；40=厂房；50=其他',
   `demand_zone` varchar(500) default NULL COMMENT '需求区域',
+  `demand_block` varchar(500) default NULL COMMENT '需求板块',
+  `demand_center` varchar(500) default NULL COMMENT '商圈需求',
   `demand_price` varchar(500) default NULL COMMENT '需求总价',
-  `demand_use` varchar(500) default NULL COMMENT '购房用途',
+  `demand_use` varchar(500) default NULL COMMENT '购房用途(投资，自用等，读数据字典)',
   `demand_building` varchar(500) default NULL COMMENT '建筑类型需求（高层小高层别墅等)',
   `demand_consider` varchar(500) default NULL COMMENT '考虑因素',
   `demand_area` varchar(500) default NULL COMMENT '面积需求',
-  `demand_service` varchar(500) default NULL,
-  `demand_age` varchar(500) default NULL,
-  `demand_special` varchar(500) default NULL,
-  `demand_room` varchar(50) default NULL,
-  `demand_hall` varchar(50) default NULL,
-  `demand_toilet` varchar(50) default NULL,
-  `demand_fitment` varchar(500) default NULL,
-  `demand_catalog` varchar(100) default NULL,
-  `demand_return_rate` varchar(500) default NULL,
-  `status` int(11) default NULL,
-  `add_person_id` char(36) default NULL,
-  `add_time` datetime default NULL,
-  `last_trace_time` datetime default NULL,
-  `update_time` datetime default NULL,
+  `demand_service` varchar(500) default NULL COMMENT '服务需求',
+  `demand_age` varchar(500) default NULL COMMENT '房龄需求(住宅需求)',
+  `demand_special` varchar(500) default NULL COMMENT '特殊需求',
+  `demand_room` varchar(50) default NULL COMMENT '房型需求-室(住宅）',
+  `demand_hall` varchar(50) default NULL COMMENT '房型需求-厅(住宅）',
+  `demand_toilet` varchar(50) default NULL COMMENT '房型需求-卫(住宅）',
+  `demand_fitment` varchar(500) default NULL COMMENT '装修需求',
+  `demand_catalog` varchar(100) default NULL COMMENT '需求自定义类别',
+  `demand_return_rate` varchar(500) default NULL COMMENT '投资回报率(商业办公需求)',
+  `status` int(11) default NULL COMMENT '需求状态(1=有效；-1=无效)',
+  `add_person_id` char(36) default NULL COMMENT '需求添加人',
+  `add_time` datetime default NULL COMMENT '需求添加时间',
+  `last_trace_time` datetime default NULL COMMENT '需求最后跟单时间',
+  `update_time` datetime default NULL COMMENT '最后更新时间',
+  `shop_type` varchar(500) default NULL COMMENT '商铺类型(沿街等,读数据字典）',
+  `business_scope` varchar(500) default NULL COMMENT '经营范围(餐饮，服饰等，读数据字典)',
+  `fav_community_id` char(36) default NULL COMMENT '第一选择的小区',
   PRIMARY KEY  (`record_id`),
   KEY `ix_customer_id` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户需求信息表';
@@ -259,17 +264,149 @@ CREATE TABLE `house_baseinfo` (
   `mark_code` varchar(255) default NULL COMMENT '备案号码',
   `is_entrust` bit(1) default NULL COMMENT '是否签订委托',
   `add_peron_id` char(36) default NULL COMMENT '房源添加人',
+  `opr_person_id` char(36) default NULL COMMENT '操作人ID',
   `add_time` datetime default NULL COMMENT '添加时间',
   `update_time` datetime default NULL COMMENT '更新时间',
   `web_send_status` int(11) default NULL COMMENT '房源推送状态(用位标示推送到了那些网站)',
   `last_refrash_time` datetime default NULL COMMENT '最后刷新时间',
   `house_remark` varchar(500) default NULL COMMENT '房源备注',
   `push_remark` varchar(2000) default NULL COMMENT '推送时的房源描述',
+  `shop_type` varchar(500) default NULL COMMENT '商铺类型(沿街等,读数据字典）',
+  `business_scope` varchar(500) default NULL COMMENT '经营范围(餐饮，服饰等，读数据字典)',
   PRIMARY KEY  (`house_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='房源基本信息表';
 
 -- ----------------------------
 -- Records of house_baseinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_intrustinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_intrustinfo`;
+CREATE TABLE `house_intrustinfo` (
+  `record_id` char(36) NOT NULL default '',
+  `house_id` char(36) default NULL COMMENT '房源ID',
+  `house_code` varchar(50) default NULL COMMENT '房源编号',
+  `house_address` varchar(200) default NULL COMMENT '房源地址',
+  `community_id` char(36) default NULL COMMENT '小区ID',
+  `region` varchar(50) default NULL COMMENT '房源区域',
+  `block` varchar(50) default NULL COMMENT '房源板块',
+  `property_code` varchar(100) default NULL COMMENT '产证编号',
+  `date_start` date default NULL COMMENT '委托开始日期',
+  `date_end` date default NULL COMMENT '委托结束日期',
+  `house_area` decimal(10,0) default NULL COMMENT '房屋面积',
+  `total_price` decimal(10,0) default NULL COMMENT '委托总价',
+  `unit_price` decimal(10,0) default NULL COMMENT '委托单价',
+  `customer_name` varchar(100) default NULL COMMENT '客户姓名',
+  `customer_phone` varchar(100) default NULL COMMENT '客户电话',
+  `customer_mobile` varchar(50) default NULL COMMENT '客户手机',
+  `customer_address` varchar(200) default NULL COMMENT '客户联系地址',
+  `business_type` int(11) default NULL COMMENT '交易类型（10=出售；20=出租；30=租售',
+  `entrust_type` int(11) default NULL COMMENT '委托类型（10=一般委托；20=独家委托)',
+  `status` int(11) default NULL COMMENT '委托状态（1=有效；-1=无效）',
+  `intrust_person_id` char(36) default NULL COMMENT '委托业务人员id',
+  `add_person_id` char(36) default NULL COMMENT '记录添加人员id',
+  `add_time` datetime default NULL COMMENT '记录添加时间',
+  `update_time` datetime default NULL COMMENT '记录更新时间',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_house_id` (`house_id`),
+  KEY `ix_house_code` (`house_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='房源委托信息表';
+
+-- ----------------------------
+-- Records of house_intrustinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_key_receiptioninfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_key_receiptioninfo`;
+CREATE TABLE `house_key_receiptioninfo` (
+  `record_id` char(36) NOT NULL COMMENT '记录标识',
+  `house_id` char(36) default NULL COMMENT '房源ID',
+  `house_code` varchar(50) default NULL COMMENT '房源编号',
+  `house_address` varchar(200) default NULL COMMENT '房源地址',
+  `receiption_code` varchar(50) default NULL COMMENT '钥匙收据编号',
+  `key_count` int(11) default NULL COMMENT '收取钥匙数量',
+  `get_date` date default NULL COMMENT '收取钥匙时间',
+  `customer_name` varchar(50) default NULL COMMENT '客户姓名',
+  `get_person_id` char(36) default NULL COMMENT '钥匙收取人ID',
+  `add_person_id` char(50) default NULL COMMENT '记录添加人ID',
+  `add_time` datetime default NULL COMMENT '记录添加时间',
+  `update_time` datetime default NULL COMMENT '记录更新时间',
+  `status` int(11) default NULL COMMENT '钥匙状态(-1=已被业主收回；1=在店中)',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_house_id` (`house_id`),
+  KEY `ix_house_code` (`house_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='房源钥匙收据信息表';
+
+-- ----------------------------
+-- Records of house_key_receiptioninfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_markedinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_markedinfo`;
+CREATE TABLE `house_markedinfo` (
+  `record_id` char(36) NOT NULL COMMENT '记录标识',
+  `house_id` char(36) default NULL COMMENT '房源ID',
+  `house_code` varchar(50) default NULL COMMENT '房源编号',
+  `house_address` varchar(200) default NULL COMMENT '房源地址',
+  `mark_code` varchar(50) default NULL COMMENT '备案编号',
+  `mark_day` date default NULL COMMENT '备案日期',
+  `mark_start_day` date default NULL COMMENT '备案开始时间',
+  `mark_end_day` date default NULL COMMENT '备案结束时间',
+  `status` int(11) default NULL COMMENT '备案状态(1=有效；-1=无效)',
+  `mark_person_id` char(36) default NULL COMMENT '备案人',
+  `add_person_id` char(36) default NULL COMMENT '备案添加人ID',
+  `add_time` datetime default NULL COMMENT '记录添加时间',
+  `update_time` datetime default NULL COMMENT '记录更新时间',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_house_id` (`house_id`),
+  KEY `ix_house_code` (`house_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='房源备案信息表';
+
+-- ----------------------------
+-- Records of house_markedinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_picinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_picinfo`;
+CREATE TABLE `house_picinfo` (
+  `record_id` char(36) NOT NULL default '',
+  `house_id` char(255) NOT NULL default '' COMMENT '房源ID',
+  `pic_type` int(11) default NULL COMMENT '图片类型10：房型图；20：室内图；30：外景图',
+  `pic_enum` int(11) default NULL COMMENT '图片大小分类10：缩略图；20：原图；30水印图',
+  `pic_url` varchar(200) default NULL COMMENT '图片地址',
+  PRIMARY KEY  (`record_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='房源图片信息';
+
+-- ----------------------------
+-- Records of house_picinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_push_logs`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_push_logs`;
+CREATE TABLE `house_push_logs` (
+  `record_id` char(36) NOT NULL default '',
+  `house_id` char(36) default NULL,
+  `house_code` varchar(50) default NULL,
+  `house_address` varchar(200) default NULL,
+  `push_to` int(11) default NULL,
+  `push_time` datetime default NULL,
+  `push_person_id` char(36) default NULL,
+  `push_status` datetime default NULL,
+  PRIMARY KEY  (`record_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of house_push_logs
 -- ----------------------------
 
 -- ----------------------------
@@ -289,6 +426,112 @@ CREATE TABLE `house_traceinfo` (
 
 -- ----------------------------
 -- Records of house_traceinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_viewhouse_baseinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_viewhouse_baseinfo`;
+CREATE TABLE `house_viewhouse_baseinfo` (
+  `record_id` char(36) NOT NULL default '' COMMENT '记录标识',
+  `customer_id` char(36) default NULL COMMENT '客户ID',
+  `customer_name` varchar(50) default NULL COMMENT '客户姓名',
+  `description` varchar(500) default NULL COMMENT '看房结果描述',
+  `view_time` datetime default NULL COMMENT '看房时间',
+  `status` int(11) default NULL COMMENT '状态（-1=无效；1=有效)',
+  `view_person_id` char(255) default NULL COMMENT '带看人员ID',
+  `add_person_id` char(36) default NULL COMMENT '记录添加人员ID',
+  `add_time` datetime default NULL COMMENT '记录添加时间',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_customer_id` (`customer_id`),
+  KEY `ix_view_date` (`view_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户带看记录基本信息';
+
+-- ----------------------------
+-- Records of house_viewhouse_baseinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `house_viewhouse_subinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `house_viewhouse_subinfo`;
+CREATE TABLE `house_viewhouse_subinfo` (
+  `record_id` char(36) NOT NULL default '' COMMENT '记录标识',
+  `main_id` char(36) default NULL COMMENT '带看记录基本信息表主键ID',
+  `house_id` char(36) default NULL COMMENT '房源ID',
+  `house_code` varchar(50) default NULL COMMENT '房源编号',
+  `house_address` varchar(200) default NULL COMMENT '房源地址',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_main_id` (`main_id`),
+  KEY `ix_house_id` (`house_id`),
+  KEY `ix_house_code` (`house_code`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户带看带看房源信息表';
+
+-- ----------------------------
+-- Records of house_viewhouse_subinfo
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_user_business_config`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user_business_config`;
+CREATE TABLE `sys_user_business_config` (
+  `user_id` char(36) default NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sys_user_business_config
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_user_community_config`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user_community_config`;
+CREATE TABLE `sys_user_community_config` (
+  `record_id` char(36) NOT NULL default '' COMMENT '记录标识',
+  `user_id` char(36) default NULL COMMENT '用户ID',
+  `community_id` char(36) default NULL COMMENT '小区ID',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_user_id` (`user_id`),
+  KEY `ix_community_id` (`community_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户主营小区配置';
+
+-- ----------------------------
+-- Records of sys_user_community_config
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_user_region_config`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user_region_config`;
+CREATE TABLE `sys_user_region_config` (
+  `record_id` char(36) NOT NULL default '' COMMENT '记录标识',
+  `user_id` char(36) NOT NULL default '' COMMENT '用户ID',
+  `regin` varchar(300) default NULL COMMENT '主营的区域',
+  `block` varchar(300) default NULL COMMENT '主营的板块',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户主营的区域板块设置';
+
+-- ----------------------------
+-- Records of sys_user_region_config
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `sys_user_relationinfo`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_user_relationinfo`;
+CREATE TABLE `sys_user_relationinfo` (
+  `record_id` char(36) NOT NULL default '' COMMENT '记录标识',
+  `parent_id` char(36) default NULL COMMENT '父账号ID',
+  `child_id` char(36) default NULL COMMENT '子账号id',
+  PRIMARY KEY  (`record_id`),
+  KEY `ix_parent_id` (`parent_id`),
+  KEY `ix_child_id` (`child_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户子账户关系表';
+
+-- ----------------------------
+-- Records of sys_user_relationinfo
 -- ----------------------------
 
 -- ----------------------------
