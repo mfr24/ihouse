@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ILight.Behaviors">
+      <HintPath>..\Libs\Silverlight\ILight.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="ILight.Core">
       <HintPath>..\Libs\Silverlight\ILight.Core.dll</HintPath>
     </Reference>
@@ -59,6 +62,7 @@
     <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="System.Windows.Interactivity" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Browser" />
