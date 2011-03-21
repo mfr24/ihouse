@@ -63,6 +63,7 @@
     <Compile Include="ServerResult.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Validation\ServerAttribute.cs" />
+    <Compile Include="Validation\ValidationRequest.cs" />
     <Compile Include="Validation\ValidationScope.cs" />
   </ItemGroup>
   <ItemGroup>

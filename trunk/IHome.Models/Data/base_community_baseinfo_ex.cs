@@ -11,11 +11,12 @@ namespace IHome.Data
         const int ToYear = 2011;
         public base_community_baseinfo_ex()
         {
-            _validationContext = new ValidationContext(this, null, null);
+            Errors = new Dictionary<string, List<string>>();
         }
 
 
         [Required(ErrorMessage = "小区名不能为空")]
+        [Server]
         override public string community_name
         {
             get { return base.community_name; }
@@ -40,8 +41,6 @@ namespace IHome.Data
                 if (ValidatePro("pinyin", value)) base.pinyin = value;
             }
         }
-
-
         [Range(1940, ToYear, ErrorMessage = "请输入合法的年份")]
         override public int? complete_year
         {
@@ -59,59 +58,41 @@ namespace IHome.Data
 
 
         #region validation
-        private ICollection<ValidationResult> _validationResults = new List<ValidationResult>();
         private string _error = string.Empty;
-        private Dictionary<string, List<string>> _errorDict = new Dictionary<string, List<string>>();
-        private ValidationContext _validationContext;
-        public string Error
-        {
-            get { return _error; }
-        }
-        public string this[string columnName]
-        {
-            get
-            {
-
-                if (_errorDict.ContainsKey(columnName))
-                {
-                    string str = "|";
-                    foreach (var item in _errorDict[columnName])
-                    {
-                        str += item + "|";
-                    }
-                    return str;
-                }
-                return null;
-            }
-        }
         public bool ValidatePro(string columnName, object value)
         {
-            return this.ValidatePro(columnName, value, ref _errorDict, ErrorsChanged);
+            return this.ValidateProEx(columnName, value);
         }
 
         public bool Validate()
         {
-            return this.Validate(ref _errorDict, ErrorsChanged);
-        }
-        #endregion
-        #region INotifyDataErrorInfo
-        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
-
-        public System.Collections.IEnumerable GetErrors(string propertyName)
-        {
-            if (_errorDict.ContainsKey(propertyName))
-            {
-                return _errorDict[propertyName];
-            }
-            return null;
+            return this.ValidateEx();
         }
 
         public bool HasErrors
         {
             get
             {
-                return _errorDict.Count > 0;
+                return Errors.Count > 0;
             }
+        }
+
+        public Dictionary<string, List<string>> Errors
+        {
+            get;
+            set;
+        }
+
+        public void RaiseErrorsChanged(string propertyName)
+        {
+            this.RaiseErrorsChangedEx(propertyName,ErrorsChanged);
+        }
+
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public System.Collections.IEnumerable GetErrors(string propertyName)
+        {
+            return this.GetErrorsEx(propertyName);
         }
         #endregion
     }
