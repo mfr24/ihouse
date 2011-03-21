@@ -8,7 +8,7 @@ namespace IHome.Data
 {
     public partial class base_community_baseinfo_ex : base_community_baseinfo,IValidateable
     {
-
+        const int ToYear = 2011;
         public base_community_baseinfo_ex()
         {
             _validationContext = new ValidationContext(this, null, null);
@@ -42,30 +42,17 @@ namespace IHome.Data
         }
 
 
-        //属性为int时,无法捕获前端输入字符串引发的异常;
-        public string complete_year_ex
+        [Range(1940, ToYear, ErrorMessage = "请输入合法的年份")]
+        public int? complete_year
         {
             get
             {
-                if (base.complete_year == null) return null;
-                return base.complete_year.ToString();
+                
+                return base.complete_year;
             }
             set
             {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    int year = 0;
-                    if (!int.TryParse(value, out year))
-                    {
-
-                        return;
-                    }
-                    base.complete_year = int.Parse(value);
-                }
-                else
-                {
-                    base.complete_year = null;
-                }
+                if (ValidatePro("complete_year", value)) base.complete_year = value;
 
             }
         }
