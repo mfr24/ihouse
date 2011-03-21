@@ -120,17 +120,77 @@ namespace IHome.Server.Data
         }
         private ObjectSet<house_baseinfo> _house_baseinfo;
     
+        public ObjectSet<house_intrustinfo> house_intrustinfo
+        {
+            get { return _house_intrustinfo  ?? (_house_intrustinfo = CreateObjectSet<house_intrustinfo>("house_intrustinfo")); }
+        }
+        private ObjectSet<house_intrustinfo> _house_intrustinfo;
+    
+        public ObjectSet<house_key_receiptioninfo> house_key_receiptioninfo
+        {
+            get { return _house_key_receiptioninfo  ?? (_house_key_receiptioninfo = CreateObjectSet<house_key_receiptioninfo>("house_key_receiptioninfo")); }
+        }
+        private ObjectSet<house_key_receiptioninfo> _house_key_receiptioninfo;
+    
+        public ObjectSet<house_markedinfo> house_markedinfo
+        {
+            get { return _house_markedinfo  ?? (_house_markedinfo = CreateObjectSet<house_markedinfo>("house_markedinfo")); }
+        }
+        private ObjectSet<house_markedinfo> _house_markedinfo;
+    
+        public ObjectSet<house_picinfo> house_picinfo
+        {
+            get { return _house_picinfo  ?? (_house_picinfo = CreateObjectSet<house_picinfo>("house_picinfo")); }
+        }
+        private ObjectSet<house_picinfo> _house_picinfo;
+    
+        public ObjectSet<house_push_logs> house_push_logs
+        {
+            get { return _house_push_logs  ?? (_house_push_logs = CreateObjectSet<house_push_logs>("house_push_logs")); }
+        }
+        private ObjectSet<house_push_logs> _house_push_logs;
+    
         public ObjectSet<house_traceinfo> house_traceinfo
         {
             get { return _house_traceinfo  ?? (_house_traceinfo = CreateObjectSet<house_traceinfo>("house_traceinfo")); }
         }
         private ObjectSet<house_traceinfo> _house_traceinfo;
     
+        public ObjectSet<house_viewhouse_baseinfo> house_viewhouse_baseinfo
+        {
+            get { return _house_viewhouse_baseinfo  ?? (_house_viewhouse_baseinfo = CreateObjectSet<house_viewhouse_baseinfo>("house_viewhouse_baseinfo")); }
+        }
+        private ObjectSet<house_viewhouse_baseinfo> _house_viewhouse_baseinfo;
+    
+        public ObjectSet<house_viewhouse_subinfo> house_viewhouse_subinfo
+        {
+            get { return _house_viewhouse_subinfo  ?? (_house_viewhouse_subinfo = CreateObjectSet<house_viewhouse_subinfo>("house_viewhouse_subinfo")); }
+        }
+        private ObjectSet<house_viewhouse_subinfo> _house_viewhouse_subinfo;
+    
         public ObjectSet<sys_user_baseinfo> sys_user_baseinfo
         {
             get { return _sys_user_baseinfo  ?? (_sys_user_baseinfo = CreateObjectSet<sys_user_baseinfo>("sys_user_baseinfo")); }
         }
         private ObjectSet<sys_user_baseinfo> _sys_user_baseinfo;
+    
+        public ObjectSet<sys_user_community_config> sys_user_community_config
+        {
+            get { return _sys_user_community_config  ?? (_sys_user_community_config = CreateObjectSet<sys_user_community_config>("sys_user_community_config")); }
+        }
+        private ObjectSet<sys_user_community_config> _sys_user_community_config;
+    
+        public ObjectSet<sys_user_region_config> sys_user_region_config
+        {
+            get { return _sys_user_region_config  ?? (_sys_user_region_config = CreateObjectSet<sys_user_region_config>("sys_user_region_config")); }
+        }
+        private ObjectSet<sys_user_region_config> _sys_user_region_config;
+    
+        public ObjectSet<sys_user_relationinfo> sys_user_relationinfo
+        {
+            get { return _sys_user_relationinfo  ?? (_sys_user_relationinfo = CreateObjectSet<sys_user_relationinfo>("sys_user_relationinfo")); }
+        }
+        private ObjectSet<sys_user_relationinfo> _sys_user_relationinfo;
     
         public ObjectSet<usys_community_baseinfo> usys_community_baseinfo
         {

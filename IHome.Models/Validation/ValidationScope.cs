@@ -85,7 +85,7 @@ namespace IHome.Models.Validation
 
         public void ValidateScope()
         {
-            ForEachElement(ScopeElement, delegate(DependencyObject obj)
+            ForEachElement(ScopeElement, (obj)=>
             {
                 // TODO - some of this reflection could be cached to improve performance
                 string propertyName = GetValidateBoundProperty(obj);

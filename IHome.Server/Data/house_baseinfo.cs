@@ -382,6 +382,15 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
+        public virtual Nullable<System.Guid> opr_person_id
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
         public virtual Nullable<System.DateTime> add_time
         {
             get;
@@ -428,6 +437,24 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual string push_remark
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string shop_type
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string business_scope
         {
             get;
             set;
