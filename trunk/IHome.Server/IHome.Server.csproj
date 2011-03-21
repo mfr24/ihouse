@@ -144,10 +144,13 @@
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Facade\MainFacade.cs" />
-    <Compile Include="Facade\MainFacade_Validate.cs" />
+    <Compile Include="Facade\MainFacade_Validate.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\HouseInfo.cs" />
     <Compile Include="Models\ServerResult.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ValidationRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,7 @@ namespace IHome.Models.Validation
             List<object> requsetData = new List<object>();
 
             Dictionary<string, object> dict = new Dictionary<string, object>();
-            dict.Add("ValidationRequest", new ValidationRequest() { ModelName = validationContext.ObjectInstance.GetType().FullName,Property=validationContext.MemberName,Value=value});
+            dict.Add("ValidationRequest", new ValidationRequest() { ModelName = validationContext.ObjectInstance.GetType().FullName, Property = validationContext.MemberName, Value = value });
             requsetData.Add(dict);
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
             resultType.Add(0, typeof(Models.ServerResult<object>));
