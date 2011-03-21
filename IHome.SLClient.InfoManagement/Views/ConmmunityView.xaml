@@ -17,7 +17,7 @@
                              IsBusy="{Binding IsBusy,Mode=TwoWay}" 
                              AutoGenerateColumns="False" 
                              CanUserFreezeColumns="False" 
-							 CanUserResizeColumns="False">
+							 CanUserResizeColumns="False" Height="225" VerticalAlignment="Top">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn Header="名称" DataMemberBinding="{Binding community_name}" />
                 <telerik:GridViewDataColumn Header="拼音" DataMemberBinding="{Binding pinyin}" />
