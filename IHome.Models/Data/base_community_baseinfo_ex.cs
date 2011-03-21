@@ -29,7 +29,7 @@ namespace IHome.Data
         }
         [Required(ErrorMessage = "小区拼音不能为空")]
         [RegularExpressionAttribute(@"^[A-Za-z]+$", ErrorMessage = "请输入拼音首字母")]
-        public string pinyin
+        override public string pinyin
         {
             get
             {
@@ -43,7 +43,7 @@ namespace IHome.Data
 
 
         [Range(1940, ToYear, ErrorMessage = "请输入合法的年份")]
-        public int? complete_year
+        override public int? complete_year
         {
             get
             {
@@ -95,7 +95,6 @@ namespace IHome.Data
         }
         #endregion
         #region INotifyDataErrorInfo
-        private List<ValidationResult> _errorsContainer;
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         public System.Collections.IEnumerable GetErrors(string propertyName)
