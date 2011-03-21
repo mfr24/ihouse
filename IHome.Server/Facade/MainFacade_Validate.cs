@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
-
 namespace IHome.Server.Facade
 {
      public partial class MainFacade
@@ -13,6 +12,7 @@ namespace IHome.Server.Facade
             Exception erro = null;
             object data = null;
             string message = null;
+            Models.ValidationRequest valid = paramDicts[0].GetModel<Models.ValidationRequest>();
             try
             {
                 
