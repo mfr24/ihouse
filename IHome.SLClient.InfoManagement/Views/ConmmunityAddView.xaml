@@ -14,24 +14,23 @@
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityAddViewModelDataSource}}">
         <TextBox TextWrapping="Wrap" Text="{Binding Community.community_name, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区名称" VerticalAlignment="Top" Margin="39,22,0,0"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.pinyin, Mode=TwoWay, ValidatesOnExceptions=True,
-      NotifyOnValidationError=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.pinyin, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区拼音" Margin="39,62,0,0" VerticalAlignment="Top"/>
         <TextBox TextWrapping="Wrap" Text="{Binding Community.city_name, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,98,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="城市" VerticalAlignment="Top" Margin="39,102,0,0"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.region, Mode=TwoWay}" VerticalAlignment="Top" Margin="111,138,0,0" HorizontalAlignment="Left" Width="152"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.region, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,138,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属区域" VerticalAlignment="Top" Margin="39,142,0,0"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.block, Mode=TwoWay}" VerticalAlignment="Top" Margin="111,178,0,0" HorizontalAlignment="Left" Width="152"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.block, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,178,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属板块" VerticalAlignment="Top" Margin="39,182,0,0"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.address, Mode=TwoWay}" Margin="111,218,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.address, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,218,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区地址" Margin="39,222,0,0" VerticalAlignment="Top"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.community_use, Mode=TwoWay}" Margin="111,258,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.community_use, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,258,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区用途" Margin="39,262,0,0" VerticalAlignment="Top"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.building_type, Mode=TwoWay}" Margin="111,298,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.building_type, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,298,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="建筑类型" Margin="39,302,0,0" VerticalAlignment="Top"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Mode=TwoWay, Path=Community.complete_year_ex, ValidatesOnExceptions=True, NotifyOnValidationError=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Mode=TwoWay, Path=Community.complete_year,ValidatesOnDataErrors=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="竣工年份" Margin="39,342,0,0" VerticalAlignment="Top"/>
-        <TextBox TextWrapping="Wrap" Text="{Binding Community.remark, Mode=TwoWay}" Margin="111,378,0,0" VerticalAlignment="Top" Height="94" HorizontalAlignment="Left" Width="521" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+        <TextBox TextWrapping="Wrap" Text="{Binding Community.remark, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,378,0,0" VerticalAlignment="Top" Height="94" HorizontalAlignment="Left" Width="521" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区描述" Margin="39,382,0,0" VerticalAlignment="Top"/>
         <Button Content="添加" VerticalAlignment="Top" Margin="8,450,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding AddConmmunity, Mode=OneWay}" />
 	</Grid>
