@@ -101,10 +101,40 @@
     <Compile Include="Data\house_baseinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\house_intrustinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_key_receiptioninfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_markedinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_picinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_push_logs.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\house_traceinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\house_viewhouse_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_viewhouse_subinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\sys_user_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_community_config.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_region_config.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_relationinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\usys_community_baseinfo.cs">

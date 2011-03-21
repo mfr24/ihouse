@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace IHome.Server.Data
 {
-    public partial class customer_demandinfo
+    public partial class house_intrustinfo
     {
         #region Primitive Properties
     
@@ -31,7 +31,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<System.Guid> customer_id
+        public virtual Nullable<System.Guid> house_id
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> demand_kind
+        public virtual string house_code
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> demand_type
+        public virtual string house_address
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_zone
+        public virtual Nullable<System.Guid> community_id
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_block
+        public virtual string region
         {
             get;
             set;
@@ -76,7 +76,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_center
+        public virtual string block
         {
             get;
             set;
@@ -85,7 +85,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_price
+        public virtual string property_code
         {
             get;
             set;
@@ -94,7 +94,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_use
+        public virtual Nullable<System.DateTime> date_start
         {
             get;
             set;
@@ -103,7 +103,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_building
+        public virtual Nullable<System.DateTime> date_end
         {
             get;
             set;
@@ -112,7 +112,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_consider
+        public virtual Nullable<decimal> house_area
         {
             get;
             set;
@@ -121,7 +121,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_area
+        public virtual Nullable<decimal> total_price
         {
             get;
             set;
@@ -130,7 +130,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_service
+        public virtual Nullable<decimal> unit_price
         {
             get;
             set;
@@ -139,7 +139,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_age
+        public virtual string customer_name
         {
             get;
             set;
@@ -148,7 +148,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_special
+        public virtual string customer_phone
         {
             get;
             set;
@@ -157,7 +157,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_room
+        public virtual string customer_mobile
         {
             get;
             set;
@@ -166,7 +166,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_hall
+        public virtual string customer_address
         {
             get;
             set;
@@ -175,7 +175,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_toilet
+        public virtual Nullable<int> business_type
         {
             get;
             set;
@@ -184,25 +184,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string demand_fitment
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string demand_catalog
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string demand_return_rate
+        public virtual Nullable<int> entrust_type
         {
             get;
             set;
@@ -212,6 +194,15 @@ namespace IHome.Server.Data
     	///undefine	
     	/// </summary>
         public virtual Nullable<int> status
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.Guid> intrust_person_id
         {
             get;
             set;
@@ -238,43 +229,7 @@ namespace IHome.Server.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<System.DateTime> last_trace_time
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
         public virtual Nullable<System.DateTime> update_time
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string shop_type
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string business_scope
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual Nullable<System.Guid> fav_community_id
         {
             get;
             set;
