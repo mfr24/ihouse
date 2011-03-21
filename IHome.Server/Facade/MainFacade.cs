@@ -6,7 +6,7 @@ using System.Collections;
 using IHome.Server.Common;
 namespace IHome.Server.Facade
 {
-    public class MainFacade
+    public partial class MainFacade
     {
         public MainFacade()
         {
