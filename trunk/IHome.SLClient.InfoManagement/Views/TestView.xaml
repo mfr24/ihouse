@@ -16,12 +16,12 @@
 		<Grid x:Name="AAA"/>
 		<Button Content="{Binding XXX}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" 
          />
-		
-		<telerik:RadButton Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,182,0,0">
+		<StackPanel HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="111,90,0,0" Background="#FFD23232">
 			<i:Interaction.Behaviors>
 				<ilight:XDrop/>
 			</i:Interaction.Behaviors>
-		</telerik:RadButton>
+			<telerik:RadButton Content="Button" HorizontalAlignment="Left"/>
+		</StackPanel>
 		
 	</Grid>
 </UserControl>
