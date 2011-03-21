@@ -4,7 +4,7 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:IHome.SLClient.InfoManagement"
-	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ilight="http://silverlight.imbob.com.cn"
 	mc:Ignorable="d"
 	x:Class="IHome.SLClient.InfoManagement.TestView"
 	d:DesignWidth="640" d:DesignHeight="480">
@@ -17,7 +17,11 @@
 		<Button Content="{Binding XXX}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" 
          />
 		
-		<telerik:RadButton Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,182,0,0"/>
+		<telerik:RadButton Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="155,182,0,0">
+			<i:Interaction.Behaviors>
+				<ilight:XDrop/>
+			</i:Interaction.Behaviors>
+		</telerik:RadButton>
 		
 	</Grid>
 </UserControl>
