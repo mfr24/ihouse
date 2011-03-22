@@ -3,6 +3,20 @@
   dslVersion="1.0.0.0"
   Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec"
   name="IHome.DataFlow" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="ef4b03d5-d6d9-4dfd-a747-5d76ced51432">
+      <body>判断
+1.用户名是否重复
+2.手机号码是否重复</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="084d8df6-9d8f-4dab-841e-4ed1e56bdacc"
+          LastKnownName="Decision1"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -2105,7 +2119,119 @@
           <initialNode
             Id="43281320-b726-408f-af77-1f7bcfda01cc"
             name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a81888fe-ff4a-4d64-9724-00c0e909cdd5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="12a2ccf3-1296-464f-ae00-10dd30443b96"
+                  LastKnownName="输入注册信息"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="12a2ccf3-1296-464f-ae00-10dd30443b96"
+            name="输入注册信息"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b519b25b-860e-475b-a262-9c952a50663d"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="084d8df6-9d8f-4dab-841e-4ed1e56bdacc"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="084d8df6-9d8f-4dab-841e-4ed1e56bdacc"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f469ad06-5ef7-4fb7-a7f6-adebe4361af8"
+                guard="NO"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="12a2ccf3-1296-464f-ae00-10dd30443b96"
+                  LastKnownName="输入注册信息"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2ea88c6f-9467-42f8-a8c3-57ba8593d1bf"
+                guard="YES"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2a6e1e51-4a20-4e20-9aa4-6a3dbd42a3d1"
+                  LastKnownName="保存注册信息"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="2a6e1e51-4a20-4e20-9aa4-6a3dbd42a3d1"
+            name="保存注册信息"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="30ad391b-f024-455b-b315-022da092d469"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="bea49fed-b0b8-4a4c-a9e8-b1c1e532e31f"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b6458783-fbcf-4722-8610-c7260d86fc93"
+            name="跳转到系统默认页"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c58566a5-3e65-4fa9-9075-760ef86ef369"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="df95a814-5d82-44e4-b992-7407b98595b8"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="df95a814-5d82-44e4-b992-7407b98595b8"
+            name="ActivityFinal1"
             isLeaf="false" />
+          <opaqueAction
+            Id="c2093308-ac14-4197-8853-044e18e6758d"
+            name="生成CurrentUser"
+            isLeaf="false" />
+          <forkNode
+            Id="bea49fed-b0b8-4a4c-a9e8-b1c1e532e31f"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1e6cd09c-7fb3-4d9c-9b20-bf76f1173d82"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b6458783-fbcf-4722-8610-c7260d86fc93"
+                  LastKnownName="跳转到系统默认页"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="bf8527a2-051e-404c-bf86-ad47e2486167"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c2093308-ac14-4197-8853-044e18e6758d"
+                  LastKnownName="生成CurrentUser"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
         </nodes>
       </activity>
     </packageHasNamedElement>
