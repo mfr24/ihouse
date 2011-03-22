@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 namespace IHome.Server.Facade
 {
      public partial class MainFacade
@@ -15,7 +16,15 @@ namespace IHome.Server.Facade
             Models.ValidationRequest valid = paramDicts[0].GetModel<Models.ValidationRequest>();
             try
             {
-                
+                List<ValidationResult> validationResults = new List<ValidationResult>();
+                if (!Validator.TryValidateProperty(valid.Value, new ValidationContext(Activator.CreateInstance(null, valid.ModelName),null,null) { MemberName = valid.Property }, validationResults))
+                {
+                    data = new { succeed = false, ValidationResultList = validationResults };
+                }
+                else
+                {
+                    data = new { succeed = true };
+                }
             }
             catch (Exception ex)
             {

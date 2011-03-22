@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using IHome.Models.Validation;
 using ILight.Core.Model;
-namespace IHome.Data
+namespace IHome.Model.Data
 {
     public partial class base_community_baseinfo_ex : base_community_baseinfo,IValidateable
     {
