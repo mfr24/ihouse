@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="preview">
+  <useCaseModelRootMoniker Id="a265df16-9537-4a5f-9655-a05f0097eecb" />
+  <nestedChildShapes>
+    <SubsystemShape Id="3758ae47-9ccb-484a-834e-5539af4cd605" absoluteBounds="0.625, 0.625, 2, 1" customColor="White">
+      <subsystemMoniker Id="b57317d9-1eb5-4d93-b97d-70fd8cd435c4" LastKnownName="用户管理子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="ca498698-891c-4676-a5e0-aa8a4e39dd2e" absoluteBounds="6.375, 0.625, 2, 1" customColor="White">
+      <subsystemMoniker Id="9f4449d7-f150-4455-8344-55e7d5e10f85" LastKnownName="基础管理子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="a1abdf71-6526-4816-8172-44fd9068e478" absoluteBounds="2, 2, 2, 1" customColor="White">
+      <subsystemMoniker Id="8e086311-3810-4453-9c23-06d84f0b275e" LastKnownName="房源管理子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="d2a85b25-5ab6-4c65-bc7e-cec2ba6aea94" absoluteBounds="4.625, 2, 2, 1" customColor="White">
+      <subsystemMoniker Id="27e38ef3-58a2-4de5-9ed4-1d28a2e7c3b9" LastKnownName="客户管理子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="0447f046-c39b-430a-85d3-b6d2b1facf9d" absoluteBounds="2, 3.25, 2, 1" customColor="White">
+      <subsystemMoniker Id="0bf171c6-4c99-48a1-b481-40a28cdc31dd" LastKnownName="签约管理子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="2464e9c5-9d8f-4bae-8c54-16931fe88f46" absoluteBounds="4.625, 3.25, 2, 1" customColor="White">
+      <subsystemMoniker Id="77ff4323-e3e5-49c0-9367-acb786cd107c" LastKnownName="款项收支子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="feca7e68-797c-4bef-9041-159814435b0d" absoluteBounds="3.5, 0.625, 2, 1" customColor="White">
+      <subsystemMoniker Id="eb3ae667-eb4f-416f-8ff1-bb9487ce751d" LastKnownName="个人管理子系统" />
+    </SubsystemShape>
+    <SubsystemShape Id="46c3b9ca-18d2-41ac-81b9-ccc111d4341d" absoluteBounds="3.25, 4.625, 2, 1" customColor="White">
+      <subsystemMoniker Id="8db246cc-1ccb-4109-a7c8-ab3d635caa0f" LastKnownName="报表管理子系统" />
+    </SubsystemShape>
+  </nestedChildShapes>
+</useCaseDiagram>
