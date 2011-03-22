@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace IHome.Server.Data
+namespace IHome.Models.Data
 {
     public partial class base_community_baseinfo
     {

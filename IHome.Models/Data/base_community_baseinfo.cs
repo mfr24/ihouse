@@ -11,7 +11,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace IHome.Data
+namespace IHome.Model.Data
 {
     public partial class base_community_baseinfo
     {

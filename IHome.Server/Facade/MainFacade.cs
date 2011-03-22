@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
-using IHome.Server.Common;
 namespace IHome.Server.Facade
 {
     public partial class MainFacade
@@ -35,7 +34,7 @@ namespace IHome.Server.Facade
         {
             //Models.User model = paramDicts[0]["user"].ToString().JsonToModel<Models.User>();
             {
-                Data.sys_user_baseinfo user = new Data.sys_user_baseinfo();
+                Models.Data.sys_user_baseinfo user = new Models.Data.sys_user_baseinfo();
                 user.user_id = Guid.NewGuid();
                 user.city_name = "北京";
                 using (var context=new Data.CbooEntities())
@@ -66,7 +65,7 @@ namespace IHome.Server.Facade
                 {
                     //check user
                 }
-                revList.Add(new Models.ServerResult() { succeed = true, data = users.ToList<Data.sys_user_baseinfo>(), message = "message f!!!!!!" });
+                revList.Add(new Models.ServerResult() { succeed = true, data = users.ToList<Models.Data.sys_user_baseinfo>(), message = "message f!!!!!!" });
                 return revList;
 
             }
@@ -88,7 +87,7 @@ namespace IHome.Server.Facade
 
                                       select community;
 
-                    data = communities.ToList<Data.base_community_baseinfo>();
+                    data = communities.ToList<Models.Data.base_community_baseinfo>();
                 }
             }
             catch (Exception ex)
@@ -113,7 +112,7 @@ namespace IHome.Server.Facade
             string message = null;
             try
             {
-                Data.base_community_baseinfo community = paramDicts[0]["community"].ToString().JsonToModel<Data.base_community_baseinfo>();
+                Models.Data.base_community_baseinfo community = paramDicts[0]["community"].ToString().JsonToModel<Models.Data.base_community_baseinfo>();
                 community.community_id = Guid.NewGuid();
                 using (var context = new Data.CbooEntities())
                 {
