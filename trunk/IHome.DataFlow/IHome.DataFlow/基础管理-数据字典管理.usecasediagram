@@ -1,27 +1,237 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="035ce89d-18b4-44d4-a8c8-36c6f372a00a" name="基础管理-数据字典管理" linkedPackageId="9484c3b0-1f07-4a5f-b77b-63c1bf92ecb0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="c4eb0189-c814-41a6-9b0b-68fa5c59d21a">
-      <profileInstance Id="9faf80b7-0064-41a9-86f3-1d8907e9c1ed" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="b947de16-8628-4bc3-8cfc-9e686f79a0fb">
-      <profileInstance Id="6eaa600c-9c3f-46b4-a963-032bc7a06ccf" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <useCaseModelRootHasTypes>
       <actor Id="9a59b3c6-e365-4aa5-8cbe-ff84fe49f8a8" name="后台管理员" isAbstract="false" isLeaf="false">
         <elementDefinition Id="3c235701-9cd6-4fcb-ac9f-b91fe5843583" />
+        <targetEnds>
+          <association Id="50c8d719-c311-4135-876a-ecbc1217a363" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目添加" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="ecb13745-ee45-4815-bbdc-3e97f693adc9" LastKnownName="数据字典项目添加" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="4fe7cfa9-ee0e-4c56-8572-5fd50a21670c" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="512822e4-91f8-4e5e-a154-98b733b05ed3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9028fb8a-edc6-43d3-90fd-99a58b30f6ab" name="数据字典项目添加" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="91b127e1-6c20-48af-ad6e-69e1a4825671" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d0b2ecbf-2400-47f3-8903-b0543c83b6a4" />
+          </association>
+          <association Id="68c240b4-f3b2-4bc5-bdd5-1ed76a3db9bc" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目查询" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a0357e20-b5cd-4c04-926a-9edfb5cd7556" LastKnownName="数据字典项目查询" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="14033757-4abf-478e-ba08-db9345f79ddc" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="410bdef3-f68b-4ce5-86eb-692c880d3493" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3ae51ecc-32ff-465b-9b7d-5b9ee44abd5d" name="数据字典项目查询" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1e9c0726-d325-405b-a180-e044d79cc507" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="4f52f25c-9b46-4abc-bbe6-64fda067b88f" />
+          </association>
+          <association Id="4ed57488-8425-47cd-a40e-779a506a3c96" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目值添加" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bcfc3462-3afa-4fd6-8c27-ab43e32462ea" LastKnownName="数据字典项目值添加" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8e314598-b43b-4631-ac7a-032b558aeaee" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7913f4f4-775d-4016-bb51-1544fe94b99c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="09ffc568-f226-4e2a-bf80-89faab5bdf5c" name="数据字典项目值添加" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="0ad1b849-37f1-4b83-a35e-58702c8bf6d1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2b9c507e-dcd5-4fcc-b4ab-10f2e00a4af8" />
+          </association>
+          <association Id="c7e1fdcc-2f26-4d0e-a9af-23bb6f64d51c" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目值查询" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8c7b2d2f-31aa-4f0f-a390-f1c09d2de4fb" LastKnownName="数据字典项目值查询" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7cbdb005-56e1-4d86-a28e-51ffc053315d" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ab0544b7-3d9f-4595-aa7b-c0ae7eedba3f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b919ce12-4596-4c02-bd94-7d5cb8966931" name="数据字典项目值查询" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ee182c24-a69a-4cbf-bc53-823e73d590b7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1e92d755-9f58-4438-9e87-1cfdedf3d9c7" />
+          </association>
+          <association Id="8e0227e8-4acb-4f48-9a47-43635fe04798" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="后台管理员" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="9a59b3c6-e365-4aa5-8cbe-ff84fe49f8a8" LastKnownName="后台管理员" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c2983513-b98d-4e6e-a82c-b6d97ff0f523" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bf90c39a-79ee-4107-ba1b-36b2954bd15a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7090aa2e-369e-4585-a3db-15de64bef6dc" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a1d274b2-ca68-4af6-b82b-ebd004b5b08a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="96fdcd81-6a16-42cb-9031-f53db6011a7e" />
+          </association>
+          <association Id="e8d4e34f-1147-4542-a833-ef6fd7e862f2" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目修改" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="f0af94b5-139a-4fc0-8d06-b0f14b6ce203" LastKnownName="数据字典项目修改" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6d92a054-ed0e-4799-927d-e39ace82c6c5" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="19b69afb-5dea-4100-b91a-8c70d0fd1118" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="104bb28b-f42b-4c05-9114-c988d357faf5" name="数据字典项目修改" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d048ff2a-a8a0-4179-8dae-4ace6b4967c3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f7180128-8616-4ef8-b9e3-bb8c58ad627e" />
+          </association>
+          <association Id="cc544797-a779-41df-bf93-32deb816b88a" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目删除" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="40ff8a3a-99d3-4d87-813d-3ab491b65cf8" LastKnownName="数据字典项目删除" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8c23cf52-ec6f-41a0-a110-f53da9b4cfea" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1a83e1b1-b86d-4fb6-b223-bb36c7ba9f12" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d6ae5391-be00-4fd6-a18f-9e0f92800f50" name="数据字典项目删除" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="467055cb-072e-42c1-8c1e-6d0ec27ae694" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="0bee23a9-68bf-4c4a-aeb0-cc520d018ea9" />
+          </association>
+          <association Id="91fa1ba3-eba5-4c19-bd89-65ee0df3652d" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目值修改" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="268e32f6-5589-43e3-a0f1-8cdd8fd41f3b" LastKnownName="数据字典项目值修改" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="00c111b3-8f69-418e-b26d-8c074c9a962e" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b9c55453-12f4-4d29-a6ab-2db873e29431" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f2a2d374-299a-470f-8ee7-a411fe6baf9c" name="数据字典项目值修改" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1350ce90-024f-4eab-838e-e08873f75d36" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="489136fb-c26e-49e3-881d-1b9db6082ce0" />
+          </association>
+          <association Id="21fc5a51-84c8-4528-a821-68dc1fb78304" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="数据字典项目值删除" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="0b64423a-0890-411a-8a87-b3b0133002a6" LastKnownName="数据字典项目值删除" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9a77e2a8-6a69-4bc7-b334-39e08ed205c1" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2689d07a-4b02-4e84-863f-941cab60df99" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3135d8c-a08d-45ec-a2d5-ea1349a79cb9" name="数据字典项目值删除" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="321470ec-d5e7-473e-abc9-05ac1fa6aad9" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9458fb01-29a6-494e-8f2b-bc4b73617adf" />
+          </association>
+        </targetEnds>
       </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="ecb13745-ee45-4815-bbdc-3e97f693adc9" name="数据字典项目添加" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5b618e8a-351a-450c-ad88-6b7aaebcba63" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a0357e20-b5cd-4c04-926a-9edfb5cd7556" name="数据字典项目查询" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="17b55f05-b2ed-4e39-b33f-54c2da99322f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="f0af94b5-139a-4fc0-8d06-b0f14b6ce203" name="数据字典项目修改" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="493fc98a-06e0-4f43-8106-40955ab70a9f" />
+        <suppliersInternal>
+          <dependency Id="7b3d9642-09a9-4def-9e75-8ad261120da4">
+            <useCaseMoniker Id="a0357e20-b5cd-4c04-926a-9edfb5cd7556" LastKnownName="数据字典项目查询" />
+            <elementDefinition Id="2a94e051-2737-4467-9105-5df7b00a6da2" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="40ff8a3a-99d3-4d87-813d-3ab491b65cf8" name="数据字典项目删除" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2d75998d-a583-435a-bc68-8dd1c19836a3" />
+        <suppliersInternal>
+          <dependency Id="25b67d39-8d54-4eaa-bb8a-680d6f780f50">
+            <useCaseMoniker Id="a0357e20-b5cd-4c04-926a-9edfb5cd7556" LastKnownName="数据字典项目查询" />
+            <elementDefinition Id="ba19ab33-45c4-44cd-9b2b-c997ac21e6d0" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bcfc3462-3afa-4fd6-8c27-ab43e32462ea" name="数据字典项目值添加" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f76336bc-e58f-40bb-81a4-31363242182a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8c7b2d2f-31aa-4f0f-a390-f1c09d2de4fb" name="数据字典项目值查询" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="88a9ae1a-d9c2-4119-a0b7-a314e30340f5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="268e32f6-5589-43e3-a0f1-8cdd8fd41f3b" name="数据字典项目值修改" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6ccf22dc-a536-4aeb-a5dd-abc03c955425" />
+        <suppliersInternal>
+          <dependency Id="c28acaa4-af6c-4ae4-9c58-e3af953cb817">
+            <useCaseMoniker Id="8c7b2d2f-31aa-4f0f-a390-f1c09d2de4fb" LastKnownName="数据字典项目值查询" />
+            <elementDefinition Id="95a7a41e-c596-4f8c-ae3b-5ec44c4b413b" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="0b64423a-0890-411a-8a87-b3b0133002a6" name="数据字典项目值删除" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8d246f00-faef-415b-8a03-18d0271c90e2" />
+        <suppliersInternal>
+          <dependency Id="11a7cc33-941d-46b7-9753-51830cb336f8">
+            <useCaseMoniker Id="8c7b2d2f-31aa-4f0f-a390-f1c09d2de4fb" LastKnownName="数据字典项目值查询" />
+            <elementDefinition Id="93175912-1d11-4561-8c8b-1adb6cbd8bce" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
     </useCaseModelRootHasTypes>
   </packagedElements>
   <package Id="9484c3b0-1f07-4a5f-b77b-63c1bf92ecb0" name="IHome.DataFlow">
     <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+    <profileInstances>
+      <packageHasProfileInstances Id="c4eb0189-c814-41a6-9b0b-68fa5c59d21a">
+        <profileInstance Id="9faf80b7-0064-41a9-86f3-1d8907e9c1ed" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="b947de16-8628-4bc3-8cfc-9e686f79a0fb">
+        <profileInstance Id="6eaa600c-9c3f-46b4-a963-032bc7a06ccf" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>
