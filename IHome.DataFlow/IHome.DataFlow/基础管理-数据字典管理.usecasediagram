@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="035ce89d-18b4-44d4-a8c8-36c6f372a00a" name="基础管理-数据字典管理" linkedPackageId="9484c3b0-1f07-4a5f-b77b-63c1bf92ecb0" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="c4eb0189-c814-41a6-9b0b-68fa5c59d21a">
+      <profileInstance Id="9faf80b7-0064-41a9-86f3-1d8907e9c1ed" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="b947de16-8628-4bc3-8cfc-9e686f79a0fb">
+      <profileInstance Id="6eaa600c-9c3f-46b4-a963-032bc7a06ccf" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="9a59b3c6-e365-4aa5-8cbe-ff84fe49f8a8" name="后台管理员" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3c235701-9cd6-4fcb-ac9f-b91fe5843583" />
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="9484c3b0-1f07-4a5f-b77b-63c1bf92ecb0" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</useCaseModelRoot>

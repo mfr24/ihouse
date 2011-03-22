@@ -35,7 +35,7 @@
       <relativeChildShapes />
     </useCaseShape>
     <useCaseShape Id="73d5a4a5-e711-42e4-af15-0f67a2b4e085" absoluteBounds="4.125, 1.375, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
-      <useCaseMoniker Id="deeba716-e550-4890-a7fe-ad594deb93b8" LastKnownName="查询" />
+      <useCaseMoniker Id="deeba716-e550-4890-a7fe-ad594deb93b8" LastKnownName="查询用户" />
       <relativeChildShapes />
     </useCaseShape>
     <useCaseShape Id="adb86f4d-1099-4b3b-83d9-d50c5fa0aba6" absoluteBounds="4.125, 5.25, 1, 0.5" customColor="238, 237, 131" heightOffset="0">

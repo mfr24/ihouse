@@ -24,6 +24,20 @@
       <SubType>Content</SubType>
       <DependentUpon>preview.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="基础管理-数据字典管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="基础管理-数据字典管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>基础管理-数据字典管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="基础管理-权限管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="基础管理-权限管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>基础管理-权限管理.usecasediagram</DependentUpon>
+    </Content>
     <Content Include="用户管理.usecasediagram">
       <SubType>Content</SubType>
     </Content>

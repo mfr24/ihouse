@@ -141,7 +141,7 @@
     <packageHasNamedElement>
       <useCase
         Id="176798cb-7e4e-41cd-8443-570593074227"
-        name="查询"
+        name="查询用户"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>
@@ -412,7 +412,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="176798cb-7e4e-41cd-8443-570593074227"
-              LastKnownName="查询"
+              LastKnownName="查询用户"
               LastKnownLocation="IHome.DataFlow.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -637,6 +637,357 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="f6edda17-1ef7-4cdd-8de4-607ef9d79dce"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="权限项定义"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="21b618e9-dd9c-42cb-bf4e-2b72295a3f6b"
+              LastKnownName="权限项定义"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="09738c28-6a36-4764-aeb7-fddeb4b59976"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d3584cd0-8ef2-4c23-b340-e2c688f0600d"
+                  name="权限项定义"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9dae6724-501c-4858-9d96-605d771cbab0"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="权限项查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f9ce562e-9296-4391-83c3-cbda889e85dd"
+              LastKnownName="权限项查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bc419677-2e1c-4026-9068-09343541f348"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="83007290-db20-4ce2-a8b4-b00fedc32c6b"
+                  name="权限项查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="8219a832-b1fc-46d8-b71e-782d8d8e92d7"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="权限项修改"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="1b27c42a-4b1e-414a-9953-277ad6ed4bc1"
+              LastKnownName="权限项修改"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b203b763-7e5d-420c-9b72-5dd52c4dc883"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ece1e013-e788-47ef-9b74-091f26ae8e54"
+                  name="权限项修改"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="911617f6-6c25-4e4e-a753-ba94a192882a"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="用户组定义"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e48118d8-b384-4b23-85de-410908a6e87f"
+              LastKnownName="用户组定义"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="faefbea5-71d2-4e18-8a80-9487db5b04fc"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="58c6ee19-b88b-4fdf-9eb2-6ff09ca09529"
+                  name="用户组定义"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="6b81282f-6e5e-4425-b891-7a07ff3e0d23"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="用户组修改"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="b706f56e-234d-4456-a49a-4a28fc5ef5ab"
+              LastKnownName="用户组修改"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="84c17f53-25cb-4164-a291-8446bd99dc3b"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="606223f5-d74f-4e59-8770-01df2d18a8c6"
+                  name="用户组修改"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="16def4e7-1def-4b63-b3ba-9ac078acde82"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="用户组权限设定"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="87cfcf5e-38ef-4c61-9510-5fbd24a8a0fd"
+              LastKnownName="用户组权限设定"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5c7527e2-d842-456f-bf7a-c13e33032d32"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="05eea7a5-6a9e-4285-8d9b-0c7b432cc1cc"
+                  name="用户组权限设定"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ff741e95-cdbc-4854-87a9-d92b05215130"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="用户组成员维护"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e53a86e4-5949-416e-9ce1-74631e398aaf"
+              LastKnownName="用户组成员维护"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b10d57da-d983-4672-97a7-1303970d3ca9"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="761c9f77-04a1-42d7-a292-6e7559f250d9"
+                  name="用户组成员维护"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="bb8aae5e-ec46-4f65-9681-adf3b87376a9"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="用户组权限查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0948ac52-929a-4a49-9337-f60207870920"
+              LastKnownName="用户组权限查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e0bf2a7d-4493-42e7-a2da-a31dedb50fce"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a332c1da-e3ab-4c74-91ce-b73cb25549ab"
+                  name="用户组权限查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f21bcbcb-4a36-48f2-9721-2de02d80fbea"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="用户权限查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="98687ceb-7bf7-4e42-8e13-e83dcd5f7dc1"
+              LastKnownName="用户权限查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="10b5aa27-9ae4-4468-bc44-1afb2c96c8b3"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9aa0ab29-3026-4e08-b70b-3da0e04a5dab"
+                  name="用户权限查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
@@ -665,6 +1016,79 @@
       <useCase
         Id="aa7d08ab-d097-4a63-abf7-f0acd2c75863"
         name="个人推送信息设定"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="21b618e9-dd9c-42cb-bf4e-2b72295a3f6b"
+        name="权限项定义"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="1b27c42a-4b1e-414a-9953-277ad6ed4bc1"
+        name="权限项修改"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f9ce562e-9296-4391-83c3-cbda889e85dd"
+        name="权限项查询"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e48118d8-b384-4b23-85de-410908a6e87f"
+        name="用户组定义"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="b706f56e-234d-4456-a49a-4a28fc5ef5ab"
+        name="用户组修改"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="87cfcf5e-38ef-4c61-9510-5fbd24a8a0fd"
+        name="用户组权限设定"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e53a86e4-5949-416e-9ce1-74631e398aaf"
+        name="用户组成员维护"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="9bc26407-16f1-4bb9-8241-e3fc590e0499">
+            <subsystemMoniker
+              Id="3bdba2d5-c113-4205-8df1-c39827c99c0f"
+              LastKnownName="用户管理子系统"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0948ac52-929a-4a49-9337-f60207870920"
+        name="用户组权限查询"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="98687ceb-7bf7-4e42-8e13-e83dcd5f7dc1"
+        name="用户权限查询"
         isAbstract="false"
         isLeaf="false" />
     </packageHasNamedElement>

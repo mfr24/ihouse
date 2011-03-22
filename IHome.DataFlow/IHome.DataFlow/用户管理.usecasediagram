@@ -56,7 +56,7 @@
       </useCase>
     </useCaseModelRootHasTypes>
     <useCaseModelRootHasTypes>
-      <useCase Id="deeba716-e550-4890-a7fe-ad594deb93b8" name="查询" isAbstract="false" isLeaf="false">
+      <useCase Id="deeba716-e550-4890-a7fe-ad594deb93b8" name="查询用户" isAbstract="false" isLeaf="false">
         <elementDefinition Id="176798cb-7e4e-41cd-8443-570593074227" />
       </useCase>
     </useCaseModelRootHasTypes>
@@ -173,7 +173,7 @@
         <elementDefinition Id="3c235701-9cd6-4fcb-ac9f-b91fe5843583" />
         <targetEnds>
           <association Id="35df26fd-80b9-42fe-83d2-b24f7f323cab" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="查询" isLeaf="false" isAbstract="false">
-            <useCaseMoniker Id="deeba716-e550-4890-a7fe-ad594deb93b8" LastKnownName="查询" />
+            <useCaseMoniker Id="deeba716-e550-4890-a7fe-ad594deb93b8" LastKnownName="查询用户" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd Id="f0d72b4c-c4f8-4ae1-a0f7-98c1c2d9577c" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">

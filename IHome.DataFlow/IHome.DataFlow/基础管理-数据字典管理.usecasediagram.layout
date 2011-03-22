@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="基础管理-数据字典管理">
+  <useCaseModelRootMoniker Id="035ce89d-18b4-44d4-a8c8-36c6f372a00a" />
+  <nestedChildShapes>
+    <actorShape Id="1f3f1d78-a7cb-42aa-80de-33bd8f3b0890" absoluteBounds="1, 2.625, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="9a59b3c6-e365-4aa5-8cbe-ff84fe49f8a8" LastKnownName="后台管理员" />
+      <relativeChildShapes />
+    </actorShape>
+  </nestedChildShapes>
+</useCaseDiagram>
