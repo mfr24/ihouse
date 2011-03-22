@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec"
   name="IHome.DataFlow" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -383,6 +383,435 @@
                 <memberEnd
                   Id="45acf5bc-e897-40a8-857d-cd1d28ed6169"
                   name="个人主营小区设定"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1bbd9daa-28da-4fea-ba6d-f5df6c7c69e3"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="新增楼盘"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="47076729-0e41-4e2f-8397-c3f5a5eb8940"
+              LastKnownName="新增楼盘"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="512c911f-1c95-49e2-a73f-9d71ea72c572"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a036128-3549-4a85-b37a-e14f4477fc9c"
+                  name="新增楼盘"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9a22d1e6-0ad8-471b-a5a3-36e77e22d864"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="楼盘查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d74901e1-ce41-4050-874a-68a029ee9be5"
+              LastKnownName="楼盘查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a4cb905c-9d84-4223-82db-87fa35dd394c"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3c1fc738-523f-45ea-abe3-ee82bd1b2a0f"
+                  name="楼盘查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="cb9b44ad-813b-4ee2-83c1-51e1f36981f4"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="导入预设楼盘字典"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6ac07538-dc1c-469a-9b0d-2a05b3a85c54"
+              LastKnownName="导入预设楼盘字典"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="52da1263-aa17-410f-8a96-730fa254627d"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e927880-a439-46ea-8cee-f15b3c897f34"
+                  name="导入预设楼盘字典"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="d6320671-8658-4d17-a53d-dca96c3800b1"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="修改楼盘"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7f77b6c9-bdd1-4616-9e7a-10ff6b442e19"
+              LastKnownName="修改楼盘"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="106c58bb-7288-4875-9d0e-b69fe537004c"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d224c522-309e-4b6e-bdc8-24af47e72764"
+                  name="修改楼盘"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="702af675-473c-4d1a-be77-1a4c5368356e"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="删除楼盘"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0ab56d58-e822-427c-91a9-d494b47c36c4"
+              LastKnownName="删除楼盘"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5ab20ad5-2a21-41cc-b110-89899bca0ae2"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="59cf3378-7e91-4869-aab8-b29862b2c575"
+                  name="删除楼盘"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="00b56130-b4cb-48a3-818e-ec718c12640e"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="新增楼栋"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f1c3f147-059b-42cf-a92a-7d6644be619b"
+              LastKnownName="新增楼栋"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="48c90a76-5a7b-4864-8d1a-8cef92d03dea"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1b0c43f3-f7e3-4158-b14b-d9b30259d8e0"
+                  name="新增楼栋"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9e9eda3b-e3b6-424a-81b6-8f5b9a1fe2ae"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="查询楼栋"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="7514e9c8-0540-481b-9da6-2be82a3765e7"
+              LastKnownName="查询楼栋"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9f3fd009-19d3-43bc-8e8f-e615a04b5e70"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4c519578-6e55-4ba4-832f-141fe40dac19"
+                  name="查询楼栋"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2fe2f964-491f-4c06-8ad0-08a22d97ec9c"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="楼盘详情"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ac758a47-3c9b-46e5-9ad5-24b6cc339631"
+              LastKnownName="楼盘详情"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ad6a560-00b2-4c17-80c6-b44080482ccb"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d2a41335-655d-4566-ba03-4ce8e72090fb"
+                  name="楼盘详情"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9686079c-c9fa-4bf7-8f22-b5d7d46f76ba"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="编辑楼栋"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4ed1871e-79e0-4d4c-8c2a-95ab571a8814"
+              LastKnownName="编辑楼栋"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1c465d04-7ef4-47ba-a211-40e6ee949bc5"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="13336607-9077-4227-9bde-5593d812a0f3"
+                  name="编辑楼栋"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="e434ccd6-4f03-4654-ad98-1f28509993fa"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="删除楼栋"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a05b3455-e78d-4783-9d7a-94d6f3acd663"
+              LastKnownName="删除楼栋"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ad2d5869-bdad-42f3-922d-d39fa5e7bcea"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a7c3e77c-c502-4caf-990d-9c2860af9451"
+                  name="删除楼栋"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="76f18ad3-c272-4dca-8491-e638c66a679a"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="查看楼栋"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="48663a27-2fde-4b0c-b059-4e88029dbfcb"
+              LastKnownName="查看楼栋"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7529cbfd-3743-47c8-ae7b-0d716a897a9f"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7a196a88-46c2-4622-8ae1-f8bed5c3e312"
+                  name="查看楼栋"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -988,6 +1417,396 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="d0b2ecbf-2400-47f3-8903-b0543c83b6a4"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目添加"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="5b618e8a-351a-450c-ad88-6b7aaebcba63"
+              LastKnownName="数据字典项目添加"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="512822e4-91f8-4e5e-a154-98b733b05ed3"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="91b127e1-6c20-48af-ad6e-69e1a4825671"
+                  name="数据字典项目添加"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="4f52f25c-9b46-4abc-bbe6-64fda067b88f"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="17b55f05-b2ed-4e39-b33f-54c2da99322f"
+              LastKnownName="数据字典项目查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="410bdef3-f68b-4ce5-86eb-692c880d3493"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1e9c0726-d325-405b-a180-e044d79cc507"
+                  name="数据字典项目查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="2b9c507e-dcd5-4fcc-b4ab-10f2e00a4af8"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目值添加"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="f76336bc-e58f-40bb-81a4-31363242182a"
+              LastKnownName="数据字典项目值添加"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7913f4f4-775d-4016-bb51-1544fe94b99c"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0ad1b849-37f1-4b83-a35e-58702c8bf6d1"
+                  name="数据字典项目值添加"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="1e92d755-9f58-4438-9e87-1cfdedf3d9c7"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目值查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="88a9ae1a-d9c2-4119-a0b7-a314e30340f5"
+              LastKnownName="数据字典项目值查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ab0544b7-3d9f-4595-aa7b-c0ae7eedba3f"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ee182c24-a69a-4cbf-bc53-823e73d590b7"
+                  name="数据字典项目值查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="96fdcd81-6a16-42cb-9031-f53db6011a7e"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="后台管理员"
+            isLeaf="false"
+            isAbstract="false">
+            <actorMoniker
+              Id="3c235701-9cd6-4fcb-ac9f-b91fe5843583"
+              LastKnownName="后台管理员"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="bf90c39a-79ee-4107-ba1b-36b2954bd15a"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a1d274b2-ca68-4af6-b82b-ebd004b5b08a"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f7180128-8616-4ef8-b9e3-bb8c58ad627e"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目修改"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="493fc98a-06e0-4f43-8106-40955ab70a9f"
+              LastKnownName="数据字典项目修改"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="19b69afb-5dea-4100-b91a-8c70d0fd1118"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d048ff2a-a8a0-4179-8dae-4ace6b4967c3"
+                  name="数据字典项目修改"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0bee23a9-68bf-4c4a-aeb0-cc520d018ea9"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目删除"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2d75998d-a583-435a-bc68-8dd1c19836a3"
+              LastKnownName="数据字典项目删除"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1a83e1b1-b86d-4fb6-b223-bb36c7ba9f12"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="467055cb-072e-42c1-8c1e-6d0ec27ae694"
+                  name="数据字典项目删除"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="489136fb-c26e-49e3-881d-1b9db6082ce0"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目值修改"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="6ccf22dc-a536-4aeb-a5dd-abc03c955425"
+              LastKnownName="数据字典项目值修改"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b9c55453-12f4-4d29-a6ab-2db873e29431"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1350ce90-024f-4eab-838e-e08873f75d36"
+                  name="数据字典项目值修改"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9458fb01-29a6-494e-8f2b-bc4b73617adf"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="数据字典项目值删除"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="8d246f00-faef-415b-8a03-18d0271c90e2"
+              LastKnownName="数据字典项目值删除"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2689d07a-4b02-4e84-863f-941cab60df99"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="321470ec-d5e7-473e-abc9-05ac1fa6aad9"
+                  name="数据字典项目值删除"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="22351a49-63cb-406d-854b-cfabf8cfc8df"
+            isDerived="false"
+            sourceEndRoleName="后台管理员"
+            targetEndRoleName="审核楼盘字典(进入预设楼盘字典库)"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="131b0344-20f6-41d3-a424-eccf911d0165"
+              LastKnownName="审核楼盘字典(进入预设楼盘字典库)"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b7f94851-9142-481a-b5db-f17f3a273c39"
+                  name="后台管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d41bd49a-a25f-42c3-a1f7-4412b220dafc"
+                  name="审核楼盘字典(进入预设楼盘字典库)"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
@@ -1091,6 +1910,204 @@
         name="用户权限查询"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="5b618e8a-351a-450c-ad88-6b7aaebcba63"
+        name="数据字典项目添加"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="17b55f05-b2ed-4e39-b33f-54c2da99322f"
+        name="数据字典项目查询"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="493fc98a-06e0-4f43-8106-40955ab70a9f"
+        name="数据字典项目修改"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="2a94e051-2737-4467-9105-5df7b00a6da2">
+            <useCaseMoniker
+              Id="17b55f05-b2ed-4e39-b33f-54c2da99322f"
+              LastKnownName="数据字典项目查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2d75998d-a583-435a-bc68-8dd1c19836a3"
+        name="数据字典项目删除"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="ba19ab33-45c4-44cd-9b2b-c997ac21e6d0">
+            <useCaseMoniker
+              Id="17b55f05-b2ed-4e39-b33f-54c2da99322f"
+              LastKnownName="数据字典项目查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f76336bc-e58f-40bb-81a4-31363242182a"
+        name="数据字典项目值添加"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="88a9ae1a-d9c2-4119-a0b7-a314e30340f5"
+        name="数据字典项目值查询"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6ccf22dc-a536-4aeb-a5dd-abc03c955425"
+        name="数据字典项目值修改"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="95a7a41e-c596-4f8c-ae3b-5ec44c4b413b">
+            <useCaseMoniker
+              Id="88a9ae1a-d9c2-4119-a0b7-a314e30340f5"
+              LastKnownName="数据字典项目值查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="8d246f00-faef-415b-8a03-18d0271c90e2"
+        name="数据字典项目值删除"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="93175912-1d11-4561-8c8b-1adb6cbd8bce">
+            <useCaseMoniker
+              Id="88a9ae1a-d9c2-4119-a0b7-a314e30340f5"
+              LastKnownName="数据字典项目值查询"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="47076729-0e41-4e2f-8397-c3f5a5eb8940"
+        name="新增楼盘"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7f77b6c9-bdd1-4616-9e7a-10ff6b442e19"
+        name="修改楼盘"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d74901e1-ce41-4050-874a-68a029ee9be5"
+        name="楼盘查询"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0ab56d58-e822-427c-91a9-d494b47c36c4"
+        name="删除楼盘"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="f1c3f147-059b-42cf-a92a-7d6644be619b"
+        name="新增楼栋"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="7514e9c8-0540-481b-9da6-2be82a3765e7"
+        name="查询楼栋"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4ed1871e-79e0-4d4c-8c2a-95ab571a8814"
+        name="编辑楼栋"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a05b3455-e78d-4783-9d7a-94d6f3acd663"
+        name="删除楼栋"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ac758a47-3c9b-46e5-9ad5-24b6cc339631"
+        name="楼盘详情"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="48663a27-2fde-4b0c-b059-4e88029dbfcb"
+        name="查看楼栋"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="6ac07538-dc1c-469a-9b0d-2a05b3a85c54"
+        name="导入预设楼盘字典"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="131b0344-20f6-41d3-a424-eccf911d0165"
+        name="审核楼盘字典(进入预设楼盘字典库)"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="370581f9-d7d0-4554-85c9-31ee7088ca6e"
+        name="用户管理"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="43281320-b726-408f-af77-1f7bcfda01cc"
+            name="Initial1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
