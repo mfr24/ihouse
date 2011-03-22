@@ -19,11 +19,11 @@ namespace IHome.Server.Facade
                 List<ValidationResult> validationResults = new List<ValidationResult>();
                 if (!Validator.TryValidateProperty(valid.Value, new ValidationContext(Activator.CreateInstance(null, valid.ModelName).Unwrap(),null,null) { MemberName = valid.Property }, validationResults))
                 {
-                    data = new { succeed = false, ValidationResultList = validationResults };
+                    data = validationResults;
                 }
                 else
                 {
-                    data = new { succeed = true };
+                    data = null;
                 }
             }
             catch (Exception ex)
