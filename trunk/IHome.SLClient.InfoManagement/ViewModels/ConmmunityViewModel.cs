@@ -35,9 +35,9 @@ namespace IHome.SLClient.InfoManagement
         }
         public ConmmunityViewModel()
         {
-            _communityList = new ObservableCollection<Model.Data.base_community_baseinfo>();
+            _communityList = new ObservableCollection<Models.Data.base_community_baseinfo>();
         }
-        private ObservableCollection<Model.Data.base_community_baseinfo> _communityList;
+        private ObservableCollection<Models.Data.base_community_baseinfo> _communityList;
         private bool _isBusy;
 
         public bool IsBusy
@@ -49,7 +49,7 @@ namespace IHome.SLClient.InfoManagement
         }
         
 
-        public ObservableCollection<Model.Data.base_community_baseinfo> CommunityList
+        public ObservableCollection<Models.Data.base_community_baseinfo> CommunityList
         {
             get { return _communityList; }
             set { _communityList = value; }
@@ -67,7 +67,7 @@ namespace IHome.SLClient.InfoManagement
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
 
             //the dictionary key is index of returned array
-            resultType.Add(0, typeof(Models.ServerResult<List<Model.Data.base_community_baseinfo>>));
+            resultType.Add(0, typeof(Models.ServerResult<List<Models.Data.base_community_baseinfo>>));
 
 
             ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
@@ -77,7 +77,7 @@ namespace IHome.SLClient.InfoManagement
                 if (result.DataList[0] != null)
                 {
                     CommunityList.Clear();
-                    List<Model.Data.base_community_baseinfo> data = (result.DataList[0] as Models.ServerResult<List<Model.Data.base_community_baseinfo>>).data;
+                    List<Models.Data.base_community_baseinfo> data = (result.DataList[0] as Models.ServerResult<List<Models.Data.base_community_baseinfo>>).data;
                     foreach (var item in data)
                     {
                         CommunityList.Add(item);
