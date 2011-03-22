@@ -17,7 +17,7 @@ namespace IHome.Server.Facade
             try
             {
                 List<ValidationResult> validationResults = new List<ValidationResult>();
-                if (!Validator.TryValidateProperty(valid.Value, new ValidationContext(Activator.CreateInstance(null, valid.ModelName),null,null) { MemberName = valid.Property }, validationResults))
+                if (!Validator.TryValidateProperty(valid.Value, new ValidationContext(Activator.CreateInstance(null, valid.ModelName).Unwrap(),null,null) { MemberName = valid.Property }, validationResults))
                 {
                     data = new { succeed = false, ValidationResultList = validationResults };
                 }

@@ -27,10 +27,10 @@ namespace IHome.SLClient.InfoManagement
         }
 		public ConmmunityAddViewModel()
 		{
-            Community = new Model.Data.base_community_baseinfo_ex();
+            Community = new Models.Data.base_community_baseinfo_ex();
 		}
         
-        public Model.Data.base_community_baseinfo_ex Community
+        public Models.Data.base_community_baseinfo_ex Community
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace IHome.SLClient.InfoManagement
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
 
             //the dictionary key is index of returned array
-            resultType.Add(0, typeof(Models.ServerResult<Model.Data.base_community_baseinfo>));
+            resultType.Add(0, typeof(Models.ServerResult<Models.Data.base_community_baseinfo>));
 
 
             ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
@@ -58,7 +58,7 @@ namespace IHome.SLClient.InfoManagement
             {
                 if (result.DataList[0] != null)
                 {
-                    if ((result.DataList[0] as Models.ServerResult<Model.Data.base_community_baseinfo>).succeed)
+                    if ((result.DataList[0] as Models.ServerResult<Models.Data.base_community_baseinfo>).succeed)
                     {
                         MessageBox.Show("OK!!!");
                     }
