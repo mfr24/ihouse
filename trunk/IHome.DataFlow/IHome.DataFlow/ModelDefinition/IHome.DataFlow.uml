@@ -8,7 +8,9 @@
       Id="ef4b03d5-d6d9-4dfd-a747-5d76ced51432">
       <body>判断
 1.用户名是否重复
-2.手机号码是否重复</body>
+2.手机号码是否重复
+3.密码是否符合规范
+4.用户名是否符合规范</body>
       <annotatedElements>
         <decisionNodeMoniker
           Id="084d8df6-9d8f-4dab-841e-4ed1e56bdacc"

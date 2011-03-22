@@ -8,6 +8,8 @@
     <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
     <Name>IHome.DataFlow</Name>
     <RootNamespace>IHome.DataFlow</RootNamespace>
+    <ValidateArchitecture>
+    </ValidateArchitecture>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\Debug\</OutputPath>
