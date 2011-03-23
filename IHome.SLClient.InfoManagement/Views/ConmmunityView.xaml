@@ -13,32 +13,39 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityViewModelDataSource}}">
-        <telerik:RadGridView ItemsSource="{Binding CommunityList ,Mode=TwoWay}" ShowGroupPanel="False" IsReadOnly="True" Margin="0,22,0,0"
+        <telerik:RadGridView ItemsSource="{Binding CommunityList ,Mode=TwoWay}" ShowGroupPanel="False" Margin="0,22,0,0"
                              IsBusy="{Binding IsBusy,Mode=TwoWay}" 
                              AutoGenerateColumns="False" 
                              CanUserFreezeColumns="False" 
 							 CanUserResizeColumns="False" Height="241" VerticalAlignment="Top" SelectedItem="{Binding CommunitySelected}">
             <telerik:RadGridView.Columns>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding check_status_ex}">
+                <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
-                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding IsCheckAll}"/>
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource ConmmunityViewModelDataSource}}" />
                     </telerik:GridViewDataColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding check_status_ex, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
                 </telerik:GridViewDataColumn>
-                <telerik:GridViewDataColumn Header="名称" DataMemberBinding="{Binding community_name}" />
-                <telerik:GridViewDataColumn Header="拼音" DataMemberBinding="{Binding pinyin}" />
-                <telerik:GridViewDataColumn Header="城市" DataMemberBinding="{Binding city_name}" />
-                <telerik:GridViewDataColumn Header="区域" DataMemberBinding="{Binding region}" />
-                <telerik:GridViewDataColumn Header="板块" DataMemberBinding="{Binding block}" />
-                <telerik:GridViewDataColumn Header="地址" DataMemberBinding="{Binding address}" />
-                <telerik:GridViewDataColumn Header="用途" DataMemberBinding="{Binding community_use}" />
-                <telerik:GridViewDataColumn Header="建筑类型" DataMemberBinding="{Binding building_type}" />
-                <telerik:GridViewDataColumn Header="竣工年份" DataMemberBinding="{Binding complete_year}" />
-                <telerik:GridViewDataColumn Header="小区描述" DataMemberBinding="{Binding remark}" Width="*"/>
+                <telerik:GridViewDataColumn Header="名称" DataMemberBinding="{Binding community_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="拼音" DataMemberBinding="{Binding pinyin}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="城市" DataMemberBinding="{Binding city_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="区域" DataMemberBinding="{Binding region}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="板块" DataMemberBinding="{Binding block}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="地址" DataMemberBinding="{Binding address}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="用途" DataMemberBinding="{Binding community_use}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="建筑类型" DataMemberBinding="{Binding building_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="竣工年份" DataMemberBinding="{Binding complete_year}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="小区描述" DataMemberBinding="{Binding remark}" Width="*" IsReadOnly="True"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <telerik:RadDataForm ItemsSource="{Binding CommunityList}" Height="217" VerticalAlignment="Top" Margin="0,263,0,0" HorizontalAlignment="Left" Width="299"
 						     />
         <Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddConmmunity, Mode=OneWay}"/>
         <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetConmmunityList, Mode=OneWay}" Margin="81,0,0,0" />
+        <Button Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="160,0,0,0"/>
+        <Button Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="240,0,0,0"/>
     </Grid>
 </UserControl>
