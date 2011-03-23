@@ -15,14 +15,14 @@ using System.Collections.Specialized;
 
 namespace IHome.Models.Data
 {
-    public partial class base_community_baseinfo
+    public partial class base_community_buildinginfo
     {
         #region Primitive Properties
     
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.Guid community_id
+        public virtual System.Guid building_id
         {
             get;
             set;
@@ -31,7 +31,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string community_name
+        public virtual Nullable<System.Guid> community_id
         {
             get;
             set;
@@ -40,7 +40,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> city_id
+        public virtual string building_name
         {
             get;
             set;
@@ -49,43 +49,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string city_name
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string region
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string block
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string address
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual string community_use
+        public virtual string building_use
         {
             get;
             set;
@@ -103,7 +67,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<int> complete_year
+        public virtual Nullable<int> building_floor
         {
             get;
             set;
@@ -112,7 +76,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string remark
+        public virtual Nullable<int> unit_num
         {
             get;
             set;
@@ -121,7 +85,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string pinyin
+        public virtual string unit_type
         {
             get;
             set;
@@ -130,7 +94,16 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual Nullable<System.Guid> add_person_id
+        public virtual string room_rule
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string room_rule_remark
         {
             get;
             set;
