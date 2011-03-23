@@ -13,21 +13,15 @@ using System.Windows.Shapes;
 namespace IHome.SLClient.InfoManagement
 {
 	/// <summary>
-	/// Interaction logic for ConmmunityAddView.xaml
+	/// Interaction logic for CommunityView.xaml
 	/// </summary>
-	public partial class ConmmunityAddView : UserControl
+	public partial class CommunityView : UserControl
 	{
-		public ConmmunityAddView()
+		public CommunityView()
 		{
-            Resources.Add("ConmmunityAddViewModelDataSource",new ConmmunityAddViewModel());
 			this.InitializeComponent();
 			
 			// Insert code required on object creation below this point.
 		}
-        public ConmmunityAddView(ConmmunityAddViewModel VM)
-        {
-            Resources["ConmmunityAddViewModelDataSource"] = VM;
-            this.InitializeComponent();
-        }
 	}
 }
