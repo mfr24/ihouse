@@ -8,10 +8,11 @@
 	x:Class="IHome.SLClient.InfoManagement.ConmmunityAddView"
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
-		<local:ConmmunityAddViewModel x:Key="ConmmunityAddViewModelDataSource" />
+		<!--<local:ConmmunityAddViewModel x:Key="ConmmunityAddViewModelDataSource" />-->
+        <d:DesignInstance Type="local:ConmmunityAddViewModel" x:Key="ConmmunityAddViewModelDataSource"/>
 	</UserControl.Resources>
 
-	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityAddViewModelDataSource}}">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityAddViewModelDataSource}}">
         <TextBox TextWrapping="Wrap" Text="{Binding Community.community_name, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区名称" VerticalAlignment="Top" Margin="39,22,0,0"/>
         <TextBox TextWrapping="Wrap" Text="{Binding Community.pinyin, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
