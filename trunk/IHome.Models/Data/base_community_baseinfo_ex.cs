@@ -12,8 +12,9 @@ namespace IHome.Models.Data
         public base_community_baseinfo_ex()
         {
             Errors = new Dictionary<string, List<string>>();
+            check_status_ex = false;
         }
-        public bool DelteMark { get; set; }
+        public bool check_status_ex { get; set; }
 
         //[Required(ErrorMessage = "小区名不能为空")]
         [Server]

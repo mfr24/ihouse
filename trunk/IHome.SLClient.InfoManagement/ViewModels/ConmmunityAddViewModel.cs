@@ -25,6 +25,8 @@ namespace IHome.SLClient.InfoManagement
 
             }
         }
+
+
 		public ConmmunityAddViewModel()
 		{
             Community = new Models.Data.base_community_baseinfo_ex();

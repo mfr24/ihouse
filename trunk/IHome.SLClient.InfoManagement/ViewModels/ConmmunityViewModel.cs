@@ -33,11 +33,27 @@ namespace IHome.SLClient.InfoManagement
 
             }
         }
+        private bool _isCheckAll = false;
+
+        public bool IsCheckAll
+        {
+            get { return _isCheckAll; }
+            set
+            {
+                _isCheckAll = value;
+                foreach (var item in CommunityList)
+                {
+                    item.check_status_ex = _isCheckAll;
+                }
+                NotifyPropertyChanged("IsCheckAll");
+            }
+        }
+
         public ConmmunityViewModel()
         {
-            _communityList = new ObservableCollection<Models.Data.base_community_baseinfo>();
+            _communityList = new ObservableCollection<Models.Data.base_community_baseinfo_ex>();
         }
-        private ObservableCollection<Models.Data.base_community_baseinfo> _communityList;
+        private ObservableCollection<Models.Data.base_community_baseinfo_ex> _communityList;
         private bool _isBusy;
 
         public bool IsBusy
@@ -47,9 +63,9 @@ namespace IHome.SLClient.InfoManagement
             NotifyPropertyChanged("IsBusy");
             }
         }
-        
 
-        public ObservableCollection<Models.Data.base_community_baseinfo> CommunityList
+
+        public ObservableCollection<Models.Data.base_community_baseinfo_ex> CommunityList
         {
             get { return _communityList; }
             set { _communityList = value; }
@@ -67,7 +83,7 @@ namespace IHome.SLClient.InfoManagement
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
 
             //the dictionary key is index of returned array
-            resultType.Add(0, typeof(Models.ServerResult<List<Models.Data.base_community_baseinfo>>));
+            resultType.Add(0, typeof(Models.ServerResult<List<Models.Data.base_community_baseinfo_ex>>));
 
 
             ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
@@ -77,7 +93,7 @@ namespace IHome.SLClient.InfoManagement
                 if (result.DataList[0] != null)
                 {
                     CommunityList.Clear();
-                    List<Models.Data.base_community_baseinfo> data = (result.DataList[0] as Models.ServerResult<List<Models.Data.base_community_baseinfo>>).data;
+                    List<Models.Data.base_community_baseinfo_ex> data = (result.DataList[0] as Models.ServerResult<List<Models.Data.base_community_baseinfo_ex>>).data;
                     foreach (var item in data)
                     {
                         CommunityList.Add(item);

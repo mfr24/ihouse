@@ -19,6 +19,11 @@
                              CanUserFreezeColumns="False" 
 							 CanUserResizeColumns="False" Height="241" VerticalAlignment="Top" SelectedItem="{Binding CommunitySelected}">
             <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding check_status_ex}">
+                    <telerik:GridViewDataColumn.Header>
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding IsCheckAll}"/>
+                    </telerik:GridViewDataColumn.Header>
+                </telerik:GridViewDataColumn>
                 <telerik:GridViewDataColumn Header="名称" DataMemberBinding="{Binding community_name}" />
                 <telerik:GridViewDataColumn Header="拼音" DataMemberBinding="{Binding pinyin}" />
                 <telerik:GridViewDataColumn Header="城市" DataMemberBinding="{Binding city_name}" />
