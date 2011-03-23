@@ -54,12 +54,26 @@
       <SubType>Content</SubType>
       <DependentUpon>用户管理\用户管理-用户注册.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="用户管理\用户管理-用户登录.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-用户登录.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-用户登录.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="用户管理\用户管理.usecasediagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="用户管理\用户管理.usecasediagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>用户管理\用户管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="租房专题资讯发布.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="租房专题资讯发布.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>租房专题资讯发布.usecasediagram</DependentUpon>
     </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\IHome.DataFlow.uml">

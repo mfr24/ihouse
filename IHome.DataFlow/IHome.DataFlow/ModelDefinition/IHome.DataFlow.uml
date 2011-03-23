@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec"
   name="IHome.DataFlow" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -17,6 +17,12 @@
           LastKnownName="Decision1"
           LastKnownLocation="IHome.DataFlow.uml" />
       </annotatedElements>
+    </comment>
+    <comment
+      Id="f1992493-5256-4b88-9ee6-6efc4d892d02">
+      <body>1.将对应的URL返回给租房频道编辑
+2.上传文件位置为双方约定好。
+如 http://xxxxxx.xom/arch/xx.html</body>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -2236,6 +2242,520 @@
           </forkNode>
         </nodes>
       </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="6bfa555c-f3a8-4b73-88b8-82ff3da0734b"
+        name="租房频道编辑"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8361b4f5-0386-4367-97ef-96a982956b86"
+            isDerived="false"
+            sourceEndRoleName="租房频道编辑"
+            targetEndRoleName="发布专题"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="00ff9b30-e526-4d41-8df6-e036f491a56f"
+              LastKnownName="发布专题"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7a7d229d-536b-4d93-be34-8270c5a4062c"
+                  name="租房频道编辑"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="10abcd92-c2e1-45b6-9084-a1069c42a5fa"
+                  name="发布专题"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="c1f090b2-ad11-4e8f-8ad3-7c96ce23f050"
+            isDerived="false"
+            sourceEndRoleName="租房频道编辑"
+            targetEndRoleName="上传至服务器"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4ffea305-be79-423b-92a9-332eb23f2f12"
+              LastKnownName="上传至服务器"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="690577fd-3aae-48ae-b683-93576abaaf60"
+                  name="租房频道编辑"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c84f3ebe-13f1-4fcc-bf3b-9275a24a541e"
+                  name="上传至服务器"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="209c2808-4965-456c-807d-0de62045d16c"
+            isDerived="false"
+            sourceEndRoleName="租房频道编辑"
+            targetEndRoleName="告知sina编辑 文字链标题及URL"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="713ccc92-cd45-47c6-8db9-7855c7d41209"
+              LastKnownName="告知sina编辑 文字链标题及URL"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3ad22e0d-199a-49fe-a2af-942d254c05cd"
+                  name="租房频道编辑"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="fdac4e76-6263-45bf-9015-85a60a0011e5"
+                  name="告知sina编辑 文字链标题及URL"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="d67a767c-bcc2-499e-873c-4f560ca4aad1"
+        name="租房资讯专题发布"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="39ed818b-b2ef-4ba9-a0c6-0ec1cd4d208a"
+        name="数据中心专题资讯生成系统"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="7656d27b-8e40-4f57-9ee7-caf7d625e490"
+            isDerived="false"
+            sourceEndRoleName="数据中心专题资讯生成系统"
+            targetEndRoleName="生成专题文件"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9383f2d9-00ec-4cbf-ae64-c106f8763033"
+              LastKnownName="生成专题文件"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6c00d23a-be24-47eb-8e92-9edb022e838c"
+                  name="数据中心专题资讯生成系统"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1ce6407e-87c4-414e-98ae-b6891a047dc1"
+                  name="生成专题文件"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </subsystem>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="00ff9b30-e526-4d41-8df6-e036f491a56f"
+        name="发布专题"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="30c97af3-f29c-4d6f-a6c0-0b152590f49d"
+            isDerived="false"
+            sourceEndRoleName="发布专题"
+            targetEndRoleName="数据中心专题资讯生成系统"
+            isLeaf="false"
+            isAbstract="false">
+            <subsystemMoniker
+              Id="39ed818b-b2ef-4ba9-a0c6-0ec1cd4d208a"
+              LastKnownName="数据中心专题资讯生成系统"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="caed4566-bd87-40d2-8d20-8c8ebd41c8f3"
+                  name="发布专题"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="62fa9ad4-bd0f-4228-8119-0c5365b1dd12"
+                  name="数据中心专题资讯生成系统"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9383f2d9-00ec-4cbf-ae64-c106f8763033"
+        name="生成专题文件"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8218aa63-0a1b-4de7-b5ef-7bdda59344f4"
+            isDerived="false"
+            sourceEndRoleName="生成专题文件"
+            targetEndRoleName="上传至服务器"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4ffea305-be79-423b-92a9-332eb23f2f12"
+              LastKnownName="上传至服务器"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="90a13f02-bff9-4ae8-b4fd-099801aafcbf"
+                  name="生成专题文件"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="973399e1-eda5-406a-a415-6fcebec86834"
+                  name="上传至服务器"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="4ffea305-be79-423b-92a9-332eb23f2f12"
+        name="上传至服务器"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="a3dbead3-b250-4edd-997a-e161cb00ab39"
+            isDerived="false"
+            sourceEndRoleName="上传至服务器"
+            targetEndRoleName="上传至服务器"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4ffea305-be79-423b-92a9-332eb23f2f12"
+              LastKnownName="上传至服务器"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="905aa0d1-eac1-4860-a95e-bf5fb604478e"
+                  name="上传至服务器"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e315a740-1a8a-427a-920d-762d2b583095"
+                  name="上传至服务器"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="0aa9a622-9a8f-4081-846b-7d15f3a998f0"
+        name="房友相关人员"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="8543c51b-aeba-4007-b13e-520dce3ae148"
+            isDerived="false"
+            sourceEndRoleName="房友相关人员"
+            targetEndRoleName="上传至服务器"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="4ffea305-be79-423b-92a9-332eb23f2f12"
+              LastKnownName="上传至服务器"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c776015f-967b-4c70-b984-c061829bde72"
+                  name="房友相关人员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d418cbd6-df4c-4ce7-87e6-57cb5d450b99"
+                  name="上传至服务器"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="713ccc92-cd45-47c6-8db9-7855c7d41209"
+        name="告知sina编辑 文字链标题及URL"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="574c0056-80b2-4a80-bfb8-8f971e00ea7b"
+        name="sina相关位置添加链接"
+        isAbstract="false"
+        isLeaf="false">
+        <suppliersInternal>
+          <dependency
+            Id="0d80de77-3f1b-4ca0-810a-f8ed2ef15000">
+            <useCaseMoniker
+              Id="4ffea305-be79-423b-92a9-332eb23f2f12"
+              LastKnownName="上传至服务器"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+          <dependency
+            Id="0303c5e7-1527-4737-b292-8407acd2b8f5">
+            <useCaseMoniker
+              Id="713ccc92-cd45-47c6-8db9-7855c7d41209"
+              LastKnownName="告知sina编辑 文字链标题及URL"
+              LastKnownLocation="IHome.DataFlow.uml" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="c0db05df-e45f-46d8-adba-2876cced382d"
+        name="sina编辑"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="868cdfc8-1c6c-4875-9dfe-46bfc432c886"
+            isDerived="false"
+            sourceEndRoleName="sina编辑"
+            targetEndRoleName="sina相关位置添加链接"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="574c0056-80b2-4a80-bfb8-8f971e00ea7b"
+              LastKnownName="sina相关位置添加链接"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="06200dbe-f7cc-4e81-a5cf-b7f58c29db9c"
+                  name="sina编辑"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d8d7c247-0062-4174-b01e-aa476633f9ab"
+                  name="sina相关位置添加链接"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="b7e4d40f-a089-4a20-b945-4efa7c45a7b7"
+        name="房友系统"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="07be7b91-ef43-4f4c-9f45-4c71ad00476e"
+            isDerived="false"
+            sourceEndRoleName="房友系统"
+            targetEndRoleName="数据中心专题资讯生成系统"
+            isLeaf="false"
+            isAbstract="false">
+            <subsystemMoniker
+              Id="39ed818b-b2ef-4ba9-a0c6-0ec1cd4d208a"
+              LastKnownName="数据中心专题资讯生成系统"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b7742d4f-e877-494d-925b-9c575a400d69"
+                  name="房友系统"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="9684fb7e-f756-4d62-9441-12f833793421"
+                  name="数据中心专题资讯生成系统"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </subsystem>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
