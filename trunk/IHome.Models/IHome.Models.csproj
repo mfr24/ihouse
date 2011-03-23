@@ -56,6 +56,7 @@
     <Reference Include="System.Windows" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionType.cs" />
     <Compile Include="Data\base_community_baseinfo.cs" />
     <Compile Include="Data\base_community_baseinfo_ex.cs" />
     <Compile Include="Data\base_community_buildinginfo.cs" />

@@ -19,19 +19,32 @@ namespace IHome.SLClient.InfoManagement
                 {
                     if (!Community.Validate()) {
                         return;
-                    } 
-                    PostData();
+                    }
+                    if (Action == Models.ActionType.Edit)
+                    {
+                        List<object> list=new List<object>();
+                        Dictionary<string, object> dict = new Dictionary<string, object>();
+                        dict.Add("community", Community);
+                        list.Add(dict);
+                        //list.Add(new {base_community_baseinfo= Community });
+                        UpdateCommunity("IHome.Server.Facade.MainFacade.UpdateCommunity",
+                            list,
+                            (result) => { });
+                    }
+                    else
+                    {
+                        PostData();
+                    }
                 });
 
             }
         }
-
-
 		public CommunityAddViewModel()
 		{
-            Community = new Models.Data.base_community_baseinfo_ex();
+            Community = new Models.Data.base_community_baseinfo_ex() { IsValidate=true};
+            Action = Models.ActionType.Add;
 		}
-        
+        public Models.ActionType Action { get; set; }
         public Models.Data.base_community_baseinfo_ex Community
         {
             get;
@@ -40,12 +53,12 @@ namespace IHome.SLClient.InfoManagement
         private void PostData()
         {
             // creat request array
-            List<object> requsetData = new List<object>();
+            List<object> requestData = new List<object>();
 
             // creat request object
             Dictionary<string, object> dict = new Dictionary<string, object>();
             dict.Add("community", Community);
-            requsetData.Add(dict);// request data :[ {house_info:{MyProperty1:'1asdjf',MyProperty2:'2134asdfasdf'}}]
+            requestData.Add(dict);// request data :[ {house_info:{MyProperty1:'1asdjf',MyProperty2:'2134asdfasdf'}}]
 
             // creat dictionary contains type of returned object 
             Dictionary<int, Type> resultType = new Dictionary<int, Type>();
@@ -69,11 +82,25 @@ namespace IHome.SLClient.InfoManagement
             webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
                 , "guest"
                 , "IHome.Server.Facade.MainFacade.AddCommunity"
-                , requsetData
+                , requestData
                 , resultType);
 
         }
-        private object getCommunity
+        private void UpdateCommunity(string method, List<object> requestData, Action<ILight.Core.Net.WebRequest.RequestCompletedEventArgs> onCompleted)
+        {
+
+
+            ILight.Core.Net.WebRequest.HttpWebRequestProvider webRequest = new ILight.Core.Net.WebRequest.HttpWebRequestProvider();
+            webRequest.OnRequestCompleted += (sender, result) =>
+            {
+                onCompleted(result);
+            };
+            webRequest.Request(Application.Current.Host.Source.AbsoluteUri.Remove(Application.Current.Host.Source.AbsoluteUri.LastIndexOf("/ClientBin") + 1) + "apphandler.dll"
+                , "guest"
+                , method
+                , requestData
+                , null);
+        }
 		#region INotifyPropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
 

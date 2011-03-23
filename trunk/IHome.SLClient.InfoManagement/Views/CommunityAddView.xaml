@@ -33,6 +33,6 @@
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="竣工年份" Margin="39,342,0,0" VerticalAlignment="Top"/>
         <TextBox TextWrapping="Wrap" Text="{Binding Community.remark, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,378,0,0" VerticalAlignment="Top" Height="94" HorizontalAlignment="Left" Width="521" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
 		<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="小区描述" Margin="39,382,0,0" VerticalAlignment="Top"/>
-        <Button Content="添加" VerticalAlignment="Top" Margin="8,450,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding AddCommunity, Mode=OneWay}" />
+        <Button Content="保存" VerticalAlignment="Top" Margin="8,450,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding AddCommunity, Mode=OneWay}" />
 	</Grid>
 </UserControl>
