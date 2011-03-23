@@ -52,7 +52,6 @@ namespace IHome.Models.Data
             set
             {
                 if (ValidatePro("complete_year", value)) base.complete_year = value;
-
             }
         }
 
