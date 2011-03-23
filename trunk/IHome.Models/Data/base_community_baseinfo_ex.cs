@@ -13,7 +13,7 @@ namespace IHome.Models.Data
         {
             Errors = new Dictionary<string, List<string>>();
         }
-
+        public bool DelteMark { get; set; }
 
         //[Required(ErrorMessage = "小区名不能为空")]
         [Server]
