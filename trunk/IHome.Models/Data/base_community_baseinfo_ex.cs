@@ -6,15 +6,24 @@ using IHome.Models.Validation;
 using ILight.Core.Model;
 namespace IHome.Models.Data
 {
-    public partial class base_community_baseinfo_ex : base_community_baseinfo,IValidateable
+    public partial class base_community_baseinfo_ex : base_community_baseinfo, IValidateable, INotifyPropertyChanged
     {
         const int ToYear = 2011;
         public base_community_baseinfo_ex()
         {
             Errors = new Dictionary<string, List<string>>();
-            check_status_ex = false;
+            _check_status_ex = false;
+            
         }
-        public bool check_status_ex { get; set; }
+        private bool _check_status_ex;
+
+        public bool check_status_ex
+        {
+            get { return _check_status_ex; }
+            set { _check_status_ex = value;
+            NotifyPropertyChanged("check_status_ex");
+            }
+        }
 
         //[Required(ErrorMessage = "小区名不能为空")]
         [Server]
@@ -93,6 +102,17 @@ namespace IHome.Models.Data
         public System.Collections.IEnumerable GetErrors(string propertyName)
         {
             return this.GetErrorsEx(propertyName);
+        }
+        #endregion
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
         }
         #endregion
     }
