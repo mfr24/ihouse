@@ -28,10 +28,13 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
+                    if (CommunitySelected != null) {
+                        CommunitySelected.IsValidate = true;
                     System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
-                    CommunityAddViewModel vm = new CommunityAddViewModel() { };
-                    childWin.Content = new CommunityAddView();
+                    CommunityAddViewModel vm = new CommunityAddViewModel() { Community = CommunitySelected,Action=Models.ActionType.Edit };
+                    childWin.Content = new CommunityAddView(vm);
                     childWin.Show();
+                    }
                 });
 
             }
@@ -66,8 +69,17 @@ namespace IHome.SLClient.InfoManagement
         public CommunityViewModel()
         {
             _communityList = new ObservableCollection<Models.Data.base_community_baseinfo_ex>();
+
         }
+
         private ObservableCollection<Models.Data.base_community_baseinfo_ex> _communityList;
+        private Models.Data.base_community_baseinfo_ex _communitySelected;
+
+        public Models.Data.base_community_baseinfo_ex CommunitySelected
+        {
+            get { return _communitySelected; }
+            set { _communitySelected = value; }
+        }
         private bool _isBusy;
 
         public bool IsBusy

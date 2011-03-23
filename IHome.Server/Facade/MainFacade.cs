@@ -131,6 +131,32 @@ namespace IHome.Server.Facade
             return revList;
 
         }
+        public ArrayList UpdateCommunity(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                Models.Data.base_community_baseinfo community = paramDicts[0]["community"].ToString().JsonToModel<Models.Data.base_community_baseinfo>();
+                using (var context = new Data.CbooEntities())
+                {
+                    context.base_community_baseinfo.Attach(community);
+                    context.ObjectStateManager.ChangeObjectState(community,System.Data.EntityState.Modified);
+                    int a = context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+
+        }
 
     }
 }
