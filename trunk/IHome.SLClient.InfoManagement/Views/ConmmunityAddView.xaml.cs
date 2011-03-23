@@ -19,9 +19,15 @@ namespace IHome.SLClient.InfoManagement
 	{
 		public ConmmunityAddView()
 		{
+            Resources.Add("ConmmunityAddViewModelDataSource",new ConmmunityAddViewModel());
 			this.InitializeComponent();
 			
 			// Insert code required on object creation below this point.
 		}
+        public ConmmunityAddView(ConmmunityAddViewModel VM)
+        {
+            Resources["ConmmunityAddViewModelDataSource"] = VM;
+            this.InitializeComponent();
+        }
 	}
 }

@@ -22,6 +22,19 @@ namespace IHome.SLClient.InfoManagement
 
             }
         }
+        public ICommand EditConmmunity
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
+                    childWin.Content = new ConmmunityAddView();
+                    childWin.Show();
+                });
+
+            }
+        }
         public ICommand GetConmmunityList
         {
             get
