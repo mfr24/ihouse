@@ -7,35 +7,36 @@ using System.Windows.Input;
 
 namespace IHome.SLClient.InfoManagement
 {
-    public class ConmmunityViewModel : INotifyPropertyChanged
+    public class CommunityViewModel : INotifyPropertyChanged
     {
-        public ICommand AddConmmunity
+        public ICommand AddCommunity
         {
             get
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
-                    childWin.Content = new ConmmunityAddView();
+                    childWin.Content = new CommunityAddView();
                     childWin.Show();
                 });
 
             }
         }
-        public ICommand EditConmmunity
+        public ICommand EditCommunity
         {
             get
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
-                    childWin.Content = new ConmmunityAddView();
+                    CommunityAddViewModel vm = new CommunityAddViewModel() { };
+                    childWin.Content = new CommunityAddView();
                     childWin.Show();
                 });
 
             }
         }
-        public ICommand GetConmmunityList
+        public ICommand GetCommunityList
         {
             get
             {
@@ -62,7 +63,7 @@ namespace IHome.SLClient.InfoManagement
             }
         }
 
-        public ConmmunityViewModel()
+        public CommunityViewModel()
         {
             _communityList = new ObservableCollection<Models.Data.base_community_baseinfo_ex>();
         }

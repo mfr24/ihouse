@@ -6,13 +6,13 @@
 	xmlns:local="clr-namespace:IHome.SLClient.InfoManagement"
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 	mc:Ignorable="d"
-	x:Class="IHome.SLClient.InfoManagement.ConmmunityView"
+	x:Class="IHome.SLClient.InfoManagement.CommunityView"
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
-		<local:ConmmunityViewModel  x:Key="ConmmunityViewModelDataSource" />
+		<local:CommunityViewModel  x:Key="CommunityViewModelDataSource" />
 	</UserControl.Resources>
 
-	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource ConmmunityViewModelDataSource}}">
+	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource CommunityViewModelDataSource}}">
         <telerik:RadGridView ItemsSource="{Binding CommunityList ,Mode=TwoWay}" ShowGroupPanel="False" Margin="0,22,0,0"
                              IsBusy="{Binding IsBusy,Mode=TwoWay}" 
                              AutoGenerateColumns="False" 
@@ -21,7 +21,7 @@
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
-                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource ConmmunityViewModelDataSource}}" />
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource CommunityViewModelDataSource}}" />
                     </telerik:GridViewDataColumn.Header>
                     <telerik:GridViewDataColumn.CellTemplate>
                         <DataTemplate>
@@ -43,8 +43,8 @@
         </telerik:RadGridView>
         <telerik:RadDataForm ItemsSource="{Binding CommunityList}" Height="217" VerticalAlignment="Top" Margin="0,263,0,0" HorizontalAlignment="Left" Width="299"
 						     />
-        <Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddConmmunity, Mode=OneWay}"/>
-        <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetConmmunityList, Mode=OneWay}" Margin="81,0,0,0" />
+        <Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddCommunity, Mode=OneWay}"/>
+        <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetCommunityList, Mode=OneWay}" Margin="81,0,0,0" />
         <Button Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="160,0,0,0"/>
         <Button Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="240,0,0,0"/>
     </Grid>

@@ -8,10 +8,10 @@ using System.Windows;
 
 namespace IHome.SLClient.InfoManagement
 {
-	public class ConmmunityAddViewModel : INotifyPropertyChanged
+	public class CommunityAddViewModel : INotifyPropertyChanged
 	{
 
-        public ICommand AddConmmunity
+        public ICommand AddCommunity
         {
             get
             {
@@ -27,7 +27,7 @@ namespace IHome.SLClient.InfoManagement
         }
 
 
-		public ConmmunityAddViewModel()
+		public CommunityAddViewModel()
 		{
             Community = new Models.Data.base_community_baseinfo_ex();
 		}
@@ -73,6 +73,7 @@ namespace IHome.SLClient.InfoManagement
                 , resultType);
 
         }
+        private object getCommunity
 		#region INotifyPropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
 
