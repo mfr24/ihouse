@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.Server", "IHome.Server\IHome.Server.csproj", "{9F12845B-F827-40E6-BF51-B5AFCCC7E9E9}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IHome.Web", "IHome.Web\", "{15E8C638-1346-42D4-A0AF-718D06CF3B71}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IHome.Web", "IHome.Web", "{15E8C638-1346-42D4-A0AF-718D06CF3B71}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		ProjectReferences = "{9F12845B-F827-40E6-BF51-B5AFCCC7E9E9}|IHome.Server.dll;"
@@ -34,6 +34,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.Models", "IHome.Models\IHome.Models.csproj", "{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.SLClient.InfoManagement", "IHome.SLClient.InfoManagement\IHome.SLClient.InfoManagement.csproj", "{92BE0677-8FB4-4837-B246-B9B8570B1245}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SL", "SL", "{197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{1D22AF71-C5E7-47D8-B489-C49604FB99B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,5 +72,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{788D7CC3-88AD-4B0C-AA0A-DE2F5D1665B5} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
+		{92BE0677-8FB4-4837-B246-B9B8570B1245} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
+		{9FA3E1AA-A6A5-4CB0-B907-EB8C7E2C3D1E} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
+		{D292D167-A96A-4BB8-B45D-E3DD806ED6D5} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
+		{9F12845B-F827-40E6-BF51-B5AFCCC7E9E9} = {1D22AF71-C5E7-47D8-B489-C49604FB99B3}
+		{15E8C638-1346-42D4-A0AF-718D06CF3B71} = {1D22AF71-C5E7-47D8-B489-C49604FB99B3}
 	EndGlobalSection
 EndGlobal
