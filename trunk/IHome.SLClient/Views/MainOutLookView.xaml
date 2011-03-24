@@ -13,9 +13,7 @@
 	<UserControl.Resources>
 		<local:MainOutLookViewModel x:Key="MainOutLookViewModelDataSource" />
 		<DataTemplate x:Key="ItemDataTemplate">
-			
                 <StackPanel Orientation="Horizontal" Background="White">
-
 				<Image Width="20"/>
 				<TextBlock Text="{Binding name}"/>
 			</StackPanel>
