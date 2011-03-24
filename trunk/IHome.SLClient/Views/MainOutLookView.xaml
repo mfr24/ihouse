@@ -113,5 +113,14 @@
                 <local:HomeView x:Name="HH"/>
             </ilight:RadTabItemCloseable>
         </telerik:RadTabControl>
+        <telerik:RadBusyIndicator x:Name="busyIndicator" IsBusy="{Binding Source={StaticResource AppDataSource},Path=IsBusy}" BusyContent="Loading data...." Grid.ColumnSpan="2">
+        	<telerik:RadBusyIndicator.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="White" Offset="0"/>
+        			<GradientStop Color="#B2587A95" Offset="1"/>
+        		</LinearGradientBrush>
+        	</telerik:RadBusyIndicator.Background>
+        </telerik:RadBusyIndicator>
+
     </Grid>
 </UserControl>
