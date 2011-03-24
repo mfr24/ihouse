@@ -5,6 +5,9 @@ using System.Text;
 using System.Collections;
 namespace IHome.Server.Facade
 {
+    /// <summary>
+    /// entrance of assembly
+    /// </summary>
     public partial class MainFacade
     {
         public MainFacade()
@@ -157,6 +160,8 @@ namespace IHome.Server.Facade
             return revList;
 
         }
+
+        readonly static string _deleteCommunityList = "update base_community_baseinfo set status=-1 where community_id in ('{0}')";
         public ArrayList DeleteCommunityList(string userKey, Dictionary<string, object>[] paramDicts)
         {
             Exception erro = null;
@@ -164,13 +169,10 @@ namespace IHome.Server.Facade
             string message = null;
             try
             {
-                List<Models.Data.base_community_baseinfo> communityList = paramDicts[0]["communityList"].ToString().JsonToModel<List<Models.Data.base_community_baseinfo>>();
+                List<string> communityList = paramDicts[0]["communityList"].ToString().JsonToModel<List<string>>();
                 using (var context = new Data.CbooEntities())
                 {
-                    foreach (var item in communityList)
-                    {
-                        context.base_community_baseinfo.DeleteObject(item);
-                    }
+                    context.ExecuteStoreCommand(string.Format(_deleteCommunityList, communityList.GetSelectIn()));
                     int a = context.SaveChanges();
                 }
             }
