@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec"
   name="IHome.DataFlow" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -23,6 +23,100 @@
       <body>1.将对应的URL返回给租房频道编辑
 2.上传文件位置为双方约定好。
 如 http://xxxxxx.xom/arch/xx.html</body>
+    </comment>
+    <comment
+      Id="0f28a5bb-5a7f-4a7a-ad31-deeac0729a76">
+      <body>用户名（模糊）；电话号码；公司名称
+用户类型（免费，收费等）
+用户状态（活跃，冻结等)
+注册时间段</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="4dd06f65-8da4-4d3b-8a68-5f504ee45f23"
+          LastKnownName="输入查询条件"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="78688b9d-6991-4012-8585-cc576b21b795">
+      <body>分页显示</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="1532fdfa-fa53-4d21-910e-1812edfdc3ed"
+          LastKnownName="显示查询结果"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="2a99c4b9-6ee8-4e2e-8343-14b990322128">
+      <body>1.判断输入十分合法
+2.2次新密码十分一致</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="890ba014-b4ce-4ee2-aea0-99c9d58354d5"
+          LastKnownName="Decision1"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="83dd7f94-7bed-4b58-894c-e5176c76b149">
+      <body>判断原密码是否正确</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="ae41107b-96f8-4d8b-9fa4-eed58b5ebef8"
+          LastKnownName="Decision11"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="42423556-6f8a-4826-9080-e28fa13ff01d">
+      <body>MD5加密后的数据</body>
+      <annotatedElements>
+        <opaqueActionMoniker
+          Id="8284dcec-f973-452a-a05d-54b16037723a"
+          LastKnownName="提交数据"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4e12bc25-fe82-4247-99bc-10f357f78029">
+      <body>若邮箱输入正确</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c10a7c19-ff46-44d8-85b0-45ad106b67bc"
+          LastKnownName="Decision1"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="728fbb25-74ee-4325-9f94-4bfe09bf5ee9">
+      <body>检查邮箱输入合法性</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="e610df34-12d9-4d97-ad0a-6d5f84db3d62"
+          LastKnownName="Decision2"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8caa0305-de14-4813-b507-f7a992d8d213">
+      <body>判断是否该用户已添加该区域板块</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="185b2e24-03de-4858-be1a-8faa56aa08af"
+          LastKnownName="Decision1"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="ab35a1bd-23b3-467c-9241-7fb620bfb217">
+      <body>判断是否该用户已添加该小区</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="c3bdf671-622c-490e-80fe-2c85ffbaa8ae"
+          LastKnownName="Decision1"
+          LastKnownLocation="IHome.DataFlow.uml" />
+      </annotatedElements>
     </comment>
   </ownedCommentsInternal>
   <profileInstances>
@@ -834,6 +928,45 @@
                 <memberEnd
                   Id="7a196a88-46c2-4622-8ae1-f8bed5c3e312"
                   name="查看楼栋"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="33fc0407-1c03-463b-a1a7-09411b593cd7"
+            isDerived="false"
+            sourceEndRoleName="前台用户"
+            targetEndRoleName="修改个人信息"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e0286bb2-f94a-461e-881b-958a3007cb1a"
+              LastKnownName="修改个人信息"
+              LastKnownLocation="IHome.DataFlow.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0091d842-699d-400d-890d-3fb85148911a"
+                  name="前台用户"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ae0a30ea-264a-4b10-8d74-76407a632145"
+                  name="修改个人信息"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -2756,6 +2889,844 @@
           </association>
         </targetEnds>
       </subsystem>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="175aeab8-ed0e-43f1-8c7f-d6aa113f741c"
+        name="用户查询"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="a492c346-cd31-4226-b0d1-4ba02f307b1f"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="877ce9ee-86a8-4a6d-a4fe-c86c5349ff17"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="4dd06f65-8da4-4d3b-8a68-5f504ee45f23"
+                  LastKnownName="输入查询条件"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="4dd06f65-8da4-4d3b-8a68-5f504ee45f23"
+            name="输入查询条件"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3ffaf21d-3373-4255-965b-f6f1db719703"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1532fdfa-fa53-4d21-910e-1812edfdc3ed"
+                  LastKnownName="显示查询结果"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1532fdfa-fa53-4d21-910e-1812edfdc3ed"
+            name="显示查询结果"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c43e1700-1dbf-4b05-bb03-a96518bc4911"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="7c25c39a-a057-4e65-b8b0-46420956f201"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode
+            Id="7c25c39a-a057-4e65-b8b0-46420956f201"
+            name="Fork1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fdbb91ea-2650-4dc7-8500-28027f5e3e5b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a5e9d592-ed08-4b73-b5c7-2067b85846ee"
+                  LastKnownName="查看用户详情"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a5739d32-bdcc-4d66-8582-ac5dec5df3ce"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="83840b23-f551-44ca-927d-cac0cd701609"
+                  LastKnownName="重置密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="a3c5c54e-b62e-4527-a63f-c0c760088400"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bf83e66d-c068-47ec-b337-6e543711657f"
+                  LastKnownName="冻结/激活账户"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2efd13cf-a808-464c-9630-15a080978a34"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="1d012350-899b-4874-a877-5c456c76d5ab"
+                  LastKnownName="变更类型"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="42ac054e-e743-4a43-9300-e54302c58c14"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d5f28164-0b6f-4fdb-8f92-dab0c2084609"
+                  LastKnownName="删除账户"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="fc53ac12-02ec-4b66-afa8-5475c0bf2719"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6ea37581-3e39-44dc-842f-6e68eef8c983"
+                  LastKnownName="导出数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction
+            Id="a5e9d592-ed08-4b73-b5c7-2067b85846ee"
+            name="查看用户详情"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1d2f5b94-255e-48b8-80bb-fbf75c33f73d"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+                  LastKnownName="Join1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="83840b23-f551-44ca-927d-cac0cd701609"
+            name="重置密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6010bcbf-d757-44da-9499-05234b7080aa"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+                  LastKnownName="Join1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="bf83e66d-c068-47ec-b337-6e543711657f"
+            name="冻结/激活账户"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="db0cea32-45d0-4159-a91c-a89b9a2d2219"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+                  LastKnownName="Join1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="1d012350-899b-4874-a877-5c456c76d5ab"
+            name="变更类型"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1183f6a7-1546-4cdf-a044-273d73bc1453"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+                  LastKnownName="Join1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d5f28164-0b6f-4fdb-8f92-dab0c2084609"
+            name="删除账户"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a2d83198-6baa-4ff4-b036-ae8241b9e61a"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+                  LastKnownName="Join1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6ea37581-3e39-44dc-842f-6e68eef8c983"
+            name="导出数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d6016e2f-90a5-475f-b889-7c5fae841c23"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+                  LastKnownName="Join1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974"
+            name="Join1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="703e1226-2d0d-4031-b591-a396021f28e6"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="a533a7a9-ea59-4a0d-bfb3-c6b111623090"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityFinalNode
+            Id="a533a7a9-ea59-4a0d-bfb3-c6b111623090"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="d2d213ee-ff6b-40e0-9248-7adbbe97c097"
+        name="用户管理-修改密码"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <opaqueAction
+            Id="fca55162-ff82-4c54-86f0-da8bfa97a61a"
+            name="修改密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1a01eecf-28b4-4af8-9dbc-8df34039a9a5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cafd5e2e-2021-4901-8532-812b649bc808"
+                  LastKnownName="输入原密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="cafd5e2e-2021-4901-8532-812b649bc808"
+            name="输入原密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b67a8ab2-d416-4c35-913c-5317b5cd50c8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d44f0fe4-42ac-412b-bbc0-cf545acc3e69"
+                  LastKnownName="输入2次新密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d44f0fe4-42ac-412b-bbc0-cf545acc3e69"
+            name="输入2次新密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f677e240-9aea-4af9-9c6d-dbc94328c705"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="890ba014-b4ce-4ee2-aea0-99c9d58354d5"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="890ba014-b4ce-4ee2-aea0-99c9d58354d5"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b7b70f15-779d-48ae-b69c-b0929d0acf01"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d44f0fe4-42ac-412b-bbc0-cf545acc3e69"
+                  LastKnownName="输入2次新密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="d88be29b-b799-437e-9813-b2f73c0e387c"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8284dcec-f973-452a-a05d-54b16037723a"
+                  LastKnownName="提交数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="8284dcec-f973-452a-a05d-54b16037723a"
+            name="提交数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="47c18308-b3f0-4a9d-8e07-cf8d8c8a1a15"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="ae41107b-96f8-4d8b-9fa4-eed58b5ebef8"
+                  LastKnownName="Decision11"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="ae41107b-96f8-4d8b-9fa4-eed58b5ebef8"
+            name="Decision11"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="163087e1-67c6-416c-baca-1e4ddd628643"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cafd5e2e-2021-4901-8532-812b649bc808"
+                  LastKnownName="输入原密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="ea8330fd-c6bf-4967-ab23-c30f94253f70"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ecd0ffe3-b013-443e-b18b-0ea67df16c21"
+                  LastKnownName="保存数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="ecd0ffe3-b013-443e-b18b-0ea67df16c21"
+            name="保存数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a2aa1d2f-df6f-414b-9dbd-0a5c5dded008"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="f1c4543d-8765-4a3b-a258-ab3b111c017d"
+                  LastKnownName="ActivityFinal2"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="f1c4543d-8765-4a3b-a258-ab3b111c017d"
+            name="ActivityFinal2"
+            isLeaf="false" />
+          <initialNode
+            Id="c212ce4d-ba8a-410e-bc50-931b183cdd35"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="a2f3099a-6c95-4c0d-a37c-dbe1dfa47f62"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="fca55162-ff82-4c54-86f0-da8bfa97a61a"
+                  LastKnownName="修改密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="9c5dfc42-a856-4740-bd95-1e4fc9680200"
+        name="用户管理-找回密码"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="1bd53a73-2069-4801-b502-c78179d056da"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1fa804a7-daa8-47da-a9b1-b2aca69062d9"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cf7a0f6d-3410-48c3-8018-72ca60cb5636"
+                  LastKnownName="找回密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="cf7a0f6d-3410-48c3-8018-72ca60cb5636"
+            name="找回密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ee978888-292f-47f2-81c8-9c5d9f90d2d6"
+                isLeaf="false">
+                <callOperationActionMoniker
+                  Id="7f0610cc-aeac-428d-a215-bee151addde2"
+                  LastKnownName="提示输入注册时的邮箱"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <callOperationAction
+            Id="7f0610cc-aeac-428d-a215-bee151addde2"
+            name="提示输入注册时的邮箱"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6bb3d7b0-a1d0-42a8-b1c8-bbe2e266887d"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cf22ef1a-f433-41c3-8581-7f7d43565667"
+                  LastKnownName="输入邮箱地址"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callOperationAction>
+          <opaqueAction
+            Id="cf22ef1a-f433-41c3-8581-7f7d43565667"
+            name="输入邮箱地址"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e74ab1f8-675a-4cbb-86b5-8a2d03ec4111"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="e610df34-12d9-4d97-ad0a-6d5f84db3d62"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6394d223-f28e-406c-be0a-1e74b25abbca"
+            name="提交数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="028d239f-f4d6-4686-8db6-1cf945a21821"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c10a7c19-ff46-44d8-85b0-45ad106b67bc"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c10a7c19-ff46-44d8-85b0-45ad106b67bc"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="42b773a7-96f1-487e-8d32-a7d669cc559f"
+                isLeaf="false">
+                <callOperationActionMoniker
+                  Id="7f0610cc-aeac-428d-a215-bee151addde2"
+                  LastKnownName="提示输入注册时的邮箱"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="2ceee893-a19b-4717-96a0-bf47c49d9c33"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f7d338c6-6a26-4a15-8ac1-8c59a41cee9a"
+                  LastKnownName="随机生成密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="e610df34-12d9-4d97-ad0a-6d5f84db3d62"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5a92633e-5b79-4c5d-a679-7549254e7224"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="cf22ef1a-f433-41c3-8581-7f7d43565667"
+                  LastKnownName="输入邮箱地址"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="6cc8dd40-553a-475d-bcf2-c655d7c4c8bd"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6394d223-f28e-406c-be0a-1e74b25abbca"
+                  LastKnownName="提交数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="f7d338c6-6a26-4a15-8ac1-8c59a41cee9a"
+            name="随机生成密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="5384c304-9c88-4fb8-8e35-ffd661ebfb10"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="df742462-918b-48c4-8cde-87fb44a10a4c"
+                  LastKnownName="保存新密码"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="df742462-918b-48c4-8cde-87fb44a10a4c"
+            name="保存新密码"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4d8ddaed-eb35-418a-9bf5-67b77e157ccf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0d74fd1f-0a86-4337-bd31-cc878762477e"
+                  LastKnownName="发送邮件"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0d74fd1f-0a86-4337-bd31-cc878762477e"
+            name="发送邮件"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c76f4e32-8fac-4eed-b951-756229af033f"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="796e5a32-394c-466f-bc1d-b66c1da1d1e8"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="796e5a32-394c-466f-bc1d-b66c1da1d1e8"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="27633b8b-1234-4328-8b4f-2e34a390cb95"
+        name="用户管理-个人主营区域板块设定"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="f2b49b2e-3795-45c3-82bd-53bccfe905cd"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="250effe9-1fd8-4765-a576-6da5aea18178"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8633302a-9aed-442a-ba58-626be9bf4aa7"
+                  LastKnownName="添加设定"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="8633302a-9aed-442a-ba58-626be9bf4aa7"
+            name="添加设定"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c331268c-bff3-4759-a1f0-758b6a019202"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2c16db03-113f-4530-aa43-576d5eb6d7d6"
+                  LastKnownName="选择区域"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2c16db03-113f-4530-aa43-576d5eb6d7d6"
+            name="选择区域"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ab3e0a50-7fd5-4f12-91d7-72c77cf9cc61"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="aaca0034-c1ad-494d-b5dd-255474e1a660"
+                  LastKnownName="选择板块(对应选定的区域)"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="aaca0034-c1ad-494d-b5dd-255474e1a660"
+            name="选择板块(对应选定的区域)"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="03cdb4eb-b8ca-44d0-af42-c8b63b872208"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6c0ddbfb-547f-412c-957d-86c27585e8d7"
+                  LastKnownName="提交数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6c0ddbfb-547f-412c-957d-86c27585e8d7"
+            name="提交数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1bf3540d-6942-43fd-93f4-e295b35ad0d0"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="185b2e24-03de-4858-be1a-8faa56aa08af"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="185b2e24-03de-4858-be1a-8faa56aa08af"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f165502a-3206-4146-9664-d9db0dad2faf"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2c16db03-113f-4530-aa43-576d5eb6d7d6"
+                  LastKnownName="选择区域"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0a504005-47ac-4714-81f3-13aca49ae817"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="60f9c787-5079-4550-9053-04b96bb6a166"
+                  LastKnownName="保存数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="60f9c787-5079-4550-9053-04b96bb6a166"
+            name="保存数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="03e90797-2d90-40bf-9549-e99b8201ab0a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0b9db9ce-4bd2-4e18-b24f-ad3cad2a450f"
+                  LastKnownName="刷新客户端"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="0b9db9ce-4bd2-4e18-b24f-ad3cad2a450f"
+            name="刷新客户端"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="88782069-5811-4c1d-92e8-8d8339c5664a"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="5118d9f0-aa4a-46ff-8fd1-3652cecba54d"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="5118d9f0-aa4a-46ff-8fd1-3652cecba54d"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="6b320453-3e6e-4f4a-83ce-18d4497c6f06"
+        name="用户管理-个人主营小区设定"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="d5b554b2-a354-4433-bf9a-7bd15fba99ed"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="f20fe1ea-2884-4242-8ab6-7cffd8a6c31e"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="e79f41e8-ff5a-4839-ac83-f2d1a4e7abac"
+                  LastKnownName="添加设定"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="e79f41e8-ff5a-4839-ac83-f2d1a4e7abac"
+            name="添加设定"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="46a19915-295b-46bd-8638-504b1d469b74"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2023d618-3cac-4ef0-bdec-11f351f44a72"
+                  LastKnownName="选择小区"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="2023d618-3cac-4ef0-bdec-11f351f44a72"
+            name="选择小区"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="e3ddb5cc-9e60-4afe-ad11-793247451cac"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="edcc9342-7448-4708-b5ab-dc91993f0455"
+                  LastKnownName="提交数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="edcc9342-7448-4708-b5ab-dc91993f0455"
+            name="提交数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="20d4b039-b901-44d8-b7cc-d12bb7cdd74f"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="c3bdf671-622c-490e-80fe-2c85ffbaa8ae"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="c3bdf671-622c-490e-80fe-2c85ffbaa8ae"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="48aeeab4-8bdb-45ec-b187-560d0f368ff1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="2023d618-3cac-4ef0-bdec-11f351f44a72"
+                  LastKnownName="选择小区"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="0682d4ae-b0a9-42eb-9912-f92245e14df8"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="76105816-7fa5-4a7a-b09e-5220e62a2a41"
+                  LastKnownName="保存数据"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="76105816-7fa5-4a7a-b09e-5220e62a2a41"
+            name="保存数据"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8575e955-4ccc-4f37-9093-dfd4920f8343"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f7417a2a-05df-4283-ab85-17265bc12bee"
+                  LastKnownName="刷新客户端"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f7417a2a-05df-4283-ab85-17265bc12bee"
+            name="刷新客户端"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="6ea2dd35-701e-475f-a890-a1686478df97"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="30f6f993-f393-4d53-b07d-0e981302f3d0"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="30f6f993-f393-4d53-b07d-0e981302f3d0"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

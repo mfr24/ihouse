@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="448050e4-a0c6-48d6-a6df-e445a00c23ac" name="用户管理" linkedPackageId="fef5f40f-a0af-4104-a867-cb23005c9fee" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
-  <profileInstances>
-    <packageHasProfileInstances Id="4d76b5c2-5010-4645-beda-e84e75bfca43">
-      <profileInstance Id="f4913bee-6bab-4205-ad52-4f9f819eef35" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="2b86b469-0b1f-4408-a865-0694ddae22eb">
-      <profileInstance Id="3d029747-5f0e-4857-bd7f-8dbc3549025c" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="448050e4-a0c6-48d6-a6df-e445a00c23ac" name="用户管理" linkedPackageId="fef5f40f-a0af-4104-a867-cb23005c9fee" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
   <packagedElements>
     <useCaseModelRootHasTypes>
       <useCase Id="6536f46f-d041-40c0-8b76-e915466e99e5" name="注册" isAbstract="false" isLeaf="false">
@@ -165,6 +151,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="98d854b0-9d81-48b8-91cc-d4cbef4b3f8b" />
           </association>
+          <association Id="4d3a7a7f-7c5f-4bf9-92be-89583edc3a5f" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="修改个人信息" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="de585da8-0c85-4432-bd38-d17e2ff9f0b5" LastKnownName="修改个人信息" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec006c54-8c80-4b41-8d94-7b48fed3fe7a" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0091d842-699d-400d-890d-3fb85148911a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="23ff7e38-839b-4ac3-bcb6-70f42a011675" name="修改个人信息" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="ae0a30ea-264a-4b10-8d74-76407a632145" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="33fc0407-1c03-463b-a1a7-09411b593cd7" />
+          </association>
         </targetEnds>
       </actor>
     </useCaseModelRootHasTypes>
@@ -294,5 +296,19 @@
   </packagedElements>
   <package Id="fef5f40f-a0af-4104-a867-cb23005c9fee" name="IHome.DataFlow">
     <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4d76b5c2-5010-4645-beda-e84e75bfca43">
+        <profileInstance Id="f4913bee-6bab-4205-ad52-4f9f819eef35" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2b86b469-0b1f-4408-a865-0694ddae22eb">
+        <profileInstance Id="3d029747-5f0e-4857-bd7f-8dbc3549025c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </useCaseModelRoot>

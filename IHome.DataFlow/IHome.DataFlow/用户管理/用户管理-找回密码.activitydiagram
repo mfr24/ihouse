@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="996369d6-601e-44c8-bb48-2e8da6e18456" name="用户管理-找回密码" linkedPackageId="705868ac-0827-4478-9830-283311049e00" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="100daad0-5a0d-4788-8c7a-f99ed9b984c8">
+      <elementDefinition Id="4e12bc25-fe82-4247-99bc-10f357f78029" />
+      <body>若邮箱输入正确</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="e9c69ca9-dc75-4b08-b320-aaeb194ef1ff" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="2ee5e357-b16c-42a0-b694-b5e5c99159e7">
+      <elementDefinition Id="728fbb25-74ee-4325-9f94-4bfe09bf5ee9" />
+      <body>检查邮箱输入合法性</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="54225627-1230-4e78-b99f-cbd50df4b56b" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="fd2c8dc1-5818-4022-8eec-8747447da9a8">
+      <profileInstance Id="20554953-b550-4367-bf1f-ec395ac8e82d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e8165af5-d79a-4086-81c4-a2b53651d8ee">
+      <profileInstance Id="79cdc616-58bb-4d13-96a4-19da9aa7198d" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="49d0794f-f6e5-4beb-83bc-d038f5b3f74f" name="用户管理-找回密码" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="9c5dfc42-a856-4740-bd95-1e4fc9680200" />
+        <nodes>
+          <initialNode Id="8f679e22-c14d-4248-9052-117a24435c18" name="Initial1" isLeaf="false">
+            <elementDefinition Id="1bd53a73-2069-4801-b502-c78179d056da" />
+            <flowNodeTargets>
+              <controlFlow Id="9adfe0b2-191b-4aa5-869f-b046e3a63f97" isLeaf="false">
+                <opaqueActionMoniker Id="c0b1f95d-d50c-499c-ba24-5f85bc6e0b94" LastKnownName="找回密码" />
+                <elementDefinition Id="1fa804a7-daa8-47da-a9b1-b2aca69062d9" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="c0b1f95d-d50c-499c-ba24-5f85bc6e0b94" name="找回密码" isLeaf="false">
+            <elementDefinition Id="cf7a0f6d-3410-48c3-8018-72ca60cb5636" />
+            <flowNodeTargets>
+              <controlFlow Id="d98cda8a-ea79-4385-a7d0-c834738ac108" isLeaf="false">
+                <callOperationActionMoniker Id="4fffc5f2-1bb5-4eae-8c7d-b43e642eb6a9" LastKnownName="提示输入注册时的邮箱" />
+                <elementDefinition Id="ee978888-292f-47f2-81c8-9c5d9f90d2d6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <callOperationAction Id="4fffc5f2-1bb5-4eae-8c7d-b43e642eb6a9" name="提示输入注册时的邮箱" isLeaf="false">
+            <elementDefinition Id="7f0610cc-aeac-428d-a215-bee151addde2" />
+            <flowNodeTargets>
+              <controlFlow Id="ac671e36-d333-47d6-b3fd-39720704cd25" isLeaf="false">
+                <opaqueActionMoniker Id="d5928a98-5061-4229-8b53-b07b237946b2" LastKnownName="输入邮箱地址" />
+                <elementDefinition Id="6bb3d7b0-a1d0-42a8-b1c8-bbe2e266887d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </callOperationAction>
+          <opaqueAction Id="d5928a98-5061-4229-8b53-b07b237946b2" name="输入邮箱地址" isLeaf="false">
+            <elementDefinition Id="cf22ef1a-f433-41c3-8581-7f7d43565667" />
+            <flowNodeTargets>
+              <controlFlow Id="1742c832-10dd-4cdf-9c44-db75a0ef9f95" isLeaf="false">
+                <decisionNodeMoniker Id="54225627-1230-4e78-b99f-cbd50df4b56b" LastKnownName="Decision2" />
+                <elementDefinition Id="e74ab1f8-675a-4cbb-86b5-8a2d03ec4111" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ace6fd5b-1098-406f-9001-6cfb5bfcaaed" name="提交数据" isLeaf="false">
+            <elementDefinition Id="6394d223-f28e-406c-be0a-1e74b25abbca" />
+            <flowNodeTargets>
+              <controlFlow Id="0db87b99-35f5-4111-80a2-31b54ce79e2d" isLeaf="false">
+                <decisionNodeMoniker Id="e9c69ca9-dc75-4b08-b320-aaeb194ef1ff" LastKnownName="Decision1" />
+                <elementDefinition Id="028d239f-f4d6-4686-8db6-1cf945a21821" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="e9c69ca9-dc75-4b08-b320-aaeb194ef1ff" name="Decision1" isLeaf="false">
+            <elementDefinition Id="c10a7c19-ff46-44d8-85b0-45ad106b67bc" />
+            <flowNodeTargets>
+              <controlFlow Id="0f80d877-3ed0-4725-b664-524dd9651b78" isLeaf="false">
+                <callOperationActionMoniker Id="4fffc5f2-1bb5-4eae-8c7d-b43e642eb6a9" LastKnownName="提示输入注册时的邮箱" />
+                <elementDefinition Id="42b773a7-96f1-487e-8d32-a7d669cc559f" />
+              </controlFlow>
+              <controlFlow Id="60fc4d00-5db6-4333-aacf-9e823408da55" isLeaf="false">
+                <opaqueActionMoniker Id="08c42578-2e43-4579-a62d-6736ae626549" LastKnownName="随机生成密码" />
+                <elementDefinition Id="2ceee893-a19b-4717-96a0-bf47c49d9c33" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="54225627-1230-4e78-b99f-cbd50df4b56b" name="Decision2" isLeaf="false">
+            <elementDefinition Id="e610df34-12d9-4d97-ad0a-6d5f84db3d62" />
+            <flowNodeTargets>
+              <controlFlow Id="79a5630a-67de-441d-9721-3dea6e9fc995" isLeaf="false">
+                <opaqueActionMoniker Id="d5928a98-5061-4229-8b53-b07b237946b2" LastKnownName="输入邮箱地址" />
+                <elementDefinition Id="5a92633e-5b79-4c5d-a679-7549254e7224" />
+              </controlFlow>
+              <controlFlow Id="ae1b7935-4cd0-444f-8fb1-858b74694d41" isLeaf="false">
+                <opaqueActionMoniker Id="ace6fd5b-1098-406f-9001-6cfb5bfcaaed" LastKnownName="提交数据" />
+                <elementDefinition Id="6cc8dd40-553a-475d-bcf2-c655d7c4c8bd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="08c42578-2e43-4579-a62d-6736ae626549" name="随机生成密码" isLeaf="false">
+            <elementDefinition Id="f7d338c6-6a26-4a15-8ac1-8c59a41cee9a" />
+            <flowNodeTargets>
+              <controlFlow Id="2628548b-9500-4052-8355-46ff6660e74c" isLeaf="false">
+                <opaqueActionMoniker Id="7d3b707c-64d3-411b-a79f-ade815ec73c2" LastKnownName="保存新密码" />
+                <elementDefinition Id="5384c304-9c88-4fb8-8e35-ffd661ebfb10" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7d3b707c-64d3-411b-a79f-ade815ec73c2" name="保存新密码" isLeaf="false">
+            <elementDefinition Id="df742462-918b-48c4-8cde-87fb44a10a4c" />
+            <flowNodeTargets>
+              <controlFlow Id="d841d058-cbc6-41aa-8157-a33d914aeacd" isLeaf="false">
+                <opaqueActionMoniker Id="f31d0579-df43-4e7a-a95a-bfad6db32752" LastKnownName="发送邮件" />
+                <elementDefinition Id="4d8ddaed-eb35-418a-9bf5-67b77e157ccf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f31d0579-df43-4e7a-a95a-bfad6db32752" name="发送邮件" isLeaf="false">
+            <elementDefinition Id="0d74fd1f-0a86-4337-bd31-cc878762477e" />
+            <flowNodeTargets>
+              <controlFlow Id="8df57279-2a5e-4f38-ace7-d62c6f740c85" isLeaf="false">
+                <activityFinalNodeMoniker Id="0497198d-07cb-42a3-a29b-9d872a737e0d" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="c76f4e32-8fac-4eed-b951-756229af033f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="0497198d-07cb-42a3-a29b-9d872a737e0d" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="796e5a32-394c-466f-bc1d-b66c1da1d1e8" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="705868ac-0827-4478-9830-283311049e00" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</activityRootModel>

@@ -47,6 +47,41 @@
       <SubType>Content</SubType>
       <DependentUpon>基础管理-楼盘字典管理.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="用户管理\用户查询.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户查询.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户查询.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营区域板块设定.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营区域板块设定.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-个人主营区域板块设定.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营小区设定.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营小区设定.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-个人主营小区设定.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-修改密码.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-修改密码.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-修改密码.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-找回密码.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-找回密码.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-找回密码.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="用户管理\用户管理-用户注册.activitydiagram">
       <SubType>Content</SubType>
     </Content>

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="c6ac4b13-0384-48bb-bf43-803250f178dc" name="用户管理-修改密码" linkedPackageId="3764e5c0-b1d8-47a6-b2f2-b4c11a65cbba" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="089301cf-c50b-4bc7-9fba-955dab0efca9">
+      <elementDefinition Id="2a99c4b9-6ee8-4e2e-8343-14b990322128" />
+      <body>1.判断输入十分合法
+2.2次新密码十分一致</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="0c550248-8791-4338-95e4-25501f873e11" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="da698cfa-1bd5-43a3-ad61-76bda1ba6bd2">
+      <elementDefinition Id="83dd7f94-7bed-4b58-894c-e5176c76b149" />
+      <body>判断原密码是否正确</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="907636a5-031d-4275-8773-97b301c52f33" LastKnownName="Decision11" />
+      </annotatedElements>
+    </comment>
+    <comment Id="2f345821-9d2d-4cfb-b149-71211dcc7346">
+      <elementDefinition Id="42423556-6f8a-4826-9080-e28fa13ff01d" />
+      <body>MD5加密后的数据</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="ec500113-d1dd-4d22-8907-aa86e0c2ac1e" LastKnownName="提交数据" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="a96ec458-7d69-4d3a-8d79-38e43c1cf8a2">
+      <profileInstance Id="45cb4882-8660-48b4-8b7a-3b583d2a60c6" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="5e4faa33-d60b-47e5-8ac5-0bfcfcd96c4e">
+      <profileInstance Id="2ac45988-e7e7-4659-9169-8fcc0623c7d9" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="10b52a96-4387-42bc-ac4e-f2507e855ffd" name="用户管理-修改密码" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="d2d213ee-ff6b-40e0-9248-7adbbe97c097" />
+        <nodes>
+          <opaqueAction Id="7e58f93b-5078-440d-82f1-dc1875ca9f65" name="修改密码" isLeaf="false">
+            <elementDefinition Id="fca55162-ff82-4c54-86f0-da8bfa97a61a" />
+            <flowNodeTargets>
+              <controlFlow Id="e323e841-11f1-4808-b369-d3bb283bcd42" isLeaf="false">
+                <opaqueActionMoniker Id="2b254f7f-d33b-4170-9a9a-8f269812974a" LastKnownName="输入原密码" />
+                <elementDefinition Id="1a01eecf-28b4-4af8-9dbc-8df34039a9a5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2b254f7f-d33b-4170-9a9a-8f269812974a" name="输入原密码" isLeaf="false">
+            <elementDefinition Id="cafd5e2e-2021-4901-8532-812b649bc808" />
+            <flowNodeTargets>
+              <controlFlow Id="c8f8f587-4778-4227-96af-0f5f233de3c6" isLeaf="false">
+                <opaqueActionMoniker Id="6075f0dd-fc16-4eb0-8536-88a192b8fe5d" LastKnownName="输入2次新密码" />
+                <elementDefinition Id="b67a8ab2-d416-4c35-913c-5317b5cd50c8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6075f0dd-fc16-4eb0-8536-88a192b8fe5d" name="输入2次新密码" isLeaf="false">
+            <elementDefinition Id="d44f0fe4-42ac-412b-bbc0-cf545acc3e69" />
+            <flowNodeTargets>
+              <controlFlow Id="ec838c8d-a55b-4ffe-8f3d-862e9b319df3" isLeaf="false">
+                <decisionNodeMoniker Id="0c550248-8791-4338-95e4-25501f873e11" LastKnownName="Decision1" />
+                <elementDefinition Id="f677e240-9aea-4af9-9c6d-dbc94328c705" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="0c550248-8791-4338-95e4-25501f873e11" name="Decision1" isLeaf="false">
+            <elementDefinition Id="890ba014-b4ce-4ee2-aea0-99c9d58354d5" />
+            <flowNodeTargets>
+              <controlFlow Id="133a2ef5-da31-4902-942c-9fd3f770c5aa" isLeaf="false">
+                <opaqueActionMoniker Id="6075f0dd-fc16-4eb0-8536-88a192b8fe5d" LastKnownName="输入2次新密码" />
+                <elementDefinition Id="b7b70f15-779d-48ae-b69c-b0929d0acf01" />
+              </controlFlow>
+              <controlFlow Id="57934c82-447a-4267-9c00-14d61b8ea519" isLeaf="false">
+                <opaqueActionMoniker Id="ec500113-d1dd-4d22-8907-aa86e0c2ac1e" LastKnownName="提交数据" />
+                <elementDefinition Id="d88be29b-b799-437e-9813-b2f73c0e387c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="ec500113-d1dd-4d22-8907-aa86e0c2ac1e" name="提交数据" isLeaf="false">
+            <elementDefinition Id="8284dcec-f973-452a-a05d-54b16037723a" />
+            <flowNodeTargets>
+              <controlFlow Id="225b6e85-9671-46f2-9981-d7de8d4cac71" isLeaf="false">
+                <decisionNodeMoniker Id="907636a5-031d-4275-8773-97b301c52f33" LastKnownName="Decision11" />
+                <elementDefinition Id="47c18308-b3f0-4a9d-8e07-cf8d8c8a1a15" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="907636a5-031d-4275-8773-97b301c52f33" name="Decision11" isLeaf="false">
+            <elementDefinition Id="ae41107b-96f8-4d8b-9fa4-eed58b5ebef8" />
+            <flowNodeTargets>
+              <controlFlow Id="2cbf6871-ccdf-4887-8a8d-4c9dc99f3d76" isLeaf="false">
+                <opaqueActionMoniker Id="2b254f7f-d33b-4170-9a9a-8f269812974a" LastKnownName="输入原密码" />
+                <elementDefinition Id="163087e1-67c6-416c-baca-1e4ddd628643" />
+              </controlFlow>
+              <controlFlow Id="bb1cae3d-ef6f-4fb8-9107-a99809bfbf16" isLeaf="false">
+                <opaqueActionMoniker Id="ce58f9a4-7c6f-4347-a932-6500b21be341" LastKnownName="保存数据" />
+                <elementDefinition Id="ea8330fd-c6bf-4967-ab23-c30f94253f70" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="ce58f9a4-7c6f-4347-a932-6500b21be341" name="保存数据" isLeaf="false">
+            <elementDefinition Id="ecd0ffe3-b013-443e-b18b-0ea67df16c21" />
+            <flowNodeTargets>
+              <controlFlow Id="c1847cf4-2797-41fa-919f-577bd3723ced" isLeaf="false">
+                <activityFinalNodeMoniker Id="d95c549a-b1c1-400f-a58b-1cc4cdb4dd51" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="a2aa1d2f-df6f-414b-9dbd-0a5c5dded008" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="d95c549a-b1c1-400f-a58b-1cc4cdb4dd51" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="f1c4543d-8765-4a3b-a258-ab3b111c017d" />
+          </activityFinalNode>
+          <initialNode Id="c1e5601e-b9e7-4023-a0ca-387bb27c1fc7" name="Initial1" isLeaf="false">
+            <elementDefinition Id="c212ce4d-ba8a-410e-bc50-931b183cdd35" />
+            <flowNodeTargets>
+              <controlFlow Id="7f47a8f9-aafc-4138-a192-1e7217e56937" isLeaf="false">
+                <opaqueActionMoniker Id="7e58f93b-5078-440d-82f1-dc1875ca9f65" LastKnownName="修改密码" />
+                <elementDefinition Id="a2f3099a-6c95-4c0d-a37c-dbe1dfa47f62" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="3764e5c0-b1d8-47a6-b2f2-b4c11a65cbba" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</activityRootModel>
