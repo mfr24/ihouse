@@ -1,20 +1,156 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="869a36ec-a78b-4d71-90ca-d2565a185500" name="用户管理-用户登录" linkedPackageId="e264ff54-8543-4f3c-9d44-e8cd90f74981" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="36e1413d-3697-4818-8364-9501afbfd66e">
-      <profileInstance Id="ed4ff4ce-544b-4684-a9b6-aa41459bcbda" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="e04614f8-55e8-4fde-8494-eb13f57b7324">
-      <profileInstance Id="532cb164-2351-4d34-89c6-73bef0a642f3" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="53cfaa52-b8d0-4a86-933f-d97ae4027661" name="用户管理-用户登录" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="8fec7913-1b4c-4c88-9887-113619c968b1" />
+        <nodes>
+          <initialNode Id="a53a5373-e1e8-43b3-8b7d-956b41ff6ab2" name="Initial1" isLeaf="false">
+            <elementDefinition Id="538790e0-45e9-4bfd-b1e6-b7dbbf4855f4" />
+            <flowNodeTargets>
+              <controlFlow Id="bfef5f44-1ebe-4670-afb3-34414ec8c095" isLeaf="false">
+                <opaqueActionMoniker Id="dc93f80d-efdd-4a7b-9094-33f8bb72ed2b" LastKnownName="登录" />
+                <elementDefinition Id="5d8a04a9-8c01-4aee-a74f-f57c922e3a22" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="dc93f80d-efdd-4a7b-9094-33f8bb72ed2b" name="登录" isLeaf="false">
+            <elementDefinition Id="386b2e4e-e248-4d58-b18a-c27aa6bf39e4" />
+            <flowNodeTargets>
+              <controlFlow Id="a9689a17-bcc3-4e72-9007-10c9d74bda34" isLeaf="false">
+                <decisionNodeMoniker Id="355d737e-6c73-49f9-8e2c-fa1df21fee6d" LastKnownName="Decision1" />
+                <elementDefinition Id="db637d27-07a9-4790-8230-6760c51717f5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="355d737e-6c73-49f9-8e2c-fa1df21fee6d" name="Decision1" isLeaf="false">
+            <elementDefinition Id="849e2ebf-e0f7-49b7-b305-4d27f11b6320" />
+            <flowNodeTargets>
+              <controlFlow Id="d08c8788-8396-417e-b475-6f182b109349" guard="前台校验输入是否合法" isLeaf="false">
+                <opaqueActionMoniker Id="dc93f80d-efdd-4a7b-9094-33f8bb72ed2b" LastKnownName="登录" />
+                <elementDefinition Id="2a88ff6f-6466-4d48-97b3-f9be9d35beaa" />
+              </controlFlow>
+              <controlFlow Id="afd1d1a7-4f66-43e1-99dd-47ce969608f6" isLeaf="false">
+                <opaqueActionMoniker Id="c000a035-d226-46b9-8704-604b2ca8a1eb" LastKnownName="服务器验证" />
+                <elementDefinition Id="5dbcc7af-be4c-4dad-ac8e-3890c1115789" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="c000a035-d226-46b9-8704-604b2ca8a1eb" name="服务器验证" isLeaf="false">
+            <elementDefinition Id="0c7117c8-fc77-4adb-8321-f0c5eade383e" />
+            <flowNodeTargets>
+              <controlFlow Id="fa3d53cc-b4e7-4ef9-8fa5-5390ec5e7b83" isLeaf="false">
+                <decisionNodeMoniker Id="7da3c8c5-8110-4b59-a1d9-a3d348ae647f" LastKnownName="Decision11" />
+                <elementDefinition Id="46f0506d-ee95-4aeb-b4e0-7b97643b534f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="7da3c8c5-8110-4b59-a1d9-a3d348ae647f" name="Decision11" isLeaf="false">
+            <elementDefinition Id="7e0e10fd-a9e8-4ab3-9f02-d4f7c43307ea" />
+            <flowNodeTargets>
+              <controlFlow Id="0850bfcc-a0c7-407e-ac61-fffb063c7fa5" guard="验证用户是否冻结,用户名密码是否匹配,请求是否合法" isLeaf="false">
+                <opaqueActionMoniker Id="dc93f80d-efdd-4a7b-9094-33f8bb72ed2b" LastKnownName="登录" />
+                <elementDefinition Id="f18b79e9-5d2b-49c8-9767-defae1c9fc2d" />
+              </controlFlow>
+              <controlFlow Id="c44a05e8-a0bb-4c2f-86d3-0fb844032a3c" isLeaf="false">
+                <forkNodeMoniker Id="f4faf85b-2e8e-46ce-8de0-dd6e2a80ff88" LastKnownName="Fork1" />
+                <elementDefinition Id="e09b155b-b76c-4b35-ba44-77927b7547b2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="77688c02-2633-46d1-8b6a-ba7b8c70664e" name="记录登录日志" isLeaf="false">
+            <elementDefinition Id="5bd0e2e3-1953-4158-a548-bbaafb5cde3f" />
+            <flowNodeTargets>
+              <controlFlow Id="63155578-f921-4f2d-b08a-c59890e15c4a" isLeaf="false">
+                <joinNodeMoniker Id="f87949e6-8388-430f-8815-927093ac19e4" LastKnownName="Join1" />
+                <elementDefinition Id="a5fd81de-c338-4e3c-8f4f-daffe88114cd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="f4faf85b-2e8e-46ce-8de0-dd6e2a80ff88" name="Fork1" isLeaf="false">
+            <elementDefinition Id="ba1e1cea-92ce-4b26-b198-d3c2b0221530" />
+            <flowNodeTargets>
+              <controlFlow Id="225f8e02-0a43-426e-beb0-46cfdd700c13" isLeaf="false">
+                <opaqueActionMoniker Id="77688c02-2633-46d1-8b6a-ba7b8c70664e" LastKnownName="记录登录日志" />
+                <elementDefinition Id="41bdb0ae-92d7-4c58-a461-a0115842c2be" />
+              </controlFlow>
+              <controlFlow Id="db4470e3-2334-4169-b802-2b80b994310c" isLeaf="false">
+                <opaqueActionMoniker Id="149830b8-3775-4ad1-9fd1-f807edf63e0a" LastKnownName="生成CurrentUser" />
+                <elementDefinition Id="2b7a4c6e-ed1f-4207-9f57-b7895699a1a4" />
+              </controlFlow>
+              <controlFlow Id="92e202fb-fcb3-4599-9e9d-44e9af3d59e1" isLeaf="false">
+                <opaqueActionMoniker Id="129779ff-1059-4a9d-972d-c1d563c97b20" LastKnownName="读取用户权限" />
+                <elementDefinition Id="ebe16297-99e3-427c-a354-e337d4c4f37e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="149830b8-3775-4ad1-9fd1-f807edf63e0a" name="生成CurrentUser" isLeaf="false">
+            <elementDefinition Id="cd80403a-aa34-4c18-bec0-0c51d4727973" />
+            <flowNodeTargets>
+              <controlFlow Id="761579e3-5aed-4e2b-be3e-0d519093df8a" isLeaf="false">
+                <joinNodeMoniker Id="f87949e6-8388-430f-8815-927093ac19e4" LastKnownName="Join1" />
+                <elementDefinition Id="6d653b78-494c-4660-8d0a-54e0ad680744" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="129779ff-1059-4a9d-972d-c1d563c97b20" name="读取用户权限" isLeaf="false">
+            <elementDefinition Id="7f3a71dd-40ad-408b-8934-71d0b0cad081" />
+            <flowNodeTargets>
+              <controlFlow Id="885f856f-adc3-43b4-9724-86011b8ce880" isLeaf="false">
+                <joinNodeMoniker Id="f87949e6-8388-430f-8815-927093ac19e4" LastKnownName="Join1" />
+                <elementDefinition Id="6fc067f8-21cc-4490-bbe0-1d6b3cc7c812" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="f87949e6-8388-430f-8815-927093ac19e4" name="Join1" isLeaf="false">
+            <elementDefinition Id="9aa2581a-a7b5-4fda-8790-cc5b3b0ea2ac" />
+            <flowNodeTargets>
+              <controlFlow Id="c0ebb8e2-dd99-4263-8389-0953a8d829fb" isLeaf="false">
+                <opaqueActionMoniker Id="7c16b059-1e13-4cc2-bbfa-813a494bceca" LastKnownName="返回数据至客户端" />
+                <elementDefinition Id="fbd1c29b-6202-4787-ae2d-094f10ae5177" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="7c16b059-1e13-4cc2-bbfa-813a494bceca" name="返回数据至客户端" isLeaf="false">
+            <elementDefinition Id="37f1a996-9228-40ba-85cb-de5edec0d820" />
+            <flowNodeTargets>
+              <controlFlow Id="d23ba718-1e6f-40ed-8f79-66a1905c7389" isLeaf="false">
+                <opaqueActionMoniker Id="03b47c91-1e59-4073-9aab-a6c0bd5cf64e" LastKnownName="进入默认页" />
+                <elementDefinition Id="c91381ba-2cdd-44e5-9235-49531edb86a4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="03b47c91-1e59-4073-9aab-a6c0bd5cf64e" name="进入默认页" isLeaf="false">
+            <elementDefinition Id="84045e2d-e96f-4d79-8ab2-41bb0f68cebf" />
+            <flowNodeTargets>
+              <controlFlow Id="89cee57e-5a43-4e95-b5a7-2fb1c455f376" isLeaf="false">
+                <activityFinalNodeMoniker Id="4595bc99-432e-4815-954e-192fde2712d9" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="d1281678-e235-4b3f-b3ee-afc45179d7d4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="4595bc99-432e-4815-954e-192fde2712d9" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="3ecc83fa-8f92-4f7e-8024-cd380865a851" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
   <package Id="e264ff54-8543-4f3c-9d44-e8cd90f74981" name="IHome.DataFlow">
     <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+    <profileInstances>
+      <packageHasProfileInstances Id="36e1413d-3697-4818-8364-9501afbfd66e">
+        <profileInstance Id="ed4ff4ce-544b-4684-a9b6-aa41459bcbda" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="e04614f8-55e8-4fde-8494-eb13f57b7324">
+        <profileInstance Id="532cb164-2351-4d34-89c6-73bef0a642f3" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </activityRootModel>
