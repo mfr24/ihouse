@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>facade</Title>
+      <Shortcut>facade</Shortcut>
+      <Description>
+      </Description>
+      <Author>Gabry.Zhong</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>method</ID>
+          <ToolTip>method name</ToolTip>
+          <Default>MyMethod</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[public ArrayList $method$ (string userKey, Dictionary<string, object>[] paramDicts){
+        Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
