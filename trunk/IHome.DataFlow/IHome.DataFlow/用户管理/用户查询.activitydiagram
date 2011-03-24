@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="0867f41c-b29a-47f1-8c27-35bc0b792c51" name="用户查询" linkedPackageId="679e7209-bc83-4b9f-8e59-b55de223d79d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="42c89e16-6b74-43b6-af73-99c531d72f79">
+      <elementDefinition Id="0f28a5bb-5a7f-4a7a-ad31-deeac0729a76" />
+      <body>用户名（模糊）；电话号码；公司名称
+用户类型（免费，收费等）
+用户状态（活跃，冻结等)
+注册时间段</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="e952b3fc-7212-4aa9-b3dd-e93433ff6d29" LastKnownName="输入查询条件" />
+      </annotatedElements>
+    </comment>
+    <comment Id="f8d305fa-6f33-43c1-b538-ac39c7fc8da8">
+      <elementDefinition Id="78688b9d-6991-4012-8585-cc576b21b795" />
+      <body>分页显示</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="7cd25dc4-92cb-4645-b395-28a79af60e69" LastKnownName="显示查询结果" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="49b03cd2-67c3-4245-ae7d-cf66ba7e7d1b">
+      <profileInstance Id="5b98786a-9d4a-4eca-b945-a3b6a5c05e37" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a78c60e8-78ae-46e3-8175-1b05f5e1bef8">
+      <profileInstance Id="c7821411-30b5-463e-ba4d-b1519a794946" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="39a4a156-b73c-416c-8693-1e4389ef5fff" name="用户查询" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="175aeab8-ed0e-43f1-8c7f-d6aa113f741c" />
+        <nodes>
+          <initialNode Id="e0a8e753-3279-4ad7-ab43-08bbeddc4b14" name="Initial1" isLeaf="false">
+            <elementDefinition Id="a492c346-cd31-4226-b0d1-4ba02f307b1f" />
+            <flowNodeTargets>
+              <controlFlow Id="63ff20ee-714b-4132-bfa9-504fbaddc873" isLeaf="false">
+                <opaqueActionMoniker Id="e952b3fc-7212-4aa9-b3dd-e93433ff6d29" LastKnownName="输入查询条件" />
+                <elementDefinition Id="877ce9ee-86a8-4a6d-a4fe-c86c5349ff17" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="e952b3fc-7212-4aa9-b3dd-e93433ff6d29" name="输入查询条件" isLeaf="false">
+            <elementDefinition Id="4dd06f65-8da4-4d3b-8a68-5f504ee45f23" />
+            <flowNodeTargets>
+              <controlFlow Id="b9f4bb70-0139-4618-b6dd-738c817cd3b9" isLeaf="false">
+                <opaqueActionMoniker Id="7cd25dc4-92cb-4645-b395-28a79af60e69" LastKnownName="显示查询结果" />
+                <elementDefinition Id="3ffaf21d-3373-4255-965b-f6f1db719703" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7cd25dc4-92cb-4645-b395-28a79af60e69" name="显示查询结果" isLeaf="false">
+            <elementDefinition Id="1532fdfa-fa53-4d21-910e-1812edfdc3ed" />
+            <flowNodeTargets>
+              <controlFlow Id="11f090c0-82bd-432f-bec5-02a9b3f132f7" isLeaf="false">
+                <forkNodeMoniker Id="f1a9e878-84ee-4f9b-a5d8-58af7ee80f95" LastKnownName="Fork1" />
+                <elementDefinition Id="c43e1700-1dbf-4b05-bb03-a96518bc4911" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <forkNode Id="f1a9e878-84ee-4f9b-a5d8-58af7ee80f95" name="Fork1" isLeaf="false">
+            <elementDefinition Id="7c25c39a-a057-4e65-b8b0-46420956f201" />
+            <flowNodeTargets>
+              <controlFlow Id="e84eba8f-cb22-4b8d-81c2-d9e4e0bf5574" isLeaf="false">
+                <opaqueActionMoniker Id="0e58b410-6505-4146-b5d4-427ab7899254" LastKnownName="查看用户详情" />
+                <elementDefinition Id="fdbb91ea-2650-4dc7-8500-28027f5e3e5b" />
+              </controlFlow>
+              <controlFlow Id="6008a812-2c5e-4001-a68d-11ddaa306d3f" isLeaf="false">
+                <opaqueActionMoniker Id="5ca41c9d-a1e0-466c-a534-7bddde728397" LastKnownName="重置密码" />
+                <elementDefinition Id="a5739d32-bdcc-4d66-8582-ac5dec5df3ce" />
+              </controlFlow>
+              <controlFlow Id="ba51bc0f-e24d-45c5-9975-ae684418e579" isLeaf="false">
+                <opaqueActionMoniker Id="24f40bb9-c6b2-42ce-bf8e-93ea3536f992" LastKnownName="冻结/激活账户" />
+                <elementDefinition Id="a3c5c54e-b62e-4527-a63f-c0c760088400" />
+              </controlFlow>
+              <controlFlow Id="1d4bce74-7428-47d3-bd3d-71775c77fa93" isLeaf="false">
+                <opaqueActionMoniker Id="7bd7d706-d6f4-4126-8b0b-877bb5719aaa" LastKnownName="变更类型" />
+                <elementDefinition Id="2efd13cf-a808-464c-9630-15a080978a34" />
+              </controlFlow>
+              <controlFlow Id="f5b80b31-b009-4035-9ee9-662072852e2c" isLeaf="false">
+                <opaqueActionMoniker Id="fef0ef03-4896-4fa3-adc8-b57fa35d6812" LastKnownName="删除账户" />
+                <elementDefinition Id="42ac054e-e743-4a43-9300-e54302c58c14" />
+              </controlFlow>
+              <controlFlow Id="33d9803c-2320-4e51-ae0a-446a921df3ac" isLeaf="false">
+                <opaqueActionMoniker Id="e84db499-858a-42bd-83d6-5d1ca376fc4a" LastKnownName="导出数据" />
+                <elementDefinition Id="fc53ac12-02ec-4b66-afa8-5475c0bf2719" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="0e58b410-6505-4146-b5d4-427ab7899254" name="查看用户详情" isLeaf="false">
+            <elementDefinition Id="a5e9d592-ed08-4b73-b5c7-2067b85846ee" />
+            <flowNodeTargets>
+              <controlFlow Id="c4b9e743-650b-4a25-bbce-f34734ea8e78" isLeaf="false">
+                <joinNodeMoniker Id="0f0659cb-0261-43db-9197-0705b1e932a7" LastKnownName="Join1" />
+                <elementDefinition Id="1d2f5b94-255e-48b8-80bb-fbf75c33f73d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5ca41c9d-a1e0-466c-a534-7bddde728397" name="重置密码" isLeaf="false">
+            <elementDefinition Id="83840b23-f551-44ca-927d-cac0cd701609" />
+            <flowNodeTargets>
+              <controlFlow Id="cb01c6f6-c4fc-430e-a286-01fea2d05e52" isLeaf="false">
+                <joinNodeMoniker Id="0f0659cb-0261-43db-9197-0705b1e932a7" LastKnownName="Join1" />
+                <elementDefinition Id="6010bcbf-d757-44da-9499-05234b7080aa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="24f40bb9-c6b2-42ce-bf8e-93ea3536f992" name="冻结/激活账户" isLeaf="false">
+            <elementDefinition Id="bf83e66d-c068-47ec-b337-6e543711657f" />
+            <flowNodeTargets>
+              <controlFlow Id="66284220-8966-4cf2-8f46-228c0f03bc45" isLeaf="false">
+                <joinNodeMoniker Id="0f0659cb-0261-43db-9197-0705b1e932a7" LastKnownName="Join1" />
+                <elementDefinition Id="db0cea32-45d0-4159-a91c-a89b9a2d2219" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7bd7d706-d6f4-4126-8b0b-877bb5719aaa" name="变更类型" isLeaf="false">
+            <elementDefinition Id="1d012350-899b-4874-a877-5c456c76d5ab" />
+            <flowNodeTargets>
+              <controlFlow Id="d6119f24-6aae-49f5-afe2-e54f9ad7062e" isLeaf="false">
+                <joinNodeMoniker Id="0f0659cb-0261-43db-9197-0705b1e932a7" LastKnownName="Join1" />
+                <elementDefinition Id="1183f6a7-1546-4cdf-a044-273d73bc1453" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fef0ef03-4896-4fa3-adc8-b57fa35d6812" name="删除账户" isLeaf="false">
+            <elementDefinition Id="d5f28164-0b6f-4fdb-8f92-dab0c2084609" />
+            <flowNodeTargets>
+              <controlFlow Id="f42df15e-6b06-4177-aa95-ee8076c6de11" isLeaf="false">
+                <joinNodeMoniker Id="0f0659cb-0261-43db-9197-0705b1e932a7" LastKnownName="Join1" />
+                <elementDefinition Id="a2d83198-6baa-4ff4-b036-ae8241b9e61a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="e84db499-858a-42bd-83d6-5d1ca376fc4a" name="导出数据" isLeaf="false">
+            <elementDefinition Id="6ea37581-3e39-44dc-842f-6e68eef8c983" />
+            <flowNodeTargets>
+              <controlFlow Id="b981e4b4-7e11-4f9d-8d83-2cd1998b36f2" isLeaf="false">
+                <joinNodeMoniker Id="0f0659cb-0261-43db-9197-0705b1e932a7" LastKnownName="Join1" />
+                <elementDefinition Id="d6016e2f-90a5-475f-b889-7c5fae841c23" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="0f0659cb-0261-43db-9197-0705b1e932a7" name="Join1" isLeaf="false">
+            <elementDefinition Id="ffe9c598-38bb-4b7b-8c2e-527a9f6ae974" />
+            <flowNodeTargets>
+              <controlFlow Id="309f6698-955b-404c-903d-56c3035dbfa9" isLeaf="false">
+                <activityFinalNodeMoniker Id="18be80b2-cd84-44db-8f8f-542982d6fff9" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="703e1226-2d0d-4031-b591-a396021f28e6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityFinalNode Id="18be80b2-cd84-44db-8f8f-542982d6fff9" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="a533a7a9-ea59-4a0d-bfb3-c6b111623090" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="679e7209-bc83-4b9f-8e59-b55de223d79d" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</activityRootModel>
