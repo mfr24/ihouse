@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
-
+using ILight.Core.Net.WebRequest;
 namespace IHome.SLClient.InfoManagement
 {
     public class CommunityViewModel : INotifyPropertyChanged
@@ -45,14 +45,16 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    List<IHome.Models.Data.base_community_baseinfo> deleteList = new List<IHome.Models.Data.base_community_baseinfo>();
+                    List<string> deleteList = new List<string>();
                     foreach (var item in CommunityList)
                     {
-                        if (item.check_status_ex) deleteList.Add(new Models.Data.base_community_baseinfo() { community_id = item.community_id });
+                        if (item.check_status_ex) deleteList.Add(item.community_id.ToString());
                     }
                     List<object> list = new List<object>();
-                    list.Add(new { communityList = deleteList });
-                    ILight.Core.Net.WebRequest.HttpWebRequestProvider.Request("IHome.Server.Facade.MainFacade.UpdateCommunity",
+                    Dictionary<string, object> dict = new Dictionary<string, object>();
+                    dict["communityList"] = deleteList;
+                    list.Add(dict);
+                    this.Request("IHome.Server.Facade.MainFacade.DeleteCommunityList",
                             list,
                             (result) => { });
                 });
