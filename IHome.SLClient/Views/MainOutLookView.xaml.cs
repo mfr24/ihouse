@@ -19,6 +19,7 @@ namespace IHome.SLClient
 	{
 		public MainOutLookView()
 		{
+
 			this.InitializeComponent();
             //MessageBox.Show(MainTab.Items+HH.ToString()+BB);
 			// Insert code required on object creation below this point.
