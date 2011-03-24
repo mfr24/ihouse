@@ -18,7 +18,7 @@
                              SelectedItem="{Binding CommunitySelected, Mode=TwoWay}"
                              AutoGenerateColumns="False" 
                              CanUserFreezeColumns="False" 
-							 CanUserResizeColumns="False" Height="241" VerticalAlignment="Top">
+							 CanUserResizeColumns="False" Height="458" VerticalAlignment="Top">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
@@ -42,8 +42,6 @@
                 <telerik:GridViewDataColumn Header="小区描述" DataMemberBinding="{Binding remark}" Width="*" IsReadOnly="True"/>
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
-        <telerik:RadDataForm ItemsSource="{Binding CommunityList}" Height="217" VerticalAlignment="Top" Margin="0,263,0,0" HorizontalAlignment="Left" Width="299"
-						     />
         <Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddCommunity, Mode=OneWay}"/>
         <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetCommunityList, Mode=OneWay}" Margin="81,0,0,0" />
         <Button Content="修改" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding EditCommunity, Mode=OneWay}" Margin="160,0,0,0"/>
