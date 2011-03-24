@@ -51,9 +51,9 @@ namespace IHome.SLClient.InfoManagement
                         if (item.check_status_ex) deleteList.Add(item.community_id.ToString());
                     }
                     List<object> list = new List<object>();
-                    Dictionary<string, object> dict = new Dictionary<string, object>();
-                    dict["communityList"] = deleteList;
-                    list.Add(dict);
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["communityList"] = deleteList;
+                    list.Add(requestParams);
                     this.Request("IHome.Server.Facade.MainFacade.DeleteCommunityList",
                             list,
                             (result) => { });
