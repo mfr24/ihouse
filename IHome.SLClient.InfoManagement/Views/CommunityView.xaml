@@ -13,12 +13,13 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource CommunityViewModelDataSource}}">
-        <telerik:RadGridView ItemsSource="{Binding CommunityList ,Mode=TwoWay}" ShowGroupPanel="False" Margin="0,22,0,0"
-                             IsBusy="{Binding IsBusy,Mode=TwoWay}"
-                             SelectedItem="{Binding CommunitySelected, Mode=TwoWay}"
+        <telerik:RadGridView ShowGroupPanel="False" Margin="0,22,0,0"
                              AutoGenerateColumns="False" 
                              CanUserFreezeColumns="False" 
-							 CanUserResizeColumns="False" Height="458" VerticalAlignment="Top">
+							 CanUserResizeColumns="False" Height="458" VerticalAlignment="Top"
+                             ItemsSource="{Binding CommunityList ,Mode=TwoWay}" 
+                             SelectedItem="{Binding CommunitySelected, Mode=TwoWay}"
+                             >
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
@@ -46,5 +47,6 @@
         <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetCommunityList, Mode=OneWay}" Margin="81,0,0,0" />
         <Button Content="修改" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding EditCommunity, Mode=OneWay}" Margin="160,0,0,0"/>
         <Button Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding DeleteCommunity, Mode=OneWay}" Margin="240,0,0,0"/>
+        <Button Content="查看楼栋" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetBuildingList, Mode=OneWay}" Margin="321,0,0,0"/>
     </Grid>
 </UserControl>

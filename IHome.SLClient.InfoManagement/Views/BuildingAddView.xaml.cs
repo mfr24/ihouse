@@ -23,5 +23,10 @@ namespace IHome.SLClient.InfoManagement
 			
 			// Insert code required on object creation below this point.
 		}
+        public BuildingAddView(BuildingViewModel VM)
+        {
+            Resources.Add("BuildingViewModelDataSource", VM);
+            this.InitializeComponent();
+        }
 	}
 }

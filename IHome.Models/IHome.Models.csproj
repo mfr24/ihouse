@@ -50,8 +50,13 @@
       <HintPath>..\Libs\Silverlight\ILight.Core.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json.Silverlight">
+      <HintPath>..\Libs\Silverlight\Newtonsoft.Json.Silverlight.dll</HintPath>
+    </Reference>
     <Reference Include="system" />
-    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Windows" />
   </ItemGroup>
