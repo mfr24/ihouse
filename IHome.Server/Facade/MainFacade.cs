@@ -37,7 +37,7 @@ namespace IHome.Server.Facade
                 Models.Data.sys_user_baseinfo user = new Models.Data.sys_user_baseinfo();
                 user.user_id = Guid.NewGuid();
                 user.city_name = "北京";
-                using (var context=new Data.CbooEntities())
+                using (var context = new Data.CbooEntities())
                 {
                     context.sys_user_baseinfo.AddObject(user);
                     context.SaveChanges();
@@ -100,7 +100,7 @@ namespace IHome.Server.Facade
             {
                 //check user
             }
-            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data ,message=message});
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
             return revList;
 
         }
@@ -117,7 +117,7 @@ namespace IHome.Server.Facade
                 using (var context = new Data.CbooEntities())
                 {
                     context.base_community_baseinfo.AddObject(community);
-                    int a =context.SaveChanges();
+                    int a = context.SaveChanges();
                 }
             }
             catch (Exception ex)
@@ -142,7 +142,7 @@ namespace IHome.Server.Facade
                 using (var context = new Data.CbooEntities())
                 {
                     context.base_community_baseinfo.Attach(community);
-                    context.ObjectStateManager.ChangeObjectState(community,System.Data.EntityState.Modified);
+                    context.ObjectStateManager.ChangeObjectState(community, System.Data.EntityState.Modified);
                     int a = context.SaveChanges();
                 }
             }
@@ -157,6 +157,33 @@ namespace IHome.Server.Facade
             return revList;
 
         }
+        public ArrayList DeleteCommunityList(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                List<Models.Data.base_community_baseinfo> communityList = paramDicts[0]["communityList"].ToString().JsonToModel<List<Models.Data.base_community_baseinfo>>();
+                using (var context = new Data.CbooEntities())
+                {
+                    foreach (var item in communityList)
+                    {
+                        context.base_community_baseinfo.DeleteObject(item);
+                    }
+                    int a = context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
 
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+
+        }
     }
 }

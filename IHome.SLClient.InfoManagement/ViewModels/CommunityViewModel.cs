@@ -39,6 +39,27 @@ namespace IHome.SLClient.InfoManagement
 
             }
         }
+        public ICommand DeleteCommunity
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<IHome.Models.Data.base_community_baseinfo> deleteList = new List<IHome.Models.Data.base_community_baseinfo>();
+                    foreach (var item in CommunityList)
+                    {
+                        if (item.check_status_ex) deleteList.Add(new Models.Data.base_community_baseinfo() { community_id = item.community_id });
+                    }
+                    List<object> list = new List<object>();
+                    list.Add(new { communityList = deleteList });
+                    ILight.Core.Net.WebRequest.HttpWebRequestProvider.Request("IHome.Server.Facade.MainFacade.UpdateCommunity",
+                            list,
+                            (result) => { });
+                });
+
+            }
+        }
+        
         public ICommand GetCommunityList
         {
             get
