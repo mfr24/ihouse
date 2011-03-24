@@ -13,7 +13,7 @@ namespace IHome.Server.Facade
             Exception erro = null;
             object data = null;
             string message = null;
-            Models.ValidationRequest valid = paramDicts[0].GetModel<Models.ValidationRequest>();
+            Models.ValidationRequest valid = paramDicts[0].As<Models.ValidationRequest>();
             try
             {
                 List<ValidationResult> validationResults = new List<ValidationResult>();

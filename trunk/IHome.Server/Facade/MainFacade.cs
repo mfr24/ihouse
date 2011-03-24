@@ -188,5 +188,59 @@ namespace IHome.Server.Facade
 
         }
 
+        public ArrayList AddBuilding(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                Models.Data.base_community_buildinginfo model = paramDicts[0]["Building"].ToString().JsonToModel<Models.Data.base_community_buildinginfo>();
+                model.building_id = Guid.NewGuid();
+                using (var context = new Data.CbooEntities())
+                {
+                    context.base_community_buildinginfo.AddObject(model);
+                    int a = context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
+        public ArrayList GetBuildingList(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                var community_id=new Guid(paramDicts[0]["community_id"].ToString());
+                using (var context = new Data.CbooEntities())
+                {
+
+                    var models = from building in context.base_community_buildinginfo
+
+                                      where building.community_id == community_id
+
+                                      select building;
+
+                    data = models.ToList<Models.Data.base_community_buildinginfo>();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
+
     }
 }

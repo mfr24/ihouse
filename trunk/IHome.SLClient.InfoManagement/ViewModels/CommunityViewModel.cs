@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using ILight.Core.Net.WebRequest;
+using IHome.Models.Data;
+using IHome.Models;
 namespace IHome.SLClient.InfoManagement
 {
     public class CommunityViewModel : INotifyPropertyChanged
@@ -61,7 +63,6 @@ namespace IHome.SLClient.InfoManagement
 
             }
         }
-        
         public ICommand GetCommunityList
         {
             get
@@ -71,6 +72,29 @@ namespace IHome.SLClient.InfoManagement
                     PostData();
                 });
 
+            }
+        }
+        public ICommand GetBuildingList
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["community_id"] = CommunitySelected.community_id;
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.GetBuildingList",
+                    requestList,
+                    (result) =>
+                    {
+                        ObservableCollection<base_community_buildinginfo_ex> list = result.GetData<ObservableCollection<base_community_buildinginfo_ex>>().data;
+                        BuildingViewModel vm = new BuildingViewModel {BuildingList=list };
+                        System.Windows.Controls.ChildWindow child = new System.Windows.Controls.ChildWindow();
+                        child.Content = (new BuildingAddView(vm));
+                        child.Show();
+                    });
+                });
             }
         }
         private bool _isCheckAll = false;
@@ -91,17 +115,14 @@ namespace IHome.SLClient.InfoManagement
 
         public CommunityViewModel()
         {
-            _communityList = new ObservableCollection<Models.Data.base_community_baseinfo_ex>();
-
+            CommunityList = new ObservableCollection<base_community_baseinfo_ex>();
         }
 
-        private ObservableCollection<Models.Data.base_community_baseinfo_ex> _communityList;
-        private Models.Data.base_community_baseinfo_ex _communitySelected;
 
         public Models.Data.base_community_baseinfo_ex CommunitySelected
         {
-            get { return _communitySelected; }
-            set { _communitySelected = value; }
+            get;
+            set;
         }
         private bool _isBusy;
 
@@ -116,8 +137,8 @@ namespace IHome.SLClient.InfoManagement
 
         public ObservableCollection<Models.Data.base_community_baseinfo_ex> CommunityList
         {
-            get { return _communityList; }
-            set { _communityList = value; }
+            get;
+            set;
         }
         private void PostData()
         {
