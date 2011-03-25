@@ -14,10 +14,10 @@
         <d:DesignInstance Type="local:BuildingViewModel" x:Key="BuildingViewModelDataSource"/>
 	</UserControl.Resources>
 
-    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="640" Height="480">
         <telerik:RadDataForm ItemsSource="{Binding BuildingList, Mode=TwoWay}" CurrentItem="{Binding Building, Mode=TwoWay}" 
                              CommitButtonContent="保存" CancelButtonContent="取消" AutoGenerateFields="False"
-                             Margin="184,57,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="279">
+                             VerticalAlignment="Top" HorizontalAlignment="Left" Width="307" Height="480" Visibility="Collapsed">
             <telerik:RadDataForm.ReadOnlyTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -66,5 +66,30 @@
         		</i:EventTrigger>
         	</i:Interaction.Triggers>
         </telerik:RadDataForm>
+        <telerik:RadGridView ItemsSource="{Binding BuildingList, Mode=TwoWay}" SelectedItem="{Binding Building, Mode=TwoWay}" 
+                             AutoGenerateColumns="False"
+                             ShowGroupPanel="False"
+                             >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn IsReadOnly="True">
+                    <telerik:GridViewDataColumn.Header>
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource BuildingViewModelDataSource}}" />
+                    </telerik:GridViewDataColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding check_status_ex, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="楼栋名称" DataMemberBinding="{Binding building_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="楼栋用途" DataMemberBinding="{Binding building_use}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="建筑类型" DataMemberBinding="{Binding building_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="楼栋楼层数" DataMemberBinding="{Binding building_floor}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="单元数" DataMemberBinding="{Binding unit_num}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="单元类型" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="房间号规则" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="房间号规则描述" DataMemberBinding="{Binding room_rule_remark}" Width="*" IsReadOnly="True" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
     </Grid>
 </UserControl>
