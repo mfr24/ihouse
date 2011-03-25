@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="f89fa1ae-cc33-465d-a9ec-a47eba58968d" name="房源登记" linkedPackageId="b4b2ef85-b6b7-468d-9827-b2f5f05ee2f1" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="7d475d7f-8551-4404-9d5f-73c0a27da1b9">
+      <elementDefinition Id="95930fb9-71a8-47c6-9624-b7c369e62633" />
+      <body>以autoComplete方式，输入楼盘名称或拼音简写</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="51ad9185-a9b2-44ac-b669-5a149c1768d7" LastKnownName="选择楼盘" />
+      </annotatedElements>
+    </comment>
+    <comment Id="9e00a1e6-18b5-4b64-9eef-721a7d3b2ffe">
+      <elementDefinition Id="24aaab02-4047-42e1-bafc-f89253391431" />
+      <body>目标楼栋不存在</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="03e9a960-5828-4151-8a87-d6abbb4a7555" LastKnownName="Decision111" />
+      </annotatedElements>
+    </comment>
+    <comment Id="340408dd-4335-4ee6-8c4b-13f645f0e1af">
+      <elementDefinition Id="9950a956-5d8d-4a65-8a2c-b4fe3a7fa136" />
+      <body>判断房源该用户及其子用户是否输入过</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="a98dbb33-5787-447d-aa01-d6fb1fadb2a7" LastKnownName="Decision1111" />
+      </annotatedElements>
+    </comment>
+    <comment Id="ad707db5-c8bf-4400-a5c8-a73527abd408">
+      <elementDefinition Id="4223fcc1-6272-4a2d-8705-d8628a88d7c2" />
+      <body>判断设定中是否允许重复的电话号码</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="3570bb7c-43d3-468c-9c58-e3b0066c564b" LastKnownName="Decision111111" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8405cac4-df86-45b0-956e-a38bde160193">
+      <elementDefinition Id="0a674404-535e-4bcf-b209-d2902286b029" />
+      <body>保存信息成功</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="8139ef10-2962-457c-9642-655d8472129f" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="53414d68-852d-4cbc-b952-eb0226fa391a">
+      <elementDefinition Id="bd2e46bc-6796-430e-a2d5-24f5602bb135" />
+      <body>1.返回房源查询
+2.继续输入该小区房源
+
+若都不选择直接关闭提示框则返回房源查询</body>
+      <annotatedElements>
+        <opaqueActionMoniker Id="c10b8cde-61a1-4754-9227-9eb15800f360" LastKnownName="提供下一步操作选择" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="272ee2d9-1ba7-45a8-a6a1-a52f89a8a225">
+      <profileInstance Id="96491c6f-fdcf-433f-b8a8-2ee474e26349" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="95a1ea3a-805f-47a3-b8c3-50d96354d228">
+      <profileInstance Id="de4f9608-cfd9-49ab-a9e6-d0751d272b60" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="4866b44f-e74e-458a-a8f4-3e5e90b15f52" name="房源登记" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="d8a19054-5513-43d1-9417-89679947cf23" />
+        <nodes>
+          <initialNode Id="597b00a8-e562-47d5-ac10-e011e24520ac" name="Initial1" isLeaf="false">
+            <elementDefinition Id="da2fc1df-6a53-490a-bcf8-56340b2bc066" />
+            <flowNodeTargets>
+              <controlFlow Id="6259209b-df7f-407a-91c7-a578adee1594" isLeaf="false">
+                <opaqueActionMoniker Id="35e2cd86-1f8b-4041-b392-e0c05acecb19" LastKnownName="登记房源" />
+                <elementDefinition Id="cd882ad4-a4b5-4ec1-90c2-f80b575b4d66" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="35e2cd86-1f8b-4041-b392-e0c05acecb19" name="登记房源" isLeaf="false">
+            <elementDefinition Id="6aeed731-038c-4c3f-8174-d21fdc9b2fee" />
+            <flowNodeTargets>
+              <controlFlow Id="a07d3287-33e4-4ab9-ac61-84fa5a7ea3c4" isLeaf="false">
+                <opaqueActionMoniker Id="51ad9185-a9b2-44ac-b669-5a149c1768d7" LastKnownName="选择楼盘" />
+                <elementDefinition Id="8e03a693-1a71-4699-ba9f-0989919699d4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="51ad9185-a9b2-44ac-b669-5a149c1768d7" name="选择楼盘" isLeaf="false">
+            <elementDefinition Id="eb00734c-a321-4352-b3a0-33ea6e373f7e" />
+            <flowNodeTargets>
+              <controlFlow Id="9e05d052-63dc-49fa-be85-3237f05b9467" isLeaf="false">
+                <decisionNodeMoniker Id="3a3dff33-0b2f-48a9-8165-a8791bea87c3" LastKnownName="Decision1" />
+                <elementDefinition Id="5571cf3f-204a-4335-b55e-0a3164b0b647" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="3a3dff33-0b2f-48a9-8165-a8791bea87c3" name="Decision1" isLeaf="false">
+            <elementDefinition Id="6af83381-44ce-43e9-8caa-73a2f60744b5" />
+            <flowNodeTargets>
+              <controlFlow Id="d0bfd67d-0fd9-4f4b-9ac3-4e9c1fd99c4c" guard="楼盘不存在" isLeaf="false">
+                <opaqueActionMoniker Id="10aaef41-1692-48ae-8b8d-3882c942b6cd" LastKnownName="提示新建楼盘" />
+                <elementDefinition Id="23dfa9e3-7b5e-49fb-8418-5b0bf1bffb07" />
+              </controlFlow>
+              <controlFlow Id="52a05b5f-7602-4b2e-a047-dd68d0fb0e98" guard="存在" isLeaf="false">
+                <opaqueActionMoniker Id="0fef4e59-9001-4e34-928b-c827b7ddcebf" LastKnownName="判断设定，是否需要选择楼栋" />
+                <elementDefinition Id="53cf2628-a9c1-4013-9c1b-c6e8c630d48c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="10aaef41-1692-48ae-8b8d-3882c942b6cd" name="提示新建楼盘" isLeaf="false">
+            <elementDefinition Id="104f4e27-854f-4ae7-ad21-68324bc6c68a" />
+            <flowNodeTargets>
+              <controlFlow Id="22ccb90e-428e-4ee0-93e0-680da18e0f8e" isLeaf="false">
+                <opaqueActionMoniker Id="f0acc4c5-63f2-480f-99d5-38a1aaf63d37" LastKnownName="新建楼盘" />
+                <elementDefinition Id="0229062c-794a-48dd-bbf4-66ce41353f96" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f0acc4c5-63f2-480f-99d5-38a1aaf63d37" name="新建楼盘" isLeaf="false">
+            <elementDefinition Id="9d7cac3b-f670-481b-a749-e9512b03825f" />
+          </opaqueAction>
+          <opaqueAction Id="0fef4e59-9001-4e34-928b-c827b7ddcebf" name="判断设定，是否需要选择楼栋" isLeaf="false">
+            <elementDefinition Id="0271a2c0-7687-45e1-b0d7-59f46fa71f44" />
+            <flowNodeTargets>
+              <controlFlow Id="d2789a7a-d8a6-408c-84d1-a4b7ed19fb4e" isLeaf="false">
+                <decisionNodeMoniker Id="1ed45d3f-5ce5-44c2-909a-07108623b8a2" LastKnownName="Decision11" />
+                <elementDefinition Id="dcaa25dd-725c-4647-b752-843ff019c19f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="1ed45d3f-5ce5-44c2-909a-07108623b8a2" name="Decision11" isLeaf="false">
+            <elementDefinition Id="8983ecf0-a2a0-4352-bacd-16b436a6ed8f" />
+            <flowNodeTargets>
+              <controlFlow Id="df3ef4b1-3c88-4ad0-9f96-4358e52cf5a9" guard="需要" isLeaf="false">
+                <opaqueActionMoniker Id="fbe2e802-4f17-4f58-bed9-db232b78d157" LastKnownName="选择楼栋" />
+                <elementDefinition Id="996c6bd7-1add-4268-a9c6-a7c6a320ad1d" />
+              </controlFlow>
+              <controlFlow Id="c2eb6ed3-03ea-44a9-8b86-9c2eb05228cf" guard="不需要" isLeaf="false">
+                <opaqueActionMoniker Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" LastKnownName="输入房间信息" />
+                <elementDefinition Id="2adc0200-55ff-41c8-852a-993eba4db127" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="fbe2e802-4f17-4f58-bed9-db232b78d157" name="选择楼栋" isLeaf="false">
+            <elementDefinition Id="262578d7-9c8f-4873-976e-ceba02732830" />
+            <flowNodeTargets>
+              <controlFlow Id="3b52b9a4-89a7-43b1-9f61-553fa276a750" isLeaf="false">
+                <decisionNodeMoniker Id="03e9a960-5828-4151-8a87-d6abbb4a7555" LastKnownName="Decision111" />
+                <elementDefinition Id="4ecc6a41-c0bd-4fda-9efb-42c00173a2bb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="03e9a960-5828-4151-8a87-d6abbb4a7555" name="Decision111" isLeaf="false">
+            <elementDefinition Id="d75e2a0d-7a2c-4f00-a922-49c2402756d0" />
+            <flowNodeTargets>
+              <controlFlow Id="f2a2d36a-64f2-49ed-8910-94ec3715fd12" guard="楼栋不存在" isLeaf="false">
+                <opaqueActionMoniker Id="3c25d677-0582-4142-ba6e-64551173f193" LastKnownName="提示新建楼栋" />
+                <elementDefinition Id="47d91be7-2e33-4b55-b5ef-6a8313d4f4ca" />
+              </controlFlow>
+              <controlFlow Id="db2f2ba9-57fa-4488-9e9c-51e99d048b3a" guard="楼栋存在" isLeaf="false">
+                <opaqueActionMoniker Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" LastKnownName="输入房间信息" />
+                <elementDefinition Id="225576c9-70dd-40a1-82a5-64ce3367a08a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="3c25d677-0582-4142-ba6e-64551173f193" name="提示新建楼栋" isLeaf="false">
+            <elementDefinition Id="824b6ff7-5d8c-4a0c-bf20-b0702c9240e0" />
+            <flowNodeTargets>
+              <controlFlow Id="d5b5f6f7-408b-4838-955b-d8808de737ec" isLeaf="false">
+                <opaqueActionMoniker Id="fb13fc8d-2749-4e72-861f-197487cb1ded" LastKnownName="新建楼栋" />
+                <elementDefinition Id="3541a2e7-d85f-4aec-a320-7b6527383ef7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="fb13fc8d-2749-4e72-861f-197487cb1ded" name="新建楼栋" isLeaf="false">
+            <elementDefinition Id="0381b56b-7adb-47ab-ab6d-97ad831f6574" />
+            <flowNodeTargets>
+              <controlFlow Id="23d15941-72e7-44a7-a480-82c89e149586" isLeaf="false">
+                <opaqueActionMoniker Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" LastKnownName="输入房间信息" />
+                <elementDefinition Id="75333cf1-acd0-4b2b-804d-f4fc9e36342d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" name="输入房间信息" isLeaf="false">
+            <elementDefinition Id="c6f20aa6-ca64-4e4c-a06c-d90812f55fa8" />
+            <flowNodeTargets>
+              <controlFlow Id="25e5c438-0266-48e0-b637-17550816aa07" isLeaf="false">
+                <decisionNodeMoniker Id="5cce18cf-adfa-4f54-9b7c-3506e34053d8" LastKnownName="Decision112" />
+                <elementDefinition Id="86433527-a38b-4876-a205-e79955853d6e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="a98dbb33-5787-447d-aa01-d6fb1fadb2a7" name="Decision1111" isLeaf="false">
+            <elementDefinition Id="1bf5fe20-6322-4c1c-ad0b-dd8c50a2840b" />
+            <flowNodeTargets>
+              <controlFlow Id="24eb11b5-5afb-497b-b50f-a7980d4fae1b" guard="不允许" isLeaf="false">
+                <opaqueActionMoniker Id="ea7fab52-1f0e-4f1b-9ba3-8bac4bc69091" LastKnownName="判断是否有重复" />
+                <elementDefinition Id="5b819018-076c-4369-be44-e7c369f06424" />
+              </controlFlow>
+              <controlFlow Id="c743de64-b1f5-42b2-b246-850cb79990b2" guard="允许" isLeaf="false">
+                <opaqueActionMoniker Id="2f6c8505-e25e-42c5-9bcf-660b39d9a9ba" LastKnownName="输入客户信息" />
+                <elementDefinition Id="31df151b-f1a5-4b53-91c0-15f057c604a6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="a06f5711-054b-40e5-8ff2-7c91977204d5" name="判断设定是否允许输入重复房源" isLeaf="false">
+            <elementDefinition Id="efe948a7-36c4-468e-b616-6f4d472f6442" />
+            <flowNodeTargets>
+              <controlFlow Id="eb6e49cd-6e3d-42a2-bff3-6c97c64fea6c" isLeaf="false">
+                <decisionNodeMoniker Id="a98dbb33-5787-447d-aa01-d6fb1fadb2a7" LastKnownName="Decision1111" />
+                <elementDefinition Id="254e6ba4-61c9-4aa3-9de9-9b63155673f5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="2f6c8505-e25e-42c5-9bcf-660b39d9a9ba" name="输入客户信息" isLeaf="false">
+            <elementDefinition Id="0bb9e9ec-d3fd-486f-a519-f2194b9e09b1" />
+            <flowNodeTargets>
+              <controlFlow Id="264c219c-b6c8-4847-9f64-4ff66ce08a3e" isLeaf="false">
+                <decisionNodeMoniker Id="3570bb7c-43d3-468c-9c58-e3b0066c564b" LastKnownName="Decision111111" />
+                <elementDefinition Id="5157baba-cf9c-49a9-8387-3e2415f87dd3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ea7fab52-1f0e-4f1b-9ba3-8bac4bc69091" name="判断是否有重复" isLeaf="false">
+            <elementDefinition Id="583963ed-f1e6-4fb4-9c57-0abc19086f56" />
+            <flowNodeTargets>
+              <controlFlow Id="67f38a14-9bcf-40d9-a494-82b5ce97edd0" isLeaf="false">
+                <decisionNodeMoniker Id="13f2b0ad-6ea8-4518-a496-d0a1a90810c8" LastKnownName="Decision11111" />
+                <elementDefinition Id="31604de0-d5a2-48d5-9592-2a8787f65fb8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="13f2b0ad-6ea8-4518-a496-d0a1a90810c8" name="Decision11111" isLeaf="false">
+            <elementDefinition Id="063f0401-1073-43bb-b6e3-4d48f1069c11" />
+            <flowNodeTargets>
+              <controlFlow Id="732a6ecb-70e4-4d7b-9ec4-1a1fdd7f4e2e" guard="无重复" isLeaf="false">
+                <opaqueActionMoniker Id="2f6c8505-e25e-42c5-9bcf-660b39d9a9ba" LastKnownName="输入客户信息" />
+                <elementDefinition Id="ad4e59a7-b773-4234-8917-a0a5f752b51e" />
+              </controlFlow>
+              <controlFlow Id="ecaa1c57-f20d-47b6-a845-2322d6450175" guard="有重复" isLeaf="false">
+                <opaqueActionMoniker Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" LastKnownName="输入房间信息" />
+                <elementDefinition Id="85ebf850-a3fc-436b-b171-491f83c3b486" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="5cce18cf-adfa-4f54-9b7c-3506e34053d8" name="Decision112" isLeaf="false">
+            <elementDefinition Id="4402d982-0abc-4dc3-afc6-b955bfb494f1" />
+            <flowNodeTargets>
+              <controlFlow Id="12ae5a26-ac41-459b-8503-4c8385f38882" guard="符合房间号规则" isLeaf="false">
+                <opaqueActionMoniker Id="a06f5711-054b-40e5-8ff2-7c91977204d5" LastKnownName="判断设定是否允许输入重复房源" />
+                <elementDefinition Id="72cb7765-39d6-4dc0-8a2b-104c7a09044b" />
+              </controlFlow>
+              <controlFlow Id="437af25a-d29d-4693-87fc-debd6dbdb4ac" guard="不符合规则" isLeaf="false">
+                <opaqueActionMoniker Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" LastKnownName="输入房间信息" />
+                <elementDefinition Id="96dae50d-ad3c-42bf-b9cb-1a296e162dfb" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode Id="3570bb7c-43d3-468c-9c58-e3b0066c564b" name="Decision111111" isLeaf="false">
+            <elementDefinition Id="5b68ced0-1ecc-4ff7-861e-d98bb129f8d2" />
+            <flowNodeTargets>
+              <controlFlow Id="f8ca52c5-06d6-41c0-93cc-eb1500d8ab23" guard="不允许" isLeaf="false">
+                <opaqueActionMoniker Id="2f6c8505-e25e-42c5-9bcf-660b39d9a9ba" LastKnownName="输入客户信息" />
+                <elementDefinition Id="5fc4a311-8a14-40f0-8517-caf99dc245a1" />
+              </controlFlow>
+              <controlFlow Id="8e3cd5d3-2b9b-41d5-b99a-cdf90c39ff8b" isLeaf="false">
+                <opaqueActionMoniker Id="aabdb031-cb9b-4a18-89f0-cc59a39655ab" LastKnownName="其他房源信息" />
+                <elementDefinition Id="e92fbf46-0731-44bb-8c8a-b50d691b9258" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="aabdb031-cb9b-4a18-89f0-cc59a39655ab" name="其他房源信息" isLeaf="false">
+            <elementDefinition Id="fae0236e-b117-4946-b2b5-5499eeec06eb" />
+            <flowNodeTargets>
+              <controlFlow Id="1004fe8a-e773-4429-aeb9-37e92967d37c" isLeaf="false">
+                <opaqueActionMoniker Id="1838403d-c571-42e6-a10b-124df9178f2d" LastKnownName="提交数据" />
+                <elementDefinition Id="4379ab62-272a-4f8b-a805-ce7da0552a49" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="1838403d-c571-42e6-a10b-124df9178f2d" name="提交数据" isLeaf="false">
+            <elementDefinition Id="f5b2a977-3341-4cb4-9402-6bdef8d13d08" />
+            <flowNodeTargets>
+              <controlFlow Id="3147a0df-43fc-4c54-9df6-434b7dc42d93" isLeaf="false">
+                <opaqueActionMoniker Id="73648c25-07d3-4248-a289-acaf5c65eb37" LastKnownName="保存信息" />
+                <elementDefinition Id="772f6f7e-94c0-4093-8df8-953cbdbf5d13" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="73648c25-07d3-4248-a289-acaf5c65eb37" name="保存信息" isLeaf="false">
+            <elementDefinition Id="e7031050-9b15-4dcd-9b4d-4ac39cd39791" />
+            <flowNodeTargets>
+              <controlFlow Id="de6f3ce3-be1d-45a6-8c68-c1e228f108f4" isLeaf="false">
+                <decisionNodeMoniker Id="8139ef10-2962-457c-9642-655d8472129f" LastKnownName="Decision2" />
+                <elementDefinition Id="3b0121b9-361f-4400-839a-8d4f553ae59a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="8139ef10-2962-457c-9642-655d8472129f" name="Decision2" isLeaf="false">
+            <elementDefinition Id="fcbfd206-f627-4521-afa7-45cfcafb3d83" />
+            <flowNodeTargets>
+              <controlFlow Id="41751de2-2c27-4281-be70-c60f97da5d43" guard="成功" isLeaf="false">
+                <opaqueActionMoniker Id="c10b8cde-61a1-4754-9227-9eb15800f360" LastKnownName="提供下一步操作选择" />
+                <elementDefinition Id="237b6bb6-f1c7-4abf-8a1a-a261db4ad671" />
+              </controlFlow>
+              <controlFlow Id="590449d5-4172-4a4a-b257-002a9db643ba" guard="保存失败" isLeaf="false">
+                <opaqueActionMoniker Id="c5e4f408-c1ca-4800-b9e8-4dc2a3dbb6c1" LastKnownName="输入房间信息" />
+                <elementDefinition Id="a168874d-dc3b-45a4-9a16-776aa87f1645" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="c10b8cde-61a1-4754-9227-9eb15800f360" name="提供下一步操作选择" isLeaf="false">
+            <elementDefinition Id="e003e362-faf8-46f9-8668-97d5cfe4eeb9" />
+          </opaqueAction>
+          <forkNode Id="2dde5200-3924-49b6-b646-a0e80ea31d4d" name="Fork1" isLeaf="false">
+            <elementDefinition Id="3b5bffca-a659-434e-aa03-81eafa15de2b" />
+            <flowNodeTargets>
+              <controlFlow Id="5c503144-417b-4951-a37b-ef8f8643c136" isLeaf="false">
+                <opaqueActionMoniker Id="d277100f-c4ab-437b-82f1-1bc7302df222" LastKnownName="返回房源查询" />
+                <elementDefinition Id="9d41649d-dfb6-4f62-8a8e-0677e237cf87" />
+              </controlFlow>
+              <controlFlow Id="5306103c-b462-4fce-94c5-81bd9e76ae15" isLeaf="false">
+                <opaqueActionMoniker Id="9a3dbe97-0247-4d7a-8270-fdb843e6ba68" LastKnownName="添加同小区房源" />
+                <elementDefinition Id="d53fc85a-0c5b-4f61-ab59-a9c8bb1443d8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+          <opaqueAction Id="d277100f-c4ab-437b-82f1-1bc7302df222" name="返回房源查询" isLeaf="false">
+            <elementDefinition Id="0020cccc-e21e-4c50-8eb4-91377a72457d" />
+            <flowNodeTargets>
+              <controlFlow Id="1c6789b0-2179-4012-a748-3d953baf5b88" isLeaf="false">
+                <joinNodeMoniker Id="a920768f-07d1-4d89-8a90-bb40788ba517" LastKnownName="Join1" />
+                <elementDefinition Id="65d9cfb7-ea67-4c38-bc3c-dd320f68d32c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9a3dbe97-0247-4d7a-8270-fdb843e6ba68" name="添加同小区房源" isLeaf="false">
+            <elementDefinition Id="f213a37a-ca6d-46fb-899f-b50515a97c2e" />
+            <flowNodeTargets>
+              <controlFlow Id="0727119a-a662-4f0a-a53c-3beb87ed4ea7" isLeaf="false">
+                <joinNodeMoniker Id="a920768f-07d1-4d89-8a90-bb40788ba517" LastKnownName="Join1" />
+                <elementDefinition Id="8850ee91-e523-4d7c-9c0a-e4b2151c7376" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="a920768f-07d1-4d89-8a90-bb40788ba517" name="Join1" isLeaf="false">
+            <elementDefinition Id="32ef9e61-0de1-420a-855a-a01fe6cf361e" />
+            <flowNodeTargets>
+              <controlFlow Id="b94b9949-1aed-42e4-ae9c-9ec0c779d86a" isLeaf="false">
+                <activityFinalNodeMoniker Id="5f56c6c4-971c-442a-94fe-0d86061c8f5e" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="0d2ca980-c014-489f-a8be-c8a300c4e397" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <activityFinalNode Id="5f56c6c4-971c-442a-94fe-0d86061c8f5e" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="3acdc36c-e44d-4b6e-8e56-56e312dd367c" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="b4b2ef85-b6b7-468d-9827-b2f5f05ee2f1" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</activityRootModel>
