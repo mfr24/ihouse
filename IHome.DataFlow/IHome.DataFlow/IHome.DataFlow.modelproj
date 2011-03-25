@@ -47,6 +47,13 @@
       <SubType>Content</SubType>
       <DependentUpon>基础管理-楼盘字典管理.usecasediagram</DependentUpon>
     </Content>
+    <Content Include="房源管理\房源登记.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="房源管理\房源登记.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>房源管理\房源登记.activitydiagram</DependentUpon>
+    </Content>
     <Content Include="房源管理\房源管理.usecasediagram">
       <SubType>Content</SubType>
     </Content>
