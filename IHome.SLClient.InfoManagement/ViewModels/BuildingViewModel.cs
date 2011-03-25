@@ -57,6 +57,20 @@ namespace IHome.SLClient.InfoManagement
         }
         public ObservableCollection<base_community_buildinginfo_ex> BuildingList { get; set; }
         public base_community_buildinginfo_ex Building { get; set; }
+        private bool _isCheckAll = false;
+        public bool IsCheckAll
+        {
+            get { return _isCheckAll; }
+            set
+            {
+                _isCheckAll = value;
+                foreach (var item in BuildingList)
+                {
+                    item.check_status_ex = _isCheckAll;
+                }
+                NotifyPropertyChanged("IsCheckAll");
+            }
+        }
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
