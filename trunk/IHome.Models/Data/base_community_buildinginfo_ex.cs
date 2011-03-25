@@ -12,6 +12,7 @@ namespace IHome.Models.Data
             Errors = new Dictionary<string, List<string>>();
             //_check_status_ex = false;
         }
+        public bool check_status_ex { get; set; }
         public bool IsValidate
         {
             get { return _isValidate; }
