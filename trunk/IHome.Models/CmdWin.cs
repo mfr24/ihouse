@@ -16,7 +16,8 @@ namespace IHome.Models
     }
     public class CmdWin : DLLModel
     {
-        public enum WinType { child = 1, tab = 2, info = 4, erro = 8 }
+
+        public sealed enum WinType { child = 1, tab = 2, info = 4, erro = 8 }
         public WinType Win { get; set; }
         public INotifyPropertyChanged VeiwModel { get; set; }
     }

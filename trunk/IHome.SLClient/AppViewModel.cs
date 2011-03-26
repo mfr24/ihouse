@@ -74,7 +74,7 @@ namespace IHome.SLClient
                     //}
                     //Recent.item_list.Insert(0, dll);
                     #endregion
-                    ILight.Core.Reflection.AssemblyProvider.GetInstanceAsync(win.type_name, win.xap_name, win.version, (frm) =>
+                    Action<object> action=(frm) =>
                     {
                         if (win.Win == IHome.Models.CmdWin.WinType.tab)
                         {
@@ -92,10 +92,19 @@ namespace IHome.SLClient
                         }
                         else if (win.Win == IHome.Models.CmdWin.WinType.child)
                         {
-                            ChildWindow child = new ChildWindow() { Content = frm };
+                            ChildWindow child = new ChildWindow() {Title=win.name, Content = frm };
                             child.Show();
                         }
-                    });
+                    };
+                    if (win.VeiwModel != null)
+                    {
+                        ILight.Core.Reflection.AssemblyProvider.GetInstanceAsync(win.type_name, win.xap_name, win.version, action,win.VeiwModel);
+                    }
+                    else
+                    {
+
+                        ILight.Core.Reflection.AssemblyProvider.GetInstanceAsync(win.type_name, win.xap_name, win.version, action);
+                    }
                 });
             }
         }
