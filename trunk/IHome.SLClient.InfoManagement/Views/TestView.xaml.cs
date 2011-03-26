@@ -12,16 +12,16 @@ using System.Windows.Shapes;
 
 namespace IHome.SLClient.InfoManagement
 {
-	/// <summary>
-	/// Interaction logic for TestView.xaml
-	/// </summary>
-	public partial class TestView : UserControl
-	{
-		public TestView()
-		{
-			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
-		}
-	}
+    /// <summary>
+    /// Interaction logic for TestView.xaml
+    /// </summary>
+    public partial class TestView : UserControl
+    {
+        public TestView() : this(new TestViewModel()) { }
+        public TestView(System.ComponentModel.INotifyPropertyChanged VM)
+        {
+            Resources.Add("TestViewModelDataSource", VM);
+            this.InitializeComponent();
+        }
+    }
 }

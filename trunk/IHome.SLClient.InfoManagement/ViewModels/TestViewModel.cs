@@ -6,7 +6,7 @@ using System.ComponentModel;
 
 namespace IHome.SLClient.InfoManagement
 {
-	public class TestViewModel : INotifyPropertyChanged
+    public class TestViewModel : INotifyPropertyChanged
 	{
 		public TestViewModel()
 		{
