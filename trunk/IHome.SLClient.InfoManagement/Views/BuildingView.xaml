@@ -3,13 +3,93 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
 	xmlns:local="clr-namespace:IHome.SLClient.InfoManagement"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+	mc:Ignorable="d"
 	x:Class="IHome.SLClient.InfoManagement.BuildingView"
 	d:DesignWidth="640" d:DesignHeight="480">
-	<UserControl.Resources>
-		<local:BuildingViewModel x:Key="BuildingViewModelDataSource" />
-	</UserControl.Resources>
+    <UserControl.Resources>
+        <!--<local:BuildingViewModel x:Key="BuildingViewModelDataSource" />-->
+        <d:DesignInstance Type="local:BuildingViewModel" x:Key="BuildingViewModelDataSource"/>
+    </UserControl.Resources>
 
-	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}"/>
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="640" Height="480">
+        <telerik:RadDataForm ItemsSource="{Binding BuildingList, Mode=TwoWay}" CurrentItem="{Binding Building, Mode=TwoWay}" 
+                             CommitButtonContent="保存" CancelButtonContent="取消" AutoGenerateFields="False"
+                             VerticalAlignment="Top" HorizontalAlignment="Left" Width="307" Height="480" Visibility="Collapsed">
+            <telerik:RadDataForm.ReadOnlyTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_name}" Label="楼栋名称:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_use}" Label="楼栋用途:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_type}" Label="建筑类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_floor}" Label="楼栋楼层数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_num}" Label="单元数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_type}" Label="单元类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule}" Label="房间号规则:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule_remark}" Label="房间号规则描述:" />
+                    </StackPanel>
+                </DataTemplate>
+            </telerik:RadDataForm.ReadOnlyTemplate>
+            <telerik:RadDataForm.EditTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_name}" Label="楼栋名称:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_use}" Label="楼栋用途:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_type}" Label="建筑类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_floor}" Label="楼栋楼层数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_num}" Label="单元数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_type}" Label="单元类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule}" Label="房间号规则:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule_remark}" Label="房间号规则描述:" />
+                    </StackPanel>
+                </DataTemplate>
+            </telerik:RadDataForm.EditTemplate>
+            <telerik:RadDataForm.NewItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_name,Mode=TwoWay}" Label="楼栋名称:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_use,Mode=TwoWay}" Label="楼栋用途:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_type,Mode=TwoWay}" Label="建筑类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_floor,Mode=TwoWay}" Label="楼栋楼层数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_num,Mode=TwoWay}" Label="单元数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_type,Mode=TwoWay}" Label="单元类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule,Mode=TwoWay}" Label="房间号规则:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule_remark,Mode=TwoWay}" Label="房间号规则描述:" />
+                    </StackPanel>
+                </DataTemplate>
+            </telerik:RadDataForm.NewItemTemplate>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="EditEnded">
+                    <i:InvokeCommandAction Command="{Binding AddBuilding, Mode=OneWay}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </telerik:RadDataForm>
+        <telerik:RadGridView ItemsSource="{Binding BuildingList, Mode=TwoWay}" SelectedItem="{Binding Building, Mode=TwoWay}" 
+                             AutoGenerateColumns="False"
+                             ShowGroupPanel="False"
+                             >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn IsReadOnly="True">
+                    <telerik:GridViewDataColumn.Header>
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource BuildingViewModelDataSource}}" />
+                    </telerik:GridViewDataColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding check_status_ex, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="楼栋名称" DataMemberBinding="{Binding building_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="楼栋用途" DataMemberBinding="{Binding building_use}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="建筑类型" DataMemberBinding="{Binding building_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="楼栋楼层数" DataMemberBinding="{Binding building_floor}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="单元数" DataMemberBinding="{Binding unit_num}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="单元类型" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="房间号规则" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="房间号规则描述" DataMemberBinding="{Binding room_rule_remark}" Width="*" IsReadOnly="True" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
+    </Grid>
 </UserControl>

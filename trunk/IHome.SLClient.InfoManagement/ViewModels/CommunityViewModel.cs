@@ -91,7 +91,7 @@ namespace IHome.SLClient.InfoManagement
                         ObservableCollection<base_community_buildinginfo_ex> list = result.GetData<ObservableCollection<base_community_buildinginfo_ex>>().data;
                         BuildingViewModel vm = new BuildingViewModel {BuildingList=list };
                         System.Windows.Controls.ChildWindow child = new System.Windows.Controls.ChildWindow();
-                        child.Content = (new BuildingAddView(vm));
+                        child.Content = (new BuildingView(vm));
                         child.Show();
                     });
                 });
