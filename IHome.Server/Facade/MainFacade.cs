@@ -16,21 +16,22 @@ namespace IHome.Server.Facade
         public MainFacade(string user)
         {
         }
-        public ArrayList AddHoseInfo(string userKey, Dictionary<string, object>[] paramDicts)
-        {
-
-            ArrayList revList = new ArrayList();
-            revList.Add(new Models.ServerResult() { succeed = true, data = new Models.HouseInfo() { MyProperty1 = "123123 from server", MyProperty2 = "123123 from server" }, message = "message f!!!!!!" });
-            return revList;
-        }
         public ArrayList Login(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            Models.User model = paramDicts[0]["user"].ToString().JsonToModel<Models.User>();
-            ArrayList revList = new ArrayList();
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
             {
-                //check user
+
             }
-            revList.Add(new Models.ServerResult() { succeed = true, data = new Models.User() { user_login = "哈哈", token = Guid.NewGuid().ToString() }, message = "message f!!!!!!" });
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
             return revList;
         }
         public ArrayList Register(string userKey, Dictionary<string, object>[] paramDicts)
