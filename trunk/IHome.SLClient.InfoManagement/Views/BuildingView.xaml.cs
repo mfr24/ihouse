@@ -28,5 +28,10 @@ namespace IHome.SLClient.InfoManagement
             Resources.Add("BuildingViewModelDataSource", VM);
             this.InitializeComponent();
         }
+
+        private void radGridView_RowActivated(object sender, Telerik.Windows.Controls.GridView.RowEventArgs e)
+        {
+            SbEdite.Begin();
+        }
     }
 }
