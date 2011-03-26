@@ -12,16 +12,21 @@ using System.Windows.Shapes;
 
 namespace IHome.SLClient.InfoManagement
 {
-	/// <summary>
-	/// Interaction logic for BuildingView.xaml
-	/// </summary>
-	public partial class BuildingView : UserControl
-	{
-		public BuildingView()
-		{
-			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
-		}
-	}
+    /// <summary>
+    /// Interaction logic for BuildingView.xaml
+    /// </summary>
+    public partial class BuildingView : UserControl
+    {
+        public BuildingView()
+        {
+            this.InitializeComponent();
+
+            // Insert code required on object creation below this point.
+        }
+        public BuildingView(BuildingViewModel VM)
+        {
+            Resources.Add("BuildingViewModelDataSource", VM);
+            this.InitializeComponent();
+        }
+    }
 }
