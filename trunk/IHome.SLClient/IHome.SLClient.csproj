@@ -110,6 +110,9 @@
       <HintPath>..\Libs\Silverlight\Telerik.Windows.Data.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows7">
+      <HintPath>..\Libs\Silverlight\Telerik.Windows.Themes.Windows7.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
