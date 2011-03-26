@@ -20,8 +20,11 @@
 			<i:Interaction.Behaviors>
 				<ilight:XDrop/>
 			</i:Interaction.Behaviors>
-            <telerik:RadButton Content="Button" HorizontalAlignment="Left" Command="{Binding Source={StaticResource AppDataSource},Path=ShowWin }" CommandParameter="{}{name:'SL测试',type_name:'IHome.SLClient.InfoManagement.TestView',xap_name:'IHome.SLClient.InfoManagement.zip',win:1}"/>
-		</StackPanel>
+            <telerik:RadButton Content="Button" HorizontalAlignment="Left" Command="{Binding Source={StaticResource AppDataSource},Path=ShowWin }" 
+                              
+                               CommandParameter="{Binding TestWin}"/>
+            <!--CommandParameter="{}{name:'SL测试',type_name:'IHome.SLClient.InfoManagement.TestView',xap_name:'IHome.SLClient.InfoManagement.zip',win:1}"-->
+        </StackPanel>
 		
 	</Grid>
 </UserControl>

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Data;
 using System.ComponentModel;
 using System.Windows.Input;
-using System.Windows;
-using System.Collections.ObjectModel;
-using System.Windows.Controls;
 using IHome.Models;
 
 namespace IHome.SLClient
@@ -62,7 +56,9 @@ namespace IHome.SLClient
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    CmdWin win = Newtonsoft.Json.JsonConvert.DeserializeObject<CmdWin>((string)p);
+                    CmdWin win;
+                    if(p is CmdWin)  win= p as CmdWin;
+                    else  win = Newtonsoft.Json.JsonConvert.DeserializeObject<CmdWin>((string)p);
                     #region 最近访问
                     //if (Recent.item_list.Contains(dll))
                     //{
@@ -78,7 +74,7 @@ namespace IHome.SLClient
                     {
                         if (win.Win == IHome.Models.CmdWin.WinType.tab)
                         {
-                            foreach (ILight.Controls.RadControls.RadTabItemCloseable item in ((Telerik.Windows.Controls.RadTabControl)((FrameworkElement)Application.Current.RootVisual).FindName("MainTab")).Items)
+                            foreach (ILight.Controls.RadControls.RadTabItemCloseable item in ((Telerik.Windows.Controls.RadTabControl)((System.Windows.FrameworkElement)System.Windows.Application.Current.RootVisual).FindName("MainTab")).Items)
                             {
                                 if (item.Content.GetType().FullName == win.type_name)
                                 {
@@ -88,12 +84,19 @@ namespace IHome.SLClient
                             }
 
                             ILight.Controls.RadControls.RadTabItemCloseable tab = new ILight.Controls.RadControls.RadTabItemCloseable() { Header = win.name, Content = frm, IsSelected = true };
-                            ((Telerik.Windows.Controls.RadTabControl)((FrameworkElement)Application.Current.RootVisual).FindName("MainTab")).Items.Add(tab);
+                            ((Telerik.Windows.Controls.RadTabControl)((System.Windows.FrameworkElement)System.Windows.Application.Current.RootVisual).FindName("MainTab")).Items.Add(tab);
                         }
-                        else if (win.Win == IHome.Models.CmdWin.WinType.child)
+                        else if (win.Win == IHome.Models.CmdWin.WinType.window)
                         {
-                            ChildWindow child = new ChildWindow() {Title=win.name, Content = frm };
+                            Telerik.Windows.Controls.RadWindow child = new Telerik.Windows.Controls.RadWindow() { Header = win.name, Content = frm };
+                            child.WindowStartupLocation = Telerik.Windows.Controls.WindowStartupLocation.CenterScreen;
                             child.Show();
+                        }
+                        else if (win.Win == IHome.Models.CmdWin.WinType.modal)
+                        {
+                            Telerik.Windows.Controls.RadWindow child = new Telerik.Windows.Controls.RadWindow() { Header = win.name, Content = frm};
+                            child.WindowStartupLocation =Telerik.Windows.Controls.WindowStartupLocation.CenterScreen;
+                            child.ShowDialog();
                         }
                     };
                     if (win.VeiwModel != null)
