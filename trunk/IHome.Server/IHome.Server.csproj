@@ -149,9 +149,7 @@
       <DependentUpon>MainFacade.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Data\base_community_baseinfo_ex.cs" />
-    <Compile Include="Models\HouseInfo.cs" />
     <Compile Include="Models\ServerResult.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Models\ValidationRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
