@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:IHome.SLClient"
              >
     <Application.Resources>
+        <!--程序全局变量-->
         <local:AppViewModel x:Key="AppDataSource" />
     </Application.Resources>
 </Application>
