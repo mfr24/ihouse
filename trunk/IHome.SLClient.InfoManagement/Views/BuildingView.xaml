@@ -51,7 +51,12 @@
     				</EasingDoubleKeyFrame.EasingFunction>
     			</EasingDoubleKeyFrame>
     		</DoubleAnimationUsingKeyFrames>
-    	</Storyboard>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Completed">
+                    <i:InvokeCommandAction Command="{Binding SbEditeCompleted, Mode=OneWay}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Storyboard>
     </UserControl.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="640" Height="480">
@@ -85,7 +90,7 @@
         </telerik:RadGridView>
         <telerik:RadDataForm x:Name="radDataForm" ItemsSource="{Binding BuildingList, Mode=TwoWay}" CurrentItem="{Binding Building, Mode=TwoWay}" 
                              CommitButtonContent="保存" CancelButtonContent="取消" AutoGenerateFields="False"
-                             VerticalAlignment="Top" HorizontalAlignment="Right" Width="307" Height="480" Margin="0,0,-308,0" RenderTransformOrigin="0.5,0.5">
+                             VerticalAlignment="Top" HorizontalAlignment="Right" Width="307" Height="480" Margin="0,0,-308,0" RenderTransformOrigin="0.5,0.5" Mode="AddNew">
         	<telerik:RadDataForm.RenderTransform>
         		<CompositeTransform/>
         	</telerik:RadDataForm.RenderTransform>
@@ -133,7 +138,7 @@
             </telerik:RadDataForm.NewItemTemplate>
             <i:Interaction.Triggers>
             	<i:EventTrigger EventName="EditEnded">
-            		<i:InvokeCommandAction Command="{Binding AddBuilding, Mode=OneWay}"/>
+                    <i:InvokeCommandAction Command="{Binding EditBuilding, Mode=OneWay}"/>
             	</i:EventTrigger>
             </i:Interaction.Triggers>
         </telerik:RadDataForm>

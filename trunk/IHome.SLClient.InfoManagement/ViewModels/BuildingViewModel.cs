@@ -12,7 +12,7 @@ namespace IHome.SLClient.InfoManagement
 {
     public class BuildingViewModel : INotifyPropertyChanged
     {
-        public ICommand AddBuilding
+        public ICommand EditBuilding
         {
             get
             {
@@ -51,12 +51,30 @@ namespace IHome.SLClient.InfoManagement
                 });
             }
         }
+        public ICommand SbEditeCompleted
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    
+                });
+            }
+        }
         public BuildingViewModel()
         {
             BuildingList = new ObservableCollection<base_community_buildinginfo_ex>();
         }
         public ObservableCollection<base_community_buildinginfo_ex> BuildingList { get; set; }
-        public base_community_buildinginfo_ex Building { get; set; }
+        private base_community_buildinginfo_ex _building;
+
+        public base_community_buildinginfo_ex Building
+        {
+            get { return _building; }
+            set { _building = value;
+            NotifyPropertyChanged("Building");
+            }
+        }
         private bool _isCheckAll = false;
         public bool IsCheckAll
         {
