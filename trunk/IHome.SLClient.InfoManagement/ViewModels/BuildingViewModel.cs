@@ -98,7 +98,7 @@ namespace IHome.SLClient.InfoManagement
         {
             BuildingList = new ObservableCollection<base_community_buildinginfo_ex>();
         }
-        private Models.Pager<base_community_buildinginfo_ex> _dataPager = new Pager<base_community_buildinginfo_ex>() { page_index = 1, page_size = 5,total=20 };
+        private Models.Pager<base_community_buildinginfo_ex> _dataPager = new Pager<base_community_buildinginfo_ex>() { page_index = 0, page_size = 5,total=20 };
 
         public Models.Pager<base_community_buildinginfo_ex> DataPager
         {
