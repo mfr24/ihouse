@@ -5,6 +5,7 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:local="clr-namespace:IHome.SLClient.InfoManagement"
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 	mc:Ignorable="d"
 	x:Class="IHome.SLClient.InfoManagement.CommunityView"
 	d:DesignWidth="640" d:DesignHeight="480">
@@ -17,13 +18,13 @@
                              AutoGenerateColumns="False" 
                              CanUserFreezeColumns="False" 
 							 CanUserResizeColumns="False" Height="458" VerticalAlignment="Top"
-                             ItemsSource="{Binding CommunityList ,Mode=TwoWay}" 
+                             ItemsSource="{Binding CommunityList, Mode=TwoWay}" 
                              SelectedItem="{Binding CommunitySelected, Mode=TwoWay}"
                              >
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
-                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource CommunityViewModelDataSource}}" />
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding IsCheckAll, Mode=TwoWay, Source={StaticResource CommunityViewModelDataSource}}" />
                     </telerik:GridViewDataColumn.Header>
                     <telerik:GridViewDataColumn.CellTemplate>
                         <DataTemplate>
@@ -42,6 +43,11 @@
                 <telerik:GridViewDataColumn Header="竣工年份" DataMemberBinding="{Binding complete_year}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="小区描述" DataMemberBinding="{Binding remark}" Width="*" IsReadOnly="True"/>
             </telerik:RadGridView.Columns>
+        	<i:Interaction.Triggers>
+        		<i:EventTrigger EventName="RowActivated">
+        			<i:InvokeCommandAction Command="{Binding GetBuildingList, Mode=OneWay}"/>
+        		</i:EventTrigger>
+        	</i:Interaction.Triggers>
         </telerik:RadGridView>
         <Button Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddCommunity, Mode=OneWay}"/>
         <Button Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetCommunityList, Mode=OneWay}" Margin="81,0,0,0" />
