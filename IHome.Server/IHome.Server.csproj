@@ -145,6 +145,9 @@
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Facade\MainFacade.cs" />
+    <Compile Include="Facade\MainFacade_InfoManagement.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Facade\MainFacade_Validate.cs">
       <DependentUpon>MainFacade.cs</DependentUpon>
     </Compile>
