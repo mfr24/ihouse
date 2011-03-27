@@ -36,5 +36,12 @@ namespace IHome.Server.Facade
                 sb.Remove(sb.Length - 3, 3);
                 return sb.ToString();
         }
+
+        public static Models.Pager<T> Page<T>(this IQueryable<T> query,Models.Pager<T> pager)
+        {
+            pager.data_list = query.Skip(pager.page_index * pager.page_count).Take(pager.page_count).ToList();
+            pager.total = query.Count();
+            return pager;
+        }
     }
 }

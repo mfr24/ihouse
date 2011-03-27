@@ -17,11 +17,8 @@ namespace IHome.SLClient.InfoManagement
     /// </summary>
     public partial class BuildingView : UserControl
     {
-        public BuildingView()
+        public BuildingView():this(new BuildingViewModel())
         {
-            this.InitializeComponent();
-
-            // Insert code required on object creation below this point.
         }
         public BuildingView(BuildingViewModel VM)
         {

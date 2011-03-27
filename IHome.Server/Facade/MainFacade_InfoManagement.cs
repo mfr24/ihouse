@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using IHome.Models.Data;
 
 namespace IHome.Server.Facade
 {
@@ -13,7 +14,7 @@ namespace IHome.Server.Facade
         /// <summary>
         /// sql for delete building info list by building_id
         /// </summary>
-        readonly static string _deleteBuildingList = "update base_building_baseinfo set status=-1 where building_id in ('{0}')";
+        readonly static string _deleteBuildingList = "update base_community_buildinginfo set status=-1 where building_id in ('{0}')";
 
         /// <summary>
         /// update building info
@@ -61,10 +62,11 @@ namespace IHome.Server.Facade
             {
                 Models.Data.base_community_buildinginfo model = paramDicts[0]["building"].ToString().JsonToModel<Models.Data.base_community_buildinginfo>();
                 model.building_id = Guid.NewGuid();
+                model.status = 1;
                 using (var context = new Data.CbooEntities())
                 {
                     context.base_community_buildinginfo.AddObject(model);
-                    int a = context.SaveChanges();
+                    data = context.SaveChanges();
                 }
             }
             catch (Exception ex)
@@ -88,6 +90,9 @@ namespace IHome.Server.Facade
             Exception erro = null;
             object data = null;
             string message = null;
+            Models.Pager<base_community_buildinginfo> pager=null;
+            if (paramDicts[0].ContainsKey("Pager"))
+                 pager=paramDicts[0].As<Models.Pager<base_community_buildinginfo>>();
             try
             {
                 var community_id = new Guid(paramDicts[0]["community_id"].ToString());
@@ -95,12 +100,11 @@ namespace IHome.Server.Facade
                 {
 
                     var models = from building in context.base_community_buildinginfo
-
-                                 where building.community_id == community_id
-
+                                 where building.community_id == community_id && building.status!=-1
+                                 orderby building.building_name
                                  select building;
-
-                    data = models.ToList<Models.Data.base_community_buildinginfo>();
+                    if (pager == null) data = models.ToList();
+                    else data = models.Page(pager);
                 }
             }
             catch (Exception ex)
@@ -109,7 +113,7 @@ namespace IHome.Server.Facade
                 message = ex.Message;
             }
             ArrayList revList = new ArrayList();
-            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data =data, message = message });
             return revList;
         }
 
@@ -126,7 +130,7 @@ namespace IHome.Server.Facade
             string message = null;
             try
             {
-                List<string> modelList = paramDicts[0]["buildingList"].ToString().JsonToModel<List<string>>();
+                List<string> modelList = paramDicts[0]["building_list"].ToString().JsonToModel<List<string>>();
                 using (var context = new Data.CbooEntities())
                 {
                     context.ExecuteStoreCommand(string.Format(_deleteBuildingList, modelList.GetSelectIn()));

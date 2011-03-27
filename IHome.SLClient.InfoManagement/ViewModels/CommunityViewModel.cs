@@ -89,7 +89,7 @@ namespace IHome.SLClient.InfoManagement
                     (result) =>
                     {
                         ObservableCollection<base_community_buildinginfo_ex> list = result.GetData<ObservableCollection<base_community_buildinginfo_ex>>().data;
-                        BuildingViewModel vm = new BuildingViewModel {BuildingList=list };
+                        BuildingViewModel vm = new BuildingViewModel {BuildingList=list,Community=CommunitySelected };
                         System.Windows.Controls.ChildWindow child = new System.Windows.Controls.ChildWindow();
                         child.Content = (new BuildingView(vm));
                         child.Show();
