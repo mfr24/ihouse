@@ -81,6 +81,7 @@ namespace IHome.SLClient.InfoManagement
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                         BuildingViewModel vm = new BuildingViewModel() {Community=CommunitySelected };
+
                         System.Windows.Controls.ChildWindow child = new System.Windows.Controls.ChildWindow();
                         child.Content = (new BuildingView(vm));
                         child.Show();
