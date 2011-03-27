@@ -21,13 +21,41 @@ namespace IHome.SLClient.InfoManagement
                     if (!Building.Validate()) { return; }
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["Building"] = Building;
+                    Building.community_id = Community.community_id;
+                    string method = Building.building_id == Guid.Empty ?
+                                    "IHome.Server.Facade.MainFacade.AddBuilding" : "IHome.Server.Facade.MainFacade.UpdateBuilding";
+                    requestParams["building"] = Building;
                     requestList.Add(requestParams);
-                    this.Request("IHome.Server.Facade.MainFacade.AddBuilding",
+
+                    this.Request(method,
                     requestList,
                     (result) =>
                     {
-                        //do somethting while server return
+                        if (result.GetData<int>().data > 0)
+                        {
+                            NotifyPropertyChanged("Building");
+                        }
+                    });
+                });
+            }
+        }
+        public ICommand DeleteBuilding
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    List<string> list = new List<string>();
+                    list.Add(Building.building_id.ToString());
+                    requestParams["building_list"] = list;
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.DeleteBuildingList",
+                    requestList,
+                    (result) =>
+                    {
+
                     });
                 });
             }
@@ -57,7 +85,7 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    
+
                 });
             }
         }
@@ -66,13 +94,16 @@ namespace IHome.SLClient.InfoManagement
             BuildingList = new ObservableCollection<base_community_buildinginfo_ex>();
         }
         public ObservableCollection<base_community_buildinginfo_ex> BuildingList { get; set; }
+        public base_community_baseinfo_ex Community { get; set; }
         private base_community_buildinginfo_ex _building;
 
         public base_community_buildinginfo_ex Building
         {
             get { return _building; }
-            set { _building = value;
-            NotifyPropertyChanged("Building");
+            set
+            {
+                _building = value;
+                NotifyPropertyChanged("Building");
             }
         }
         private bool _isCheckAll = false;
