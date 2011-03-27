@@ -11,7 +11,7 @@
 	d:DesignWidth="640" d:DesignHeight="480">
     <UserControl.Resources>
         <!--<local:BuildingViewModel x:Key="BuildingViewModelDataSource" />-->
-    	<Storyboard x:Name="SbEdite">
+    	<Storyboard x:Name="SbEdit">
     		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationY)" Storyboard.TargetName="radGridView">
     			<EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
     			<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.5">
@@ -53,10 +53,37 @@
     		</DoubleAnimationUsingKeyFrames>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Completed">
-                    <i:InvokeCommandAction Command="{Binding Source={StaticResource BuildingViewModelDataSource}, Path=SbEditeCompleted, Mode=OneWay}"/>
+                    <i:InvokeCommandAction Command="{Binding Source={StaticResource BuildingViewModelDataSource}, Path=SbEditCompleted, Mode=OneWay}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Storyboard>
+    	<Storyboard x:Name="SbEditR">
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.CenterOfRotationX)" Storyboard.TargetName="radGridView">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0">
+    				<EasingDoubleKeyFrame.EasingFunction>
+    					<PowerEase EasingMode="EaseIn" Power="3"/>
+    				</EasingDoubleKeyFrame.EasingFunction>
+    			</EasingDoubleKeyFrame>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationY)" Storyboard.TargetName="radGridView">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="-45"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-45"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0">
+    				<EasingDoubleKeyFrame.EasingFunction>
+    					<PowerEase EasingMode="EaseIn" Power="3"/>
+    				</EasingDoubleKeyFrame.EasingFunction>
+    			</EasingDoubleKeyFrame>
+    		</DoubleAnimationUsingKeyFrames>
+    		<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="radDataForm">
+    			<EasingDoubleKeyFrame KeyTime="0" Value="-308"/>
+    			<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+    				<EasingDoubleKeyFrame.EasingFunction>
+    					<PowerEase EasingMode="EaseIn" Power="3"/>
+    				</EasingDoubleKeyFrame.EasingFunction>
+    			</EasingDoubleKeyFrame>
+    		</DoubleAnimationUsingKeyFrames>
+    	</Storyboard>
     </UserControl.Resources>
 
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="640" Height="480">
@@ -120,14 +147,14 @@
             <telerik:RadDataForm.EditTemplate>
                 <DataTemplate>
                 	<StackPanel>
-                		<telerik:DataFormDataField DataMemberBinding="{Binding building_name}" Label="楼栋名称:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding building_use}" Label="楼栋用途:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding building_type}" Label="建筑类型:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding building_floor}" Label="楼栋楼层数:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding unit_num}" Label="单元数:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding unit_type}" Label="单元类型:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding room_rule}" Label="房间号规则:" />
-                		<telerik:DataFormDataField DataMemberBinding="{Binding room_rule_remark}" Label="房间号规则描述:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_name, Mode=TwoWay}" Label="楼栋名称:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_use, Mode=TwoWay}" Label="楼栋用途:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_type, Mode=TwoWay}" Label="建筑类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding building_floor, Mode=TwoWay}" Label="楼栋楼层数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_num, Mode=TwoWay}" Label="单元数:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding unit_type, Mode=TwoWay}" Label="单元类型:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule, Mode=TwoWay}" Label="房间号规则:" />
+                        <telerik:DataFormDataField DataMemberBinding="{Binding room_rule_remark, Mode=TwoWay}" Label="房间号规则描述:" />
                 	</StackPanel>
                 </DataTemplate>
             </telerik:RadDataForm.EditTemplate>

@@ -17,6 +17,7 @@ namespace IHome.SLClient.InfoManagement
     /// </summary>
     public partial class BuildingView : UserControl
     {
+        private bool isEditing=false;
         public BuildingView():this(new BuildingViewModel())
         {
         }
@@ -28,8 +29,14 @@ namespace IHome.SLClient.InfoManagement
 
         private void radGridView_RowActivated(object sender, Telerik.Windows.Controls.GridView.RowEventArgs e)
         {
-            SbEdite.Begin();
-            radDataForm.Mode = Telerik.Windows.Controls.Data.DataForm.RadDataFormMode.Edit;
+            {
+            if (!isEditing) 
+                SbEdit.Begin();
+            
+            else
+            SbEditR.Begin();
+            }
+            isEditing = !isEditing;
         }
     }
 }
