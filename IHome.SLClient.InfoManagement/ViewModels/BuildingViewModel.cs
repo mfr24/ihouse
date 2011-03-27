@@ -81,7 +81,6 @@ namespace IHome.SLClient.InfoManagement
                         BuildingList = model.data_list;
                         NotifyPropertyChanged("BuildingList");
                     });
-                    //System.Threading.Thread.Sleep(5000);
                 });
             }
         }
