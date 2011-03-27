@@ -39,7 +39,7 @@ namespace IHome.Server.Facade
 
         public static Models.Pager<T> Page<T>(this IQueryable<T> query,Models.Pager<T> pager)
         {
-            pager.data_list = query.Skip((pager.page_index-1) * pager.page_size).Take(pager.page_size).ToList();
+            pager.data_list = query.Skip((pager.page_index) * pager.page_size).Take(pager.page_size).ToList();
             pager.total = query.Count();
             return pager;
         }
