@@ -68,16 +68,20 @@ namespace IHome.SLClient.InfoManagement
                 {
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    Models.Pager<Models.Data.base_community_buildinginfo> pager = new Models.Pager<Models.Data.base_community_buildinginfo>() { page_index = 1, page_size = 2 };
+                   
                     requestParams["community_id"] = Community.community_id;
-                    requestParams["Pager`1"] = pager;
+                    requestParams["Pager`1"] = DataPager;
                     requestList.Add(requestParams);
                     this.Request("IHome.Server.Facade.MainFacade.GetBuildingList",
                     requestList,
                     (result) =>
                     {
-
+                        var model = result.GetData<Pager<base_community_buildinginfo_ex>>().data;
+                        DataPager.total = model.total;
+                        BuildingList = model.data_list;
+                        NotifyPropertyChanged("BuildingList");
                     });
+                    //System.Threading.Thread.Sleep(5000);
                 });
             }
         }
@@ -94,6 +98,13 @@ namespace IHome.SLClient.InfoManagement
         public BuildingViewModel()
         {
             BuildingList = new ObservableCollection<base_community_buildinginfo_ex>();
+        }
+        private Models.Pager<base_community_buildinginfo_ex> _dataPager = new Pager<base_community_buildinginfo_ex>() { page_index = 1, page_size = 5,total=20 };
+
+        public Models.Pager<base_community_buildinginfo_ex> DataPager
+        {
+            get { return _dataPager; }
+            set { _dataPager = value; }
         }
         public ObservableCollection<base_community_buildinginfo_ex> BuildingList { get; set; }
         private base_community_baseinfo_ex _community;
