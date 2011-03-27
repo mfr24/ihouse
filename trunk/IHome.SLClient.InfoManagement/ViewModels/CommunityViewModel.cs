@@ -80,20 +80,11 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    List<object> requestList = new List<object>();
-                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["community_id"] = CommunitySelected.community_id;
-                    requestList.Add(requestParams);
-                    this.Request("IHome.Server.Facade.MainFacade.GetBuildingList",
-                    requestList,
-                    (result) =>
-                    {
-                        ObservableCollection<base_community_buildinginfo_ex> list = result.GetData<ObservableCollection<base_community_buildinginfo_ex>>().data;
-                        BuildingViewModel vm = new BuildingViewModel {BuildingList=list,Community=CommunitySelected };
+                        BuildingViewModel vm = new BuildingViewModel() {Community=CommunitySelected };
                         System.Windows.Controls.ChildWindow child = new System.Windows.Controls.ChildWindow();
                         child.Content = (new BuildingView(vm));
                         child.Show();
-                    });
+                    
                 });
             }
         }

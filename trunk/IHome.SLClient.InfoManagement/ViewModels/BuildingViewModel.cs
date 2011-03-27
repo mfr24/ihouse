@@ -68,7 +68,9 @@ namespace IHome.SLClient.InfoManagement
                 {
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["CommunityID"] = "";
+                    Models.Pager<Models.Data.base_community_buildinginfo> pager = new Models.Pager<Models.Data.base_community_buildinginfo>() { page_index = 1, page_size = 2 };
+                    requestParams["community_id"] = Community.community_id;
+                    requestParams["Pager`1"] = pager;
                     requestList.Add(requestParams);
                     this.Request("IHome.Server.Facade.MainFacade.GetBuildingList",
                     requestList,
@@ -94,7 +96,17 @@ namespace IHome.SLClient.InfoManagement
             BuildingList = new ObservableCollection<base_community_buildinginfo_ex>();
         }
         public ObservableCollection<base_community_buildinginfo_ex> BuildingList { get; set; }
-        public base_community_baseinfo_ex Community { get; set; }
+        private base_community_baseinfo_ex _community;
+
+        public base_community_baseinfo_ex Community
+        {
+            get { return _community; }
+            set
+            {
+                _community = value;
+                GetBuildingList.Execute(null);
+            }
+        }
         private base_community_buildinginfo_ex _building;
 
         public base_community_buildinginfo_ex Building

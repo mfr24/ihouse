@@ -91,7 +91,7 @@ namespace IHome.Server.Facade
             object data = null;
             string message = null;
             Models.Pager<base_community_buildinginfo> pager=null;
-            if (paramDicts[0].ContainsKey("Pager"))
+            if (paramDicts[0].ContainsKey("Pager`1"))
                  pager=paramDicts[0].As<Models.Pager<base_community_buildinginfo>>();
             try
             {
