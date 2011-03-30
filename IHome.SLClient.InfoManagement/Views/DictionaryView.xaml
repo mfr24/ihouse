@@ -3,13 +3,18 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
 	xmlns:local="clr-namespace:IHome.SLClient.InfoManagement"
+	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	mc:Ignorable="d"
 	x:Class="IHome.SLClient.InfoManagement.DictionaryView"
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
 		<local:DictionaryViewModel x:Key="DictionaryViewModelDataSource" />
 	</UserControl.Resources>
 
-	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}"/>
+	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
+		<telerik:RadTreeView HorizontalAlignment="Left" Height="250" Margin="0,0,0,230" Width="150">
+			<telerik:RadTreeViewItem DropPosition="Inside" Header="Item 1" IsTabStop="True" TabNavigation="Once"/>
+		</telerik:RadTreeView>
+	</Grid>
 </UserControl>

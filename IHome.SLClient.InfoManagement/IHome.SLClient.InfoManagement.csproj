@@ -81,6 +81,9 @@
       <HintPath>..\Libs\Silverlight\Telerik.Windows.Controls.GridView.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>..\Libs\Silverlight\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
     <Reference Include="Telerik.Windows.Data">
       <HintPath>..\Libs\Silverlight\Telerik.Windows.Data.dll</HintPath>
     </Reference>
