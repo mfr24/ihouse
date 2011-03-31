@@ -60,6 +60,9 @@
     <Compile Include="Data\base_datadic_iteminfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\base_datadic_tree.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\base_permit_define.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
