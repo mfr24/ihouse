@@ -10,6 +10,7 @@
           <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.Store.base_community_buildinginfo" store:Type="Tables" Schema="cboo" />
           <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.Store.base_datadic_detailinfo" store:Type="Tables" Schema="cboo" />
           <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.Store.base_datadic_iteminfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_datadic_tree" EntityType="IHome.Models.Store.base_datadic_tree" store:Type="Tables" Schema="cboo" />
           <EntitySet Name="base_permit_define" EntityType="IHome.Models.Store.base_permit_define" store:Type="Tables" Schema="cboo" />
           <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo" />
           <EntitySet Name="base_personal_push_config" EntityType="IHome.Models.Store.base_personal_push_config" store:Type="Tables" Schema="cboo" />
@@ -85,6 +86,18 @@
           <Property Name="item_id" Type="guid" Nullable="false" />
           <Property Name="item_key" Type="varchar" MaxLength="50" />
           <Property Name="item_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="base_datadic_tree">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="guid" Nullable="false" />
+          <Property Name="item_key" Type="varchar" MaxLength="50" />
+          <Property Name="item_name" Type="varchar" MaxLength="50" />
+          <Property Name="parent_id" Type="guid" />
+          <Property Name="leaf" Type="bit" />
+          <Property Name="deep" Type="smallint" />
+          <Property Name="memo" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="base_permit_define">
           <Key>
@@ -488,6 +501,7 @@
           <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.Data.base_community_buildinginfo" />
           <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.Data.base_datadic_detailinfo" />
           <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.Data.base_datadic_iteminfo" />
+          <EntitySet Name="base_datadic_tree" EntityType="IHome.Models.Data.base_datadic_tree" />
           <EntitySet Name="base_permit_define" EntityType="IHome.Models.Data.base_permit_define" />
           <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.Data.base_permit_roledefine" />
           <EntitySet Name="base_personal_push_config" EntityType="IHome.Models.Data.base_personal_push_config" />
@@ -563,6 +577,18 @@
           <Property Type="Guid" Name="item_id" Nullable="false" />
           <Property Type="String" Name="item_key" />
           <Property Type="String" Name="item_name" />
+        </EntityType>
+        <EntityType Name="base_datadic_tree">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Type="Guid" Name="item_id" Nullable="false" />
+          <Property Type="String" Name="item_key" />
+          <Property Type="String" Name="item_name" />
+          <Property Type="Guid" Name="parent_id" />
+          <Property Type="Boolean" Name="leaf" />
+          <Property Type="Int16" Name="deep" />
+          <Property Type="String" Name="memo" />
         </EntityType>
         <EntityType Name="base_permit_define">
           <Key>
@@ -1003,6 +1029,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="base_datadic_tree">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_datadic_tree">
+              <MappingFragment StoreEntitySet="base_datadic_tree">
+                <ScalarProperty Name="memo" ColumnName="memo" />
+                <ScalarProperty Name="deep" ColumnName="deep" />
+                <ScalarProperty Name="leaf" ColumnName="leaf" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="item_key" ColumnName="item_key" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="base_permit_define">
             <EntityTypeMapping TypeName="IHome.Models.Data.base_permit_define">
               <MappingFragment StoreEntitySet="base_permit_define">
@@ -1430,29 +1469,30 @@
         <EntityTypeShape EntityType="IHome.Models.Data.base_community_buildinginfo" Width="1.5" PointX="2.75" PointY="0.75" Height="3.1161507161458246" />
         <EntityTypeShape EntityType="IHome.Models.Data.base_datadic_detailinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7790128580729174" />
         <EntityTypeShape EntityType="IHome.Models.Data.base_datadic_iteminfo" Width="1.5" PointX="2.75" PointY="4.75" Height="1.5879931640625102" />
-        <EntityTypeShape EntityType="IHome.Models.Data.base_permit_define" Width="1.5" PointX="4.75" PointY="3.75" Height="1.7790128580729174" />
-        <EntityTypeShape EntityType="IHome.Models.Data.base_permit_roledefine" Width="1.5" PointX="6.75" PointY="0.75" Height="2.5430916341145746" />
-        <EntityTypeShape EntityType="IHome.Models.Data.base_personal_push_config" Width="1.5" PointX="6.75" PointY="4.75" Height="2.7341113281250102" />
-        <EntityTypeShape EntityType="IHome.Models.Data.base_rolepermitionrelationinfo" Width="1.5" PointX="0.75" PointY="7.75" Height="1.5879931640625102" />
-        <EntityTypeShape EntityType="IHome.Models.Data.base_roleuserrelationinfo" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5879931640625102" />
-        <EntityTypeShape EntityType="IHome.Models.Data.customer_baseinfo" Width="1.5" PointX="8.75" PointY="0.75" Height="3.3071704101562602" />
-        <EntityTypeShape EntityType="IHome.Models.Data.customer_demandinfo" Width="1.5" PointX="4.75" PointY="8.75" Height="6.5545052083333246" />
-        <EntityTypeShape EntityType="IHome.Models.Data.customer_traceinfo" Width="1.5" PointX="8.75" PointY="5.75" Height="2.3520719401041674" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_baseinfo" Width="1.5" PointX="6.75" PointY="9.75" Height="10.374899088541667" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_intrustinfo" Width="1.5" PointX="8.75" PointY="9.75" Height="5.599406738281246" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_key_receiptioninfo" Width="1.5" PointX="10.75" PointY="0.75" Height="3.4981901041666674" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_markedinfo" Width="1.5" PointX="0.75" PointY="10.75" Height="3.4981901041666674" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_picinfo" Width="1.5" PointX="10.75" PointY="5.75" Height="1.9700325520833246" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_push_logs" Width="1.5" PointX="10.75" PointY="8.75" Height="2.5430916341145746" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_traceinfo" Width="1.5" PointX="12.75" PointY="0.75" Height="2.3520719401041674" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_baseinfo" Width="1.5" PointX="12.75" PointY="4.75" Height="2.7341113281249818" />
-        <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_subinfo" Width="1.5" PointX="12.75" PointY="8.75" Height="1.9700325520833246" />
-        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_baseinfo" Width="1.5" PointX="10.75" PointY="12.75" Height="4.6443082682291674" />
-        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_community_config" Width="1.5" PointX="12.75" PointY="11.75" Height="1.5879931640624818" />
-        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_region_config" Width="1.5" PointX="14.75" PointY="0.75" Height="1.7790128580729174" />
-        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_relationinfo" Width="1.5" PointX="14.75" PointY="3.75" Height="1.5879931640624818" />
-        <EntityTypeShape EntityType="IHome.Models.Data.usys_community_baseinfo" Width="1.5" PointX="14.75" PointY="6.75" Height="3.6892097981770746" />
-        <EntityTypeShape EntityType="IHome.Models.Data.usys_community_buildinginfo" Width="1.5" PointX="14.75" PointY="11.75" Height="3.1161507161458246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_datadic_tree" Width="1.5" PointX="4.75" PointY="3.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_permit_define" Width="1.5" PointX="6.75" PointY="0.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_permit_roledefine" Width="1.5" PointX="6.75" PointY="3.75" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_personal_push_config" Width="1.5" PointX="0.75" PointY="7.75" Height="2.7341113281250102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_rolepermitionrelationinfo" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5879931640625102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_roleuserrelationinfo" Width="1.5" PointX="4.75" PointY="7.75" Height="1.5879931640625102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.customer_baseinfo" Width="1.5" PointX="6.75" PointY="7.75" Height="3.3071704101562602" />
+        <EntityTypeShape EntityType="IHome.Models.Data.customer_demandinfo" Width="1.5" PointX="8.75" PointY="0.75" Height="6.5545052083333246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.customer_traceinfo" Width="1.5" PointX="8.75" PointY="8.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_baseinfo" Width="1.5" PointX="10.75" PointY="0.75" Height="10.374899088541667" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_intrustinfo" Width="1.5" PointX="2.75" PointY="10.75" Height="5.59940673828126" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_key_receiptioninfo" Width="1.5" PointX="12.75" PointY="0.75" Height="3.4981901041666674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_markedinfo" Width="1.5" PointX="4.75" PointY="12.75" Height="3.4981901041666674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_picinfo" Width="1.5" PointX="12.75" PointY="5.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_push_logs" Width="1.5" PointX="6.75" PointY="12.75" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_traceinfo" Width="1.5" PointX="12.75" PointY="8.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_baseinfo" Width="1.5" PointX="8.75" PointY="12.75" Height="2.7341113281249818" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_subinfo" Width="1.5" PointX="10.75" PointY="12.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_baseinfo" Width="1.5" PointX="12.75" PointY="12.75" Height="4.6443082682291674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_community_config" Width="1.5" PointX="14.75" PointY="0.75" Height="1.5879931640624818" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_region_config" Width="1.5" PointX="14.75" PointY="3.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_relationinfo" Width="1.5" PointX="14.75" PointY="6.75" Height="1.5879931640624818" />
+        <EntityTypeShape EntityType="IHome.Models.Data.usys_community_baseinfo" Width="1.5" PointX="14.75" PointY="9.75" Height="3.6892097981770746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.usys_community_buildinginfo" Width="1.5" PointX="14.75" PointY="14.75" Height="3.1161507161458246" />
       </Diagram>
     </Diagrams>
   </Designer>

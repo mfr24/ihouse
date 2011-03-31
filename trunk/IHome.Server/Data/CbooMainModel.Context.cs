@@ -66,6 +66,12 @@ namespace IHome.Server.Data
         }
         private ObjectSet<base_datadic_iteminfo> _base_datadic_iteminfo;
     
+        public ObjectSet<base_datadic_tree> base_datadic_tree
+        {
+            get { return _base_datadic_tree  ?? (_base_datadic_tree = CreateObjectSet<base_datadic_tree>("base_datadic_tree")); }
+        }
+        private ObjectSet<base_datadic_tree> _base_datadic_tree;
+    
         public ObjectSet<base_permit_define> base_permit_define
         {
             get { return _base_permit_define  ?? (_base_permit_define = CreateObjectSet<base_permit_define>("base_permit_define")); }
