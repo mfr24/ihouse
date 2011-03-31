@@ -75,12 +75,12 @@
   <ItemGroup>
     <Compile Include="ActionType.cs" />
     <Compile Include="CmdWin.cs" />
+    <Compile Include="DataEx\base_datadic_tree_ex.cs" />
     <Compile Include="Data\base_community_baseinfo.cs" />
     <Compile Include="DataEx\base_community_baseinfo_ex.cs" />
     <Compile Include="Data\base_community_buildinginfo.cs" />
     <Compile Include="DataEx\base_community_buildinginfo_ex.cs" />
-    <Compile Include="Data\base_datadic_detailinfo.cs" />
-    <Compile Include="Data\base_datadic_iteminfo.cs" />
+    <Compile Include="Data\base_datadic_tree.cs" />
     <Compile Include="HouseInfo.cs" />
     <Compile Include="Pager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
