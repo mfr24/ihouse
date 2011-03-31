@@ -310,6 +310,12 @@
           </decisionNode>
           <opaqueAction Id="c10b8cde-61a1-4754-9227-9eb15800f360" name="提供下一步操作选择" isLeaf="false">
             <elementDefinition Id="e003e362-faf8-46f9-8668-97d5cfe4eeb9" />
+            <flowNodeTargets>
+              <controlFlow Id="ec4ac607-b2fe-401d-8dde-2104f2a62b57" isLeaf="false">
+                <forkNodeMoniker Id="2dde5200-3924-49b6-b646-a0e80ea31d4d" LastKnownName="Fork1" />
+                <elementDefinition Id="933a8055-9f44-4aef-aa85-f5b7dd5b08f7" />
+              </controlFlow>
+            </flowNodeTargets>
           </opaqueAction>
           <forkNode Id="2dde5200-3924-49b6-b646-a0e80ea31d4d" name="Fork1" isLeaf="false">
             <elementDefinition Id="3b5bffca-a659-434e-aa03-81eafa15de2b" />
