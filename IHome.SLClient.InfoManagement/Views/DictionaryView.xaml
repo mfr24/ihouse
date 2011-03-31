@@ -11,9 +11,8 @@
 	<UserControl.Resources>
 		<local:DictionaryViewModel x:Key="DictionaryViewModelDataSource" />
 	</UserControl.Resources>
-
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
-		<telerik:RadTreeView HorizontalAlignment="Left" Height="250" Margin="0,0,0,230" Width="150">
+		<telerik:RadTreeView HorizontalAlignment="Center" Width="150">
 			<telerik:RadTreeViewItem DropPosition="Inside" Header="Item 1" IsTabStop="True" TabNavigation="Once"/>
 		</telerik:RadTreeView>
 	</Grid>
