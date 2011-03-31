@@ -5,7 +5,7 @@ using System;
 
 namespace IHome.Models.Data
 {
-    public partial class base_datadic_tree_ex : base_datadic_iteminfo, IValidateable, INotifyPropertyChanged
+    public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
     {
         bool _isValidate = false;
         public base_datadic_tree_ex()
