@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace IHome.Models.Data
 {
-    public partial class base_datadic_iteminfo
+    public partial class base_datadic_tree
     {
         #region Primitive Properties
     
@@ -41,6 +41,42 @@ namespace IHome.Models.Data
     	///undefine	
     	/// </summary>
         public virtual string item_name
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<System.Guid> parent_id
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<bool> leaf
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual Nullable<short> deep
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual string memo
         {
             get;
             set;
