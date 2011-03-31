@@ -4831,7 +4831,18 @@
           <opaqueAction
             Id="e003e362-faf8-46f9-8668-97d5cfe4eeb9"
             name="提供下一步操作选择"
-            isLeaf="false" />
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="933a8055-9f44-4aef-aa85-f5b7dd5b08f7"
+                isLeaf="false">
+                <forkNodeMoniker
+                  Id="3b5bffca-a659-434e-aa03-81eafa15de2b"
+                  LastKnownName="Fork1"
+                  LastKnownLocation="IHome.DataFlow.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
           <forkNode
             Id="3b5bffca-a659-434e-aa03-81eafa15de2b"
             name="Fork1"
