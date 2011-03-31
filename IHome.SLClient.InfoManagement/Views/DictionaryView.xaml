@@ -13,6 +13,14 @@
 	</UserControl.Resources>
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
 		<telerik:RadTreeView HorizontalAlignment="Center" Width="150">
+			<telerik:RadContextMenu.ContextMenu>
+				<telerik:RadContextMenu Opened="ContextMenuOpened">
+					<telerik:RadMenuItem Header="Add New Item" />
+					<telerik:RadMenuItem Header="Remove Item" />
+					<telerik:RadMenuItem Header="Disable" />
+				</telerik:RadContextMenu>
+
+			</telerik:RadContextMenu.ContextMenu>
 			<telerik:RadTreeViewItem DropPosition="Inside" Header="Item 1" IsTabStop="True" TabNavigation="Once"/>
 		</telerik:RadTreeView>
 	</Grid>
