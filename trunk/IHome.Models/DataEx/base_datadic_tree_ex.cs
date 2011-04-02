@@ -14,7 +14,7 @@ namespace IHome.Models.Data
         {
             get
             {
-                if (_children_ex == null)
+                if (_children_ex == null&&(!leaf.Value))
                 {
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
