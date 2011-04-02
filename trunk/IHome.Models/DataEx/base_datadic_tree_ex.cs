@@ -1,12 +1,39 @@
 using System.ComponentModel;
-using ILight.Core.Model;
 using System.Collections.Generic;
 using System;
-
+using System.Collections.ObjectModel;
+using ILight.Core.Net.WebRequest;
+using ILight.Core.Model;
 namespace IHome.Models.Data
 {
     public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
     {
+        private ObservableCollection<base_datadic_tree_ex> _children_ex;
+
+        public ObservableCollection<base_datadic_tree_ex> children_ex
+        {
+            get
+            {
+                if (_children_ex == null)
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["item_id"] = this.item_id;
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.GetChildren",
+                    requestList,
+                    (result) =>
+                    {
+                        _children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
+                        NotifyPropertyChanged("children_ex");
+                    });
+                }
+                return _children_ex;
+            }
+            set { _children_ex = value; }
+        }
+        
+
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
