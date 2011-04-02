@@ -24,7 +24,7 @@ namespace IHome.SLClient.InfoManagement
         }
 		public DictionaryViewModel()
 		{
-            Dict = new base_datadic_tree_ex();
+            Dict = new base_datadic_tree_ex() { children_ex=new System.Collections.ObjectModel.ObservableCollection<base_datadic_tree_ex>()};
             GetRoot();
 		}
         private base_datadic_tree_ex _dict;
