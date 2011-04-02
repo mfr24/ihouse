@@ -19,11 +19,12 @@ namespace IHome.SLClient.InfoManagement
             requestList,
             (result) =>
             {
-                Dict = result.GetData<base_datadic_tree_ex>().data;
+                Dict.children_ex.Add(result.GetData<base_datadic_tree_ex>().data);
             });
         }
 		public DictionaryViewModel()
 		{
+            Dict = new base_datadic_tree_ex();
             GetRoot();
 		}
         private base_datadic_tree_ex _dict;
@@ -32,7 +33,6 @@ namespace IHome.SLClient.InfoManagement
         {
             get { return _dict; }
             set { _dict = value;
-            NotifyPropertyChanged("Dict");
             }
         }
 
