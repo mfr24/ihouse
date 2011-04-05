@@ -89,7 +89,7 @@
     <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="640" Height="480">
         <telerik:RadGridView x:Name="radGridView" ItemsSource="{Binding BuildingList, Mode=TwoWay}" SelectedItem="{Binding Building, Mode=TwoWay}" 
                              AutoGenerateColumns="False"
-                             ShowGroupPanel="False" RowActivated="radGridView_RowActivated"
+                             ShowGroupPanel="False" RowActivated="radGridView_RowActivated" Margin="0,0,0,28"
                              >
         	<telerik:RadGridView.Projection>
         		<PlaneProjection/>
