@@ -161,7 +161,7 @@ namespace IHome.Server.Facade
                 using (var context = new Data.CbooEntities())
                 {
                     var models = from model in context.base_datadic_tree
-                                 where model.item_key == "root"
+                                 where model.item_id == new Guid("0cf3f9d0-67ac-492f-91f7-d0b6f31e8165")
                                  select model;
                     data = models.First();
                 }
@@ -209,9 +209,28 @@ namespace IHome.Server.Facade
             {
                 Models.Data.base_datadic_tree model = paramDicts[0]["dict"].ToString().JsonToModel<Models.Data.base_datadic_tree>();
                 model.item_id = Guid.NewGuid();
+                model.leaf = true;
                 using (var context = new Data.CbooEntities())
                 {
+                    string max=(from dict in context.base_datadic_tree
+                                      where dict.parent_id == model.parent_id
+                                       select dict.item_key).Max();
+                    if (max == null)
+                    {
+                        model.item_key = (from dict in context.base_datadic_tree
+                                          where dict.item_id == model.parent_id
+                                          select dict.item_key).First()+"01";
+                    }
+                    else
+                    {
+                        model.item_key = (int.Parse(max,System.Globalization.NumberStyles.HexNumber)+1).ToString("X");
+                    }
+                    
                     context.base_datadic_tree.AddObject(model);
+                    (from parent in context.base_datadic_tree
+                                 where parent.item_id == model.parent_id
+                                 select parent).First().leaf=false;
+
                     data = context.SaveChanges();
                 }
             }
@@ -248,7 +267,8 @@ namespace IHome.Server.Facade
             revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
             return revList;
         }
-        readonly string _deleteChildren = "delete from base_datadic_tree where item_id in ('{0}')";
+        readonly string _deleteDict = "delete from base_datadic_tree where item_key like '{0}%'";
+        readonly string _setLeaf = "update base_datadic_tree set leaf=1 where item_id ='{0}' ";
         public ArrayList DeleteDict(string userKey, Dictionary<string, object>[] paramDicts)
         {
             Exception erro = null;
@@ -256,10 +276,16 @@ namespace IHome.Server.Facade
             string message = null;
             try
             {
-                List<string> modelList = paramDicts[0]["dic_list"].ToString().JsonToModel<List<string>>();
+                Models.Data.base_datadic_tree model = paramDicts[0]["dict"].ToString().JsonToModel<Models.Data.base_datadic_tree>();
                 using (var context = new Data.CbooEntities())
                 {
-                    context.ExecuteStoreCommand(string.Format(_deleteChildren, modelList.GetSelectIn()));
+                    context.ExecuteStoreCommand(string.Format(_deleteDict, model.item_key));
+                    int count = (from dict in context.base_datadic_tree
+                                 where dict.parent_id == model.parent_id
+                                 select dict).Count();
+                    if (count == 0) {
+                        context.ExecuteStoreCommand(string.Format(_setLeaf, model.parent_id));
+                    }
                 }
             }
             catch (Exception ex)
