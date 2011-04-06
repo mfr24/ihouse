@@ -9,7 +9,6 @@ namespace IHome.Models.Data
     public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
     {
         private ObservableCollection<base_datadic_tree_ex> _children_ex;
-
         public ObservableCollection<base_datadic_tree_ex> children_ex
         {
             get
@@ -32,7 +31,8 @@ namespace IHome.Models.Data
             }
             set { _children_ex = value; }
         }
-        
+
+        public base_datadic_tree_ex parent_ex { get; set; }
 
         bool _isValidate = false;
         public base_datadic_tree_ex()

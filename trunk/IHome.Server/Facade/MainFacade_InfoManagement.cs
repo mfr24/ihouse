@@ -200,6 +200,54 @@ namespace IHome.Server.Facade
             revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
             return revList;
         }
+        public ArrayList AddChild(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                Models.Data.base_datadic_tree model = paramDicts[0]["dic"].ToString().JsonToModel<Models.Data.base_datadic_tree>();
+                model.item_id = Guid.NewGuid();
+                using (var context = new Data.CbooEntities())
+                {
+                    context.base_datadic_tree.AddObject(model);
+                    data = context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
+
+        readonly string _deleteChildren = "delete from base_datadic_tree where item_id in ('{0}')";
+        public ArrayList DeleteChildren(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                List<string> modelList = paramDicts[0]["dic_list"].ToString().JsonToModel<List<string>>();
+                using (var context = new Data.CbooEntities())
+                {
+                    context.ExecuteStoreCommand(string.Format(_deleteChildren, modelList.GetSelectIn()));
+                }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
         #endregion
 
     }

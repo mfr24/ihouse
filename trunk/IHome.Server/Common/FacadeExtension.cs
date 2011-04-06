@@ -23,7 +23,11 @@ namespace IHome.Server.Facade
             }
             throw (new Exception("找不到参数" + typeof(T).Name));
         }
-
+        /// <summary>
+        /// get list[a,b,c,d] as query string like a','b','c','d
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public static string GetSelectIn(this List<string> list)
         {
             if (list==null||list.Count==0)return "";
