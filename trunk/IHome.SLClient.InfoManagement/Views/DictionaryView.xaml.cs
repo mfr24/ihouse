@@ -36,5 +36,28 @@ namespace IHome.SLClient.InfoManagement
             }
             tree.SelectedItem = treeViewItem.Item;
         }
+
+        private void RadMenuItemEdit_Click(object sender, Telerik.Windows.RadRoutedEventArgs e)
+        {
+           tree.SelectedContainer.BeginEdit();
+        }
+        private void RadMenuItemAdd_Click(object sender, Telerik.Windows.RadRoutedEventArgs e)
+        {
+            Telerik.Windows.Controls.RadTreeViewItem treeViewItem = tree.SelectedContainer;
+            if (treeViewItem == null)
+            {
+                this.tree.Items.Add(new Telerik.Windows.Controls.RadTreeViewItem()
+                {
+                    Header = "New Node",
+                });
+                return;
+            }
+            treeViewItem.Items.Add(new Telerik.Windows.Controls.RadTreeViewItem()
+            {
+                Header = "New Node",
+            });
+            treeViewItem.IsExpanded = true;
+
+        }
     }
 }
