@@ -12,6 +12,16 @@ namespace IHome.SLClient.InfoManagement
 {
 	public class DictionaryViewModel : INotifyPropertyChanged
 	{
+        public ICommand RefreshChild
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    SelectedItem.RefreshChild();
+                });
+            }
+        }
         public ICommand AddChild
         {
             get

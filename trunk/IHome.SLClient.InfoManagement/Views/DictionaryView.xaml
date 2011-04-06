@@ -22,6 +22,7 @@
                     <telerik:RadMenuItem Header="添加" Command="{Binding AddChild}"/>
                     <telerik:RadMenuItem Header="编辑" Command="{Binding EditChild}"/>
                     <telerik:RadMenuItem Header="删除" Command="{Binding DeleteChildren}"/>
+                    <telerik:RadMenuItem Header="刷新" Command="{Binding RefreshChild}"/>
 				</telerik:RadContextMenu>
 			</telerik:RadContextMenu.ContextMenu>
             <telerik:RadTreeView.ItemTemplate>
