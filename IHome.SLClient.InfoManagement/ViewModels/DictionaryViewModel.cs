@@ -20,6 +20,7 @@ namespace IHome.SLClient.InfoManagement
                 {
                     if (SelectedItem.children_ex == null) { SelectedItem.children_ex = new ObservableCollection<base_datadic_tree_ex>(); }
                     SelectedItem.children_ex.Add(new base_datadic_tree_ex() { item_name = "new item" });
+                    SelectedItem.expanded_ex = true;
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
                     requestParams["dic"] = NewDict;
