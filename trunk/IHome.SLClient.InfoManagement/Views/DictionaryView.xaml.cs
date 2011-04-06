@@ -12,16 +12,29 @@ using System.Windows.Shapes;
 
 namespace IHome.SLClient.InfoManagement
 {
-	/// <summary>
-	/// Interaction logic for DictionaryView.xaml
-	/// </summary>
-	public partial class DictionaryView : UserControl
-	{
-		public DictionaryView()
-		{
-			this.InitializeComponent();
-			
-			// Insert code required on object creation below this point.
-		}
-	}
+    /// <summary>
+    /// Interaction logic for DictionaryView.xaml
+    /// </summary>
+    public partial class DictionaryView : UserControl
+    {
+        public DictionaryView()
+        {
+            this.InitializeComponent();
+
+            // Insert code required on object creation below this point.
+        }
+
+
+        private void RadContextMenu_Opened(object sender, RoutedEventArgs e)
+        {
+            Telerik.Windows.Controls.RadTreeViewItem treeViewItem =
+((Telerik.Windows.Controls.RadContextMenu)sender).GetClickedElement<Telerik.Windows.Controls.RadTreeViewItem>();
+            if (treeViewItem == null)
+            {
+                (sender as Telerik.Windows.Controls.RadContextMenu).IsOpen = false;
+                return;
+            }
+            tree.SelectedItem = treeViewItem.Item;
+        }
+    }
 }

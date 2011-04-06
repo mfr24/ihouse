@@ -12,10 +12,10 @@
 		<local:DictionaryViewModel x:Key="DictionaryViewModelDataSource" />
 	</UserControl.Resources>
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
-        <telerik:RadTreeView HorizontalAlignment="Center" Width="150" ItemsSource="{Binding Dict.children_ex,Mode=TwoWay}" 
-                             SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+        <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Center" Width="150" ItemsSource="{Binding Dict.children_ex,Mode=TwoWay}" 
+                             SelectedItem="{Binding SelectedItem, Mode=TwoWay}" >
 			<telerik:RadContextMenu.ContextMenu>
-				<telerik:RadContextMenu>
+                <telerik:RadContextMenu Opened="RadContextMenu_Opened">
                     <telerik:RadMenuItem Header="添加" Command="{Binding AddChild}"/>
                     <telerik:RadMenuItem Header="删除" Command="{Binding DeleteChildren}"/>
 				</telerik:RadContextMenu>
