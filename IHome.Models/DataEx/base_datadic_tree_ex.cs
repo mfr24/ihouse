@@ -13,7 +13,7 @@ namespace IHome.Models.Data
         {
             get
             {
-                if (_children_ex == null&&(!leaf.Value))
+                if (_children_ex == null && leaf.HasValue && !leaf.Value)
                 {
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
@@ -29,7 +29,11 @@ namespace IHome.Models.Data
                 }
                 return _children_ex;
             }
-            set { _children_ex = value; }
+            set
+            {
+                _children_ex = value;
+                NotifyPropertyChanged("children_ex");
+            }
         }
 
         public base_datadic_tree_ex parent_ex { get; set; }
