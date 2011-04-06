@@ -32,7 +32,13 @@
                         <!--<Image Source="{Binding Image}" Margin=" 0,0,6,0" />-->
                         <TextBlock Text="{Binding item_name}" FontFamily="Segoe UI" FontSize="13" Foreground="Black" FontWeight="Bold" />
                     </StackPanel>
+                    <telerik:ContainerBinding.ContainerBindings>
+                        <telerik:ContainerBindingCollection>
+                            <telerik:ContainerBinding PropertyName="IsExpanded" Binding="{Binding expanded_ex, Mode=TwoWay}" />
+                        </telerik:ContainerBindingCollection>
+                    </telerik:ContainerBinding.ContainerBindings>
                 </telerik:HierarchicalDataTemplate>
+                
             </telerik:RadTreeView.ItemTemplate>
             <telerik:RadTreeView.ItemEditTemplate>
                 <telerik:HierarchicalDataTemplate ItemsSource="{Binding children_ex,Mode=TwoWay}">
