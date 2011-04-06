@@ -10,19 +10,17 @@
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
 		<local:DictionaryViewModel x:Key="DictionaryViewModelDataSource" />
-        <!--<Style TargetType="telerik:RadTreeViewItem">
-            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsExpanded, Mode=TwoWay}"/>
-        </Style>-->
     </UserControl.Resources>
     
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
         <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Center" Width="150" ItemsSource="{Binding Dict.children_ex,Mode=TwoWay}" 
                              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                             IsLineEnabled="True"
                              IsEditable="True">
 			<telerik:RadContextMenu.ContextMenu>
                 <telerik:RadContextMenu Opened="RadContextMenu_Opened">
                     <telerik:RadMenuItem Header="添加" Command="{Binding AddChild}"/>
-                    <telerik:RadMenuItem Header="编辑" Command="{Binding AddChild}"/>
+                    <telerik:RadMenuItem Header="编辑" Command="{Binding EditChild}"/>
                     <telerik:RadMenuItem Header="删除" Command="{Binding DeleteChildren}"/>
 				</telerik:RadContextMenu>
 			</telerik:RadContextMenu.ContextMenu>

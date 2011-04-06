@@ -26,6 +26,16 @@ namespace IHome.SLClient.InfoManagement
                 });
             }
         }
+        public ICommand EditChild
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    SelectedItem.edit_mode_ex = true;
+                });
+            }
+        }
         public ICommand DeleteChildren
         {
             get
