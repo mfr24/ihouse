@@ -38,6 +38,7 @@ namespace IHome.Models.Data
 
         public base_datadic_tree_ex parent_ex { get; set; }
 
+        public bool IsExpanded { get; set; }
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
