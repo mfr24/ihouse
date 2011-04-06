@@ -8,6 +8,33 @@ namespace IHome.Models.Data
 {
     public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
     {
+        public override string item_name
+        {
+            get
+            {
+                return base.item_name;
+            }
+            set
+            {
+                if (item_name != value.Trim())
+                {
+                    base.item_name = value;
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["dic"] = this;
+                    requestList.Add(requestParams);
+                    this.Request(this.item_id == Guid.Empty ?
+                        "IHome.Server.Facade.MainFacade.AddDict" : "IHome.Server.Facade.MainFacade.UpdateDict",
+                    requestList,
+                    (result) =>
+                    {
+                        NotifyPropertyChanged("item_name");
+                    });
+                }
+
+            }
+        }
+
         private ObservableCollection<base_datadic_tree_ex> _children_ex;
         public ObservableCollection<base_datadic_tree_ex> children_ex
         {
@@ -51,11 +78,25 @@ namespace IHome.Models.Data
                 }
             }
         }
-       
+
+        private bool _edit_mode_ex;
+        public bool edit_mode_ex
+        {
+            get { return _edit_mode_ex; }
+            set { _edit_mode_ex = value; NotifyPropertyChanged("edit_mode_ex"); }
+        }
+
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
             Errors = new Dictionary<string, List<string>>();
+            children_ex.CollectionChanged += (sender, e) =>
+            {
+                foreach (var item in e.NewItems)
+                {
+                    ((base_datadic_tree_ex)item).parent_id = item_id;
+                }
+            };
             //_check_status_ex = false;
         }
         public bool IsValidate

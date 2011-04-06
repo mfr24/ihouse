@@ -37,10 +37,5 @@ namespace IHome.SLClient.InfoManagement
             tree.SelectedItem = treeViewItem.Item;
         }
 
-        private void RadMenuItemEdit_Click(object sender, Telerik.Windows.RadRoutedEventArgs e)
-        {
-           tree.SelectedContainer.BeginEdit();
-        }
-
     }
 }
