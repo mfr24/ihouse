@@ -22,7 +22,25 @@ namespace IHome.Models.Data
 
             }
         }
-
+        public void RefreshChild()
+        {
+            if (leaf.HasValue && !leaf.Value) {
+                GetChildren();
+            }
+        }
+        private void GetChildren()
+        {
+            List<object> requestList = new List<object>();
+            Dictionary<string, object> requestParams = new Dictionary<string, object>();
+            requestParams["item_id"] = this.item_id;
+            requestList.Add(requestParams);
+            this.Request("IHome.Server.Facade.MainFacade.GetChildren",
+            requestList,
+            (result) =>
+            {
+                children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
+            });
+        }
         private ObservableCollection<base_datadic_tree_ex> _children_ex;
         [JsonIgnore]
         public ObservableCollection<base_datadic_tree_ex> children_ex
@@ -31,16 +49,7 @@ namespace IHome.Models.Data
             {
                 if (_children_ex == null && leaf.HasValue && !leaf.Value)
                 {
-                    List<object> requestList = new List<object>();
-                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["item_id"] = this.item_id;
-                    requestList.Add(requestParams);
-                    this.Request("IHome.Server.Facade.MainFacade.GetChildren",
-                    requestList,
-                    (result) =>
-                    {
-                        children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
-                    });
+                    GetChildren();
                 }
                 return _children_ex;
             }
