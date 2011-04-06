@@ -22,7 +22,7 @@
 			<telerik:RadContextMenu.ContextMenu>
                 <telerik:RadContextMenu Opened="RadContextMenu_Opened">
                     <telerik:RadMenuItem Header="添加" Command="{Binding AddChild}"/>
-                    <telerik:RadMenuItem Header="编辑" Click="RadMenuItemEdit_Click"/>
+                    <telerik:RadMenuItem Header="编辑" Command="{Binding AddChild}"/>
                     <telerik:RadMenuItem Header="删除" Command="{Binding DeleteChildren}"/>
 				</telerik:RadContextMenu>
 			</telerik:RadContextMenu.ContextMenu>
@@ -35,6 +35,7 @@
                     <telerik:ContainerBinding.ContainerBindings>
                         <telerik:ContainerBindingCollection>
                             <telerik:ContainerBinding PropertyName="IsExpanded" Binding="{Binding expanded_ex, Mode=TwoWay}" />
+                            <telerik:ContainerBinding PropertyName="IsInEditMode" Binding="{Binding edit_mode_ex, Mode=TwoWay}" />
                         </telerik:ContainerBindingCollection>
                     </telerik:ContainerBinding.ContainerBindings>
                 </telerik:HierarchicalDataTemplate>
@@ -44,7 +45,7 @@
                 <telerik:HierarchicalDataTemplate ItemsSource="{Binding children_ex,Mode=TwoWay}">
                     <StackPanel Orientation="Horizontal">
                         <!--<Image Source="{Binding Image}" Margin=" 0,0,6,0" />-->
-                        <TextBox Text="{Binding item_name}" FontFamily="Segoe UI" FontSize="13" Foreground="Black" FontWeight="Bold" />
+                        <TextBox Text="{Binding item_name, Mode=TwoWay}" FontFamily="Segoe UI" FontSize="13" Foreground="Black" FontWeight="Bold" />
                     </StackPanel>
                 </telerik:HierarchicalDataTemplate>
             </telerik:RadTreeView.ItemEditTemplate>
