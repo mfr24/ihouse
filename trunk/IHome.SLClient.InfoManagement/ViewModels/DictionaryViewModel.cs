@@ -80,7 +80,6 @@ namespace IHome.SLClient.InfoManagement
             set { _dict = value;
             }
         }
-        public base_datadic_tree_ex NewDict { get; set; }
         public base_datadic_tree_ex SelectedItem { get; set; }
 		#region INotifyPropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
