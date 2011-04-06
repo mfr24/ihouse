@@ -18,6 +18,8 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
+                    if (SelectedItem.children_ex == null) { SelectedItem.children_ex = new ObservableCollection<base_datadic_tree_ex>(); }
+                    SelectedItem.children_ex.Add(new base_datadic_tree_ex() { item_name = "new item" });
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
                     requestParams["dic"] = NewDict;
@@ -42,7 +44,7 @@ namespace IHome.SLClient.InfoManagement
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
                     List<string> dic_list = new List<string>();
-                    var item = SelectedItem;
+                    dic_list.Add(SelectedItem.item_id.ToString());
                     requestParams["dic_list"] = dic_list;
                     requestList.Add(requestParams);
                     this.Request("IHome.Server.Facade.MainFacade.DeleteChildren",
