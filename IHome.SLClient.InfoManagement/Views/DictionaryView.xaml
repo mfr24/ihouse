@@ -10,7 +10,11 @@
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
 		<local:DictionaryViewModel x:Key="DictionaryViewModelDataSource" />
-	</UserControl.Resources>
+        <!--<Style TargetType="telerik:RadTreeViewItem">
+            <Setter Property="IsExpanded" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=IsExpanded, Mode=TwoWay}"/>
+        </Style>-->
+    </UserControl.Resources>
+    
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
         <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Center" Width="150" ItemsSource="{Binding Dict.children_ex,Mode=TwoWay}" 
                              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
