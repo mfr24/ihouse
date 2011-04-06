@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using ILight.Core.Net.WebRequest;
 using ILight.Core.Model;
+using Newtonsoft.Json;
 namespace IHome.Models.Data
 {
     public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
@@ -12,30 +13,18 @@ namespace IHome.Models.Data
         {
             get
             {
+                if (string.IsNullOrEmpty(base.item_name)) return "ÐÂ½Úµã";
                 return base.item_name;
             }
             set
             {
-                if (item_name != value.Trim())
-                {
-                    base.item_name = value;
-                    List<object> requestList = new List<object>();
-                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["dic"] = this;
-                    requestList.Add(requestParams);
-                    this.Request(this.item_id == Guid.Empty ?
-                        "IHome.Server.Facade.MainFacade.AddDict" : "IHome.Server.Facade.MainFacade.UpdateDict",
-                    requestList,
-                    (result) =>
-                    {
-                        NotifyPropertyChanged("item_name");
-                    });
-                }
+                base.item_name = value;
 
             }
         }
 
         private ObservableCollection<base_datadic_tree_ex> _children_ex;
+        [JsonIgnore]
         public ObservableCollection<base_datadic_tree_ex> children_ex
         {
             get
@@ -50,8 +39,7 @@ namespace IHome.Models.Data
                     requestList,
                     (result) =>
                     {
-                        _children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
-                        NotifyPropertyChanged("children_ex");
+                        children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
                     });
                 }
                 return _children_ex;
@@ -59,13 +47,29 @@ namespace IHome.Models.Data
             set
             {
                 _children_ex = value;
+                foreach (var item in _children_ex)
+                {
+                    item.parent_ex = this;
+                }
+                _children_ex.CollectionChanged += (sender, e) =>
+                {
+                    if (e.NewItems != null && e.NewItems.Count > 0)
+                    {
+                        foreach (var item in e.NewItems)
+                        {
+                            ((base_datadic_tree_ex)item).parent_id = item_id;
+                            ((base_datadic_tree_ex)item).parent_ex = this;
+                        }
+                    }
+                };
                 NotifyPropertyChanged("children_ex");
             }
         }
-
+        [JsonIgnore]
         public base_datadic_tree_ex parent_ex { get; set; }
 
         private bool _expanded_ex;
+        [JsonIgnore]
         public bool expanded_ex
         {
             get { return _expanded_ex; }
@@ -80,23 +84,36 @@ namespace IHome.Models.Data
         }
 
         private bool _edit_mode_ex;
+        [JsonIgnore]
         public bool edit_mode_ex
         {
             get { return _edit_mode_ex; }
-            set { _edit_mode_ex = value; NotifyPropertyChanged("edit_mode_ex"); }
+            set
+            {
+                if (!value)
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["dict"] = this;
+                    requestList.Add(requestParams);
+                    this.Request(this.item_id == Guid.Empty ?
+                        "IHome.Server.Facade.MainFacade.AddDict" : "IHome.Server.Facade.MainFacade.UpdateDict",
+                    requestList,
+                    (result) =>
+                    {
+                        NotifyPropertyChanged("item_name");
+                    });
+                }
+                _edit_mode_ex = value;
+                NotifyPropertyChanged("edit_mode_ex");
+
+            }
         }
 
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
             Errors = new Dictionary<string, List<string>>();
-            children_ex.CollectionChanged += (sender, e) =>
-            {
-                foreach (var item in e.NewItems)
-                {
-                    ((base_datadic_tree_ex)item).parent_id = item_id;
-                }
-            };
             //_check_status_ex = false;
         }
         public bool IsValidate
