@@ -11,19 +11,20 @@ namespace IHome.SLClient.InfoManagement
 {
     public class CommunityViewModel : INotifyPropertyChanged
     {
-        
+
         public ICommand EditCommunity
         {
             get
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    if (CommunitySelected != null) {
+                    if (CommunitySelected != null)
+                    {
                         CommunitySelected.IsValidate = true;
-                    System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
-                    CommunityAddViewModel vm = new CommunityAddViewModel() { Community = CommunitySelected,Action=Models.ActionType.Edit };
-                    childWin.Content = new CommunityAddView(vm);
-                    childWin.Show();
+                        System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
+                        CommunityAddViewModel vm = new CommunityAddViewModel() { Community = CommunitySelected, Action = Models.ActionType.Edit };
+                        childWin.Content = new CommunityAddView(vm);
+                        childWin.Show();
                     }
                 });
 
@@ -62,19 +63,20 @@ namespace IHome.SLClient.InfoManagement
 
             }
         }
-        public ICommand GetBuildingList
+
+        private IHome.Models.CmdWin _buildingView = new Models.CmdWin()
+                {
+                    name = "楼栋信息",
+                    type_name = "IHome.SLClient.InfoManagement.BuildingView",
+                    xap_name = "IHome.SLClient.InfoManagement.zip",
+                    Win = Models.CmdWin.WinType.window,
+                    VeiwModel = new BuildingViewModel()
+                };
+        public IHome.Models.CmdWin BuildingView
         {
             get
             {
-                return new ILight.Core.Model.CommandBase((p) =>
-                {
-                        BuildingViewModel vm = new BuildingViewModel() {Community=CommunitySelected };
-
-                        System.Windows.Controls.ChildWindow child = new System.Windows.Controls.ChildWindow();
-                        child.Content = (new BuildingView(vm));
-                        child.Show();
-                    
-                });
+                return _buildingView;
             }
         }
 
@@ -112,19 +114,27 @@ namespace IHome.SLClient.InfoManagement
             CommunityList = new ObservableCollection<base_community_baseinfo_ex>();
         }
 
+        private Models.Data.base_community_baseinfo_ex _communitySelected;
 
         public Models.Data.base_community_baseinfo_ex CommunitySelected
         {
-            get;
-            set;
+            get { return _communitySelected; }
+            set
+            {
+                _communitySelected = value;
+                ((BuildingViewModel)BuildingView.VeiwModel).Community = _communitySelected;
+            }
         }
+
         private bool _isBusy;
 
         public bool IsBusy
         {
             get { return _isBusy; }
-            set { _isBusy = value;
-            NotifyPropertyChanged("IsBusy");
+            set
+            {
+                _isBusy = value;
+                NotifyPropertyChanged("IsBusy");
             }
         }
 

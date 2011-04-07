@@ -23,7 +23,7 @@ namespace IHome.SLClient.InfoManagement
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
                     Building.community_id = Community.community_id;
                     string method = Building.building_id == Guid.Empty ?
-                                    "IHome.Server.Facade.MainFacade.AddBuilding" : "IHome.Server.Facade.MainFacade.UpdateBuilding";
+                    "IHome.Server.Facade.MainFacade.AddBuilding" : "IHome.Server.Facade.MainFacade.UpdateBuilding";
                     requestParams["building"] = Building;
                     requestList.Add(requestParams);
 
@@ -112,10 +112,7 @@ namespace IHome.SLClient.InfoManagement
         {
             get { return _community; }
             set
-            {
-                _community = value;
-                GetBuildingList.Execute(null);
-            }
+            {   _community = value;}
         }
         private base_community_buildinginfo_ex _building;
 

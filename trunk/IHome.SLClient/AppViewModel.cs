@@ -91,16 +91,12 @@ namespace IHome.SLClient
                         else if (win.Win == IHome.Models.CmdWin.WinType.window)
                         {
                             Telerik.Windows.Controls.RadWindow child = new Telerik.Windows.Controls.RadWindow() { Header = win.name, Content = frm };
-                            child.Width = width;
-                            child.Height = height;
                             child.WindowStartupLocation = Telerik.Windows.Controls.WindowStartupLocation.CenterScreen;
                             child.Show();
                         }
                         else if (win.Win == IHome.Models.CmdWin.WinType.modal)
                         {
                             Telerik.Windows.Controls.RadWindow child = new Telerik.Windows.Controls.RadWindow() { Header = win.name, Content = frm};
-                            child.Width = width;
-                            child.Height = height;
                             child.WindowStartupLocation =Telerik.Windows.Controls.WindowStartupLocation.CenterScreen;
                             child.ShowDialog();
                         }
