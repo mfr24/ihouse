@@ -41,7 +41,7 @@ namespace IHome.SLClient.InfoManagement
         }
 		public CommunityAddViewModel()
 		{
-            Community = new Models.Data.base_community_baseinfo_ex() { IsValidate=true};
+            Community = new Models.Data.base_community_baseinfo_ex() { CanValidate=true};
             Action = Models.ActionType.Add;
 		}
         public Models.ActionType Action { get; set; }

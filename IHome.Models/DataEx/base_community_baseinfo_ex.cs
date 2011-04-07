@@ -9,12 +9,12 @@ namespace IHome.Models.Data
     public partial class base_community_baseinfo_ex : base_community_baseinfo, IValidateable, INotifyPropertyChanged
     {
         const int ToYear = 2011;
-        bool _isValidate = false;
+        bool _canValidate = false;
 
-        public bool IsValidate
+        public bool CanValidate
         {
-            get { return _isValidate; }
-            set { _isValidate = value; }
+            get { return _canValidate; }
+            set { _canValidate = value; }
         }
 
         public base_community_baseinfo_ex()
@@ -78,7 +78,7 @@ namespace IHome.Models.Data
         private string _error = string.Empty;
         public bool ValidatePro(string columnName, object value)
         {
-            if (!_isValidate) return true;
+            if (!_canValidate) return true;
             return this.ValidateProEx(columnName, value);
         }
 

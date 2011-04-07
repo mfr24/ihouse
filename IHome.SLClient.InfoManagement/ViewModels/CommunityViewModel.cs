@@ -20,7 +20,7 @@ namespace IHome.SLClient.InfoManagement
                 {
                     if (CommunitySelected != null)
                     {
-                        CommunitySelected.IsValidate = true;
+                        CommunitySelected.CanValidate = true;
                         System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
                         CommunityAddViewModel vm = new CommunityAddViewModel() { Community = CommunitySelected, Action = Models.ActionType.Edit };
                         childWin.Content = new CommunityAddView(vm);
