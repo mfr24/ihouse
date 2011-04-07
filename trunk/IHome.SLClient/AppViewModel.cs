@@ -57,6 +57,8 @@ namespace IHome.SLClient
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     CmdWin win;
+                    int width = 600;
+                    int height = 400;
                     if(p is CmdWin)  win= p as CmdWin;
                     else  win = Newtonsoft.Json.JsonConvert.DeserializeObject<CmdWin>((string)p);
                     #region 最近访问
@@ -89,12 +91,16 @@ namespace IHome.SLClient
                         else if (win.Win == IHome.Models.CmdWin.WinType.window)
                         {
                             Telerik.Windows.Controls.RadWindow child = new Telerik.Windows.Controls.RadWindow() { Header = win.name, Content = frm };
+                            child.Width = width;
+                            child.Height = height;
                             child.WindowStartupLocation = Telerik.Windows.Controls.WindowStartupLocation.CenterScreen;
                             child.Show();
                         }
                         else if (win.Win == IHome.Models.CmdWin.WinType.modal)
                         {
                             Telerik.Windows.Controls.RadWindow child = new Telerik.Windows.Controls.RadWindow() { Header = win.name, Content = frm};
+                            child.Width = width;
+                            child.Height = height;
                             child.WindowStartupLocation =Telerik.Windows.Controls.WindowStartupLocation.CenterScreen;
                             child.ShowDialog();
                         }
