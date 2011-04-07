@@ -49,7 +49,8 @@
         		</i:EventTrigger>
         	</i:Interaction.Triggers>
         </telerik:RadGridView>
-        <telerik:RadButton Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding AddCommunity, Mode=OneWay}"/>
+        <telerik:RadButton Content="添加小区" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"  
+                           Command="{Binding Source={StaticResource AppDataSource},Path=ShowWin }" CommandParameter="{Binding CommunityAddView}"/>
         <telerik:RadButton Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetCommunityList, Mode=OneWay}" Margin="81,0,0,0" />
         <telerik:RadButton Content="修改" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding EditCommunity, Mode=OneWay}" Margin="160,0,0,0"/>
         <telerik:RadButton Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding DeleteCommunity, Mode=OneWay}" Margin="240,0,0,0"/>
