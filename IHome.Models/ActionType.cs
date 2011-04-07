@@ -13,6 +13,6 @@ namespace IHome.Models
 {
     public enum ActionType
     {
-        Add=1,Edit=2,Delete=4,Search=8
+        Add=1,Edit=2,Remove=4,Search=8
     }
 }
