@@ -7,8 +7,7 @@
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 	mc:Ignorable="d"
-	x:Class="IHome.SLClient.InfoManagement.BuildingView"
-	d:DesignWidth="640" d:DesignHeight="480">
+	x:Class="IHome.SLClient.InfoManagement.BuildingView">
     <UserControl.Resources>
         <!--<local:BuildingViewModel x:Key="BuildingViewModelDataSource" />-->
     	<Storyboard x:Name="SbEdit">
@@ -86,11 +85,19 @@
     	</Storyboard>
     </UserControl.Resources>
 
-    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="640" Height="480">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource BuildingViewModelDataSource}}" Width="600" Height="400">
+        <Grid.Clip>
+            <RectangleGeometry Rect="0,0,600,400"/>
+        </Grid.Clip>
         <telerik:RadGridView x:Name="radGridView" ItemsSource="{Binding BuildingList, Mode=TwoWay}" SelectedItem="{Binding Building, Mode=TwoWay}" 
                              AutoGenerateColumns="False"
                              ShowGroupPanel="False" RowActivated="radGridView_RowActivated" Margin="0,0,0,28"
                              >
+        	<i:Interaction.Triggers>
+        		<i:EventTrigger>
+                    <i:InvokeCommandAction Command="{Binding GetBuildingList}"/>
+        		</i:EventTrigger>
+        	</i:Interaction.Triggers>
         	<telerik:RadGridView.Projection>
         		<PlaneProjection/>
         	</telerik:RadGridView.Projection>
@@ -125,8 +132,7 @@
         	</i:Interaction.Triggers>
         </telerik:RadDataPager>
         <telerik:RadDataForm x:Name="radDataForm" ItemsSource="{Binding BuildingList, Mode=TwoWay}" CurrentItem="{Binding Building, Mode=TwoWay}" 
-                             CommitButtonContent="保存" CancelButtonContent="取消" AutoGenerateFields="False"
-                             VerticalAlignment="Top" HorizontalAlignment="Right" Width="307" Height="480" Margin="0,0,-308,0" RenderTransformOrigin="0.5,0.5" Mode="AddNew">
+                             CommitButtonContent="保存" CancelButtonContent="取消" AutoGenerateFields="False" HorizontalAlignment="Right" Width="307" Margin="0,0,-308,0" RenderTransformOrigin="0.5,0.5" Mode="AddNew" OpacityMask="{Binding ElementName=radGridView}">
         	<telerik:RadDataForm.RenderTransform>
         		<CompositeTransform/>
         	</telerik:RadDataForm.RenderTransform>

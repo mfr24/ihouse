@@ -45,7 +45,7 @@
             </telerik:RadGridView.Columns>
         	<i:Interaction.Triggers>
         		<i:EventTrigger EventName="RowActivated">
-        			<i:InvokeCommandAction Command="{Binding GetBuildingList, Mode=OneWay}"/>
+                    <i:InvokeCommandAction Command="{Binding Source={StaticResource AppDataSource},Path=ShowWin }" CommandParameter="{Binding BuildingView}"/>
         		</i:EventTrigger>
         	</i:Interaction.Triggers>
         </telerik:RadGridView>
@@ -54,6 +54,7 @@
         <telerik:RadButton Content="搜索" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetCommunityList, Mode=OneWay}" Margin="81,0,0,0" />
         <telerik:RadButton Content="修改" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding EditCommunity, Mode=OneWay}" Margin="160,0,0,0"/>
         <telerik:RadButton Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding DeleteCommunity, Mode=OneWay}" Margin="240,0,0,0"/>
-        <telerik:RadButton Content="查看楼栋" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Command="{Binding GetBuildingList, Mode=OneWay}" Margin="321,0,0,0"/>
+        <telerik:RadButton Content="查看楼栋" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="321,0,0,0"
+                           Command="{Binding Source={StaticResource AppDataSource},Path=ShowWin }" CommandParameter="{Binding BuildingView}"/>
     </Grid>
 </UserControl>
