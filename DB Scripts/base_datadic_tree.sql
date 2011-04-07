@@ -1,19 +1,34 @@
-﻿delete `base_datadic_tree`
-INSERT INTO `base_datadic_tree` VALUES ('0cf3f9d0-67ac-492f-91f7-d0b6f31e8165', '10', '数据字典', NULL, '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('13a54541-91b0-4505-9b33-0286926bb6a1', '10020104', '淮海路', 'c8e3f598-fbba-4fa2-989b-c4adf26acfab', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('2b0c16b0-8bf0-4f56-918f-1142ced5c27f', '10030101', '浦东', '96ac2913-0d48-4735-a4bc-3e0f34d454e8', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('59b2694a-6e5f-4372-b476-edce00871da4', '10020105', '徐家汇', 'c8e3f598-fbba-4fa2-989b-c4adf26acfab', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('899052f0-7ef9-405f-8a54-49c5029feb80', '1001', '行业', '0cf3f9d0-67ac-492f-91f7-d0b6f31e8165', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('96ac2913-0d48-4735-a4bc-3e0f34d454e8', '100301', '上海', '97fe5d66-4aac-4b1f-8e94-7db1ab2574ed', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('97fe5d66-4aac-4b1f-8e94-7db1ab2574ed', '1003', '城市', '0cf3f9d0-67ac-492f-91f7-d0b6f31e8165', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('9bf13e19-4081-4fdd-a82c-1110f1221a2f', '100102', '房地产', '899052f0-7ef9-405f-8a54-49c5029feb80', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('b592e488-a149-4271-9172-c87714a63f78', '10030105', '长宁', '96ac2913-0d48-4735-a4bc-3e0f34d454e8', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('c2d84e0c-a645-4d54-ade0-324a6ab50192', '10020102', '南京西路', 'c8e3f598-fbba-4fa2-989b-c4adf26acfab', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('c8e3f598-fbba-4fa2-989b-c4adf26acfab', '100201', '上海', 'edb81921-c0c6-4e12-8b8f-17e33b0be88a', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('ce4cd639-a8cd-4968-ab6d-503935d9249a', '10030104', '普陀', '96ac2913-0d48-4735-a4bc-3e0f34d454e8', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('e2ca13f3-2b88-4941-ab72-57d1d0395f92', '10030103', '徐汇', '96ac2913-0d48-4735-a4bc-3e0f34d454e8', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('e4319526-c336-4648-991e-9c51da63a548', '10020101', '人民广场', 'c8e3f598-fbba-4fa2-989b-c4adf26acfab', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('edb81921-c0c6-4e12-8b8f-17e33b0be88a', '1002', '商圈', '0cf3f9d0-67ac-492f-91f7-d0b6f31e8165', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('f583d6b0-dde7-41ad-8170-c34ef6c86b24', '10020103', '陆家嘴', 'c8e3f598-fbba-4fa2-989b-c4adf26acfab', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('f7a37bef-4343-4105-b108-2403764cda6b', '100101', '制造业', '899052f0-7ef9-405f-8a54-49c5029feb80', '', NULL, NULL);
-INSERT INTO `base_datadic_tree` VALUES ('f84b68ee-ddbc-460e-87b7-3378350a84ff', '10030102', '闵行', '96ac2913-0d48-4735-a4bc-3e0f34d454e8', '', NULL, NULL);
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : local
+Source Server Version : 50153
+Source Host           : localhost:3306
+Source Database       : cboo
+
+Target Server Type    : MYSQL
+Target Server Version : 50153
+File Encoding         : 65001
+
+Date: 2011-03-31 09:54:02
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `base_datadic_tree`
+-- ----------------------------
+DROP TABLE IF EXISTS `base_datadic_tree`;
+CREATE TABLE `base_datadic_tree` (
+  `item_id` char(36) NOT NULL DEFAULT '',
+  `item_key` varchar(50) DEFAULT NULL,
+  `item_name` varchar(50) DEFAULT NULL,
+  `parent_id` char(36) DEFAULT NULL,
+  `leaf` bit(1) DEFAULT NULL,
+  `deep` smallint(11) DEFAULT NULL,
+  `memo` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='数据字典树型';
+
+-- ----------------------------
+-- Records of base_datadic_tree
+-- ----------------------------
