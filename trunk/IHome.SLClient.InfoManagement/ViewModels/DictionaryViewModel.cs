@@ -75,6 +75,7 @@ namespace IHome.SLClient.InfoManagement
             (result) =>
             {
                 Dict.children_ex.Add(result.GetData<base_datadic_tree_ex>().data);
+                if (!Dict.children_ex[0].leaf.Value) { Dict.children_ex[0].expanded_ex = true; }
             });
         }
 		public DictionaryViewModel()
