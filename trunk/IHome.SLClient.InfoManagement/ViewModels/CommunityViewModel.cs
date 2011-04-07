@@ -11,19 +11,7 @@ namespace IHome.SLClient.InfoManagement
 {
     public class CommunityViewModel : INotifyPropertyChanged
     {
-        public ICommand AddCommunity
-        {
-            get
-            {
-                return new ILight.Core.Model.CommandBase((p) =>
-                {
-                    System.Windows.Controls.ChildWindow childWin = new System.Windows.Controls.ChildWindow();
-                    childWin.Content = new CommunityAddView();
-                    childWin.Show();
-                });
-
-            }
-        }
+        
         public ICommand EditCommunity
         {
             get
@@ -87,6 +75,20 @@ namespace IHome.SLClient.InfoManagement
                         child.Show();
                     
                 });
+            }
+        }
+
+        public IHome.Models.CmdWin CommunityAddView
+        {
+            get
+            {
+                return new Models.CmdWin()
+                {
+                    name = "添加楼盘",
+                    type_name = "IHome.SLClient.InfoManagement.CommunityAddView",
+                    xap_name = "IHome.SLClient.InfoManagement.zip",
+                    Win = Models.CmdWin.WinType.modal
+                };
             }
         }
         private bool _isCheckAll = false;
