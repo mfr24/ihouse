@@ -68,7 +68,7 @@ namespace IHome.SLClient.InfoManagement
                 {
                     List<object> requestList = new List<object>();
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                   
+
                     requestParams["community_id"] = Community.community_id;
                     requestParams["Pager`1"] = DataPager;
                     requestList.Add(requestParams);
@@ -98,7 +98,7 @@ namespace IHome.SLClient.InfoManagement
         {
             BuildingList = new ObservableCollection<base_community_buildinginfo_ex>();
         }
-        private Models.Pager<base_community_buildinginfo_ex> _dataPager = new Pager<base_community_buildinginfo_ex>() { page_index = 0, page_size = 5,total=20 };
+        private Models.Pager<base_community_buildinginfo_ex> _dataPager = new Pager<base_community_buildinginfo_ex>() { page_index = 0, page_size = 5, total = 20 };
 
         public Models.Pager<base_community_buildinginfo_ex> DataPager
         {
@@ -112,7 +112,10 @@ namespace IHome.SLClient.InfoManagement
         {
             get { return _community; }
             set
-            {   _community = value;}
+            {
+                _community = value;
+                _dataPager.page_index = 0;
+            }
         }
         private base_community_buildinginfo_ex _building;
 
