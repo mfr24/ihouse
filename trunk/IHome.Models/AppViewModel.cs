@@ -4,7 +4,7 @@ using System.Windows.Input;
 using IHome.Models;
 using System.Windows.Data;
 
-namespace IHome.SLClient
+namespace IHome.Models
 {
 
     public class AppViewModel : ILight.Core.Model.IAppVM
@@ -122,7 +122,7 @@ namespace IHome.SLClient
                 return _cmd;
             }
         }
-
+        public bool IsInDesignMode { get; set; }
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

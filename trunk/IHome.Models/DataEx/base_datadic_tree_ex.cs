@@ -123,7 +123,7 @@ namespace IHome.Models.Data
         public string image_ex { get {
             return 
                 leaf.GetValueOrDefault()?
-                "":"/images/folder.png";
+                "/images/file.png" : "/images/folder.png";
         } }
         bool _isValidate = false;
         public base_datadic_tree_ex()

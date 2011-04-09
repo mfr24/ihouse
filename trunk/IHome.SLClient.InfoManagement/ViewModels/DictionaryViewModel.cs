@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Windows.Data;
-using System.ComponentModel;
-using IHome.Models.Data;
-using IHome.Models;
-using ILight.Core.Net.WebRequest;
-using System.Windows.Input;
 using System.Collections.ObjectModel;
-using System.Windows;
+using System.ComponentModel;
+using System.Windows.Input;
+using IHome.Models;
+using IHome.Models.Data;
+using ILight.Core.Net.WebRequest;
 namespace IHome.SLClient.InfoManagement
 {
 	public class DictionaryViewModel : INotifyPropertyChanged
@@ -82,10 +79,11 @@ namespace IHome.SLClient.InfoManagement
 		public DictionaryViewModel()
 		{
             Dict = new base_datadic_tree_ex() { children_ex=new System.Collections.ObjectModel.ObservableCollection<base_datadic_tree_ex>()};
-            if (!(bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue))
+            if (!((AppViewModel)System.Windows.Application.Current.Resources["AppDataSource"]).IsInDesignMode)
             {
                 GetRoot();
             }
+                
 
 		}
         private base_datadic_tree_ex _dict;

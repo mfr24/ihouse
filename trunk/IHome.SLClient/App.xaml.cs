@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Telerik.Windows.Controls;
+using System.ComponentModel;
 
 namespace IHome.SLClient
 {
@@ -22,6 +23,10 @@ namespace IHome.SLClient
             this.Exit += this.Application_Exit;
             this.UnhandledException += this.Application_UnhandledException;
             InitializeComponent();
+            if ((bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue))
+            {
+                ((IHome.Models.AppViewModel)this.Resources["AppDataSource"]).IsInDesignMode = true;
+            }
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)

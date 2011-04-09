@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionType.cs" />
+    <Compile Include="AppViewModel.cs" />
     <Compile Include="CmdWin.cs" />
     <Compile Include="Converter\TrueFalseConverter.cs" />
     <Compile Include="DataEx\base_datadic_tree_ex.cs" />
