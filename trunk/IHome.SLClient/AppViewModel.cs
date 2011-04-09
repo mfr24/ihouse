@@ -2,12 +2,58 @@
 using System.ComponentModel;
 using System.Windows.Input;
 using IHome.Models;
+using System.Windows.Data;
 
 namespace IHome.SLClient
 {
 
     public class AppViewModel : ILight.Core.Model.IAppVM
     {
+
+
+        public AppViewModel()
+        {
+
+        }
+
+        private int _requestCount = 0;
+        private bool _isBusy = false;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                if (value)
+                {
+                    _requestCount += 1;
+
+                }
+                else
+                {
+                    _requestCount -= 1;
+                }
+                if (_requestCount > 0)
+                {
+                    lock (this)
+                    {
+                        if (_isBusy) return;
+                        _isBusy = true;
+                        NotifyPropertyChanged("IsBusy");
+                    }
+                }
+                else
+                {
+                    lock (this)
+                    {
+                        if (!_isBusy) return;
+                        _isBusy = false;
+                        NotifyPropertyChanged("IsBusy");
+                    }
+                }
+
+            }
+        }
+
         private static ICommand GetCommand()
         {
             return new ILight.Core.Model.CommandBase((p) =>
@@ -69,47 +115,6 @@ namespace IHome.SLClient
             });
         }
         private ICommand _cmd = GetCommand();
-        public AppViewModel()
-        {
-
-        }
-        private bool _isBusy = false;
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                if (value)
-                {
-                    _requestCount += 1;
-
-                }
-                else
-                {
-                    _requestCount -= 1;
-                }
-                if (_requestCount > 0)
-                {
-                    lock (this)
-                    {
-                        if (_isBusy) return;
-                        _isBusy = true;
-                        NotifyPropertyChanged("IsBusy");
-                    }
-                }
-                else
-                {
-                    lock (this)
-                    {
-                        if (!_isBusy) return;
-                        _isBusy = false;
-                        NotifyPropertyChanged("IsBusy");
-                    }
-                }
-
-            }
-        }
-        private int _requestCount = 0;
         public ICommand ShowWin
         {
             get
@@ -117,6 +122,7 @@ namespace IHome.SLClient
                 return _cmd;
             }
         }
+
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 

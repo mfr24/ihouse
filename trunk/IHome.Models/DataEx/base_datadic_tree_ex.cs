@@ -119,6 +119,12 @@ namespace IHome.Models.Data
             }
         }
 
+        [JsonIgnore]
+        public string image_ex { get {
+            return 
+                leaf.GetValueOrDefault()?
+                "":"/images/folder.png";
+        } }
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
