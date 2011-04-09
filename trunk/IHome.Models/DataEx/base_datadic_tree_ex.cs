@@ -143,6 +143,21 @@ namespace IHome.Models.Data
                 leaf.GetValueOrDefault()?
                 "/images/file.png" : "/images/folder.png";
         } }
+
+        private System.Windows.Visibility _visibility_ex = System.Windows.Visibility.Visible;
+        [JsonIgnore]
+        public System.Windows.Visibility visibility_ex
+        {
+            get { return _visibility_ex; }
+            set
+            {
+                _visibility_ex = value;
+                NotifyPropertyChanged("visibility_ex");
+            }
+        }
+
+        
+
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
