@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity\InfoManagementAct.cs" />
     <Compile Include="Common\FacadeExtension.cs" />
     <Compile Include="Data\base_community_baseinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
@@ -129,6 +130,7 @@
     <Compile Include="Data\house_viewhouse_subinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\Storage\base_datadic_tree_storage.cs" />
     <Compile Include="Data\sys_user_baseinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
@@ -178,9 +180,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Activity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
