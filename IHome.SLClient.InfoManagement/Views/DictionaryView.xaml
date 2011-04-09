@@ -16,7 +16,7 @@
         <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Left" Width="300" ItemsSource="{Binding Dict.children_ex, Mode=TwoWay}" 
                              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                              IsLineEnabled="True"
-                             IsEditable="True">
+                             IsEditable="True" Margin="8,34,0,78">
 			<telerik:RadContextMenu.ContextMenu>
                 <telerik:RadContextMenu Opened="RadContextMenu_Opened">
                     <telerik:RadMenuItem Header="添加" Command="{Binding AddChild}"/>
@@ -29,6 +29,7 @@
                 <telerik:HierarchicalDataTemplate ItemsSource="{Binding children_ex, Mode=TwoWay}">
                     <telerik:ContainerBinding.ContainerBindings>
                         <telerik:ContainerBindingCollection>
+                            <telerik:ContainerBinding PropertyName="Visibility" Binding="{Binding visibility_ex}" />
                             <telerik:ContainerBinding PropertyName="IsExpanded" Binding="{Binding expanded_ex, Mode=TwoWay}" />
                             <telerik:ContainerBinding PropertyName="IsInEditMode" Binding="{Binding edit_mode_ex, Mode=TwoWay}" />
                         </telerik:ContainerBindingCollection>
@@ -49,5 +50,6 @@
                 </telerik:HierarchicalDataTemplate>
             </telerik:RadTreeView.ItemEditTemplate>
 		</telerik:RadTreeView>
+        <telerik:RadMaskedTextBox EmptyContent="Search" Value="{Binding SearchText, Mode=TwoWay}" VerticalAlignment="Top" MaskType="None" Width="200" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, Width" Margin="8,8,0,0"/>
 	</Grid>
 </UserControl>

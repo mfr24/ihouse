@@ -63,6 +63,60 @@ namespace IHome.SLClient.InfoManagement
                 });
             }
         }
+
+        private void RecoverParent(base_datadic_tree_ex node)
+        {
+            if (node.parent_ex == null || node.parent_ex.visibility_ex == System.Windows.Visibility.Visible) return;
+            node.parent_ex.visibility_ex = System.Windows.Visibility.Visible;
+            node.parent_ex.expanded_ex = true;
+            RecoverParent(node.parent_ex);
+        }
+        private void VisibleAll(base_datadic_tree_ex node)
+        {
+            if (node.children_ex == null) return;
+            foreach (var item in node.children_ex)
+            {
+                item.visibility_ex = System.Windows.Visibility.Visible;
+                VisibleAll(item);
+            }
+        }
+        private void SearchChildren(string searchText, base_datadic_tree_ex node)
+        {
+            if (node.children_ex == null) return;
+            foreach (var item in node.children_ex)
+            {
+
+                if (item.item_name.ToLower().Contains(searchText))
+                {
+                    RecoverParent(item);
+                }
+                else
+                {
+                    item.visibility_ex = System.Windows.Visibility.Collapsed;
+                    SearchChildren(searchText, item);
+                }
+            }
+        }
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    if (string.IsNullOrWhiteSpace(_searchText)) return;
+                    
+                    VisibleAll(Dict.children_ex[0]);
+                }
+                else
+                {
+                    SearchChildren(value.ToLower(), Dict.children_ex[0]);
+                }
+                _searchText = value;
+            }
+        }
+
         public void GetRoot()
         {
             List<object> requestList = new List<object>();
