@@ -16,7 +16,7 @@ namespace IHome.SLClient.InfoManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    SelectedItem.RefreshChild();
+                    SelectedItem.Refresh();
                 });
             }
         }
@@ -58,7 +58,7 @@ namespace IHome.SLClient.InfoManagement
                     requestList,
                     (result) =>
                     {
-                        SelectedItem.parent_ex.children_ex.Remove(SelectedItem);
+                        SelectedItem.parent_ex.Refresh();
                     });
                 });
             }

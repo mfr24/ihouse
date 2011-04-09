@@ -151,6 +151,7 @@ namespace IHome.Server.Facade
         #endregion
 
         #region base_datadict
+        private readonly Activity.InfoManagementAct _infoManagementAct = new Activity.InfoManagementAct();
         public ArrayList GetRoot(string userKey, Dictionary<string, object>[] paramDicts)
         {
             Exception erro = null;
@@ -165,6 +166,25 @@ namespace IHome.Server.Facade
                                  select model;
                     data = models.First();
                 }
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
+        public ArrayList GetNode(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                var item_id = new Guid(paramDicts[0]["item_id"].ToString());
+                data=_infoManagementAct.GetModel(item_id);
             }
             catch (Exception ex)
             {

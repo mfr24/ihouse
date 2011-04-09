@@ -5,6 +5,7 @@ using System.ComponentModel;
 using ILight.Core.Model;
 using ILight.Core.Net.WebRequest;
 using Newtonsoft.Json;
+using System.Linq;
 namespace IHome.Models.Data
 {
     public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
@@ -27,6 +28,23 @@ namespace IHome.Models.Data
             if (leaf.HasValue && !leaf.Value) {
                 GetChildren();
             }
+        }
+        public void Refresh()
+        {
+            List<object> requestList = new List<object>();
+            Dictionary<string, object> requestParams = new Dictionary<string, object>();
+            requestParams["item_id"] = this.item_id;
+            requestList.Add(requestParams);
+            this.Request("IHome.Server.Facade.MainFacade.GetNode",
+            requestList,
+            (result) =>
+            {
+                var data=result.GetData<base_datadic_tree_ex>().data;
+                data.expanded_ex = !data.leaf.Value;
+                int index = parent_ex.children_ex.IndexOf(this);
+                parent_ex.children_ex.Remove(this);
+                parent_ex.children_ex.Insert(index, data);
+            });
         }
         private void GetChildren()
         {
@@ -110,7 +128,7 @@ namespace IHome.Models.Data
                     requestList,
                     (result) =>
                     {
-                        NotifyPropertyChanged("item_name");
+                        this.parent_ex.Refresh();
                     });
                 }
                 _edit_mode_ex = value;
