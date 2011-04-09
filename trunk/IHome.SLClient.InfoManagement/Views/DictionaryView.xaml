@@ -13,7 +13,7 @@
     </UserControl.Resources>
     
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
-        <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Center" Width="150" ItemsSource="{Binding Dict.children_ex, Mode=TwoWay}" 
+        <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Left" Width="300" ItemsSource="{Binding Dict.children_ex, Mode=TwoWay}" 
                              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                              IsLineEnabled="True"
                              IsEditable="True">
