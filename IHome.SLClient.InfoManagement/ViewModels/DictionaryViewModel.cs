@@ -80,20 +80,64 @@ namespace IHome.SLClient.InfoManagement
                 VisibleAll(item);
             }
         }
+
+        int _searchWait = 0;
         private void SearchChildren(string searchText, base_datadic_tree_ex node)
         {
-            if (node.children_ex == null) return;
-            foreach (var item in node.children_ex)
+            if (node.leaf.Value) return;
+            if (node.children_ex == null)
             {
+                _searchWait++;
+                node.ChildLoaded = () =>
+                    {
+                        SearchChildren(searchText, node);
+                        node.ChildLoaded = null;
+                        _searchWait--;
+                    };
+            }
+            else
+            {
+                foreach (var item in node.children_ex)
+                {
 
-                if (item.item_name.ToLower().Contains(searchText))
-                {
-                    RecoverParent(item);
+                    if (item.item_name.ToLower().Contains(searchText))
+                    {
+                        if (item.visibility_ex == System.Windows.Visibility.Collapsed) item.Refresh();
+                        RecoverParent(item);
+                    }
+                    else
+                    {
+                        item.visibility_ex = System.Windows.Visibility.Collapsed;
+                        SearchChildren(searchText, item);
+                    }
                 }
-                else
+            }
+        }
+        private void ColorChildren(string searchText,base_datadic_tree_ex node)
+        {
+            if (node.leaf.Value) return;
+            if (node.children_ex == null)
+            {
+                node.ChildLoaded = () =>
                 {
-                    item.visibility_ex = System.Windows.Visibility.Collapsed;
-                    SearchChildren(searchText, item);
+                    ColorChildren(searchText, node);
+                    node.ChildLoaded = null;
+                };
+            }
+            else
+            {
+                foreach (var item in node.children_ex)
+                {
+
+                    if (item.item_name.ToLower().Contains(searchText))
+                    {
+                        if (item.background_ex == null) item.background_ex = "Yellow";
+                    }
+                    else
+                    {
+                        item.background_ex = null;
+                    }
+                    ColorChildren(searchText, item);
                 }
             }
         }
@@ -103,6 +147,7 @@ namespace IHome.SLClient.InfoManagement
             get { return _searchText; }
             set
             {
+                string search=null;
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     if (string.IsNullOrWhiteSpace(_searchText)) return;
@@ -111,9 +156,11 @@ namespace IHome.SLClient.InfoManagement
                 }
                 else
                 {
+                    search = value.ToLower().Trim();
+                    if (SearchText == search) return;
                     SearchChildren(value.ToLower(), Dict.children_ex[0]);
                 }
-                _searchText = value;
+                _searchText = search;
             }
         }
 
