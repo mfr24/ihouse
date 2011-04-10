@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Threading;
 using ILight.Core.Model;
 using ILight.Core.Net.WebRequest;
 using Newtonsoft.Json;
@@ -25,7 +24,8 @@ namespace IHome.Models.Data
         }
         public void RefreshChild()
         {
-            if (leaf.HasValue && !leaf.Value) {
+            if (leaf.HasValue && !leaf.Value)
+            {
                 GetChildren();
             }
         }
@@ -39,7 +39,7 @@ namespace IHome.Models.Data
             requestList,
             (result) =>
             {
-                var data=result.GetData<base_datadic_tree_ex>().data;
+                var data = result.GetData<base_datadic_tree_ex>().data;
                 data.expanded_ex = !data.leaf.Value;
                 int index = parent_ex.children_ex.IndexOf(this);
                 parent_ex.children_ex.Remove(this);
@@ -58,7 +58,7 @@ namespace IHome.Models.Data
             (result) =>
             {
                 children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
-                if (ChildLoaded!=null)ChildLoaded();
+                if (ChildLoaded != null) ChildLoaded();
             });
 
         }
@@ -143,11 +143,15 @@ namespace IHome.Models.Data
         }
 
         [JsonIgnore]
-        public string image_ex { get {
-            return 
-                leaf.GetValueOrDefault()?
-                "/images/file.png" : "/images/folder.png";
-        } }
+        public string image_ex
+        {
+            get
+            {
+                return
+                    leaf.GetValueOrDefault() ?
+                    "/images/file.png" : "/images/folder.png";
+            }
+        }
 
         private string _background_ex;
 
@@ -155,9 +159,14 @@ namespace IHome.Models.Data
         [JsonIgnore]
         public string background_ex
         {
-            get { return _background_ex; }
-            set { _background_ex = value;
-            NotifyPropertyChanged("background_ex");
+            get
+            {
+                return _background_ex;
+            }
+            set
+            {
+                _background_ex = value;
+                NotifyPropertyChanged("background_ex");
             }
         }
         private System.Windows.Visibility _visibility_ex = System.Windows.Visibility.Visible;
@@ -172,13 +181,12 @@ namespace IHome.Models.Data
             }
         }
 
-        
+
 
         bool _isValidate = false;
         public base_datadic_tree_ex()
         {
             Errors = new Dictionary<string, List<string>>();
-            //_check_status_ex = false;
         }
         public bool IsValidate
         {

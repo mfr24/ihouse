@@ -151,6 +151,7 @@ namespace IHome.SLClient.InfoManagement
                     if (item.item_name.ToLower().Contains(searchText))
                     {
                         if (item.background_ex == null) item.background_ex = "Yellow";
+                        node.expanded_ex = true;
                     }
                     else
                     {
