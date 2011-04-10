@@ -77,11 +77,26 @@ namespace IHome.SLClient.InfoManagement
             foreach (var item in node.children_ex)
             {
                 item.visibility_ex = System.Windows.Visibility.Visible;
+                item.background_ex = null;
                 VisibleAll(item);
             }
         }
 
         int _searchWait = 0;
+        private Action WaitAll;
+        private int SearchWait
+        {
+            get { return _searchWait; }
+            set
+            {
+                _searchWait = value;
+                if (_searchWait == 0 && WaitAll != null)
+                {
+                    WaitAll();
+                }
+            }
+        }
+
         private void SearchChildren(string searchText, base_datadic_tree_ex node)
         {
             if (node.leaf.Value) return;
@@ -92,7 +107,11 @@ namespace IHome.SLClient.InfoManagement
                     {
                         SearchChildren(searchText, node);
                         node.ChildLoaded = null;
-                        _searchWait--;
+                        lock (this)
+                        {
+                            SearchWait--;
+                        }
+                        
                     };
             }
             else
@@ -128,7 +147,7 @@ namespace IHome.SLClient.InfoManagement
             {
                 foreach (var item in node.children_ex)
                 {
-
+                    if (item.visibility_ex == System.Windows.Visibility.Collapsed) continue;
                     if (item.item_name.ToLower().Contains(searchText))
                     {
                         if (item.background_ex == null) item.background_ex = "Yellow";
@@ -147,18 +166,27 @@ namespace IHome.SLClient.InfoManagement
             get { return _searchText; }
             set
             {
-                string search=null;
+                string search = null;
                 if (string.IsNullOrWhiteSpace(value))
                 {
                     if (string.IsNullOrWhiteSpace(_searchText)) return;
-                    
+
                     VisibleAll(Dict.children_ex[0]);
                 }
                 else
                 {
                     search = value.ToLower().Trim();
                     if (SearchText == search) return;
-                    SearchChildren(value.ToLower(), Dict.children_ex[0]);
+                    SearchChildren(search, Dict.children_ex[0]);
+                    lock (this)
+                    {
+                        if (_searchWait > 0)
+                        {
+                            WaitAll = () => { ColorChildren(search, Dict.children_ex[0]); };
+                        }
+                        else { ColorChildren(search, Dict.children_ex[0]); }
+                    }
+
                 }
                 _searchText = search;
             }
