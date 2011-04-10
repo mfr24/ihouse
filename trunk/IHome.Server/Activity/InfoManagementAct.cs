@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using IHome.Models.Data;
-using System.Dynamic;
 namespace IHome.Server.Activity
 {
     public class InfoManagementAct
@@ -14,13 +13,20 @@ namespace IHome.Server.Activity
             if (_datadictStorage.GetList(id).Count == 0) return null;
             return _datadictStorage.GetList(id)[0];
         }
-        public base_datadic_tree_ex GetDictTree()
+        public base_datadic_tree GetDictTree()
         {
-            dynamic root = new ExpandoObject();
-            
-                //_datadictStorage.GetRoot().;
-
+            var root = _datadictStorage.GetRoot();
+            FillChildren(root);
             return root;
+        }
+        public void FillChildren(base_datadic_tree node)
+        {
+            node.children_ex = _datadictStorage.GetChildren(node.item_id);
+            foreach (var item in node.children_ex)
+            {
+                if (item.leaf.Value) return;
+                FillChildren(item);
+            }
         }
     }
 }
