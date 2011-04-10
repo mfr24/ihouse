@@ -63,7 +63,24 @@ namespace IHome.SLClient.InfoManagement
                 });
             }
         }
-
+        public ICommand GetDictTree
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.GetDictTree",
+                    requestList,
+                    (result) =>
+                    {
+                        //do somethting while server return
+                    });
+                });
+            }
+        }
         private void RecoverParent(base_datadic_tree_ex node)
         {
             if (node.parent_ex == null || node.parent_ex.visibility_ex == System.Windows.Visibility.Visible) return;
