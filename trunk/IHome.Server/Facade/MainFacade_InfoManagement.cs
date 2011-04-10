@@ -317,6 +317,25 @@ namespace IHome.Server.Facade
             revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
             return revList;
         }
+
+        public ArrayList GetDictTree(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                data = _infoManagementAct.GetDictTree();
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
         #endregion
 
     }
