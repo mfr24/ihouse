@@ -52,5 +52,6 @@
             </telerik:RadTreeView.ItemEditTemplate>
 		</telerik:RadTreeView>
         <telerik:RadMaskedTextBox EmptyContent="Search" Value="{Binding SearchText, Mode=TwoWay}" VerticalAlignment="Top" MaskType="None" Width="200" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, Width" Margin="8,8,0,0"/>
+        <telerik:RadButton Content="Button" HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Command="{Binding GetDictTree}"/>
 	</Grid>
 </UserControl>

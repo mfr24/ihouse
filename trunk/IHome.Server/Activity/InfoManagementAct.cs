@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using IHome.Models.Data;
+using System.Dynamic;
 namespace IHome.Server.Activity
 {
     public class InfoManagementAct
@@ -15,7 +16,9 @@ namespace IHome.Server.Activity
         }
         public base_datadic_tree_ex GetDictTree()
         {
-            dynamic root = _datadictStorage.GetRoot();
+            dynamic root = new ExpandoObject();
+            
+                //_datadictStorage.GetRoot().;
 
             return root;
         }
