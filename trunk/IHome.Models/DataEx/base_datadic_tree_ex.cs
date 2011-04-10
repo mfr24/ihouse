@@ -57,7 +57,6 @@ namespace IHome.Models.Data
             requestList,
             (result) =>
             {
-                Thread.Sleep(500);
                 children_ex = result.GetData<ObservableCollection<base_datadic_tree_ex>>().data;
                 if (ChildLoaded!=null)ChildLoaded();
             });
