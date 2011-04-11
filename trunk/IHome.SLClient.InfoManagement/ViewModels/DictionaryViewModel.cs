@@ -77,11 +77,21 @@ namespace IHome.SLClient.InfoManagement
                     (result) =>
                     {
                         var root =result.GetData<base_datadic_tree_ex>().data;
+                        SetParentToChildren(root);
                         var children = new ObservableCollection<base_datadic_tree_ex>();
                         children.Add(root);
                         Dict.children_ex = children;
                     });
                 });
+            }
+        }
+        public void SetParentToChildren(base_datadic_tree_ex node)
+        {
+            if (node.children == null) return;
+            foreach (base_datadic_tree_ex item in node.children)
+            {
+                item.parent_ex = node;
+                SetParentToChildren(item);
             }
         }
         private void RecoverParent(base_datadic_tree_ex node)
@@ -131,7 +141,7 @@ namespace IHome.SLClient.InfoManagement
                         {
                             SearchWait--;
                         }
-                        
+
                     };
             }
             else
@@ -141,7 +151,11 @@ namespace IHome.SLClient.InfoManagement
 
                     if (item.item_name.ToLower().Contains(searchText))
                     {
-                        if (item.visibility_ex == System.Windows.Visibility.Collapsed) item.Refresh();
+                        if (item.visibility_ex == System.Windows.Visibility.Collapsed)
+                        {
+                            item.visibility_ex = System.Windows.Visibility.Visible;
+                            VisibleAll(item);
+                        }
                         RecoverParent(item);
                     }
                     else

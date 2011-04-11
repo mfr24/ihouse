@@ -100,7 +100,6 @@ namespace IHome.Models.Data
         }
         [JsonIgnore]
         public base_datadic_tree_ex parent_ex { get; set; }
-
         private bool _expanded_ex;
         [JsonIgnore]
         public bool expanded_ex
