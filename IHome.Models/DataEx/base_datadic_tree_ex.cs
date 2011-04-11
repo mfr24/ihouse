@@ -65,7 +65,6 @@ namespace IHome.Models.Data
         [JsonIgnore]
         public Action ChildLoaded;
         private ObservableCollection<base_datadic_tree_ex> _children_ex;
-        [JsonIgnore]
         public ObservableCollection<base_datadic_tree_ex> children_ex
         {
             get
@@ -79,6 +78,7 @@ namespace IHome.Models.Data
             set
             {
                 _children_ex = value;
+                if (value == null) return;
                 foreach (var item in _children_ex)
                 {
                     item.parent_ex = this;
