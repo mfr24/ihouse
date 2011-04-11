@@ -69,7 +69,7 @@ namespace IHome.SLClient.InfoManagement
                     name = "楼栋信息",
                     type_name = "IHome.SLClient.InfoManagement.BuildingView",
                     xap_name = "IHome.SLClient.InfoManagement.zip",
-                    Win = Models.CmdWin.WinType.window,
+                    Win = Models.CmdWin.WinType.modal,
                     VeiwModel = new BuildingViewModel()
                 };
         public IHome.Models.CmdWin BuildingView
