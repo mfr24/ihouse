@@ -79,7 +79,7 @@ namespace IHome.SLClient.InfoManagement
                         var root =result.GetData<base_datadic_tree_ex>().data;
                         var children = new ObservableCollection<base_datadic_tree_ex>();
                         children.Add(root);
-                        //Dict.children_ex = children;
+                        Dict.children_ex = children;
                     });
                 });
             }

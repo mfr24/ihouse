@@ -7,7 +7,7 @@ using ILight.Core.Net.WebRequest;
 using Newtonsoft.Json;
 namespace IHome.Models.Data
 {
-    public partial class base_datadic_tree_ex : base_datadic_tree, IValidateable, INotifyPropertyChanged
+    public partial class base_datadic_tree_ex: base_datadic_tree, IValidateable, INotifyPropertyChanged
     {
         public override string item_name
         {
@@ -64,26 +64,27 @@ namespace IHome.Models.Data
         }
         [JsonIgnore]
         public Action ChildLoaded;
-        private ObservableCollection<base_datadic_tree_ex> _children_ex;
+
+        [JsonIgnore]
         public ObservableCollection<base_datadic_tree_ex> children_ex
         {
             get
             {
-                if (_children_ex == null && leaf.HasValue && !leaf.Value)
+                if (children == null && leaf.HasValue && !leaf.Value)
                 {
                     GetChildren();
                 }
-                return _children_ex;
+                return children;
             }
             set
             {
-                _children_ex = value;
+                children = value;
                 if (value == null) return;
-                foreach (var item in _children_ex)
+                foreach (var item in children)
                 {
                     item.parent_ex = this;
                 }
-                _children_ex.CollectionChanged += (sender, e) =>
+                children.CollectionChanged += (sender, e) =>
                 {
                     if (e.NewItems != null && e.NewItems.Count > 0)
                     {

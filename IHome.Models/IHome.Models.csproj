@@ -83,6 +83,7 @@
     <Compile Include="Data\base_community_buildinginfo.cs" />
     <Compile Include="DataEx\base_community_buildinginfo_ex.cs" />
     <Compile Include="Data\base_datadic_tree.cs" />
+    <Compile Include="DataEx\base_datadic_tree_part.cs" />
     <Compile Include="Pager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerResult.cs" />
