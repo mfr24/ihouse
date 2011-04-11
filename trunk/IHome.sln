@@ -24,7 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IHome.Web", "IHome.Web", "{
 		VWDPort = "2928"
 		VWDVirtualPath = "/"
 		DefaultWebSiteLanguage = "Visual C#"
-		ProjOutputReferences = "{788D7CC3-88AD-4B0C-AA0A-DE2F5D1665B5}|ClientBin|false;"
+		ProjOutputReferences = "{788D7CC3-88AD-4B0C-AA0A-DE2F5D1665B5}|ClientBin|false;{48F855AB-6DB6-4902-A656-10E88644CF5D}|ClientBin|false;"
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.SLClient", "IHome.SLClient\IHome.SLClient.csproj", "{788D7CC3-88AD-4B0C-AA0A-DE2F5D1665B5}"
@@ -40,6 +40,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{1D22AF71-C5E7-47D8-B489-C49604FB99B3}"
 EndProject
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "IHome.DataFlow", "IHome.DataFlow\IHome.DataFlow\IHome.DataFlow.modelproj", "{4E85BFC9-4829-4320-8624-E0A40D4D9E32}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lab", "lab", "{F0EB040E-66C7-4CD8-8ABE-475947E39ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLLab", "SLLab\SLLab.csproj", "{48F855AB-6DB6-4902-A656-10E88644CF5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,10 @@ Global
 		{4E85BFC9-4829-4320-8624-E0A40D4D9E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E85BFC9-4829-4320-8624-E0A40D4D9E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E85BFC9-4829-4320-8624-E0A40D4D9E32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +94,6 @@ Global
 		{D292D167-A96A-4BB8-B45D-E3DD806ED6D5} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
 		{92BE0677-8FB4-4837-B246-B9B8570B1245} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
 		{788D7CC3-88AD-4B0C-AA0A-DE2F5D1665B5} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
+		{48F855AB-6DB6-4902-A656-10E88644CF5D} = {F0EB040E-66C7-4CD8-8ABE-475947E39ED2}
 	EndGlobalSection
 EndGlobal
