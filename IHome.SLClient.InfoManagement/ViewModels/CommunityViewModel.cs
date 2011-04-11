@@ -93,22 +93,7 @@ namespace IHome.SLClient.InfoManagement
                 };
             }
         }
-
-        private IHome.Models.CmdWin _BuildingView = new Models.CmdWin()
-                {
-                    name = "窗口名",
-                    type_name = "IHome.SLClient.InfoManagement.BuildingView",
-                    xap_name = "IHome.SLClient.InfoManagement.zip",
-                    Win = Models.CmdWin.WinType.modal,
-                    VeiwModel = new BuildingViewModel()
-                };
-        public IHome.Models.CmdWin BuildingView
-        {
-            get
-            {
-                return _BuildingView;
-            }
-        }
+        
         private bool _isCheckAll = false;
 
         public bool IsCheckAll
