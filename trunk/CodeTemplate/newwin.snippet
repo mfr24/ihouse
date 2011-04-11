@@ -2,8 +2,8 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>ICommand MVVM</Title>
-      <Shortcut>cmd</Shortcut>
+      <Title>NewWin</Title>
+      <Shortcut>win</Shortcut>
       <Description>
       </Description>
       <Author>Gabry.Zhong</Author>
@@ -26,22 +26,22 @@
         <Literal>
           <ID>type</ID>
           <ToolTip>type_name</ToolTip>
-          <Default>IHome.SLClient.InfoManagement.BuildingView</Default>
+          <Default>IHome.SLClient.InfoManagement</Default>
         </Literal>
         <Literal>
           <ID>xap</ID>
           <ToolTip>xap_name</ToolTip>
-          <Default>IHome.SLClient.InfoManagement.zip</Default>
+          <Default>IHome.SLClient.InfoManagement</Default>
         </Literal>
       </Declarations>
       <Code Language="csharp">
         <![CDATA[private IHome.Models.CmdWin _$mywin$View = new Models.CmdWin()
                 {
                     name = "$title$",
-                    type_name = "$type$",
-                    xap_name = "$xap$",
+                    type_name = "$xap$.$mywin$View",
+                    xap_name = "$xap$.zip",
                     Win = Models.CmdWin.WinType.modal,
-                    VeiwModel = new BuildingViewModel()
+                    VeiwModel = new $mywin$ViewModel()
                 };
         public IHome.Models.CmdWin $mywin$View
         {
