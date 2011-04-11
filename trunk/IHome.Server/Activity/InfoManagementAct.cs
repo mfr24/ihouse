@@ -21,8 +21,8 @@ namespace IHome.Server.Activity
         }
         public void FillChildren(base_datadic_tree node)
         {
-            node.children_ex = _datadictStorage.GetChildren(node.item_id);
-            foreach (var item in node.children_ex)
+            node.children = _datadictStorage.GetChildren(node.item_id);
+            foreach (var item in node.children)
             {
                 if (item.leaf.Value) return;
                 FillChildren(item);
