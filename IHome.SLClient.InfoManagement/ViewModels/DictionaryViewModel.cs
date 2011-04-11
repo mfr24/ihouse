@@ -8,8 +8,8 @@ using IHome.Models.Data;
 using ILight.Core.Net.WebRequest;
 namespace IHome.SLClient.InfoManagement
 {
-	public class DictionaryViewModel : INotifyPropertyChanged
-	{
+    public class DictionaryViewModel : INotifyPropertyChanged
+    {
         public ICommand RefreshChild
         {
             get
@@ -74,7 +74,7 @@ namespace IHome.SLClient.InfoManagement
                     requestList,
                     (result) =>
                     {
-                        var root =result.GetData<base_datadic_tree_ex>().data;
+                        var root = result.GetData<base_datadic_tree_ex>().data;
                         root.expanded_ex = true;
                         SetParentToChildren(root);
                         var children = new ObservableCollection<base_datadic_tree_ex>();
@@ -165,7 +165,7 @@ namespace IHome.SLClient.InfoManagement
                 }
             }
         }
-        private void ColorChildren(string searchText,base_datadic_tree_ex node)
+        private void ColorChildren(string searchText, base_datadic_tree_ex node)
         {
             if (node.leaf.Value) return;
             if (node.children_ex == null)
@@ -239,35 +239,49 @@ namespace IHome.SLClient.InfoManagement
                 if (!Dict.children_ex[0].leaf.Value) { Dict.children_ex[0].expanded_ex = true; }
             });
         }
-		public DictionaryViewModel()
-		{
-            Dict = new base_datadic_tree_ex() { children_ex=new System.Collections.ObjectModel.ObservableCollection<base_datadic_tree_ex>()};
+        public DictionaryViewModel()
+        {
+            Dict = new base_datadic_tree_ex() { children_ex = new System.Collections.ObjectModel.ObservableCollection<base_datadic_tree_ex>() };
             if (!((AppViewModel)System.Windows.Application.Current.Resources["AppDataSource"]).IsInDesignMode)
             {
                 GetRoot();
             }
-                
 
-		}
+
+        }
         private base_datadic_tree_ex _dict;
 
         public base_datadic_tree_ex Dict
         {
             get { return _dict; }
-            set { _dict = value;
+            set
+            {
+                _dict = value;
             }
         }
-        public base_datadic_tree_ex SelectedItem { get; set; }
-		#region INotifyPropertyChanged
-		public event PropertyChangedEventHandler PropertyChanged;
+        private base_datadic_tree_ex _selectedItem;
 
-		private void NotifyPropertyChanged(String info)
-		{
-			if (PropertyChanged != null)
-			{
-				PropertyChanged(this, new PropertyChangedEventArgs(info));
-			}
-		}
-		#endregion
-	}
+        public base_datadic_tree_ex SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                _selectedItem = value;
+                NotifyPropertyChanged("SelectedItem");
+            }
+        }
+
+        public base_datadic_tree_ex GridSelected { get; set; }
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void NotifyPropertyChanged(String info)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(info));
+            }
+        }
+        #endregion
+    }
 }

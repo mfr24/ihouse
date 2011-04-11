@@ -13,10 +13,14 @@
     </UserControl.Resources>
     
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DictionaryViewModelDataSource}}">
-        <telerik:RadTreeView x:Name="tree" HorizontalAlignment="Left" Width="300" ItemsSource="{Binding Dict.children_ex, Mode=TwoWay}" 
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="248"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+        <telerik:RadTreeView x:Name="tree" ItemsSource="{Binding Dict.children_ex, Mode=TwoWay}" 
                              SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                              IsLineEnabled="True"
-                             IsEditable="True" Margin="8,34,0,78">
+                             IsEditable="True" Margin="8,34,8,8">
 			<telerik:RadContextMenu.ContextMenu>
                 <telerik:RadContextMenu Opened="RadContextMenu_Opened">
                     <telerik:RadMenuItem Header="添加" Command="{Binding AddChild}"/>
@@ -51,7 +55,33 @@
                 </telerik:HierarchicalDataTemplate>
             </telerik:RadTreeView.ItemEditTemplate>
 		</telerik:RadTreeView>
-        <telerik:RadMaskedTextBox EmptyContent="Search" Value="{Binding SearchText, Mode=TwoWay}" VerticalAlignment="Top" MaskType="None" Width="200" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, Width" Margin="8,8,0,0"/>
+        <telerik:RadMaskedTextBox EmptyContent="Search" Value="{Binding SearchText, Mode=TwoWay}" VerticalAlignment="Top" MaskType="None" Width="200" HorizontalAlignment="Left" d:LayoutOverrides="Width" Margin="8,8,0,0"/>
         <telerik:RadButton Content="Button" HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Command="{Binding GetDictTree}"/>
+        <telerik:RadGridView ShowGroupPanel="False" Margin="8,8,8,0"
+                             AutoGenerateColumns="False" 
+                             CanUserFreezeColumns="False" 
+							 CanUserResizeColumns="False" Height="464" VerticalAlignment="Top"
+                             ItemsSource="{Binding SelectedItem.children_ex, Mode=TwoWay}" 
+                             SelectedItem="{Binding GridSelected, Mode=TwoWay}" Grid.Column="1"
+                             >
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn IsReadOnly="True">
+                    <telerik:GridViewDataColumn.Header>
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding IsCheckAll, Mode=TwoWay, Source={StaticResource DictionaryViewModelDataSource}}" />
+                    </telerik:GridViewDataColumn.Header>
+                    <telerik:GridViewDataColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding check_status_ex, Mode=TwoWay}"/>
+                        </DataTemplate>
+                    </telerik:GridViewDataColumn.CellTemplate>
+                </telerik:GridViewDataColumn>
+                <telerik:GridViewDataColumn Header="标识名" DataMemberBinding="{Binding parent_ex.item_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="表示值" DataMemberBinding="{Binding item_key}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="值" DataMemberBinding="{Binding item_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="排序" DataMemberBinding="{Binding item_key}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="城市" DataMemberBinding="{Binding block}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="公司" DataMemberBinding="{Binding address}" IsReadOnly="True" />
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
 	</Grid>
 </UserControl>
