@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
 
 namespace SLLab
 {
@@ -18,5 +19,28 @@ namespace SLLab
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            JsonTest();
+        }
+        #region 试验方法
+        /// <summary>
+        /// 反序列化Json反序列化时,如果属性为List类型,会首先调用此属性的get方法;
+        /// </summary>
+        private void JsonTest()
+        {
+
+            SampleClass sample = new SampleClass();
+            sample.IntPro = 1;
+            sample.StringPro = "String";
+            sample.ListPro = new List<string>();
+
+            string json = JsonConvert.SerializeObject(sample);
+
+            var samlpe2 = JsonConvert.DeserializeObject<SampleClass>(json);
+        }
+        #endregion
+        
     }
 }
