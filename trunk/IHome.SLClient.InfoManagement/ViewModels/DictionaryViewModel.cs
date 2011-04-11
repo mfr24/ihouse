@@ -70,13 +70,12 @@ namespace IHome.SLClient.InfoManagement
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     List<object> requestList = new List<object>();
-                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestList.Add(requestParams);
                     this.Request("IHome.Server.Facade.MainFacade.GetDictTree",
                     requestList,
                     (result) =>
                     {
                         var root =result.GetData<base_datadic_tree_ex>().data;
+                        root.expanded_ex = true;
                         SetParentToChildren(root);
                         var children = new ObservableCollection<base_datadic_tree_ex>();
                         children.Add(root);
