@@ -63,6 +63,7 @@ namespace IHome.SLClient.InfoManagement
                 });
             }
         }
+
         public ICommand GetDictTree
         {
             get
@@ -93,6 +94,8 @@ namespace IHome.SLClient.InfoManagement
                 SetParentToChildren(item);
             }
         }
+
+        #region Search
         private void RecoverParent(base_datadic_tree_ex node)
         {
             if (node.parent_ex == null || node.parent_ex.visibility_ex == System.Windows.Visibility.Visible) return;
@@ -110,7 +113,6 @@ namespace IHome.SLClient.InfoManagement
                 VisibleAll(item);
             }
         }
-
         int _searchWait = 0;
         private Action WaitAll;
         private int SearchWait
@@ -125,7 +127,6 @@ namespace IHome.SLClient.InfoManagement
                 }
             }
         }
-
         private void SearchChildren(string searchText, base_datadic_tree_ex node)
         {
             if (node.leaf.Value) return;
@@ -133,15 +134,15 @@ namespace IHome.SLClient.InfoManagement
             {
                 _searchWait++;
                 node.ChildLoaded = () =>
+                {
+                    SearchChildren(searchText, node);
+                    node.ChildLoaded = null;
+                    lock (this)
                     {
-                        SearchChildren(searchText, node);
-                        node.ChildLoaded = null;
-                        lock (this)
-                        {
-                            SearchWait--;
-                        }
+                        SearchWait--;
+                    }
 
-                    };
+                };
             }
             else
             {
@@ -225,6 +226,8 @@ namespace IHome.SLClient.InfoManagement
                 _searchText = search;
             }
         }
+        #endregion
+       
 
         public void GetRoot()
         {
@@ -249,8 +252,8 @@ namespace IHome.SLClient.InfoManagement
 
 
         }
-        private base_datadic_tree_ex _dict;
 
+        private base_datadic_tree_ex _dict;
         public base_datadic_tree_ex Dict
         {
             get { return _dict; }
