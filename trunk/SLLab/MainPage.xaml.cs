@@ -48,12 +48,14 @@ namespace SLLab
         }
 
         private void ResetModel(){
-            _vm.Sample = new SampleClass() { StringPro = "ResetModel" };
+            _vm.Sample = new SampleClass() { StringPro = "ResetModel",IntPro=1 };
         }
         private void ResetModelPro()
         {
             _vm.Sample.StringPro = "ResetModelPro";
+            _vm.Sample.IntPro = 2;
             _vm.NotifyPropertyChanged("StringPro_ui");
+            _vm.NotifyPropertyChanged("IntPro_ui");
         }
         #endregion
         
