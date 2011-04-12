@@ -127,18 +127,6 @@ namespace IHome.SLClient.InfoManagement
             }
         }
 
-        private bool _isBusy;
-
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                _isBusy = value;
-                NotifyPropertyChanged("IsBusy");
-            }
-        }
-
 
         public ObservableCollection<Models.Data.base_community_baseinfo_ex> CommunityList
         {
