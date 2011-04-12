@@ -10,7 +10,9 @@
         <local:MainPageViewModel x:Key="MainPageViewModelDataSource" />
     </UserControl.Resources>
     <Grid x:Name="LayoutRoot" Background="White" DataContext="{StaticResource MainPageViewModelDataSource}">
-        <Button Content="测试" Click="Button_Click" Margin="12,12,297,254"></Button>
-        <TextBox Text="{Binding StringPro_ui}" Height="23" HorizontalAlignment="Left" Margin="12,52,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
+        <Button Content="变更实体" Click="Button_Click" Margin="132,8,0,0" d:LayoutOverrides="HorizontalAlignment" HorizontalAlignment="Left" Width="91" Height="23" VerticalAlignment="Top"></Button>
+        <TextBox Text="{Binding Sample.StringPro}" Height="23" HorizontalAlignment="Left" Margin="8,8,0,0" VerticalAlignment="Top" Width="120" />
+        <Button Content="变更属性" Click="Button_Click2" Margin="132,38,0,0" d:LayoutOverrides="HorizontalAlignment" HorizontalAlignment="Left" Width="91" Height="23" VerticalAlignment="Top" />
+        <TextBox Text="{Binding StringPro_ui}" Height="23" HorizontalAlignment="Left" Margin="8,38,0,0" VerticalAlignment="Top" Width="120" />
     </Grid>
 </UserControl>

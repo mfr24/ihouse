@@ -24,6 +24,10 @@ namespace SLLab
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            ResetModel();
+        }
+        private void Button_Click2(object sender, RoutedEventArgs e)
+        {
             ResetModelPro();
         }
         #region 试验方法
