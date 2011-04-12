@@ -57,10 +57,10 @@
 		</telerik:RadTreeView>
         <telerik:RadMaskedTextBox EmptyContent="Search" Value="{Binding SearchText, Mode=TwoWay}" VerticalAlignment="Top" MaskType="None" Width="200" HorizontalAlignment="Left" d:LayoutOverrides="Width" Margin="8,8,0,0"/>
         <telerik:RadButton Content="Button" HorizontalAlignment="Left" Margin="8,0,0,8" VerticalAlignment="Bottom" Command="{Binding GetDictTree}"/>
-        <telerik:RadGridView ShowGroupPanel="False" Margin="8,8,8,0"
+        <telerik:RadGridView ShowGroupPanel="False" Margin="8,34,8,0"
                              AutoGenerateColumns="False" 
                              CanUserFreezeColumns="False" 
-							 CanUserResizeColumns="False" Height="464" VerticalAlignment="Top"
+							 CanUserResizeColumns="False" Height="438" VerticalAlignment="Top"
                              ItemsSource="{Binding SelectedItem.children_ex, Mode=TwoWay}" 
                              SelectedItem="{Binding GridSelected, Mode=TwoWay}" Grid.Column="1"
                              >
@@ -83,5 +83,8 @@
                 <telerik:GridViewDataColumn Header="公司" DataMemberBinding="{Binding address}" IsReadOnly="True" />
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
+        <telerik:RadButton Content="添加" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="8,8,0,0"/>
+        <telerik:RadButton Content="修改" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="40,8,0,0"/>
+        <telerik:RadButton Content="删除" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="72,8,0,0"/>
 	</Grid>
 </UserControl>
