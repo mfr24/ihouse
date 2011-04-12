@@ -3,10 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:SLLab"
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
-
-    <Grid x:Name="LayoutRoot" Background="White">
-        <Button Content="测试" Click="Button_Click"></Button>
+    <UserControl.Resources>
+        <local:MainPageViewModel x:Key="MainPageViewModelDataSource" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{StaticResource MainPageViewModelDataSource}">
+        <Button Content="测试" Click="Button_Click" Margin="12,12,297,254"></Button>
+        <TextBox Text="{Binding StringPro_ui}" Height="23" HorizontalAlignment="Left" Margin="12,52,0,0" Name="textBox1" VerticalAlignment="Top" Width="120" />
     </Grid>
 </UserControl>

@@ -15,14 +15,16 @@ namespace SLLab
 {
     public partial class MainPage : UserControl
     {
+        private MainPageViewModel _vm;
         public MainPage()
         {
             InitializeComponent();
+            _vm = this.Resources["MainPageViewModelDataSource"] as MainPageViewModel;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            JsonTest();
+            ResetModelPro();
         }
         #region 试验方法
         /// <summary>
@@ -39,6 +41,15 @@ namespace SLLab
             string json = JsonConvert.SerializeObject(sample);
 
             var samlpe2 = JsonConvert.DeserializeObject<SampleClass>(json);
+        }
+
+        private void ResetModel(){
+            _vm.Sample = new SampleClass() { StringPro = "ResetModel" };
+        }
+        private void ResetModelPro()
+        {
+            _vm.Sample.StringPro = "ResetModelPro";
+            _vm.NotifyPropertyChanged("StringPro_ui");
         }
         #endregion
         
