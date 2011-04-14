@@ -8,7 +8,7 @@ using IHome.Models.Data;
 using System.Windows.Input;
 using IHome.Models;
 using ILight.Core.Net.WebRequest;
-namespace IHome.UserManagement
+namespace IHome.SLClient.UserManagement
 {
     public class UserViewModel : INotifyPropertyChanged
     {
