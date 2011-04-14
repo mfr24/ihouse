@@ -189,6 +189,24 @@ namespace IHome.Models.Data
             get;
             set;
         }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual System.DateTimeOffset ts
+        {
+            get;
+            set;
+        }
+    
+    	/// <summary>
+    	///undefine	
+    	/// </summary>
+        public virtual bool dr
+        {
+            get;
+            set;
+        }
 
         #endregion
     }

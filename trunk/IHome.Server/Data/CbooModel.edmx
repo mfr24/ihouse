@@ -415,6 +415,8 @@
           <Property Name="reg_time" Type="timestamp" Nullable="false" Precision="0" />
           <Property Name="update_time" Type="timestamp" Nullable="false" Precision="0" />
           <Property Name="last_login_time" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="ts" Type="timestamp" Nullable="false" Precision="0" />
+          <Property Name="dr" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_user_community_config">
           <Key>
@@ -906,6 +908,8 @@
           <Property Type="DateTimeOffset" Name="reg_time" Nullable="false" />
           <Property Type="DateTimeOffset" Name="update_time" Nullable="false" />
           <Property Type="DateTimeOffset" Name="last_login_time" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="ts" Nullable="false" />
+          <Property Type="Boolean" Name="dr" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_user_community_config">
           <Key>
@@ -1355,6 +1359,8 @@
           <EntitySetMapping Name="sys_user_baseinfo">
             <EntityTypeMapping TypeName="IHome.Models.Data.sys_user_baseinfo">
               <MappingFragment StoreEntitySet="sys_user_baseinfo">
+                <ScalarProperty Name="dr" ColumnName="dr" />
+                <ScalarProperty Name="ts" ColumnName="ts" />
                 <ScalarProperty Name="last_login_time" ColumnName="last_login_time" />
                 <ScalarProperty Name="update_time" ColumnName="update_time" />
                 <ScalarProperty Name="reg_time" ColumnName="reg_time" />
@@ -1487,7 +1493,7 @@
         <EntityTypeShape EntityType="IHome.Models.Data.house_traceinfo" Width="1.5" PointX="12.75" PointY="8.75" Height="2.3520719401041674" />
         <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_baseinfo" Width="1.5" PointX="8.75" PointY="12.75" Height="2.7341113281249818" />
         <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_subinfo" Width="1.5" PointX="10.75" PointY="12.75" Height="1.9700325520833246" />
-        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_baseinfo" Width="1.5" PointX="12.75" PointY="12.75" Height="4.6443082682291674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_baseinfo" Width="1.5" PointX="12.75" PointY="12.75" Height="5.0263476562499818" />
         <EntityTypeShape EntityType="IHome.Models.Data.sys_user_community_config" Width="1.5" PointX="14.75" PointY="0.75" Height="1.5879931640624818" />
         <EntityTypeShape EntityType="IHome.Models.Data.sys_user_region_config" Width="1.5" PointX="14.75" PointY="3.75" Height="1.7790128580729174" />
         <EntityTypeShape EntityType="IHome.Models.Data.sys_user_relationinfo" Width="1.5" PointX="14.75" PointY="6.75" Height="1.5879931640624818" />
