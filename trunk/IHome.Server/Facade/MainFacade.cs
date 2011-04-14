@@ -10,6 +10,24 @@ namespace IHome.Server.Facade
     /// </summary>
     public partial class MainFacade
     {
+        private ArrayList Excute(Action<object> act)
+        {
+            Exception erro = null;
+            object data = null;
+            string message = null;
+            try
+            {
+                if(act!=null)act(data);
+            }
+            catch (Exception ex)
+            {
+                erro = ex;
+                message = ex.Message;
+            }
+            ArrayList revList = new ArrayList();
+            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
+            return revList;
+        }
         public MainFacade()
         {
         }
