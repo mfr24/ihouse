@@ -68,5 +68,6 @@
         <telerik:RadButton Content="添加员工" HorizontalAlignment="Left" VerticalAlignment="Top"/>
         <telerik:RadButton Content="修改信息" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,0,0,0"/>
         <telerik:RadButton Content="删除员工" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,-1,0,0"/>
+        <local:UserDetailView Margin="0,32,-582,0" HorizontalAlignment="Right" d:LayoutOverrides="Height"/>
     </Grid>
 </UserControl>
