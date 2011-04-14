@@ -45,7 +45,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lab", "lab", "{F0EB040E-66C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLLab", "SLLab\SLLab.csproj", "{48F855AB-6DB6-4902-A656-10E88644CF5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.UserManagement", "IHome.UserManagement\IHome.UserManagement.csproj", "{776BCF25-414D-47B8-8FFA-4FB1B530895E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.SLClient.UserManagement", "IHome.UserManagement\IHome.SLClient.UserManagement.csproj", "{776BCF25-414D-47B8-8FFA-4FB1B530895E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
