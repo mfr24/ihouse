@@ -22,9 +22,14 @@ namespace IHome.SLClient.UserManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
+                    
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+
+                    requestParams["Pager`1"] = DataPager;
+                    List<object> requestList = new List<object>() { requestParams };
 
                     this.Request("IHome.Server.Facade.MainFacade.GetUserList",
-                    new List<object>() { new Dictionary<string, object>()},
+                    requestList,
                     (result) =>
                     {
                         var model = result.GetData<Pager<sys_user_baseinfo_ex>>().data;
