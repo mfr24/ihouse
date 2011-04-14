@@ -29,7 +29,7 @@
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
-                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource BuildingViewModelDataSource}}" />
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource UserViewModelDataSource}}" />
                     </telerik:GridViewDataColumn.Header>
                     <telerik:GridViewDataColumn.CellTemplate>
                         <DataTemplate>

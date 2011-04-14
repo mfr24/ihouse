@@ -41,7 +41,7 @@ namespace IHome.Server.Facade
             return sb.ToString();
         }
 
-        public static Models.Pager<T> Page<T>(this IQueryable<T> query, Models.Pager<T> pager)
+        public static Models.Pager<TEntity> Page<TEntity>(this IQueryable<TEntity> query, Models.Pager<TEntity> pager) where TEntity : class
         {
             pager.data_list = query.Skip((pager.page_index) * pager.page_size).Take(pager.page_size).ToList();
             pager.total = query.Count();
