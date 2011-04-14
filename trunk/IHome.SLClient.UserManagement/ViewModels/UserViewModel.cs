@@ -40,6 +40,25 @@ namespace IHome.SLClient.UserManagement
                 });
             }
         }
+        public ICommand AddUser
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["user"] = NewUser;
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.AddUser",
+                    requestList,
+                    (result) =>
+                    {
+                        //do somethting while server return
+                    });
+                });
+            }
+        }
         public ObservableCollection<sys_user_baseinfo_ex> UserList { get; set; }
         private Models.Pager<sys_user_baseinfo_ex> _dataPager = new Models.Pager<sys_user_baseinfo_ex>() { page_index = 0, page_size = 5, total = 20 };
         public Models.Pager<sys_user_baseinfo_ex> DataPager
@@ -48,6 +67,7 @@ namespace IHome.SLClient.UserManagement
             set { _dataPager = value; }
         }
         public sys_user_baseinfo_ex SelectedUser { get; set; }
+        public sys_user_baseinfo_ex NewUser { get; set; }
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
 
