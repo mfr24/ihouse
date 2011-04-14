@@ -10,14 +10,14 @@ namespace IHome.Server.Facade
     /// </summary>
     public partial class MainFacade
     {
-        private ArrayList Excute(Action<object> act)
+        private ArrayList Excute(Func<object> act)
         {
             Exception erro = null;
             object data = null;
             string message = null;
             try
             {
-                if(act!=null)act(data);
+                if(act!=null) data=act();
             }
             catch (Exception ex)
             {

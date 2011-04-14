@@ -24,10 +24,10 @@ namespace IHome.Server.Facade
         /// <returns></returns>
         public ArrayList UpdateUser(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            return Excute(data =>
+            return Excute(() =>
             {
                 Models.Data.sys_user_baseinfo model = paramDicts[0]["user"].ToString().JsonToModel<Models.Data.sys_user_baseinfo>();
-                data = Entity.UpdateModel(model);
+                return Entity.UpdateModel(model);
             });
         }
 
@@ -39,10 +39,10 @@ namespace IHome.Server.Facade
         /// <returns></returns>
         public ArrayList AddUser(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            return Excute(data => {
+            return Excute(() => {
                 Models.Data.sys_user_baseinfo model = paramDicts[0]["user"].ToString().JsonToModel<Models.Data.sys_user_baseinfo>();
                 model.user_id = Guid.NewGuid();
-                data = Entity.AddModel(model);
+                return Entity.AddModel(model);
             });
         }
 
@@ -55,10 +55,10 @@ namespace IHome.Server.Facade
         /// <returns></returns>
         public ArrayList DeleteUser(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            return Excute(data =>
+            return Excute(() =>
             {
                 string user_id = paramDicts[0]["user_id"].ToString();
-                data = Entity.DeleteModel<sys_user_baseinfo>(user_id);
+                return Entity.DeleteModel<sys_user_baseinfo>(user_id);
             });
         }
 
@@ -71,13 +71,13 @@ namespace IHome.Server.Facade
         /// <returns></returns>
         public ArrayList GetUserList(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            return Excute(data =>
+            return Excute(() =>
             {
                 Models.Pager<sys_user_baseinfo> pager = null;
                 if (paramDicts[0].ContainsKey("Pager`1")) pager = paramDicts[0].As<Models.Pager<sys_user_baseinfo>>();
-                data = Entity.GetModelList<sys_user_baseinfo, object>(
+                return Entity.GetModelList<sys_user_baseinfo, object>(
                     null,//model => model.user_name == "aaa",
-                    model => model.user_name, 
+                    model => model.user_name,
                     pager);
             });
         }

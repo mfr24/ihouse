@@ -26,10 +26,10 @@ namespace IHome.Server.Facade
         {
             using (var context = new Data.CbooEntities())
             {
-                var models = from model in context.CreateObjectSet<TEntity>()
-                             select model;
-                if (where != null) models.Where(where);
-                if (orderby != null) models.OrderBy(orderby);
+                IEnumerable<TEntity> models = (from model in context.CreateObjectSet<TEntity>()
+                             select model);
+                if (where != null) models=models.Where(where);
+                if (orderby != null) models=models.OrderBy(orderby);
                 if(pager!=null) return models.Page(pager);
                 return models.ToList();
             }
