@@ -72,27 +72,6 @@ namespace IHome.Server.Facade
             revList.Add(new Models.ServerResult() { succeed = true, data = null, message = "message f!!!!!!" });
             return revList;
         }
-
-        public ArrayList GetUserList(string userKey, Dictionary<string, object>[] paramDicts)
-        {
-            using (var context = new Data.CbooEntities())
-            {
-
-                var users = from user in context.sys_user_baseinfo
-
-                            where user.city_name == "北京"
-
-                            select user;
-                ArrayList revList = new ArrayList();
-                {
-                    //check user
-                }
-                revList.Add(new Models.ServerResult() { succeed = true, data = users.ToList<Models.Data.sys_user_baseinfo>(), message = "message f!!!!!!" });
-                return revList;
-
-            }
-
-        }
         public ArrayList GetCommunityList(string userKey, Dictionary<string, object>[] paramDicts)
         {
             Exception erro = null;
