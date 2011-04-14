@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-namespace IHome.Server
+namespace IHome.Server.Facade
 {
     public class table_info {
         public string key { get; set; }
@@ -23,7 +22,7 @@ namespace IHome.Server
             }
             return EntityKey[tableName];
         }
-        public static IQueryable<TEntity> GetModelList<TEntity, TKey>(Func<TEntity, bool> where, Func<TEntity, TKey> orderby) where TEntity : class
+        public static object GetModelList<TEntity, TKey>(Func<TEntity, bool> where, Func<TEntity, TKey> orderby, Models.Pager<TEntity> pager) where TEntity : class
         {
             using (var context = new Data.CbooEntities())
             {
@@ -31,7 +30,8 @@ namespace IHome.Server
                              select model;
                 if (where != null) models.Where(where);
                 if (orderby != null) models.OrderBy(orderby);
-                return models;
+                if(pager!=null) return models.Page(pager);
+                return models.ToList();
             }
         }
         public static int AddModel<TEntity>(TEntity model) where TEntity : class

@@ -24,7 +24,7 @@ namespace IHome.SLClient.UserManagement
                 {
 
                     this.Request("IHome.Server.Facade.MainFacade.GetUserList",
-                    null,
+                    new List<object>() { new Dictionary<string, object>()},
                     (result) =>
                     {
                         var model = result.GetData<Pager<sys_user_baseinfo_ex>>().data;

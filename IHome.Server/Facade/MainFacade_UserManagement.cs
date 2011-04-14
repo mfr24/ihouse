@@ -71,30 +71,15 @@ namespace IHome.Server.Facade
         /// <returns></returns>
         public ArrayList GetUserList(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            Exception erro = null;
-            object data = null;
-            string message = null;
-            Models.Pager<sys_user_baseinfo> pager=null;
-            if (paramDicts[0].ContainsKey("Pager`1"))
-                pager = paramDicts[0].As<Models.Pager<sys_user_baseinfo>>();
-            try
+            return Excute(data =>
             {
-                var models = Entity.GetModelList<sys_user_baseinfo, object>(
-                    //model => model.user_name == "aaa",
-                    null,
-                    model => model.user_name
-                    );
-                    if (pager == null) data = models.ToList();
-                    else data = models.Page(pager);
-            }
-            catch (Exception ex)
-            {
-                erro = ex;
-                message = ex.Message;
-            }
-            ArrayList revList = new ArrayList();
-            revList.Add(new Models.ServerResult() { succeed = erro == null, data =data, message = message });
-            return revList;
+                Models.Pager<sys_user_baseinfo> pager = null;
+                if (paramDicts[0].ContainsKey("Pager`1")) pager = paramDicts[0].As<Models.Pager<sys_user_baseinfo>>();
+                data = Entity.GetModelList<sys_user_baseinfo, object>(
+                    null,//model => model.user_name == "aaa",
+                    model => model.user_name, 
+                    pager);
+            });
         }
 
         /// <summary>
