@@ -5,8 +5,24 @@ using System.Text;
 
 namespace IHome.Server
 {
+    public class table_info {
+        public string key { get; set; }
+    }
     public static class Entity
     {
+        private static Dictionary<string, string> EntityKey = new Dictionary<string, string>();
+        private static string GetKey(string tableName)
+        {
+            if (!EntityKey.ContainsKey(tableName))
+            {
+                using (var context = new Data.CbooEntities())
+                {
+                    var table = context.ExecuteStoreQuery<table_info>("desc " + tableName);
+                    EntityKey[tableName] = table.Where(t => t.key == "PRI").First().key;
+                }
+            }
+            return EntityKey[tableName];
+        }
         public static IQueryable<TEntity> GetModelList<TEntity, TKey>(Func<TEntity, bool> where, Func<TEntity, TKey> orderby) where TEntity : class
         {
             using (var context = new Data.CbooEntities())
@@ -32,6 +48,22 @@ namespace IHome.Server
             {
                 context.CreateObjectSet<TEntity>().Attach(model);
                 context.ObjectStateManager.ChangeObjectState(model, System.Data.EntityState.Modified);
+                return context.SaveChanges();
+            }
+        }
+        public static string _deleteModel = "update {0} set dr=1 where {1}='{2}'";
+        /// <summary>
+        /// update TEntity set dr=1 where Primarykey = id
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="id">Primary key</param>
+        /// <returns></returns>
+        public static int DeleteModel<TEntity>(string id) where TEntity : class
+        {
+            string tableName=typeof(TEntity).Name;
+            using (var context = new Data.CbooEntities())
+            {
+                context.ExecuteStoreCommand(string.Format(_deleteModel, tableName, GetKey(tableName), id));
                 return context.SaveChanges();
             }
         }

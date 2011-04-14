@@ -17,34 +17,22 @@ namespace IHome.Server.Facade
         readonly static string _deleteUserList = "update base_community_buildinginfo set status=-1 where building_id in ('{0}')";
 
         /// <summary>
-        /// update building info
+        /// update user info
         /// </summary>
         /// <param name="userKey"></param>
         /// <param name="paramDicts"></param>
         /// <returns></returns>
         public ArrayList UpdateUser(string userKey, Dictionary<string, object>[] paramDicts)
         {
-            Exception erro = null;
-            object data = null;
-            string message = null;
-            try
+            return Excute(data =>
             {
-                Models.Data.sys_user_baseinfo model = paramDicts[0]["building"].ToString().JsonToModel<Models.Data.base_community_buildinginfo>();
-
+                Models.Data.sys_user_baseinfo model = paramDicts[0]["user"].ToString().JsonToModel<Models.Data.sys_user_baseinfo>();
                 data = Entity.UpdateModel(model);
-            }
-            catch (Exception ex)
-            {
-                erro = ex;
-                message = ex.Message;
-            }
-            ArrayList revList = new ArrayList();
-            revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
-            return revList;
+            });
         }
 
         /// <summary>
-        /// add building info
+        /// add user info
         /// </summary>
         /// <param name="userKey"></param>
         /// <param name="paramDicts"></param>
@@ -58,8 +46,25 @@ namespace IHome.Server.Facade
             });
         }
 
+
         /// <summary>
-        /// get building info as List<base_community_buildinginfo>
+        /// add user info
+        /// </summary>
+        /// <param name="userKey"></param>
+        /// <param name="paramDicts"></param>
+        /// <returns></returns>
+        public ArrayList DeleteUser(string userKey, Dictionary<string, object>[] paramDicts)
+        {
+            return Excute(data =>
+            {
+                string user_id = paramDicts[0]["user_id"].ToString();
+                data = Entity.DeleteModel<sys_user_baseinfo>(user_id);
+            });
+        }
+
+
+        /// <summary>
+        /// get user info as List<base_community_buildinginfo>
         /// </summary>
         /// <param name="userKey"></param>
         /// <param name="paramDicts"></param>
