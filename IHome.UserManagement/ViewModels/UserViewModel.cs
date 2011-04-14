@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using IHome.Models.Data;
 using System.Windows.Input;
+using IHome.Models;
 using ILight.Core.Net.WebRequest;
 namespace IHome.UserManagement
 {
@@ -26,12 +27,22 @@ namespace IHome.UserManagement
                     null,
                     (result) =>
                     {
-                        //do somethting while server return
+                        var model = result.GetData<Pager<sys_user_baseinfo_ex>>().data;
+                        DataPager.total = model.total;
+                        UserList = model.data_list;
+                        NotifyPropertyChanged("UserList");
                     });
                 });
             }
         }
         public ObservableCollection<sys_user_baseinfo_ex> UserList { get; set; }
+        private Models.Pager<sys_user_baseinfo_ex> _dataPager = new Models.Pager<sys_user_baseinfo_ex>() { page_index = 0, page_size = 5, total = 20 };
+
+        public Models.Pager<sys_user_baseinfo_ex> DataPager
+        {
+            get { return _dataPager; }
+            set { _dataPager = value; }
+        }
         public sys_user_baseinfo_ex SelectedUser { get; set; }
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
