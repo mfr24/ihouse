@@ -187,6 +187,10 @@
       <Project>{92BE0677-8FB4-4837-B246-B9B8570B1245}</Project>
       <Name>IHome.SLClient.InfoManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IHome.UserManagement\IHome.UserManagement.csproj">
+      <Project>{776BCF25-414D-47B8-8FFA-4FB1B530895E}</Project>
+      <Name>IHome.UserManagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />

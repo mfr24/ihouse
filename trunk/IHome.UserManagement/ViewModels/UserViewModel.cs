@@ -37,7 +37,6 @@ namespace IHome.UserManagement
         }
         public ObservableCollection<sys_user_baseinfo_ex> UserList { get; set; }
         private Models.Pager<sys_user_baseinfo_ex> _dataPager = new Models.Pager<sys_user_baseinfo_ex>() { page_index = 0, page_size = 5, total = 20 };
-
         public Models.Pager<sys_user_baseinfo_ex> DataPager
         {
             get { return _dataPager; }
