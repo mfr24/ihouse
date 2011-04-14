@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity\InfoManagementAct.cs" />
+    <Compile Include="Common\Entity.cs" />
     <Compile Include="Common\FacadeExtension.cs" />
     <Compile Include="Data\base_community_baseinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
@@ -152,6 +153,9 @@
     </Compile>
     <Compile Include="Facade\MainFacade.cs" />
     <Compile Include="Facade\MainFacade_InfoManagement.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facade\MainFacade_UserManagement.cs">
       <DependentUpon>MainFacade.cs</DependentUpon>
     </Compile>
     <Compile Include="Facade\MainFacade_Validate.cs">

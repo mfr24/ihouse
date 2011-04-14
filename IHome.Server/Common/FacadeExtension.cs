@@ -17,9 +17,9 @@ namespace IHome.Server.Facade
 
         public static T As<T>(this Dictionary<string, object> dict)
         {
-            if(dict.ContainsKey(typeof(T).Name))
+            if (dict.ContainsKey(typeof(T).Name))
             {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(dict[typeof(T).Name].ToString());
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(dict[typeof(T).Name].ToString());
             }
             throw (new Exception("找不到参数" + typeof(T).Name));
         }
@@ -30,22 +30,24 @@ namespace IHome.Server.Facade
         /// <returns></returns>
         public static string GetSelectIn(this List<string> list)
         {
-            if (list==null||list.Count==0)return "";
-            StringBuilder sb=new StringBuilder();
-                            foreach (var item in list)
-                {
-                    sb.Append(item);
-                    sb.Append("','");
-                }
-                sb.Remove(sb.Length - 3, 3);
-                return sb.ToString();
+            if (list == null || list.Count == 0) return "";
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in list)
+            {
+                sb.Append(item);
+                sb.Append("','");
+            }
+            sb.Remove(sb.Length - 3, 3);
+            return sb.ToString();
         }
 
-        public static Models.Pager<T> Page<T>(this IQueryable<T> query,Models.Pager<T> pager)
+        public static Models.Pager<T> Page<T>(this IQueryable<T> query, Models.Pager<T> pager)
         {
             pager.data_list = query.Skip((pager.page_index) * pager.page_size).Take(pager.page_size).ToList();
             pager.total = query.Count();
             return pager;
         }
+
+
     }
 }
