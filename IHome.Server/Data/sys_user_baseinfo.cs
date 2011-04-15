@@ -121,7 +121,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual string it_num
+        public virtual string id_num
         {
             get;
             set;

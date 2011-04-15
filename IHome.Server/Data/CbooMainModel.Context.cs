@@ -102,6 +102,12 @@ namespace IHome.Server.Data
         }
         private ObjectSet<base_roleuserrelationinfo> _base_roleuserrelationinfo;
     
+        public ObjectSet<base_webpush_iteminfo> base_webpush_iteminfo
+        {
+            get { return _base_webpush_iteminfo  ?? (_base_webpush_iteminfo = CreateObjectSet<base_webpush_iteminfo>("base_webpush_iteminfo")); }
+        }
+        private ObjectSet<base_webpush_iteminfo> _base_webpush_iteminfo;
+    
         public ObjectSet<customer_baseinfo> customer_baseinfo
         {
             get { return _customer_baseinfo  ?? (_customer_baseinfo = CreateObjectSet<customer_baseinfo>("customer_baseinfo")); }
@@ -179,6 +185,12 @@ namespace IHome.Server.Data
             get { return _sys_user_baseinfo  ?? (_sys_user_baseinfo = CreateObjectSet<sys_user_baseinfo>("sys_user_baseinfo")); }
         }
         private ObjectSet<sys_user_baseinfo> _sys_user_baseinfo;
+    
+        public ObjectSet<sys_user_business_config> sys_user_business_config
+        {
+            get { return _sys_user_business_config  ?? (_sys_user_business_config = CreateObjectSet<sys_user_business_config>("sys_user_business_config")); }
+        }
+        private ObjectSet<sys_user_business_config> _sys_user_business_config;
     
         public ObjectSet<sys_user_community_config> sys_user_community_config
         {
