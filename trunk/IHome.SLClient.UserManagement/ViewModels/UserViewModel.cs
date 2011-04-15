@@ -14,7 +14,12 @@ namespace IHome.SLClient.UserManagement
     {
         public UserViewModel()
         {
-
+            ButtonList = new ObservableCollection<CmdButton>() { 
+                new CmdButton() { text = "添加" }, 
+                new CmdButton() { text = "修改" }, 
+                new CmdButton() { text = "删除" }, 
+                new CmdButton() { text = "查看" } 
+            };
         }
         public ICommand GetUserList
         {
@@ -59,6 +64,7 @@ namespace IHome.SLClient.UserManagement
                 });
             }
         }
+        public ObservableCollection<CmdButton> ButtonList { get; set; }
         public ObservableCollection<sys_user_baseinfo_ex> UserList { get; set; }
         private Models.Pager<sys_user_baseinfo_ex> _dataPager = new Models.Pager<sys_user_baseinfo_ex>() { page_index = 0, page_size = 5, total = 20 };
         public Models.Pager<sys_user_baseinfo_ex> DataPager
