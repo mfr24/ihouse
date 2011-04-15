@@ -18,10 +18,10 @@
         <telerik:RadButton Content="修改信息" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="60,0,0,0"/>
         <telerik:RadButton Content="删除员工" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="120,-1,0,0"/>
         <telerik:RadButton Content="查看列表" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,-1,0,0" Click="RadButton_Click_1" />
-        <IHome_Controls:ToolBar Margin="0,32,0,368"  VerticalAlignment="Top" DataContext="{Binding ButtonList}">
+        <IHome_Controls:ToolBar Margin="0,32,0,368" ItemsSource="{Binding ButtonList}"  VerticalAlignment="Top">
             <IHome_Controls:ToolBar.ItemTemplate>
                 <DataTemplate>
-                    <telerik:RadButton Content="{Binding text}" Command="{Binding cmd}" Width="40" Height="40" Margin="0,0,25,0"/>
+                    <telerik:RadButton Width="40" Height="40" Content="{Binding text}"/>
                 </DataTemplate>
             </IHome_Controls:ToolBar.ItemTemplate>
         </IHome_Controls:ToolBar>
