@@ -25,7 +25,7 @@
                     <telerik:HierarchicalDataTemplate.ItemTemplate>
                         <DataTemplate>
                             <telerik:RadRadioButton Command="{Binding ItemCommand, Source={StaticResource MainOutLookViewModelDataSource}}"
-                				CommandParameter="{Binding}">
+                				CommandParameter="{Binding}" Margin="-5,-3,-5,-3" Height="32">
                                 <telerik:RadRadioButton.Content>
                                     <StackPanel Orientation="Horizontal" Margin="4 0">
                                         <Image Height="16" Width="14" Source="/images/female.png" />
