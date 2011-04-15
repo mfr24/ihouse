@@ -23,5 +23,10 @@ namespace IHome.SLClient.UserManagement
 			
 			// Insert code required on object creation below this point.
 		}
+
+        private void RadButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Transition.Content = new UserDetailView();
+        }
 	}
 }

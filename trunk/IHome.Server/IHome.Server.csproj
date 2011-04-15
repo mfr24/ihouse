@@ -81,6 +81,9 @@
     <Compile Include="Data\base_roleuserrelationinfo.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\base_webpush_iteminfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\CbooMainModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +137,9 @@
     </Compile>
     <Compile Include="Data\Storage\base_datadic_tree_storage.cs" />
     <Compile Include="Data\sys_user_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_business_config.cs">
       <DependentUpon>CbooMainModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\sys_user_community_config.cs">
