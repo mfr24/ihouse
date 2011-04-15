@@ -24,7 +24,7 @@
                 <telerik:HierarchicalDataTemplate ItemsSource="{Binding item_list, Mode=TwoWay}">
                     <telerik:HierarchicalDataTemplate.ItemTemplate>
                         <DataTemplate>
-                            <telerik:RadRadioButton VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding ItemCommand, Source={StaticResource MainOutLookViewModelDataSource}}"
+                            <telerik:RadRadioButton Command="{Binding ItemCommand, Source={StaticResource MainOutLookViewModelDataSource}}"
                 				CommandParameter="{Binding}">
                                 <telerik:RadRadioButton.Content>
                                     <StackPanel Orientation="Horizontal" Margin="4 0">
