@@ -8,7 +8,10 @@
 	x:Class="IHome.SLClient.UserManagement.UserDetailView"
 	d:DesignWidth="640" d:DesignHeight="480">
 
-	<Grid x:Name="LayoutRoot">
+	<Grid x:Name="LayoutRoot" Background="White">
+		<Grid.Effect>
+			<DropShadowEffect BlurRadius="10" ShadowDepth="15"/>
+		</Grid.Effect>
         <telerik:RadMaskedTextBox MaskType="None" Value="{Binding user_code, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="员工编号" VerticalAlignment="Top" Margin="39,22,0,0"/>
         <telerik:RadMaskedTextBox MaskType="None" Value="{Binding user_name, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
