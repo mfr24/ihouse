@@ -19,7 +19,7 @@
         <telerik:RadButton Content="查看列表" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="180,-1,0,0" Click="RadButton_Click_1" />
         <telerik:RadTransitionControl x:Name="Transition" Margin="0,26,0,0">
             <telerik:RadTransitionControl.Transition>
-                <telerik:SlideAndZoomTransition />
+                <telerik:SlideAndZoomTransition/>
             </telerik:RadTransitionControl.Transition>
         </telerik:RadTransitionControl>
     </Grid>
