@@ -27,11 +27,14 @@ namespace IHome.SLClient.UserManagement
         private UIElement[] _uiList = new UIElement[] { new UserListView(), new UserDetailView()};
         private void RadButton_Click(object sender, RoutedEventArgs e)
         {
+            ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)Transition.Transition).SlideDirection = FlowDirection.RightToLeft;
             this.Transition.Content = _uiList[1];
+          
         }
 
         private void RadButton_Click_1(object sender, RoutedEventArgs e)
         {
+            ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)Transition.Transition).SlideDirection = FlowDirection.LeftToRight;
             this.Transition.Content = _uiList[0];
         }
 	}
