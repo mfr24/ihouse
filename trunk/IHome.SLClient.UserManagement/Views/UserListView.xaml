@@ -10,7 +10,7 @@
     <Grid x:Name="LayoutRoot">
         <telerik:RadGridView x:Name="radGridView" ItemsSource="{Binding UserList, Mode=TwoWay}" SelectedItem="{Binding SelectedUser, Mode=TwoWay}" 
                              AutoGenerateColumns="False"
-                             ShowGroupPanel="False" Margin="0,32,0,28"
+                             ShowGroupPanel="False" Margin="0,0,0,28"
                              >
             <i:Interaction.Triggers>
                 <i:EventTrigger>
@@ -23,7 +23,7 @@
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn IsReadOnly="True">
                     <telerik:GridViewDataColumn.Header>
-                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding Mode=TwoWay, Path=IsCheckAll, Source={StaticResource UserViewModelDataSource}}" />
+                        <CheckBox Content="全选" Foreground="White" IsChecked="{Binding IsCheckAll, Mode=TwoWay}" />
                     </telerik:GridViewDataColumn.Header>
                     <telerik:GridViewDataColumn.CellTemplate>
                         <DataTemplate>
