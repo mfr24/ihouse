@@ -58,7 +58,7 @@
                               >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="PageIndexChanged">
-                    <i:InvokeCommandAction Command="{Binding GetBuildingList}"/>
+                    <i:InvokeCommandAction Command="{Binding GetUserList}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </telerik:RadDataPager>
