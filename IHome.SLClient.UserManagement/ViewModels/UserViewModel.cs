@@ -20,7 +20,7 @@ namespace IHome.SLClient.UserManagement
                 new CmdButton() { text = "删除" }, 
                 new CmdButton() { text = "查看" } 
             };
-            NewUser = new sys_user_baseinfo_ex() { user_name="蜡笔小新"};
+            NewUser = new sys_user_baseinfo_ex() { user_name = "蜡笔小新" };
         }
         public ICommand GetUserList
         {
@@ -28,7 +28,7 @@ namespace IHome.SLClient.UserManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    
+
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
 
                     requestParams["Pager`1"] = DataPager;
@@ -62,6 +62,72 @@ namespace IHome.SLClient.UserManagement
                     {
                         //do somethting while server return
                     });
+                });
+            }
+        }
+        public ICommand UpdateUser
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["user"] = SelectedUser;
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.UpdateUser",
+                    requestList,
+                    (result) =>
+                    {
+                        //do somethting while server return
+                    });
+                });
+            }
+        }
+        public ICommand DeleteUser
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    List<object> requestList = new List<object>();
+                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                    requestParams["user_id"] = SelectedUser.user_id;
+                    requestList.Add(requestParams);
+                    this.Request("IHome.Server.Facade.MainFacade.DeleteUser",
+                    requestList,
+                    (result) =>
+                    {
+                        //do somethting while server return
+                    });
+                });
+            }
+        }
+        public ICommand ViewAdd
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    if (NewUser == null || NewUser == SelectedUser)
+                    {
+                        NewUser = new sys_user_baseinfo_ex();
+                        NotifyPropertyChanged("NewUser");
+                    }
+                });
+            }
+        }
+        public ICommand ViewUpdate
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    if (NewUser != SelectedUser)
+                    {
+                        NewUser = SelectedUser;
+                        NotifyPropertyChanged("NewUser");
+                    }
                 });
             }
         }

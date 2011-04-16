@@ -15,8 +15,8 @@
 	</UserControl.Resources>
     <Grid x:Name="LayoutRoot" DataContext="{StaticResource UserViewModelDataSource}">
         <IHome_Controls:ToolBar Margin="0,8,0,0"  VerticalAlignment="Top" >
-            <telerik:RadButton Width="60" Height="40" Content="添加员工" Margin="0,0,25,0" Click="RadButton_Click"/>
-            <telerik:RadButton Width="60" Height="40" Content="修改信息" Margin="0,0,25,0"/>
+            <telerik:RadButton Width="60" Height="40" Content="添加员工" Margin="0,0,25,0" Click="RadButton_Click" Command="ViewAdd"/>
+            <telerik:RadButton Width="60" Height="40" Content="修改信息" Margin="0,0,25,0" Click="RadButton_Click" Command="ViewUpdate"/>
             <telerik:RadButton Width="60" Height="40" Content="删除员工" Margin="0,0,25,0"/>
             <telerik:RadButton Width="60" Height="40" Content="查看列表" Margin="0,0,25,0" Click="RadButton_Click_1"/>
         </IHome_Controls:ToolBar>

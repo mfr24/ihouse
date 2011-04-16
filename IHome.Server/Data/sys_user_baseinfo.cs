@@ -166,7 +166,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.DateTimeOffset reg_time
+        public virtual Nullable<System.DateTimeOffset> reg_time
         {
             get;
             set;
@@ -175,7 +175,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.DateTimeOffset update_time
+        public virtual Nullable<System.DateTimeOffset> update_time
         {
             get;
             set;
@@ -184,7 +184,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.DateTimeOffset last_login_time
+        public virtual Nullable<System.DateTimeOffset> last_login_time
         {
             get;
             set;
@@ -193,16 +193,7 @@ namespace IHome.Models.Data
     	/// <summary>
     	///undefine	
     	/// </summary>
-        public virtual System.DateTimeOffset ts
-        {
-            get;
-            set;
-        }
-    
-    	/// <summary>
-    	///undefine	
-    	/// </summary>
-        public virtual bool dr
+        public virtual Nullable<bool> dr
         {
             get;
             set;

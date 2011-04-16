@@ -34,23 +34,19 @@
                         </DataTemplate>
                     </telerik:GridViewDataColumn.CellTemplate>
                 </telerik:GridViewDataColumn>
-                <telerik:GridViewDataColumn Header="员工编号" DataMemberBinding="{Binding building_name}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="员工姓名" DataMemberBinding="{Binding building_use}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="所属部门" DataMemberBinding="{Binding building_type}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="所属公司" DataMemberBinding="{Binding building_floor}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="职务" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="员工编号" DataMemberBinding="{Binding user_code}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="员工姓名" DataMemberBinding="{Binding user_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="所属部门" DataMemberBinding="{Binding department}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="所属公司" DataMemberBinding="{Binding company_name}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="职务" DataMemberBinding="{Binding user_code}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="入职时间" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="性别" DataMemberBinding="{Binding building_name}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="学历" DataMemberBinding="{Binding building_use}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="证件号" DataMemberBinding="{Binding building_type}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="手机" DataMemberBinding="{Binding building_floor}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="家庭电话" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="办公电话" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="联系地址" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="合同起始" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="合同终止" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="离职日期" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="劳动关系" DataMemberBinding="{Binding unit_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="证件号" DataMemberBinding="{Binding id_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="手机" DataMemberBinding="{Binding mobile}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="家庭电话" DataMemberBinding="{Binding home_tel}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="办公电话" DataMemberBinding="{Binding office_tel}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="联系地址" DataMemberBinding="{Binding addr}" IsReadOnly="True" />
             </telerik:RadGridView.Columns>
         </telerik:RadGridView>
         <telerik:RadDataPager x:Name="RadDataPager1" DisplayMode="All" Margin="0" d:LayoutOverrides="GridBox" VerticalAlignment="Bottom" IsTotalItemCountFixed="True"
