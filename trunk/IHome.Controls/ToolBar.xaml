@@ -23,9 +23,7 @@
                 </Canvas>
                 <Grid Canvas.ZIndex="1" Margin="40,0">
                     <Grid Height="40" VerticalAlignment="Top">
-                        <StackPanel  Orientation="Horizontal">
-                            <ItemsPresenter/>
-                        </StackPanel>
+                        <ItemsPresenter Height="40"/>
                     </Grid>
                     <Grid Height="40" VerticalAlignment="Bottom">
                         <Grid.OpacityMask>
@@ -37,12 +35,15 @@
                         <Grid.RenderTransform>
                             <CompositeTransform TranslateY="42" ScaleY="-1" />
                         </Grid.RenderTransform>
-                        <StackPanel  Orientation="Horizontal">
-                            <ItemsPresenter/>
-                        </StackPanel>
+                        <ItemsPresenter Height="40"/>
                     </Grid>
                 </Grid>
             </Grid>
         </ControlTemplate>
     </telerik:ListBox.Template>
+    <telerik:ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+            <StackPanel Orientation="Horizontal"/>
+        </ItemsPanelTemplate>
+    </telerik:ListBox.ItemsPanel>
 </telerik:ListBox>

@@ -72,6 +72,7 @@ namespace IHome.SLClient.UserManagement
             get { return _dataPager; }
             set { _dataPager = value; }
         }
+        public bool IsCheckAll { get; set; }
         public sys_user_baseinfo_ex SelectedUser { get; set; }
         public sys_user_baseinfo_ex NewUser { get; set; }
         #region INotifyPropertyChanged
