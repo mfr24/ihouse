@@ -11,6 +11,9 @@ using System.Windows.Shapes;
 
 namespace IHome.Models
 {
+    /// <summary>
+    /// view status
+    /// </summary>
     public enum CmdType
     {
         Add=1,
