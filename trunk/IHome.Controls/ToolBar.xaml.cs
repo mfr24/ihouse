@@ -17,6 +17,7 @@ namespace IHome.Controls
 			// Required to initialize variables
             
 			InitializeComponent();
+            
 		}
         
 	}
