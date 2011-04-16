@@ -12,6 +12,7 @@ namespace IHome.SLClient.UserManagement
 {
     public class UserViewModel : INotifyPropertyChanged
     {
+        public CmdType _cmdTpe;
         public UserViewModel()
         {
             ButtonList = new ObservableCollection<CmdButton>() { 
@@ -46,7 +47,7 @@ namespace IHome.SLClient.UserManagement
                 });
             }
         }
-        public ICommand AddUser
+        public ICommand SaveUser
         {
             get
             {
@@ -56,26 +57,9 @@ namespace IHome.SLClient.UserManagement
                     Dictionary<string, object> requestParams = new Dictionary<string, object>();
                     requestParams["user"] = NewUser;
                     requestList.Add(requestParams);
-                    this.Request("IHome.Server.Facade.MainFacade.AddUser",
-                    requestList,
-                    (result) =>
-                    {
-                        //do somethting while server return
-                    });
-                });
-            }
-        }
-        public ICommand UpdateUser
-        {
-            get
-            {
-                return new ILight.Core.Model.CommandBase((p) =>
-                {
-                    List<object> requestList = new List<object>();
-                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["user"] = SelectedUser;
-                    requestList.Add(requestParams);
-                    this.Request("IHome.Server.Facade.MainFacade.UpdateUser",
+                    this.Request(_cmdTpe==CmdType.Add
+                        ? "IHome.Server.Facade.MainFacade.AddUser"
+                        : "IHome.Server.Facade.MainFacade.UpdateUser",
                     requestList,
                     (result) =>
                     {
@@ -109,11 +93,9 @@ namespace IHome.SLClient.UserManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    if (NewUser == null || NewUser == SelectedUser)
-                    {
                         NewUser = new sys_user_baseinfo_ex();
+                        _cmdTpe = CmdType.Add;
                         NotifyPropertyChanged("NewUser");
-                    }
                 });
             }
         }
@@ -123,11 +105,9 @@ namespace IHome.SLClient.UserManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-                    if (NewUser != SelectedUser)
-                    {
                         NewUser = SelectedUser;
+                        _cmdTpe = CmdType.Update;
                         NotifyPropertyChanged("NewUser");
-                    }
                 });
             }
         }

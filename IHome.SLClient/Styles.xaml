@@ -1,20 +1,16 @@
 ﻿<ResourceDictionary
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    >
+    
 	<!-- Resource dictionary entries should be defined here. -->
-<Style x:Key="BigButtonStyle" TargetType="Button">
-  <Setter Property="Padding" Value="20" />
-  <Setter Property="Margin" Value="10" />
-  <Setter Property="FontFamily" Value="Georgia" />
-  <Setter Property="FontSize" Value="40" />
-  <Setter Property="Foreground" Value="SlateGray" />
-  <Setter Property="Background">
-  <Setter.Value>
-  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-  <GradientStop Color="Blue"></GradientStop>
-  <GradientStop Color="Yellow" Offset="1"></GradientStop>
-  </LinearGradientBrush>
-  </Setter.Value>
-  </Setter>
-  </Style>
+    <Style TargetType="telerik:RadButton">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
 </ResourceDictionary>

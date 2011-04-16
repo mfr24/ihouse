@@ -42,7 +42,7 @@
                 <telerik:GridViewDataColumn Header="入职时间" DataMemberBinding="{Binding room_rule}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="性别" DataMemberBinding="{Binding building_name}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="学历" DataMemberBinding="{Binding building_use}" IsReadOnly="True" />
-                <telerik:GridViewDataColumn Header="证件号" DataMemberBinding="{Binding id_type}" IsReadOnly="True" />
+                <telerik:GridViewDataColumn Header="证件号" DataMemberBinding="{Binding id_num}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="手机" DataMemberBinding="{Binding mobile}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="家庭电话" DataMemberBinding="{Binding home_tel}" IsReadOnly="True" />
                 <telerik:GridViewDataColumn Header="办公电话" DataMemberBinding="{Binding office_tel}" IsReadOnly="True" />

@@ -32,6 +32,6 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="证件编号" Margin="39,342,0,0" VerticalAlignment="Top"/>
         <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.remark, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="267,258,8,0" VerticalAlignment="Top" Height="102" />
         <TextBlock TextWrapping="Wrap" Text="备注" Margin="267,224,289,0" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
-        <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="39,370,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding AddUser, Mode=OneWay}" />
+        <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="39,370,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding SaveUser, Mode=OneWay}" />
     </Grid>
 </UserControl>
