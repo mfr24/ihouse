@@ -20,7 +20,7 @@
             <telerik:RadButton Width="60" Height="40" Content="删除员工" Margin="0,0,25,0"/>
             <telerik:RadButton Width="60" Height="40" Content="查看列表" Margin="0,0,25,0" Click="RadButton_Click_1"/>
         </IHome_Controls:ToolBar>
-        <telerik:RadTransitionControl x:Name="Transition" Margin="0,88,0,0">
+        <telerik:RadTransitionControl x:Name="Transition" Margin="0,68,0,0">
             <telerik:RadTransitionControl.Transition>
                 <telerik:SlideAndZoomTransition/>
             </telerik:RadTransitionControl.Transition>
