@@ -3,8 +3,13 @@
              x:Class="IHome.SLClient.App" 
              xmlns:model="http://com.ihome.model">
     <Application.Resources>
-        <!--程序全局变量-->
-        <model:AppViewModel x:Key="AppDataSource" />
-        <model:TrueFalseConverter x:Key="TrueFalseConverter" />
+    	<ResourceDictionary>
+    		<ResourceDictionary.MergedDictionaries>
+    			<ResourceDictionary Source="Styles.xaml"/>
+    		</ResourceDictionary.MergedDictionaries>
+    		<!--程序全局变量-->
+    		<model:AppViewModel x:Key="AppDataSource" />
+    		<model:TrueFalseConverter x:Key="TrueFalseConverter" />
+    	</ResourceDictionary>
   </Application.Resources>
 </Application>
