@@ -20,6 +20,7 @@ namespace IHome.SLClient.UserManagement
                 new CmdButton() { text = "删除" }, 
                 new CmdButton() { text = "查看" } 
             };
+            NewUser = new sys_user_baseinfo_ex() { user_name="蜡笔小新"};
         }
         public ICommand GetUserList
         {
@@ -72,7 +73,20 @@ namespace IHome.SLClient.UserManagement
             get { return _dataPager; }
             set { _dataPager = value; }
         }
-        public bool IsCheckAll { get; set; }
+        private bool _isCheckAll = false;
+        public bool IsCheckAll
+        {
+            get { return _isCheckAll; }
+            set
+            {
+                _isCheckAll = value;
+                foreach (var item in UserList)
+                {
+                    item.check_status_ex = _isCheckAll;
+                }
+                NotifyPropertyChanged("IsCheckAll");
+            }
+        }
         public sys_user_baseinfo_ex SelectedUser { get; set; }
         public sys_user_baseinfo_ex NewUser { get; set; }
         #region INotifyPropertyChanged

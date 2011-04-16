@@ -8,7 +8,7 @@
 	x:Class="IHome.SLClient.UserManagement.UserDetailView"
 	d:DesignWidth="640" d:DesignHeight="480">
 
-	<Grid x:Name="LayoutRoot" Background="White">
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding NewUser}">
 		<Grid.Effect>
 			<DropShadowEffect BlurRadius="10" ShadowDepth="15"/>
 		</Grid.Effect>

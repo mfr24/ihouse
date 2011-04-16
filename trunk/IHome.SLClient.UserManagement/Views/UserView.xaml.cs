@@ -20,11 +20,12 @@ namespace IHome.SLClient.UserManagement
 		public UserView()
 		{
 			this.InitializeComponent();
+            _uiList = new UIElement[] { new UserListView() { DataContext = Transition.DataContext }, new UserDetailView() { DataContext = Transition.DataContext } };
             Transition.Content = _uiList[0];
 			
 			// Insert code required on object creation below this point.
 		}
-        private UIElement[] _uiList = new UIElement[] { new UserListView(), new UserDetailView()};
+        private UIElement[] _uiList;
         private void RadButton_Click(object sender, RoutedEventArgs e)
         {
             ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)Transition.Transition).SlideDirection = FlowDirection.RightToLeft;
