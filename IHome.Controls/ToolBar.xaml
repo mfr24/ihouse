@@ -6,6 +6,11 @@
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 	mc:Ignorable="d"
 	x:Class="IHome.Controls.ToolBar">
+    <telerik:ListBox.Resources>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <StackPanel Orientation="Horizontal"/>
+        </ItemsPanelTemplate>
+    </telerik:ListBox.Resources>
     <telerik:ListBox.Template>
         <ControlTemplate>
             <Grid x:Name="LayoutRoot" Height="80">
@@ -35,7 +40,7 @@
                         <Grid.RenderTransform>
                             <CompositeTransform TranslateY="42" ScaleY="-1" />
                         </Grid.RenderTransform>
-                        <ItemsPresenter Height="40"/>
+                        <telerik:ListBox ItemsPanel="{StaticResource ItemsPanelTemplate1}" />
                     </Grid>
                 </Grid>
             </Grid>
@@ -45,5 +50,6 @@
         <ItemsPanelTemplate>
             <StackPanel Orientation="Horizontal"/>
         </ItemsPanelTemplate>
+        
     </telerik:ListBox.ItemsPanel>
 </telerik:ListBox>
