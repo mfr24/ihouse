@@ -8,30 +8,30 @@
 	x:Class="IHome.SLClient.UserManagement.UserDetailView"
 	d:DesignWidth="640" d:DesignHeight="480">
 
-    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding NewUser}">
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding}">
 		<Grid.Effect>
 			<DropShadowEffect BlurRadius="10" ShadowDepth="15"/>
 		</Grid.Effect>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding user_code, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.user_code, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="员工编号" VerticalAlignment="Top" Margin="39,22,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding user_name, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.user_name, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="员工姓名" Margin="39,62,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding department, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,98,0,0" HorizontalAlignment="Left" Width="152"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.department, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,98,0,0" HorizontalAlignment="Left" Width="152"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属部门" VerticalAlignment="Top" Margin="39,102,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding company_name, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,138,0,0" HorizontalAlignment="Left" Width="152"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.company_name, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,138,0,0" HorizontalAlignment="Left" Width="152"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属公司" VerticalAlignment="Top" Margin="39,142,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding password, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,178,0,0" HorizontalAlignment="Left" Width="152"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.password, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,178,0,0" HorizontalAlignment="Left" Width="152"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="密码" VerticalAlignment="Top" Margin="39,182,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding city_code, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,218,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.city_code, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,218,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="城市编码" Margin="39,222,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding city_name, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,258,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.city_name, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,258,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="城市" Margin="39,262,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding id_type, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,298,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.id_type, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,298,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="证件类型" Margin="39,302,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding id_num, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.id_num, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="证件编号" Margin="39,342,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding Community.remark, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="267,258,8,0" VerticalAlignment="Top" Height="102" />
+        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.remark, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="267,258,8,0" VerticalAlignment="Top" Height="102" />
         <TextBlock TextWrapping="Wrap" Text="备注" Margin="267,224,289,0" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
-        <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="39,370,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding AddCommunity, Mode=OneWay}" />
+        <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="39,370,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding AddUser, Mode=OneWay}" />
     </Grid>
 </UserControl>
