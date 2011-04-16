@@ -21,6 +21,8 @@ namespace IHome.Models.Data
             get { return _canValidate; }
             set { _canValidate = value; }
         }
+
+        public bool check_status_ex { get; set; }
         #region validation
         private string _error = string.Empty;
         public bool ValidatePro(string columnName, object value)
