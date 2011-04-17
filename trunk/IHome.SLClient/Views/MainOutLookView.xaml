@@ -18,7 +18,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
-        <telerik:RadPanelBar Width="150" d:LayoutOverrides="HorizontalMargin" ItemsSource="{Binding MenuList}" >
+        <telerik:RadPanelBar Width="180" d:LayoutOverrides="HorizontalMargin" ItemsSource="{Binding MenuList}" VerticalAlignment="Stretch" >
             
             <telerik:RadPanelBar.ItemTemplate>
                 <telerik:HierarchicalDataTemplate ItemsSource="{Binding item_list, Mode=TwoWay}">
@@ -35,7 +35,7 @@
                             </telerik:RadRadioButton>
                         </DataTemplate>
                     </telerik:HierarchicalDataTemplate.ItemTemplate>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Height="40">
                         <Image Height="20" Source="/Images/send_email.png"></Image>
                         <TextBlock Text="{Binding header}" Cursor="Hand" Height="20" />
                     </StackPanel>

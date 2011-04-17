@@ -5,11 +5,16 @@
     >
     
 	<!-- Resource dictionary entries should be defined here. -->
+
+    <Style TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
     <Style TargetType="telerik:RadButton">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
         <Setter Property="FontSize" Value="12" />
     </Style>
-    <Style TargetType="TextBlock">
+    <Style TargetType="telerik:RadPanelBar">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
         <Setter Property="FontSize" Value="12" />
     </Style>
