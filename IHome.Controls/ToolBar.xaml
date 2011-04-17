@@ -15,7 +15,7 @@
         <ControlTemplate>
             <Grid x:Name="LayoutRoot" Height="60">
                 <Grid Height="40" VerticalAlignment="Bottom">
-                    <Image Source="/Images/dock.png" Opacity="0.6" Stretch="Fill" Margin="0,0,0,-2"/>
+                    <Image Source="/Images/dock.png" Opacity="0.33" Stretch="Fill" Margin="0,0,0,-2"/>
                 </Grid>
                 <Grid Canvas.ZIndex="1" Margin="40,0,40,20">
                     <Grid Height="40" VerticalAlignment="Top">
