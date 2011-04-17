@@ -14,13 +14,16 @@
 		<local:UserViewModel x:Key="UserViewModelDataSource" />
 	</UserControl.Resources>
     <Grid x:Name="LayoutRoot" DataContext="{StaticResource UserViewModelDataSource}">
-        <IHome_Controls:ToolBar Margin="0,8,0,0"  VerticalAlignment="Top" >
-            <telerik:RadButton Width="60" Height="40" Content="添加员工" Margin="0,0,25,0" Command="{Binding ViewAdd}" Click="RadButton_Click"/>
-            <telerik:RadButton Width="60" Height="40" Content="修改信息" Margin="0,0,25,0" Command="{Binding ViewUpdate}" Click="RadButton_Click"/>
-            <telerik:RadButton Width="60" Height="40" Content="删除员工" Margin="0,0,25,0"/>
-            <telerik:RadButton Width="60" Height="40" Content="查看列表" Margin="0,0,25,0" Click="RadButton_Click_1"/>
+        <IHome_Controls:ToolBar  VerticalAlignment="Bottom" >
+            <telerik:RadRadioButton Width="60" Height="40" Content="添加员工" Margin="0,0,25,0" Command="{Binding ViewAdd}" Click="RadButton_Click"/>
+            <telerik:RadRadioButton Width="60" Height="40" Content="修改信息" Margin="0,0,25,0" Command="{Binding ViewUpdate}" Click="RadButton_Click"/>
+            <telerik:RadRadioButton Width="60" Height="40" Content="删除员工" Margin="0,0,25,0"/>
+            <telerik:RadRadioButton Width="60" Height="40" Content="查看列表" Margin="0,0,25,0" Click="RadButton_Click_1"/>
         </IHome_Controls:ToolBar>
-        <telerik:RadTransitionControl x:Name="Transition" Margin="0,68,0,0">
+        <telerik:RadTransitionControl x:Name="Transition" Margin="0,0,0,72">
+        	<telerik:RadTransitionControl.Effect>
+        		<DropShadowEffect Color="#FF3A3A3A" ShadowDepth="10" BlurRadius="33"/>
+        	</telerik:RadTransitionControl.Effect>
             <telerik:RadTransitionControl.Transition>
                 <telerik:SlideAndZoomTransition/>
             </telerik:RadTransitionControl.Transition>
