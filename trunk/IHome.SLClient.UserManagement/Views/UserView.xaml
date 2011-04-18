@@ -29,6 +29,4 @@
             </telerik:RadTransitionControl.Transition>
         </telerik:RadTransitionControl>
     </Grid>
-
-
 </UserControl>
