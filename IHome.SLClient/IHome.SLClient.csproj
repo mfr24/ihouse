@@ -125,6 +125,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainOutLookViewModel.cs" />
+    <Compile Include="ViewModels\MainPadViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\HomeView.xaml.cs">
@@ -135,6 +136,9 @@
     </Compile>
     <Compile Include="Views\MainOutLookView.xaml.cs">
       <DependentUpon>MainOutLookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainPadView.xaml.cs">
+      <DependentUpon>MainPadView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -171,6 +175,10 @@
     </Page>
     <Page Include="MainPanelStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MainPadView.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainView.xaml">
