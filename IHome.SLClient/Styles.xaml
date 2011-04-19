@@ -3,6 +3,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
     xmlns:ilight="http://silverlight.imbob.com.cn/Controls"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Telerik_Windows_Controls_Chromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Telerik.Windows.Controls"
     >
     
 	<!-- Resource dictionary entries should be defined here. -->
@@ -28,4 +29,49 @@
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
         <Setter Property="FontSize" Value="13" />
     </Style>
+	<ControlTemplate x:Key="DataFormTemplate" TargetType="telerik:RadButton">
+		<Grid>
+						
+			<VisualStateManager.VisualStateGroups>
+				<VisualStateGroup x:Name="CommonStates">
+					<VisualState x:Name="Normal" />
+					<VisualState x:Name="Disabled">
+						<Storyboard>
+							<DoubleAnimation Storyboard.TargetName="Content" To="0.5"
+								Duration="0" Storyboard.TargetProperty="Opacity" />
+							<ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonChrome" Storyboard.TargetProperty="RenderEnabled">
+								<DiscreteObjectKeyFrame KeyTime="0">
+									<DiscreteObjectKeyFrame.Value>
+										<System:Boolean>False</System:Boolean>
+									</DiscreteObjectKeyFrame.Value>
+								</DiscreteObjectKeyFrame>
+							</ObjectAnimationUsingKeyFrames>
+						</Storyboard>
+					</VisualState>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
+						
+
+			<Telerik_Windows_Controls_Chromes:ButtonChrome
+				x:Name="ButtonChrome"
+				telerik:StyleManager.Theme="{StaticResource Theme}"
+				Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
+				BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}"
+				RenderNormal="{TemplateBinding IsBackgroundVisible}"
+				RenderMouseOver="{TemplateBinding IsMouseOver}"
+				RenderPressed="{TemplateBinding IsPressed}"
+				RenderFocused="{TemplateBinding IsFocused}"
+				CornerRadius="{TemplateBinding CornerRadius}" BorderThickness="0"
+								/>
+			<ContentPresenter x:Name="Content"
+				Margin="{TemplateBinding Padding}"
+				Content="{TemplateBinding Content}"
+				ContentTemplate="{TemplateBinding ContentTemplate}"
+				VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+				HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								 />
+		</Grid>
+
+					
+	</ControlTemplate>
 </ResourceDictionary>
