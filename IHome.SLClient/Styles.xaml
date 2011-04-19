@@ -9,11 +9,16 @@
     <Style TargetType="ilight:RadTabItemCloseable">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
         <Setter Property="FontSize" Value="13" />
-        <Setter Property="FontWeight" Value="Black" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
     <Style TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
         <Setter Property="FontSize" Value="13" />
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="FontWeight" Value="Bold" />
     </Style>
     <Style TargetType="telerik:RadButton">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />

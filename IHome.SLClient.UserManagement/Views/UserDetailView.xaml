@@ -4,31 +4,281 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+	xmlns:System="clr-namespace:System;assembly=mscorlib"
 	mc:Ignorable="d"
 	x:Class="IHome.SLClient.UserManagement.UserDetailView"
 	d:DesignWidth="640" d:DesignHeight="480">
 
-    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding}">
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.user_code, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,18,0,0" HorizontalAlignment="Left" Width="152"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="员工编号" VerticalAlignment="Top" Margin="39,22,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.user_name, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="111,58,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="员工姓名" Margin="39,62,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.department, Mode=TwoWay, ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,98,0,0" HorizontalAlignment="Left" Width="152"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属部门" VerticalAlignment="Top" Margin="39,102,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.company_name, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,138,0,0" HorizontalAlignment="Left" Width="152"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="所属公司" VerticalAlignment="Top" Margin="39,142,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.password, Mode=TwoWay,ValidatesOnDataErrors=True}" VerticalAlignment="Top" Margin="111,178,0,0" HorizontalAlignment="Left" Width="152"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="密码" VerticalAlignment="Top" Margin="39,182,0,0"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.city_code, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,218,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="城市编码" Margin="39,222,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.city_name, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,258,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="城市" Margin="39,262,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.id_type, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,298,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="证件类型" Margin="39,302,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.id_num, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="111,338,0,0" HorizontalAlignment="Left" Width="152" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="证件编号" Margin="39,342,0,0" VerticalAlignment="Top"/>
-        <telerik:RadMaskedTextBox MaskType="None" Value="{Binding NewUser.remark, Mode=TwoWay,ValidatesOnDataErrors=True}" Margin="267,258,8,0" VerticalAlignment="Top" Height="102" />
-        <TextBlock TextWrapping="Wrap" Text="备注" Margin="267,224,289,0" VerticalAlignment="Top" d:LayoutOverrides="Width"/>
-        <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="39,370,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding SaveUser, Mode=OneWay}" />
+	<UserControl.Resources>
+		<ControlTemplate x:Key="ValidationToolTipTemplate">
+			<Grid x:Name="Root" Margin="5,0" Opacity="0" RenderTransformOrigin="0,0">
+				<Grid.RenderTransform>
+					<TranslateTransform x:Name="xform" X="-25"/>
+				</Grid.RenderTransform>
+				<VisualStateManager.VisualStateGroups>
+					<VisualStateGroup x:Name="OpenStates">
+						<VisualStateGroup.Transitions>
+							<VisualTransition GeneratedDuration="0"/>
+							<VisualTransition GeneratedDuration="0:0:0.2" To="Open">
+								<Storyboard>
+									<DoubleAnimation Duration="0:0:0.2" To="0" Storyboard.TargetProperty="X" Storyboard.TargetName="xform">
+										<DoubleAnimation.EasingFunction>
+											<BackEase Amplitude=".3" EasingMode="EaseOut"/>
+										</DoubleAnimation.EasingFunction>
+									</DoubleAnimation>
+									<DoubleAnimation Duration="0:0:0.2" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+								</Storyboard>
+							</VisualTransition>
+						</VisualStateGroup.Transitions>
+						<VisualState x:Name="Closed">
+							<Storyboard>
+								<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+							</Storyboard>
+						</VisualState>
+						<VisualState x:Name="Open">
+							<Storyboard>
+								<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="X" Storyboard.TargetName="xform"/>
+								<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Root"/>
+							</Storyboard>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateManager.VisualStateGroups>
+				<Border Background="#052A2E31" CornerRadius="5" Margin="4,4,-4,-4"/>
+				<Border Background="#152A2E31" CornerRadius="4" Margin="3,3,-3,-3"/>
+				<Border Background="#252A2E31" CornerRadius="3" Margin="2,2,-2,-2"/>
+				<Border Background="#352A2E31" CornerRadius="2" Margin="1,1,-1,-1"/>
+				<Border Background="#FFDC000C" CornerRadius="2"/>
+				<Border CornerRadius="2">
+					<TextBlock Foreground="White" MaxWidth="250" Margin="8,4,8,4" TextWrapping="Wrap" Text="{Binding (Validation.Errors)[0].ErrorContent}" UseLayoutRounding="false"/>
+				</Border>
+			</Grid>
+		</ControlTemplate>
+		<Style x:Key="TextBoxStyle1" TargetType="TextBox">
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Background" Value="#FFFFFFFF"/>
+			<Setter Property="Foreground" Value="#FF000000"/>
+			<Setter Property="Padding" Value="2"/>
+			<Setter Property="BorderBrush">
+				<Setter.Value>
+					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+						<GradientStop Color="#FFA3AEB9" Offset="0"/>
+						<GradientStop Color="#FF8399A9" Offset="0.375"/>
+						<GradientStop Color="#FF718597" Offset="0.375"/>
+						<GradientStop Color="#FF617584" Offset="1"/>
+					</LinearGradientBrush>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="TextBox">
+						<Grid x:Name="RootElement">
+							<VisualStateManager.VisualStateGroups>
+								<VisualStateGroup x:Name="CommonStates">
+									<VisualState x:Name="Normal"/>
+									<VisualState x:Name="MouseOver">
+										<Storyboard>
+											<ColorAnimation Duration="0" To="#FF99C1E2" Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="MouseOverBorder"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Disabled">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="ReadOnly">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="ReadOnlyVisualElement"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="FocusStates">
+									<VisualState x:Name="Focused">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="Unfocused">
+										<Storyboard>
+											<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+								<VisualStateGroup x:Name="ValidationStates">
+									<VisualState x:Name="Valid"/>
+									<VisualState x:Name="InvalidUnfocused">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ValidationErrorElement">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+									<VisualState x:Name="InvalidFocused">
+										<Storyboard>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ValidationErrorElement">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<Visibility>Visible</Visibility>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+											<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" Storyboard.TargetName="validationTooltip">
+												<DiscreteObjectKeyFrame KeyTime="0">
+													<DiscreteObjectKeyFrame.Value>
+														<System:Boolean>True</System:Boolean>
+													</DiscreteObjectKeyFrame.Value>
+												</DiscreteObjectKeyFrame>
+											</ObjectAnimationUsingKeyFrames>
+										</Storyboard>
+									</VisualState>
+								</VisualStateGroup>
+							</VisualStateManager.VisualStateGroups>
+							<Grid Margin="1,1,-1,-1">
+								<Border x:Name="ReadOnlyVisualElement" Background="#5EC9C9C9" Opacity="0"/>
+								<Border x:Name="MouseOverBorder" BorderBrush="Transparent">
+									<ScrollViewer x:Name="ContentElement" BorderThickness="0" IsTabStop="False" Padding="{TemplateBinding Padding}"/>
+								</Border>
+							</Grid>
+							<Border x:Name="DisabledVisualElement" BorderBrush="#A5F7F7F7" BorderThickness="{TemplateBinding BorderThickness}" Background="#A5F7F7F7" IsHitTestVisible="False" Opacity="0"/>
+							<Border x:Name="FocusVisualElement" IsHitTestVisible="False" Margin="1" Opacity="0"/>
+							<Border x:Name="ValidationErrorElement" BorderBrush="#FFDB000C" BorderThickness="1" CornerRadius="1" Visibility="Collapsed">
+								<ToolTipService.ToolTip>
+									<ToolTip x:Name="validationTooltip" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" Placement="Right" PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Template="{StaticResource ValidationToolTipTemplate}">
+										<ToolTip.Triggers>
+											<EventTrigger RoutedEvent="Canvas.Loaded">
+												<BeginStoryboard>
+													<Storyboard>
+														<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="IsHitTestVisible" Storyboard.TargetName="validationTooltip">
+															<DiscreteObjectKeyFrame KeyTime="0">
+																<DiscreteObjectKeyFrame.Value>
+																	<System:Boolean>true</System:Boolean>
+																</DiscreteObjectKeyFrame.Value>
+															</DiscreteObjectKeyFrame>
+														</ObjectAnimationUsingKeyFrames>
+													</Storyboard>
+												</BeginStoryboard>
+											</EventTrigger>
+										</ToolTip.Triggers>
+									</ToolTip>
+								</ToolTipService.ToolTip>
+								<Grid Background="Transparent" HorizontalAlignment="Right" Height="12" Margin="1,-4,-4,0" VerticalAlignment="Top" Width="12">
+									<Path Data="M 1,0 L6,0 A 2,2 90 0 1 8,2 L8,7 z" Fill="#FFDC000C" Margin="1,3,0,0"/>
+									<Path Data="M 0,0 L2,0 L 8,6 L8,8" Fill="#ffffff" Margin="1,3,0,0"/>
+								</Grid>
+							</Border>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding}" Width="480">
+        <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="8,448,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding SaveUser, Mode=OneWay}" />
+        <Border BorderBrush="#FF989898" BorderThickness="1" Height="120" Margin="50,20,32,0" VerticalAlignment="Top" CornerRadius="15">
+        	<StackPanel Margin="0">
+        		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="员工编号" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="0936" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        			</Grid>
+        		</Border>
+        		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="员工姓名" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="曹国伟" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        			</Grid>
+        		</Border>
+        		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="密码" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="123456" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        			</Grid>
+        		</Border>
+        	</StackPanel>
+        </Border>
+        <Border BorderBrush="#FF989898" BorderThickness="1" Margin="50,170,32,0" CornerRadius="15" Height="120" VerticalAlignment="Top">
+        	<StackPanel Margin="0">
+        		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="手机" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="13800106688" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        			</Grid>
+        		</Border>
+        		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="电话" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="(021)61330998" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        			</Grid>
+        		</Border>
+        		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="邮箱" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="cao@gmail.com" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        			</Grid>
+        		</Border>
+        	</StackPanel>
+        </Border>
+        <Border BorderBrush="#FF989898" BorderThickness="1" Margin="50,320,32,0" CornerRadius="15" Height="120" VerticalAlignment="Top">
+        	<StackPanel>
+        		<Border BorderBrush="#FF989898" Height="120" BorderThickness="0">
+        			<Grid>
+        				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
+        					<TextBlock TextWrapping="Wrap" Text="地址" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
+        				</Border>
+        				<StackPanel Margin="100,0,0,0">
+        					<Border BorderBrush="#FF989898" BorderThickness="0,0,0,1" Height="40">
+        						<Grid>
+        							<Grid.ColumnDefinitions>
+        								<ColumnDefinition Width="0.511*"/>
+        								<ColumnDefinition Width="0.5*"/>
+        							</Grid.ColumnDefinitions>
+        							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
+        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="0" Text="省" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        							</Border>
+        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="市" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FF666666"/>
+        						</Grid>
+        					</Border>
+        					<Border BorderBrush="#FF989898" BorderThickness="0,0,0,1" Height="40">
+        						<Grid>
+        							<Grid.ColumnDefinitions>
+        								<ColumnDefinition Width="0.511*"/>
+        								<ColumnDefinition Width="0.5*"/>
+        							</Grid.ColumnDefinitions>
+        							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
+        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="0" Text="区" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        							</Border>
+        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="邮编" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FF666666"/>
+        						</Grid>
+        					</Border>
+        					<Border BorderBrush="#FF989898" Height="40">
+        						<Grid>
+        							<Grid.ColumnDefinitions>
+        								<ColumnDefinition Width="0.511*"/>
+        								<ColumnDefinition Width="0.5*"/>
+        							</Grid.ColumnDefinitions>
+        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="街道" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="#FF666666"/>
+        						</Grid>
+        					</Border>
+        				</StackPanel>
+        			</Grid>
+        		</Border>
+        	</StackPanel>
+        </Border>
     </Grid>
 </UserControl>
