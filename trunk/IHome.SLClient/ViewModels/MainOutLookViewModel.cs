@@ -64,15 +64,18 @@ namespace IHome.SLClient
                             + ",{header:'佣金管理',item_list:[{name:'款项明细'},{name:'款项修改'},{name:'款项作废'},{name:'资金报表'},{name:'未收管理'},{name:'意向金管理'},{name:'服务费管理'}]}"
                             + ",{header:'最近打开',item_list:[]}]";
             _menuList = Newtonsoft.Json.JsonConvert.DeserializeObject<ObservableCollection<Menu>>(menulist);
+            SimpleMenu = _menuList[0].item_list;
             _recent = _menuList[_menuList.Count - 1];
         }
         private ObservableCollection<Menu> _menuList;
-
+        
         public ObservableCollection<Menu> MenuList
         {
             get { return _menuList; }
             set { _menuList = value; }
         }
+
+        public ObservableCollection<DLLModel> SimpleMenu { get; set; }
         private Menu _recent;
         private int _recentMax = 10;
         public Menu Recent
