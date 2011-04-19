@@ -176,9 +176,15 @@
 		</Style>
 	</UserControl.Resources>
 
-    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding}" Width="480">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding}" Width="480">
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0,1">
+    			<GradientStop Color="#FFE2E5EA"/>
+    			<GradientStop Color="#FFD0D2D8" Offset="1"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
         <telerik:RadButton Content="保存" VerticalAlignment="Top" Margin="8,448,0,0" HorizontalAlignment="Left" Width="75" Command="{Binding SaveUser, Mode=OneWay}" />
-        <Border BorderBrush="#FF989898" BorderThickness="1" Height="120" Margin="50,20,32,0" VerticalAlignment="Top" CornerRadius="15">
+        <Border BorderBrush="#FF989898" BorderThickness="1" Height="120" Margin="50,20,32,0" VerticalAlignment="Top" CornerRadius="15" Background="White">
         	<StackPanel Margin="0">
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
         			<Grid>
@@ -206,7 +212,7 @@
         		</Border>
         	</StackPanel>
         </Border>
-        <Border BorderBrush="#FF989898" BorderThickness="1" Margin="50,170,32,0" CornerRadius="15" Height="120" VerticalAlignment="Top">
+        <Border BorderBrush="#FF989898" BorderThickness="1" Margin="50,170,32,0" CornerRadius="15" Height="120" VerticalAlignment="Top" Background="White">
         	<StackPanel Margin="0">
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
         			<Grid>
@@ -234,7 +240,7 @@
         		</Border>
         	</StackPanel>
         </Border>
-        <Border BorderBrush="#FF989898" BorderThickness="1" Margin="50,320,32,0" CornerRadius="15" Height="120" VerticalAlignment="Top">
+        <Border BorderBrush="#FF989898" BorderThickness="1" Margin="50,320,32,0" CornerRadius="15" Height="120" VerticalAlignment="Top" Background="White">
         	<StackPanel>
         		<Border BorderBrush="#FF989898" Height="120" BorderThickness="0">
         			<Grid>
