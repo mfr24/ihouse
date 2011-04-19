@@ -1,4 +1,4 @@
-﻿<RadioButton
+﻿<telerik:RadRadioButton
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,7 +9,7 @@
 	x:Class="IHome.Controls.IHomeRadioButton"
 	>
 
-    <RadioButton.Resources>
+    <telerik:RadRadioButton.Resources>
 		<ControlTemplate x:Key="ValidationToolTipTemplate">
 			<Grid x:Name="Root" Margin="5,0" Opacity="0" RenderTransformOrigin="0,0">
 				<Grid.RenderTransform>
@@ -53,9 +53,9 @@
 				</Border>
 			</Grid>
 		</ControlTemplate>
-    </RadioButton.Resources>
+    </telerik:RadRadioButton.Resources>
 
-    <RadioButton.Style>
+    <telerik:RadRadioButton.Style>
         <Style TargetType="RadioButton">
             <Setter Property="Background" Value="#FF448DCA"/>
             <Setter Property="Foreground" Value="#FF000000"/>
@@ -120,5 +120,5 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    </RadioButton.Style>
-</RadioButton>
+    </telerik:RadRadioButton.Style>
+</telerik:RadRadioButton>
