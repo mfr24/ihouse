@@ -4,12 +4,18 @@
     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
     xmlns:ilight="http://silverlight.imbob.com.cn/Controls"
     xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Telerik_Windows_Controls_Chromes="clr-namespace:Telerik.Windows.Controls.Chromes;assembly=Telerik.Windows.Controls"
+    xmlns:ihome="clr-namespace:IHome.Controls;assembly=IHome.Controls"
     >
-    
-	<!-- Resource dictionary entries should be defined here. -->
+
+    <!-- Resource dictionary entries should be defined here. -->
     <Style TargetType="ilight:RadTabItemCloseable">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
         <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style TargetType="ihome:IHomeRadioButton">
+        <Setter Property="FontFamily" Value="Microsoft YaHei" />
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
     <Style TargetType="TextBlock">

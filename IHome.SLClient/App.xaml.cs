@@ -32,7 +32,7 @@ namespace IHome.SLClient
         private void Application_Startup(object sender, StartupEventArgs e)
         {
             StyleManager.ApplicationTheme = new Windows7Theme();
-            this.RootVisual = new MainOutLookView();
+            this.RootVisual = new MainPadView();
         }
 
         private void Application_Exit(object sender, EventArgs e)
