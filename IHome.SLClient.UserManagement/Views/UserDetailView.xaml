@@ -6,8 +6,7 @@
 	xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 	xmlns:System="clr-namespace:System;assembly=mscorlib"
 	mc:Ignorable="d"
-	x:Class="IHome.SLClient.UserManagement.UserDetailView"
-	d:DesignWidth="640" d:DesignHeight="480">
+	x:Class="IHome.SLClient.UserManagement.UserDetailView">
 
 	<UserControl.Resources>
 		<ControlTemplate x:Key="ValidationToolTipTemplate">
@@ -226,7 +225,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="员工编号" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="0936" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="0936" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -234,7 +233,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="员工姓名" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="曹国伟" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="曹国伟" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -242,7 +241,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="密码" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="123456" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="123456" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         	</StackPanel>
@@ -254,7 +253,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="手机" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="13800106688" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="13800106688" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -262,7 +261,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="电话" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="(021)61330998" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="(021)61330998" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -270,7 +269,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="邮箱" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="cao@gmail.com" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        				<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="cao@gmail.com" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         	</StackPanel>
@@ -290,9 +289,9 @@
         								<ColumnDefinition Width="0.5*"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="0" Text="省" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="4,0" Text="省" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FFB3B3B3"/>
         							</Border>
-        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="市" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FF666666"/>
+        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="市" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FFB3B3B3" Margin="4,0"/>
         						</Grid>
         					</Border>
         					<Border BorderBrush="#FF989898" BorderThickness="0,0,0,1" Height="40">
@@ -302,9 +301,9 @@
         								<ColumnDefinition Width="0.5*"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="0" Text="区" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FF666666"/>
+        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="4,0" Text="区" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FFB3B3B3"/>
         							</Border>
-        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="邮编" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FF666666"/>
+        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="邮编" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FFB3B3B3" Margin="4,0"/>
         						</Grid>
         					</Border>
         					<Border BorderBrush="#FF989898" Height="40">
@@ -313,7 +312,7 @@
         								<ColumnDefinition Width="0.511*"/>
         								<ColumnDefinition Width="0.5*"/>
         							</Grid.ColumnDefinitions>
-        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="街道" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="#FF666666"/>
+        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="街道" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.ColumnSpan="2" Foreground="Black" Margin="4,0"/>
         						</Grid>
         					</Border>
         				</StackPanel>
