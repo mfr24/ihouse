@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 
 namespace IHome.Controls
 {
-    public partial class IHomeRadioButton : RadioButton
+    public partial class IHomeRadioButton : Telerik.Windows.Controls.RadRadioButton
 	{
         public IHomeRadioButton()
 		{
