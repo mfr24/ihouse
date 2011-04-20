@@ -9,12 +9,15 @@
 	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:IHome_Controls="clr-namespace:IHome.Controls;assembly=IHome.Controls"
 	mc:Ignorable="d"
 	x:Name="userControl"
-	x:Class="IHome.SLClient.MainPadView"
-	d:DesignWidth="640" d:DesignHeight="480">
+	x:Class="IHome.SLClient.MainPadView">
     <UserControl.Resources>
         <local:MainOutLookViewModel x:Key="MainOutLookViewModelDataSource" />
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource MainOutLookViewModelDataSource}}" Background="Black" Margin="50,0,50,20">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource MainOutLookViewModelDataSource}}" Background="Black" Margin="0,8,0,24" Width="980" HorizontalAlignment="Center">
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="Auto" MinHeight="24"/>
+    		<RowDefinition/>
+    	</Grid.RowDefinitions>
     	<Grid.Effect>
     		<DropShadowEffect Direction="275"/>
     	</Grid.Effect>
@@ -22,21 +25,10 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="1">
-            <ilight:RadTabItemCloseable Header="首页" x:Name="BB">
-                <!--无法获得属性内容的x:Name,此处后台代码HH引用为null-->
-                <local:HomeView x:Name="HH"/>
-            </ilight:RadTabItemCloseable>
-        </telerik:RadTabControl>
-        <telerik:RadBusyIndicator x:Name="busyIndicator" IsBusy="{Binding IsBusy, Source={StaticResource AppDataSource}}" BusyContent="Loading data...." Grid.ColumnSpan="2">
-            <telerik:RadBusyIndicator.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="White" Offset="0"/>
-                    <GradientStop Color="#B2587A95" Offset="1"/>
-                </LinearGradientBrush>
-            </telerik:RadBusyIndicator.Background>
-        </telerik:RadBusyIndicator>
-        <Border BorderBrush="#FFC3D1E1" BorderThickness="0" Background="#FFC3D1E1" CornerRadius="5">
+        <Grid Height="40" Background="White" Grid.ColumnSpan="2" Margin="0">
+    		<Image Margin="-4,0" Source="/IHome.SLClient;component/Images/navigation.png" Stretch="Fill"/>
+    	</Grid>
+        <Border BorderBrush="#FFC3D1E1" BorderThickness="0" Background="#FFC3D1E1" CornerRadius="5" Grid.Row="1">
         	<StackPanel Width="160">
         		<StackPanel.Background>
         			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -63,5 +55,19 @@
         		</telerik:ListBox>
         	</StackPanel>
         </Border>
+        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0" Grid.Row="1">
+            <ilight:RadTabItemCloseable Header="首页" x:Name="BB">
+                <!--无法获得属性内容的x:Name,此处后台代码HH引用为null-->
+                <local:HomeView x:Name="HH"/>
+            </ilight:RadTabItemCloseable>
+        </telerik:RadTabControl>
+        <telerik:RadBusyIndicator x:Name="busyIndicator" IsBusy="{Binding IsBusy, Source={StaticResource AppDataSource}}" BusyContent="Loading data...." Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <telerik:RadBusyIndicator.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#B2587A95" Offset="1"/>
+                </LinearGradientBrush>
+            </telerik:RadBusyIndicator.Background>
+        </telerik:RadBusyIndicator>
     </Grid>
 </UserControl>
