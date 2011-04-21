@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <local:MainOutLookViewModel x:Key="MainOutLookViewModelDataSource" />
     </UserControl.Resources>
-    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource MainOutLookViewModelDataSource}}" Background="Black" Margin="0,8,0,24" Width="980" HorizontalAlignment="Center">
+    <Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource MainOutLookViewModelDataSource}}" Margin="0,8,0,24" Width="980" HorizontalAlignment="Center" Background="White">
     	<Grid.Effect>
     		<DropShadowEffect Direction="275"/>
     	</Grid.Effect>
@@ -31,12 +31,23 @@
     		<Grid Height="33">
     			<Grid.Background>
     				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-    					<GradientStop Color="#FFE7E9EC" Offset="0"/>
-    					<GradientStop Color="#FFBEC2CA" Offset="1"/>
+    					<GradientStop Color="#FFF4F5F7" Offset="0"/>
+    					<GradientStop Color="#FFA8ACB9" Offset="1"/>
     				</LinearGradientBrush>
     			</Grid.Background>
-    			<Image Margin="20,0,0,0" Source="/IHome.SLClient;component/Images/logo.jpg" HorizontalAlignment="Left"/>
-    			<TextBlock Margin="60,0,0,0" TextWrapping="Wrap" Text="IBM" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Arial Unicode MS" FontWeight="Bold" FontSize="18.667" Foreground="#FF414141"/>
+    			<telerik:RadButton x:Name="HomeButton" Content="首页" Margin="36,0,78,0" VerticalAlignment="Center" Template="{StaticResource NavigationTemplate}" Padding="10,3" d:LayoutOverrides="Width" Click="RadButton_Click">
+    				<telerik:RadButton.Effect>
+        				<DropShadowEffect ShadowDepth="2" Direction="275"/>
+        			</telerik:RadButton.Effect>
+        			<telerik:RadButton.Background>
+        				<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+        					<GradientStop Color="White" Offset="0"/>
+        					<GradientStop Color="Gainsboro"/>
+        					<GradientStop Color="#FFE1E1E3"/>
+        					<GradientStop Color="#FFBDBDC2" Offset="1"/>
+        				</LinearGradientBrush>
+        			</telerik:RadButton.Background>
+				</telerik:RadButton>
     		</Grid>
     		<telerik:ListBox ItemsSource="{Binding SimpleMenu}" Margin="0">
     			<telerik:ListBox.ItemTemplate>
@@ -56,12 +67,25 @@
     			</telerik:ListBox.ItemTemplate>
     		</telerik:ListBox>
     	</StackPanel>
-        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0">
+
+		<telerik:RadTransitionControl x:Name="Transition" Margin="0" HorizontalContentAlignment="Stretch" Grid.Column="1">
+            <telerik:RadTransitionControl.Transition>
+                <telerik:PerspectiveRotationTransition Direction="Right" NewPlaneCenterOfRotationX="1" OldPlaneCenterOfRotationX="0">
+                    <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                    <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                </telerik:PerspectiveRotationTransition>
+            </telerik:RadTransitionControl.Transition>
+			        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0">
             <ilight:RadTabItemCloseable Header="首页" x:Name="BB">
                 <!--无法获得属性内容的x:Name,此处后台代码HH引用为null-->
                 <local:HomeView x:Name="HH"/>
             </ilight:RadTabItemCloseable>
         </telerik:RadTabControl>
+        </telerik:RadTransitionControl>
         <telerik:RadBusyIndicator x:Name="busyIndicator" IsBusy="{Binding IsBusy, Source={StaticResource AppDataSource}}" BusyContent="Loading data...." Grid.ColumnSpan="2">
             <telerik:RadBusyIndicator.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
