@@ -20,8 +20,18 @@ namespace IHome.SLClient
 		public MainPadView()
 		{
 			this.InitializeComponent();
-			
+            _uiList = new UIElement[] { Transition.Content as UIElement,new NavigationView() };
 			// Insert code required on object creation below this point.
 		}
+
+        private UIElement[] _uiList;
+        private string[] _btnName = {"首页","返回"};
+        private int _btnStatus=0;
+        private void RadButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _btnStatus++;
+            Transition.Content = _uiList[_btnStatus%2];
+            HomeButton.Content = _btnName[_btnStatus%2];
+        }
 	}
 }
