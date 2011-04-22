@@ -28,7 +28,7 @@
     				<GradientStop Color="#FFE8EAED" />
     			</LinearGradientBrush>
     		</StackPanel.Background>
-    		<Grid Height="33">
+    		<Grid Height="40">
     			<Grid.Background>
     				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
     					<GradientStop Color="#FFF4F5F7" Offset="0"/>
@@ -79,7 +79,13 @@
                     </telerik:PerspectiveRotationTransition.OldPlaneEasing>
                 </telerik:PerspectiveRotationTransition>
             </telerik:RadTransitionControl.Transition>
-			        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0">
+			        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0" Style="{StaticResource RadTabControlStyle}" BorderBrush="{StaticResource ControlElement_Normal}">
+			        	<telerik:RadTabControl.Background>
+			        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+			        			<GradientStop Color="#FFBDBDC2" Offset="1"/>
+			        			<GradientStop Color="#FFDFDFE1"/>
+			        		</LinearGradientBrush>
+			        	</telerik:RadTabControl.Background>
             <ilight:RadTabItemCloseable Header="首页" x:Name="BB">
                 <!--无法获得属性内容的x:Name,此处后台代码HH引用为null-->
                 <local:HomeView x:Name="HH"/>
