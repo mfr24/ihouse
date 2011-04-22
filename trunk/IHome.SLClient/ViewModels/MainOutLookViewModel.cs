@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows;
 using System.Collections.ObjectModel;
-
+using IHome.Models;
 namespace IHome.SLClient
 {
 
