@@ -181,7 +181,7 @@
 			<GradientStop Color="#FFE2E5EA"/>
 		</LinearGradientBrush>
 	</Border.Background>
-    <Grid x:Name="LayoutRoot" DataContext="{Binding}" Width="480">
+    <Grid x:Name="LayoutRoot" Width="480">
         <Border Height="50" VerticalAlignment="Top" CornerRadius="5">
         	<Border.Background>
         			<LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
