@@ -650,7 +650,7 @@
 								</LinearGradientBrush>
 							</Border.Background>
 						</Border>
-						<Border BorderBrush="{StaticResource ControlOuterBorder_Normal}" BorderThickness="1,0,0,0"/>
+						<Border BorderBrush="{StaticResource ControlOuterBorder_Normal}"/>
 						<telerik:RadDockPanel Canvas.ZIndex="10">
 							<ToggleButton x:Name="DropDownButtonElement" ClickMode="Press" telerik:RadDockPanel.Dock="Right" IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="2 4 4 2" Style="{TemplateBinding DropDownButtonStyle}" Visibility="Collapsed">
 								<telerik:RadContextMenu.ContextMenu>

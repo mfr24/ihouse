@@ -21,6 +21,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Border BorderThickness="0,0,1,0" BorderBrush="{StaticResource ControlItem_OuterBorder_Normal}">
         <StackPanel Width="160">
     		<StackPanel.Background>
     			<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -67,7 +68,7 @@
     			</telerik:ListBox.ItemTemplate>
     		</telerik:ListBox>
     	</StackPanel>
-
+        </Border>
 		<telerik:RadTransitionControl x:Name="Transition" Margin="0" HorizontalContentAlignment="Stretch" Grid.Column="1">
             <telerik:RadTransitionControl.Transition>
                 <telerik:PerspectiveRotationTransition Direction="Right" NewPlaneCenterOfRotationX="1" OldPlaneCenterOfRotationX="0">
@@ -79,14 +80,14 @@
                     </telerik:PerspectiveRotationTransition.OldPlaneEasing>
                 </telerik:PerspectiveRotationTransition>
             </telerik:RadTransitionControl.Transition>
-			        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0" Style="{StaticResource RadTabControlStyle}" BorderBrush="{StaticResource ControlElement_Normal}">
+			        <telerik:RadTabControl x:Name="MainTab" HorizontalAlignment="Stretch" Grid.Column="1" Margin="0" Style="{StaticResource RadTabControlStyle}" BorderThickness="0,0,1,1">
 			        	<telerik:RadTabControl.Background>
 			        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 			        			<GradientStop Color="#FFBDBDC2" Offset="1"/>
 			        			<GradientStop Color="#FFDFDFE1"/>
 			        		</LinearGradientBrush>
 			        	</telerik:RadTabControl.Background>
-            <ilight:RadTabItemCloseable Header="首页" x:Name="BB">
+            <ilight:RadTabItemCloseable Header="登录" x:Name="BB">
                 <!--无法获得属性内容的x:Name,此处后台代码HH引用为null-->
                 <local:HomeView x:Name="HH"/>
             </ilight:RadTabItemCloseable>
