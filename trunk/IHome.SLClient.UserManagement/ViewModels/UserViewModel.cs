@@ -47,27 +47,7 @@ namespace IHome.SLClient.UserManagement
                 });
             }
         }
-        public ICommand SaveUser
-        {
-            get
-            {
-                return new ILight.Core.Model.CommandBase((p) =>
-                {
-                    List<object> requestList = new List<object>();
-                    Dictionary<string, object> requestParams = new Dictionary<string, object>();
-                    requestParams["user"] = NewUser;
-                    requestList.Add(requestParams);
-                    this.Request(_cmdTpe==CmdType.Add
-                        ? "IHome.Server.Facade.MainFacade.AddUser"
-                        : "IHome.Server.Facade.MainFacade.UpdateUser",
-                    requestList,
-                    (result) =>
-                    {
-                        //do somethting while server return
-                    });
-                });
-            }
-        }
+        
         public ICommand DeleteUser
         {
             get
