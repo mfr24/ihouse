@@ -6,6 +6,7 @@ namespace IHome.Server.Facade
 {
     public class table_info {
         public string key { get; set; }
+        public string field { get; set; }
     }
     public static class Entity
     {
@@ -17,7 +18,7 @@ namespace IHome.Server.Facade
                 using (var context = new Data.CbooEntities())
                 {
                     var table = context.ExecuteStoreQuery<table_info>("desc " + tableName);
-                    EntityKey[tableName] = table.Where(t => t.key == "PRI").First().key;
+                    EntityKey[tableName] = table.Where(t => t.key == "PRI").First().field;
                 }
             }
             return EntityKey[tableName];
