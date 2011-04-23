@@ -12,11 +12,6 @@
                              AutoGenerateColumns="False"
                              ShowGroupPanel="False" Margin="0,0,0,28"
                              >
-            <i:Interaction.Triggers>
-                <i:EventTrigger>
-                    <i:InvokeCommandAction Command="{Binding GetUserList}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
             <telerik:RadGridView.Projection>
                 <PlaneProjection/>
             </telerik:RadGridView.Projection>

@@ -48,7 +48,18 @@ namespace IHome.SLClient.UserManagement
         {
            
         }
-        public sys_user_baseinfo_ex User { get; set; }
+        private sys_user_baseinfo_ex _user;
+
+        public sys_user_baseinfo_ex User
+        {
+            get { return _user; }
+            set
+            {
+                _user = value;
+                NotifyPropertyChanged("User");
+            }
+        }
+       
         public List<string> State { get; set; }
         public List<string> City { get; set; }
         #region INotifyPropertyChanged

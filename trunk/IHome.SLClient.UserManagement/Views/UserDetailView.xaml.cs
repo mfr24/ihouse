@@ -7,15 +7,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace IHome.SLClient.UserManagement
 {
 	public partial class UserDetailView : UserControl
 	{
-		public UserDetailView()
+        public UserDetailView()
 		{
-			// Required to initialize variables
-			InitializeComponent();
+            InitializeComponent();
 		}
 	}
 }
