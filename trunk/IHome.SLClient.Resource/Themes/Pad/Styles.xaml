@@ -17,4 +17,5 @@
         <Setter Property="FontSize" Value="13" />
         <Setter Property="FontWeight" Value="Bold" />
     </Style>
+    <DropShadowEffect x:Key="Button_ShadowEffect" ShadowDepth="2" Direction="275"/>
 </ResourceDictionary>
