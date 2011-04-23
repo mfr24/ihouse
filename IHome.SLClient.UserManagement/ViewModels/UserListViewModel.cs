@@ -30,7 +30,7 @@ namespace IHome.SLClient.UserManagement
                     requestList,
                     (result) =>
                     {
-                        //do somethting while server return
+                        GetUserList.Execute(null);
                     });
                 });
             }

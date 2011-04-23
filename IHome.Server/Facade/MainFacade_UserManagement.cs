@@ -76,7 +76,7 @@ namespace IHome.Server.Facade
                 Models.Pager<sys_user_baseinfo> pager = null;
                 if (paramDicts[0].ContainsKey("Pager`1")) pager = paramDicts[0].As<Models.Pager<sys_user_baseinfo>>();
                 return Entity.GetModelList<sys_user_baseinfo, object>(
-                    null,//model => model.user_name == "aaa",
+                    model=>model.dr!=true,//model => model.user_name == "aaa",
                     model => model.user_name,
                     pager);
             });
