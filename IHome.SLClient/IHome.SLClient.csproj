@@ -200,6 +200,10 @@
       <Project>{92BE0677-8FB4-4837-B246-B9B8570B1245}</Project>
       <Name>IHome.SLClient.InfoManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IHome.SLClient.Resource\IHome.SLClient.Resource.csproj">
+      <Project>{C7F1CBD5-4756-42D9-82D7-C539E5386BAF}</Project>
+      <Name>IHome.SLClient.Resource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IHome.SLClient.UserManagement\IHome.SLClient.UserManagement.csproj">
       <Project>{776BCF25-414D-47B8-8FFA-4FB1B530895E}</Project>
       <Name>IHome.SLClient.UserManagement</Name>
