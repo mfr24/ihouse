@@ -10,12 +10,11 @@ using System.Windows.Shapes;
 
 namespace IHome.Controls
 {
-	public partial class ChildWin : UserControl
+    public partial class ChildWin : Telerik.Windows.Controls.ListBox
 	{
-		public ChildWin()
+        public ChildWin()
 		{
-			// Required to initialize variables
-			InitializeComponent();
+            InitializeComponent();
 		}
 	}
 }
