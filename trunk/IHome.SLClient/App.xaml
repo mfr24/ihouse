@@ -8,6 +8,7 @@
     		<ResourceDictionary.MergedDictionaries>
     			<ResourceDictionary Source="Styles.xaml"/>
     			<ResourceDictionary Source="MainPanelStyle.xaml"/>
+    			<ResourceDictionary Source="/IHome.Controls;component/IHomeControls.xaml"/>
     		</ResourceDictionary.MergedDictionaries>
     		<!--程序全局变量-->
     		<model:AppViewModel x:Key="AppDataSource" />

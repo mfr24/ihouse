@@ -3,8 +3,9 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
 	xmlns:local="clr-namespace:IHome.SLClient"
+	xmlns:IHome_Controls="clr-namespace:IHome.Controls;assembly=IHome.Controls"
+	mc:Ignorable="d"
 	x:Class="IHome.SLClient.NavigationView"
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
@@ -12,6 +13,16 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource NavigationViewModelDataSource}}">
-		<Image Margin="0" Source="/IHome.SLClient;component/Images/navigation.png" Stretch="None" HorizontalAlignment="Center"/>
-	</Grid>
+        <IHome_Controls:ChildWin Margin="136,160,160,104" Padding="5 5">
+            <Button>
+                aaa
+            </Button>
+            <Button>
+                aaa
+            </Button>
+            <Button>
+                aaa
+            </Button>
+        </IHome_Controls:ChildWin>
+    </Grid>
 </UserControl>
