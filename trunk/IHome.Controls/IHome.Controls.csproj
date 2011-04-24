@@ -60,6 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildWin.xaml.cs">
+      <DependentUpon>ChildWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataForm.xaml.cs">
       <DependentUpon>DataForm.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ChildWin.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="DataForm.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
