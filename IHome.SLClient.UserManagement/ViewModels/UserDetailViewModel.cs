@@ -13,6 +13,12 @@ namespace IHome.SLClient.UserManagement
     public class UserDetailViewModel : INotifyPropertyChanged
     {
         private CmdType _cmdType;
+
+        public CmdType CmdType
+        {
+            get { return _cmdType; }
+            set { _cmdType = value; }
+        }
         public ICommand Save
         {
             get

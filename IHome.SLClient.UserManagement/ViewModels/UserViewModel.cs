@@ -30,6 +30,7 @@ namespace IHome.SLClient.UserManagement
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     _detailVM.User = new sys_user_baseinfo_ex();
+                    _detailVM.CmdType = CmdType.Add;
                 });
             }
         }
@@ -40,6 +41,7 @@ namespace IHome.SLClient.UserManagement
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
                     _detailVM.User = _listVM.SelectedUser;
+                    _detailVM.CmdType = CmdType.Update;
                 });
             }
         }

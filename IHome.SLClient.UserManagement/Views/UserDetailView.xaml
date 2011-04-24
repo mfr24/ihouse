@@ -225,7 +225,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="员工编号" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.user_code}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
+                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.user_code, Mode=TwoWay}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -233,7 +233,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="员工姓名" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.user_name}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
+                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.user_name, Mode=TwoWay}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -241,7 +241,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="密码" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.password}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
+                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.password, Mode=TwoWay}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         	</StackPanel>
@@ -253,7 +253,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="手机" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.mobile}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
+                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.mobile, Mode=TwoWay}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -261,7 +261,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="电话" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.office_tel}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
+                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.office_tel, Mode=TwoWay}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         		<Border BorderBrush="#FF989898" Height="40" Margin="0" BorderThickness="0,0,0,1">
@@ -269,7 +269,7 @@
         				<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0" Width="100" HorizontalAlignment="Left">
         					<TextBlock TextWrapping="Wrap" Text="邮箱" VerticalAlignment="Center" Margin="0,0,8,0" d:LayoutOverrides="Width" HorizontalAlignment="Right" FontSize="12" FontWeight="Bold" Foreground="#FF666666"/>
         				</Border>
-                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.email}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
+                            <TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="108,0,8,0" Text="{Binding User.email, Mode=TwoWay}" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold"/>
         			</Grid>
         		</Border>
         	</StackPanel>
