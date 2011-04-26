@@ -49,7 +49,7 @@
         				</LinearGradientBrush>
         			</telerik:RadButton.Background>
 				</telerik:RadButton>
-    			<Button Content="哈哈" HorizontalAlignment="Right" Margin="0,0,22,0" d:LayoutOverrides="Height" Padding="12,4" VerticalAlignment="Center">
+    			<Button Content="哈哈" HorizontalAlignment="Right" Margin="0,0,22,0" d:LayoutOverrides="Height" Padding="12,5" VerticalAlignment="Center">
                         <Button.Effect>
     					<DropShadowEffect ShadowDepth="2" Direction="275"/>
                             </Button.Effect>

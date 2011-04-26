@@ -32,8 +32,15 @@
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                 	<Storyboard>
-                                		<ColorAnimation Duration="0" To="#FFBDBDC2" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="Background" d:IsOptimized="True"/>
+                                		<ColorAnimation Duration="0" To="#FFC5CDDA" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="Background" d:IsOptimized="True"/>
                                 		<ColorAnimation Duration="0" To="White" Storyboard.TargetProperty="(Border.Background).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="Background" d:IsOptimized="True"/>
+                                		<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.CornerRadius)" Storyboard.TargetName="Background">
+                                			<DiscreteObjectKeyFrame KeyTime="0">
+                                				<DiscreteObjectKeyFrame.Value>
+                                					<CornerRadius>3</CornerRadius>
+                                				</DiscreteObjectKeyFrame.Value>
+                                			</DiscreteObjectKeyFrame>
+                                		</ObjectAnimationUsingKeyFrames>
                                 	</Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
@@ -47,7 +54,7 @@
                                 <VisualState x:Name="Unfocused"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Border x:Name="Background" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="1">
+                        <Border x:Name="Background" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
                             <Border.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="#FFE1E1E3" Offset="0"/>
