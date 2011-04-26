@@ -83,6 +83,7 @@ namespace IHome.SLClient.UserManagement
                 CmdCompleted = cmd =>
                 {
                     ViewIndex = 0;
+                    _listVM.GetUserList.Execute(null);
                 }
             };
         }
