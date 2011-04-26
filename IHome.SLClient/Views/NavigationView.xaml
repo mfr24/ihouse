@@ -13,7 +13,7 @@
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource NavigationViewModelDataSource}}">
-        <IHome_Controls:ChildWin Margin="136,160,160,104" Padding="5 5">
+        <IHome_Controls:ChildWin Margin="136,160,0,0" Padding="5 5" Height="216" VerticalAlignment="Top" HorizontalAlignment="Left" Width="344">
             <Button>
                 aaa
             </Button>
