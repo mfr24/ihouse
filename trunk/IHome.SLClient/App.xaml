@@ -6,7 +6,6 @@
     <Application.Resources>
     	<ResourceDictionary>
     		<ResourceDictionary.MergedDictionaries>
-    			<ResourceDictionary Source="Styles.xaml"/>
     			<ResourceDictionary Source="MainPanelStyle.xaml"/>
     			<ResourceDictionary Source="/IHome.Controls;component/Theme/IHomeControls.xaml"/>
     		</ResourceDictionary.MergedDictionaries>
