@@ -36,24 +36,11 @@
     					<GradientStop Color="#FFA8ACB9" Offset="1"/>
     				</LinearGradientBrush>
     			</Grid.Background>
-    			<telerik:RadButton x:Name="HomeButton" Content="首页" Margin="36,0,78,0" VerticalAlignment="Center" Template="{StaticResource NavigationTemplate}" Padding="10,3" d:LayoutOverrides="Width" Click="RadButton_Click">
-    				<telerik:RadButton.Effect>
-        				<DropShadowEffect ShadowDepth="2" Direction="275"/>
-        			</telerik:RadButton.Effect>
-        			<telerik:RadButton.Background>
-        				<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-        					<GradientStop Color="White" Offset="0"/>
-        					<GradientStop Color="Gainsboro"/>
-        					<GradientStop Color="#FFE1E1E3"/>
-        					<GradientStop Color="#FFBDBDC2" Offset="1"/>
-        				</LinearGradientBrush>
-        			</telerik:RadButton.Background>
-				</telerik:RadButton>
-    			<Button Content="哈哈" HorizontalAlignment="Right" Margin="0,0,22,0" d:LayoutOverrides="Height" Padding="12,5" VerticalAlignment="Center">
+                    <Button x:Name="HomeButton" Content="首页" Margin="36,0,0,0" d:LayoutOverrides="Height" Padding="12,5" VerticalAlignment="Center" Click="RadButton_Click" HorizontalAlignment="Left">
                         <Button.Effect>
     					<DropShadowEffect ShadowDepth="2" Direction="275"/>
-                            </Button.Effect>
-                    </Button>
+                        </Button.Effect>
+                </Button>
     		</Grid>
     		<telerik:ListBox ItemsSource="{Binding SimpleMenu}" Margin="0">
     			<telerik:ListBox.ItemTemplate>
