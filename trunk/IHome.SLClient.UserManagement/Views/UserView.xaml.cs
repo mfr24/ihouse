@@ -12,38 +12,49 @@ using System.Windows.Shapes;
 
 namespace IHome.SLClient.UserManagement
 {
-	/// <summary>
-	/// Interaction logic for UserView.xaml
-	/// </summary>
-	public partial class UserView : UserControl
-	{
-		public UserView()
-		{
-			this.InitializeComponent();
+    /// <summary>
+    /// Interaction logic for UserView.xaml
+    /// </summary>
+    public partial class UserView : UserControl
+    {
+
+
+        public int ViewIndex
+        {
+            get { return (int)GetValue(ViewIndexProperty); }
+            set { SetValue(ViewIndexProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ViewIndex.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ViewIndexProperty =
+            DependencyProperty.Register("ViewIndex", typeof(int), typeof(UserView), new PropertyMetadata(0,
+                (d, e) =>
+                {
+                    ViewTo((UserView)d, (int)e.NewValue);
+                }));
+        public static void ViewTo(UserView view, int viewIndex)
+        {
+
+            ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)view.Transition.Transition).SlideDirection = (FlowDirection)viewIndex;
+            view.Transition.Content = view.UiList[viewIndex];
+        }
+
+        public UserView()
+        {
+            this.InitializeComponent();
             _uiList = new UIElement[] { new UserListView() { DataContext = ((UserViewModel)this.Resources["UserViewModelDataSource"]).ListVM }, 
                 new UserDetailView(){DataContext=((UserViewModel)this.Resources["UserViewModelDataSource"]).DetailVM} };
             Transition.Content = _uiList[0];
-			
-			// Insert code required on object creation below this point.
-		}
+            Binding b=new Binding();
+            b.Source=this.Resources["UserViewModelDataSource"];
+            b.Path=new PropertyPath("ViewIndex");
+            this.SetBinding(ViewIndexProperty, b);
+        }
         private UIElement[] _uiList;
 
-        private void RadButton_Click_Select(object sender, RoutedEventArgs e)
+        public UIElement[] UiList
         {
-            ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)Transition.Transition).SlideDirection = FlowDirection.LeftToRight;
-            this.Transition.Content = _uiList[0];
+            get { return _uiList; }
         }
-        
-        private void RadButton_Click_Add(object sender, RoutedEventArgs e)
-        {
-            ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)Transition.Transition).SlideDirection = FlowDirection.RightToLeft;
-            this.Transition.Content = _uiList[1];
-        }
-
-        private void RadButton_Click_Update(object sender, RoutedEventArgs e)
-        {
-            ((Telerik.Windows.Controls.TransitionEffects.SlideAndZoomTransition)Transition.Transition).SlideDirection = FlowDirection.RightToLeft;
-            this.Transition.Content = _uiList[1];
-        }
-	}
+    }
 }

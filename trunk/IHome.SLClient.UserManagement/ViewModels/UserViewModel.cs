@@ -12,7 +12,19 @@ namespace IHome.SLClient.UserManagement
 {
     public class UserViewModel : INotifyPropertyChanged
     {
-        private UserDetailViewModel _detailVM = new UserDetailViewModel();
+        private int _viewIndex;
+
+        public int ViewIndex
+        {
+            get { return _viewIndex; }
+            set
+            {
+                _viewIndex = value;
+                NotifyPropertyChanged("ViewIndex");
+            }
+        }
+
+        private UserDetailViewModel _detailVM;
         public UserDetailViewModel DetailVM
         {
             get { return _detailVM; }
@@ -31,6 +43,7 @@ namespace IHome.SLClient.UserManagement
                 {
                     _detailVM.User = new sys_user_baseinfo_ex();
                     _detailVM.CmdType = CmdType.Add;
+                    ViewIndex = 1;
                 });
             }
         }
@@ -42,6 +55,17 @@ namespace IHome.SLClient.UserManagement
                 {
                     _detailVM.User = _listVM.SelectedUser;
                     _detailVM.CmdType = CmdType.Update;
+                    ViewIndex = 1;
+                });
+            }
+        }
+        public ICommand ToListView
+        {
+            get
+            {
+                return new ILight.Core.Model.CommandBase((p) =>
+                {
+                    ViewIndex = 0;
                 });
             }
         }
@@ -53,6 +77,13 @@ namespace IHome.SLClient.UserManagement
                 new CmdButton() { text = "修改" }, 
                 new CmdButton() { text = "删除" }, 
                 new CmdButton() { text = "查看" } 
+            };
+            _detailVM = new UserDetailViewModel()
+            {
+                CmdCompleted = cmd =>
+                {
+                    ViewIndex = 0;
+                }
             };
         }
         public ObservableCollection<CmdButton> ButtonList { get; set; }

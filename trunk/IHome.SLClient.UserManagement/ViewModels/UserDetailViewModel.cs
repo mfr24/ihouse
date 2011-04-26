@@ -12,6 +12,7 @@ namespace IHome.SLClient.UserManagement
 {
     public class UserDetailViewModel : INotifyPropertyChanged
     {
+        public Action<string> CmdCompleted { get; set; }
         private CmdType _cmdType;
 
         public CmdType CmdType
@@ -36,6 +37,9 @@ namespace IHome.SLClient.UserManagement
                     (result) =>
                     {
                         //do somethting while server return
+                        if (CmdCompleted != null) {
+                            CmdCompleted("Save");
+                        }
                     });
                 });
             }
@@ -46,7 +50,10 @@ namespace IHome.SLClient.UserManagement
             {
                 return new ILight.Core.Model.CommandBase((p) =>
                 {
-
+                    if (CmdCompleted != null)
+                    {
+                        CmdCompleted("Cancel");
+                    }
                 });
             }
         }
