@@ -10,7 +10,7 @@
     <Grid x:Name="LayoutRoot">
         <telerik:RadGridView x:Name="radGridView" ItemsSource="{Binding UserList, Mode=TwoWay}" SelectedItem="{Binding SelectedUser, Mode=TwoWay}" 
                              AutoGenerateColumns="False"
-                             ShowGroupPanel="False" Margin="0,0,0,28"
+                             ShowGroupPanel="False" Margin="0,64,0,28"
                              >
             <telerik:RadGridView.Projection>
                 <PlaneProjection/>
@@ -50,6 +50,51 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </telerik:RadDataPager>
+        <Border Height="48" VerticalAlignment="Top" CornerRadius="5">
+        	<Border.Effect>
+        		<DropShadowEffect ShadowDepth="4" Direction="275"/>
+        	</Border.Effect>
+        	<Border.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FFE8EAED" Offset="0"/>
+        			<GradientStop Color="#FFBFC3CB" Offset="1"/>
+        		</LinearGradientBrush>
+        	</Border.Background>
+        	<StackPanel Margin="8" Orientation="Horizontal">
+        		<telerik:RadComboBox HorizontalAlignment="Left" EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,0,0,0">
+        			<telerik:RadComboBox.Effect>
+        				<DropShadowEffect ShadowDepth="2" Direction="275"/>
+        			</telerik:RadComboBox.Effect>
+        			<telerik:RadComboBoxItem Content="Item 1"/>
+        			<telerik:RadComboBoxItem Content="Item 2"/>
+        			<telerik:RadComboBoxItem Content="Item 3"/>
+        		</telerik:RadComboBox>
+        		<telerik:RadComboBox HorizontalAlignment="Left" EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,0,0,0">
+        			<telerik:RadComboBox.Effect>
+        				<DropShadowEffect ShadowDepth="2" Direction="275"/>
+        			</telerik:RadComboBox.Effect>
+        			<telerik:RadComboBoxItem Content="Item 1"/>
+        			<telerik:RadComboBoxItem Content="Item 2"/>
+        			<telerik:RadComboBoxItem Content="Item 3"/>
+        		</telerik:RadComboBox>
+        		<telerik:RadComboBox EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,0,0,0">
+        			<telerik:RadComboBox.Effect>
+        				<DropShadowEffect ShadowDepth="2" Direction="275"/>
+        			</telerik:RadComboBox.Effect>
+        			<telerik:RadComboBoxItem Content="Item 1"/>
+        			<telerik:RadComboBoxItem Content="Item 2"/>
+        			<telerik:RadComboBoxItem Content="Item 3"/>
+        		</telerik:RadComboBox>
+        		<telerik:RadComboBox EmptyText="所属公司" FontSize="13.333" BorderThickness="0" HorizontalAlignment="Right" Margin="20,0,0,0">
+        			<telerik:RadComboBox.Effect>
+        				<DropShadowEffect ShadowDepth="2" Direction="275"/>
+        			</telerik:RadComboBox.Effect>
+        			<telerik:RadComboBoxItem Content="Item 1"/>
+        			<telerik:RadComboBoxItem Content="Item 2"/>
+        			<telerik:RadComboBoxItem Content="Item 3"/>
+        		</telerik:RadComboBox>
+        	</StackPanel>
+        </Border>
 
     </Grid>
 </UserControl>

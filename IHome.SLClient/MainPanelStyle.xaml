@@ -470,7 +470,6 @@
 	</Style>
 	<SolidColorBrush x:Key="TabControl_HeaderBackground" Color="#FFBFBFBF"/>
 	<CornerRadius x:Key="TabControl_LeftScrollButton_CornerRadius">2 0 0 2</CornerRadius>
-	<telerik:Office_BlackTheme x:Key="Theme2"/>
 	<Style x:Key="LeftScrollButtonStyle" TargetType="RepeatButton">
 		<Setter Property="Template">
 			<Setter.Value>
@@ -492,7 +491,7 @@
 						</VisualStateManager.VisualStateGroups>
 						<Border x:Name="ButtonBorder">
 							<Grid>
-								<Telerik_Windows_Controls_Chromes:ButtonChrome x:Name="ButtonVisual" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{StaticResource TabControl_LeftScrollButton_CornerRadius}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderEnabled="{TemplateBinding IsEnabled}" telerik:StyleManager.Theme="{StaticResource Theme2}"/>
+								<Telerik_Windows_Controls_Chromes:ButtonChrome x:Name="ButtonVisual" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{StaticResource TabControl_LeftScrollButton_CornerRadius}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderEnabled="{TemplateBinding IsEnabled}" telerik:StyleManager.Theme="{StaticResource Theme}"/>
 								<Path x:Name="Path" Data="F1 M 110.692,342.252L 110.692,352.682L 104.594,347.467L 110.692,342.252 Z" Fill="{StaticResource ControlElement_Normal}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Height="7" Margin="{TemplateBinding Padding}" Stretch="Uniform" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="5"/>
 							</Grid>
 						</Border>
@@ -531,7 +530,7 @@
 						</VisualStateManager.VisualStateGroups>
 						<Border x:Name="ButtonBorder">
 							<Grid>
-								<Telerik_Windows_Controls_Chromes:ButtonChrome x:Name="ButtonVisual" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{StaticResource TabControl_RightScrollButton_CornerRadius}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderEnabled="{TemplateBinding IsEnabled}" telerik:StyleManager.Theme="{StaticResource Theme2}"/>
+								<Telerik_Windows_Controls_Chromes:ButtonChrome x:Name="ButtonVisual" BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource TemplatedParent}}" BorderThickness="1" Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{StaticResource TabControl_RightScrollButton_CornerRadius}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderPressed="{TemplateBinding IsPressed}" RenderEnabled="{TemplateBinding IsEnabled}" telerik:StyleManager.Theme="{StaticResource Theme}"/>
 								<Path x:Name="Path" Data="M0.5,0.5 L5.2,5.4 L5.2,5.4 L0.5,10.5 z" Fill="{StaticResource ControlElement_Normal}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Height="7" Margin="{TemplateBinding Padding}" Stretch="Uniform" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Width="5"/>
 							</Grid>
 						</Border>
