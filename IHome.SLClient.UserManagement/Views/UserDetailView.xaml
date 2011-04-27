@@ -289,7 +289,7 @@
         								<ColumnDefinition Width="0.5*"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="4,0" Text="省" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FFB3B3B3"/>
+        								<ComboBox/>
         							</Border>
         							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="市" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FFB3B3B3" Margin="4,0"/>
         						</Grid>
