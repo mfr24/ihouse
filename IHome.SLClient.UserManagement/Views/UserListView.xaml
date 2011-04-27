@@ -52,7 +52,7 @@
         </telerik:RadDataPager>
         <Border Height="48" VerticalAlignment="Top" CornerRadius="5">
         	<Border.Effect>
-        		<DropShadowEffect ShadowDepth="4" Direction="275"/>
+        		<DropShadowEffect ShadowDepth="2" Direction="275"/>
         	</Border.Effect>
         	<Border.Background>
         		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -61,7 +61,7 @@
         		</LinearGradientBrush>
         	</Border.Background>
         	<StackPanel Margin="8" Orientation="Horizontal">
-        		<telerik:RadComboBox HorizontalAlignment="Left" EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,0,0,0">
+        		<telerik:RadComboBox HorizontalAlignment="Left" EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,1,0,1" Width="80">
         			<telerik:RadComboBox.Effect>
         				<DropShadowEffect ShadowDepth="2" Direction="275"/>
         			</telerik:RadComboBox.Effect>
@@ -69,7 +69,7 @@
         			<telerik:RadComboBoxItem Content="Item 2"/>
         			<telerik:RadComboBoxItem Content="Item 3"/>
         		</telerik:RadComboBox>
-        		<telerik:RadComboBox HorizontalAlignment="Left" EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,0,0,0">
+        		<telerik:RadComboBox HorizontalAlignment="Left" EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,1,0,1" Width="80">
         			<telerik:RadComboBox.Effect>
         				<DropShadowEffect ShadowDepth="2" Direction="275"/>
         			</telerik:RadComboBox.Effect>
@@ -77,7 +77,7 @@
         			<telerik:RadComboBoxItem Content="Item 2"/>
         			<telerik:RadComboBoxItem Content="Item 3"/>
         		</telerik:RadComboBox>
-        		<telerik:RadComboBox EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,0,0,0">
+        		<telerik:RadComboBox EmptyText="所属公司" FontSize="13.333" BorderThickness="0" Margin="20,1,0,1" Width="80">
         			<telerik:RadComboBox.Effect>
         				<DropShadowEffect ShadowDepth="2" Direction="275"/>
         			</telerik:RadComboBox.Effect>
@@ -85,7 +85,7 @@
         			<telerik:RadComboBoxItem Content="Item 2"/>
         			<telerik:RadComboBoxItem Content="Item 3"/>
         		</telerik:RadComboBox>
-        		<telerik:RadComboBox EmptyText="所属公司" FontSize="13.333" BorderThickness="0" HorizontalAlignment="Right" Margin="20,0,0,0">
+        		<telerik:RadComboBox EmptyText="所属公司" FontSize="13.333" BorderThickness="0" HorizontalAlignment="Right" Margin="20,1,0,1" Width="80">
         			<telerik:RadComboBox.Effect>
         				<DropShadowEffect ShadowDepth="2" Direction="275"/>
         			</telerik:RadComboBox.Effect>
@@ -93,6 +93,12 @@
         			<telerik:RadComboBoxItem Content="Item 2"/>
         			<telerik:RadComboBoxItem Content="Item 3"/>
         		</telerik:RadComboBox>
+        		<Button Content="搜索" Width="80" Margin="20,0,0,0">
+				<Button.Effect>
+					<DropShadowEffect ShadowDepth="2" Direction="275"/>
+				
+				</Button.Effect>
+				</Button>
         	</StackPanel>
         </Border>
 
