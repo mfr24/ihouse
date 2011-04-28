@@ -8,7 +8,7 @@
     >
     <Style TargetType="Button">
         <Setter Property="FontFamily" Value="Microsoft YaHei" />
-        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontSize" Value="13" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
