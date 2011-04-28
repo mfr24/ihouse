@@ -285,13 +285,22 @@
         					<Border BorderBrush="#FF989898" BorderThickness="0,0,0,1" Height="40">
         						<Grid>
         							<Grid.ColumnDefinitions>
-        								<ColumnDefinition Width="0.511*"/>
-        								<ColumnDefinition Width="0.5*"/>
+        								<ColumnDefinition Width="0.534*"/>
+        								<ColumnDefinition Width="0.466*"/>
+        								<ColumnDefinition Width="15"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<ComboBox/>
+        								<telerik:RadComboBox EmptyText="省">
+        									<telerik:RadComboBoxItem Content="Item 1"/>
+        									<telerik:RadComboBoxItem Content="Item 2"/>
+        									<telerik:RadComboBoxItem Content="Item 3"/>
+        								</telerik:RadComboBox>
         							</Border>
-        							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="市" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FFB3B3B3" Margin="4,0"/>
+        							<telerik:RadComboBox d:LayoutOverrides="Height" Grid.Column="1" EmptyText="市">
+        								<telerik:RadComboBoxItem Content="Item 1"/>
+        								<telerik:RadComboBoxItem Content="Item 2"/>
+        								<telerik:RadComboBoxItem Content="Item 3"/>
+        							</telerik:RadComboBox>
         						</Grid>
         					</Border>
         					<Border BorderBrush="#FF989898" BorderThickness="0,0,0,1" Height="40">
@@ -301,7 +310,11 @@
         								<ColumnDefinition Width="0.5*"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Margin="4,0" Text="区" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Foreground="#FFB3B3B3"/>
+        								<telerik:RadComboBox EmptyText="区">
+        									<telerik:RadComboBoxItem Content="Item 1"/>
+        									<telerik:RadComboBoxItem Content="Item 2"/>
+        									<telerik:RadComboBoxItem Content="Item 3"/>
+        								</telerik:RadComboBox>
         							</Border>
         							<TextBox TextWrapping="Wrap" Style="{StaticResource TextBoxStyle1}" Text="邮编" VerticalAlignment="Center" FontFamily="Microsoft YaHei" FontSize="18" FontWeight="Bold" Grid.Column="1" Foreground="#FFB3B3B3" Margin="4,0"/>
         						</Grid>
