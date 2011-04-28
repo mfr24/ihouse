@@ -25,7 +25,6 @@ namespace IHome.SLClient.UserManagement
             set { SetValue(ViewIndexProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for ViewIndex.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ViewIndexProperty =
             DependencyProperty.Register("ViewIndex", typeof(int), typeof(UserView), new PropertyMetadata(0,
                 (d, e) =>
