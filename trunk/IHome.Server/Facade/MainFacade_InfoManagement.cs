@@ -207,6 +207,7 @@ namespace IHome.Server.Facade
                 {
                     var models = from model in context.base_datadic_tree
                                  where model.parent_id==item_id
+                                 orderby model.item_key
                                  select model;
                     data = models.ToList();
                 }
@@ -243,7 +244,7 @@ namespace IHome.Server.Facade
                     }
                     else
                     {
-                        model.item_key = (int.Parse(max,System.Globalization.NumberStyles.HexNumber)+1).ToString("X");
+                        model.item_key = (long.Parse(max,System.Globalization.NumberStyles.HexNumber)+1).ToString("X");
                     }
                     
                     context.base_datadic_tree.AddObject(model);
@@ -317,7 +318,6 @@ namespace IHome.Server.Facade
             revList.Add(new Models.ServerResult() { succeed = erro == null, data = data, message = message });
             return revList;
         }
-
         public ArrayList GetDictTree(string userKey, Dictionary<string, object>[] paramDicts)
         {
             Exception erro = null;
