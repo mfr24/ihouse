@@ -290,13 +290,13 @@
         								<ColumnDefinition Width="15"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<telerik:RadComboBox EmptyText="省">
+        								<telerik:RadComboBox EmptyText="省" BorderThickness="0" Margin="1">
         									<telerik:RadComboBoxItem Content="Item 1"/>
         									<telerik:RadComboBoxItem Content="Item 2"/>
         									<telerik:RadComboBoxItem Content="Item 3"/>
         								</telerik:RadComboBox>
         							</Border>
-        							<telerik:RadComboBox d:LayoutOverrides="Height" Grid.Column="1" EmptyText="市">
+        							<telerik:RadComboBox d:LayoutOverrides="Height" Grid.Column="1" EmptyText="市" BorderThickness="0" Margin="1">
         								<telerik:RadComboBoxItem Content="Item 1"/>
         								<telerik:RadComboBoxItem Content="Item 2"/>
         								<telerik:RadComboBoxItem Content="Item 3"/>
@@ -310,7 +310,7 @@
         								<ColumnDefinition Width="0.5*"/>
         							</Grid.ColumnDefinitions>
         							<Border BorderBrush="#FF989898" BorderThickness="0,0,1,0">
-        								<telerik:RadComboBox EmptyText="区">
+        								<telerik:RadComboBox EmptyText="区" BorderThickness="0" Margin="1">
         									<telerik:RadComboBoxItem Content="Item 1"/>
         									<telerik:RadComboBoxItem Content="Item 2"/>
         									<telerik:RadComboBoxItem Content="Item 3"/>

@@ -26,6 +26,7 @@ namespace IHome.Server.Data.Storage
 
                 var models = from model in context.base_datadic_tree
                              where model.parent_id == parent_id
+                             orderby model.item_key
                              select model;
                 return models.ToList();
             }
