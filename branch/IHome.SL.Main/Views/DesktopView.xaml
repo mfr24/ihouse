@@ -29,6 +29,8 @@
 				<GradientStop Color="White"/>
 			</LinearGradientBrush>
 		</Grid.Background>
-		<telerik:RadWrapPanel Grid.Column="1" Grid.Row="1"/>
+		<telerik:RadWrapPanel x:Name="Desk" Grid.Column="1" Grid.Row="1">
+		
+		</telerik:RadWrapPanel>
 	</Grid>
 </UserControl>
