@@ -103,10 +103,6 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IHome.Controls\IHome.Controls.csproj">
-      <Project>{8672A762-C220-4B89-9E58-D0773F9D67F2}</Project>
-      <Name>IHome.Controls</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IHome.Models\IHome.Models.csproj">
       <Project>{D292D167-A96A-4BB8-B45D-E3DD806ED6D5}</Project>
       <Name>IHome.Models</Name>
