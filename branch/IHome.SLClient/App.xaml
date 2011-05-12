@@ -13,7 +13,6 @@
     		<!--程序全局变量-->
     		<model:AppViewModel x:Key="AppDataSource" />
     		<model:TrueFalseConverter x:Key="TrueFalseConverter" />
-            <telerik:Windows7Theme x:Key="Theme" />
         </ResourceDictionary>
   </Application.Resources>
 </Application>

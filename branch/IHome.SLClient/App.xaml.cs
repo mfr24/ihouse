@@ -9,7 +9,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Telerik.Windows.Controls;
 using System.ComponentModel;
 
 namespace IHome.SLClient
@@ -31,8 +30,6 @@ namespace IHome.SLClient
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            StyleManager.ApplicationTheme = new Windows7Theme();
-            this.RootVisual = new MainPadView();
         }
 
         private void Application_Exit(object sender, EventArgs e)
