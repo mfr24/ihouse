@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" dslVersion="1.0.0.0" Id="cb697b21-8f71-4f5c-b070-a89df15ed023" name="租房专题资讯发布" linkedPackageId="bea366ef-0c1a-4583-8597-7f44b9ddb915" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <ownedCommentsInternal>
+    <comment Id="071ad055-e18a-417a-85f7-080e7e37c999">
+      <elementDefinition Id="f1992493-5256-4b88-9ee6-6efc4d892d02" />
+      <body>1.将对应的URL返回给租房频道编辑
+2.上传文件位置为双方约定好。
+如 http://xxxxxx.xom/arch/xx.html</body>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="504a345b-af9d-4b6b-b5d9-e7802210e2a5">
+      <profileInstance Id="10ca0956-3b99-40dd-a879-5074ebe796ec" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="803e22ae-0d8c-49a8-a18c-dcfaae544580">
+      <profileInstance Id="61b6287b-a807-4d64-9e2a-699a6a02d6c7" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="9cb31dce-3ade-40f6-98fe-5ca74db55542" name="租房频道编辑" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6bfa555c-f3a8-4b73-88b8-82ff3da0734b" />
+        <targetEnds>
+          <association Id="44e85158-d79f-4a0e-a793-597528d98ea4" isDerived="false" sourceEndRoleName="租房频道编辑" targetEndRoleName="发布专题" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="7f7f732e-c29e-4331-8c16-1bb067fc2e75" LastKnownName="发布专题" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d860be37-6d69-490c-9943-b356356f95a4" name="租房频道编辑" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7a7d229d-536b-4d93-be34-8270c5a4062c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1d24cfad-2883-4039-beab-cba4c844f052" name="发布专题" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="10abcd92-c2e1-45b6-9084-a1069c42a5fa" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8361b4f5-0386-4367-97ef-96a982956b86" />
+          </association>
+          <association Id="3c5b31ee-8ca7-459f-a746-6ff0383887f2" isDerived="false" sourceEndRoleName="租房频道编辑" targetEndRoleName="上传至服务器" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8be49007-1572-4cae-a907-e8c113ac9453" LastKnownName="上传至服务器" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ccaefde5-3a8c-4cc3-bedc-989bada9a788" name="租房频道编辑" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="690577fd-3aae-48ae-b683-93576abaaf60" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="46a376b0-0352-47a8-bb67-909373cb090d" name="上传至服务器" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c84f3ebe-13f1-4fcc-bf3b-9275a24a541e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c1f090b2-ad11-4e8f-8ad3-7c96ce23f050" />
+          </association>
+          <association Id="0fec67f1-5097-4721-a8fe-978a687f9073" isDerived="false" sourceEndRoleName="租房频道编辑" targetEndRoleName="告知sina编辑 文字链标题及URL" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="13985561-7730-4bdc-8f8e-c85cb7074352" LastKnownName="告知sina编辑 文字链标题及URL" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="502a0416-5f8c-42fb-a906-da85daf32b2e" name="租房频道编辑" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3ad22e0d-199a-49fe-a2af-942d254c05cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b4afb89-3f38-4528-a392-c81f47bda371" name="告知sina编辑 文字链标题及URL" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fdac4e76-6263-45bf-9015-85a60a0011e5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="209c2808-4965-456c-807d-0de62045d16c" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="b0ce079d-9b18-4cbf-ba03-4eedd7992c54" name="数据中心专题资讯生成系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="39ed818b-b2ef-4ba9-a0c6-0ec1cd4d208a" />
+        <targetEnds>
+          <association Id="2d28d6e7-34b4-4614-96a3-748d3e294ace" isDerived="false" sourceEndRoleName="数据中心专题资讯生成系统" targetEndRoleName="生成专题文件" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="faf40a83-0505-4d94-8312-250df2b1600c" LastKnownName="生成专题文件" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b31133b-2aca-4f53-a06f-eea8d68cd9fd" name="数据中心专题资讯生成系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="6c00d23a-be24-47eb-8e92-9edb022e838c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39d4f9aa-bfc9-4e31-bf86-4f1ac017c08f" name="生成专题文件" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1ce6407e-87c4-414e-98ae-b6891a047dc1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7656d27b-8e40-4f57-9ee7-caf7d625e490" />
+          </association>
+        </targetEnds>
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="7f7f732e-c29e-4331-8c16-1bb067fc2e75" name="发布专题" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="00ff9b30-e526-4d41-8df6-e036f491a56f" />
+        <targetEnds>
+          <association Id="e7bba513-8b93-4a8f-b203-3caf621e4d8a" isDerived="false" sourceEndRoleName="发布专题" targetEndRoleName="数据中心专题资讯生成系统" isLeaf="false" isAbstract="false">
+            <subsystemMoniker Id="b0ce079d-9b18-4cbf-ba03-4eedd7992c54" LastKnownName="数据中心专题资讯生成系统" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b9613270-0149-4345-a502-e0c4852052e4" name="发布专题" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="caed4566-bd87-40d2-8d20-8c8ebd41c8f3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c4ebe2e6-9b46-486a-847f-7521b3e5e7c8" name="数据中心专题资讯生成系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="62fa9ad4-bd0f-4228-8119-0c5365b1dd12" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="30c97af3-f29c-4d6f-a6c0-0b152590f49d" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="faf40a83-0505-4d94-8312-250df2b1600c" name="生成专题文件" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="9383f2d9-00ec-4cbf-ae64-c106f8763033" />
+        <targetEnds>
+          <association Id="e8423256-6fc9-4d2c-85ec-f3520f687f14" isDerived="false" sourceEndRoleName="生成专题文件" targetEndRoleName="上传至服务器" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8be49007-1572-4cae-a907-e8c113ac9453" LastKnownName="上传至服务器" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7012e5f2-327d-42dc-b757-1334b39eb1db" name="生成专题文件" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="90a13f02-bff9-4ae8-b4fd-099801aafcbf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1f3cd1b2-5997-4075-ad41-71ed34384997" name="上传至服务器" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="973399e1-eda5-406a-a415-6fcebec86834" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8218aa63-0a1b-4de7-b5ef-7bdda59344f4" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="8be49007-1572-4cae-a907-e8c113ac9453" name="上传至服务器" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4ffea305-be79-423b-92a9-332eb23f2f12" />
+        <targetEnds>
+          <association Id="ef3922a4-2faa-4179-adbc-a9ea5e2d5aea" isDerived="false" sourceEndRoleName="上传至服务器" targetEndRoleName="上传至服务器" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8be49007-1572-4cae-a907-e8c113ac9453" LastKnownName="上传至服务器" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2a854547-e0c9-4671-9bfb-fb9477f801c1" name="上传至服务器" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="905aa0d1-eac1-4860-a95e-bf5fb604478e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3e82ff14-9baf-483e-9ed5-2260b9b17c21" name="上传至服务器" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="e315a740-1a8a-427a-920d-762d2b583095" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a3dbead3-b250-4edd-997a-e161cb00ab39" />
+          </association>
+        </targetEnds>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="b3a082cd-c529-4ef1-b6d6-2dd5ff1856c0" name="房友相关人员" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0aa9a622-9a8f-4081-846b-7d15f3a998f0" />
+        <targetEnds>
+          <association Id="74d81d60-33b5-40c0-a9e5-9a1ce0c3393d" isDerived="false" sourceEndRoleName="房友相关人员" targetEndRoleName="上传至服务器" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="8be49007-1572-4cae-a907-e8c113ac9453" LastKnownName="上传至服务器" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b5443d19-c73c-45ca-9d50-012a491dbda0" name="房友相关人员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c776015f-967b-4c70-b984-c061829bde72" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c32acd4d-104b-4d67-bb2a-31e4000a5331" name="上传至服务器" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d418cbd6-df4c-4ce7-87e6-57cb5d450b99" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8543c51b-aeba-4007-b13e-520dce3ae148" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="13985561-7730-4bdc-8f8e-c85cb7074352" name="告知sina编辑 文字链标题及URL" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="713ccc92-cd45-47c6-8db9-7855c7d41209" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="467287a9-9e1e-4434-af10-6da8e811622f" name="sina相关位置添加链接" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="574c0056-80b2-4a80-bfb8-8f971e00ea7b" />
+        <suppliersInternal>
+          <dependency Id="59e76aa9-b239-4eba-b5d3-8dc1a084c475">
+            <useCaseMoniker Id="8be49007-1572-4cae-a907-e8c113ac9453" LastKnownName="上传至服务器" />
+            <elementDefinition Id="0d80de77-3f1b-4ca0-810a-f8ed2ef15000" />
+          </dependency>
+          <dependency Id="f34b6f90-05f5-488a-82cd-6935fe9fb8c8">
+            <useCaseMoniker Id="13985561-7730-4bdc-8f8e-c85cb7074352" LastKnownName="告知sina编辑 文字链标题及URL" />
+            <elementDefinition Id="0303c5e7-1527-4737-b292-8407acd2b8f5" />
+          </dependency>
+        </suppliersInternal>
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="4520896d-5adc-47b4-bc74-4a65a48aea78" name="sina编辑" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c0db05df-e45f-46d8-adba-2876cced382d" />
+        <targetEnds>
+          <association Id="308cc0e4-10c5-4c33-bdbc-f022f436454a" isDerived="false" sourceEndRoleName="sina编辑" targetEndRoleName="sina相关位置添加链接" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="467287a9-9e1e-4434-af10-6da8e811622f" LastKnownName="sina相关位置添加链接" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a25cec2f-e34f-4cd8-a38f-d3132a4fce11" name="sina编辑" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="06200dbe-f7cc-4e81-a5cf-b7f58c29db9c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a684dd46-87ea-4ffa-ad8d-36191789bdd5" name="sina相关位置添加链接" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d8d7c247-0062-4174-b01e-aa476633f9ab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="868cdfc8-1c6c-4875-9dfe-46bfc432c886" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="a18a17c1-655f-46a5-8665-cd23aa7d354c" name="房友系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b7e4d40f-a089-4a20-b945-4efa7c45a7b7" />
+        <targetEnds>
+          <association Id="4e2229df-9284-41a1-a84d-ca223a57247f" isDerived="false" sourceEndRoleName="房友系统" targetEndRoleName="数据中心专题资讯生成系统" isLeaf="false" isAbstract="false">
+            <subsystemMoniker Id="b0ce079d-9b18-4cbf-ba03-4eedd7992c54" LastKnownName="数据中心专题资讯生成系统" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="70cdf87d-9b02-4df4-bbc3-399f2f99ab9d" name="房友系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b7742d4f-e877-494d-925b-9c575a400d69" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0fe482ac-00f3-450a-b4e5-9b062cec5d6c" name="数据中心专题资讯生成系统" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="9684fb7e-f756-4d62-9441-12f833793421" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="07be7b91-ef43-4f4c-9f45-4c71ad00476e" />
+          </association>
+        </targetEnds>
+      </subsystem>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="bea366ef-0c1a-4583-8597-7f44b9ddb915" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</useCaseModelRoot>

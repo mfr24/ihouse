@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="1bb7a510-e542-41eb-a4dc-585daebf9692" name="用户管理-个人主营区域板块设定" linkedPackageId="189600c2-f7c0-4194-ac7f-aa46664d09d4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="87c5c864-8edc-428f-a913-296d65fdea54">
+      <elementDefinition Id="8caa0305-de14-4813-b507-f7a992d8d213" />
+      <body>判断是否该用户已添加该区域板块</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="8ee35411-8430-4915-8a76-503cddae00a9" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="12e638d2-5dab-43e1-b79c-9714634de783">
+      <profileInstance Id="c2838f25-06dd-445a-9248-b95e107a603e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="85d2099e-e00f-42bf-927b-d0d8ce9a4df5">
+      <profileInstance Id="94c665a5-6e44-4499-86b8-cd9092c74399" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="39f957c9-33af-4ea4-94ca-525d28bdf03c" name="用户管理-个人主营区域板块设定" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="27633b8b-1234-4328-8b4f-2e34a390cb95" />
+        <nodes>
+          <initialNode Id="cee2393f-4290-4899-a8b6-607f7b3ecc0c" name="Initial1" isLeaf="false">
+            <elementDefinition Id="f2b49b2e-3795-45c3-82bd-53bccfe905cd" />
+            <flowNodeTargets>
+              <controlFlow Id="9d90993a-a60d-49d8-a456-ebce94aec441" isLeaf="false">
+                <opaqueActionMoniker Id="99ad74a4-6ab9-41cd-95b8-bac674a1a383" LastKnownName="添加设定" />
+                <elementDefinition Id="250effe9-1fd8-4765-a576-6da5aea18178" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="99ad74a4-6ab9-41cd-95b8-bac674a1a383" name="添加设定" isLeaf="false">
+            <elementDefinition Id="8633302a-9aed-442a-ba58-626be9bf4aa7" />
+            <flowNodeTargets>
+              <controlFlow Id="8e804e90-962b-4930-a5c0-7b647c8bc822" isLeaf="false">
+                <opaqueActionMoniker Id="9206f411-48f5-4765-97bb-225260907304" LastKnownName="选择区域" />
+                <elementDefinition Id="c331268c-bff3-4759-a1f0-758b6a019202" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="9206f411-48f5-4765-97bb-225260907304" name="选择区域" isLeaf="false">
+            <elementDefinition Id="2c16db03-113f-4530-aa43-576d5eb6d7d6" />
+            <flowNodeTargets>
+              <controlFlow Id="7a641417-391b-479f-a5a4-728ed1a00a40" isLeaf="false">
+                <opaqueActionMoniker Id="f5484671-084d-4397-88ee-ec1cecbda4e3" LastKnownName="选择板块(对应选定的区域)" />
+                <elementDefinition Id="ab3e0a50-7fd5-4f12-91d7-72c77cf9cc61" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f5484671-084d-4397-88ee-ec1cecbda4e3" name="选择板块(对应选定的区域)" isLeaf="false">
+            <elementDefinition Id="aaca0034-c1ad-494d-b5dd-255474e1a660" />
+            <flowNodeTargets>
+              <controlFlow Id="76e997ea-3033-4395-92dc-b155c84c70b1" isLeaf="false">
+                <opaqueActionMoniker Id="ad82415d-0507-4954-8fd4-4dc07d137fcb" LastKnownName="提交数据" />
+                <elementDefinition Id="03cdb4eb-b8ca-44d0-af42-c8b63b872208" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="ad82415d-0507-4954-8fd4-4dc07d137fcb" name="提交数据" isLeaf="false">
+            <elementDefinition Id="6c0ddbfb-547f-412c-957d-86c27585e8d7" />
+            <flowNodeTargets>
+              <controlFlow Id="cffac9c1-d73d-4383-9337-bd93a66d1000" isLeaf="false">
+                <decisionNodeMoniker Id="8ee35411-8430-4915-8a76-503cddae00a9" LastKnownName="Decision1" />
+                <elementDefinition Id="1bf3540d-6942-43fd-93f4-e295b35ad0d0" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="8ee35411-8430-4915-8a76-503cddae00a9" name="Decision1" isLeaf="false">
+            <elementDefinition Id="185b2e24-03de-4858-be1a-8faa56aa08af" />
+            <flowNodeTargets>
+              <controlFlow Id="b7d577da-c1a9-4272-9807-482a7c33fa58" isLeaf="false">
+                <opaqueActionMoniker Id="9206f411-48f5-4765-97bb-225260907304" LastKnownName="选择区域" />
+                <elementDefinition Id="f165502a-3206-4146-9664-d9db0dad2faf" />
+              </controlFlow>
+              <controlFlow Id="6a58bcd6-6046-4a17-b122-98c7e0bffc5d" isLeaf="false">
+                <opaqueActionMoniker Id="d5bd2730-e36d-451b-9a30-8d9b3bd4dd69" LastKnownName="保存数据" />
+                <elementDefinition Id="0a504005-47ac-4714-81f3-13aca49ae817" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="d5bd2730-e36d-451b-9a30-8d9b3bd4dd69" name="保存数据" isLeaf="false">
+            <elementDefinition Id="60f9c787-5079-4550-9053-04b96bb6a166" />
+            <flowNodeTargets>
+              <controlFlow Id="fd9f1467-0cfe-4dbf-890e-c4e6df21c4e6" isLeaf="false">
+                <opaqueActionMoniker Id="1dda4f69-8aa6-4856-afa5-6ec829e3878c" LastKnownName="刷新客户端" />
+                <elementDefinition Id="03e90797-2d90-40bf-9549-e99b8201ab0a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="1dda4f69-8aa6-4856-afa5-6ec829e3878c" name="刷新客户端" isLeaf="false">
+            <elementDefinition Id="0b9db9ce-4bd2-4e18-b24f-ad3cad2a450f" />
+            <flowNodeTargets>
+              <controlFlow Id="0377f95f-0c34-4e19-b152-ba986ac99444" isLeaf="false">
+                <activityFinalNodeMoniker Id="5b0a4829-dedf-4889-a74d-e7ac9389bf31" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="88782069-5811-4c1d-92e8-8d8339c5664a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="5b0a4829-dedf-4889-a74d-e7ac9389bf31" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="5118d9f0-aa4a-46ff-8fd1-3652cecba54d" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="189600c2-f7c0-4194-ac7f-aa46664d09d4" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</activityRootModel>

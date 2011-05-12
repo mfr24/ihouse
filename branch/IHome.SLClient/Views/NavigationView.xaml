@@ -1,0 +1,28 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:local="clr-namespace:IHome.SLClient"
+	xmlns:IHome_Controls="clr-namespace:IHome.Controls;assembly=IHome.Controls"
+	mc:Ignorable="d"
+	x:Class="IHome.SLClient.NavigationView"
+	d:DesignWidth="640" d:DesignHeight="480">
+	<UserControl.Resources>
+		<local:NavigationViewModel x:Key="NavigationViewModelDataSource" />
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource NavigationViewModelDataSource}}">
+        <IHome_Controls:ChildWin Margin="136,160,0,0" Padding="5 5" Height="216" VerticalAlignment="Top" HorizontalAlignment="Left" Width="344">
+            <Button>
+                aaa
+            </Button>
+            <Button>
+                aaa
+            </Button>
+            <Button>
+                aaa
+            </Button>
+        </IHome_Controls:ChildWin>
+    </Grid>
+</UserControl>

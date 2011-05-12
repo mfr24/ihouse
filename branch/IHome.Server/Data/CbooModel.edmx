@@ -1,0 +1,1542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IHome.Models.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="IHomeModelsStoreContainer">
+          <EntitySet Name="base_community_baseinfo" EntityType="IHome.Models.Store.base_community_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.Store.base_community_buildinginfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.Store.base_datadic_detailinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.Store.base_datadic_iteminfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_datadic_tree" EntityType="IHome.Models.Store.base_datadic_tree" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_permit_define" EntityType="IHome.Models.Store.base_permit_define" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.Store.base_permit_roledefine" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_personal_push_config" EntityType="IHome.Models.Store.base_personal_push_config" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHome.Models.Store.base_rolepermitionrelationinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHome.Models.Store.base_roleuserrelationinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="base_webpush_iteminfo" EntityType="IHome.Models.Store.base_webpush_iteminfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="customer_baseinfo" EntityType="IHome.Models.Store.customer_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="customer_demandinfo" EntityType="IHome.Models.Store.customer_demandinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="customer_traceinfo" EntityType="IHome.Models.Store.customer_traceinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_baseinfo" EntityType="IHome.Models.Store.house_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_intrustinfo" EntityType="IHome.Models.Store.house_intrustinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_key_receiptioninfo" EntityType="IHome.Models.Store.house_key_receiptioninfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_markedinfo" EntityType="IHome.Models.Store.house_markedinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_picinfo" EntityType="IHome.Models.Store.house_picinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_push_logs" EntityType="IHome.Models.Store.house_push_logs" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_traceinfo" EntityType="IHome.Models.Store.house_traceinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_viewhouse_baseinfo" EntityType="IHome.Models.Store.house_viewhouse_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="house_viewhouse_subinfo" EntityType="IHome.Models.Store.house_viewhouse_subinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="sys_user_baseinfo" EntityType="IHome.Models.Store.sys_user_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="sys_user_business_config" EntityType="IHome.Models.Store.sys_user_business_config" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="sys_user_community_config" EntityType="IHome.Models.Store.sys_user_community_config" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="sys_user_region_config" EntityType="IHome.Models.Store.sys_user_region_config" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="sys_user_relationinfo" EntityType="IHome.Models.Store.sys_user_relationinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="usys_community_baseinfo" EntityType="IHome.Models.Store.usys_community_baseinfo" store:Type="Tables" Schema="cboo" />
+          <EntitySet Name="usys_community_buildinginfo" EntityType="IHome.Models.Store.usys_community_buildinginfo" store:Type="Tables" Schema="cboo" />
+        </EntityContainer>
+        <EntityType Name="base_community_baseinfo">
+          <Key>
+            <PropertyRef Name="community_id" />
+          </Key>
+          <Property Name="community_id" Type="guid" Nullable="false" />
+          <Property Name="community_name" Type="varchar" MaxLength="200" />
+          <Property Name="city_id" Type="int" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" />
+          <Property Name="region" Type="varchar" MaxLength="50" />
+          <Property Name="block" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="200" />
+          <Property Name="community_use" Type="varchar" MaxLength="50" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="complete_year" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+          <Property Name="pinyin" Type="varchar" MaxLength="200" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="base_community_buildinginfo">
+          <Key>
+            <PropertyRef Name="building_id" />
+          </Key>
+          <Property Name="building_id" Type="guid" Nullable="false" />
+          <Property Name="community_id" Type="guid" />
+          <Property Name="building_name" Type="varchar" MaxLength="50" />
+          <Property Name="building_use" Type="varchar" MaxLength="50" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="building_floor" Type="int" />
+          <Property Name="unit_num" Type="int" />
+          <Property Name="unit_type" Type="varchar" MaxLength="50" />
+          <Property Name="room_rule" Type="varchar" MaxLength="500" />
+          <Property Name="room_rule_remark" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="base_datadic_detailinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="item_key" Type="varchar" MaxLength="50" />
+          <Property Name="item_value" Type="varchar" MaxLength="255" />
+          <Property Name="item_index" Type="int" />
+        </EntityType>
+        <EntityType Name="base_datadic_iteminfo">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="guid" Nullable="false" />
+          <Property Name="item_key" Type="varchar" MaxLength="50" />
+          <Property Name="item_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="base_datadic_tree">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Name="item_id" Type="guid" Nullable="false" />
+          <Property Name="item_key" Type="varchar" MaxLength="50" />
+          <Property Name="item_name" Type="varchar" MaxLength="50" />
+          <Property Name="parent_id" Type="guid" />
+          <Property Name="leaf" Type="bit" />
+          <Property Name="deep" Type="smallint" />
+          <Property Name="memo" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="base_permit_define">
+          <Key>
+            <PropertyRef Name="permit_id" />
+          </Key>
+          <Property Name="permit_id" Type="guid" Nullable="false" />
+          <Property Name="permit_code" Type="varchar" MaxLength="200" />
+          <Property Name="permit_name" Type="varchar" MaxLength="200" />
+          <Property Name="permit_roup" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="base_permit_roledefine">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Name="role_id" Type="guid" Nullable="false" />
+          <Property Name="role_name" Type="varchar" MaxLength="50" />
+          <Property Name="city_code" Type="varchar" MaxLength="20" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" />
+          <Property Name="company_id" Type="guid" />
+          <Property Name="company_name" Type="varchar" MaxLength="50" />
+          <Property Name="is_show" Type="bit" />
+          <Property Name="def_role" Type="bit" />
+        </EntityType>
+        <EntityType Name="base_personal_push_config">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="person_id" Type="guid" />
+          <Property Name="web_id" Type="int" />
+          <Property Name="web_user_code" Type="varchar" MaxLength="100" />
+          <Property Name="web_user_password" Type="varchar" MaxLength="100" />
+          <Property Name="display_name" Type="varchar" MaxLength="100" />
+          <Property Name="display_depart" Type="varchar" MaxLength="100" />
+          <Property Name="display_company" Type="varchar" MaxLength="100" />
+          <Property Name="display_mobile" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="base_rolepermitionrelationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="role_id" Type="guid" />
+          <Property Name="permit_id" Type="guid" />
+        </EntityType>
+        <EntityType Name="base_roleuserrelationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="role_id" Type="guid" />
+          <Property Name="user_id" Type="guid" />
+        </EntityType>
+        <EntityType Name="base_webpush_iteminfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="city_id" Type="guid" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" />
+          <Property Name="web_port_code" Type="varchar" MaxLength="100" />
+          <Property Name="web_port_name" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="customer_baseinfo">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Name="customer_id" Type="guid" Nullable="false" />
+          <Property Name="customer_name" Type="varchar" MaxLength="255" />
+          <Property Name="customer_sex" Type="varchar" MaxLength="255" />
+          <Property Name="mobile" Type="varchar" MaxLength="20" />
+          <Property Name="phone" Type="varchar" MaxLength="100" />
+          <Property Name="address" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="int" />
+          <Property Name="customer_type" Type="varchar" MaxLength="255" />
+          <Property Name="last_trace_date" Type="date" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="add_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="customer_demandinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="customer_id" Type="guid" />
+          <Property Name="demand_kind" Type="int" />
+          <Property Name="demand_type" Type="int" />
+          <Property Name="demand_zone" Type="varchar" MaxLength="500" />
+          <Property Name="demand_block" Type="varchar" MaxLength="500" />
+          <Property Name="demand_center" Type="varchar" MaxLength="500" />
+          <Property Name="demand_price" Type="varchar" MaxLength="500" />
+          <Property Name="demand_use" Type="varchar" MaxLength="500" />
+          <Property Name="demand_building" Type="varchar" MaxLength="500" />
+          <Property Name="demand_consider" Type="varchar" MaxLength="500" />
+          <Property Name="demand_area" Type="varchar" MaxLength="500" />
+          <Property Name="demand_service" Type="varchar" MaxLength="500" />
+          <Property Name="demand_age" Type="varchar" MaxLength="500" />
+          <Property Name="demand_special" Type="varchar" MaxLength="500" />
+          <Property Name="demand_room" Type="varchar" MaxLength="50" />
+          <Property Name="demand_hall" Type="varchar" MaxLength="50" />
+          <Property Name="demand_toilet" Type="varchar" MaxLength="50" />
+          <Property Name="demand_fitment" Type="varchar" MaxLength="500" />
+          <Property Name="demand_catalog" Type="varchar" MaxLength="100" />
+          <Property Name="demand_return_rate" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="add_time" Type="datetime" />
+          <Property Name="last_trace_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+          <Property Name="shop_type" Type="varchar" MaxLength="500" />
+          <Property Name="business_scope" Type="varchar" MaxLength="500" />
+          <Property Name="fav_community_id" Type="guid" />
+        </EntityType>
+        <EntityType Name="customer_traceinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="customer_id" Type="guid" />
+          <Property Name="trace_type" Type="int" />
+          <Property Name="trace_context" Type="varchar" MaxLength="500" />
+          <Property Name="trace_time" Type="datetime" />
+          <Property Name="trace_person_id" Type="char" />
+          <Property Name="trace_person_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="house_baseinfo">
+          <Key>
+            <PropertyRef Name="house_id" />
+          </Key>
+          <Property Name="house_id" Type="guid" Nullable="false" />
+          <Property Name="house_code" Type="char" MaxLength="12" />
+          <Property Name="community_id" Type="guid" />
+          <Property Name="buidling_id" Type="guid" />
+          <Property Name="room" Type="varchar" MaxLength="120" />
+          <Property Name="house_address" Type="varchar" MaxLength="500" />
+          <Property Name="region" Type="varchar" MaxLength="50" />
+          <Property Name="block" Type="varchar" MaxLength="50" />
+          <Property Name="complete_year" Type="int" />
+          <Property Name="customer_id" Type="guid" />
+          <Property Name="customer_name" Type="varchar" MaxLength="100" />
+          <Property Name="customer_mobile" Type="varchar" MaxLength="50" />
+          <Property Name="customer_phone" Type="varchar" MaxLength="250" />
+          <Property Name="building_area" Type="decimal" Scale="2" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="house_use" Type="varchar" MaxLength="50" />
+          <Property Name="model_room" Type="int" />
+          <Property Name="model_hall" Type="int" />
+          <Property Name="model_toilet" Type="int" />
+          <Property Name="total_floor" Type="int" />
+          <Property Name="cur_floor" Type="int" />
+          <Property Name="direction" Type="varchar" MaxLength="255" />
+          <Property Name="fitment" Type="varchar" MaxLength="500" />
+          <Property Name="sale_totalprice" Type="decimal" />
+          <Property Name="sale_unitprice" Type="decimal" />
+          <Property Name="sale_realprice" Type="decimal" />
+          <Property Name="rent_price" Type="decimal" />
+          <Property Name="rent_unit" Type="varchar" MaxLength="50" />
+          <Property Name="pay_mode" Type="varchar" MaxLength="20" />
+          <Property Name="is_rented" Type="bit" />
+          <Property Name="rent_overtime" Type="date" />
+          <Property Name="equipment" Type="varchar" MaxLength="300" />
+          <Property Name="house_actuality" Type="varchar" MaxLength="30" />
+          <Property Name="business_kind" Type="int" />
+          <Property Name="house_status" Type="int" />
+          <Property Name="is_havekey" Type="bit" />
+          <Property Name="is_marked" Type="bit" />
+          <Property Name="mark_code" Type="varchar" MaxLength="255" />
+          <Property Name="is_entrust" Type="bit" />
+          <Property Name="add_peron_id" Type="guid" />
+          <Property Name="opr_person_id" Type="guid" />
+          <Property Name="add_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+          <Property Name="web_send_status" Type="int" />
+          <Property Name="last_refrash_time" Type="datetime" />
+          <Property Name="house_remark" Type="varchar" MaxLength="500" />
+          <Property Name="push_remark" Type="varchar" MaxLength="2000" />
+          <Property Name="shop_type" Type="varchar" MaxLength="500" />
+          <Property Name="business_scope" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="house_intrustinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="house_id" Type="guid" />
+          <Property Name="house_code" Type="varchar" MaxLength="50" />
+          <Property Name="house_address" Type="varchar" MaxLength="200" />
+          <Property Name="community_id" Type="guid" />
+          <Property Name="region" Type="varchar" MaxLength="50" />
+          <Property Name="block" Type="varchar" MaxLength="50" />
+          <Property Name="property_code" Type="varchar" MaxLength="100" />
+          <Property Name="date_start" Type="date" />
+          <Property Name="date_end" Type="date" />
+          <Property Name="house_area" Type="decimal" />
+          <Property Name="total_price" Type="decimal" />
+          <Property Name="unit_price" Type="decimal" />
+          <Property Name="customer_name" Type="varchar" MaxLength="100" />
+          <Property Name="customer_phone" Type="varchar" MaxLength="100" />
+          <Property Name="customer_mobile" Type="varchar" MaxLength="50" />
+          <Property Name="customer_address" Type="varchar" MaxLength="200" />
+          <Property Name="business_type" Type="int" />
+          <Property Name="entrust_type" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="intrust_person_id" Type="guid" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="add_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="house_key_receiptioninfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="house_id" Type="guid" />
+          <Property Name="house_code" Type="varchar" MaxLength="50" />
+          <Property Name="house_address" Type="varchar" MaxLength="200" />
+          <Property Name="receiption_code" Type="varchar" MaxLength="50" />
+          <Property Name="key_count" Type="int" />
+          <Property Name="get_date" Type="date" />
+          <Property Name="customer_name" Type="varchar" MaxLength="50" />
+          <Property Name="get_person_id" Type="guid" />
+          <Property Name="add_person_id" Type="char" MaxLength="50" />
+          <Property Name="add_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="house_markedinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="house_id" Type="guid" />
+          <Property Name="house_code" Type="varchar" MaxLength="50" />
+          <Property Name="house_address" Type="varchar" MaxLength="200" />
+          <Property Name="mark_code" Type="varchar" MaxLength="50" />
+          <Property Name="mark_day" Type="date" />
+          <Property Name="mark_start_day" Type="date" />
+          <Property Name="mark_end_day" Type="date" />
+          <Property Name="status" Type="int" />
+          <Property Name="mark_person_id" Type="guid" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="add_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="house_picinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="house_id" Type="char" Nullable="false" />
+          <Property Name="pic_type" Type="int" />
+          <Property Name="pic_enum" Type="int" />
+          <Property Name="pic_url" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="house_push_logs">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="house_id" Type="guid" />
+          <Property Name="house_code" Type="varchar" MaxLength="50" />
+          <Property Name="house_address" Type="varchar" MaxLength="200" />
+          <Property Name="push_to" Type="int" />
+          <Property Name="push_time" Type="datetime" />
+          <Property Name="push_person_id" Type="guid" />
+          <Property Name="push_status" Type="datetime" />
+        </EntityType>
+        <EntityType Name="house_traceinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="house_id" Type="guid" />
+          <Property Name="trace_type" Type="int" />
+          <Property Name="trace_context" Type="varchar" MaxLength="500" />
+          <Property Name="trace_time" Type="datetime" />
+          <Property Name="trace_person_id" Type="char" />
+          <Property Name="trace_person_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="house_viewhouse_baseinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="customer_id" Type="guid" />
+          <Property Name="customer_name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
+          <Property Name="view_time" Type="datetime" />
+          <Property Name="status" Type="int" />
+          <Property Name="view_person_id" Type="char" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="add_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="house_viewhouse_subinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="main_id" Type="guid" />
+          <Property Name="house_id" Type="guid" />
+          <Property Name="house_code" Type="varchar" MaxLength="50" />
+          <Property Name="house_address" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="sys_user_baseinfo">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="guid" Nullable="false" />
+          <Property Name="user_code" Type="varchar" MaxLength="50" />
+          <Property Name="user_name" Type="varchar" MaxLength="150" />
+          <Property Name="department" Type="varchar" MaxLength="150" />
+          <Property Name="company_name" Type="varchar" MaxLength="150" />
+          <Property Name="password" Type="varchar" MaxLength="200" />
+          <Property Name="city_code" Type="varchar" MaxLength="20" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" />
+          <Property Name="validate" Type="bit" />
+          <Property Name="user_type" Type="int" />
+          <Property Name="id_type" Type="varchar" MaxLength="50" />
+          <Property Name="id_num" Type="varchar" MaxLength="150" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" />
+          <Property Name="office_tel" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="250" />
+          <Property Name="remark" Type="longtext" />
+          <Property Name="reg_time" Type="timestamp" Precision="0" />
+          <Property Name="update_time" Type="timestamp" Precision="0" />
+          <Property Name="last_login_time" Type="timestamp" Precision="0" />
+          <Property Name="dr" Type="bit" />
+        </EntityType>
+        <EntityType Name="sys_user_business_config">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_user_community_config">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="user_id" Type="guid" />
+          <Property Name="community_id" Type="guid" />
+        </EntityType>
+        <EntityType Name="sys_user_region_config">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="user_id" Type="guid" Nullable="false" />
+          <Property Name="regin" Type="varchar" MaxLength="300" />
+          <Property Name="block" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="sys_user_relationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Name="record_id" Type="guid" Nullable="false" />
+          <Property Name="parent_id" Type="guid" />
+          <Property Name="child_id" Type="guid" />
+        </EntityType>
+        <EntityType Name="usys_community_baseinfo">
+          <Key>
+            <PropertyRef Name="community_id" />
+          </Key>
+          <Property Name="community_id" Type="guid" Nullable="false" />
+          <Property Name="community_name" Type="varchar" MaxLength="200" />
+          <Property Name="city_id" Type="int" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" />
+          <Property Name="region" Type="varchar" MaxLength="50" />
+          <Property Name="block" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="200" />
+          <Property Name="community_use" Type="varchar" MaxLength="50" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="complete_year" Type="int" />
+          <Property Name="remark" Type="varchar" MaxLength="500" />
+          <Property Name="pinyin" Type="varchar" MaxLength="200" />
+          <Property Name="add_person_id" Type="guid" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="usys_community_buildinginfo">
+          <Key>
+            <PropertyRef Name="building_id" />
+          </Key>
+          <Property Name="building_id" Type="guid" Nullable="false" />
+          <Property Name="community_id" Type="guid" />
+          <Property Name="building_name" Type="varchar" MaxLength="50" />
+          <Property Name="building_use" Type="varchar" MaxLength="50" />
+          <Property Name="building_type" Type="varchar" MaxLength="50" />
+          <Property Name="building_floor" Type="int" />
+          <Property Name="unit_num" Type="int" />
+          <Property Name="unit_type" Type="varchar" MaxLength="50" />
+          <Property Name="room_rule" Type="varchar" MaxLength="500" />
+          <Property Name="room_rule_remark" Type="varchar" MaxLength="500" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IHome.Models.Data" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CbooEntities" a:LazyLoadingEnabled="true" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="base_community_baseinfo" EntityType="IHome.Models.Data.base_community_baseinfo" />
+          <EntitySet Name="base_community_buildinginfo" EntityType="IHome.Models.Data.base_community_buildinginfo" />
+          <EntitySet Name="base_datadic_detailinfo" EntityType="IHome.Models.Data.base_datadic_detailinfo" />
+          <EntitySet Name="base_datadic_iteminfo" EntityType="IHome.Models.Data.base_datadic_iteminfo" />
+          <EntitySet Name="base_datadic_tree" EntityType="IHome.Models.Data.base_datadic_tree" />
+          <EntitySet Name="base_permit_define" EntityType="IHome.Models.Data.base_permit_define" />
+          <EntitySet Name="base_permit_roledefine" EntityType="IHome.Models.Data.base_permit_roledefine" />
+          <EntitySet Name="base_personal_push_config" EntityType="IHome.Models.Data.base_personal_push_config" />
+          <EntitySet Name="base_rolepermitionrelationinfo" EntityType="IHome.Models.Data.base_rolepermitionrelationinfo" />
+          <EntitySet Name="base_roleuserrelationinfo" EntityType="IHome.Models.Data.base_roleuserrelationinfo" />
+          <EntitySet Name="base_webpush_iteminfo" EntityType="IHome.Models.Data.base_webpush_iteminfo" />
+          <EntitySet Name="customer_baseinfo" EntityType="IHome.Models.Data.customer_baseinfo" />
+          <EntitySet Name="customer_demandinfo" EntityType="IHome.Models.Data.customer_demandinfo" />
+          <EntitySet Name="customer_traceinfo" EntityType="IHome.Models.Data.customer_traceinfo" />
+          <EntitySet Name="house_baseinfo" EntityType="IHome.Models.Data.house_baseinfo" />
+          <EntitySet Name="house_intrustinfo" EntityType="IHome.Models.Data.house_intrustinfo" />
+          <EntitySet Name="house_key_receiptioninfo" EntityType="IHome.Models.Data.house_key_receiptioninfo" />
+          <EntitySet Name="house_markedinfo" EntityType="IHome.Models.Data.house_markedinfo" />
+          <EntitySet Name="house_picinfo" EntityType="IHome.Models.Data.house_picinfo" />
+          <EntitySet Name="house_push_logs" EntityType="IHome.Models.Data.house_push_logs" />
+          <EntitySet Name="house_traceinfo" EntityType="IHome.Models.Data.house_traceinfo" />
+          <EntitySet Name="house_viewhouse_baseinfo" EntityType="IHome.Models.Data.house_viewhouse_baseinfo" />
+          <EntitySet Name="house_viewhouse_subinfo" EntityType="IHome.Models.Data.house_viewhouse_subinfo" />
+          <EntitySet Name="sys_user_baseinfo" EntityType="IHome.Models.Data.sys_user_baseinfo" />
+          <EntitySet Name="sys_user_business_config" EntityType="IHome.Models.Data.sys_user_business_config" />
+          <EntitySet Name="sys_user_community_config" EntityType="IHome.Models.Data.sys_user_community_config" />
+          <EntitySet Name="sys_user_region_config" EntityType="IHome.Models.Data.sys_user_region_config" />
+          <EntitySet Name="sys_user_relationinfo" EntityType="IHome.Models.Data.sys_user_relationinfo" />
+          <EntitySet Name="usys_community_baseinfo" EntityType="IHome.Models.Data.usys_community_baseinfo" />
+          <EntitySet Name="usys_community_buildinginfo" EntityType="IHome.Models.Data.usys_community_buildinginfo" />
+        </EntityContainer>
+        <EntityType Name="base_community_baseinfo">
+          <Key>
+            <PropertyRef Name="community_id" />
+          </Key>
+          <Property Type="Guid" Name="community_id" Nullable="false" />
+          <Property Type="String" Name="community_name" />
+          <Property Type="Int32" Name="city_id" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="String" Name="region" />
+          <Property Type="String" Name="block" />
+          <Property Type="String" Name="address" />
+          <Property Type="String" Name="community_use" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="Int32" Name="complete_year" />
+          <Property Type="String" Name="remark" />
+          <Property Type="String" Name="pinyin" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
+        <EntityType Name="base_community_buildinginfo">
+          <Key>
+            <PropertyRef Name="building_id" />
+          </Key>
+          <Property Type="Guid" Name="building_id" Nullable="false" />
+          <Property Type="Guid" Name="community_id" />
+          <Property Type="String" Name="building_name" />
+          <Property Type="String" Name="building_use" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="Int32" Name="building_floor" />
+          <Property Type="Int32" Name="unit_num" />
+          <Property Type="String" Name="unit_type" />
+          <Property Type="String" Name="room_rule" />
+          <Property Type="String" Name="room_rule_remark" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
+        <EntityType Name="base_datadic_detailinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="String" Name="item_key" />
+          <Property Type="String" Name="item_value" />
+          <Property Type="Int32" Name="item_index" />
+        </EntityType>
+        <EntityType Name="base_datadic_iteminfo">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Type="Guid" Name="item_id" Nullable="false" />
+          <Property Type="String" Name="item_key" />
+          <Property Type="String" Name="item_name" />
+        </EntityType>
+        <EntityType Name="base_datadic_tree">
+          <Key>
+            <PropertyRef Name="item_id" />
+          </Key>
+          <Property Type="Guid" Name="item_id" Nullable="false" />
+          <Property Type="String" Name="item_key" />
+          <Property Type="String" Name="item_name" />
+          <Property Type="Guid" Name="parent_id" />
+          <Property Type="Boolean" Name="leaf" />
+          <Property Type="Int16" Name="deep" />
+          <Property Type="String" Name="memo" />
+        </EntityType>
+        <EntityType Name="base_permit_define">
+          <Key>
+            <PropertyRef Name="permit_id" />
+          </Key>
+          <Property Type="Guid" Name="permit_id" Nullable="false" />
+          <Property Type="String" Name="permit_code" />
+          <Property Type="String" Name="permit_name" />
+          <Property Type="String" Name="permit_roup" />
+        </EntityType>
+        <EntityType Name="base_permit_roledefine">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Type="Guid" Name="role_id" Nullable="false" />
+          <Property Type="String" Name="role_name" />
+          <Property Type="String" Name="city_code" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="Guid" Name="company_id" />
+          <Property Type="String" Name="company_name" />
+          <Property Type="Boolean" Name="is_show" />
+          <Property Type="Boolean" Name="def_role" />
+        </EntityType>
+        <EntityType Name="base_personal_push_config">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="person_id" />
+          <Property Type="Int32" Name="web_id" />
+          <Property Type="String" Name="web_user_code" />
+          <Property Type="String" Name="web_user_password" />
+          <Property Type="String" Name="display_name" />
+          <Property Type="String" Name="display_depart" />
+          <Property Type="String" Name="display_company" />
+          <Property Type="String" Name="display_mobile" />
+        </EntityType>
+        <EntityType Name="base_rolepermitionrelationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="role_id" />
+          <Property Type="Guid" Name="permit_id" />
+        </EntityType>
+        <EntityType Name="base_roleuserrelationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="role_id" />
+          <Property Type="Guid" Name="user_id" />
+        </EntityType>
+        <EntityType Name="base_webpush_iteminfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="city_id" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="String" Name="web_port_code" />
+          <Property Type="String" Name="web_port_name" />
+        </EntityType>
+        <EntityType Name="customer_baseinfo">
+          <Key>
+            <PropertyRef Name="customer_id" />
+          </Key>
+          <Property Type="Guid" Name="customer_id" Nullable="false" />
+          <Property Type="String" Name="customer_name" />
+          <Property Type="String" Name="customer_sex" />
+          <Property Type="String" Name="mobile" />
+          <Property Type="String" Name="phone" />
+          <Property Type="String" Name="address" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="String" Name="customer_type" />
+          <Property Type="DateTime" Name="last_trace_date" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+          <Property Type="DateTime" Name="update_time" />
+        </EntityType>
+        <EntityType Name="customer_demandinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="customer_id" />
+          <Property Type="Int32" Name="demand_kind" />
+          <Property Type="Int32" Name="demand_type" />
+          <Property Type="String" Name="demand_zone" />
+          <Property Type="String" Name="demand_block" />
+          <Property Type="String" Name="demand_center" />
+          <Property Type="String" Name="demand_price" />
+          <Property Type="String" Name="demand_use" />
+          <Property Type="String" Name="demand_building" />
+          <Property Type="String" Name="demand_consider" />
+          <Property Type="String" Name="demand_area" />
+          <Property Type="String" Name="demand_service" />
+          <Property Type="String" Name="demand_age" />
+          <Property Type="String" Name="demand_special" />
+          <Property Type="String" Name="demand_room" />
+          <Property Type="String" Name="demand_hall" />
+          <Property Type="String" Name="demand_toilet" />
+          <Property Type="String" Name="demand_fitment" />
+          <Property Type="String" Name="demand_catalog" />
+          <Property Type="String" Name="demand_return_rate" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+          <Property Type="DateTime" Name="last_trace_time" />
+          <Property Type="DateTime" Name="update_time" />
+          <Property Type="String" Name="shop_type" />
+          <Property Type="String" Name="business_scope" />
+          <Property Type="Guid" Name="fav_community_id" />
+        </EntityType>
+        <EntityType Name="customer_traceinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="customer_id" />
+          <Property Type="Int32" Name="trace_type" />
+          <Property Type="String" Name="trace_context" />
+          <Property Type="DateTime" Name="trace_time" />
+          <Property Type="String" Name="trace_person_id" />
+          <Property Type="String" Name="trace_person_name" />
+        </EntityType>
+        <EntityType Name="house_baseinfo">
+          <Key>
+            <PropertyRef Name="house_id" />
+          </Key>
+          <Property Type="Guid" Name="house_id" Nullable="false" />
+          <Property Type="String" Name="house_code" />
+          <Property Type="Guid" Name="community_id" />
+          <Property Type="Guid" Name="buidling_id" />
+          <Property Type="String" Name="room" />
+          <Property Type="String" Name="house_address" />
+          <Property Type="String" Name="region" />
+          <Property Type="String" Name="block" />
+          <Property Type="Int32" Name="complete_year" />
+          <Property Type="Guid" Name="customer_id" />
+          <Property Type="String" Name="customer_name" />
+          <Property Type="String" Name="customer_mobile" />
+          <Property Type="String" Name="customer_phone" />
+          <Property Type="Decimal" Name="building_area" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="String" Name="house_use" />
+          <Property Type="Int32" Name="model_room" />
+          <Property Type="Int32" Name="model_hall" />
+          <Property Type="Int32" Name="model_toilet" />
+          <Property Type="Int32" Name="total_floor" />
+          <Property Type="Int32" Name="cur_floor" />
+          <Property Type="String" Name="direction" />
+          <Property Type="String" Name="fitment" />
+          <Property Type="Decimal" Name="sale_totalprice" />
+          <Property Type="Decimal" Name="sale_unitprice" />
+          <Property Type="Decimal" Name="sale_realprice" />
+          <Property Type="Decimal" Name="rent_price" />
+          <Property Type="String" Name="rent_unit" />
+          <Property Type="String" Name="pay_mode" />
+          <Property Type="Boolean" Name="is_rented" />
+          <Property Type="DateTime" Name="rent_overtime" />
+          <Property Type="String" Name="equipment" />
+          <Property Type="String" Name="house_actuality" />
+          <Property Type="Int32" Name="business_kind" />
+          <Property Type="Int32" Name="house_status" />
+          <Property Type="Boolean" Name="is_havekey" />
+          <Property Type="Boolean" Name="is_marked" />
+          <Property Type="String" Name="mark_code" />
+          <Property Type="Boolean" Name="is_entrust" />
+          <Property Type="Guid" Name="add_peron_id" />
+          <Property Type="Guid" Name="opr_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+          <Property Type="DateTime" Name="update_time" />
+          <Property Type="Int32" Name="web_send_status" />
+          <Property Type="DateTime" Name="last_refrash_time" />
+          <Property Type="String" Name="house_remark" />
+          <Property Type="String" Name="push_remark" />
+          <Property Type="String" Name="shop_type" />
+          <Property Type="String" Name="business_scope" />
+        </EntityType>
+        <EntityType Name="house_intrustinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="house_id" />
+          <Property Type="String" Name="house_code" />
+          <Property Type="String" Name="house_address" />
+          <Property Type="Guid" Name="community_id" />
+          <Property Type="String" Name="region" />
+          <Property Type="String" Name="block" />
+          <Property Type="String" Name="property_code" />
+          <Property Type="DateTime" Name="date_start" />
+          <Property Type="DateTime" Name="date_end" />
+          <Property Type="Decimal" Name="house_area" />
+          <Property Type="Decimal" Name="total_price" />
+          <Property Type="Decimal" Name="unit_price" />
+          <Property Type="String" Name="customer_name" />
+          <Property Type="String" Name="customer_phone" />
+          <Property Type="String" Name="customer_mobile" />
+          <Property Type="String" Name="customer_address" />
+          <Property Type="Int32" Name="business_type" />
+          <Property Type="Int32" Name="entrust_type" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="Guid" Name="intrust_person_id" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+          <Property Type="DateTime" Name="update_time" />
+        </EntityType>
+        <EntityType Name="house_key_receiptioninfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="house_id" />
+          <Property Type="String" Name="house_code" />
+          <Property Type="String" Name="house_address" />
+          <Property Type="String" Name="receiption_code" />
+          <Property Type="Int32" Name="key_count" />
+          <Property Type="DateTime" Name="get_date" />
+          <Property Type="String" Name="customer_name" />
+          <Property Type="Guid" Name="get_person_id" />
+          <Property Type="String" Name="add_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+          <Property Type="DateTime" Name="update_time" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
+        <EntityType Name="house_markedinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="house_id" />
+          <Property Type="String" Name="house_code" />
+          <Property Type="String" Name="house_address" />
+          <Property Type="String" Name="mark_code" />
+          <Property Type="DateTime" Name="mark_day" />
+          <Property Type="DateTime" Name="mark_start_day" />
+          <Property Type="DateTime" Name="mark_end_day" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="Guid" Name="mark_person_id" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+          <Property Type="DateTime" Name="update_time" />
+        </EntityType>
+        <EntityType Name="house_picinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="String" Name="house_id" Nullable="false" />
+          <Property Type="Int32" Name="pic_type" />
+          <Property Type="Int32" Name="pic_enum" />
+          <Property Type="String" Name="pic_url" />
+        </EntityType>
+        <EntityType Name="house_push_logs">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="house_id" />
+          <Property Type="String" Name="house_code" />
+          <Property Type="String" Name="house_address" />
+          <Property Type="Int32" Name="push_to" />
+          <Property Type="DateTime" Name="push_time" />
+          <Property Type="Guid" Name="push_person_id" />
+          <Property Type="DateTime" Name="push_status" />
+        </EntityType>
+        <EntityType Name="house_traceinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="house_id" />
+          <Property Type="Int32" Name="trace_type" />
+          <Property Type="String" Name="trace_context" />
+          <Property Type="DateTime" Name="trace_time" />
+          <Property Type="String" Name="trace_person_id" />
+          <Property Type="String" Name="trace_person_name" />
+        </EntityType>
+        <EntityType Name="house_viewhouse_baseinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="customer_id" />
+          <Property Type="String" Name="customer_name" />
+          <Property Type="String" Name="description" />
+          <Property Type="DateTime" Name="view_time" />
+          <Property Type="Int32" Name="status" />
+          <Property Type="String" Name="view_person_id" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="DateTime" Name="add_time" />
+        </EntityType>
+        <EntityType Name="house_viewhouse_subinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="main_id" />
+          <Property Type="Guid" Name="house_id" />
+          <Property Type="String" Name="house_code" />
+          <Property Type="String" Name="house_address" />
+        </EntityType>
+        <EntityType Name="sys_user_baseinfo">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Type="Guid" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="user_code" />
+          <Property Type="String" Name="user_name" />
+          <Property Type="String" Name="department" />
+          <Property Type="String" Name="company_name" />
+          <Property Type="String" Name="password" />
+          <Property Type="String" Name="city_code" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="Boolean" Name="validate" />
+          <Property Type="Int32" Name="user_type" />
+          <Property Type="String" Name="id_type" />
+          <Property Type="String" Name="id_num" />
+          <Property Type="String" Name="mobile" />
+          <Property Type="String" Name="office_tel" />
+          <Property Type="String" Name="email" />
+          <Property Type="String" Name="remark" />
+          <Property Type="DateTimeOffset" Name="reg_time" />
+          <Property Type="DateTimeOffset" Name="update_time" />
+          <Property Type="DateTimeOffset" Name="last_login_time" />
+          <Property Type="Boolean" Name="dr" />
+        </EntityType>
+        <EntityType Name="sys_user_business_config">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Type="Guid" Name="user_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_user_community_config">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="user_id" />
+          <Property Type="Guid" Name="community_id" />
+        </EntityType>
+        <EntityType Name="sys_user_region_config">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="regin" />
+          <Property Type="String" Name="block" />
+        </EntityType>
+        <EntityType Name="sys_user_relationinfo">
+          <Key>
+            <PropertyRef Name="record_id" />
+          </Key>
+          <Property Type="Guid" Name="record_id" Nullable="false" />
+          <Property Type="Guid" Name="parent_id" />
+          <Property Type="Guid" Name="child_id" />
+        </EntityType>
+        <EntityType Name="usys_community_baseinfo">
+          <Key>
+            <PropertyRef Name="community_id" />
+          </Key>
+          <Property Type="Guid" Name="community_id" Nullable="false" />
+          <Property Type="String" Name="community_name" />
+          <Property Type="Int32" Name="city_id" />
+          <Property Type="String" Name="city_name" />
+          <Property Type="String" Name="region" />
+          <Property Type="String" Name="block" />
+          <Property Type="String" Name="address" />
+          <Property Type="String" Name="community_use" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="Int32" Name="complete_year" />
+          <Property Type="String" Name="remark" />
+          <Property Type="String" Name="pinyin" />
+          <Property Type="Guid" Name="add_person_id" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
+        <EntityType Name="usys_community_buildinginfo">
+          <Key>
+            <PropertyRef Name="building_id" />
+          </Key>
+          <Property Type="Guid" Name="building_id" Nullable="false" />
+          <Property Type="Guid" Name="community_id" />
+          <Property Type="String" Name="building_name" />
+          <Property Type="String" Name="building_use" />
+          <Property Type="String" Name="building_type" />
+          <Property Type="Int32" Name="building_floor" />
+          <Property Type="Int32" Name="unit_num" />
+          <Property Type="String" Name="unit_type" />
+          <Property Type="String" Name="room_rule" />
+          <Property Type="String" Name="room_rule_remark" />
+          <Property Type="Int32" Name="status" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IHomeModelsStoreContainer" CdmEntityContainer="CbooEntities">
+          <EntitySetMapping Name="base_community_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_community_baseinfo">
+              <MappingFragment StoreEntitySet="base_community_baseinfo">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="pinyin" ColumnName="pinyin" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="complete_year" ColumnName="complete_year" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="community_use" ColumnName="community_use" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="community_name" ColumnName="community_name" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_community_buildinginfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_community_buildinginfo">
+              <MappingFragment StoreEntitySet="base_community_buildinginfo">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="room_rule_remark" ColumnName="room_rule_remark" />
+                <ScalarProperty Name="room_rule" ColumnName="room_rule" />
+                <ScalarProperty Name="unit_type" ColumnName="unit_type" />
+                <ScalarProperty Name="unit_num" ColumnName="unit_num" />
+                <ScalarProperty Name="building_floor" ColumnName="building_floor" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="building_use" ColumnName="building_use" />
+                <ScalarProperty Name="building_name" ColumnName="building_name" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="building_id" ColumnName="building_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_datadic_detailinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_datadic_detailinfo">
+              <MappingFragment StoreEntitySet="base_datadic_detailinfo">
+                <ScalarProperty Name="item_index" ColumnName="item_index" />
+                <ScalarProperty Name="item_value" ColumnName="item_value" />
+                <ScalarProperty Name="item_key" ColumnName="item_key" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_datadic_iteminfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_datadic_iteminfo">
+              <MappingFragment StoreEntitySet="base_datadic_iteminfo">
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="item_key" ColumnName="item_key" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_datadic_tree">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_datadic_tree">
+              <MappingFragment StoreEntitySet="base_datadic_tree">
+                <ScalarProperty Name="memo" ColumnName="memo" />
+                <ScalarProperty Name="deep" ColumnName="deep" />
+                <ScalarProperty Name="leaf" ColumnName="leaf" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="item_key" ColumnName="item_key" />
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_permit_define">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_permit_define">
+              <MappingFragment StoreEntitySet="base_permit_define">
+                <ScalarProperty Name="permit_roup" ColumnName="permit_roup" />
+                <ScalarProperty Name="permit_name" ColumnName="permit_name" />
+                <ScalarProperty Name="permit_code" ColumnName="permit_code" />
+                <ScalarProperty Name="permit_id" ColumnName="permit_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_permit_roledefine">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_permit_roledefine">
+              <MappingFragment StoreEntitySet="base_permit_roledefine">
+                <ScalarProperty Name="def_role" ColumnName="def_role" />
+                <ScalarProperty Name="is_show" ColumnName="is_show" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="company_id" ColumnName="company_id" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_code" ColumnName="city_code" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_personal_push_config">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_personal_push_config">
+              <MappingFragment StoreEntitySet="base_personal_push_config">
+                <ScalarProperty Name="display_mobile" ColumnName="display_mobile" />
+                <ScalarProperty Name="display_company" ColumnName="display_company" />
+                <ScalarProperty Name="display_depart" ColumnName="display_depart" />
+                <ScalarProperty Name="display_name" ColumnName="display_name" />
+                <ScalarProperty Name="web_user_password" ColumnName="web_user_password" />
+                <ScalarProperty Name="web_user_code" ColumnName="web_user_code" />
+                <ScalarProperty Name="web_id" ColumnName="web_id" />
+                <ScalarProperty Name="person_id" ColumnName="person_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_rolepermitionrelationinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_rolepermitionrelationinfo">
+              <MappingFragment StoreEntitySet="base_rolepermitionrelationinfo">
+                <ScalarProperty Name="permit_id" ColumnName="permit_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_roleuserrelationinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_roleuserrelationinfo">
+              <MappingFragment StoreEntitySet="base_roleuserrelationinfo">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="base_webpush_iteminfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.base_webpush_iteminfo">
+              <MappingFragment StoreEntitySet="base_webpush_iteminfo">
+                <ScalarProperty Name="web_port_name" ColumnName="web_port_name" />
+                <ScalarProperty Name="web_port_code" ColumnName="web_port_code" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.customer_baseinfo">
+              <MappingFragment StoreEntitySet="customer_baseinfo">
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="last_trace_date" ColumnName="last_trace_date" />
+                <ScalarProperty Name="customer_type" ColumnName="customer_type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="customer_sex" ColumnName="customer_sex" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_demandinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.customer_demandinfo">
+              <MappingFragment StoreEntitySet="customer_demandinfo">
+                <ScalarProperty Name="fav_community_id" ColumnName="fav_community_id" />
+                <ScalarProperty Name="business_scope" ColumnName="business_scope" />
+                <ScalarProperty Name="shop_type" ColumnName="shop_type" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="last_trace_time" ColumnName="last_trace_time" />
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="demand_return_rate" ColumnName="demand_return_rate" />
+                <ScalarProperty Name="demand_catalog" ColumnName="demand_catalog" />
+                <ScalarProperty Name="demand_fitment" ColumnName="demand_fitment" />
+                <ScalarProperty Name="demand_toilet" ColumnName="demand_toilet" />
+                <ScalarProperty Name="demand_hall" ColumnName="demand_hall" />
+                <ScalarProperty Name="demand_room" ColumnName="demand_room" />
+                <ScalarProperty Name="demand_special" ColumnName="demand_special" />
+                <ScalarProperty Name="demand_age" ColumnName="demand_age" />
+                <ScalarProperty Name="demand_service" ColumnName="demand_service" />
+                <ScalarProperty Name="demand_area" ColumnName="demand_area" />
+                <ScalarProperty Name="demand_consider" ColumnName="demand_consider" />
+                <ScalarProperty Name="demand_building" ColumnName="demand_building" />
+                <ScalarProperty Name="demand_use" ColumnName="demand_use" />
+                <ScalarProperty Name="demand_price" ColumnName="demand_price" />
+                <ScalarProperty Name="demand_center" ColumnName="demand_center" />
+                <ScalarProperty Name="demand_block" ColumnName="demand_block" />
+                <ScalarProperty Name="demand_zone" ColumnName="demand_zone" />
+                <ScalarProperty Name="demand_type" ColumnName="demand_type" />
+                <ScalarProperty Name="demand_kind" ColumnName="demand_kind" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer_traceinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.customer_traceinfo">
+              <MappingFragment StoreEntitySet="customer_traceinfo">
+                <ScalarProperty Name="trace_person_name" ColumnName="trace_person_name" />
+                <ScalarProperty Name="trace_person_id" ColumnName="trace_person_id" />
+                <ScalarProperty Name="trace_time" ColumnName="trace_time" />
+                <ScalarProperty Name="trace_context" ColumnName="trace_context" />
+                <ScalarProperty Name="trace_type" ColumnName="trace_type" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_baseinfo">
+              <MappingFragment StoreEntitySet="house_baseinfo">
+                <ScalarProperty Name="business_scope" ColumnName="business_scope" />
+                <ScalarProperty Name="shop_type" ColumnName="shop_type" />
+                <ScalarProperty Name="push_remark" ColumnName="push_remark" />
+                <ScalarProperty Name="house_remark" ColumnName="house_remark" />
+                <ScalarProperty Name="last_refrash_time" ColumnName="last_refrash_time" />
+                <ScalarProperty Name="web_send_status" ColumnName="web_send_status" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="opr_person_id" ColumnName="opr_person_id" />
+                <ScalarProperty Name="add_peron_id" ColumnName="add_peron_id" />
+                <ScalarProperty Name="is_entrust" ColumnName="is_entrust" />
+                <ScalarProperty Name="mark_code" ColumnName="mark_code" />
+                <ScalarProperty Name="is_marked" ColumnName="is_marked" />
+                <ScalarProperty Name="is_havekey" ColumnName="is_havekey" />
+                <ScalarProperty Name="house_status" ColumnName="house_status" />
+                <ScalarProperty Name="business_kind" ColumnName="business_kind" />
+                <ScalarProperty Name="house_actuality" ColumnName="house_actuality" />
+                <ScalarProperty Name="equipment" ColumnName="equipment" />
+                <ScalarProperty Name="rent_overtime" ColumnName="rent_overtime" />
+                <ScalarProperty Name="is_rented" ColumnName="is_rented" />
+                <ScalarProperty Name="pay_mode" ColumnName="pay_mode" />
+                <ScalarProperty Name="rent_unit" ColumnName="rent_unit" />
+                <ScalarProperty Name="rent_price" ColumnName="rent_price" />
+                <ScalarProperty Name="sale_realprice" ColumnName="sale_realprice" />
+                <ScalarProperty Name="sale_unitprice" ColumnName="sale_unitprice" />
+                <ScalarProperty Name="sale_totalprice" ColumnName="sale_totalprice" />
+                <ScalarProperty Name="fitment" ColumnName="fitment" />
+                <ScalarProperty Name="direction" ColumnName="direction" />
+                <ScalarProperty Name="cur_floor" ColumnName="cur_floor" />
+                <ScalarProperty Name="total_floor" ColumnName="total_floor" />
+                <ScalarProperty Name="model_toilet" ColumnName="model_toilet" />
+                <ScalarProperty Name="model_hall" ColumnName="model_hall" />
+                <ScalarProperty Name="model_room" ColumnName="model_room" />
+                <ScalarProperty Name="house_use" ColumnName="house_use" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="building_area" ColumnName="building_area" />
+                <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+                <ScalarProperty Name="customer_mobile" ColumnName="customer_mobile" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="complete_year" ColumnName="complete_year" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="house_address" ColumnName="house_address" />
+                <ScalarProperty Name="room" ColumnName="room" />
+                <ScalarProperty Name="buidling_id" ColumnName="buidling_id" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="house_code" ColumnName="house_code" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_intrustinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_intrustinfo">
+              <MappingFragment StoreEntitySet="house_intrustinfo">
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="intrust_person_id" ColumnName="intrust_person_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="entrust_type" ColumnName="entrust_type" />
+                <ScalarProperty Name="business_type" ColumnName="business_type" />
+                <ScalarProperty Name="customer_address" ColumnName="customer_address" />
+                <ScalarProperty Name="customer_mobile" ColumnName="customer_mobile" />
+                <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+                <ScalarProperty Name="total_price" ColumnName="total_price" />
+                <ScalarProperty Name="house_area" ColumnName="house_area" />
+                <ScalarProperty Name="date_end" ColumnName="date_end" />
+                <ScalarProperty Name="date_start" ColumnName="date_start" />
+                <ScalarProperty Name="property_code" ColumnName="property_code" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="house_address" ColumnName="house_address" />
+                <ScalarProperty Name="house_code" ColumnName="house_code" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_key_receiptioninfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_key_receiptioninfo">
+              <MappingFragment StoreEntitySet="house_key_receiptioninfo">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="get_person_id" ColumnName="get_person_id" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="get_date" ColumnName="get_date" />
+                <ScalarProperty Name="key_count" ColumnName="key_count" />
+                <ScalarProperty Name="receiption_code" ColumnName="receiption_code" />
+                <ScalarProperty Name="house_address" ColumnName="house_address" />
+                <ScalarProperty Name="house_code" ColumnName="house_code" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_markedinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_markedinfo">
+              <MappingFragment StoreEntitySet="house_markedinfo">
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="mark_person_id" ColumnName="mark_person_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="mark_end_day" ColumnName="mark_end_day" />
+                <ScalarProperty Name="mark_start_day" ColumnName="mark_start_day" />
+                <ScalarProperty Name="mark_day" ColumnName="mark_day" />
+                <ScalarProperty Name="mark_code" ColumnName="mark_code" />
+                <ScalarProperty Name="house_address" ColumnName="house_address" />
+                <ScalarProperty Name="house_code" ColumnName="house_code" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_picinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_picinfo">
+              <MappingFragment StoreEntitySet="house_picinfo">
+                <ScalarProperty Name="pic_url" ColumnName="pic_url" />
+                <ScalarProperty Name="pic_enum" ColumnName="pic_enum" />
+                <ScalarProperty Name="pic_type" ColumnName="pic_type" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_push_logs">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_push_logs">
+              <MappingFragment StoreEntitySet="house_push_logs">
+                <ScalarProperty Name="push_status" ColumnName="push_status" />
+                <ScalarProperty Name="push_person_id" ColumnName="push_person_id" />
+                <ScalarProperty Name="push_time" ColumnName="push_time" />
+                <ScalarProperty Name="push_to" ColumnName="push_to" />
+                <ScalarProperty Name="house_address" ColumnName="house_address" />
+                <ScalarProperty Name="house_code" ColumnName="house_code" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_traceinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_traceinfo">
+              <MappingFragment StoreEntitySet="house_traceinfo">
+                <ScalarProperty Name="trace_person_name" ColumnName="trace_person_name" />
+                <ScalarProperty Name="trace_person_id" ColumnName="trace_person_id" />
+                <ScalarProperty Name="trace_time" ColumnName="trace_time" />
+                <ScalarProperty Name="trace_context" ColumnName="trace_context" />
+                <ScalarProperty Name="trace_type" ColumnName="trace_type" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_viewhouse_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_viewhouse_baseinfo">
+              <MappingFragment StoreEntitySet="house_viewhouse_baseinfo">
+                <ScalarProperty Name="add_time" ColumnName="add_time" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="view_person_id" ColumnName="view_person_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="view_time" ColumnName="view_time" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="house_viewhouse_subinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.house_viewhouse_subinfo">
+              <MappingFragment StoreEntitySet="house_viewhouse_subinfo">
+                <ScalarProperty Name="house_address" ColumnName="house_address" />
+                <ScalarProperty Name="house_code" ColumnName="house_code" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="main_id" ColumnName="main_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.sys_user_baseinfo">
+              <MappingFragment StoreEntitySet="sys_user_baseinfo">
+                <ScalarProperty Name="dr" ColumnName="dr" />
+                <ScalarProperty Name="last_login_time" ColumnName="last_login_time" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="reg_time" ColumnName="reg_time" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="office_tel" ColumnName="office_tel" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="id_num" ColumnName="id_num" />
+                <ScalarProperty Name="id_type" ColumnName="id_type" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+                <ScalarProperty Name="validate" ColumnName="validate" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_code" ColumnName="city_code" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="company_name" ColumnName="company_name" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_code" ColumnName="user_code" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_business_config">
+            <EntityTypeMapping TypeName="IHome.Models.Data.sys_user_business_config">
+              <MappingFragment StoreEntitySet="sys_user_business_config">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_community_config">
+            <EntityTypeMapping TypeName="IHome.Models.Data.sys_user_community_config">
+              <MappingFragment StoreEntitySet="sys_user_community_config">
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_region_config">
+            <EntityTypeMapping TypeName="IHome.Models.Data.sys_user_region_config">
+              <MappingFragment StoreEntitySet="sys_user_region_config">
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="regin" ColumnName="regin" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_user_relationinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.sys_user_relationinfo">
+              <MappingFragment StoreEntitySet="sys_user_relationinfo">
+                <ScalarProperty Name="child_id" ColumnName="child_id" />
+                <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+                <ScalarProperty Name="record_id" ColumnName="record_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usys_community_baseinfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.usys_community_baseinfo">
+              <MappingFragment StoreEntitySet="usys_community_baseinfo">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="add_person_id" ColumnName="add_person_id" />
+                <ScalarProperty Name="pinyin" ColumnName="pinyin" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="complete_year" ColumnName="complete_year" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="community_use" ColumnName="community_use" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="block" ColumnName="block" />
+                <ScalarProperty Name="region" ColumnName="region" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+                <ScalarProperty Name="community_name" ColumnName="community_name" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usys_community_buildinginfo">
+            <EntityTypeMapping TypeName="IHome.Models.Data.usys_community_buildinginfo">
+              <MappingFragment StoreEntitySet="usys_community_buildinginfo">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="room_rule_remark" ColumnName="room_rule_remark" />
+                <ScalarProperty Name="room_rule" ColumnName="room_rule" />
+                <ScalarProperty Name="unit_type" ColumnName="unit_type" />
+                <ScalarProperty Name="unit_num" ColumnName="unit_num" />
+                <ScalarProperty Name="building_floor" ColumnName="building_floor" />
+                <ScalarProperty Name="building_type" ColumnName="building_type" />
+                <ScalarProperty Name="building_use" ColumnName="building_use" />
+                <ScalarProperty Name="building_name" ColumnName="building_name" />
+                <ScalarProperty Name="community_id" ColumnName="community_id" />
+                <ScalarProperty Name="building_id" ColumnName="building_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="True" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToMySQL.tt" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CbooModel">
+        <EntityTypeShape EntityType="IHome.Models.Data.base_community_baseinfo" Width="1.5" PointX="0.75" PointY="0.75" Height="3.6892097981770746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_community_buildinginfo" Width="1.5" PointX="2.75" PointY="0.75" Height="3.1161507161458246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_datadic_detailinfo" Width="1.5" PointX="4.75" PointY="0.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_datadic_iteminfo" Width="1.5" PointX="2.75" PointY="4.75" Height="1.5879931640625102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_datadic_tree" Width="1.5" PointX="4.75" PointY="3.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_permit_define" Width="1.5" PointX="6.75" PointY="0.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_permit_roledefine" Width="1.5" PointX="6.75" PointY="3.75" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_personal_push_config" Width="1.5" PointX="0.75" PointY="7.75" Height="2.7341113281250102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_rolepermitionrelationinfo" Width="1.5" PointX="2.75" PointY="7.75" Height="1.5879931640625102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_roleuserrelationinfo" Width="1.5" PointX="4.75" PointY="7.75" Height="1.5879931640625102" />
+        <EntityTypeShape EntityType="IHome.Models.Data.base_webpush_iteminfo" Width="1.5" PointX="6.75" PointY="7.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.customer_baseinfo" Width="1.5" PointX="8.75" PointY="0.75" Height="3.307170410156246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.customer_demandinfo" Width="1.5" PointX="8.75" PointY="5.75" Height="6.5545052083333246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.customer_traceinfo" Width="1.5" PointX="10.75" PointY="0.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_baseinfo" Width="1.5" PointX="2.75" PointY="10.75" Height="10.374899088541667" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_intrustinfo" Width="1.5" PointX="10.75" PointY="4.75" Height="5.5994067382812318" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_key_receiptioninfo" Width="1.5" PointX="4.75" PointY="10.75" Height="3.4981901041666674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_markedinfo" Width="1.5" PointX="10.75" PointY="11.75" Height="3.4981901041666674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_picinfo" Width="1.5" PointX="12.75" PointY="0.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_push_logs" Width="1.5" PointX="12.75" PointY="3.75" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_traceinfo" Width="1.5" PointX="12.75" PointY="7.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_baseinfo" Width="1.5" PointX="12.75" PointY="11.75" Height="2.7341113281249818" />
+        <EntityTypeShape EntityType="IHome.Models.Data.house_viewhouse_subinfo" Width="1.5" PointX="6.75" PointY="13.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_baseinfo" Width="1.5" PointX="14.75" PointY="0.75" Height="4.8353279622395746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_business_config" Width="1.5" PointX="14.75" PointY="6.75" Height="1.2059537760416674" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_community_config" Width="1.5" PointX="14.75" PointY="8.75" Height="1.5879931640624818" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_region_config" Width="1.5" PointX="14.75" PointY="11.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="IHome.Models.Data.sys_user_relationinfo" Width="1.5" PointX="14.75" PointY="14.75" Height="1.5879931640624818" />
+        <EntityTypeShape EntityType="IHome.Models.Data.usys_community_baseinfo" Width="1.5" PointX="16.75" PointY="0.75" Height="3.6892097981770746" />
+        <EntityTypeShape EntityType="IHome.Models.Data.usys_community_buildinginfo" Width="1.5" PointX="4.75" PointY="16.75" Height="3.1161507161458246" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

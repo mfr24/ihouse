@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="9da4c0d9-7e7c-4326-ba56-6794b2a6ac2c" name="用户管理-个人主营小区设定" linkedPackageId="0d247895-05e5-42c0-8a65-2b66e3f3350d" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="241787df-d310-4c3b-8999-0cc1fdfe89ef">
+      <elementDefinition Id="ab35a1bd-23b3-467c-9241-7fb620bfb217" />
+      <body>判断是否该用户已添加该小区</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="0b3c7e49-22a1-454d-9ff4-9dfc10062bb5" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="7bcad8b1-3759-40f9-b060-ac24186c7f00">
+      <profileInstance Id="ac098d69-5eb4-4bfb-8ee4-d6bbac8bca60" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fed4d52b-3ef5-429c-96c8-91fe3eec46f2">
+      <profileInstance Id="57db867b-8fbe-4393-b0f7-a66bf0fa6b3a" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="0ccf71ab-851e-4937-b048-b876bcdcc64f" name="用户管理-个人主营小区设定" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="6b320453-3e6e-4f4a-83ce-18d4497c6f06" />
+        <nodes>
+          <initialNode Id="1a65971f-3e4f-4b77-91f7-9538560e6c52" name="Initial1" isLeaf="false">
+            <elementDefinition Id="d5b554b2-a354-4433-bf9a-7bd15fba99ed" />
+            <flowNodeTargets>
+              <controlFlow Id="efd91899-5222-4e70-9ae7-5b4e5cf17963" isLeaf="false">
+                <opaqueActionMoniker Id="69c55527-22e3-4217-941c-dee3f2fc957c" LastKnownName="添加设定" />
+                <elementDefinition Id="f20fe1ea-2884-4242-8ab6-7cffd8a6c31e" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="69c55527-22e3-4217-941c-dee3f2fc957c" name="添加设定" isLeaf="false">
+            <elementDefinition Id="e79f41e8-ff5a-4839-ac83-f2d1a4e7abac" />
+            <flowNodeTargets>
+              <controlFlow Id="c1bc9002-1b36-43b0-af51-90eafe1674c4" isLeaf="false">
+                <opaqueActionMoniker Id="4a78eee9-7d08-4362-8c6e-efd31fab22fe" LastKnownName="选择小区" />
+                <elementDefinition Id="46a19915-295b-46bd-8638-504b1d469b74" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4a78eee9-7d08-4362-8c6e-efd31fab22fe" name="选择小区" isLeaf="false">
+            <elementDefinition Id="2023d618-3cac-4ef0-bdec-11f351f44a72" />
+            <flowNodeTargets>
+              <controlFlow Id="0907f1d1-bf8c-4b68-8fec-1d705c650b1c" isLeaf="false">
+                <opaqueActionMoniker Id="917d5cc4-d862-4f43-9d21-adbb5d10203d" LastKnownName="提交数据" />
+                <elementDefinition Id="e3ddb5cc-9e60-4afe-ad11-793247451cac" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="917d5cc4-d862-4f43-9d21-adbb5d10203d" name="提交数据" isLeaf="false">
+            <elementDefinition Id="edcc9342-7448-4708-b5ab-dc91993f0455" />
+            <flowNodeTargets>
+              <controlFlow Id="a5c9fd34-90fb-455d-8800-f03972faca72" isLeaf="false">
+                <decisionNodeMoniker Id="0b3c7e49-22a1-454d-9ff4-9dfc10062bb5" LastKnownName="Decision1" />
+                <elementDefinition Id="20d4b039-b901-44d8-b7cc-d12bb7cdd74f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="0b3c7e49-22a1-454d-9ff4-9dfc10062bb5" name="Decision1" isLeaf="false">
+            <elementDefinition Id="c3bdf671-622c-490e-80fe-2c85ffbaa8ae" />
+            <flowNodeTargets>
+              <controlFlow Id="931b8ad5-d969-4b73-99b9-5d1993d2a741" isLeaf="false">
+                <opaqueActionMoniker Id="4a78eee9-7d08-4362-8c6e-efd31fab22fe" LastKnownName="选择小区" />
+                <elementDefinition Id="48aeeab4-8bdb-45ec-b187-560d0f368ff1" />
+              </controlFlow>
+              <controlFlow Id="4d648bd2-7f48-4773-8627-fe17af1a1012" isLeaf="false">
+                <opaqueActionMoniker Id="55a935c9-b0ca-40b7-b7b6-4cde4e3c5ef8" LastKnownName="保存数据" />
+                <elementDefinition Id="0682d4ae-b0a9-42eb-9912-f92245e14df8" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="55a935c9-b0ca-40b7-b7b6-4cde4e3c5ef8" name="保存数据" isLeaf="false">
+            <elementDefinition Id="76105816-7fa5-4a7a-b09e-5220e62a2a41" />
+            <flowNodeTargets>
+              <controlFlow Id="423a70ef-123d-47c5-9e30-cd5cf4b5eeed" isLeaf="false">
+                <opaqueActionMoniker Id="4b59ffcc-03f2-4922-80aa-150fb1bb1971" LastKnownName="刷新客户端" />
+                <elementDefinition Id="8575e955-4ccc-4f37-9093-dfd4920f8343" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="4b59ffcc-03f2-4922-80aa-150fb1bb1971" name="刷新客户端" isLeaf="false">
+            <elementDefinition Id="f7417a2a-05df-4283-ab85-17265bc12bee" />
+            <flowNodeTargets>
+              <controlFlow Id="e92437d7-f721-4f8f-8778-4df0fb785cc7" isLeaf="false">
+                <activityFinalNodeMoniker Id="5552636e-b194-4137-9d09-ab6ff96d302a" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="6ea2dd35-701e-475f-a890-a1686478df97" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="5552636e-b194-4137-9d09-ab6ff96d302a" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="30f6f993-f393-4d53-b07d-0e981302f3d0" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="0d247895-05e5-42c0-8a65-2b66e3f3350d" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</activityRootModel>

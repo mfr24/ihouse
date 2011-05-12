@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="a265df16-9537-4a5f-9655-a05f0097eecb" name="preview" linkedPackageId="04bd8e9c-d79a-41af-96a2-908b24c4116d" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="6ede5d76-24e4-4b19-b0d0-e28775c3176c">
+      <profileInstance Id="cffcd7fc-15c9-4fd6-ac16-164d3d026984" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="fb9920a2-8009-4719-ad6c-6eabc93309c8">
+      <profileInstance Id="c68aa316-adad-4dab-9a63-add47c580390" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="b57317d9-1eb5-4d93-b97d-70fd8cd435c4" name="用户管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3bdba2d5-c113-4205-8df1-c39827c99c0f" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="9f4449d7-f150-4455-8344-55e7d5e10f85" name="基础管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6f05d6af-8c12-4f8e-99d8-aab9cd872a1f" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="8e086311-3810-4453-9c23-06d84f0b275e" name="房源管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="19572dcc-31b0-44c1-9786-e667b1a1824c" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="27e38ef3-58a2-4de5-9ed4-1d28a2e7c3b9" name="客户管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="a8b1c35d-6df6-4638-9e91-67c88891d7d3" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="0bf171c6-4c99-48a1-b481-40a28cdc31dd" name="签约管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="3811810e-2817-4d86-8bd7-8839379e1279" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="77ff4323-e3e5-49c0-9367-acb786cd107c" name="款项收支子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="5aae5571-77a9-4d3f-86e1-f537d060b119" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="eb3ae667-eb4f-416f-8ff1-bb9487ce751d" name="个人管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="12154b02-6d43-4cfa-b535-dbacd4cedb04" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <subsystem Id="8db246cc-1ccb-4109-a7c8-ab3d635caa0f" name="报表管理子系统" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="2c8f663e-aaf1-4ec4-8359-2188451ac2e5" />
+      </subsystem>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="04bd8e9c-d79a-41af-96a2-908b24c4116d" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</useCaseModelRoot>

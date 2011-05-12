@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>NewWin</Title>
+      <Shortcut>win</Shortcut>
+      <Description>
+      </Description>
+      <Author>Gabry.Zhong</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>mywin</ID>
+          <ToolTip>view_name</ToolTip>
+          <Default>my</Default>
+        </Literal>
+        <Literal>
+          <ID>title</ID>
+          <ToolTip>title name</ToolTip>
+          <Default>窗口名</Default>
+        </Literal>
+        <Literal>
+          <ID>type</ID>
+          <ToolTip>type_name</ToolTip>
+          <Default>IHome.SLClient.InfoManagement</Default>
+        </Literal>
+        <Literal>
+          <ID>xap</ID>
+          <ToolTip>xap_name</ToolTip>
+          <Default>IHome.SLClient.InfoManagement</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[private IHome.Models.CmdWin _$mywin$View = new Models.CmdWin()
+                {
+                    name = "$title$",
+                    type_name = "$xap$.$mywin$View",
+                    xap_name = "$xap$.zip",
+                    Win = Models.CmdWin.WinType.modal,
+                    VeiwModel = new $mywin$ViewModel()
+                };
+        public IHome.Models.CmdWin $mywin$View
+        {
+            get
+            {
+                return _$mywin$View;
+            }
+        }$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

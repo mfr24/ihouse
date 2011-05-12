@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Windows.Documents.Proofing</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.Windows.Documents.Proofing.SpellCheckAllAtOnceWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:Telerik.Windows.Documents.Proofing.SpellCheckWordByWordWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+    </members>
+</doc>

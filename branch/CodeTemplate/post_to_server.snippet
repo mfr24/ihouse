@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>post to server</Title>
+      <Shortcut>post</Shortcut>
+      <Description>
+      </Description>
+      <Author>Gabry.Zhong</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>method</ID>
+          <ToolTip>method name</ToolTip>
+          <Default>IHome.Server.Facade.MainFacade.MyMethod</Default>
+        </Literal>
+        <Literal>
+          <ID>param</ID>
+          <ToolTip>param name</ToolTip>
+          <Default>param1</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[List<object> requestList = new List<object>();
+                 Dictionary<string, object> requestParams = new Dictionary<string, object>();
+                 requestParams["$param$"] = $param$;
+                 requestList.Add(requestParams);
+                 this.Request("$method$",
+                 requestList,
+                 (result) => {
+                 //do somethting while server return
+                 });$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

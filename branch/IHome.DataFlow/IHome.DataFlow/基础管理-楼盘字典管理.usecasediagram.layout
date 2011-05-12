@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="基础管理-楼盘字典管理">
+  <useCaseModelRootMoniker Id="ea2891b8-0d40-4563-b374-fb0f6242dde3" />
+  <nestedChildShapes>
+    <actorShape Id="844cb701-617b-4c7b-922d-fd319e8370c3" absoluteBounds="0.625, 3.375, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="ce349ec5-2344-4656-8b16-f85297372106" LastKnownName="前台用户" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseShape Id="401fd70e-c2b6-4250-b1fc-720cb7e20c53" absoluteBounds="1.625, 1.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="67a7c4c7-05ba-4236-b5e2-f88c2bf7aa35" LastKnownName="新增楼盘" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.01388888888889 : 3.375); (1.99117806810695 : 1.61587947740749)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="059f7780-0d65-4d2a-946b-60fb5c418098" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="401fd70e-c2b6-4250-b1fc-720cb7e20c53" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="f1495080-bc1c-432d-89c4-c02278cc831a" absoluteBounds="3.25, 1.5, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="50350b36-1986-4ba3-bfa0-58d5df6b424c" LastKnownName="修改楼盘" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.46195652173913); (3.44578422817143 : 1.94840159032298)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="57534fbb-a17a-4490-86d3-7111713589f2" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="f1495080-bc1c-432d-89c4-c02278cc831a" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="d25f019f-932f-4cee-a452-bc11a2fbe309" absoluteBounds="1.625, 3, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="27d89cc7-0cd4-455b-a6bb-4ef89624c282" LastKnownName="楼盘查询" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.55); (1.69625353714373 : 3.37862393885688)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="e88fb801-22f4-4ae2-8945-c4ea2f389862" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="d25f019f-932f-4cee-a452-bc11a2fbe309" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="eb59632a-90d5-4e1c-b311-e623b5bb1b45" absoluteBounds="3.25, 2.25, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="d72effe9-cd3a-4ebf-9426-02985616929c" LastKnownName="删除楼盘" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.52717391304348); (3.35624749949621 : 2.65407706541453)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="334d4ca3-4573-43fa-b434-5db82b8d318d" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="eb59632a-90d5-4e1c-b311-e623b5bb1b45" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="3be7c3ab-558e-4b8e-8080-047384fc5607" absoluteBounds="3.25, 3, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="91110a7f-089a-41d4-a34d-70f52bdc8d1d" LastKnownName="新增楼栋" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.59239130434783); (3.26619136380158 : 3.31310547428675)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="63ba431b-8641-404f-9a22-330bf4a3a484" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="3be7c3ab-558e-4b8e-8080-047384fc5607" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="c15ac024-207b-4c8b-a146-c34196338801" absoluteBounds="3.25, 4, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="a12bbd1d-f604-484f-bbd1-0d3eaad66d63" LastKnownName="查询楼栋" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.67934782608696); (3.29146497187338 : 4.15031847214639)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="781caed2-8b34-418b-95e6-410d885adb5a" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="c15ac024-207b-4c8b-a146-c34196338801" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="28573054-ebf2-4bef-8df9-e371e220e24e" absoluteBounds="4.75, 3.75, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="48dac058-cd54-429c-b391-0ed798e766ba" LastKnownName="编辑楼栋" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.64642857142857); (4.75718887259337 : 3.95775904622229)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="1f234e49-54bf-4902-9a77-22fad4cc693f" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="28573054-ebf2-4bef-8df9-e371e220e24e" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="1741c30a-b79f-4d07-afcf-99af8846e37f" absoluteBounds="4.75, 4.375, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="5ce5f38b-7cdc-46cb-8b22-da43b0f4c3d7" LastKnownName="删除楼栋" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.68214285714286); (4.7952627622071 : 4.52106005993305)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="e3d85fd5-28dd-449e-906d-4656d8f08932" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="1741c30a-b79f-4d07-afcf-99af8846e37f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="b7c5831f-e9be-4400-9500-28525cd22c56" absoluteBounds="3.25, 4.875, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="c73ed457-0533-43df-9271-1628137fa847" LastKnownName="楼盘详情" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.7554347826087); (3.40404731838219 : 4.94450294872114)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="d4b660d7-e145-432e-a4d0-aa8b9aa07978" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="b7c5831f-e9be-4400-9500-28525cd22c56" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="33986b36-a9a5-4496-984e-7fb932cad2ab" absoluteBounds="4.75, 5.125, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="a4336acd-fafe-471f-9429-3efb8ce34d39" LastKnownName="查看楼栋" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.125 : 3.725); (4.85956559527849 : 5.21882623811139)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="1a18e261-b533-48bd-8e5f-c3a5e1492f9b" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="33986b36-a9a5-4496-984e-7fb932cad2ab" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="ea497da0-9d2f-46dd-ac5f-74d9801e9f2f" absoluteBounds="1.75, 6, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="6e6bc3c6-6c5a-496b-b85a-589d5accb8db" LastKnownName="导入预设楼盘字典" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <useCaseAssociationConnector edgePoints="[(1.00595238095238 : 3.875); (2.12332030408116 : 6.00815694415494)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="b4de71ad-8d46-4119-88ae-42d7c67eaa92" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="844cb701-617b-4c7b-922d-fd319e8370c3" />
+        <useCaseShapeMoniker Id="ea497da0-9d2f-46dd-ac5f-74d9801e9f2f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseShape Id="0ec7a789-4a45-4f63-9912-b69ad7faacfe" absoluteBounds="6.375, 4, 1.375, 0.875" customColor="238, 237, 131" heightOffset="0">
+      <useCaseMoniker Id="4e2650df-bc67-4f9d-81a0-25d0950d7004" LastKnownName="审核楼盘字典(进入预设楼盘字典库)" />
+      <relativeChildShapes />
+    </useCaseShape>
+    <actorShape Id="8fb2ee4e-9624-47b1-b980-6de3b80bbdcd" absoluteBounds="7.125, 2.25, 0.5, 0.5" isReference="false" heightOffset="0">
+      <actorMoniker Id="0089c1fc-33ce-4222-aa5b-4c233a199a2b" LastKnownName="后台管理员" />
+      <relativeChildShapes />
+    </actorShape>
+    <useCaseAssociationConnector edgePoints="[(7.375 : 2.5); (7.375 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="17204081-d3f7-45ee-924a-e52c34ba8079" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="8fb2ee4e-9624-47b1-b980-6de3b80bbdcd" />
+        <actorShapeMoniker Id="8fb2ee4e-9624-47b1-b980-6de3b80bbdcd" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(7.33467741935484 : 2.75); (7.13269573494971 : 4.0022864433118)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="8e8e7c38-0e3a-498f-a3eb-180591bed29a" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="8fb2ee4e-9624-47b1-b980-6de3b80bbdcd" />
+        <useCaseShapeMoniker Id="0ec7a789-4a45-4f63-9912-b69ad7faacfe" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <lineShape Id="dc43e019-efd3-4bd2-bb7d-855dcff56a8b" absoluteBounds="5.875, 0.75, 0.03125, 5.75" outlineColor="83, 134, 191" outlineThickness="0.03125" />
+  </nestedChildShapes>
+</useCaseDiagram>

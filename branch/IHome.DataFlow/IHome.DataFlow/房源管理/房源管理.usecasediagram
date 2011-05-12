@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="c643530a-b448-43d5-8d79-0cb3d4070048" name="房源管理" linkedPackageId="769c362b-ded5-4887-872f-6c763e2ce2ae" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="3f2a5827-1492-4f34-ac93-43443f8eed02">
+      <profileInstance Id="8f51f7f3-eefc-45a6-a087-c1cac4e78e6a" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="d06018e1-a200-4758-ae77-b96302419182">
+      <profileInstance Id="7792f859-edc5-47e3-9059-14bda6e6dff6" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <useCase Id="95836c1d-8980-4de1-98d9-b57a9764823b" name="登记房源" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="13f72cc4-7401-4c6f-bbd2-dfcd104eff5e" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="78d99b5b-b18e-4789-a2a2-915a4ff69434" name="房源查询" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="dc2c4730-10b1-4ffd-9b9e-89fc025cb454" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="20bebf6b-8b56-4481-a302-bfccf3421210" name="修改房源" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="82280ce9-ab63-4781-83e3-345ef168e0fb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="bfa716b2-e62d-4761-b90f-55a84d93bb1d" name="房源跟单" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d057f406-87b9-4aee-aaa7-c6982750bd66" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="be0f6e68-d478-4fd2-8cee-049a7fc8e800" name="房源委托" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="47e62182-c41e-4e57-b711-3fad2cdb25c0" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c37743b0-b7b7-4124-97d4-49c71a1bbb26" name="房源带看" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="46969050-e61c-408d-9c0c-98777c69672f" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="731c4d99-3547-4b08-a246-df4e23e726a5" name="钥匙收据" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="2614dd9b-7a42-4f4f-9f30-a2a646802d11" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="3fe166d7-5e86-44e8-b466-f323b506c8f7" name="变更所有人" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a3198781-2408-4b9c-a267-905875434117" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="76550761-122f-40b3-9991-6f5aa94f92e8" name="房源备案" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="43e582af-d8fb-4e7b-96e6-3724cf402e84" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="9c2f5a0f-4524-4581-9f26-ea00d6056d73" name="数据导出" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5c2a0f22-0134-4a24-8a5e-465a5b5b338c" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="39160d70-e573-4105-a6ab-708012e34d1a" name="房源推送" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="639397ee-cc75-47ed-add2-8e4283fad738" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d0e8a5b0-39ff-4d2b-b02c-1d38062ac5df" name="房源对比" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="5ec0f8be-4f99-46ec-9411-1b429ddbf125" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="4fadb680-0010-4374-b71d-ebefb80e17af" name="前台用户" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fd4e9237-59b0-4400-9891-b63e2e577e0a" />
+        <targetEnds>
+          <association Id="58a5b5fb-c6ca-42f0-ae04-3d1810703585" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="登记房源" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="95836c1d-8980-4de1-98d9-b57a9764823b" LastKnownName="登记房源" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1cee0332-1254-46d2-8774-0c43415c7251" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="385828f2-b68f-46f9-a0f7-bf807c8e3fcf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="75e27883-074d-4d63-ba29-e2c5808d210f" name="登记房源" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="de099fac-a8ed-45dc-b8d5-75672349ed1c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="ce5f207c-768c-4dae-83e4-cd59a322c16f" />
+          </association>
+          <association Id="e4222f60-3ebe-4b2f-a9e6-2e757f9c3914" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源查询" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="78d99b5b-b18e-4789-a2a2-915a4ff69434" LastKnownName="房源查询" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8414c10d-f6d6-4c9b-b34f-50ebaf10c48e" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9a49e3b2-2a63-4c66-9279-bd42b28b34ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="28cedab9-119c-4178-a854-3fb090979c62" name="房源查询" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="63773563-0006-44d3-b807-ceee28c6e13d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f25ab5c9-0a52-44cd-8d9c-ec07497e32af" />
+          </association>
+          <association Id="66adc827-4673-43f4-bbad-6deb719b237d" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源跟单" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="bfa716b2-e62d-4761-b90f-55a84d93bb1d" LastKnownName="房源跟单" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0373c082-ecdb-4bd4-8bd3-22ff8dca0759" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2fd9c7a8-b2ad-4973-b4c1-b33ad26ddc2f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7b9bf660-489b-4758-b7d7-32bc7ddd3620" name="房源跟单" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="569eaf3a-9463-4fff-ad93-ccd293806848" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="46da4ada-c95e-45f5-9ce9-c0f9631be1a1" />
+          </association>
+          <association Id="66ba5b44-1a71-4a3f-a92f-5790cf0e7533" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源委托" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="be0f6e68-d478-4fd2-8cee-049a7fc8e800" LastKnownName="房源委托" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="725bcb4b-0f31-4bc1-ae10-2081fc064b65" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c1cc19d8-ed61-47bb-b240-1eda15d139b4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b8102391-b85b-40d2-a0c2-5b796a2e2c9b" name="房源委托" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="c554586c-ea37-4431-9250-06759545cbf3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="11c2db76-5343-4154-9f63-5dc68b5b8918" />
+          </association>
+          <association Id="73993c68-7db3-4739-bfd6-99808f22d180" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源带看" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c37743b0-b7b7-4124-97d4-49c71a1bbb26" LastKnownName="房源带看" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="364c85f2-ade6-4148-8207-840c2f1cb509" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bd751577-7373-418c-9486-082bbfe2e3eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e69f9025-337a-4598-9928-9ac64a7b7833" name="房源带看" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="afb661b9-982d-4341-9de0-9386e814741d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="eaeba5bf-5e3e-4321-a3af-013797e269e7" />
+          </association>
+          <association Id="24e0b4ab-1bfd-4c82-9553-5a5af4f4190a" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="钥匙收据" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="731c4d99-3547-4b08-a246-df4e23e726a5" LastKnownName="钥匙收据" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a7d2fd24-aea8-4a1f-b772-51f862c72a72" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3c54437d-4f3b-4530-b6f6-1537dc9972e2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="79777dfb-a013-4b82-b3b7-de00f678b19a" name="钥匙收据" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="50a89028-2b22-4dc9-937e-b6c6f913648c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="25bf399b-9e30-4999-90b6-8eaaefd274b4" />
+          </association>
+          <association Id="c1ff68c1-13e9-41c7-9e0d-809a08386766" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源备案" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="76550761-122f-40b3-9991-6f5aa94f92e8" LastKnownName="房源备案" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3bab7a71-144b-4bf8-a439-c5d6b2af27ca" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e4ddbed2-7d67-40d5-968f-e6efe1e25d0a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6038c0a8-ae47-4182-a62f-e40ac463b35a" name="房源备案" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="62b72d53-5260-4054-a913-9774050881ab" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6e280787-0912-415b-b44a-27230cb60e23" />
+          </association>
+          <association Id="17fe8168-5947-4236-a5aa-261e0abd5b87" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源推送" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="39160d70-e573-4105-a6ab-708012e34d1a" LastKnownName="房源推送" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="77cf646f-6eb6-42f0-9690-002dad501e07" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8be24202-e32b-48f3-ba8e-7fb591b62be8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="40f34d8e-846f-4248-87a5-68efd9411571" name="房源推送" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="b0f3ee5c-a704-47d0-a6bc-8d6005a1d4cd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d6a3b60b-0ccd-4463-a824-07ca9997fdbd" />
+          </association>
+          <association Id="052b61fe-1c66-4cb4-9a37-f49d5906d0e4" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="刷新房源" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="b855e612-491a-414a-9b94-b792d6cea79b" LastKnownName="刷新房源" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1a865e32-c47f-4401-8eb6-db577e47c289" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="29a7efce-867c-47e9-b03e-5d4bcf769e0f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="803de562-6eca-4233-be25-1be5589aff3d" name="刷新房源" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="6b976df6-c88f-4e8c-9f6a-2c8dac58b1ed" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b9e434bb-d28b-4bc0-8104-f06644416b7b" />
+          </association>
+          <association Id="df8f114e-fd7e-4ed8-bce5-bb51e10db262" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="房源对比" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d0e8a5b0-39ff-4d2b-b02c-1d38062ac5df" LastKnownName="房源对比" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d4c88c31-41d5-4b3f-9847-6fc2eb58c9fd" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e6d13ae5-97d2-4de4-b359-4a27be63d4cf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f676aada-c12b-4d6e-9c5c-b90fd80aecde" name="房源对比" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="879eb1e5-9de4-4478-bd29-a4583c53d35e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="845e718d-4e0a-45d5-a9c0-5e736d22ba7b" />
+          </association>
+          <association Id="be36991a-b4d2-4b3e-b5f3-33767253c0a3" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="数据导出" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="9c2f5a0f-4524-4581-9f26-ea00d6056d73" LastKnownName="数据导出" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d00055d4-c32b-425e-90f7-57101a2bf8df" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b485ef38-abfa-4db7-92b7-19959bcd591d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c1116ec1-d523-4aa6-be1d-5775f2749e97" name="数据导出" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="25b80a62-afe3-4e77-af1d-084ca7468484" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="5a1a6f7d-a152-4f54-a397-2723925ab4ec" />
+          </association>
+          <association Id="7af40f51-4a75-4ba1-b0ff-641acc0962ed" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="变更所有人" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="3fe166d7-5e86-44e8-b466-f323b506c8f7" LastKnownName="变更所有人" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="8ce1af6a-0987-428b-939a-f6a5acca45f4" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3d72baf8-71ae-4efc-ba49-491cfcb6fca2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2f9f9988-c880-4c0f-a036-ff7b1493a628" name="变更所有人" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="209741a6-835d-4d5a-925a-6ec74dc56b18" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="a4959ed3-754b-4290-aee7-b3317ebd4e83" />
+          </association>
+          <association Id="c9a7429b-6ac5-4df8-b8a5-91f4538d034d" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="修改房源" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="20bebf6b-8b56-4481-a302-bfccf3421210" LastKnownName="修改房源" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5e086d59-9aaa-4dd2-a6c7-40972a6da045" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cfff1843-b45e-42ca-a1e2-d7b67a1be67e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="62cfb2c7-cfc5-4830-9901-bbfff0fd6507" name="修改房源" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5769ad2b-0cfa-4c4d-812b-8a6d8a75c54f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="25355158-7fca-4418-935d-84682aea2d0f" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="b855e612-491a-414a-9b94-b792d6cea79b" name="刷新房源" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="8d49fc5c-e2d1-4ead-b164-cbdc43ddaf9a" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="769c362b-ded5-4887-872f-6c763e2ce2ae" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</useCaseModelRoot>

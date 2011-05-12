@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4e85bfc9-4829-4320-8624-e0a40d4d9e32}</ProjectGuid>
+    <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
+    <Name>IHome.DataFlow</Name>
+    <RootNamespace>IHome.DataFlow</RootNamespace>
+    <ValidateArchitecture>
+    </ValidateArchitecture>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
+  <ItemGroup>
+    <Content Include="preview.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="preview.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>preview.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="基础管理-数据字典管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="基础管理-数据字典管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>基础管理-数据字典管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="基础管理-权限管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="基础管理-权限管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>基础管理-权限管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="基础管理-楼盘字典管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="基础管理-楼盘字典管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>基础管理-楼盘字典管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="房源管理\房源登记.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="房源管理\房源登记.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>房源管理\房源登记.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="房源管理\房源管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="房源管理\房源管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>房源管理\房源管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户查询.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户查询.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户查询.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营区域板块设定.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营区域板块设定.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-个人主营区域板块设定.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营小区设定.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-个人主营小区设定.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-个人主营小区设定.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-修改密码.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-修改密码.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-修改密码.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-找回密码.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-找回密码.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-找回密码.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-用户注册.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-用户注册.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-用户注册.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理-用户登录.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理-用户登录.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理-用户登录.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="用户管理\用户管理.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="用户管理\用户管理.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>用户管理\用户管理.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="租房专题资讯发布.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="租房专题资讯发布.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>租房专题资讯发布.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\IHome.DataFlow.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="房源管理\" />
+    <Folder Include="用户管理" />
+  </ItemGroup>
+</Project>

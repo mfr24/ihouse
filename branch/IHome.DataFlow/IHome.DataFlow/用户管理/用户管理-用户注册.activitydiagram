@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" dslVersion="1.0.0.0" Id="9607c5de-0a26-48e2-a1fa-7b12258f1adb" name="用户管理" linkedPackageId="4331c943-61a9-4123-8ba9-7f8b28e546c8" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="ff8a37d3-83f5-4d86-bad9-756d9fe746bd">
+      <elementDefinition Id="ef4b03d5-d6d9-4dfd-a747-5d76ced51432" />
+      <body>判断
+1.用户名是否重复
+2.手机号码是否重复
+3.密码是否符合规范
+4.用户名是否符合规范</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="a7f8efd6-dc41-4edc-b50e-2cf6b1bdf661" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="3c40f011-69d9-4b6a-b03e-69f292394e1e" name="用户管理" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="370581f9-d7d0-4554-85c9-31ee7088ca6e" />
+        <nodes>
+          <initialNode Id="43bce35d-bdb9-4bb0-ab0a-2695ad59a6c5" name="Initial1" isLeaf="false">
+            <elementDefinition Id="43281320-b726-408f-af77-1f7bcfda01cc" />
+            <flowNodeTargets>
+              <controlFlow Id="7c52f323-e7d0-4a55-a473-8914cd11e493" isLeaf="false">
+                <opaqueActionMoniker Id="fc2095b8-f093-4f29-8c24-150a1031d71f" LastKnownName="输入注册信息" />
+                <elementDefinition Id="a81888fe-ff4a-4d64-9724-00c0e909cdd5" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="fc2095b8-f093-4f29-8c24-150a1031d71f" name="输入注册信息" isLeaf="false">
+            <elementDefinition Id="12a2ccf3-1296-464f-ae00-10dd30443b96" />
+            <flowNodeTargets>
+              <controlFlow Id="8013de6f-cc47-4ae6-9f66-5bd9215cf7f4" isLeaf="false">
+                <decisionNodeMoniker Id="a7f8efd6-dc41-4edc-b50e-2cf6b1bdf661" LastKnownName="Decision1" />
+                <elementDefinition Id="b519b25b-860e-475b-a262-9c952a50663d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="a7f8efd6-dc41-4edc-b50e-2cf6b1bdf661" name="Decision1" isLeaf="false">
+            <elementDefinition Id="084d8df6-9d8f-4dab-841e-4ed1e56bdacc" />
+            <flowNodeTargets>
+              <controlFlow Id="61cca5df-f936-47f4-9b00-31019617e7a3" guard="NO" isLeaf="false">
+                <opaqueActionMoniker Id="fc2095b8-f093-4f29-8c24-150a1031d71f" LastKnownName="输入注册信息" />
+                <elementDefinition Id="f469ad06-5ef7-4fb7-a7f6-adebe4361af8" />
+              </controlFlow>
+              <controlFlow Id="2ce9803b-c54d-4f38-8cfa-e00bd1df8f8e" guard="YES" isLeaf="false">
+                <opaqueActionMoniker Id="a423f595-dc1b-43e8-8320-5bd2305f196a" LastKnownName="保存注册信息" />
+                <elementDefinition Id="2ea88c6f-9467-42f8-a8c3-57ba8593d1bf" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="a423f595-dc1b-43e8-8320-5bd2305f196a" name="保存注册信息" isLeaf="false">
+            <elementDefinition Id="2a6e1e51-4a20-4e20-9aa4-6a3dbd42a3d1" />
+            <flowNodeTargets>
+              <controlFlow Id="2fff2259-e6a8-4b18-a009-eefb6a86aec8" isLeaf="false">
+                <forkNodeMoniker Id="63ae1c9a-a336-42a3-9ba4-c3cc27f85c8b" LastKnownName="Fork1" />
+                <elementDefinition Id="30ad391b-f024-455b-b315-022da092d469" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f20d65cd-252f-48d4-8079-c4b4d8fcc9d9" name="跳转到系统默认页" isLeaf="false">
+            <elementDefinition Id="b6458783-fbcf-4722-8610-c7260d86fc93" />
+            <flowNodeTargets>
+              <controlFlow Id="d2a8281d-34e0-4714-8fae-07fbdb32af1d" isLeaf="false">
+                <activityFinalNodeMoniker Id="ff0c20ba-d718-47c0-8612-39cec394984e" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="c58566a5-3e65-4fa9-9075-760ef86ef369" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="ff0c20ba-d718-47c0-8612-39cec394984e" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="df95a814-5d82-44e4-b992-7407b98595b8" />
+          </activityFinalNode>
+          <opaqueAction Id="ce98c7ca-2c8e-4a88-a865-2c6ae5d93807" name="生成CurrentUser" isLeaf="false">
+            <elementDefinition Id="c2093308-ac14-4197-8853-044e18e6758d" />
+          </opaqueAction>
+          <forkNode Id="63ae1c9a-a336-42a3-9ba4-c3cc27f85c8b" name="Fork1" isLeaf="false">
+            <elementDefinition Id="bea49fed-b0b8-4a4c-a9e8-b1c1e532e31f" />
+            <flowNodeTargets>
+              <controlFlow Id="a3197e94-4275-43b4-a97f-a6294e56fbc7" isLeaf="false">
+                <opaqueActionMoniker Id="f20d65cd-252f-48d4-8079-c4b4d8fcc9d9" LastKnownName="跳转到系统默认页" />
+                <elementDefinition Id="1e6cd09c-7fb3-4d9c-9b20-bf76f1173d82" />
+              </controlFlow>
+              <controlFlow Id="a6063627-650d-42cf-af23-ab2ecbcf46e5" isLeaf="false">
+                <opaqueActionMoniker Id="ce98c7ca-2c8e-4a88-a865-2c6ae5d93807" LastKnownName="生成CurrentUser" />
+                <elementDefinition Id="bf8527a2-051e-404c-bf86-ad47e2486167" />
+              </controlFlow>
+            </flowNodeTargets>
+          </forkNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="4331c943-61a9-4123-8ba9-7f8b28e546c8" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+    <profileInstances>
+      <packageHasProfileInstances Id="f3af2b1f-a3b3-45dc-9816-1f18706ee495">
+        <profileInstance Id="9cc29365-9ee3-432a-ac3d-3e26bc282033" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4012b2c0-0b9b-4786-90c7-986dd508183e">
+        <profileInstance Id="ee121091-f1d7-463e-b836-f784210a514e" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>

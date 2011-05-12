@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F12845B-F827-40E6-BF51-B5AFCCC7E9E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IHome.Server</RootNamespace>
+    <AssemblyName>IHome.Server</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Libs\Server\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity\InfoManagementAct.cs" />
+    <Compile Include="Common\Entity.cs" />
+    <Compile Include="Common\FacadeExtension.cs" />
+    <Compile Include="Data\base_community_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_community_buildinginfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_datadic_detailinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_datadic_iteminfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_datadic_tree.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_permit_define.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_permit_roledefine.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_personal_push_config.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_rolepermitionrelationinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_roleuserrelationinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\base_webpush_iteminfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CbooMainModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CbooMainModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CbooMainModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\CbooModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CbooModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\customer_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\customer_demandinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\customer_traceinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_intrustinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_key_receiptioninfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_markedinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_picinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_push_logs.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_traceinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_viewhouse_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\house_viewhouse_subinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Storage\base_datadic_tree_storage.cs" />
+    <Compile Include="Data\sys_user_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_business_config.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_community_config.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_region_config.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\sys_user_relationinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\usys_community_baseinfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\usys_community_buildinginfo.cs">
+      <DependentUpon>CbooMainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Facade\MainFacade.cs" />
+    <Compile Include="Facade\MainFacade_InfoManagement.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facade\MainFacade_UserManagement.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facade\MainFacade_Validate.cs">
+      <DependentUpon>MainFacade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Data\base_community_baseinfo_ex.cs" />
+    <Compile Include="Models\Data\base_datadic_tree_part.cs" />
+    <Compile Include="Models\Pager.cs" />
+    <Compile Include="Models\ServerResult.cs" />
+    <Compile Include="Models\ValidationRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Data\CbooModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CbooModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\CbooMainModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CbooMainModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\CbooMainModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CbooMainModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

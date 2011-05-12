@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<useCaseModelRoot xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ea2891b8-0d40-4563-b374-fb0f6242dde3" name="基础管理-楼盘字典管理" linkedPackageId="f79fe763-ae54-435e-a966-03fd73509078" xmlns="http://schemas.microsoft.com/dsltools/UseCaseModel">
+  <profileInstances>
+    <packageHasProfileInstances Id="f1ed3f8f-b47c-4aad-8807-83e188f5e52c">
+      <profileInstance Id="7a63591c-4bcf-45fe-843c-1670e11d5752" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="a1da4961-488b-418f-8f2c-5e9df4df6d7c">
+      <profileInstance Id="217d13b5-bdb4-46b6-9911-672462f58d3f" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <useCaseModelRootHasTypes>
+      <actor Id="ce349ec5-2344-4656-8b16-f85297372106" name="前台用户" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="fd4e9237-59b0-4400-9891-b63e2e577e0a" />
+        <targetEnds>
+          <association Id="059f7780-0d65-4d2a-946b-60fb5c418098" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="新增楼盘" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="67a7c4c7-05ba-4236-b5e2-f88c2bf7aa35" LastKnownName="新增楼盘" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c939f080-42b0-4806-93df-c2cfd8d41275" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="512c911f-1c95-49e2-a73f-9d71ea72c572" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="28a7f5de-58c1-403e-8596-efd07c6f6a47" name="新增楼盘" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="2a036128-3549-4a85-b37a-e14f4477fc9c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1bbd9daa-28da-4fea-ba6d-f5df6c7c69e3" />
+          </association>
+          <association Id="e88fb801-22f4-4ae2-8945-c4ea2f389862" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="楼盘查询" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="27d89cc7-0cd4-455b-a6bb-4ef89624c282" LastKnownName="楼盘查询" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="953330ac-9a3d-45af-9d14-aba7a8ee5a1f" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="a4cb905c-9d84-4223-82db-87fa35dd394c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0c6c3dff-a837-4bb5-be56-8516120b309b" name="楼盘查询" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="3c1fc738-523f-45ea-abe3-ee82bd1b2a0f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9a22d1e6-0ad8-471b-a5a3-36e77e22d864" />
+          </association>
+          <association Id="b4de71ad-8d46-4119-88ae-42d7c67eaa92" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="导入预设楼盘字典" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="6e6bc3c6-6c5a-496b-b85a-589d5accb8db" LastKnownName="导入预设楼盘字典" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ec69a51b-3ab2-44d4-998b-c1bd443db12c" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="52da1263-aa17-410f-8a96-730fa254627d" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ac59be2d-ff9f-4564-947f-505daeb2079a" name="导入预设楼盘字典" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="5e927880-a439-46ea-8cee-f15b3c897f34" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="cb9b44ad-813b-4ee2-83c1-51e1f36981f4" />
+          </association>
+          <association Id="57534fbb-a17a-4490-86d3-7111713589f2" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="修改楼盘" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="50350b36-1986-4ba3-bfa0-58d5df6b424c" LastKnownName="修改楼盘" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="73e70f14-b917-463c-ab1d-1ad24d9dfb28" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="106c58bb-7288-4875-9d0e-b69fe537004c" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ef3d70f4-c416-49b1-9e41-2addd47c9e0b" name="修改楼盘" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d224c522-309e-4b6e-bdc8-24af47e72764" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d6320671-8658-4d17-a53d-dca96c3800b1" />
+          </association>
+          <association Id="334d4ca3-4573-43fa-b434-5db82b8d318d" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="删除楼盘" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="d72effe9-cd3a-4ebf-9426-02985616929c" LastKnownName="删除楼盘" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="0cf0ab69-0fe3-4740-8195-240a017e224f" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5ab20ad5-2a21-41cc-b110-89899bca0ae2" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7f6c83b0-80af-4d4b-97ad-6c2e4c1556bb" name="删除楼盘" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="59cf3378-7e91-4869-aab8-b29862b2c575" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="702af675-473c-4d1a-be77-1a4c5368356e" />
+          </association>
+          <association Id="63ba431b-8641-404f-9a22-330bf4a3a484" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="新增楼栋" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="91110a7f-089a-41d4-a34d-70f52bdc8d1d" LastKnownName="新增楼栋" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="aacdf3e8-85f5-4a6e-992f-e00592893389" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="48c90a76-5a7b-4864-8d1a-8cef92d03dea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="53994d22-4aa6-4e14-87d2-962a41fedaba" name="新增楼栋" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="1b0c43f3-f7e3-4158-b14b-d9b30259d8e0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="00b56130-b4cb-48a3-818e-ec718c12640e" />
+          </association>
+          <association Id="781caed2-8b34-418b-95e6-410d885adb5a" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="查询楼栋" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a12bbd1d-f604-484f-bbd1-0d3eaad66d63" LastKnownName="查询楼栋" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f59d503b-d401-4744-9aa7-092709309883" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9f3fd009-19d3-43bc-8e8f-e615a04b5e70" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7ec48984-8fbf-4d75-8c64-34c44c714c41" name="查询楼栋" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="4c519578-6e55-4ba4-832f-141fe40dac19" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9e9eda3b-e3b6-424a-81b6-8f5b9a1fe2ae" />
+          </association>
+          <association Id="d4b660d7-e145-432e-a4d0-aa8b9aa07978" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="楼盘详情" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="c73ed457-0533-43df-9271-1628137fa847" LastKnownName="楼盘详情" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f3bf5ac8-5d9b-4c02-b71a-1c1ac38c8aff" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="0ad6a560-00b2-4c17-80c6-b44080482ccb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5122283d-44b8-4fc2-9e78-827b3b606649" name="楼盘详情" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d2a41335-655d-4566-ba03-4ce8e72090fb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2fe2f964-491f-4c06-8ad0-08a22d97ec9c" />
+          </association>
+          <association Id="1f234e49-54bf-4902-9a77-22fad4cc693f" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="编辑楼栋" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="48dac058-cd54-429c-b391-0ed798e766ba" LastKnownName="编辑楼栋" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="21437f1c-7e7b-410f-b883-8c08635e889a" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="1c465d04-7ef4-47ba-a211-40e6ee949bc5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e8a69016-6255-4a58-816c-c6a11770798d" name="编辑楼栋" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="13336607-9077-4227-9bde-5593d812a0f3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9686079c-c9fa-4bf7-8f22-b5d7d46f76ba" />
+          </association>
+          <association Id="e3d85fd5-28dd-449e-906d-4656d8f08932" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="删除楼栋" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="5ce5f38b-7cdc-46cb-8b22-da43b0f4c3d7" LastKnownName="删除楼栋" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7f6fbd98-8562-40ac-8a9e-be6be3695125" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="ad2d5869-bdad-42f3-922d-d39fa5e7bcea" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="30febad0-f6b7-4051-8a60-bf987811260d" name="删除楼栋" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a7c3e77c-c502-4caf-990d-9c2860af9451" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e434ccd6-4f03-4654-ad98-1f28509993fa" />
+          </association>
+          <association Id="1a18e261-b533-48bd-8e5f-c3a5e1492f9b" isDerived="false" sourceEndRoleName="前台用户" targetEndRoleName="查看楼栋" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="a4336acd-fafe-471f-9429-3efb8ce34d39" LastKnownName="查看楼栋" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b23bbc86-091a-4fbb-8651-4c3cb1ca55d7" name="前台用户" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="7529cbfd-3743-47c8-ae7b-0d716a897a9f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="eb461442-475a-4a20-968e-b933b6793705" name="查看楼栋" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="7a196a88-46c2-4622-8ae1-f8bed5c3e312" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="76f18ad3-c272-4dca-8491-e638c66a679a" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="67a7c4c7-05ba-4236-b5e2-f88c2bf7aa35" name="新增楼盘" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="47076729-0e41-4e2f-8397-c3f5a5eb8940" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="50350b36-1986-4ba3-bfa0-58d5df6b424c" name="修改楼盘" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7f77b6c9-bdd1-4616-9e7a-10ff6b442e19" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="27d89cc7-0cd4-455b-a6bb-4ef89624c282" name="楼盘查询" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="d74901e1-ce41-4050-874a-68a029ee9be5" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="d72effe9-cd3a-4ebf-9426-02985616929c" name="删除楼盘" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="0ab56d58-e822-427c-91a9-d494b47c36c4" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="91110a7f-089a-41d4-a34d-70f52bdc8d1d" name="新增楼栋" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="f1c3f147-059b-42cf-a92a-7d6644be619b" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a12bbd1d-f604-484f-bbd1-0d3eaad66d63" name="查询楼栋" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="7514e9c8-0540-481b-9da6-2be82a3765e7" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="48dac058-cd54-429c-b391-0ed798e766ba" name="编辑楼栋" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="4ed1871e-79e0-4d4c-8c2a-95ab571a8814" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="5ce5f38b-7cdc-46cb-8b22-da43b0f4c3d7" name="删除楼栋" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="a05b3455-e78d-4783-9d7a-94d6f3acd663" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="c73ed457-0533-43df-9271-1628137fa847" name="楼盘详情" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="ac758a47-3c9b-46e5-9ad5-24b6cc339631" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="a4336acd-fafe-471f-9429-3efb8ce34d39" name="查看楼栋" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="48663a27-2fde-4b0c-b059-4e88029dbfcb" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="6e6bc3c6-6c5a-496b-b85a-589d5accb8db" name="导入预设楼盘字典" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="6ac07538-dc1c-469a-9b0d-2a05b3a85c54" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <useCase Id="4e2650df-bc67-4f9d-81a0-25d0950d7004" name="审核楼盘字典(进入预设楼盘字典库)" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="131b0344-20f6-41d3-a424-eccf911d0165" />
+      </useCase>
+    </useCaseModelRootHasTypes>
+    <useCaseModelRootHasTypes>
+      <actor Id="0089c1fc-33ce-4222-aa5b-4c233a199a2b" name="后台管理员" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="3c235701-9cd6-4fcb-ac9f-b91fe5843583" />
+        <targetEnds>
+          <association Id="17204081-d3f7-45ee-924a-e52c34ba8079" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="后台管理员" isLeaf="false" isAbstract="false">
+            <actorMoniker Id="0089c1fc-33ce-4222-aa5b-4c233a199a2b" LastKnownName="后台管理员" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="020ef3cc-5b68-4dd3-9205-8669e6f86655" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="bf90c39a-79ee-4107-ba1b-36b2954bd15a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b045e9f4-7e64-40ad-9a42-1be7c6c5390a" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a1d274b2-ca68-4af6-b82b-ebd004b5b08a" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="96fdcd81-6a16-42cb-9031-f53db6011a7e" />
+          </association>
+          <association Id="8e8e7c38-0e3a-498f-a3eb-180591bed29a" isDerived="false" sourceEndRoleName="后台管理员" targetEndRoleName="审核楼盘字典(进入预设楼盘字典库)" isLeaf="false" isAbstract="false">
+            <useCaseMoniker Id="4e2650df-bc67-4f9d-81a0-25d0950d7004" LastKnownName="审核楼盘字典(进入预设楼盘字典库)" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d7b840ed-5403-4316-80c1-c995c1b0d9b6" name="后台管理员" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="b7f94851-9142-481a-b5db-f17f3a273c39" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="91c25193-2c1e-40d0-9b59-cf8fa80de0ae" name="审核楼盘字典(进入预设楼盘字典库)" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d41bd49a-a25f-42c3-a1f7-4412b220dafc" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="22351a49-63cb-406d-854b-cfabf8cfc8df" />
+          </association>
+        </targetEnds>
+      </actor>
+    </useCaseModelRootHasTypes>
+  </packagedElements>
+  <package Id="f79fe763-ae54-435e-a966-03fd73509078" name="IHome.DataFlow">
+    <elementDefinition Id="4b0ae66a-9c82-45cd-9721-bf401b3a4dec" />
+  </package>
+</useCaseModelRoot>
