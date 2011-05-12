@@ -24,7 +24,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "IHome.Web", "IHome.Web\", "
 		VWDPort = "1885"
 		VWDVirtualPath = "/"
 		DefaultWebSiteLanguage = "Visual C#"
-		ProjOutputReferences = "{48F855AB-6DB6-4902-A656-10E88644CF5D}|ClientBin|false;"
+		ProjOutputReferences = "{48F855AB-6DB6-4902-A656-10E88644CF5D}|ClientBin|false;{59F9DC0F-2DE7-432F-8627-1BCC93E03707}|ClientBin|false;"
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SL", "SL", "{197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}"
@@ -36,6 +36,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lab", "lab", "{F0EB040E-66C7-4CD8-8ABE-475947E39ED2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLLab", "SLLab\SLLab.csproj", "{48F855AB-6DB6-4902-A656-10E88644CF5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IHome.SL.Main", "IHome.SL.Main\IHome.SL.Main.csproj", "{59F9DC0F-2DE7-432F-8627-1BCC93E03707}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48F855AB-6DB6-4902-A656-10E88644CF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F9DC0F-2DE7-432F-8627-1BCC93E03707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F9DC0F-2DE7-432F-8627-1BCC93E03707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F9DC0F-2DE7-432F-8627-1BCC93E03707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F9DC0F-2DE7-432F-8627-1BCC93E03707}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{15E8C638-1346-42D4-A0AF-718D06CF3B71} = {1D22AF71-C5E7-47D8-B489-C49604FB99B3}
 		{9F12845B-F827-40E6-BF51-B5AFCCC7E9E9} = {1D22AF71-C5E7-47D8-B489-C49604FB99B3}
+		{59F9DC0F-2DE7-432F-8627-1BCC93E03707} = {197D4269-0D8A-4646-A3EA-FABAD0DDFDB9}
 		{48F855AB-6DB6-4902-A656-10E88644CF5D} = {F0EB040E-66C7-4CD8-8ABE-475947E39ED2}
 	EndGlobalSection
 EndGlobal
