@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
+using IHome.Models;
 
 namespace IHome.SL.Main
 {
 	public class MainPageModel : INotifyPropertyChanged
 	{
+        public class Menu
+        {
+            public string header { get; set; }
+            public ObservableCollection<DLLModel> item_list { get; set; }
+        }
 		public MainPageModel()
 		{
 			string menulist = "["
@@ -29,8 +36,9 @@ namespace IHome.SL.Main
                             + ",{header:'最近打开',item_list:[]}]";
             _menuList = Newtonsoft.Json.JsonConvert.DeserializeObject<ObservableCollection<Menu>>(menulist);
             SimpleMenu = _menuList[6].item_list;
-            _recent = _menuList[_menuList.Count - 1];
 		}
+        private ObservableCollection<Menu> _menuList;
+        
 		public ObservableCollection<DLLModel> SimpleMenu { get; set; }
 
 		#region INotifyPropertyChanged
