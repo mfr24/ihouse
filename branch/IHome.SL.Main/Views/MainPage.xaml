@@ -6,6 +6,7 @@
 	xmlns:local="clr-namespace:IHome.SL.Main"
 	xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 	mc:Ignorable="d"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
 	x:Class="IHome.SL.Main.MainPage">
 	<UserControl.Resources>
 		<local:MainPageModel x:Key="MainPageModelDataSource" />
@@ -17,6 +18,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 		<Border Width="180" BorderThickness="0,0,1,0" BorderBrush="#FF848484">
+            
 			<StackPanel>
 				<StackPanel.Background>
     				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -53,24 +55,37 @@
 				</ListBox>
 			</StackPanel>
 		</Border>
-		<Border Grid.Column="1">
-			<Grid>
-				<Grid.Background>
-					<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-			    		<GradientStop Color="#FFBDBDC2" Offset="1"/>
-			        	<GradientStop Color="#FFDFDFE1"/>
-			    	</LinearGradientBrush>
-				</Grid.Background>
-				<Grid Height="40" VerticalAlignment="Top">
-					<Grid.Background>
-						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-							<GradientStop Color="#FFF4F5F7" Offset="0"/>
-							<GradientStop Color="#FFA8ACB9" Offset="1"/>
-						</LinearGradientBrush>
-					</Grid.Background>
-				</Grid>
-				<Grid Margin="0,40,0,0"/>
-			</Grid>
-		</Border>
-	</Grid>
+
+        <telerik:RadTransitionControl x:Name="Transition" Margin="0" HorizontalContentAlignment="Stretch" Grid.Column="1">
+            <telerik:RadTransitionControl.Transition>
+                <telerik:PerspectiveRotationTransition Direction="Right" NewPlaneCenterOfRotationX="1" OldPlaneCenterOfRotationX="0">
+                    <telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </telerik:PerspectiveRotationTransition.NewPlaneEasing>
+                    <telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                        <CubicEase EasingMode="EaseInOut" />
+                    </telerik:PerspectiveRotationTransition.OldPlaneEasing>
+                </telerik:PerspectiveRotationTransition>
+            </telerik:RadTransitionControl.Transition>
+            <Border>
+                <Grid>
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFBDBDC2" Offset="1"/>
+                            <GradientStop Color="#FFDFDFE1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid Height="40" VerticalAlignment="Top">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFF4F5F7" Offset="0"/>
+                                <GradientStop Color="#FFA8ACB9" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                    </Grid>
+                    <Grid Margin="0,40,0,0"/>
+                </Grid>
+            </Border>
+        </telerik:RadTransitionControl>
+    </Grid>
 </UserControl>
