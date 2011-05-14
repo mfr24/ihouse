@@ -10,7 +10,7 @@ using System.Windows.Shapes;
 
 namespace IHome.SL.Controls
 {
-	public partial class MainViewContainer : UserControl
+	public class MainViewContainer : ContentControl
 	{
 		public MainViewContainer()
 		{

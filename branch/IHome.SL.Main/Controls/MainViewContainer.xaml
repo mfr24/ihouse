@@ -1,28 +1,32 @@
-﻿<UserControl
+﻿<ResourceDictionary
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	mc:Ignorable="d"
-	x:Class="IHome.SL.Main.MainViewContainer"
-	d:DesignWidth="640" d:DesignHeight="480">
- 			<Border>
-                <Grid>
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFBDBDC2" Offset="1"/>
-                            <GradientStop Color="#FFDFDFE1"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
-                    <Grid Height="40" VerticalAlignment="Top">
-                        <Grid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFF4F5F7" Offset="0"/>
-                                <GradientStop Color="#FFA8ACB9" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Grid.Background>
-                    </Grid>
-                    <Grid Margin="0,40,0,0"/>
-                </Grid>
-            </Border>
-</UserControl>
+    xmlns:ihome="http://silverlight.imbob.com.cn">
+    <Style TargetType="ihome:MainViewContainer">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ihome:MainViewContainer">
+                    <Border>
+                        <Grid>
+                            <Grid.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFBDBDC2" Offset="1"/>
+                                    <GradientStop Color="#FFDFDFE1"/>
+                                </LinearGradientBrush>
+                            </Grid.Background>
+                            <Grid Height="40" VerticalAlignment="Top">
+                                <Grid.Background>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFF4F5F7" Offset="0"/>
+                                        <GradientStop Color="#FFA8ACB9" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                            </Grid>
+                            <Grid Margin="0,40,0,0"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

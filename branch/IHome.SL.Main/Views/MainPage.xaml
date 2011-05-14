@@ -68,8 +68,6 @@
                     </telerik:PerspectiveRotationTransition.OldPlaneEasing>
                 </telerik:PerspectiveRotationTransition>
             </telerik:RadTransitionControl.Transition>
-        	<local:MainViewContainer/>
-           
         </telerik:RadTransitionControl>
     </Grid>
 </UserControl>
