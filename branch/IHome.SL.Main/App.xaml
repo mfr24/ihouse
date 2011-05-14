@@ -7,6 +7,7 @@
     	<ResourceDictionary>
     		<ResourceDictionary.MergedDictionaries>
     			<ResourceDictionary Source="Views/PadTheme.xaml"/>
+				<ResourceDictionary Source="Controls/MainViewContainer.xaml"/>
     		</ResourceDictionary.MergedDictionaries>
     	</ResourceDictionary>
         
