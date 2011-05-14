@@ -20,8 +20,6 @@ namespace IHome.SL.Main
 		public DesktopView()
 		{
 			this.InitializeComponent();
-			Desk.Children.Add(new DeskIcon(){Text="测试",Url="/images/female.png"});
-			// Insert code required on object creation below this point.
 		}
 	}
 }

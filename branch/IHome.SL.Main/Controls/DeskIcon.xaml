@@ -7,6 +7,6 @@
 	x:Class="IHome.SL.Main.DeskIcon">
     <StackPanel x:Name="LayoutRoot">
         <Image x:Name="Icon" Height="48" Width="48" Source="{Binding Url, ElementName=userControl}"/>
-        <TextBlock x:Name="Name" Margin="0,2,0,0" FontSize="18" FontWeight="Bold" Text=""/>
+        <TextBlock x:Name="Name" Margin="0,2,0,0" FontSize="18" FontWeight="Bold" Text="{Binding Text, ElementName=userControl}"/>
     </StackPanel>
 </UserControl>

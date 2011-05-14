@@ -30,6 +30,7 @@
 			</LinearGradientBrush>
 		</Grid.Background>
 		<telerik:RadWrapPanel x:Name="Desk" Grid.Column="1" Grid.Row="1">
+			<local:DeskIcon Text="测试" Url="/images/female.png"/>
 		
 		</telerik:RadWrapPanel>
 	</Grid>
