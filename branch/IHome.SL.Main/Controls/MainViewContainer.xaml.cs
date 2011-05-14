@@ -8,14 +8,12 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace IHome.SL.Main
+namespace IHome.SL.Controls
 {
 	public partial class MainViewContainer : UserControl
 	{
 		public MainViewContainer()
 		{
-			// Required to initialize variables
-			InitializeComponent();
 		}
 	}
 }

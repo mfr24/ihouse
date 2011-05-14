@@ -16,6 +16,7 @@ namespace IHome.SL.Main
 		{
 			// Required to initialize variables
 			InitializeComponent();
+            
 		}
 
 

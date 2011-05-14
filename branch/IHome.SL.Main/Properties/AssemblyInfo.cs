@@ -33,3 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: System.Windows.Markup.XmlnsDefinition("http://silverlight.imbob.com.cn", "IHome.SL.Controls")]
