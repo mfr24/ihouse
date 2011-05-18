@@ -22,7 +22,9 @@
                                     </LinearGradientBrush>
                                 </Grid.Background>
                             </Grid>
-                            <Grid Margin="0,40,0,0"/>
+                            <Grid Margin="0,40,0,0">
+                                <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                            </Grid>
                         </Grid>
                     </Border>
                 </ControlTemplate>
