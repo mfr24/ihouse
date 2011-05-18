@@ -10,16 +10,21 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Telerik.Windows.Controls.DragDrop;
+using System.Collections.ObjectModel;
 
 namespace IHome.SL.Main
 {
+
 	/// <summary>
 	/// Interaction logic for DesktopView.xaml
 	/// </summary>
 	public partial class DesktopView : UserControl
 	{
+
+
 		public DesktopView()
 		{
+
 			this.InitializeComponent();
             RadDragAndDropManager.AddDragQueryHandler(this, (sender, e) => {
                 ListBoxItem listBoxItem = e.Options.Source as ListBoxItem;

@@ -13,6 +13,9 @@
 		<ItemsPanelTemplate x:Key="ItemsPanelTemplate">
 			<telerik:RadWrapPanel/>
 		</ItemsPanelTemplate>
+		<Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="telerik:RadDragAndDropManager.AllowDrag" Value="True" />
+        </Style>
 	</UserControl.Resources>
 
 	<Grid x:Name="LayoutRoot" DataContext="{Binding Source={StaticResource DesktopViewModelDataSource}}">
@@ -32,21 +35,13 @@
 				<GradientStop Color="White"/>
 			</LinearGradientBrush>
 		</Grid.Background>
-		<ListBox x:Name="Desk" Grid.Column="1" Grid.Row="1" Background="{x:Null}" ItemsPanel="{StaticResource ItemsPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16" telerik:RadDragAndDropManager.AllowDrag="True"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
-            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+        <ListBox x:Name="Desk" ItemsSource="{Binding IHomeAppIcons}" Grid.Column="1" Grid.Row="1" Background="{x:Null}" ItemsPanel="{StaticResource ItemsPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemContainerStyle="{StaticResource ListBoxItemStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                <!--<local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>-->
+                    <Image Source="/images/RadDock_Silverlight.png"></Image>
+            </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
 	</Grid>
 </UserControl>
