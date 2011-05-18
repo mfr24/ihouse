@@ -37,24 +37,23 @@ namespace IHome.SL.Main
                     cue.ContentTemplate = this.Resources["ApplicationDragTemplate"] as DataTemplate;
                     cue.Content = box.SelectedItem;
                     e.Options.DragCue = cue;
-                    e.Options.ArrowCue = RadDragAndDropManager.GenerateArrowCue();
                 }
 
                 e.QueryResult = true;
             });
             RadDragAndDropManager.AddDragInfoHandler(this, (sender, e) => {
-                ListBoxItem listBoxItem = e.Options.Source as ListBoxItem;
-                ListBox box = ItemsControl.ItemsControlFromItemContainer(listBoxItem) as ListBox;
-                IList<DeskIcon> itemsSource = box.ItemsSource as IList<DeskIcon>;
-                DeskIcon payload = e.Options.Payload as DeskIcon;
+                //ListBoxItem listBoxItem = e.Options.Source as ListBoxItem;
+                //ListBox box = ItemsControl.ItemsControlFromItemContainer(listBoxItem) as ListBox;
+                //IList<DeskIcon> itemsSource = box.ItemsSource as IList<DeskIcon>;
+                //DeskIcon payload = e.Options.Payload as DeskIcon;
 
-                if (e.Options.Status == DragStatus.DragComplete)
-                {
-                    if (payload != null && itemsSource.Contains(payload))
-                    {
-                        itemsSource.Remove(payload);
-                    }
-                }
+                //if (e.Options.Status == DragStatus.DragComplete)
+                //{
+                //    if (payload != null && itemsSource.Contains(payload))
+                //    {
+                //        itemsSource.Remove(payload);
+                //    }
+                //}
 
             });
             RadDragAndDropManager.AddDropQueryHandler(this, (sender, e) => {

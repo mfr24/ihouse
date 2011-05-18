@@ -9,7 +9,10 @@
 	x:Class="IHome.SL.Main.DesktopView"
 	d:DesignWidth="640" d:DesignHeight="480">
 	<UserControl.Resources>
-		<local:DesktopViewModel x:Key="DesktopViewModelDataSource" />
+        <DataTemplate x:Key="ApplicationDragTemplate">
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16" Background="Black" Height="60" Width="32" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </DataTemplate>
+		<local:DesktopViewModel x:Key="DesktopViewModelDataSource"/>
 		<ItemsPanelTemplate x:Key="ItemsPanelTemplate">
 			<telerik:RadWrapPanel/>
 		</ItemsPanelTemplate>
@@ -35,13 +38,8 @@
 				<GradientStop Color="White"/>
 			</LinearGradientBrush>
 		</Grid.Background>
-        <ListBox x:Name="Desk" ItemsSource="{Binding IHomeAppIcons}" Grid.Column="1" Grid.Row="1" Background="{x:Null}" ItemsPanel="{StaticResource ItemsPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemContainerStyle="{StaticResource ListBoxItemStyle}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                <!--<local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>-->
-                    <Image Source="/images/RadDock_Silverlight.png"></Image>
-            </DataTemplate>
-            </ListBox.ItemTemplate>
+        <ListBox x:Name="Desk" ItemsSource="{Binding IHomeAppIcons}" Grid.Column="1" Grid.Row="1" Background="{x:Null}" ItemsPanel="{StaticResource ItemsPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+                 ItemTemplate="{StaticResource ApplicationDragTemplate}">
         </ListBox>
 	</Grid>
 </UserControl>
