@@ -30,8 +30,20 @@
 			</LinearGradientBrush>
 		</Grid.Background>
 		<telerik:RadWrapPanel x:Name="Desk" Grid.Column="1" Grid.Row="1">
-			<local:DeskIcon Text="测试" Url="/images/female.png"/>
-		
-		</telerik:RadWrapPanel>
+			<local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+            <local:DeskIcon Text="测试" Url="/images/RadDock_Silverlight.png" Margin="16,16"/>
+        </telerik:RadWrapPanel>
 	</Grid>
 </UserControl>

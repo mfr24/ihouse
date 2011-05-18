@@ -5,8 +5,13 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Name="userControl"
 	mc:Ignorable="d"
 	x:Class="IHome.SL.Main.DeskIcon">
-    <StackPanel x:Name="LayoutRoot">
-        <Image x:Name="Icon" Height="48" Width="48" Source="{Binding Url, ElementName=userControl}"/>
+    <StackPanel x:Name="LayoutRoot" HorizontalAlignment="Center">
+    	<StackPanel.Effect>
+    		<DropShadowEffect/>
+    	</StackPanel.Effect>
+        <Border BorderBrush="Black" Height="32" CornerRadius="12" Width="32">
+        	<Image x:Name="Icon" Source="{Binding Url, ElementName=userControl}"/>
+        </Border>
         <TextBlock x:Name="IconText" Margin="0,2,0,0" FontSize="18" FontWeight="Bold" Text="{Binding Text, ElementName=userControl}"/>
     </StackPanel>
 </UserControl>
