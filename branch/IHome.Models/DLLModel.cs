@@ -11,6 +11,11 @@ using System.Windows.Shapes;
 
 namespace IHome.Models
 {
+    public class AppIcon
+    {
+        string text { get; set; }
+        string icon { get; set; }
+    }
     public class DLLModel
     {
         public string name { get; set; }
@@ -24,4 +29,6 @@ namespace IHome.Models
             set { _version = value; }
         }
     }
+
+
 }

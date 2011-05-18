@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Data;
 using System.ComponentModel;
+using IHome.Models;
 
 namespace IHome.SL.Main
 {
-    public class AppIcon
-    {
-        string text { get; set; }
-        string icon { get; set; }
-    }
 	public class DesktopViewModel : INotifyPropertyChanged
 	{
         

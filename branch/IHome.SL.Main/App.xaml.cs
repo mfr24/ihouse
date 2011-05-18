@@ -26,7 +26,7 @@ namespace IHome.SL.Main
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            this.RootVisual = new MainPage();
+            this.RootVisual = new IHome.SL.Main.Views.Root();
         }
 
         private void Application_Exit(object sender, EventArgs e)
