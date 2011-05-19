@@ -39,7 +39,7 @@
 			</LinearGradientBrush>
 		</Grid.Background>
         <ListBox x:Name="Desk" ItemsSource="{Binding IHomeAppIcons}" Grid.Column="1" Grid.Row="1" Background="{x:Null}" ItemsPanel="{StaticResource ItemsPanelTemplate}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" ItemContainerStyle="{StaticResource ListBoxItemStyle}"
-                 ItemTemplate="{StaticResource ApplicationDragTemplate}">
+                 ItemTemplate="{StaticResource ApplicationDragTemplate}" telerik:RadDragAndDropManager.AllowDrop="True">
         </ListBox>
 	</Grid>
 </UserControl>

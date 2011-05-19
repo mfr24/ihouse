@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Telerik.Windows.Controls.DragDrop;
 using System.Collections.ObjectModel;
+using IHome.Models;
 
 namespace IHome.SL.Main
 {
@@ -41,26 +42,55 @@ namespace IHome.SL.Main
 
                 e.QueryResult = true;
             });
-            RadDragAndDropManager.AddDragInfoHandler(this, (sender, e) => {
-                //ListBoxItem listBoxItem = e.Options.Source as ListBoxItem;
-                //ListBox box = ItemsControl.ItemsControlFromItemContainer(listBoxItem) as ListBox;
-                //IList<DeskIcon> itemsSource = box.ItemsSource as IList<DeskIcon>;
-                //DeskIcon payload = e.Options.Payload as DeskIcon;
+            RadDragAndDropManager.AddDragInfoHandler(this, (sender, e) =>
+            {
+                ListBoxItem listBoxItem = e.Options.Source as ListBoxItem;
+                ListBox box = ItemsControl.ItemsControlFromItemContainer(listBoxItem) as ListBox;
+                IList<AppIcon> itemsSource = box.ItemsSource as IList<AppIcon>;
+                AppIcon payload = e.Options.Payload as AppIcon;
 
-                //if (e.Options.Status == DragStatus.DragComplete)
-                //{
-                //    if (payload != null && itemsSource.Contains(payload))
-                //    {
-                //        itemsSource.Remove(payload);
-                //    }
-                //}
+                if (e.Options.Status == DragStatus.DragComplete)
+                {
+                    MessageBox.Show("Drag");
+                    if (payload != null && itemsSource.Contains(payload))
+                    {
+                        itemsSource.Remove(payload);
+                    }
+                }
 
             });
-            RadDragAndDropManager.AddDropQueryHandler(this, (sender, e) => {
-                MessageBox.Show("3");
+            RadDragAndDropManager.AddDropQueryHandler(this, (sender, e) =>
+            {
+                ItemsControl box = e.Options.Destination as ItemsControl;
+                IList<AppIcon> itemsSource = box.ItemsSource as IList<AppIcon>;
+                AppIcon payload = e.Options.Payload as AppIcon;
+
+                e.QueryResult = payload != null && !itemsSource.Contains(payload);
             });
-            RadDragAndDropManager.AddDropInfoHandler(this, (sender, e) => {
-                MessageBox.Show("4");
+            RadDragAndDropManager.AddDropInfoHandler(this, (sender, e) =>
+            {
+                ItemsControl box = e.Options.Destination as ItemsControl;
+                IList<AppIcon> itemsSource = box.ItemsSource as IList<AppIcon>;
+                AppIcon payload = e.Options.Payload as AppIcon;
+
+                if (e.Options.Status == DragStatus.DropPossible)
+                {
+                    //box.BorderBrush = listBoxDragPossible;
+                }
+                else
+                {
+                    box.BorderBrush = new SolidColorBrush(Colors.Gray);
+                }
+
+                if (e.Options.Status == DragStatus.DropComplete)
+                {
+                    MessageBox.Show("Drop");
+                    if (!itemsSource.Contains(payload))
+                    {
+                        itemsSource.Add(payload);
+                    }
+                }
+
             });
 		}
 	}

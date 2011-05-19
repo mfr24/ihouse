@@ -28,7 +28,7 @@
 					<Button x:Name="HomeButton" Content="首页" HorizontalAlignment="Left" Margin="36,0,0,0" d:LayoutOverrides="Height" VerticalAlignment="Center" Padding="12,5"
                             Click="Button_Click"/>
 				</Grid>
-				<ListBox Height="400" Background="{x:Null}" ItemsSource="{Binding SimpleMenu}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" BorderThickness="0">
+				<ListBox telerik:RadDragAndDropManager.AllowDrop="True" Height="400" Background="{x:Null}" ItemsSource="{Binding SimpleMenu}" ItemContainerStyle="{StaticResource ListBoxItemStyle}" BorderThickness="0">
 					<ListBox.ItemTemplate>
 						<DataTemplate>
                             <Border BorderBrush="#FFBFC3CB" BorderThickness="0,0,0,1" Height="40">
