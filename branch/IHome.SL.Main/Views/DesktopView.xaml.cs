@@ -21,11 +21,9 @@ namespace IHome.SL.Main
 	/// </summary>
     public partial class DesktopView : UserControl
     {
-
-
         public DesktopView()
         {
-
+            this.InitializeComponent();
         }
     }
 }
