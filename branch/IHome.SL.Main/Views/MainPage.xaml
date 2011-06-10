@@ -49,7 +49,7 @@
 			</StackPanel>
 		</Border>
 
-        <telerik:RadTransitionControl x:Name="Transition" Margin="0" HorizontalContentAlignment="Stretch" Grid.Column="1">
+        <telerik:RadTransitionControl x:Name="Transition" HorizontalContentAlignment="Stretch" Grid.Column="1">
             <telerik:RadTransitionControl.Transition>
                 <telerik:PerspectiveRotationTransition Direction="Right" NewPlaneCenterOfRotationX="1" OldPlaneCenterOfRotationX="0">
                     <telerik:PerspectiveRotationTransition.NewPlaneEasing>
